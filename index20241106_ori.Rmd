@@ -1,0 +1,100 @@
+--- 
+title: "Tutorial on Phonetics and Speech Analysis"
+author: 
+  - name: <a href='https://www.hugoquene.nl' target='_blank'>Hugo Quené</a>
+    affiliation: Utrecht University
+    email: h.quene@uu.nl
+  - name: <a href='https://www.cliziawelker.com' target='_blank'>Clizia Welker</a>
+date: "Document compiled `r format(Sys.time(), '%d %b %Y %H:%M')`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+bibliography: [book.bib, packages.bib, pandoc.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/TPSA
+editor_options:
+  chunk_output_type: console
+description: "Tutorial on Phonetics and Speech Analysis. "
+---
+
+## Preface
+
+### Aims
+
+In this tutorial you will learn about acoustics, phonetics, and speech analysis. 
+You will learn the core concepts in these related fields, as well as the necessary practical skills. 
+The aim of this tutorial is to provide you with the phonetic insights and skills that you need to conduct phonetic research in your own project (e.g. paper or thesis). 
+
+### How to use this tutorial 
+
+You will learn the most from this tutorial if you (1) read the explanatory texts in this tutorial, (2) work through the questions and exercises provided, (3) practice in applying your new knowledge with the `Praat` computer program (detailed below), and (4) re-read the relevant sections from this tutorial and your textbook (with the help of keywords provided per section). 
+
+### Recommended software
+
+In this tutorial you will work mostly with `Praat`. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (Universiteit van Amsterdam). It can be downloaded from its own website <www.praat.org>, where you may also find lots of useful documentation. `Praat` also has extensive `Help` built in. 
+
+#### Installing `Praat`
+
+REVISE 
+
+In order to get Praat on your computer, go to http://www.fon.hum.uva.nl/praat > Download praat (choose the version for your operative system). It will take a second to download the program, either by downloading the self extracting executable file and double clicking on it or by downloading the ZIP file (and double clicking on it). In both ways, a Praat or Praat.exe file will appear, which is the Praat program itself. It is handy to make a shortcut link of Praat to an easily accessible location on your computer, for instance on the desktop (in Windows, click on praat.exe with the right mouse botton > Send to > Desktop, or click on right click on the desktop > New > Shortcut > Browse to find the Praat file). There is also a Praat user list (http://uk.groups.yahoo.com/group/praat-users/), where people share their knowledge posting questions and answers.
+
+### Recommended textbooks
+
+This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by 
+Ladefoged & Johnson, Reetz & Jongman, Rietveld & Van Heuven [in Dutch] AND MORE. Zsiga 
+
+
+The audio files that we will be using are downloadable from
+practicum20070725.zip
+or from
+http://www.let.uu.nl/~audiufon/data/pracfon1.html. 
+
+This tutorial is divided into XX parts:
+
+- basics of acoustics
+
+- bac
+It is divided into 5 modules: basics of acoustics 1 and 2, spectrograms, LPC and PSOLA, which are, in turn, split up into different paragraphs (see index below). Every module is made of theoretical parts and of excercises (with answers in separate documents). It is useful to go through the excercises, as welll, in order to check your understanding, and because the answers are sometimes complementary to the explanations. Every module is also made up of a practical part, where you will learn how to work with Praat. Praat  is an open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (Universiteit van Amsterdam).
+
+In order to get Praat on your computer, go to http://www.fon.hum.uva.nl/praat > Download praat (choose the version for your operative system). It will take a second to download the program, either by downloading the self extracting executable file and double clicking on it or by downloading the ZIP file (and double clicking on it). In both ways, a Praat or Praat.exe file will appear, which is the Praat program itself. It is handy to make a shortcut link of Praat to an easily accessible location on your computer, for instance on the desktop (in Windows, click on praat.exe with the right mouse botton > Send to > Desktop, or click on right click on the desktop > New > Shortcut > Browse to find the Praat file). There is also a Praat user list (http://uk.groups.yahoo.com/group/praat-users/), where people share their knowledge posting questions and answers.
+
+The audio files that we will be using are downloadable from
+practicum20070725.zip
+or from
+http://www.let.uu.nl/~audiufon/data/pracfon1.html. 
+
+### Further reading
+
+## Using Praat
+
+The aim of this tutorial is to explain how to work with speech: how to perform phonetic analyses, and how to record speech so that the recording is suitable for phonetic analyses. 
+
+
+## License {-}
+
+This document is licensed under the _GNU GPL 3_ license (for details see 
+https://www.gnu.org/licenses/gpl-3.0.en.html). 
+
+## Citation {-}
+
+
+## Technical details {-}
+
+
+## Colofon {-}
+
+This tutorial is based on an earlier tutorial (2006) titled <cite>Tutorial for self study:
+basics of phonetics and how to use Praat</cite>. 
+
+```{r class.source='fold-hide', include=FALSE}
+# automatically create a bib database for R packages that are used 
+# require(lattice)
+# require(nnet)
+# added 20220203
+require(hqmisc)
+# require(MASS)
+knitr::write_bib( c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

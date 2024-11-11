@@ -1,0 +1,97 @@
+---
+title: "Tutorial on Phonetics and Speech Analysis"
+author: 
+  - name: <a href='https://www.hugoquene.nl' target='_blank'>Hugo Quené</a>
+    affiliation: Utrecht University
+  - name: <a href='https://www.cliziawelker.com' target='_blank'>Clizia Welker</a>
+date: "Document compiled `r format(Sys.time(), '%d %b %Y %H:%M')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 1
+    self_contained: false
+bibliography: [book.bib, packages.bib, pandoc.bib, tphsa.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Tutorial on Phonetics and Speech Analysis. "
+---
+
+# Preface {-}
+
+## Aims {-}
+
+In this tutorial you will learn about acoustics, phonetics, and speech analysis. 
+You will learn the core concepts in these related fields, as well as the necessary practical skills for speech analysis. 
+The aim of this tutorial is to provide you with the phonetic insights and skills in speech analysis that you need to succesfully conduct phonetic research in your own project (e.g. paper or thesis). 
+
+## How to use this tutorial {-} 
+
+You will learn the most from this tutorial if you 
+
+(1) read the explanatory texts in this tutorial, 
+(2) work through the questions and exercises provided, 
+(3) practice in applying your new knowledge hands-on, with the `Praat` computer program (detailed below), and 
+(4) re-read the relevant sections from this tutorial and your textbook, with the help of keywords provided per section. 
+
+This tutorial is divided into XX parts:
+
+- basics of acoustics
+
+It is divided into 5 modules: basics of acoustics 1 and 2, spectrograms, LPC and PSOLA, which are, in turn, split up into different paragraphs (see index below). Every module is made of theoretical parts and of exercises (with answers in separate documents). 
+
+
+## Recommended software {-}
+
+In this tutorial you will work mostly with `Praat`^[The Dutch word _praat_ /ˈpraːt/ means "talk".]. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (both at University of Amsterdam). It can be found on its own website (<https://www.praat.org>), where you will find a wealth of helpful documentation. `Praat` also has extensive `Help` built in. 
+There is an online forum (<https://groups.io/g/Praat-Users-List>), where users share their knowledge by posting questions and providing answers.
+
+In order to install `Praat` on your computer, go to its webpage at <https://www.praat.org/>, and then proceed to the download page for the operating system of your computer. Follow the installation instructions on the download page for your operating system.  
+
+## Recommended textbooks {-}
+
+This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by 
+@Rietveld_VanHeuven_2009 (in Dutch), 
+@Johnson_2011, 
+@Ladefoged_Johnson_2015,  
+@Reetz_Jongman_2020, and 
+@Zsiga_2024. 
+
+
+## License {-}
+
+This work is licensed under the _GNU GPL 3_ license (for details see 
+https://www.gnu.org/licenses/gpl-3.0.en.html). 
+
+## Citation {-}
+
+TBA 
+
+## Technical details {-}
+
+TBA
+
+## History {-}
+
+This work is based on an earlier tutorial (2006) titled <cite>Tutorial for self study: basics of phonetics and how to use Praat</cite> by Hugo Quené and Clizia Welker. In turn, that 2006 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck. 
+
+The 2006 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown`  [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024.  
+
+
+```{r class.source='fold-hide', include=FALSE}
+# automatically create a bib database for R packages that are used 
+# require(lattice)
+# require(nnet)
+# added 20220203
+require(hqmisc)
+# require(MASS)
+knitr::write_bib( c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+

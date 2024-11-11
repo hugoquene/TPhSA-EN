@@ -1,0 +1,21 @@
+.questionbox {
+  padding: 1em;
+  background: #FAFAFA;
+  border: 2px solid orange; 
+  border-radius: 5px;
+}
+.praatbox {
+  padding: 1em;
+  background: #FAFAFA;
+  border: 2px solid #CCCCFF; /* praat website background color */
+  border-radius: 5px;
+}
+.warningbox {
+  padding: 1em;
+  background: #FCFCFC; /* very light grey */
+  border: 3px solid darkred; 
+  border-radius: 5px;
+}
+.center {
+  text-align: center;
+}

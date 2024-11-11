@@ -1,0 +1,95 @@
+# (PART\*) Part I: Acoustics {-}
+
+# Sound waves {#ch-soundwaves}
+
+## Sound
+
+Sound is a type of energy that travels through a medium (such as air, water, or solid materials) in the form of waves. These sound waves are created by the vibration of objects, which causes the surrounding particles in the medium to move in a back-and-forth (oscillatory) motion. This movement, or vibration, or oscillation, transfers energy through the medium, creating waves of high and low pressure.
+
+## Sound wave {#sec:soundwave}
+
+A sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). A sound wave is spread in all directions from the sound source; we could compare its propagation to that of a circular wave on the surface of a water basin. The molecules themselves move over a very short distance and do not travel along with the wave: instead, after the sound wave (the air pressure fluctuation) has passed along, they go back to their equilibrium position. Unlike wind, which is a movement of air (caused by temperature, pressure or difference in chemical composition), the air particles involved in the propagation of the sound wave do not move along with it.
+
+There are two kinds of waves (also depending on the acoustic medium). In *longitudinal* waves (such as sound waves) the back-and-forth displacement or movement of the medium's particles is in the same direction as the propagation of the wave. In *transverse* waves (such as the waves on the surface of a pond) the back-and-forth displacement of the water particles is perpendicular to the direction of propagation of the wave.  
+A stadium wave provides a clear example of a transverse wave: a group of persons (the particles) starts the wave by standing up, rising their arms, sitting down, standing up again, and so on. The persons' action is directly followed by that of their neighbours on one side, who do the same and who are again followed by their next neighbours on their side, and so on, until the wave is travelling through the whole stadium. The persons' motion (up-down) is perpendicular to the propagation of the wave (left-right along the bench). 
+
+Sound propagates in all dimensions through an acoustic medium, like an expanding sphere, which is indeed the theoretical model used to describe the sound wave propagation pattern. As the sound wave moves away from its source, more particles are involved in the pressure fluctuations. As a consequence, sound waves lose energy while travelling through the medium, as some of the energy is spent in moving increasingly more particles. Finally, sound is perceived as such when the sound wave spread by the sound source and travelling through the acoustic medium finally impinges upon the eardrum of the observer. 
+
+## Acoustic media
+
+Air is only one of the media through which sound can propagate. If your head is under water (as in a bath, pool, lake or sea), the water may carry sound waves from the sound source to your eardrums, and you do hear sounds. The propagation of sound waves is faster through liquids than through gases such as air: the closer the molecules of the medium (i.e. the higher its density), the higher the speed of sound in that medium. 
+
+You can also put your ear to the ground in order to hear sounds propagated through the soil. The propagation of sound waves in solid soil is even faster than in liquids. Trying this out on dry sand on the beach, one observer noted hearing footsteps until about 25 m distant [@Minnaert_1970v2, §10].
+
+## The speed of sound {#sec-speedofsound}
+
+In air, the speed of sound (the speed of propagation of a sound wave) is about 331 m/s at 0°C (about 334 m/s at 21°C). The speed of sound also depends on the humidity: humid air holds more particles (of water), resulting in a slightly higher speed of sound. 
+
+In sea water sound travels at about 1435 m/s, in concrete 3400 m/s, in iron railway tracks about 5000 m/s. 
+
+## Pressure
+
+Pressure is the amount of force on a surface. In physics, *force* is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second ($m/s$). *Pressure*, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter ($1\ Pa = 1\ N/m^2$). 
+Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (mikropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
+
+::: {#questions-soundwaves .questionbox}
+
+## Questions
+
+### Question 1.1 {-}
+
+Explain why a sound wave loses energy the further it is spread from the oscillation source.
+
+<details>
+  <summary>Answer 1.1</summary>
+  <p>The more a sound *wave* moves away from the source, the more particles of the medium (e.g. air)  are involved. The amount of initial energy (spread with the source oscillation) is spread over a larger surface, of an expanding imaginary sphere, and consequently the sound wave displaces more particles. The overall amount of energy remains the same. Therefore, the energy on a single medium particle or on a single portion of the sound wave is smaller. Thus, the sound wave fades as the distance to the sound source increases.</p>
+  <p>Remember that the sound *wave* travels through the medium, but the particles in the medium remain more or less in place.</p>
+</details>
+
+### Question 1.2 {-}
+
+What parameters influence the speed of a sound wave?
+
+<details>
+  <summary>Answer 1.2</summary>
+  <p>The propagation speed of a sound wave depends on the acoustic medium: different media have a different characteristic sound propagation speed. In gases (like air) the sound speed is lower than in liquids or solids, as the particles are less close to one another (the medium is less dense). Moreover, factors such as temperature and pressure influence the density of the acoustic medium, and thus these factors indirectly influence the speed of sound in the medium. Heat, for instance, makes the particles less close to one another, and thus slows down the sound speed. For gases such as air, sound speed is determined by their chemical composition.</p>
+</details>
+
+:::
+
+<!-- dummy text here -->
+
+-----
+
+::: {#box-praatintro .praatbox}
+
+## How to work with `Praat` {#sec-praatintro}
+
+`Praat` is a computer program designed to process, analyze and visualize speech sounds. 
+
+After starting the program, `Praat` opens two windows: an *Objects* window (typically on the left) and a *Picture* window (typically on the right). 
+
+### Objects {-}
+
+In `Praat`, signals and derived representations are all seen as objects. Objects may have different types, e.g. Sound, Spectrum, Pitch, etc^[By convention, object types are written with a capital; this helps to distinguish physical properties (e.g. the intensity of a sound) from the `Praat` representations of those properties (e.g. the Intensity object computed from a Sound object, both within `Praat`).].  
+Each type of object comes with pre-defined operations that are possible. If you select an object of a different type, then the buttons (operations) change with the object type. 
+As an analogy, consider the various types of objects in your room: clothing items and human bodies may be washed, food may be cooked but human bodies may not be cooked, furniture and food items may be opened but human bodies may not be opened, clothing can be inside furniture, etc. Moreover, relations between object types are also specified: for example, a plant can become a food item (by means of cooking), but a human body may not. 
+
+Before working with an object, you need to select that object, by clicking on it in the list of objects displayed in the Praat Objects window. 
+
+Objects of any type may be saved and opened using the `Save` and `Open` options in the top menu of the Objects window. This is a great way to save the objects resulting from your phonetic analyses, i.e., to save your results.  
+
+The buttons at the bottom of the Objects window are *always* available for objects of any type: `Rename...`, `Copy...`, `Inspect` (to take a deeper look), `Info`, and `Remove`.
+
+We will often work with objects of the *Sound* type. Such a Sound object is a digital sound (sampled audio), which you can Play or Scale or Convert or Combine, etc. You may analyze a Sound, which will typically result in an object of a different type (e.g. Pitch). Sound objects can be opened from disk, and saved as audio files in a wide variety of audio formats.  
+
+### Picture window {-}
+
+`Praat` will draw its visualisations (figures) in its Praat Picture window. The figure will be scaled to the area with the pink boundary, the so-called viewport. By changing the viewport after drawing a part of a figure, you may obtain multiple visualizations in a single figure, as will be illustrated in this tutorial. 
+
+The combined figure in the viewport may be saved (`File > Save`) or printed (`File > Print`) in the top menu of the Praat Picture window. 
+
+You may also save the figure in a different way, as a "recipe" set of instructions to re-create the figure (`File > Save as Praat picture file`), for later reuse.  
+
+:::
+

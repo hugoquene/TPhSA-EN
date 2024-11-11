@@ -1,0 +1,30 @@
+
+# Converting sound to bytes
+
+## Overview
+
+In order to process sounds by means of a computer program, or telephone, we first need to convert that sound, the variations in air pressure, to numbers that are then further processed by a computer or by a telephone device. This is a two-step process, involving at least two key components in order:
+
+(1) the **microphone**: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and deviations of the membrane (caused by the sound wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm). For more details about how to handle a microphone, see the text box in §\@ref(sec:microphone)) below. 
+The analog electrical signal is then passed on from the microphone to...
+
+(2) the **analog-to-digital-converter** (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called 'sampling'. Sampling a signal is done with a certain 'sampling frequency' (number of measurements per second) and with a certain precision of measurement (known as 'amplitude resolution'), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)^[The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.] ^[In a speaker's telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.]
+
+Very soon, whenever you want to hear sound from a computer or from a telephone connection, you will also need 
+
+(3) a **digital-to-analog-converter** (DAC): this device converts a stream of discrete, digital numbers into a continuous analog electrical signal, with a pre-specified conversion frequency and amplitude precision. The result is an output analog electrical signal, to be handled further by audio hardware (e.g. to be amplified, sent to a loudspeaker, etc.)
+
+::: {#mic-howto .warningbox}
+
+## How to handle a microphone {#sec:microphone}
+
+- A good microphone is a very sensitive and very expensive device. Treat it with great care. Never blow into a microphone (it's far better to just say `test` or `check` or to say anything else). Do not tap on its surface. 
+
+- Do not plug or unplug the microphone into/from a "hot" port (first set the port's input/output volume to zero, then plug/unplug). 
+
+- Do not speak *into* the microphone, but just over it or alongside. The microphone should measure sounds, but *not* the flow of air coming out of a speaker's mouth and nose. If the microphone comes with a foam cap to dampen airflow, then use it. 
+
+- Do not touch the microphone while it is working; this will result in undesired (and often loud) contact sounds in the output signal. 
+
+:::
+

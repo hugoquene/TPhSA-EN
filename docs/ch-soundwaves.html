@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Sound waves | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="github-repo" content="rstudio/TPhSA" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
+  
+  <meta name="twitter:description" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="converting-sound-to-bytes.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Tutorial on Phonetics and Speech Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aims"><i class="fa fa-check"></i>Aims</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#under-construction"><i class="fa fa-check"></i>Under construction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-tutorial"><i class="fa fa-check"></i>How to use this tutorial</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-software"><i class="fa fa-check"></i>Recommended software</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-textbooks"><i class="fa fa-check"></i>Recommended textbooks</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part I: Acoustics</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html"><i class="fa fa-check"></i><b>1</b> Sound waves</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sound"><i class="fa fa-check"></i><b>1.1</b> Sound</a></li>
+<li class="chapter" data-level="1.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:soundwave"><i class="fa fa-check"></i><b>1.2</b> Sound wave</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#acoustic-media"><i class="fa fa-check"></i><b>1.3</b> Acoustic media</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-speedofsound"><i class="fa fa-check"></i><b>1.4</b> The speed of sound</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#pressure"><i class="fa fa-check"></i><b>1.5</b> Pressure</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i><b>1.6</b> Questions</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-praatintro"><i class="fa fa-check"></i><b>1.7</b> How to work with <code>Praat</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial on Phonetics and Speech Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-soundwaves" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Sound waves<a href="ch-soundwaves.html#ch-soundwaves" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sound" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Sound<a href="ch-soundwaves.html#sound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sound is a type of energy that travels through a medium (such as air, water, or solid materials) in the form of waves. These sound waves are created by the vibration of objects, which causes the surrounding particles in the medium to move in a back-and-forth (oscillatory) motion. This movement, or vibration, or oscillation, transfers energy through the medium, creating waves of high and low pressure.</p>
+</div>
+<div id="sec:soundwave" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Sound wave<a href="ch-soundwaves.html#sec:soundwave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). A sound wave is spread in all directions from the sound source; we could compare its propagation to that of a circular wave on the surface of a water basin. The molecules themselves move over a very short distance and do not travel along with the wave: instead, after the sound wave (the air pressure fluctuation) has passed along, they go back to their equilibrium position. Unlike wind, which is a movement of air (caused by temperature, pressure or difference in chemical composition), the air particles involved in the propagation of the sound wave do not move along with it.</p>
+<p>There are two kinds of waves (also depending on the acoustic medium). In <em>longitudinal</em> waves (such as sound waves) the back-and-forth displacement or movement of the medium’s particles is in the same direction as the propagation of the wave. In <em>transverse</em> waves (such as the waves on the surface of a pond) the back-and-forth displacement of the water particles is perpendicular to the direction of propagation of the wave.<br />
+A stadium wave provides a clear example of a transverse wave: a group of persons (the particles) starts the wave by standing up, rising their arms, sitting down, standing up again, and so on. The persons’ action is directly followed by that of their neighbours on one side, who do the same and who are again followed by their next neighbours on their side, and so on, until the wave is travelling through the whole stadium. The persons’ motion (up-down) is perpendicular to the propagation of the wave (left-right along the bench).</p>
+<p>Sound propagates in all dimensions through an acoustic medium, like an expanding sphere, which is indeed the theoretical model used to describe the sound wave propagation pattern. As the sound wave moves away from its source, more particles are involved in the pressure fluctuations. As a consequence, sound waves lose energy while travelling through the medium, as some of the energy is spent in moving increasingly more particles. Finally, sound is perceived as such when the sound wave spread by the sound source and travelling through the acoustic medium finally impinges upon the eardrum of the observer.</p>
+</div>
+<div id="acoustic-media" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Acoustic media<a href="ch-soundwaves.html#acoustic-media" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Air is only one of the media through which sound can propagate. If your head is under water (as in a bath, pool, lake or sea), the water may carry sound waves from the sound source to your eardrums, and you do hear sounds. The propagation of sound waves is faster through liquids than through gases such as air: the closer the molecules of the medium (i.e. the higher its density), the higher the speed of sound in that medium.</p>
+<p>You can also put your ear to the ground in order to hear sounds propagated through the soil. The propagation of sound waves in solid soil is even faster than in liquids. Trying this out on dry sand on the beach, one observer noted hearing footsteps until about 25 m distant <span class="citation">(<a href="#ref-Minnaert_1970v2">Minnaert 1970, vol. 2, sec. 10</a>)</span>.</p>
+</div>
+<div id="sec-speedofsound" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> The speed of sound<a href="ch-soundwaves.html#sec-speedofsound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In air, the speed of sound (the speed of propagation of a sound wave) is about 331 m/s at 0°C (about 334 m/s at 21°C). The speed of sound also depends on the humidity: humid air holds more particles (of water), resulting in a slightly higher speed of sound.</p>
+<p>In sea water sound travels at about 1435 m/s, in concrete 3400 m/s, in iron railway tracks about 5000 m/s.</p>
+</div>
+<div id="pressure" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Pressure<a href="ch-soundwaves.html#pressure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pressure is the amount of force on a surface. In physics, <em>force</em> is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second (<span class="math inline">\(m/s\)</span>). <em>Pressure</em>, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter (<span class="math inline">\(1\ Pa = 1\ N/m^2\)</span>).
+Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (mikropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.</p>
+</div>
+<div id="questions-soundwaves" class="questionbox">
+<div id="questions-1" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Questions<a href="ch-soundwaves.html#questions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="question-1.1" class="section level3 unnumbered hasAnchor">
+<h3>Question 1.1<a href="ch-soundwaves.html#question-1.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Explain why a sound wave loses energy the further it is spread from the oscillation source.</p>
+<details>
+<summary>
+Answer 1.1
+</summary>
+<p>
+The more a sound <em>wave</em> moves away from the source, the more particles of the medium (e.g. air) are involved. The amount of initial energy (spread with the source oscillation) is spread over a larger surface, of an expanding imaginary sphere, and consequently the sound wave displaces more particles. The overall amount of energy remains the same. Therefore, the energy on a single medium particle or on a single portion of the sound wave is smaller. Thus, the sound wave fades as the distance to the sound source increases.
+</p>
+<p>
+Remember that the sound <em>wave</em> travels through the medium, but the particles in the medium remain more or less in place.
+</p>
+</details>
+</div>
+<div id="question-1.2" class="section level3 unnumbered hasAnchor">
+<h3>Question 1.2<a href="ch-soundwaves.html#question-1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What parameters influence the speed of a sound wave?</p>
+<details>
+<summary>
+Answer 1.2
+</summary>
+<p>
+The propagation speed of a sound wave depends on the acoustic medium: different media have a different characteristic sound propagation speed. In gases (like air) the sound speed is lower than in liquids or solids, as the particles are less close to one another (the medium is less dense). Moreover, factors such as temperature and pressure influence the density of the acoustic medium, and thus these factors indirectly influence the speed of sound in the medium. Heat, for instance, makes the particles less close to one another, and thus slows down the sound speed. For gases such as air, sound speed is determined by their chemical composition.
+</p>
+</details>
+</div>
+</div>
+</div>
+<!-- dummy text here -->
+<hr />
+<div id="box-praatintro" class="praatbox">
+<div id="sec-praatintro" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> How to work with <code>Praat</code><a href="ch-soundwaves.html#sec-praatintro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Praat</code> is a computer program designed to process, analyze and visualize speech sounds.</p>
+<p>After starting the program, <code>Praat</code> opens two windows: an <em>Objects</em> window (typically on the left) and a <em>Picture</em> window (typically on the right).</p>
+<div id="objects" class="section level3 unnumbered hasAnchor">
+<h3>Objects<a href="ch-soundwaves.html#objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In <code>Praat</code>, signals and derived representations are all seen as objects. Objects may have different types, e.g. Sound, Spectrum, Pitch, etc<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.<br />
+Each type of object comes with pre-defined operations that are possible. If you select an object of a different type, then the buttons (operations) change with the object type.
+As an analogy, consider the various types of objects in your room: clothing items and human bodies may be washed, food may be cooked but human bodies may not be cooked, furniture and food items may be opened but human bodies may not be opened, clothing can be inside furniture, etc. Moreover, relations between object types are also specified: for example, a plant can become a food item (by means of cooking), but a human body may not.</p>
+<p>Before working with an object, you need to select that object, by clicking on it in the list of objects displayed in the Praat Objects window.</p>
+<p>Objects of any type may be saved and opened using the <code>Save</code> and <code>Open</code> options in the top menu of the Objects window. This is a great way to save the objects resulting from your phonetic analyses, i.e., to save your results.</p>
+<p>The buttons at the bottom of the Objects window are <em>always</em> available for objects of any type: <code>Rename...</code>, <code>Copy...</code>, <code>Inspect</code> (to take a deeper look), <code>Info</code>, and <code>Remove</code>.</p>
+<p>We will often work with objects of the <em>Sound</em> type. Such a Sound object is a digital sound (sampled audio), which you can Play or Scale or Convert or Combine, etc. You may analyze a Sound, which will typically result in an object of a different type (e.g. Pitch). Sound objects can be opened from disk, and saved as audio files in a wide variety of audio formats.</p>
+</div>
+<div id="picture-window" class="section level3 unnumbered hasAnchor">
+<h3>Picture window<a href="ch-soundwaves.html#picture-window" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Praat</code> will draw its visualisations (figures) in its Praat Picture window. The figure will be scaled to the area with the pink boundary, the so-called viewport. By changing the viewport after drawing a part of a figure, you may obtain multiple visualizations in a single figure, as will be illustrated in this tutorial.</p>
+<p>The combined figure in the viewport may be saved (<code>File &gt; Save</code>) or printed (<code>File &gt; Print</code>) in the top menu of the Praat Picture window.</p>
+<p>You may also save the figure in a different way, as a “recipe” set of instructions to re-create the figure (<code>File &gt; Save as Praat picture file</code>), for later reuse.</p>
+</div>
+</div>
+</div>
+
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Minnaert_1970v2" class="csl-entry">
+Minnaert, M. 1970. <em>De Natuurkunde van ’t Vrije Veld</em>. Vol. 2. Zutphen: Thieme.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>By convention, object types are written with a capital; this helps to distinguish physical properties (e.g. the intensity of a sound) from the <code>Praat</code> representations of those properties (e.g. the Intensity object computed from a Sound object, both within <code>Praat</code>).<a href="ch-soundwaves.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="converting-sound-to-bytes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch01soundwaves.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

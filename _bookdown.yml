@@ -1,0 +1,7 @@
+book_filename: "TPhSA-EN"
+rmd_files: ["index.Rmd",
+            "ch01soundwaves.Rmd",
+            "ch02convertingsoundtobytes.Rmd",
+            "references.Rmd"]
+output_dir: "docs"
+delete_merged_file: true
