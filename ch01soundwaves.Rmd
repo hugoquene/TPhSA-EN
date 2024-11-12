@@ -2,6 +2,8 @@
 
 # Sound waves {#ch-soundwaves}
 
+*Chapter keywords*: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, `Praat`, object, visualization, picture, figure.
+
 ## Sound
 
 Sound is a type of energy that travels through a medium (such as air, water, or solid materials) in the form of waves. These sound waves are created by the vibration of objects, which causes the surrounding particles in the medium to move in a back-and-forth (oscillatory) motion. This movement, or vibration, or oscillation, transfers energy through the medium, creating waves of high and low pressure.
