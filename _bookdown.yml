@@ -4,4 +4,7 @@ rmd_files: ["index.Rmd",
             "ch02convertingsoundtobytes.Rmd",
             "references.Rmd"]
 output_dir: "docs"
+language:
+  ui:
+    chapter_name: "Chapter "
 delete_merged_file: true

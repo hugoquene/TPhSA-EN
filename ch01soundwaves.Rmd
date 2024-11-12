@@ -2,7 +2,7 @@
 
 # Sound waves {#ch-soundwaves}
 
-*Chapter keywords*: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, `Praat`, object, visualization, picture, figure.
+*Chapter keywords*: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, oscillogram, frequency, Hertz, period, amplitude, phase, Pascal, `Praat`, object, visualization, picture, figure.
 
 ## Sound
 
@@ -33,6 +33,35 @@ In sea water sound travels at about 1435 m/s, in concrete 3400 m/s, in iron rail
 
 Pressure is the amount of force on a surface. In physics, *force* is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second ($m/s$). *Pressure*, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter ($1\ Pa = 1\ N/m^2$). 
 Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (mikropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
+
+## Oscillogram {#sec-oscillogram}
+
+As explained in §\@ref(sec:soundwave) above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In §\@ref(sec:ADCoverview) we'll learn how to measure and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the beautiful **oscillogram**. (We need the oscillogram to explain three key properties of a sound wave.)
+
+In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline. (The baseline represents the current average air pressure)^[Higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram (although this is rather arbitrary, in phonetic research).] Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location. 
+
+
+```{r speech-oscillogram, echo=FALSE, fig.cap="Oscillogram of the word *speech*.", fig.align="center"}
+knitr::include_graphics("figures/speech_word_oscillogram.png")
+```
+
+An oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure. 
+
+An oscillogram may suggest, misleadingly, that the air particles themselves dance "up and down" (transverse) while the sound wave travels "from left to right". That is not true: sound in air travels in longitudinal sound waves, resulting in the air pressure variations that are visualized in the oscillogram.    
+
+## Frequency
+
+The frequency (symbol $f$) of a sound wave is the number of periods (of air pressure variation) within a time interval. Frequency is perceived as pitch. Frequency is expressed in Hertz units, that is, in periods per second (or cycles per second, cps). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding 'zero crossings' of adjacent periods. In Figure X, in the vowel /i/, we count 14 periods in 0.065 seconds, so $f\approx 14/0.065 = 215$ Hz. These periods have a duration of about $T \approx 0.065/14 = 0.0046$ s per period. The period $T$ is the inverse of the frequency $f$: $f = 1/T$. 
+
+Frequency can only be measured, and pitch is only heard, if the sound has a periodic, repetitive pattern, as in vowels (Figure X). A non-periodic sound, such as the /s/ in Figure X, does not have a periodic frequency (no repetitions), and it has no pitch.   
+
+## Amplitude 
+
+## Phase
+
+## Wave equation
+
+wave equation? 
 
 ::: {#questions-soundwaves .questionbox}
 

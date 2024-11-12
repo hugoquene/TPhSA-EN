@@ -1,7 +1,7 @@
 
 # Converting sound to bytes
 
-## Overview
+## Overview {#sec:ADCoverview}
 
 In order to process sounds by means of a computer program, or telephone, we first need to convert that sound, the variations in air pressure, to numbers that are then further processed by a computer or by a telephone device. This is a two-step process, involving at least two key components in order:
 

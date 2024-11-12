@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Sound waves | Tutorial on Phonetics and Speech Analysis</title>
-  <meta name="description" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
+  <title>Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:title" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
+  <meta property="og:description" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
   <meta name="github-repo" content="rstudio/TPhSA" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
+  <meta name="twitter:title" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
   
-  <meta name="twitter:description" content="1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="twitter:description" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
   
 
 
@@ -129,12 +129,17 @@ div.csl-indent {
 <li class="chapter" data-level="1.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#acoustic-media"><i class="fa fa-check"></i><b>1.3</b> Acoustic media</a></li>
 <li class="chapter" data-level="1.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-speedofsound"><i class="fa fa-check"></i><b>1.4</b> The speed of sound</a></li>
 <li class="chapter" data-level="1.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#pressure"><i class="fa fa-check"></i><b>1.5</b> Pressure</a></li>
-<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i><b>1.6</b> Questions</a>
+<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
+<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#frequency"><i class="fa fa-check"></i><b>1.7</b> Frequency</a></li>
+<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#amplitude"><i class="fa fa-check"></i><b>1.8</b> Amplitude</a></li>
+<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#phase"><i class="fa fa-check"></i><b>1.9</b> Phase</a></li>
+<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#wave-equation"><i class="fa fa-check"></i><b>1.10</b> Wave equation</a></li>
+<li class="chapter" data-level="1.11" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i><b>1.11</b> Questions</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-praatintro"><i class="fa fa-check"></i><b>1.7</b> How to work with <code>Praat</code></a>
+<li class="chapter" data-level="1.12" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-praatintro"><i class="fa fa-check"></i><b>1.12</b> How to work with <code>Praat</code></a>
 <ul>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
@@ -142,7 +147,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.1" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html#sec:ADCoverview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
 <li class="chapter" data-level="2.2" data-path="converting-sound-to-bytes.html"><a href="converting-sound-to-bytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -167,8 +172,8 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="ch-soundwaves" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Sound waves<a href="ch-soundwaves.html#ch-soundwaves" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><em>Chapter keywords</em>: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, <code>Praat</code>, object, visualization, picture, figure.</p>
+<h1><span class="header-section-number">Chapter 1</span> Sound waves<a href="ch-soundwaves.html#ch-soundwaves" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Chapter keywords</em>: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, oscillogram, frequency, Hertz, period, amplitude, phase, Pascal, <code>Praat</code>, object, visualization, picture, figure.</p>
 <div id="sound" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Sound<a href="ch-soundwaves.html#sound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sound is a type of energy that travels through a medium (such as air, water, or solid materials) in the form of waves. These sound waves are created by the vibration of objects, which causes the surrounding particles in the medium to move in a back-and-forth (oscillatory) motion. This movement, or vibration, or oscillation, transfers energy through the medium, creating waves of high and low pressure.</p>
@@ -195,9 +200,37 @@ A stadium wave provides a clear example of a transverse wave: a group of persons
 <p>Pressure is the amount of force on a surface. In physics, <em>force</em> is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second (<span class="math inline">\(m/s\)</span>). <em>Pressure</em>, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter (<span class="math inline">\(1\ Pa = 1\ N/m^2\)</span>).
 Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (mikropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.</p>
 </div>
+<div id="sec-oscillogram" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Oscillogram<a href="ch-soundwaves.html#sec-oscillogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As explained in §<a href="ch-soundwaves.html#sec:soundwave">1.2</a> above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In §<a href="converting-sound-to-bytes.html#sec:ADCoverview">2.1</a> we’ll learn how to measure and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the beautiful <strong>oscillogram</strong>. (We need the oscillogram to explain three key properties of a sound wave.)</p>
+<p>In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline. (The baseline represents the current average air pressure)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-oscillogram"></span>
+<img src="figures/speech_word_oscillogram.png" alt="Oscillogram of the word *speech*."  />
+<p class="caption">
+Figure 1.1: Oscillogram of the word <em>speech</em>.
+</p>
+</div>
+<p>An oscillogram is comparable to a meteorologist’s regular measurements of atmospheric air pressure at a fixed location — albeit on far finer scales of time and of air pressure.</p>
+<p>An oscillogram may suggest, misleadingly, that the air particles themselves dance “up and down” (transverse) while the sound wave travels “from left to right”. That is not true: sound in air travels in longitudinal sound waves, resulting in the air pressure variations that are visualized in the oscillogram.</p>
+</div>
+<div id="frequency" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Frequency<a href="ch-soundwaves.html#frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The frequency (symbol <span class="math inline">\(f\)</span>) of a sound wave is the number of periods (of air pressure variation) within a time interval. Frequency is perceived as pitch. Frequency is expressed in Hertz units, that is, in periods per second (or cycles per second, cps). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding ‘zero crossings’ of adjacent periods. In Figure X, in the vowel /i/, we count 14 periods in 0.065 seconds, so <span class="math inline">\(f\approx 14/0.065 = 215\)</span> Hz. These periods have a duration of about <span class="math inline">\(T \approx 0.065/14 = 0.0046\)</span> s per period. The period <span class="math inline">\(T\)</span> is the inverse of the frequency <span class="math inline">\(f\)</span>: <span class="math inline">\(f = 1/T\)</span>.</p>
+<p>Frequency can only be measured, and pitch is only heard, if the sound has a periodic, repetitive pattern, as in vowels (Figure X). A non-periodic sound, such as the /s/ in Figure X, does not have a periodic frequency (no repetitions), and it has no pitch.</p>
+</div>
+<div id="amplitude" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Amplitude<a href="ch-soundwaves.html#amplitude" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="phase" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Phase<a href="ch-soundwaves.html#phase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="wave-equation" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> Wave equation<a href="ch-soundwaves.html#wave-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>wave equation?</p>
+</div>
 <div id="questions-soundwaves" class="questionbox">
-<div id="questions-1" class="section level2 hasAnchor" number="1.6">
-<h2><span class="header-section-number">1.6</span> Questions<a href="ch-soundwaves.html#questions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="questions-1" class="section level2 hasAnchor" number="1.11">
+<h2><span class="header-section-number">1.11</span> Questions<a href="ch-soundwaves.html#questions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="question-1.1" class="section level3 unnumbered hasAnchor">
 <h3>Question 1.1<a href="ch-soundwaves.html#question-1.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Explain why a sound wave loses energy the further it is spread from the oscillation source.</p>
@@ -230,13 +263,13 @@ The propagation speed of a sound wave depends on the acoustic medium: different 
 <!-- dummy text here -->
 <hr />
 <div id="box-praatintro" class="praatbox">
-<div id="sec-praatintro" class="section level2 hasAnchor" number="1.7">
-<h2><span class="header-section-number">1.7</span> How to work with <code>Praat</code><a href="ch-soundwaves.html#sec-praatintro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec-praatintro" class="section level2 hasAnchor" number="1.12">
+<h2><span class="header-section-number">1.12</span> How to work with <code>Praat</code><a href="ch-soundwaves.html#sec-praatintro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>Praat</code> is a computer program designed to process, analyze and visualize speech sounds.</p>
 <p>After starting the program, <code>Praat</code> opens two windows: an <em>Objects</em> window (typically on the left) and a <em>Picture</em> window (typically on the right).</p>
 <div id="objects" class="section level3 unnumbered hasAnchor">
 <h3>Objects<a href="ch-soundwaves.html#objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In <code>Praat</code>, signals and derived representations are all seen as objects. Objects may have different types, e.g. Sound, Spectrum, Pitch, etc<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.<br />
+<p>In <code>Praat</code>, signals and derived representations are all seen as objects. Objects may have different types, e.g. Sound, Spectrum, Pitch, etc<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.<br />
 Each type of object comes with pre-defined operations that are possible. If you select an object of a different type, then the buttons (operations) change with the object type.
 As an analogy, consider the various types of objects in your room: clothing items and human bodies may be washed, food may be cooked but human bodies may not be cooked, furniture and food items may be opened but human bodies may not be opened, clothing can be inside furniture, etc. Moreover, relations between object types are also specified: for example, a plant can become a food item (by means of cooking), but a human body may not.</p>
 <p>Before working with an object, you need to select that object, by clicking on it in the list of objects displayed in the Praat Objects window.</p>
@@ -263,7 +296,8 @@ Minnaert, M. 1970. <em>De Natuurkunde van ’t Vrije Veld</em>. Vol. 2. Zutphen:
 <div class="footnotes">
 <hr />
 <ol start="2">
-<li id="fn2"><p>By convention, object types are written with a capital; this helps to distinguish physical properties (e.g. the intensity of a sound) from the <code>Praat</code> representations of those properties (e.g. the Intensity object computed from a Sound object, both within <code>Praat</code>).<a href="ch-soundwaves.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram (although this is rather arbitrary, in phonetic research).<a href="ch-soundwaves.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>By convention, object types are written with a capital; this helps to distinguish physical properties (e.g. the intensity of a sound) from the <code>Praat</code> representations of those properties (e.g. the Intensity object computed from a Sound object, both within <code>Praat</code>).<a href="ch-soundwaves.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
