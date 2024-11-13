@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 12 Nov 2024 23:51}
+\date{Document compiled 13 Nov 2024 11:55}
 
 \begin{document}
 \maketitle
@@ -258,18 +258,27 @@ In an oscillogram, the horizontal axis represents the time dimension, and the ve
 
 }
 
-\caption{Oscillogram of the word *speech*.}\label{fig:speech-oscillogram}
+\caption{Oscillogram of the word *speech*, with boundaries between segments.}\label{fig:speech-oscillogram}
 \end{figure}
 
 An oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure.
 
 An oscillogram may suggest, misleadingly, that the air particles themselves dance ``up and down'' (transverse) while the sound wave travels ``from left to right''. That is not true: sound in air travels in longitudinal sound waves, resulting in the air pressure variations that are visualized in the oscillogram.
 
+\section{Periodic and aperiodic sounds}\label{periodic-and-aperiodic-sounds}
+
+There are two classes of sounds which are easily distinguishable in an oscillogram:
+
+\begin{itemize}
+\item
+  \textbf{periodic} sounds, in which there is sound wave pattern that repeats itself after a particular \textbf{period} or time interval (symbol \(T\)) of a single cycle. Periodic sounds have a perceptible pitch or tone. The vowel sound for /i/ in Figure \ref{fig:speech-oscillogram} (from 0.177 to 0.238 s) provides a clear example of a periodic sound.
+\item
+  \textbf{aperiodic} sounds, in which there is not a repetitive but a random pattern in the air pressure variations. Aperiodic sounds do not have a perceptible pitch but instead we hear them as noise. The consonant sound for /s/ in Figure \ref{fig:speech-oscillogram} (from 0 to 0.099 s) provides a clear example of a noisy, aperiodic sound.
+\end{itemize}
+
 \section{Frequency}\label{frequency}
 
-The frequency (symbol \(f\)) of a sound wave is the number of periods (of air pressure variation) within a time interval. Frequency is perceived as pitch. Frequency is expressed in Hertz units, that is, in periods per second (or cycles per second, cps). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding `zero crossings' of adjacent periods. In Figure X, in the vowel /i/, we count 14 periods in 0.065 seconds, so \(f\approx 14/0.065 = 215\) Hz. These periods have a duration of about \(T \approx 0.065/14 = 0.0046\) s per period. The period \(T\) is the inverse of the frequency \(f\): \(f = 1/T\).
-
-Frequency can only be measured, and pitch is only heard, if the sound has a periodic, repetitive pattern, as in vowels (Figure X). A non-periodic sound, such as the /s/ in the initial part of Figure X, has no periodicity (no repetitions), and hence it has no frequency and no pitch.
+The frequency (symbol \(f\)) of a sound wave is the number of periods (of air pressure variation) within a time interval. Only periodic sounds do have a frequency, which is perceived as the pitch of a sound. Frequency is expressed in Hertz units, that is, in periods per second (or cycles per second, cps). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding `zero crossings' of adjacent periods. In Figure \ref{fig:speech-oscillogram}, in the vowel /i/, we count 14 periods in 0.065 seconds, so \(f\approx 14/0.065 \approx 215\) Hz. These periods have a duration of about \(T \approx 0.065/14 \approx 0.0046\) s\footnote{More exactly, the period \emph{is} 0.0046 s.}. Period \(T\) and frequency \(f\) are each other's inverse, so \(f=1/T\) and \(T=1/f\).
 
 \section{Amplitude}\label{amplitude}
 

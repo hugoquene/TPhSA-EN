@@ -6,6 +6,7 @@ acoustic-media
 sec-speedofsound
 pressure
 sec-oscillogram
+periodic-and-aperiodic-sounds
 frequency
 amplitude
 phase
