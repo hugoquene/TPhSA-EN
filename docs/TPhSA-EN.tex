@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 13 Nov 2024 11:55}
+\date{Document compiled 13 Nov 2024 12:25}
 
 \begin{document}
 \maketitle
@@ -248,9 +248,10 @@ Under normal conditions, atmospheric air pressure is centered at about 1013 hPa 
 
 \section{Oscillogram}\label{sec-oscillogram}
 
-As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In §\ref{sec:ADCoverview} we'll learn how to measure and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the beautiful \textbf{oscillogram}. (We need the oscillogram to explain three key properties of a sound wave.)
+As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In §\ref{sec:ADCoverview} we'll learn how to measure and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the beautiful \textbf{oscillogram}. (We need the oscillogram to explain important properties of sound waves.)
 
-In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline. (The baseline represents the current average air pressure)\footnote{Higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram (although this is rather arbitrary, in phonetic research).} Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.
+In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline\footnote{The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.}.
+Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.
 
 \begin{figure}
 
@@ -278,7 +279,7 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 
 \section{Frequency}\label{frequency}
 
-The frequency (symbol \(f\)) of a sound wave is the number of periods (of air pressure variation) within a time interval. Only periodic sounds do have a frequency, which is perceived as the pitch of a sound. Frequency is expressed in Hertz units, that is, in periods per second (or cycles per second, cps). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding `zero crossings' of adjacent periods. In Figure \ref{fig:speech-oscillogram}, in the vowel /i/, we count 14 periods in 0.065 seconds, so \(f\approx 14/0.065 \approx 215\) Hz. These periods have a duration of about \(T \approx 0.065/14 \approx 0.0046\) s\footnote{More exactly, the period \emph{is} 0.0046 s.}. Period \(T\) and frequency \(f\) are each other's inverse, so \(f=1/T\) and \(T=1/f\).
+The frequency (symbol \(f\)) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its \emph{pitch} or tone. Frequency is expressed in Hertz units, that is, in periods per second (in older texts you may find `cycles per second', abbreviated `cps'). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding `zero crossings' of adjacent periods. In Figure \ref{fig:speech-oscillogram}, in the vowel /i/, we count 14 periods in 0.065 seconds, so \(f \approx 14/0.065 \approx 215\) Hz. These periods have a duration of about \(T \approx 0.065/14 \approx 0.0046\) s\footnote{More exactly, the period \emph{is} 0.0046 s.}. Period \(T\) and frequency \(f\) are each other's inverse, so \(f=1/T\) and \(T=1/f\).
 
 \section{Amplitude}\label{amplitude}
 
