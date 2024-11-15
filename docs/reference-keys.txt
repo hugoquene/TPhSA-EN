@@ -11,8 +11,8 @@ frequency
 amplitude
 phase
 wave-equation
-questions-1
+wavelength
 sec-praatintro
-converting-sound-to-bytes
+sec:soundtobytes
 sec:ADCoverview
 sec:microphone

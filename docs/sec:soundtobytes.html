@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Tutorial on Phonetics and Speech Analysis</title>
-  <meta name="description" content="References | Tutorial on Phonetics and Speech Analysis." />
+  <title>Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:title" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="References | Tutorial on Phonetics and Speech Analysis." />
+  <meta property="og:description" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis." />
   <meta name="github-repo" content="rstudio/TPhSA" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Tutorial on Phonetics and Speech Analysis" />
+  <meta name="twitter:title" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis" />
   
-  <meta name="twitter:description" content="References | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="twitter:description" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis." />
   
 
 
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sec:soundtobytes.html"/>
-
+<link rel="prev" href="ch-soundwaves.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -172,66 +172,48 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered hasAnchor">
-<h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div class="csl-entry">
-Boersma, P., and D. Weenink. 2024. <span>“Praat: Doing Phonetics by Computer (Version 6.4.23).”</span> <a href="http://www.praat.org">http://www.praat.org</a>.
+<div id="sec:soundtobytes" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Converting sound to bytes<a href="sec:soundtobytes.html#sec:soundtobytes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:ADCoverview" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Overview<a href="sec:soundtobytes.html#sec:ADCoverview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In order to process sounds by means of a computer program, or telephone, we first need to convert that sound, the variations in air pressure, to numbers that are then further processed by a computer or by a telephone device. This is a two-step process, involving at least two key components in order:</p>
+<ol style="list-style-type: decimal">
+<li><p>the <strong>microphone</strong>: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and deviations of the membrane (caused by the sound wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm). For more details about how to handle a microphone, see the text box in §<a href="sec:soundtobytes.html#sec:microphone">2.2</a>) below.
+The analog electrical signal is then passed on from the microphone to…</p></li>
+<li><p>the <strong>analog-to-digital-converter</strong> (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called ‘sampling’. Sampling a signal is done with a certain ‘sampling frequency’ (number of measurements per second) and with a certain precision of measurement (known as ‘amplitude resolution’), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> <a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p></li>
+</ol>
+<p>Very soon, whenever you want to hear sound from a computer or from a telephone connection, you will also need</p>
+<ol start="3" style="list-style-type: decimal">
+<li>a <strong>digital-to-analog-converter</strong> (DAC): this device converts a stream of discrete, digital numbers into a continuous analog electrical signal, with a pre-specified conversion frequency and amplitude precision. The result is an output analog electrical signal, to be handled further by audio hardware (e.g. to be amplified, sent to a loudspeaker, etc.)</li>
+</ol>
 </div>
-<div class="csl-entry">
-Harris, Cyril M. 1971. <span>“Effects of Humidity on the Velocity of Sound in Air.”</span> <em>The Journal of the Acoustical Society of America</em> 49 (3B): 890–93. <a href="https://doi.org/10.1121/1.1912429">https://doi.org/10.1121/1.1912429</a>.
-</div>
-<div class="csl-entry">
-Johnson, Keith. 2011. <em>Acoustic and Auditory Phonetics</em>. 3rd ed. Malden, MA: Blackwell.
-</div>
-<div class="csl-entry">
-Ladefoged, Peter, and Keith Johnson. 2015. <em>A Course in Phonetics</em>. 7th ed.
-</div>
-<div class="csl-entry">
-Minnaert, M. 1970. <em>De Natuurkunde van ’t Vrije Veld</em>. Vol. 2. Zutphen: Thieme.
-</div>
-<div class="csl-entry">
-Reetz, Henning, and Allard Jongman. 2020. <em>Phonetics: Transcription, Production, Acoustics, and Perception</em>. 2nd ed. Chichester: Wiley-Blackwell.
-</div>
-<div class="csl-entry">
-Rietveld, A. C. M., and V. J. van Heuven. 2009. <em>Algemene Fonetiek</em>. 3rd ed. Bussum: Coutinho.
-</div>
-<div class="csl-entry">
-Shadle, Christine H. 2010. <span>“The Aerodynamics of Speech.”</span> In <em>The Handbook of Phonetic Sciences</em>, edited by W. J. Hardcastle, John Laver, and Fiona E. Gibbon, 2nd ed., 39–80. Chichester: Wiley-Blackwell.
-</div>
-<div class="csl-entry">
-Xie, Yihui. 2024. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
-</div>
-<div class="csl-entry">
-Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
-</div>
-<div class="csl-entry">
-Zsiga, Elisabeth C. 2024. <em>The Sounds of Language: An Introduction to Phonetics and Phonology</em>. 2nd ed. Chichester: Wiley-Blackwell.
-</div>
+<div id="mic-howto" class="warningbox">
+<div id="sec:microphone" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> How to handle a microphone<a href="sec:soundtobytes.html#sec:microphone" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>A good microphone is a very sensitive and very expensive device. Treat it with great care. Never blow into a microphone (it’s far better to just say <code>test</code> or <code>check</code> or to say anything else). Do not tap on its surface.</p></li>
+<li><p>Do not plug or unplug the microphone into/from a “hot” port (first set the port’s input/output volume to zero, then plug/unplug).</p></li>
+<li><p>Do not speak <em>into</em> the microphone, but just over it or alongside. The microphone should measure sounds, but <em>not</em> the flow of air coming out of a speaker’s mouth and nose. If the microphone comes with a foam cap to dampen airflow, then use it.</p></li>
+<li><p>Do not touch the microphone while it is working; this will result in undesired (and often loud) contact sounds in the output signal.</p></li>
+</ul>
 </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.<a href="sec:soundtobytes.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>In a speaker’s telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.<a href="sec:soundtobytes.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="sec:soundtobytes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="ch-soundwaves.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -262,7 +244,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/references.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch02convertingsoundtobytes.Rmd",
 "text": "Edit"
 },
 "history": {

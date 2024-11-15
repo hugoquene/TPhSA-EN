@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 13 Nov 2024 12:25}
+\date{Document compiled 15 Nov 2024 15:36}
 
 \begin{document}
 \maketitle
@@ -101,7 +101,7 @@
 \section*{Aims}\label{aims}
 \addcontentsline{toc}{section}{Aims}
 
-In this tutorial you will learn about \textbf{acoustics}, \textbf{phonetics}, and \textbf{speech analysis}.
+In this tutorial you will learn about \textbf{acoustics} (sounds), \textbf{phonetics} (speech), and \textbf{speech analysis}.
 You will learn the core concepts in these related fields, as well as the necessary practical skills for speech analysis.
 The aim of this tutorial is to provide you with the phonetic insights and skills in speech analysis that you need to succesfully conduct phonetic research in your own project (e.g.~paper or thesis).
 
@@ -151,7 +151,7 @@ Sound is a type of energy that travels through a medium (such as air, water, or 
 \section*{Recommended software}\label{recommended-software}
 \addcontentsline{toc}{section}{Recommended software}
 
-In this tutorial you will work mostly with \texttt{Praat}\footnote{The Dutch word \emph{praat} /ˈpraːt/ means ``talk''.}. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (both at University of Amsterdam). It can be found on its own website (\url{https://www.praat.org}), where you will find a wealth of helpful documentation. \texttt{Praat} also has extensive \texttt{Help} built in.
+In this tutorial you will work mostly with \texttt{Praat} \citep{Boersma_Weenink_2024}\footnote{The Dutch word \emph{praat} /ˈpraːt/ means ``talk''.}. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (both at University of Amsterdam). It can be found on its own website (\url{https://www.praat.org}), where you will find a wealth of helpful documentation. \texttt{Praat} also has extensive \texttt{Help} built in, including a full tutorial.\\
 There is an online forum (\url{https://groups.io/g/Praat-Users-List}), where users share their knowledge by posting questions and providing answers.
 
 In order to install \texttt{Praat} on your computer, go to its webpage at \url{https://www.praat.org/}, and then proceed to the download page for the operating system of your computer. Follow the installation instructions on the download page for your operating system.
@@ -162,7 +162,7 @@ In order to install \texttt{Praat} on your computer, go to its webpage at \url{h
 
 Text blocks such as this one will contain instructions about how to ``do'' things in \texttt{Praat}.
 
-Options in software menus, and texts of on-screen buttons, will be shown \texttt{in\ this\ way}.
+Options in software menus, as well as texts in on-screen buttons, will be shown \texttt{in\ this\ way}.
 The notation \texttt{Main\ \textgreater{}\ Sub} means: first choose option \texttt{Main} from the main menu, after which a submenu will appear, then choose option \texttt{Sub} from the submenu.
 Commands or formulas that you have to type will be shown \texttt{in\ this\ way} too. (Commands typically need to be terminated with typing \texttt{Enter} or \texttt{Return} or \texttt{␍} or \texttt{⏎} -- which however will not be specified in the instructions.)
 
@@ -209,12 +209,12 @@ The 2007 version of the tutorial was subsequently revised and adapted to the cur
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\part*{Part I: Acoustics}\label{part-part-i-acoustics}
-\addcontentsline{toc}{part}{Part I: Acoustics}
+\part*{Part I: Sounds}\label{part-part-i-sounds}
+\addcontentsline{toc}{part}{Part I: Sounds}
 
 \chapter{Sound waves}\label{ch-soundwaves}
 
-\emph{Chapter keywords}: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, oscillogram, frequency, Hertz, period, amplitude, phase, Pascal, \texttt{Praat}, object, visualization, picture, figure.
+\emph{Chapter keywords}: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, oscillogram, frequency, Hertz, period, amplitude, intensity, phase, Pascal, \texttt{Praat}, object, visualization, picture, figure.
 
 \section{Sound}\label{sound}
 
@@ -222,7 +222,9 @@ Sound is a type of energy that travels through a medium (such as air, water, or 
 
 \section{Sound wave}\label{sec:soundwave}
 
-A sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). A sound wave is spread in all directions from the sound source; we could compare its propagation to that of a circular wave on the surface of a water basin. The molecules themselves move over a very short distance and do not travel along with the wave: instead, after the sound wave (the air pressure fluctuation) has passed along, they go back to their equilibrium position. Unlike wind, which is a movement of air (caused by temperature, pressure or difference in chemical composition), the air particles involved in the propagation of the sound wave do not move along with it.
+A sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). A sound wave is spread in all directions from the sound source; we could compare its propagation to that of a circular wave on the surface of a water basin. The molecules themselves move over a very short distance and do not travel along with the wave: instead, after the sound wave (the pressure fluctuation) has passed along, they go back to their equilibrium position.
+
+Sound in air is different from wind. In wind, or in air flow, the air particles move from one position to another (from equator to tropics, from lungs to mouth). In sound, however, there is no net movement of the air particles. The particles only move over a very small distance and there is no net movement of air. In sound waves, the distance of travel of the air molecules is about \(10^{-11}\) to \(10^{-5}\) m, depending on the intensity and frequency of the vibration (more about these properties below).
 
 There are two kinds of waves (also depending on the acoustic medium). In \emph{longitudinal} waves (such as sound waves) the back-and-forth displacement or movement of the medium's particles is in the same direction as the propagation of the wave. In \emph{transverse} waves (such as the waves on the surface of a pond) the back-and-forth displacement of the water particles is perpendicular to the direction of propagation of the wave.\\
 A stadium wave provides a clear example of a transverse wave: a group of persons (the particles) starts the wave by standing up, rising their arms, sitting down, standing up again, and so on. The persons' action is directly followed by that of their neighbours on one side, who do the same and who are again followed by their next neighbours on their side, and so on, until the wave is travelling through the whole stadium. The persons' motion (up-down) is perpendicular to the propagation of the wave (left-right along the bench).
@@ -237,18 +239,36 @@ You can also put your ear to the ground in order to hear sounds propagated throu
 
 \section{The speed of sound}\label{sec-speedofsound}
 
-In air, the speed of sound (the speed of propagation of a sound wave) is about 331 m/s at 0°C (about 334 m/s at 21°C). The speed of sound also depends on the humidity: humid air holds more particles (of water), resulting in a slightly higher speed of sound.
+In air, the speed of sound (the speed of propagation of a sound wave, symbol \(c\)) is about 332 m/s at 0°C (about 343 m/s at 20°C, both at sea level). The speed of sound in a gas is affected by two parameters: by the composition of the gas (mixture, density, compressibility) and by its temperature. For dry air at 37°C at sea level, \(c=353\) m/s \citep{Shadle_2010}.
+The speed of sound in air increases with the air temperature.
+The speed of sound also depends on the humidity: humid air holds more particles (of water), resulting in a slightly higher speed of sound with increasing humidity \citep{Harris_1971}\footnote{For relative humidity \textgreater30\% \citep{Harris_1971}.}.
 
-In sea water sound travels at about 1435 m/s, in concrete 3400 m/s, in iron railway tracks about 5000 m/s.
+In sea water, sound travels at about 1435 m/s, in concrete 3400 m/s, in iron (e.g.~railroad tracks) about 5100 m/s.
 
 \section{Pressure}\label{pressure}
 
 Pressure is the amount of force on a surface. In physics, \emph{force} is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second (\(m/s\)). \emph{Pressure}, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter (\(1\ Pa = 1\ N/m^2\)).
 Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (mikropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
 
+\phantomsection\label{questions-soundwaves}
+\section*{Questions}\label{questions-1}
+\addcontentsline{toc}{section}{Questions}
+
+\subsection*{Question 1.1}\label{question-1.1}
+\addcontentsline{toc}{subsection}{Question 1.1}
+
+Explain why a sound wave loses energy the further it is spread from the oscillation source.
+
+Answer 1.1
+
+The more a sound \emph{wave} moves away from the source, the more particles of the medium (e.g.~air) are involved. The amount of initial energy (spread with the source oscillation) is spread over a larger surface, of an expanding imaginary sphere, and consequently the sound wave displaces more particles. The overall amount of energy remains the same. Therefore, the energy on a single medium particle or on a single portion of the sound wave is smaller. Thus, the sound wave fades as the distance to the sound source increases.
+
+Remember that the sound \emph{wave} travels through the medium, but the particles in the medium remain more or less in place.
+
 \section{Oscillogram}\label{sec-oscillogram}
 
-As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In §\ref{sec:ADCoverview} we'll learn how to measure and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the beautiful \textbf{oscillogram}. (We need the oscillogram to explain important properties of sound waves.)
+As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In chapter §\ref{sec:soundtobytes} we'll learn how to measure, record and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the \textbf{oscillogram}.
+(We need the oscillogram to explain important properties of sound waves.)
 
 In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline\footnote{The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.}.
 Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.
@@ -264,7 +284,7 @@ Thus an oscillogram records the back-and-forth movements of the air particles, i
 
 An oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure.
 
-An oscillogram may suggest, misleadingly, that the air particles themselves dance ``up and down'' (transverse) while the sound wave travels ``from left to right''. That is not true: sound in air travels in longitudinal sound waves, resulting in the air pressure variations that are visualized in the oscillogram.
+The visualisation in an oscillogram may suggest, misleadingly, that the air particles themselves dance ``up and down'' (transverse) while the sound wave travels ``from left to right'', like waves on the surface of a body of water. That is not true: sound in air travels in \emph{longitudinal} sound waves, resulting in the air pressure variations that are visualized in the oscillogram.
 
 \section{Periodic and aperiodic sounds}\label{periodic-and-aperiodic-sounds}
 
@@ -272,45 +292,47 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 
 \begin{itemize}
 \item
-  \textbf{periodic} sounds, in which there is sound wave pattern that repeats itself after a particular \textbf{period} or time interval (symbol \(T\)) of a single cycle. Periodic sounds have a perceptible pitch or tone. The vowel sound for /i/ in Figure \ref{fig:speech-oscillogram} (from 0.177 to 0.238 s) provides a clear example of a periodic sound.
+  \textbf{periodic} sounds, in which there is sound wave pattern that repeats itself after a particular time interval or \textbf{period} (symbol \(T\)) of a single cycle. Periodic sounds have a perceptible pitch or tone. Vowel sounds such as the /i/ in Figure \ref{fig:speech-oscillogram} (from 0.177 to 0.238 s) provide clear examples of a periodic sound.
 \item
-  \textbf{aperiodic} sounds, in which there is not a repetitive but a random pattern in the air pressure variations. Aperiodic sounds do not have a perceptible pitch but instead we hear them as noise. The consonant sound for /s/ in Figure \ref{fig:speech-oscillogram} (from 0 to 0.099 s) provides a clear example of a noisy, aperiodic sound.
+  \textbf{aperiodic} sounds, in which there is not a repetitive but instead a random pattern in the air pressure variations. Aperiodic sounds do not have a perceptible pitch but instead we hear them as noise. Some consonant sounds, e.g.~the /s/ in Figure \ref{fig:speech-oscillogram} (from 0 to 0.099 s), are clear examples of such noisy, aperiodic sounds\footnote{The clearest examples are provided by unvoiced fricative consonants, such as /f, s/.}.
 \end{itemize}
 
 \section{Frequency}\label{frequency}
 
-The frequency (symbol \(f\)) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its \emph{pitch} or tone. Frequency is expressed in Hertz units, that is, in periods per second (in older texts you may find `cycles per second', abbreviated `cps'). Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding `zero crossings' of adjacent periods. In Figure \ref{fig:speech-oscillogram}, in the vowel /i/, we count 14 periods in 0.065 seconds, so \(f \approx 14/0.065 \approx 215\) Hz. These periods have a duration of about \(T \approx 0.065/14 \approx 0.0046\) s\footnote{More exactly, the period \emph{is} 0.0046 s.}. Period \(T\) and frequency \(f\) are each other's inverse, so \(f=1/T\) and \(T=1/f\).
+The frequency (symbol \(f\)) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its \emph{pitch} or tone. Frequency is expressed in periods per second, or Hertz units, named after Heinrich Rudolf Hertz (1857--1894)\footnote{In older texts you may find `cycles per second', abbreviated `cps'.}.
+Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding `zero crossings' of adjacent periods. In Figure \ref{fig:speech-oscillogram}, in the vowel /i/, we count 14 periods in 0.065 seconds, so \(f \approx 14/0.065 \approx 215\) Hz. These periods have a duration of about \(T \approx 0.065/14 \approx 0.0046\) s\footnote{More exactly, the period \emph{is} 0.0046 s.}. Period \(T\) and frequency \(f\) are each other's inverse, so \(f=1/T\) and \(T=1/f\).
+
+In the transverse stadium wave, the period \(T\) is the time interval between two consecutive actions of standing up by the same person (e.g.~\(T=5\) s), and frequency \(f\) is the number of actions that occur within a given time unit (e.g.~\(f=1/T=1/5\) Hz).
 
 \section{Amplitude}\label{amplitude}
 
+The amplitude (symbol \(A\)) of a sound wave is the extent of the variations in air pressure (due to compression and rarefaction), measured in Pascal units of pressure. With some simplification, the amplitude of a sound wave is perceived as its \emph{loudness} or `volume'. In an oscillogram, the amplitude corresponds directly to the maximum vertical displacement, that is, to the peak deviation in air pressure relative to the ambient reference pressure).
+
+In the transverse stadium wave, the amplitude could be thought of as the extent to which persons raise their hands.
+
+In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of \emph{intensity}, which will be discussed in §XXX below.
+
 \section{Phase}\label{phase}
+
+The phase of a sound wave (symbol \(\phi\)) is the starting time of a sound wave period, relative to the duration of that period. It's easiest to explain by comparing two sounds. When listening, a single sound will arrive at our two ears at slightly different arrival times. (Unless the sound source is directly in front of us, the sound will have a slightly longer path to travel to the further ear than to the closer ear.) Thus the two sounds heard by the two ears will differ in phase: the starting time of a period in one ear will differ slightly from the starting time of a period in the other ear, and the difference can be expressed as the proportion of a period by which they differ.\\
+The brain uses this phase difference between the two ears to estimate the direction of the sound source relative to the head. You may appreciate the effect by listening to music in mono or in stereo.
+
+In addition, we use phase unconsciously to assess atmospheric and acoustic conditions. For example, when listening to a sound in a room, we hear not only the direct sound but also the indirect reflections from the floor, walls, ceiling, furniture, etc. Our brain uses the phase relations among multiple reflections to assess the dimensions and conditions of the room.
+
+Phase is expressed relative to the period \(T\), but it is not expressed in time (seconds) but in proportions, often expressed as degrees in the period cycle (which runs from \(0^\circ\) to \(360^\circ\)). So, a phase difference of \(\phi=180^\circ\) and \(\phi=0.5\)) mean the same: the time difference between the two signals is half a period, whatever the duration of that period is.
+
+In the transverse stadium wave, phase corresponds to the difference in time between the sit-down-moment of one group of persons, and the comparable sit-down-moment of another group of persons in a different section of the stadium. Imagine two waves rolling along the stadium benches: one wave on the lower benches, and a different wave on the upper benches. The two waves may be out of phase (lower and upper persons sit down at different times) or in phase (lower and upper person sit down at the same time) -- irrespective of whether the two waves have the same or different frequencies.
+
+Question: Continue this thought experiment, with two stadium waves having the same frequency on the lower and upper benches, and with \(\phi=0.5\) between the lower and upper sections. What would the resulting wave pattern look like?
+Answer: no answer provided
 
 \section{Wave equation}\label{wave-equation}
 
 wave equation?
 
-\phantomsection\label{questions-soundwaves}
-\section{Questions}\label{questions-1}
+\section{Wavelength}\label{wavelength}
 
-\subsection*{Question 1.1}\label{question-1.1}
-\addcontentsline{toc}{subsection}{Question 1.1}
-
-Explain why a sound wave loses energy the further it is spread from the oscillation source.
-
-Answer 1.1
-
-The more a sound \emph{wave} moves away from the source, the more particles of the medium (e.g.~air) are involved. The amount of initial energy (spread with the source oscillation) is spread over a larger surface, of an expanding imaginary sphere, and consequently the sound wave displaces more particles. The overall amount of energy remains the same. Therefore, the energy on a single medium particle or on a single portion of the sound wave is smaller. Thus, the sound wave fades as the distance to the sound source increases.
-
-Remember that the sound \emph{wave} travels through the medium, but the particles in the medium remain more or less in place.
-
-\subsection*{Question 1.2}\label{question-1.2}
-\addcontentsline{toc}{subsection}{Question 1.2}
-
-What parameters influence the speed of a sound wave?
-
-Answer 1.2
-
-The propagation speed of a sound wave depends on the acoustic medium: different media have a different characteristic sound propagation speed. In gases (like air) the sound speed is lower than in liquids or solids, as the particles are less close to one another (the medium is less dense). Moreover, factors such as temperature and pressure influence the density of the acoustic medium, and thus these factors indirectly influence the speed of sound in the medium. Heat, for instance, makes the particles less close to one another, and thus slows down the sound speed. For gases such as air, sound speed is determined by their chemical composition.
+symbol \(\lambda\)
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -345,7 +367,7 @@ The combined figure in the viewport may be saved (\texttt{File\ \textgreater{}\ 
 
 You may also save the figure in a different way, as a ``recipe'' set of instructions to re-create the figure (\texttt{File\ \textgreater{}\ Save\ as\ Praat\ picture\ file}), for later reuse.
 
-\chapter{Converting sound to bytes}\label{converting-sound-to-bytes}
+\chapter{Converting sound to bytes}\label{sec:soundtobytes}
 
 \section{Overview}\label{sec:ADCoverview}
 

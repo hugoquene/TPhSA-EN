@@ -19,7 +19,7 @@ description: "Tutorial on Phonetics and Speech Analysis. "
 
 ## Aims {-}
 
-In this tutorial you will learn about **acoustics**, **phonetics**, and **speech analysis**. 
+In this tutorial you will learn about **acoustics** (sounds), **phonetics** (speech), and **speech analysis**. 
 You will learn the core concepts in these related fields, as well as the necessary practical skills for speech analysis. 
 The aim of this tutorial is to provide you with the phonetic insights and skills in speech analysis that you need to succesfully conduct phonetic research in your own project (e.g. paper or thesis). 
 
@@ -63,7 +63,7 @@ What is sound?
 
 ## Recommended software {-}
 
-In this tutorial you will work mostly with `Praat`^[The Dutch word _praat_ /ˈpraːt/ means "talk".]. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (both at University of Amsterdam). It can be found on its own website (<https://www.praat.org>), where you will find a wealth of helpful documentation. `Praat` also has extensive `Help` built in. 
+In this tutorial you will work mostly with `Praat` [@Boersma_Weenink_2024]^[The Dutch word _praat_ /ˈpraːt/ means "talk".]. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (both at University of Amsterdam). It can be found on its own website (<https://www.praat.org>), where you will find a wealth of helpful documentation. `Praat` also has extensive `Help` built in, including a full tutorial.  
 There is an online forum (<https://groups.io/g/Praat-Users-List>), where users share their knowledge by posting questions and providing answers.
 
 In order to install `Praat` on your computer, go to its webpage at <https://www.praat.org/>, and then proceed to the download page for the operating system of your computer. Follow the installation instructions on the download page for your operating system.  
@@ -73,7 +73,7 @@ In order to install `Praat` on your computer, go to its webpage at <https://www.
 
 Text blocks such as this one will contain instructions about how to "do" things in `Praat`.
 
-Options in software menus, and texts of on-screen buttons, will be shown `in this way`. 
+Options in software menus, as well as texts in on-screen buttons, will be shown `in this way`. 
 The notation `Main > Sub` means: first choose option `Main` from the main menu, after which a submenu will appear, then choose option `Sub` from the submenu. 
 Commands or formulas that you have to type will be shown `in this way` too. (Commands typically need to be terminated with typing `Enter` or `Return` or `␍` or `⏎` -- which however will not be specified in the instructions.)
 :::
