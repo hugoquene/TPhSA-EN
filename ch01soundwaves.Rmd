@@ -25,7 +25,7 @@ Air is only one of the media through which sound can propagate. If your head is 
 
 You can also put your ear to the ground in order to hear sounds propagated through the soil. The propagation of sound waves in solid soil is even faster than in liquids. Trying this out on dry sand on the beach, one observer noted hearing footsteps until about 25 m distant [@Minnaert_1970v2, §10].
 
-## The speed of sound {#sec-speedofsound}
+## The speed of sound {#sec:speedofsound}
 
 In air, the speed of sound (the speed of propagation of a sound wave, symbol $c$) is about 332 m/s at 0°C (about 343 m/s at 20°C, both at sea level). The speed of sound in a gas is affected by two parameters: by the composition of the gas (mixture, density, compressibility) and by its temperature. For dry air at 37°C at sea level, $c=353$ m/s [@Shadle_2010]. 
 The speed of sound in air increases with the air temperature. 
@@ -36,7 +36,7 @@ In sea water, sound travels at about 1435 m/s, in concrete 3400 m/s, in iron (e.
 ## Pressure
 
 Pressure is the amount of force on a surface. In physics, *force* is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second ($m/s$). *Pressure*, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter ($1\ Pa = 1\ N/m^2$). 
-Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (mikropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
+Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (micropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
 
 ::: {#questions-soundwaves .questionbox}
 
@@ -67,9 +67,9 @@ What parameters influence the speed of a sound wave?
 
 :::
 
-## Oscillogram {#sec-oscillogram}
+## Oscillogram {#sec:oscillogram}
 
-As explained in §\@ref(sec:soundwave) above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In chapter  §\@ref(sec:soundtobytes) we'll learn how to measure, record and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the **oscillogram**. 
+As explained in §\@ref(sec:soundwave) above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In chapter  \@ref(ch-soundtobytes) we'll learn how to measure, record and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the **oscillogram**. 
 (We need the oscillogram to explain important properties of sound waves.)
 
 In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline^[The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.]. 
@@ -93,14 +93,14 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 
 <!-- insert fig2c.eps -->
 
-## Frequency
+## Frequency {#sec:frequency}
 
 The frequency (symbol $f$) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its *pitch* or tone. Frequency is expressed in periods per second, or Hertz units, named after Heinrich Rudolf Hertz (1857–1894)^[In older texts you may find 'cycles per second', abbreviated 'cps'.]. 
 Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding 'zero crossings' of adjacent periods. In Figure \@ref(fig:speech-oscillogram), in the vowel /i/, we count 14 periods in 0.065 seconds, so $f \approx 14/0.065 \approx 215$ Hz. These periods have a duration of about $T \approx 0.065/14 \approx 0.0046$ s^[More exactly, the period *is* 0.0046 s.]. Period $T$ and frequency $f$ are each other's inverse, so $f=1/T$ and $T=1/f$. 
 
 In the transverse stadium wave, the period $T$ is the time interval between two consecutive actions of standing up by the same person (e.g. $T=5$ s), and frequency $f$ is the number of actions that occur within a given time unit (e.g. $f=1/T=1/5$ Hz). 
 
-## Amplitude 
+## Amplitude {#sec:amplitude}
 
 The amplitude (symbol $A$) of a sound wave is the extent of the variations in air pressure (due to compression and rarefaction), measured in Pascal units of pressure. With some simplification, the amplitude of a sound wave is perceived as its *loudness* or 'volume'. In an oscillogram, the amplitude corresponds directly to the maximum vertical displacement, that is, to the peak deviation in air pressure relative to the ambient reference pressure). 
 
@@ -114,27 +114,37 @@ In practice, the amount of energy in a (longitudinal) sound wave is better asses
 Uit proefnemingen is gebleken dat de gevoeligheid van het menselijk gehoor ongeveer correspondeert met de logaritme van de intensiteit van het geluid (zie hieronder). Dit gegeven, plus het feit dat de maximaal toelaatbare geluidsdruk wel een factor 1\,000\,000 (=$10^6$) groter kan zijn dan de minimaal waarneembare geluidsdruk, leidt tot het gebruik van een logaritmische schaal voor geluidsintensiteiten of geluidsdrukken. Op zo'n schaal kunnen zowel heel kleine als heel grote waarden (in grafieken bijv.) met dezelfde relatieve nauwkeurigheid worden weergegeven. 
 -->
 
-## Phase
+## Phase {#sec:phase}
 
-The phase of a sound wave (symbol $\phi$) is the starting time of a sound wave period, relative to the duration of that period. It's easiest to explain by comparing two sounds. When listening, a single sound will arrive at our two ears at slightly different arrival times. (Unless the sound source is directly in front of us, the sound will have a slightly longer path to travel to the further ear than to the closer ear.) Thus the two sounds heard by the two ears will differ in phase: the starting time of a period in one ear will differ slightly from the starting time of a period in the other ear, and the difference can be expressed as the proportion of a period by which they differ.  
-The brain uses this phase difference between the two ears to estimate the direction of the sound source relative to the head. You may appreciate the effect by listening to music in mono or in stereo. 
+The phase of a sound wave (symbol $\varphi$) is the starting time of a sound wave period, relative to the duration of that period. It's easiest to explain by comparing two sounds. When listening, a single sound will arrive at our two ears at slightly different arrival times. (Unless the sound source is directly in front of us, the sound will have a slightly longer path to travel to the further ear than to the closer ear.) Thus the two sounds heard by the two ears will differ in phase: the starting time of a period in one ear will differ slightly from the starting time of a period in the other ear, and the difference can be expressed as the proportion of a period by which they differ.  
+The brain of the listener uses this phase difference between the two ears to estimate the direction of the sound source relative to the head. You may appreciate the effect by listening to music in mono or in stereo. 
 
-In addition, we use phase unconsciously to assess atmospheric and acoustic conditions. For example, when listening to a sound in a room, we hear not only the direct sound but also the indirect reflections from the floor, walls, ceiling, furniture, etc. Our brain uses the phase relations among multiple reflections to assess the dimensions and conditions of the room. 
+In addition, we use phase unconsciously to assess atmospheric and acoustic conditions. For example, when listening to a sound in a room, we hear not only the direct sound but also the indirect reflections from the floor, walls, ceiling, furniture, etc. The brain uses the phase relations among multiple reflections to assess the dimensions and conditions of the room. 
 
-Phase is expressed relative to the period $T$, but it is not expressed in time (seconds) but in proportions, often expressed as degrees in the period cycle (which runs from $0^\circ$ to $360^\circ$). So, a phase difference of $\phi=180^\circ$ and $\phi=0.5$) mean the same: the time difference between the two signals is half a period, whatever the duration of that period is. 
+Phase is expressed relative to the period $T$, but it is not expressed in time (seconds) but in proportions, often expressed as degrees in the period cycle (which runs from $0^\circ$ to $360^\circ$). So, a phase difference of $\varphi=180^\circ$ and $\varphi=0.5$ mean the same: the time difference between the two signals is half a period, whatever the duration of that period is. 
 
 In the transverse stadium wave, phase corresponds to the difference in time between the sit-down-moment of one group of persons, and the comparable sit-down-moment of another group of persons in a different section of the stadium. Imagine two waves rolling along the stadium benches: one wave on the lower benches, and a different wave on the upper benches. The two waves may be out of phase (lower and upper persons sit down at different times) or in phase (lower and upper person sit down at the same time) -- irrespective of whether the two waves have the same or different frequencies. 
 
-Question: Continue this thought experiment, with two stadium waves having the same frequency on the lower and upper benches, and with $\phi=0.5$ between the lower and upper sections. What would the resulting wave pattern look like? 
-Answer: no answer provided
+::: {#questions-phase .questionbox}
 
-## Wave equation
+### Question 1.2 {-}
 
-wave equation? 
+Continue this thought experiment, with two stadium waves having the same frequency on the lower and upper benches, and with phase $\varphi=0.5$ between the lower and upper sections. What would the resulting wave pattern look like? 
+<details>
+  <summary>No answer provided</summary>
+  <p>No answer provided... think this out... </p>
+</details>
 
-## Wavelength
+::: 
 
-symbol $\lambda$
+## Wavelength {#sec:wavelength}
+
+The wavelength (symbol $\lambda$) is the length of a single cycle or period, as a distance in the medium, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed $c$ of the sound wave in m/s (see §\@ref(sec:speedofsound)), and on its frequency $f$ in Hz (see §\@ref(sec:frequency)).
+$$\lambda = c / f$$
+$$\lambda = c \, T$$
+Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with $f=440$ Hz has a wavelength in air of $\lambda \approx 343/440 = 0.7795$ meter. 
+
+In the transverse stadium wave, the wavelength $\lambda$ is the distance in meters (on the same bench) between two persons in two consecutive periods who reach the highest point of their sit-stand-arms-up cycle. This is the distance the wave has traveled between the two moments at which a person repeats the same action. If we assume that $c=10$ m/s and $f=0.2$ Hz (as very rough estimates), we find that the wavelength $\lambda=c/f=10/0.2=50$ meter. 
 
 -----
 
