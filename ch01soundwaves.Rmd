@@ -12,7 +12,7 @@ Sound is a type of energy that travels through a medium (such as air, water, or 
 
 A sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). A sound wave is spread in all directions from the sound source; we could compare its propagation to that of a circular wave on the surface of a water basin. The molecules themselves move over a very short distance and do not travel along with the wave: instead, after the sound wave (the pressure fluctuation) has passed along, they go back to their equilibrium position. 
 
-Sound in air is different from wind. In wind, or in air flow, the air particles move from one position to another (from equator to tropics, from lungs to mouth). In sound, however, there is no net movement of the air particles. The particles only move over a very small distance and there is no net movement of air. In sound waves, the distance of travel of the air molecules is about $10^{-11}$ to $10^{-5}$ m, depending on the intensity and frequency of the vibration (more about these properties below). 
+Sound in air is different from wind. In wind, or in air flow, the air particles move from one position to another (from equator to tropics, from lungs to mouth). In sound, however, there is no net movement of the air particles: the particles only move over a very small distance, and return to their equilibrium after the sound wave has passed. In sound waves, the distance of travel of the air molecules is only about $10^{-11}$ to $10^{-5}$ m, depending on the amplitude and frequency of the vibration (more about these key properties in §\@ref(sec:keypropertiessound) below). 
 
 There are two kinds of waves (also depending on the acoustic medium). In *longitudinal* waves (such as sound waves) the back-and-forth displacement or movement of the medium's particles is in the same direction as the propagation of the wave. In *transverse* waves (such as the waves on the surface of a pond) the back-and-forth displacement of the water particles is perpendicular to the direction of propagation of the wave.  
 A stadium wave provides a clear example of a transverse wave: a group of persons (the particles) starts the wave by standing up, rising their arms, sitting down, standing up again, and so on. The persons' action is directly followed by that of their neighbours on one side, who do the same and who are again followed by their next neighbours on their side, and so on, until the wave is travelling through the whole stadium. The persons' motion (up-down) is perpendicular to the propagation of the wave (left-right along the bench). 
@@ -27,16 +27,17 @@ You can also put your ear to the ground in order to hear sounds propagated throu
 
 ## The speed of sound {#sec:speedofsound}
 
-In air, the speed of sound (the speed of propagation of a sound wave, symbol $c$) is about 332 m/s at 0°C (about 343 m/s at 20°C, both at sea level). The speed of sound in a gas is affected by two parameters: by the composition of the gas (mixture, density, compressibility) and by its temperature. For dry air at 37°C at sea level, $c=353$ m/s [@Shadle_2010]. 
-The speed of sound in air increases with the air temperature. 
-The speed of sound also depends on the humidity: humid air holds more particles (of water), resulting in a slightly higher speed of sound with increasing humidity [@Harris_1971]^[For relative humidity >30% [@Harris_1971].]. 
+In air, the speed of sound (the speed of propagation of a sound wave, symbol $c$) is about 332 m/s at 0°C, about 343 m/s at 20°C, and 353 m/s at at 37°C [@Shadle_2010] (all for dry air at sea level). 
+The speed of sound in a gas such as air is affected by only two parameters: 
+- the ambient temperature of the gas (as shown in the numbers above), 
+- the composition of the gas (its mixture and the density and  compressibility of its component gases), including its relative humidity: humid air holds more particles (of water), resulting in a slight increase of the speed of sound as relative humidity increases [@Harris_1971]^[For relative humidity >30% [@Harris_1971].]. 
 
 In sea water, sound travels at about 1435 m/s, in concrete 3400 m/s, in iron (e.g. railroad tracks) about 5100 m/s. 
 
 ## Pressure
 
 Pressure is the amount of force on a surface. In physics, *force* is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second ($m/s$). *Pressure*, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter ($1\ Pa = 1\ N/m^2$). 
-Under normal conditions, atmospheric air pressure is centered at about 1013 hPa (101300 Pa, an average value calculated on a medium latitude at sea level, 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (micropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
+Under normal conditions, atmospheric air pressure is centered at 1013.25 hPa (101325 Pa, an average value^[This is the standard unit of 1 atmosphere. The pressure is due to the Earth's gravition force on the Earth's atmosphere.] on a medium latitude at sea level, at 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (micropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
 
 ::: {#questions-soundwaves .questionbox}
 
@@ -92,15 +93,21 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 - **aperiodic** sounds, in which there is not a repetitive but instead a random pattern in the air pressure variations. Aperiodic sounds do not have a perceptible pitch but instead we hear them as noise. Some consonant sounds, e.g. the /s/ in Figure \@ref(fig:speech-oscillogram) (from 0 to 0.099 s), are clear examples of such noisy, aperiodic sounds^[The clearest examples are provided by unvoiced fricative consonants, such as /f, s/.]. 
 
 <!-- insert fig2c.eps -->
+## Key properties of a sound wave {#sec:keypropertiessound}
 
-## Frequency {#sec:frequency}
+> TODO: Bridging intro text.  
+
+> TODO: insert here an oscillogram of a periodic sound wave, 
+illustrating the subsequent properties in the time domain, at a fixed position in space (microphone position). 
+
+### Frequency {#sec:frequency}
 
 The frequency (symbol $f$) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its *pitch* or tone. Frequency is expressed in periods per second, or Hertz units, named after Heinrich Rudolf Hertz (1857–1894)^[In older texts you may find 'cycles per second', abbreviated 'cps'.]. 
 Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding 'zero crossings' of adjacent periods. In Figure \@ref(fig:speech-oscillogram), in the vowel /i/, we count 14 periods in 0.065 seconds, so $f \approx 14/0.065 \approx 215$ Hz. These periods have a duration of about $T \approx 0.065/14 \approx 0.0046$ s^[More exactly, the period *is* 0.0046 s.]. Period $T$ and frequency $f$ are each other's inverse, so $f=1/T$ and $T=1/f$. 
 
 In the transverse stadium wave, the period $T$ is the time interval between two consecutive actions of standing up by the same person (e.g. $T=5$ s), and frequency $f$ is the number of actions that occur within a given time unit (e.g. $f=1/T=1/5$ Hz). 
 
-## Amplitude {#sec:amplitude}
+### Amplitude {#sec:amplitude}
 
 The amplitude (symbol $A$) of a sound wave is the extent of the variations in air pressure (due to compression and rarefaction), measured in Pascal units of pressure. With some simplification, the amplitude of a sound wave is perceived as its *loudness* or 'volume'. In an oscillogram, the amplitude corresponds directly to the maximum vertical displacement, that is, to the peak deviation in air pressure relative to the ambient reference pressure). 
 
@@ -114,7 +121,7 @@ In practice, the amount of energy in a (longitudinal) sound wave is better asses
 Uit proefnemingen is gebleken dat de gevoeligheid van het menselijk gehoor ongeveer correspondeert met de logaritme van de intensiteit van het geluid (zie hieronder). Dit gegeven, plus het feit dat de maximaal toelaatbare geluidsdruk wel een factor 1\,000\,000 (=$10^6$) groter kan zijn dan de minimaal waarneembare geluidsdruk, leidt tot het gebruik van een logaritmische schaal voor geluidsintensiteiten of geluidsdrukken. Op zo'n schaal kunnen zowel heel kleine als heel grote waarden (in grafieken bijv.) met dezelfde relatieve nauwkeurigheid worden weergegeven. 
 -->
 
-## Phase {#sec:phase}
+### Phase {#sec:phase}
 
 The phase of a sound wave (symbol $\varphi$) is the starting time of a sound wave period, relative to the duration of that period. It's easiest to explain by comparing two sounds. When listening, a single sound will arrive at our two ears at slightly different arrival times. (Unless the sound source is directly in front of us, the sound will have a slightly longer path to travel to the further ear than to the closer ear.) Thus the two sounds heard by the two ears will differ in phase: the starting time of a period in one ear will differ slightly from the starting time of a period in the other ear, and the difference can be expressed as the proportion of a period by which they differ.  
 The brain of the listener uses this phase difference between the two ears to estimate the direction of the sound source relative to the head. You may appreciate the effect by listening to music in mono or in stereo. 
@@ -137,12 +144,15 @@ Continue this thought experiment, with two stadium waves having the same frequen
 
 ::: 
 
-## Wavelength {#sec:wavelength}
+### Wavelength {#sec:wavelength}
 
 The wavelength (symbol $\lambda$) is the length of a single cycle or period, as a distance in the medium, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed $c$ of the sound wave in m/s (see §\@ref(sec:speedofsound)), and on its frequency $f$ in Hz (see §\@ref(sec:frequency)).
 $$\lambda = c / f$$
 $$\lambda = c \, T$$
 Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with $f=440$ Hz has a wavelength in air of $\lambda \approx 343/440 = 0.7795$ meter. 
+
+> TODO: insert here a picture of a waveform in the space domain, with distance along X axis (not an oscillogram), illustrating wave length, at a fixed point in time (single "snapshot" of air pressure over distance). 
+Notice the similarity with the time domain in oscillogram in Figure XX.
 
 In the transverse stadium wave, the wavelength $\lambda$ is the distance in meters (on the same bench) between two persons in two consecutive periods who reach the highest point of their sit-stand-arms-up cycle. This is the distance the wave has traveled between the two moments at which a person repeats the same action. If we assume that $c=10$ m/s and $f=0.2$ Hz (as very rough estimates), we find that the wavelength $\lambda=c/f=10/0.2=50$ meter. 
 

@@ -135,14 +135,15 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
 <li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#periodic-and-aperiodic-sounds"><i class="fa fa-check"></i><b>1.7</b> Periodic and aperiodic sounds</a></li>
-<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8</b> Frequency</a></li>
-<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.9</b> Amplitude</a></li>
-<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.10</b> Phase</a>
+<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:keypropertiessound"><i class="fa fa-check"></i><b>1.8</b> Key properties of a sound wave</a>
 <ul>
+<li class="chapter" data-level="1.8.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8.1</b> Frequency</a></li>
+<li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
+<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.3</b> Phase</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
+<li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.4</b> Wavelength</a></li>
 </ul></li>
-<li class="chapter" data-level="1.11" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.11</b> Wavelength</a></li>
-<li class="chapter" data-level="1.12" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-praatintro"><i class="fa fa-check"></i><b>1.12</b> How to work with <code>Praat</code></a>
+<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec-praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
 <ul>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
@@ -182,7 +183,7 @@ div.csl-indent {
 <ol style="list-style-type: decimal">
 <li><p>the <strong>microphone</strong>: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and deviations of the membrane (caused by the sound wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm). For more details about how to handle a microphone, see the text box in §<a href="ch-soundtobytes.html#sec:microphone">2.2</a>) below.
 The analog electrical signal is then passed on from the microphone to…</p></li>
-<li><p>the <strong>analog-to-digital-converter</strong> (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called ‘sampling’. Sampling a signal is done with a certain ‘sampling frequency’ (number of measurements per second) and with a certain precision of measurement (known as ‘amplitude resolution’), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> <a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p></li>
+<li><p>the <strong>analog-to-digital-converter</strong> (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called ‘sampling’. Sampling a signal is done with a certain ‘sampling frequency’ (number of measurements per second) and with a certain precision of measurement (known as ‘amplitude resolution’), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> <a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p></li>
 </ol>
 <p>Very soon, whenever you want to hear sound from a computer or from a telephone connection, you will also need</p>
 <ol start="3" style="list-style-type: decimal">
@@ -204,9 +205,9 @@ The analog electrical signal is then passed on from the microphone to…</p></li
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.<a href="ch-soundtobytes.html#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>In a speaker’s telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.<a href="ch-soundtobytes.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<ol start="9">
+<li id="fn9"><p>The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.<a href="ch-soundtobytes.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>In a speaker’s telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.<a href="ch-soundtobytes.html#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
