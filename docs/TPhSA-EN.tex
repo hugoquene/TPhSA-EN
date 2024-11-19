@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 17 Nov 2024 14:48}
+\date{Document compiled 18 Nov 2024 16:32}
 
 \begin{document}
 \maketitle
@@ -246,7 +246,7 @@ The speed of sound in a gas such as air is affected by only two parameters:
 
 In sea water, sound travels at about 1435 m/s, in concrete 3400 m/s, in iron (e.g.~railroad tracks) about 5100 m/s.
 
-\section{Pressure}\label{pressure}
+\section{Pressure}\label{sec:pressure}
 
 Pressure is the amount of force on a surface. In physics, \emph{force} is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second (\(m/s\)). \emph{Pressure}, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter (\(1\ Pa = 1\ N/m^2\)).
 Under normal conditions, atmospheric air pressure is centered at 1013.25 hPa (101325 Pa, an average value\footnote{This is the standard unit of 1 atmosphere. The pressure is due to the Earth's gravition force on the Earth's atmosphere.} on a medium latitude at sea level, at 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (micropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
@@ -300,14 +300,16 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 
 \section{Key properties of a sound wave}\label{sec:keypropertiessound}
 
-\begin{quote}
-TODO: Bridging intro text.
-\end{quote}
+A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram below and which are further discussed in the following sub-sections.
 
-\begin{quote}
-TODO: insert here an oscillogram of a periodic sound wave,
-illustrating the subsequent properties in the time domain, at a fixed position in space (microphone position).
-\end{quote}
+\begin{figure}
+
+{\centering \includegraphics{TPhSA-EN_files/figure-latex/example-oscillogram-1} 
+
+}
+
+\caption{Oscillogram of a periodic sound (in black), with indications of the key properties frequency (1/period, see below), amplitude, and phase. The oscillogram is recorded over time (along the horizontal axis), at a fixed position in space.}\label{fig:example-oscillogram}
+\end{figure}
 
 \subsection{Frequency}\label{sec:frequency}
 
@@ -320,16 +322,16 @@ In the transverse stadium wave, the period \(T\) is the time interval between tw
 
 The amplitude (symbol \(A\)) of a sound wave is the extent of the variations in air pressure (due to compression and rarefaction), measured in Pascal units of pressure. With some simplification, the amplitude of a sound wave is perceived as its \emph{loudness} or `volume'. In an oscillogram, the amplitude corresponds directly to the maximum vertical displacement, that is, to the peak deviation in air pressure relative to the ambient reference pressure).
 
-In the transverse stadium wave, the amplitude could be thought of as the extent to which persons raise their hands.
+In the transverse stadium wave, the amplitude could be thought of as the extent to which persons raise their hands: the heighth of the wave crests.
 
 In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of \emph{intensity}, which will be discussed in §XXX below.
 
 \subsection{Phase}\label{sec:phase}
 
-The phase of a sound wave (symbol \(\varphi\)) is the starting time of a sound wave period, relative to the duration of that period. It's easiest to explain by comparing two sounds. When listening, a single sound will arrive at our two ears at slightly different arrival times. (Unless the sound source is directly in front of us, the sound will have a slightly longer path to travel to the further ear than to the closer ear.) Thus the two sounds heard by the two ears will differ in phase: the starting time of a period in one ear will differ slightly from the starting time of a period in the other ear, and the difference can be expressed as the proportion of a period by which they differ.\\
-The brain of the listener uses this phase difference between the two ears to estimate the direction of the sound source relative to the head. You may appreciate the effect by listening to music in mono or in stereo.
+The phase of a sound wave (symbol \(\varphi\)) is the starting time of a sound wave period, relative to the duration of that period. It's easiest to explain by comparing two sounds. When listening, a single sound will arrive at our two ears at slightly different arrival times. (Unless the sound source is directly behind or in front, the sound will have a slightly longer path to travel to the further ear than to the nearer ear.) Thus the two sounds heard by the two ears will differ in phase: the starting time of a period in one ear will differ slightly from the starting time of a period in the other ear, and the difference can be expressed as the proportion of a period by which they differ.\\
+The brain of the listener uses this phase difference between the two ears to estimate the direction of the sound source relative to the head. You may appreciate the effect by listening to a music record in mono or in stereo.
 
-In addition, we use phase unconsciously to assess atmospheric and acoustic conditions. For example, when listening to a sound in a room, we hear not only the direct sound but also the indirect reflections from the floor, walls, ceiling, furniture, etc. The brain uses the phase relations among multiple reflections to assess the dimensions and conditions of the room.
+In addition, we use phase unconsciously to assess atmospheric and acoustic conditions. For example, when listening to a sound in a room, we hear not only the direct sound but also the indirect reflections from the floor, walls, ceiling, furniture, people, etc. The brain uses the phase relations among multiple reflections to assess the dimensions and conditions of the room.
 
 Phase is expressed relative to the period \(T\), but it is not expressed in time (seconds) but in proportions, often expressed as degrees in the period cycle (which runs from \(0^\circ\) to \(360^\circ\)). So, a phase difference of \(\varphi=180^\circ\) and \(\varphi=0.5\) mean the same: the time difference between the two signals is half a period, whatever the duration of that period is.
 
@@ -343,7 +345,7 @@ Continue this thought experiment, with two stadium waves having the same frequen
 
 No answer provided
 
-No answer provided\ldots{} think this out\ldots{}
+\ldots So\ldots{} think this through\ldots{}
 
 \subsection{Wavelength}\label{sec:wavelength}
 
@@ -353,16 +355,25 @@ The wavelength (symbol \(\lambda\)) is the length of a single cycle or period, a
 Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with \(f=440\) Hz has a wavelength in air of \(\lambda \approx 343/440 = 0.7795\) meter.
 
 \begin{quote}
-TODO: insert here a picture of a waveform in the space domain, with distance along X axis (not an oscillogram), illustrating wave length, at a fixed point in time (single ``snapshot'' of air pressure over distance).
+TODO: insert here a picture of a waveform in the space domain, with distance along X axis (not an oscillogram with time along X axis), illustrating wave length, at a fixed point in time (single ``snapshot'' of air pressure over distance).
 Notice the similarity with the time domain in oscillogram in Figure XX.
 \end{quote}
+
+\begin{figure}
+
+{\centering \includegraphics{TPhSA-EN_files/figure-latex/example-wavelength-1} 
+
+}
+
+\caption{Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with c=343 m/s in the air. }\label{fig:example-wavelength}
+\end{figure}
 
 In the transverse stadium wave, the wavelength \(\lambda\) is the distance in meters (on the same bench) between two persons in two consecutive periods who reach the highest point of their sit-stand-arms-up cycle. This is the distance the wave has traveled between the two moments at which a person repeats the same action. If we assume that \(c=10\) m/s and \(f=0.2\) Hz (as very rough estimates), we find that the wavelength \(\lambda=c/f=10/0.2=50\) meter.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \phantomsection\label{box-praatintro}
-\section{\texorpdfstring{How to work with \texttt{Praat}}{How to work with Praat}}\label{sec-praatintro}
+\section{\texorpdfstring{How to work with \texttt{Praat}}{How to work with Praat}}\label{sec:praatintro}
 
 \texttt{Praat} is a computer program designed to process, analyze and visualize speech sounds.
 

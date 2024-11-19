@@ -1,10 +1,12 @@
 fig:speech-oscillogram
+fig:example-oscillogram
+fig:example-wavelength
 ch-soundwaves
 sound
 sec:soundwave
 acoustic-media
 sec:speedofsound
-pressure
+sec:pressure
 sec:oscillogram
 periodic-and-aperiodic-sounds
 sec:keypropertiessound
@@ -12,7 +14,7 @@ sec:frequency
 sec:amplitude
 sec:phase
 sec:wavelength
-sec-praatintro
+sec:praatintro
 ch-soundtobytes
 sec:ADCoverview
 sec:microphone

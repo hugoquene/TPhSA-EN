@@ -28,3 +28,16 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 
 :::
 
+## Key parameters in DA conversion
+
+The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the *sampling frequency*, and the number of bits used to describe the amplitude value of the sample: the *amplitude resolution*. These are explained below. 
+
+### Sampling frequency
+
+### Amplitude resolution
+
+## How to record a sound
+
+maximale uitsturing, zonder oversturing
+
+
