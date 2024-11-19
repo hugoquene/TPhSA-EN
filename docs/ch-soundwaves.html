@@ -153,6 +153,12 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:ADCoverview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
 <li class="chapter" data-level="2.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#key-parameters-in-ad-conversion"><i class="fa fa-check"></i><b>2.3</b> Key parameters in AD conversion</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sampling-frequency"><i class="fa fa-check"></i><b>2.3.1</b> Sampling frequency</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#amplitude-resolution"><i class="fa fa-check"></i><b>2.3.2</b> Amplitude resolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -266,7 +272,7 @@ Figure 1.1: Oscillogram of the word <em>speech</em>, with boundaries between seg
 </div>
 <div id="sec:keypropertiessound" class="section level2 hasAnchor" number="1.8">
 <h2><span class="header-section-number">1.8</span> Key properties of a sound wave<a href="ch-soundwaves.html#sec:keypropertiessound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram below and which are further discussed in the following sub-sections.</p>
+<p>A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram in Figure <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a> and which are further discussed in the following sub-sections.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:example-oscillogram"></span>
 <img src="TPhSA-EN_files/figure-html/example-oscillogram-1.png" alt="Oscillogram of a periodic sound (in black), with indications of the key properties frequency (1/period, see below), amplitude, and phase. The oscillogram is recorded over time (along the horizontal axis), at a fixed position in space." width="672" />
 <p class="caption">
@@ -313,14 +319,10 @@ No answer provided
 </div>
 <div id="sec:wavelength" class="section level3 hasAnchor" number="1.8.4">
 <h3><span class="header-section-number">1.8.4</span> Wavelength<a href="ch-soundwaves.html#sec:wavelength" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The wavelength (symbol <span class="math inline">\(\lambda\)</span>) is the length of a single cycle or period, as a distance in the medium, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed <span class="math inline">\(c\)</span> of the sound wave in m/s (see §<a href="ch-soundwaves.html#sec:speedofsound">1.4</a>), and on its frequency <span class="math inline">\(f\)</span> in Hz (see §<a href="ch-soundwaves.html#sec:frequency">1.8.1</a>).
+<p>The wavelength (symbol <span class="math inline">\(\lambda\)</span>) is the length of a single cycle or period, as a distance in the medium in which the sound wave propagates, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed <span class="math inline">\(c\)</span> of the sound wave in m/s (see §<a href="ch-soundwaves.html#sec:speedofsound">1.4</a>), and on its frequency <span class="math inline">\(f\)</span> in Hz (see §<a href="ch-soundwaves.html#sec:frequency">1.8.1</a>).
 <span class="math display">\[\lambda = c / f\]</span>
 <span class="math display">\[\lambda = c \, T\]</span>
 Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with <span class="math inline">\(f=440\)</span> Hz has a wavelength in air of <span class="math inline">\(\lambda \approx 343/440 = 0.7795\)</span> meter.</p>
-<blockquote>
-<p>TODO: insert here a picture of a waveform in the space domain, with distance along X axis (not an oscillogram with time along X axis), illustrating wave length, at a fixed point in time (single “snapshot” of air pressure over distance).
-Notice the similarity with the time domain in oscillogram in Figure XX.</p>
-</blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:example-wavelength"></span>
 <img src="TPhSA-EN_files/figure-html/example-wavelength-1.png" alt="Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with c=343 m/s in the air. " width="672" />
 <p class="caption">

@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 18 Nov 2024 16:32}
+\date{Document compiled 19 Nov 2024 14:37}
 
 \begin{document}
 \maketitle
@@ -300,7 +300,7 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 
 \section{Key properties of a sound wave}\label{sec:keypropertiessound}
 
-A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram below and which are further discussed in the following sub-sections.
+A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram in Figure \ref{fig:example-oscillogram} and which are further discussed in the following sub-sections.
 
 \begin{figure}
 
@@ -349,15 +349,10 @@ No answer provided
 
 \subsection{Wavelength}\label{sec:wavelength}
 
-The wavelength (symbol \(\lambda\)) is the length of a single cycle or period, as a distance in the medium, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed \(c\) of the sound wave in m/s (see §\ref{sec:speedofsound}), and on its frequency \(f\) in Hz (see §\ref{sec:frequency}).
+The wavelength (symbol \(\lambda\)) is the length of a single cycle or period, as a distance in the medium in which the sound wave propagates, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed \(c\) of the sound wave in m/s (see §\ref{sec:speedofsound}), and on its frequency \(f\) in Hz (see §\ref{sec:frequency}).
 \[\lambda = c / f\]
 \[\lambda = c \, T\]
 Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with \(f=440\) Hz has a wavelength in air of \(\lambda \approx 343/440 = 0.7795\) meter.
-
-\begin{quote}
-TODO: insert here a picture of a waveform in the space domain, with distance along X axis (not an oscillogram with time along X axis), illustrating wave length, at a fixed point in time (single ``snapshot'' of air pressure over distance).
-Notice the similarity with the time domain in oscillogram in Figure XX.
-\end{quote}
 
 \begin{figure}
 
@@ -441,6 +436,20 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 \item
   Do not touch the microphone while it is working; this will result in undesired (and often loud) contact sounds in the output signal.
 \end{itemize}
+
+\section{Key parameters in AD conversion}\label{key-parameters-in-ad-conversion}
+
+The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the \emph{sampling frequency}, and the number of bits used to describe the amplitude value of the sample: the \emph{amplitude resolution}. These are explained below.
+
+\subsection{Sampling frequency}\label{sampling-frequency}
+
+The sampling frequency (symbol \(f_s\)) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf.~§@\ref(sec:frequency). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled \(2000 \times\) per second.
+
+\subsection{Amplitude resolution}\label{amplitude-resolution}
+
+\section{How to record a sound}\label{how-to-record-a-sound}
+
+maximale uitsturing, zonder oversturing
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 

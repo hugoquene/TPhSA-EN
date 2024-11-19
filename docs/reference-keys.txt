@@ -18,3 +18,7 @@ sec:praatintro
 ch-soundtobytes
 sec:ADCoverview
 sec:microphone
+key-parameters-in-ad-conversion
+sampling-frequency
+amplitude-resolution
+how-to-record-a-sound

@@ -95,7 +95,7 @@ There are two classes of sounds which are easily distinguishable in an oscillogr
 <!-- insert fig2c.eps -->
 ## Key properties of a sound wave {#sec:keypropertiessound}
 
-A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram below and which are further discussed in the following sub-sections.  
+A periodic sound wave can be characterized by three key properties, which are illustrated in the oscillogram in Figure \@ref(fig:example-oscillogram) and which are further discussed in the following sub-sections.  
 
 ```{r example-oscillogram, echo=FALSE, fig.cap="Oscillogram of a periodic sound (in black), with indications of the key properties frequency (1/period, see below), amplitude, and phase. The oscillogram is recorded over time (along the horizontal axis), at a fixed position in space.", fig.align="center"}
 xx <- seq(-0.1,0.1,by=.0001) # .1 ms
@@ -169,7 +169,7 @@ Continue this thought experiment, with two stadium waves having the same frequen
 
 ### Wavelength {#sec:wavelength}
 
-The wavelength (symbol $\lambda$) is the length of a single cycle or period, as a distance in the medium, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed $c$ of the sound wave in m/s (see §\@ref(sec:speedofsound)), and on its frequency $f$ in Hz (see §\@ref(sec:frequency)).
+The wavelength (symbol $\lambda$) is the length of a single cycle or period, as a distance in the medium in which the sound wave propagates, between repeated patterns in the wave. It is expressed as a distance in meters. The wavelength depends on the propagation speed $c$ of the sound wave in m/s (see §\@ref(sec:speedofsound)), and on its frequency $f$ in Hz (see §\@ref(sec:frequency)).
 $$\lambda = c / f$$
 $$\lambda = c \, T$$
 Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with $f=440$ Hz has a wavelength in air of $\lambda \approx 343/440 = 0.7795$ meter. 

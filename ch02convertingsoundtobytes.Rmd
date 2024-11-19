@@ -28,11 +28,14 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 
 :::
 
-## Key parameters in DA conversion
+## Key parameters in AD conversion
 
 The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the *sampling frequency*, and the number of bits used to describe the amplitude value of the sample: the *amplitude resolution*. These are explained below. 
 
 ### Sampling frequency
+
+The sampling frequency (symbol $f_s$) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §@\ref(sec:frequency). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled $2000 \times$ per second. 
+
 
 ### Amplitude resolution
 
