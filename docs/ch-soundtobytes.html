@@ -138,9 +138,8 @@
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#general"><i class="fa fa-check"></i><b>2.4.1</b> General</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.2</b> On your computer, using Praat</a></li>
-<li class="chapter" data-level="2.4.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-phone"><i class="fa fa-check"></i><b>2.4.3</b> On your phone</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using Praat</a></li>
+<li class="chapter" data-level="2.4.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-phone"><i class="fa fa-check"></i><b>2.4.5</b> On your phone</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -218,44 +217,55 @@ For music, relevant information may be contained in the full audible range up to
 </div>
 <div id="how-to-record-a-sound" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> How to record a sound<a href="ch-soundtobytes.html#how-to-record-a-sound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="general" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> General<a href="ch-soundtobytes.html#general" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>maximale uitsturing, zonder oversturing</p>
-<p>geen LF componenten!</p>
+<p>For any audio recording, there are a few essential precautions that you’ll have to attend to, to obtain high-quality recordings suitable for subsequent analysis and re-distribution.</p>
+<div id="recording" class="warningbox">
+<div id="sec:recordinglevel" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Check recording level<a href="ch-soundtobytes.html#sec:recordinglevel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>During your recording, check the level of the recording</strong>.<br />
+If the recording level is too low, then the target signal is too weak, andthe background noise (including quantization noise) is relatively strong. It’s very difficult or impossible to fix the signal-to-noise ratio later, so you need to <strong>fix this now</strong>, during the recording.<br />
+If the recording level is too high, then the loudest portions of the target signal will be too strong, leading to “clipping” or distortion. It is impossible to fix this later, so you need to <strong>fix this now</strong>, during the recording.<br />
+There are several ways to adjust the level of the recording:
+- by adjusting the level of the input channel (maybe called <code>Gain</code>), in your computer settings,
+- by varying the distance from the sound source to the microphone (in general: the closer the better, but also depending on the type of microphone),
+- in speech: by instructing the speaker to speak more loudly or more softly.</p>
 </div>
-<div id="on-your-computer-using-praat" class="section level3 hasAnchor" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> On your computer, using Praat<a href="ch-soundtobytes.html#on-your-computer-using-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="remove-non-target-sounds" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Remove non-target sounds<a href="ch-soundtobytes.html#remove-non-target-sounds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>TODO: filter out low-freq components, using HP filter. And why.</p>
+</blockquote>
+</div>
+<div id="avoid-lossy-audio" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Avoid lossy audio<a href="ch-soundtobytes.html#avoid-lossy-audio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It it tempting to record sounds digitally, on devices that store lots of audio in compressed (lossy) formats such as MP3 or MP4. However, the lossy compression of audio data may lead to difficulties in subsequent phonetic analyses. The results may sound quite right, but details in timing or in spectral details may have been lost in the compression. It depends on your interests and research questions whether or not this constitutes a problem.
+For phonetic research, it is generally better to record in ‘lossless’ audio formats that do not compress the audio data, rather than in ‘lossy’ formats.</p>
+</div>
+</div>
+<div id="on-your-computer-using-praat" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> On your computer, using Praat<a href="ch-soundtobytes.html#on-your-computer-using-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We assume that you use a computer equipped with a <strong>microphone</strong>, or with an analog <strong>input port</strong> for an analog signal coming from an external microphone. If using an external microphone, plug it into your computer (see §<a href="ch-soundtobytes.html#sec:microphone">2.2</a>). Check that audio input is coming in, using your Windows or Mac OSX system settings for sound input (if using an external microphone, select the appropriate channel).</p>
 <div id="box-praatrecord" class="praatbox">
 <ul>
 <li><p>In the Praat Objects window, select <code>New &gt; Record mono sound</code>.
 In most situations it is not necessary to record stereo sounds.</p></li>
 <li><p>Choose the appropriate sampling frequency, e.g. 22050 Hz (see §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>). You may receive an error message if the chosen sampling frequency is incompatible with your computer.</p></li>
-<li><p>Click <code>Record</code>, and speak a test sentence into the microphone, e.g. <em>The source of the huge river is the clear spring</em><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. After speaking, click the <code>Stop</code> button.</p></li>
-<li><p><strong>While recording, check the level of the recording</strong>.<br />
-If the recording level is too low, then the target signal is too weak, andthe background noise (including quantization noise) is relatively strong. It’s very difficult or impossible to fix the signal-to-noise ratio later, so you need to <strong>fix this now</strong>, during the recording.<br />
-If the recording level is too high, then the loudest portions of the target signal will be too strong, leading to “clipping” or distortion. It is impossible to fix this later, so you need to <strong>fix this now</strong>, during the recording.<br />
-Make sure that your recording level is in the yellow zone, with occasional peaks in the red zone, but without clipping.
-There are several ways to adjust the level of the recording:</p>
-<ul>
-<li>by adjusting the level of the input channel (maybe called <code>Gain</code>), in your computer settings,</li>
-<li>by varying the distance from the speaker’s mouth to the microphone,</li>
-<li>by speaking more loudly or more softly.</li>
-</ul></li>
+<li><p>Click <code>Record</code>, and speak a test sentence into the microphone, e.g. <em>The source of the huge river is the clear spring</em><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>, or make a test recording of your sound source. After testing, click <code>Stop</code>.</p></li>
+<li><p><strong>While recording, check the level of the recording</strong> (§<a href="ch-soundtobytes.html#sec:recordinglevel">2.4.1</a>).<br />
+In <code>Praat</code>, make sure that your recording level is in the yellow zone, with occasional peaks in the red zone, but without clipping.</p></li>
 <li><p>Click <code>Play</code> to listen to your recording. <strong>Repeat the recording</strong> until the recording level is good.</p></li>
 <li><p>Enter a name for the recording, e.g. <code>river</code>, in the lower right corner (this name will be used within <code>Praat</code>).</p></li>
 <li><p>Save the recording: <code>Save to list</code> (i.e., to the list of objects in the <code>Praat</code> Objects window).</p></li>
 </ul>
-<p>Your speech recording is now an object within <code>Praat</code>. For storage, you have to save this object as an audio file on your computer’s hard disk.</p>
+<p>Your speech recording is now an object within <code>Praat</code>. For storage, you should save this object as an audio file on your computer’s hard disk.</p>
 <ul>
-<li><p>In the <code>Praat</code> object window, select the Sound object that you just recorded.</p></li>
+<li><p>To do so, in the <code>Praat</code> object window, select the Sound object that you just recorded. (Normally this new object has been added at the BOTTOM of the list of objects).</p></li>
 <li><p>From the top menu, choose <code>Save &gt; Write to WAV file...</code> or choose any of the other audio formats.</p></li>
 <li><p>In order to open an audio file from your computer hard disk, from the top menu, choose <code>Open &gt; Read from file...</code>, and pick the target audio file.</p></li>
 </ul>
 </div>
 </div>
-<div id="on-your-phone" class="section level3 hasAnchor" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> On your phone<a href="ch-soundtobytes.html#on-your-phone" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="on-your-phone" class="section level3 hasAnchor" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> On your phone<a href="ch-soundtobytes.html#on-your-phone" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>TBA</p>
 </blockquote>
@@ -271,7 +281,7 @@ There are several ways to adjust the level of the recording:</p>
 <li id="fn3"><p>This is the typical sampling frequency in VoIP, “wideband speech”.<a href="ch-soundtobytes.html#fnref3" class="footnote-back">↩︎</a></p></li>
 <li id="fn4"><p>This is the standard sampling frequency for FM radio.<a href="ch-soundtobytes.html#fnref4" class="footnote-back">↩︎</a></p></li>
 <li id="fn5"><p>This is the standard sampling frequency for audio CDs.<a href="ch-soundtobytes.html#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>1 bit is 2 possible values, <code>0</code> or <code>1</code>.<a href="ch-soundtobytes.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>1 bit or binary digit is a single digit in the binary system. A binary digit can only have 2 possible values, <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> (just as a decimal digit can have 10 possible values, <span class="math inline">\(0\)</span> to <span class="math inline">\(9\)</span>).<a href="ch-soundtobytes.html#fnref6" class="footnote-back">↩︎</a></p></li>
 <li id="fn7"><p>1 byte is 8 bits, or <span class="math inline">\(2^8=256\)</span> possible values.<a href="ch-soundtobytes.html#fnref7" class="footnote-back">↩︎</a></p></li>
 <li id="fn8"><p>Notice that one bit is required to record the sign of the value (positive or negative), so with 1 byte of resolution we can in principle record 256 possible amplitude values, running from -128 to +128, with rounding noise having an amplitude of <span class="math inline">\(0.5/128\)</span> or <span class="math inline">\(1/256\)</span> of the maximum amplitude. This corresponds to a signal-to-quantization-noise ratio of 50 dB. In practice, however, amplitude values are not stored as integer numbers but as floating numbers.<a href="ch-soundtobytes.html#fnref8" class="footnote-back">↩︎</a></p></li>
 <li id="fn9"><p>This is also the standard amplitude resolution for audio CDs.<a href="ch-soundtobytes.html#fnref9" class="footnote-back">↩︎</a></p></li>

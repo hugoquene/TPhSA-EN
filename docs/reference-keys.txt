@@ -26,3 +26,7 @@ sec:samplingfrequency
 general
 on-your-computer-using-praat
 on-your-phone
+avoid-lossy-audio
+sec:recordinglevel
+remove-other-sounds
+remove-non-target-sounds
