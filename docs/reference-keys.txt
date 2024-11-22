@@ -22,3 +22,7 @@ key-parameters-in-ad-conversion
 sampling-frequency
 amplitude-resolution
 how-to-record-a-sound
+sec:samplingfrequency
+general
+on-your-computer-using-praat
+on-your-phone

@@ -5,7 +5,7 @@
 
 In order to process sounds by means of a computer program, or telephone, we first need to convert that sound, the variations in air pressure, to numbers that are then further processed by a computer or by a telephone device. This is a two-step process, involving at least two key components in order:
 
-(1) the **microphone**: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and deviations of the membrane (caused by the sound wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm). For more details about how to handle a microphone, see the text box in §\@ref(sec:microphone)) below. 
+(1) the **microphone**: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and displacements of the membrane (caused by the sound pressure wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm), depending on the design of the microphone. For instructions about how to handle a microphone, see the text box in §\@ref(sec:microphone)) below. 
 The analog electrical signal is then passed on from the microphone to...
 
 (2) the **analog-to-digital-converter** (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called 'sampling'. Sampling a signal is done with a certain 'sampling frequency' (number of measurements per second) and with a certain precision of measurement (known as 'amplitude resolution'), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)^[The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.] ^[In a speaker's telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.]
@@ -18,7 +18,7 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 
 ## How to handle a microphone {#sec:microphone}
 
-- A good microphone is a very sensitive and very expensive device. Treat it with great care. Never blow into a microphone (it's far better to just say `test` or `check` or to say anything else). Do not tap on its surface. 
+- A good microphone is a very sensitive and very expensive device. Treat it with great care. Never blow into a microphone (it's far better to just say `test` or `check` or anything with plosive and fricative consonants). Do not tap on its surface. 
 
 - Do not plug or unplug the microphone into/from a "hot" port (first set the port's input/output volume to zero, then plug/unplug). 
 
@@ -32,15 +32,81 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 
 The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the *sampling frequency*, and the number of bits used to describe the amplitude value of the sample: the *amplitude resolution*. These are explained below. 
 
-### Sampling frequency
+### Sampling frequency {#sec:samplingfrequency}
 
-The sampling frequency (symbol $f_s$) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §@\ref(sec:frequency). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled $2000 \times$ per second. 
+The sampling frequency (symbol $f_s$) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the time dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §\@ref(sec:frequency)). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled $2000 \times$ per second. 
+
+::: {#nyquist .warningbox}
+
+The sampling frequency $f_s$ must be at least $2 \times$ the highest frequency $f$ in the analog source sound. This means that the source sound may not contain any (sounds with) frequencies above $f_s / 2$, the so-called 'nyquist frequency'. In practice this is guaranteed by high-pass filtering the source sound, thus removing any components with frequencies higher than the nyquist frequency, before AD conversion. This filtering is routinely done by the AD and DA conversion hardware and software. 
+
+> TODO add crossref to filtering section 
+
+For speech, most acoustic information is contained in the frequency range up to 8 kHz. Given the previous paragraph, this means that we need a sampling frequency of at least 16 kHz^[This is the typical sampling frequency in VoIP, "wideband speech".] or higher. In most phonetic projects, the most relevant phonetic information is contained in the frequency range up to 16 kHz, for which a sampling frequency of $f_s = 32$ kHz^[This is the standard sampling frequency for FM radio.] is adequate. 
+For music, relevant information may be contained in the full audible range up to 22 kHz, and the standard sampling frequency is 44.1 kHz^[This is the standard sampling frequency for audio CDs.]. 
+
+- Check the sampling frequency before making a digital recording, set it to an appropriate value, write down the sampling frequency in your lab journal, and mention it in your report.  
+
+- Using a higher sampling frequencies will result in proportionally larger digital sound files, which require longer processing times and more computer storage.  
+
+:::
 
 
 ### Amplitude resolution
 
+The amplitude resolution, or quantization, refers to the number of separate steps in amplitude (voltage) that are discerned during sampling. Again, with a higher amplitude resolution, the digital signal better (more closely) approximates the analog source in the amplitude dimension, resulting in a better digital recording. The amplitude resolution is expressed in bits^[1 bit is 2 possible values, `0` or `1`.] or bytes^[1 byte is 8 bits, or $2^8=256$ possible values.].
+
+The recorded amplitude values are discrete, and because of the "jump" from one discrete amplitude step to the next-higher or next-lower value, the amplitude values are "rounded" to some extent. This rounding or quantization results in audible noise in the digital signal. This rounding noise amounts to half a step of possible amplitude values. If we have more amplitude values (higher amplitude resolution) then the rounding off becomes less noticeable^[Notice that one bit is required to record the sign of the value (positive or negative), so with 1 byte of resolution we can in principle record 256 possible amplitude values, running from -128 to +128, with rounding noise having an amplitude of $0.5/128$ or $1/256$ of the maximum amplitude. This corresponds to a signal-to-quantization-noise ratio of 50 dB. In practice, however, amplitude values are not stored as integer numbers but as floating numbers.].
+
+In phonetics, the most common amplitude resolution is 16 bits, or $2^{16} = 65536$ different amplitude steps^[This is also the standard amplitude resolution for audio CDs.]. The quantization noise has an amplitude of $1/65636$ of the maximum amplitude; this corresponds to a signal-to-quantization-noise ratio of about 98 dB. This small amount of rounding noise is negligible. 
+
 ## How to record a sound
+
+### General 
 
 maximale uitsturing, zonder oversturing
 
+geen LF componenten! 
+
+### On your computer, using Praat
+
+We assume that you use a computer equipped with a **microphone**, or with an analog **input port** for an analog signal coming from an external microphone. If using an external microphone, plug it into your computer (see §\@ref(sec:microphone)). Check that audio input is coming in, using your Windows or Mac OSX system settings for sound input (if using an external microphone, select the appropriate channel). 
+
+::: {#box-praatrecord .praatbox}
+
+- In the Praat Objects window, select `New > Record mono sound`.
+In most situations it is not necessary to record stereo sounds. 
+
+- Choose the appropriate sampling frequency, e.g. 22050 Hz (see §\@ref(sec:samplingfrequency)). You may receive an error message if the chosen sampling frequency is incompatible with your computer. 
+
+- Click `Record`, and speak a test sentence into the microphone, e.g. *The source of the huge river is the clear spring*^[One of the so-called Harvard test sentences, from list 3, <https://en.wikipedia.org/wiki/Harvard_sentences>.], or make a test recording of your sound source. After testing, click `Stop`. 
+
+- **While recording, check the level of the recording**. \
+If the recording level is too low, then the target signal is too weak, andthe background noise (including quantization noise) is relatively strong. It's very difficult or impossible to fix the signal-to-noise ratio later, so you need to **fix this now**, during the recording. \
+If the recording level is too high, then the loudest portions of the target signal will be too strong, leading to "clipping" or distortion. It is impossible to fix this later, so you need to **fix this now**, during the recording. \
+Make sure that your recording level is in the yellow zone, with occasional peaks in the red zone, but without clipping. 
+There are several ways to adjust the level of the recording: 
+  - by adjusting the level of the input channel (maybe called `Gain`), in your computer settings, 
+  - by varying the distance from the sound source to the microphone (in general: the closer the better, but also depending on the type of microphone),
+  - in speech: by instructing the speaker to speak more loudly or more softly. 
+
+- Click `Play` to listen to your recording. **Repeat the recording** until the recording level is good. 
+
+- Enter a name for the recording, e.g. `river`, in the lower right corner (this name will be used within `Praat`).
+
+- Save the recording: `Save to list` (i.e., to the list of objects in the `Praat` Objects window).
+
+Your speech recording is now an object within `Praat`. For storage, you should save this object as an audio file on your computer's hard disk.  
+
+- To do so, in the `Praat` object window, select the Sound object that you just recorded. 
+
+- From the top menu, choose `Save > Write to WAV file...` or choose any of the other audio formats. 
+
+- In order to open an audio file from your computer hard disk, from the top menu, choose `Open > Read from file...`, and pick the target audio file.  
+
+:::
+
+### On your phone
+
+> TBA
 
