@@ -2,7 +2,7 @@
 
 # Sound waves {#ch-soundwaves}
 
-*Chapter keywords*: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, oscillogram, frequency, Hertz, period, amplitude, intensity, phase, Pascal, `Praat`, object, visualization, picture, figure.
+*Chapter keywords*: sound, sound wave, oscillation, propagation, longitudinal wave, transverse wave, medium, speed of sound, force, pressure, Pascal, oscillogram, frequency, Hertz, period, periodic, aperiodic, fundamental frequency, octave, amplitude, intensity, phase, Pascal, `Praat`, object, visualization, picture, figure, harmonic, overtone, timbre, Fourier, spectrum, spectral envelope, noise, impulse.
 
 ## Sound
 
@@ -13,7 +13,6 @@ Sound is a type of energy that travels through a medium (such as air, water, or 
 A sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). A sound wave is spread in all directions from the sound source; we could compare its propagation to that of a circular wave on the surface of a water basin. The molecules themselves move over a very short distance and do not travel along with the wave: instead, after the sound wave (the pressure fluctuation) has passed along, they go back to their equilibrium position. 
 
 Sound in air is different from wind. In wind, or in air flow, the air particles move from one position to another (from equator to tropics, from lungs to mouth). In sound, however, there is no net movement of the air particles: the particles only move over a very small distance, and return to their equilibrium after the sound wave has passed. In sound waves, the distance of travel of the air molecules is only about $10^{-11}$ to $10^{-5}$ m, depending on the amplitude and frequency of the vibration (more about these key properties in §\@ref(sec:keypropertiessound) below). 
-
 There are two kinds of waves (also depending on the acoustic medium). In *longitudinal* waves (such as sound waves) the back-and-forth displacement or movement of the medium's particles is in the same direction as the propagation of the wave. In *transverse* waves (such as the waves on the surface of a pond) the back-and-forth displacement of the water particles is perpendicular to the direction of propagation of the wave.  
 A stadium wave provides a clear example of a transverse wave: a group of persons (the particles) starts the wave by standing up, rising their arms, sitting down, standing up again, and so on. The persons' action is directly followed by that of their neighbours on one side, who do the same and who are again followed by their next neighbours on their side, and so on, until the wave is travelling through the whole stadium. The persons' motion (up-down) is perpendicular to the propagation of the wave (left-right along the bench). 
 
@@ -99,7 +98,7 @@ A periodic sound wave can be characterized by three key properties, which are il
 
 ```{r example-oscillogram, echo=FALSE, fig.cap="Oscillogram of a periodic sound (in black), with indications of the key properties frequency (1/period, see below), amplitude, and phase. The oscillogram is recorded over time (along the horizontal axis), at a fixed position in space.", fig.align="center"}
 xx <- seq(-0.1,0.1,by=.0001) # .1 ms
-yy <- 0.5*sin(2*pi*200*xx-.6) + 0.3*sin(2*pi*400*xx-.6) # + 0.4*sin(2*pi*600*xx+.1)
+yy <- 0.5*sin(2*pi*200*xx-.6) # + 0.3*sin(2*pi*400*xx-.6) # + 0.4*sin(2*pi*600*xx+.1)
 T <- .005 # period
 # f0 is 200 Hz, each period is 5 ms or 50 samples
 plot( xx, yy, type="l", xlim=c(-0.0025,.010),
@@ -107,17 +106,18 @@ plot( xx, yy, type="l", xlim=c(-0.0025,.010),
       xlab="Time (s)", ylab="Relative pressure")
 abline(h=0, lty=2)
 abline(v=0, lty=2)
-abline(v=0.00035, lty=2)
-arrows( x0=0.0045, y0=min(yy), y1=max(yy), 
+abline(v=0.000475, lty=2)
+arrows( x0=0.00425, y0=min(yy), y1=max(yy), 
         lwd=3, angle=15, col="darkred", code=3 )
-text( x=0.0045, y=.2, pos=2, cex=1.25, adj=0.75, labels="Amplitude",
-      col="darkred", srt=90 )
-arrows( x0=0.0054, y0=-0, x1=.0054+T-0.0001,
+text( x=0.00425-0.0002, y=0.25, pos=2, cex=1.25, adj=0.8,
+      labels="Amplitude", col="darkred", srt=90 )
+# arrows( x0=0.0054, y0=-0, x1=.0054+T-0.0001,
+arrows( x0=0.0+T+0.000475, y0=-0, x1=0+T+T+0.000475-0.0001,
         lwd=3, angle=15, col="darkred", code=3 )
 # half a period, centered, nudge left
-text( x=.0054+T/2-0.0002, y=0, pos=1, labels="Period", cex=1.25, 
+text( x=0+T+T/2+0.000475-0.0001, y=0, pos=1, labels="Period", cex=1.25, 
       col="darkred", adj=0.5 )
-arrows( x0=0, y0=0.7, x1=.00035,
+arrows( x0=0, y0=0.7, x1=.000475,
         lwd=3, angle=15, col="darkred", code=3, length=0.1 )
 text( x=0, y=0.7, pos=2, cex=1.25, labels="Phase",
       col="darkred", adj=1 )
@@ -125,7 +125,7 @@ text( x=0, y=0.7, pos=2, cex=1.25, labels="Phase",
 
 ### Frequency {#sec:frequency}
 
-The frequency (symbol $f$) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its *pitch* or tone. Frequency is expressed in periods per second, or Hertz units, named after Heinrich Rudolf Hertz (1857–1894)^[In older texts you may find 'cycles per second', abbreviated 'cps'.]. 
+The frequency (symbol $f$) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its *pitch* or tone. Frequency is expressed in periods per second, or Hertz units, named after Heinrich Rudolf Hertz (1857-–1894)^[In older texts you may find 'cycles per second', abbreviated 'cps'.]. 
 Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding 'zero crossings' of adjacent periods. In Figure \@ref(fig:speech-oscillogram), in the vowel /i/, we count 14 periods in 0.065 seconds, so $f \approx 14/0.065 \approx 215$ Hz. These periods have a duration of about $T \approx 0.065/14 \approx 0.0046$ s^[More exactly, the period *is* 0.0046 s.]. Period $T$ and frequency $f$ are each other's inverse, so $f=1/T$ and $T=1/f$. 
 
 In the transverse stadium wave, the period $T$ is the time interval between two consecutive actions of standing up by the same person (e.g. $T=5$ s), and frequency $f$ is the number of actions that occur within a given time unit (e.g. $f=1/T=1/5$ Hz). 
@@ -143,6 +143,10 @@ In practice, the amount of energy in a (longitudinal) sound wave is better asses
 <!--
 Uit proefnemingen is gebleken dat de gevoeligheid van het menselijk gehoor ongeveer correspondeert met de logaritme van de intensiteit van het geluid (zie hieronder). Dit gegeven, plus het feit dat de maximaal toelaatbare geluidsdruk wel een factor 1\,000\,000 (=$10^6$) groter kan zijn dan de minimaal waarneembare geluidsdruk, leidt tot het gebruik van een logaritmische schaal voor geluidsintensiteiten of geluidsdrukken. Op zo'n schaal kunnen zowel heel kleine als heel grote waarden (in grafieken bijv.) met dezelfde relatieve nauwkeurigheid worden weergegeven. 
 -->
+
+### Intensity
+
+#### Decibels 
 
 ### Phase {#sec:phase}
 
@@ -189,6 +193,8 @@ text( x=.00035+T/2, y=0.7, pos=1, labels="Wavelength", cex=1.25,
 axis( at=0.00035+(0:2)*T, labels=(0:2)*343/200, side=1 )
 ```
 
+> TODO adjust wavelenght plot
+
 In the transverse stadium wave, the wavelength $\lambda$ is the distance in meters (on the same bench) between two persons in two consecutive periods who reach the highest point of their sit-stand-arms-up cycle. This is the distance the wave has traveled between the two moments at which a person repeats the same action. If we assume that $c=10$ m/s and $f=0.2$ Hz (as very rough estimates), we find that the wavelength $\lambda=c/f=10/0.2=50$ meter. 
 
 -----
@@ -225,3 +231,93 @@ You may also save the figure in a different way, as a "recipe" set of instructio
 
 :::
 
+---
+
+## Complex sounds
+
+The figure below illustrates the oscillogram of a complex sound signal (at the bottom) and the three sines that make it up. As you can see, the period of the resulting complex wave corresponds to the smallest common multiple of the sines' periods (and the frequency corresponds to their maximum common denominator of their frequencies): as a matter of fact, once every period (in this case once every 0,01 s), the three sines have the same phase position.
+
+The *sine wave*, depicted in Fig. \@ref(fig:example-oscillogram), is the simplest sound possible. It is composed of the simplest back-and-forth variation in air pressure, similar to the regular swing pattern (oscillation) of a pendulum^[Drawing the position of a swinging pendulum over time will result in the same figure.]. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature -- although the sound of a tuning fork comes quite close to a sinewave pattern. 
+
+By contrast, *complex sounds* have more complex wave patterns. All natural periodic sounds are complex sounds. **A complex sound can be regarded as the sum of multiple sine wave sounds.** This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed 'frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called 'Fourier analysis' of a complex sound, these frequency components are being estimated. 
+
+If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \@ref(fig:fourier-oscillogram) provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz ($T=.01$) and 200 Hz ($T=.005$) and 400 Hz ($T=.0025$), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the *fundamental*, and its frequency is called the *fundamental frequency* (symbol $f_0$) of the complex periodic sound; we hear this $f_0$ as its pitch. The higher components are called *overtones*. The fundamental and overtones are collectively called *harmonics*: the fundamental is the first harmonic, the first overtone is the second harmonic, etc. 
+**In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.**  
+
+> TODO crossref pitch, missing fundamental
+
+Typical examples of periodic complex sounds are the vowel sounds in normal speech. The properties of a periodic complex sound depend on the amplitudes, frequencies and phases of its component harmonics. 
+
+```{r fourier-oscillogram, echo=FALSE, fig.cap="Oscillograms of a three sinewave sounds and their resulting complex periodic sound.", fig.align="center"}
+xx <- seq(-0.1,0.1,by=.0001) # .1 ms
+yy <- 0.5*sin(2*pi*100*xx) + 0.4*sin(2*pi*200*xx) + 0.2*sin(2*pi*400*xx)
+T <- .01 # period
+# f0 is 100 Hz, each period is 10 ms or 100 samples
+plot( xx, yy, xlim=c(-0.0025,.020),
+      ylim=c(-0.85,0.85), lwd=2, 
+      xlab="Time (s)", ylab="Relative pressure", type="n")
+lines( xx, 0.5*sin(2*pi*100*xx), lty="dotted", col="grey50" )
+lines( xx, 0.4*sin(2*pi*200*xx), lty="dotted", col="grey60" )
+lines( xx, 0.2*sin(2*pi*400*xx), lty="dotted", col="grey70" )
+lines( xx, yy, lty=1, lwd=2 )
+abline(h=0, lty=2)
+abline(v=0, lty=2)
+# abline(v=0.000475, lty=2)
+# arrows( x0=0.00425, y0=min(yy), y1=max(yy), 
+#         lwd=3, angle=15, col="darkred", code=3 )
+# text( x=0.00425-0.0002, y=0.25, pos=2, cex=1.25, adj=0.8,
+#       labels="Amplitude", col="darkred", srt=90 )
+# # arrows( x0=0.0054, y0=-0, x1=.0054+T-0.0001,
+# arrows( x0=0.0+T+0.000475, y0=-0, x1=0+T+T+0.000475-0.0001,
+#         lwd=3, angle=15, col="darkred", code=3 )
+# # half a period, centered, nudge left
+# text( x=0+T+T/2+0.000475-0.0001, y=0, pos=1, labels="Period", cex=1.25, 
+#       col="darkred", adj=0.5 )
+# arrows( x0=0, y0=0.7, x1=.000475,
+#         lwd=3, angle=15, col="darkred", code=3, length=0.1 )
+# text( x=0, y=0.7, pos=2, cex=1.25, labels="Phase",
+#       col="darkred", adj=1 )
+```
+
+### Timbre
+ 
+Two periodic complex sounds, having the same overall amplitude and fundamental frequency, may differ strongly in their character. The general name for this property is *timbre*. 
+Timbre depends on the relative amplitudes of the harmonics, and hence very many different timbres are possible. A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The difference between distinct vowels, such as /a/ or /i/, spoken by the same person at the same pitch and amplitude, is also a matter of timbre. 
+
+Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property. 
+
+### Octave
+
+An octave refers to a fundamental frequency ratio of $1:2$ or $2:1$, that is, doubling or halving of the fundamental frequency. It is the distance between 12 semitones (piano keys, counting black and white keys). If you sing or play a musical note (e.g. note `A2` with $f=110$ Hz), and then jump to the next higher octave, then the new note `A3` has a frequency of $2 \times 110=220$ Hz. 
+(As an aside: doubling the frequency means halving the wavelength, and vice versa, see §\@ref(sec:wavelength)).
+
+## Spectrum
+
+An unchanging sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. 
+
+Figure \@ref(fig:complex100n200n400) shows an oscillogram on the left (of the same complex sound as shown in Fig. \@ref(fig:fourier-oscillogram), and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)^[Here, the phase of the frequency components is ignored.]. Hence, a spectrum shows the frequency and amplitude of each component. 
+
+```{r complex100n200n400, echo=FALSE, fig.cap="Oscillogram (left) and spectrum (right) of a complex periodic sound.", fig.align="center"}
+knitr::include_graphics("figures/complex100n200n400.png")
+```
+
+## Spectra of aperiodic sounds
+
+Stable noise and brief impulses are two types of aperiodic signals: the variations in air pressure do not follow a regular periodic pattern^[Or, you might say that the period is infinitely long.]. 
+
+### Noise 
+
+First we discuss stable, aperiodic sounds: **noise**. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at *every* frequency. The amplitudes of the many frequency components determines the timbre of the noise. 
+
+In *white noise*, all frequency components are equally strong^[This is called 'white' noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.], and thus the spectral envelope is flat. 
+In so-called *brown noise*, the spectral envelope decreases by $-6$ dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research if we need to mask speech.
+
+```{r spectrum-whitebrownnoises, echo=FALSE, fig.cap="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).", fig.align="center"}
+knitr::include_graphics("figures/whitebrownnoises.png")
+```
+
+The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time^[If you would listen to white noise for a VERY long time, then all frequency components would indeed be equally strong.], with (c) a particular sampling frequency of the noise. 
+
+### Impulses 
+
+An **impulse** is a very brief and transient sound, such as a hand clap or tick. Acoustically, a very brief impulse sound is like a brief burst of white noise, with a flat spectral envelope. The shorter the impulse, the flatter the spectral envelope becomes. 

@@ -1,6 +1,8 @@
 
 # Converting sound to bytes {#ch-soundtobytes}
 
+*Chapter keywords*: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless. 
+
 ## Overview {#sec:ADCoverview}
 
 In order to process sounds by means of a computer program, or telephone, we first need to convert that sound, the variations in air pressure, to numbers that are then further processed by a computer or by a telephone device. This is a two-step process, involving at least two key components in order:
@@ -66,6 +68,29 @@ For any audio recording, there are a few essential precautions that you'll have 
 
 ::: {#recording .warningbox}
 
+### Remove non-target sounds 
+
+In order to obtain a high-quality recording, it helps to attenuate all non-target sounds, in various ways:
+
+- If available, use a sound-attenuating cabin or booth. The booth will help to insulate your target signal from unwanted other sounds. Close the door of the booth properly. Leave non-essential equipment (watches, phones) outside the booth. \
+If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings. \
+Background: Phonetic analyses, in particular formant measurements, aim at finding frequencies in the speech signal that may be related to the speaker's articulations. However, similar frequencies may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle these two kinds of frequency properties. Hence it helps to minimize any acoustic reflections in the recording room^[Frequency measurements may be suspect if the corresponding wavelength is a multiple of one of the dimensions of the room; or if the reported frequency is below 100 Hz; or if the reliability of the frequency measurement is low. ].
+
+> TOdO crossref wavelength and crossref frequency
+
+> TODO crossref formants. 
+
+
+- Under noisy circumstances, try using a directional microphone, which attenuates sounds not coming straight (from the source) but from the sides (including reflections and non-target sounds). 
+
+- Switch off any non-essential equipment, and try to attenuate non-target sounds from elsewhere. Even if you cannot hear a difference, the equipment sounds and outside sounds may interfere with the target sound signal, resulting in unwanted artefacts. 
+
+- Despite all these precautions, outside sounds may still interfere. This happens in particular with low-frequency signals, e.g. due to traffic outside, elevators elsewhere in the building, and so forth. These interfering sounds are typically outside the frequency range of speech. Therefore we can easily remove them, by high-pass filtering the target speech signal, *before* DA conversion. 
+  - Use a high-pass filter that will discard frequencies below a certain cut-off frequency. 
+  - Set the cut-off frequency well below the lowest possible frequency (component) in your target sound, say, a cutoff frequency of about 60 Hz.
+
+> TODO add crossref to filtering
+
 ### Check recording level {#sec:recordinglevel}
 
 **During your recording, check the level of the recording**. \
@@ -76,21 +101,18 @@ There are several ways to adjust the level of the recording:
   - by varying the distance from the sound source to the microphone (in general: the closer the better, but also depending on the type of microphone),
   - in speech: by instructing the speaker to speak more loudly or more softly. 
 
-### Remove non-target sounds 
 
-> TODO: filter out low-freq components, using HP filter. And why. 
+### Avoid lossy audio formats {#sec:avoidlossyformats}
 
-### Avoid lossy audio
-
-It it tempting to record sounds digitally, on devices that store lots of audio in compressed (lossy) formats such as MP3 or MP4. However, the lossy compression of audio data may lead to difficulties in subsequent phonetic analyses. The results may sound quite right, but details in timing or in spectral details may have been lost in the compression. It depends on your interests and research questions whether or not this constitutes a problem. 
-For phonetic research, it is generally better to record in 'lossless' audio formats that do not compress the audio data, rather than in 'lossy' formats. 
+It it tempting to record sounds digitally on smart devices which store lots of audio in compressed (lossy) formats such as MP3 or MP4. However, the lossy compression of audio data may lead to difficulties in subsequent phonetic analyses. The results may sound quite right to your ears, but  details in timing or in spectral details may nevertheless have been lost in the compression. It depends on your interests and your research questions whether or not this constitutes a problem. 
+For phonetic research, it is generally better to record in 'lossless' audio formats that do not compress the audio data, rather than in 'lossy' formats. Check whether and how your smart device can make lossless recordings: if possible at all, this will probably require a deep dive into the settings on the recording device.  
 
 :::
 
 
 ### On your computer, using Praat
 
-We assume that you use a computer equipped with a **microphone**, or with an analog **input port** for an analog signal coming from an external microphone. If using an external microphone, plug it into your computer (see §\@ref(sec:microphone)). Check that audio input is coming in, using your Windows or Mac OSX system settings for sound input (if using an external microphone, select the appropriate channel). 
+We assume that you use a computer equipped with a **microphone**, or with an analog **input port** for an analog signal coming from an external microphone. If using an external microphone, plug it into your computer (see §\@ref(sec:microphone)). Check that audio input is arriving in your computer, using your Windows or Mac OSX system settings for sound input (if using an external microphone, select the appropriate channel). 
 
 ::: {#box-praatrecord .praatbox}
 
@@ -99,7 +121,7 @@ In most situations it is not necessary to record stereo sounds.
 
 - Choose the appropriate sampling frequency, e.g. 22050 Hz (see §\@ref(sec:samplingfrequency)). You may receive an error message if the chosen sampling frequency is incompatible with your computer. 
 
-- Click `Record`, and speak a test sentence into the microphone, e.g. *The source of the huge river is the clear spring*^[One of the so-called Harvard test sentences, from list 3, <https://en.wikipedia.org/wiki/Harvard_sentences>.], or make a test recording of your sound source. After testing, click `Stop`. 
+- Click `Record`, and speak a test sentence into the microphone, e.g. *The source of the huge river is the clear spring*^[One of the so-called Harvard test sentences, from list 3, <https://en.wikipedia.org/wiki/Harvard_sentences>. In Dutch, a popular test sentence is *Het leven is mooi als de zon schijnt*.], or make a test recording of your sound source. After testing, click `Stop`. 
 
 - **While recording, check the level of the recording** (§\@ref(sec:recordinglevel)). \
 In `Praat`, make sure that your recording level is in the yellow zone, with occasional peaks in the red zone, but without clipping. 
@@ -114,13 +136,23 @@ Your speech recording is now an object within `Praat`. For storage, you should s
 
 - To do so, in the `Praat` object window, select the Sound object that you just recorded. (Normally this new object has been added at the BOTTOM of the list of objects).
 
-- From the top menu, choose `Save > Write to WAV file...` or choose any of the other audio formats. 
+- From the top menu, choose `Save > Write to WAV file...` or choose any of the other audio formats. Save the Sound object in a folder and under an unambiguous name that you will remember and understand a year from now -- not just `river.wav`. Note in your journal the folder and filename of your sound recording. Keep projects in separate folders on your computer.  
 
-- In order to open an audio file from your computer hard disk, from the top menu, choose `Open > Read from file...`, and pick the target audio file.  
+- In order to open an audio file from your computer hard disk, from the top menu in the Objects window, choose `Open > Read from file...`, and pick the target audio file.  
 
 :::
 
+
+<!--
 ### On your phone
 
+iPhone Voice Memo uses MP4 codec, which is lossy. 
+crossref to 'avoid lossy formats'
+
 > TBA
+-->
+
+## Manipulating digital sounds
+
+> TODO: explain Concatenate, Scale in `Praat`
 
