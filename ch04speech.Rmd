@@ -1,0 +1,20 @@
+# (PART\*) Part II: Speech {-}
+
+# Speech {#ch-speech}
+
+*Chapter keywords*: TBA
+
+## Introduction
+
+## Resonance
+
+## Source-filter-model
+
+## Formants
+
+## Spectrogram 
+
+## Pitch
+
+## Intensity
+

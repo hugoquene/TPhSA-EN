@@ -318,6 +318,8 @@ knitr::include_graphics("figures/whitebrownnoises.png")
 
 The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time^[If you would listen to white noise for a VERY long time, then all frequency components would indeed be equally strong.], with (c) a particular sampling frequency of the noise. 
 
-### Impulses 
+### Impulses {#sec:impulses}
 
 An **impulse** is a very brief and transient sound, such as a hand clap or tick. Acoustically, a very brief impulse sound is like a brief burst of white noise, with a flat spectral envelope. The shorter the impulse, the flatter the spectral envelope becomes. 
+
+An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g. at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by *fading in* the sound, see §\@ref(sec:fades) for more. 

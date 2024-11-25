@@ -158,7 +158,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.12" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>1.12</b> Spectra of aperiodic sounds</a>
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#noise"><i class="fa fa-check"></i><b>1.12.1</b> Noise</a></li>
-<li class="chapter" data-level="1.12.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#impulses"><i class="fa fa-check"></i><b>1.12.2</b> Impulses</a></li>
+<li class="chapter" data-level="1.12.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:impulses"><i class="fa fa-check"></i><b>1.12.2</b> Impulses</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
@@ -172,9 +172,29 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
 <ul>
-<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using Praat</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#manipulating-digital-sounds"><i class="fa fa-check"></i><b>2.5</b> Manipulating digital sounds</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-play-back-a-digital-sound"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
+<li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-a-digital-sound"><i class="fa fa-check"></i><b>2.6</b> How to manipulate a digital sound</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#scale"><i class="fa fa-check"></i><b>2.6.1</b> Scale</a></li>
+<li class="chapter" data-level="2.6.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.6.2</b> Concatenate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>3</b> Filtering</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#sections"><i class="fa fa-check"></i><b>3.1</b> sections</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Speech</b></span></li>
+<li class="chapter" data-level="4" data-path="ch-speech.html"><a href="ch-speech.html"><i class="fa fa-check"></i><b>4</b> Speech</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-speech.html"><a href="ch-speech.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-speech.html"><a href="ch-speech.html#resonance"><i class="fa fa-check"></i><b>4.2</b> Resonance</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-speech.html"><a href="ch-speech.html#source-filter-model"><i class="fa fa-check"></i><b>4.3</b> Source-filter-model</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-speech.html"><a href="ch-speech.html#formants"><i class="fa fa-check"></i><b>4.4</b> Formants</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-speech.html"><a href="ch-speech.html#spectrogram"><i class="fa fa-check"></i><b>4.5</b> Spectrogram</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-speech.html"><a href="ch-speech.html#pitch"><i class="fa fa-check"></i><b>4.6</b> Pitch</a></li>
+<li class="chapter" data-level="4.7" data-path="ch-speech.html"><a href="ch-speech.html#intensity-1"><i class="fa fa-check"></i><b>4.7</b> Intensity</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -438,9 +458,10 @@ Figure 1.6: Spectra of white noise (left) and of brown noise (right), with a lin
 </div>
 <p>The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>, with (c) a particular sampling frequency of the noise.</p>
 </div>
-<div id="impulses" class="section level3 hasAnchor" number="1.12.2">
-<h3><span class="header-section-number">1.12.2</span> Impulses<a href="ch-soundwaves.html#impulses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sec:impulses" class="section level3 hasAnchor" number="1.12.2">
+<h3><span class="header-section-number">1.12.2</span> Impulses<a href="ch-soundwaves.html#sec:impulses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An <strong>impulse</strong> is a very brief and transient sound, such as a hand clap or tick. Acoustically, a very brief impulse sound is like a brief burst of white noise, with a flat spectral envelope. The shorter the impulse, the flatter the spectral envelope becomes.</p>
+<p>An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g. at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by <em>fading in</em> the sound, see §<a href="ch-soundtobytes.html#sec:fades">2.6.1.3</a> for more.</p>
 
 </div>
 </div>
