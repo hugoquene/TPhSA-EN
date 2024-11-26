@@ -58,3 +58,17 @@ formants
 spectrogram
 pitch
 intensity-1
+fig:lowpassfilter
+fig:highpassfilter
+on-your-phone
+cutoff-frequency
+slope
+bandwidth
+time-envelope
+introduction-1
+fig:bandpassfilter
+fig:bandrejectfilter
+sec:periodicity
+sec:octave
+types-of-filters
+properties-of-filters

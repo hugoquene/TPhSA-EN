@@ -83,7 +83,7 @@ An oscillogram is comparable to a meteorologist's regular measurements of atmosp
 
 The visualisation in an oscillogram may suggest, misleadingly, that the air particles themselves dance "up and down" (transverse) while the sound wave travels "from left to right", like waves on the surface of a body of water. That is not true: sound in air travels in *longitudinal* sound waves, resulting in the air pressure variations that are visualized in the oscillogram.    
 
-## Periodic and aperiodic sounds 
+## Periodic and aperiodic sounds {#sec:periodicity}
 
 There are two classes of sounds which are easily distinguishable in an oscillogram: 
 
@@ -286,7 +286,7 @@ Timbre depends on the relative amplitudes of the harmonics, and hence very many 
 
 Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property. 
 
-### Octave
+### Octave {#sec:octave}
 
 An octave refers to a fundamental frequency ratio of $1:2$ or $2:1$, that is, doubling or halving of the fundamental frequency. It is the distance between 12 semitones (piano keys, counting black and white keys). If you sing or play a musical note (e.g. note `A2` with $f=110$ Hz), and then jump to the next higher octave, then the new note `A3` has a frequency of $2 \times 110=220$ Hz. 
 (As an aside: doubling the frequency means halving the wavelength, and vice versa, see §\@ref(sec:wavelength)).
@@ -303,14 +303,14 @@ knitr::include_graphics("figures/complex100n200n400.png")
 
 ## Spectra of aperiodic sounds
 
-Stable noise and brief impulses are two types of aperiodic signals: the variations in air pressure do not follow a regular periodic pattern^[Or, you might say that the period is infinitely long.]. 
+Stable noise and brief impulses are two types of aperiodic signals (§\@ref(sec:periodicity)): the variations in air pressure do not follow a regular periodic pattern^[Or, you might say that the period is infinitely long.]. Aperiodic sounds do not have a fundamental frequency (because there is no regular period), and their phase is undefined, but aperiodic sounds do have an amplitude and a spectral composition. 
 
 ### Noise 
 
-First we discuss stable, aperiodic sounds: **noise**. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at *every* frequency. The amplitudes of the many frequency components determines the timbre of the noise. 
+First we discuss stable, aperiodic sounds: **noise**. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at *every* frequency. The relative amplitudes of the many frequency components determines the timbre of the noise. 
 
 In *white noise*, all frequency components are equally strong^[This is called 'white' noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.], and thus the spectral envelope is flat. 
-In so-called *brown noise*, the spectral envelope decreases by $-6$ dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research if we need to mask speech.
+In so-called *brown noise*, the spectral envelope decreases by $-6$ dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research whenever we need to mask speech.
 
 ```{r spectrum-whitebrownnoises, echo=FALSE, fig.cap="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).", fig.align="center"}
 knitr::include_graphics("figures/whitebrownnoises.png")
