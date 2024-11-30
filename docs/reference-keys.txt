@@ -72,3 +72,4 @@ sec:periodicity
 sec:octave
 types-of-filters
 properties-of-filters
+emphasis-filters

@@ -81,11 +81,11 @@ segments(x0=ffl, y1=0, x1=ffh, y=0, col="darkviolet", lwd=4)
 segments(x0=ffh, y0=0, x1=16000, y1=-36, col="darkviolet", lwd=4)
 # segments(x0=0,y0=+3,x1=1000-155,y1=+3, col="darkred", lwd=4)
 ```
-A tuneable band-pass filter is essential for producing a spectrogram.
+-- A tuneable band-pass filter is essential for producing a spectrogram.
 
 > TODO crossref spectrogram
 
-A telephone works as a bandpass filter with a fixed pass band of 300 to 3400 Hz.  
+-- A telephone works as a bandpass filter with a fixed pass band of 300 to 3400 Hz.  
 
 - **band-reject** or **notch filters** (Fig.\@ref(fig:bandrejectfilter)) again do the reverse: they attenuate frequencies within a certain frequency band, and allow frequencies outside this band to pass through.
 
@@ -137,6 +137,22 @@ This distance may be expressed as the musical interval between the lower and hig
 
 In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequences are so-called "third band" filters. Both octave-band and third-band filters are widely used in phonetic research. 
 
+
+## Emphasis filters
+
+> TODO crossref source-filter, spectral slope of speech
+
+For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of $-6$ dB/octave. On average, the amplitude of higher frequency components decreases by about $-6$ dB for each doubling of the frequency (\@ref(sec:octave)). 
+Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called *pre-emphasis* filter, which modifies the overall spectral slope by $+6$ dB per octave. This boosting of higher-frequency components ideally results in a flat (horizontal) spectral envelope^[The overall average slope of the spectral envelope of speech changes from $-6$ to $-6+6=0$ dB per octave.], with equal amplitudes for all frequency components. This renders spectral details equally discernible across the full spectral range. 
+
+The reverse operation is called *de-emphasis* filtering: this changes the overall spectral slope by $-6$ dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise ($-6$ dB/oct) from the white noise ($0$ dB/oct) in Fig.\@ref(fig:spectrum-whitebrownnoises).
+
+::: {#box-praatemphasis .praatbox}
+
+Select an input Sound object in the Praat Objects window. Then choose `Filter > Filter (pre-emphasis)...` for pre-emphasis filtering, or choose `Filter > Filter (de-emphasis)...` for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz. \
+The resulting filtered output Sound object is again added at the bottom of the list of objects. 
+
+:::
 
 ## Time envelope
 

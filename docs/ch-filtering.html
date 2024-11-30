@@ -173,7 +173,8 @@
 <li class="chapter" data-level="3.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>3.3.2</b> Slope</a></li>
 <li class="chapter" data-level="3.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>3.3.3</b> Bandwidth</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="ch-filtering.html"><a href="ch-filtering.html#time-envelope"><i class="fa fa-check"></i><b>3.4</b> Time envelope</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>3.4</b> Emphasis filters</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-filtering.html"><a href="ch-filtering.html#time-envelope"><i class="fa fa-check"></i><b>3.5</b> Time envelope</a></li>
 </ul></li>
 <li class="part"><span><b>Part II: Speech</b></span></li>
 <li class="chapter" data-level="4" data-path="ch-speech.html"><a href="ch-speech.html"><i class="fa fa-check"></i><b>4</b> Speech</a>
@@ -245,11 +246,11 @@ Figure 3.2: Frequency characteristic of a high-pass filter, with cutoff frequenc
 Figure 3.3: Frequency characteristic of a band-pass filter, with a pass band from 1 to 2 kHz (one octave), and with slopes of -12 dB per octave on both sides.
 </p>
 </div>
-<p>A tuneable band-pass filter is essential for producing a spectrogram.</p>
+<p>– A tuneable band-pass filter is essential for producing a spectrogram.</p>
 <blockquote>
 <p>TODO crossref spectrogram</p>
 </blockquote>
-<p>A telephone works as a bandpass filter with a fixed pass band of 300 to 3400 Hz.</p>
+<p>– A telephone works as a bandpass filter with a fixed pass band of 300 to 3400 Hz.</p>
 <ul>
 <li><strong>band-reject</strong> or <strong>notch filters</strong> (Fig.<a href="ch-filtering.html#fig:bandrejectfilter">3.4</a>) again do the reverse: they attenuate frequencies within a certain frequency band, and allow frequencies outside this band to pass through.</li>
 </ul>
@@ -278,8 +279,21 @@ Figure 3.4: Frequency characteristic of a band-reject filter, with a reject band
 <p>In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequences are so-called “third band” filters. Both octave-band and third-band filters are widely used in phonetic research.</p>
 </div>
 </div>
-<div id="time-envelope" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Time envelope<a href="ch-filtering.html#time-envelope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="emphasis-filters" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Emphasis filters<a href="ch-filtering.html#emphasis-filters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>TODO crossref source-filter, spectral slope of speech</p>
+</blockquote>
+<p>For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of <span class="math inline">\(-6\)</span> dB/octave. On average, the amplitude of higher frequency components decreases by about <span class="math inline">\(-6\)</span> dB for each doubling of the frequency (<a href="ch-soundwaves.html#sec:octave">1.10.2</a>).
+Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called <em>pre-emphasis</em> filter, which modifies the overall spectral slope by <span class="math inline">\(+6\)</span> dB per octave. This boosting of higher-frequency components ideally results in a flat (horizontal) spectral envelope<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, with equal amplitudes for all frequency components. This renders spectral details equally discernible across the full spectral range.</p>
+<p>The reverse operation is called <em>de-emphasis</em> filtering: this changes the overall spectral slope by <span class="math inline">\(-6\)</span> dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (<span class="math inline">\(-6\)</span> dB/oct) from the white noise (<span class="math inline">\(0\)</span> dB/oct) in Fig.<a href="#fig:spectrum-whitebrownnoises"><strong>??</strong></a>.</p>
+<div id="box-praatemphasis" class="praatbox">
+<p>Select an input Sound object in the Praat Objects window. Then choose <code>Filter &gt; Filter (pre-emphasis)...</code> for pre-emphasis filtering, or choose <code>Filter &gt; Filter (de-emphasis)...</code> for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz.<br />
+The resulting filtered output Sound object is again added at the bottom of the list of objects.</p>
+</div>
+</div>
+<div id="time-envelope" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Time envelope<a href="ch-filtering.html#time-envelope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>TBA</p>
 </blockquote>
@@ -298,6 +312,7 @@ Figure 3.4: Frequency characteristic of a band-reject filter, with a reject band
 <hr />
 <ol start="1">
 <li id="fn1"><p>Note that the band reject filter in Fig.<a href="ch-filtering.html#fig:bandrejectfilter">3.4</a> has steeper slopes than the band pass filter in Fig.<a href="ch-filtering.html#fig:bandpassfilter">3.3</a>.<a href="ch-filtering.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>The overall average slope of the spectral envelope of speech changes from <span class="math inline">\(-6\)</span> to <span class="math inline">\(-6+6=0\)</span> dB per octave.<a href="ch-filtering.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
