@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Tutorial on Phonetics and Speech Analysis</title>
-  <meta name="description" content="Tutorial on Phonetics and Speech Analysis." />
+  <title>Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:title" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Tutorial on Phonetics and Speech Analysis." />
+  <meta property="og:description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
   <meta name="github-repo" content="rstudio/TPhSA" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tutorial on Phonetics and Speech Analysis" />
+  <meta name="twitter:title" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis" />
   
-  <meta name="twitter:description" content="Tutorial on Phonetics and Speech Analysis." />
+  <meta name="twitter:description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
   
 
 
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="ch-soundwaves.html"/>
+<link rel="prev" href="ch-soundtobytes.html"/>
+<link rel="next" href="ch-filtering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -219,145 +219,93 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Tutorial on Phonetics and Speech Analysis</h1>
-<p class="author multi-author"><em><a href='https://www.hugoquene.nl' target='_blank'>Hugo Quené</a></em></p>
-<address class="author_afil">
-Utrecht University<br>
-</address>
-<p class="author multi-author"><em><a href='https://www.cliziawelker.com' target='_blank'>Clizia Welker</a></em></p>
-<p class="date"><em>Document compiled 02 Dec 2024 16:48</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered hasAnchor">
-<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="aims" class="section level2 unnumbered hasAnchor">
-<h2>Aims<a href="index.html#aims" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this tutorial you will learn about <strong>acoustics</strong> (sounds), <strong>phonetics</strong> (speech), and <strong>speech analysis</strong>.
-You will learn the core concepts in these related fields, as well as the necessary practical skills for speech analysis.
-The aim of this tutorial is to provide you with the phonetic insights and skills in speech analysis that you need to succesfully conduct phonetic research in your own project (e.g. paper or thesis).</p>
-<div id="under-construction" class="section level3 unnumbered hasAnchor">
-<h3>Under construction<a href="index.html#under-construction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This tutorial is a work in progress, resulting from an ongoing revision of an existing tutorial, and meanwhile incorporating other modules and resources.</p>
-<p>The existing (outdated) full tutorial is still available at <a href="https://resources.lab.hum.uu.nl/resources/phonetics/index.html" class="uri">https://resources.lab.hum.uu.nl/resources/phonetics/index.html</a>
-.</p>
-<p>More details on the origins of this tutorial are provided below.</p>
-</div>
-</div>
-<div id="how-to-use-this-tutorial" class="section level2 unnumbered hasAnchor">
-<h2>How to use this tutorial<a href="index.html#how-to-use-this-tutorial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You will learn the most from this tutorial if you</p>
-<ol style="list-style-type: decimal">
-<li>read the explanatory texts in this tutorial,</li>
-<li>work through the questions and exercises provided,</li>
-<li>practice in applying your new knowledge hands-on, with the <code>Praat</code> computer program (detailed below), and</li>
-<li>re-read the relevant sections from this tutorial and your textbook, with the help of keywords provided per section.</li>
-</ol>
-<div id="question-intro" class="questionbox">
-<div id="questions" class="section level3 unnumbered hasAnchor">
-<h3>Questions<a href="index.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Text blocks such as this one will contain questions or exercises inviting you to engage with the tutorial. You will learn most if you attempt to answer these questions (preferably in writing) <em>before</em> you proceed and <em>before</em> you take a look at the answer provided. (These questions only work in the HTML version of the tutorial; other versions will just show both the question and answer subsequently.)</p>
-<div id="question-0.1" class="section level4 unnumbered hasAnchor">
-<h4>Question 0.1<a href="index.html#question-0.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>What is sound?</p>
-<details>
-<summary>
-Answer 0.1
-</summary>
-<p>
-Sound is a type of energy that travels through a medium (such as air, water, or solid materials) in the form of waves. These sound waves are created by the vibration of objects, which causes the surrounding particles in the medium to move in a back-and-forth motion. This movement, or vibration, transfers energy through the medium, creating waves of high and low pressure.
+<div id="complex-sounds-and-spectra" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Complex sounds and spectra<a href="complex-sounds-and-spectra.html#complex-sounds-and-spectra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Chapter keywords</em>: sinewave sound, complex sound, spectrum, FFT, fourier analysis, harmonics, fundamental, overtone, component, timbre,</p>
+<div id="introduction" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction<a href="complex-sounds-and-spectra.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <em>sine wave</em>, depicted in Fig. <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>, is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature – although the sound of a tuning fork comes quite close to a sinewave pattern.</p>
+<p>By contrast, <em>complex sounds</em> have more complex wave patterns. All natural periodic sounds are complex sounds. <strong>A complex sound can be regarded as the sum of multiple sine wave sounds.</strong> This relation has been described by the French mathematician, baron J.B.J. Fourier (1768–1830). The sine waves are termed ‘frequency components’ of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called ‘Fourier analysis’ of a complex sound, these frequency components are being estimated.</p>
+<p>If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a> provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz (<span class="math inline">\(T=.01\)</span>) and 200 Hz (<span class="math inline">\(T=.005\)</span>) and 400 Hz (<span class="math inline">\(T=.0025\)</span>), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the <em>fundamental</em>, and its frequency is called the <em>fundamental frequency</em> (symbol <span class="math inline">\(f_0\)</span>) of the complex periodic sound; we hear this <span class="math inline">\(f_0\)</span> as its pitch. The higher components are called <em>overtones</em>. The fundamental and overtones are collectively called <em>harmonics</em>: the fundamental is the first harmonic, the first overtone is the second harmonic, etc.
+<strong>In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.</strong></p>
+<blockquote>
+<p>TODO crossref pitch, missing fundamental</p>
+</blockquote>
+<p>Typical examples of periodic complex sounds are the vowel sounds in normal speech. The properties of a periodic complex sound depend on the amplitudes, frequencies and phases of its component harmonics.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fourier-oscillogram"></span>
+<img src="TPhSA-EN_files/figure-html/fourier-oscillogram-1.png" alt="Oscillograms of three sinewave sounds and their resulting complex periodic sound." width="672" />
+<p class="caption">
+Figure 3.1: Oscillograms of three sinewave sounds and their resulting complex periodic sound.
 </p>
-</details>
-<!-- dummy header ### needed to close tabset -->
+</div>
+<div id="timbre" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Timbre<a href="complex-sounds-and-spectra.html#timbre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two periodic complex sounds, having the same overall amplitude and fundamental frequency, may differ strongly in their character.
+The general name for this property is <em>timbre</em>.
+Timbre depends on the relative amplitudes of the harmonics, and hence very many different timbres are possible.
+For aperiodic sounds, timbre also depends on the relative amplitudes of the (infinitely many) frequency components.
+A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The difference between distinct vowels, such as /a/ vs. /i/, spoken by the same person at the same pitch and amplitude, is also a matter of timbre, as is the difference between similar but distinct consonant sounds, such as /s/ vs. /ʃ/.</p>
+<p>Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property.</p>
+</div>
+<div id="sec:octave" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Octave<a href="complex-sounds-and-spectra.html#sec:octave" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An octave refers to a fundamental frequency ratio of <span class="math inline">\(1:2\)</span> or <span class="math inline">\(2:1\)</span>, that is, doubling or halving of the fundamental frequency. It is the distance between 12 semitones (piano keys, counting black and white keys). If you sing or play a musical note (e.g. note <code>A2</code> with <span class="math inline">\(f=110\)</span> Hz), and then jump to the next higher octave, then the new note <code>A3</code> has a frequency of <span class="math inline">\(2 \times 110=220\)</span> Hz.
+(As an aside: doubling the frequency means halving the wavelength, and vice versa, see §<a href="ch-soundwaves.html#sec:wavelength">1.8.5</a>).</p>
 </div>
 </div>
+<div id="spectrum" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Spectrum<a href="complex-sounds-and-spectra.html#spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An unchanging sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a <em>spectrum</em>.</p>
+<p>Figure <a href="complex-sounds-and-spectra.html#fig:complex100n200n400">3.2</a> shows an oscillogram on the left (of the same complex sound as shown in Fig. <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a>, and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. Hence, a spectrum shows the frequency and amplitude of each component.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:complex100n200n400"></span>
+<img src="figures/complex100n200n400.png" alt="Oscillogram (left) and spectrum (right) of a complex periodic sound."  />
+<p class="caption">
+Figure 3.2: Oscillogram (left) and spectrum (right) of a complex periodic sound.
+</p>
 </div>
+<blockquote>
+<p>TODO Praat instruction box</p>
+</blockquote>
 </div>
-<div id="recommended-software" class="section level2 unnumbered hasAnchor">
-<h2>Recommended software<a href="index.html#recommended-software" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this tutorial you will work mostly with <code>Praat</code> <span class="citation">(<a href="#ref-Boersma_Weenink_2024">Boersma and Weenink 2024</a>)</span><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. This is a popular open-source program for the analysis of speech, developed by Paul Boersma and David Weenink (both at University of Amsterdam). It can be found on its own website (<a href="https://www.praat.org" class="uri">https://www.praat.org</a>), where you will find a wealth of helpful documentation. <code>Praat</code> also has extensive <code>Help</code> built in, including a full tutorial.<br />
-There is an online forum (<a href="https://groups.io/g/Praat-Users-List" class="uri">https://groups.io/g/Praat-Users-List</a>), where users share their knowledge by posting questions and providing answers.</p>
-<p>In order to install <code>Praat</code> on your computer, go to its webpage at <a href="https://www.praat.org/" class="uri">https://www.praat.org/</a>, and then proceed to the download page for the operating system of your computer. Follow the installation instructions on the download page for your operating system.</p>
-<div id="tech-layout" class="praatbox">
-<div id="instructions-for-using-praat" class="section level3 unnumbered hasAnchor">
-<h3>Instructions for using <code>Praat</code><a href="index.html#instructions-for-using-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Text blocks such as this one will contain instructions about how to “do” things in <code>Praat</code>.</p>
-<p>Options in software menus, as well as texts in on-screen buttons, will be shown <code>in this way</code>.
-The notation <code>Main &gt; Sub</code> means: first choose option <code>Main</code> from the main menu, after which a submenu will appear, then choose option <code>Sub</code> from the submenu.
-Commands or formulas that you have to type will be shown <code>in this way</code> too. (Commands typically need to be terminated with typing <code>Enter</code> or <code>Return</code> or <code>␍</code> or <code>⏎</code> – which however will not be specified in the instructions.)</p>
+<div id="spectra-of-aperiodic-sounds" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Spectra of aperiodic sounds<a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Stable noise and brief impulses are two types of aperiodic signals (§<a href="ch-soundwaves.html#sec:periodicity">1.7</a>): the variations in air pressure do not follow a regular periodic pattern<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>. Aperiodic sounds do not have a fundamental frequency (because there is no regular period), and their phase is undefined, but aperiodic sounds do have an amplitude and a spectral composition.</p>
+<div id="noise" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Noise<a href="complex-sounds-and-spectra.html#noise" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First we discuss <em>stable</em> aperiodic sounds: <strong>noise</strong>. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at <em>every</em> frequency. The relative amplitudes of the many frequency components determines the timbre of the noise.</p>
+<p>In <em>white noise</em>, all frequency components are equally strong<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, and thus the spectral envelope is flat.
+In so-called <em>brown noise</em>, the spectral envelope decreases by <span class="math inline">\(-6\)</span> dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research whenever we need to mask speech.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrum-whitebrownnoises"></span>
+<img src="figures/whitebrownnoises.png" alt="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz)."  />
+<p class="caption">
+Figure 3.3: Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).
+</p>
 </div>
+<p>The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>, with (c) a particular sampling frequency of the noise.</p>
 </div>
+<div id="sec:impulses" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Impulses<a href="complex-sounds-and-spectra.html#sec:impulses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>impulse</strong> is a very brief and <em>transient</em> sound, such as a hand clap or tick. Acoustically, a very brief impulse sound is like a brief burst of white noise, with a flat spectral envelope. The shorter the impulse, the flatter the spectral envelope becomes.</p>
+<p>An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g. at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by <em>fading in</em> the sound, see §<a href="ch-soundtobytes.html#sec:fades">2.6.1.3</a> for more.</p>
 </div>
-<div id="structure-of-this-tutorial" class="section level2 unnumbered hasAnchor">
-<h2>Structure of this tutorial<a href="index.html#structure-of-this-tutorial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TBA</p>
-</div>
-<div id="recommended-textbooks" class="section level2 unnumbered hasAnchor">
-<h2>Recommended textbooks<a href="index.html#recommended-textbooks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by
-<span class="citation">Rietveld and Heuven (<a href="#ref-Rietveld_VanHeuven_2009">2009</a>)</span> (in Dutch),
-<span class="citation">Johnson (<a href="#ref-Johnson_2011">2011</a>)</span>,
-<span class="citation">Ladefoged and Johnson (<a href="#ref-Ladefoged_Johnson_2015">2015</a>)</span>,<br />
-<span class="citation">Reetz and Jongman (<a href="#ref-Reetz_Jongman_2020">2020</a>)</span>, and
-<span class="citation">Zsiga (<a href="#ref-Zsiga_2024">2024</a>)</span>.</p>
-</div>
-<div id="details" class="section level2 unnumbered hasAnchor">
-<h2>Details<a href="index.html#details" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="license" class="section level3 unnumbered hasAnchor">
-<h3>License<a href="index.html#license" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This work is licensed under the <em>GNU GPL 3</em> license (for details see
-<a href="https://www.gnu.org/licenses/gpl-3.0.en.html" class="uri">https://www.gnu.org/licenses/gpl-3.0.en.html</a>).</p>
-</div>
-<div id="citation" class="section level3 unnumbered hasAnchor">
-<h3>Citation<a href="index.html#citation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>TBA</p>
-</div>
-<div id="technical-details" class="section level3 unnumbered hasAnchor">
-<h3>Technical details<a href="index.html#technical-details" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>TBA</p>
-</div>
-<div id="history" class="section level3 unnumbered hasAnchor">
-<h3>History<a href="index.html#history" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This work is based on an earlier tutorial (2006-2007) titled <cite>Tutorial for self study: basics of phonetics and how to use Praat</cite> by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck.</p>
-<p>The 2007 version of the tutorial was subsequently revised and adapted to the current version using <code>R Markdown</code> <span class="citation">(<a href="#ref-rmarkdown2018">Xie, Allaire, and Grolemund 2018</a>)</span> and <code>bookdown</code> <span class="citation">(<a href="#ref-R-bookdown">Xie 2024</a>)</span> in <a href="https://www.rstudio.com">Rstudio</a> by Hugo Quené in 2024.</p>
-<hr />
+<div id="adsr-envelope" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> ADSR envelope<a href="complex-sounds-and-spectra.html#adsr-envelope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>discuss here ??</p>
+</blockquote>
+<p>impulse has brief A and D, low S, R n/a</p>
 
 </div>
-</div>
-</div>
-
-
-
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-Boersma_Weenink_2024" class="csl-entry">
-Boersma, P., and D. Weenink. 2024. <span>“Praat: Doing Phonetics by Computer (Version 6.4.23).”</span> <a href="http://www.praat.org">http://www.praat.org</a>.
-</div>
-<div id="ref-Johnson_2011" class="csl-entry">
-Johnson, Keith. 2011. <em>Acoustic and Auditory Phonetics</em>. 3rd ed. Malden, MA: Blackwell.
-</div>
-<div id="ref-Ladefoged_Johnson_2015" class="csl-entry">
-Ladefoged, Peter, and Keith Johnson. 2015. <em>A Course in Phonetics</em>. 7th ed.
-</div>
-<div id="ref-Reetz_Jongman_2020" class="csl-entry">
-Reetz, Henning, and Allard Jongman. 2020. <em>Phonetics: Transcription, Production, Acoustics, and Perception</em>. 2nd ed. Chichester: Wiley-Blackwell.
-</div>
-<div id="ref-Rietveld_VanHeuven_2009" class="csl-entry">
-Rietveld, A. C. M., and V. J. van Heuven. 2009. <em>Algemene Fonetiek</em>. 3rd ed. Bussum: Coutinho.
-</div>
-<div id="ref-R-bookdown" class="csl-entry">
-Xie, Yihui. 2024. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
-</div>
-<div id="ref-rmarkdown2018" class="csl-entry">
-Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
-</div>
-<div id="ref-Zsiga_2024" class="csl-entry">
-Zsiga, Elisabeth C. 2024. <em>The Sounds of Language: An Introduction to Phonetics and Phonology</em>. 2nd ed. Chichester: Wiley-Blackwell.
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>The Dutch word <em>praat</em> /ˈpraːt/ means “talk”.<a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="20">
+<li id="fn20"><p>Drawing the position of a swinging pendulum over time will result in the same figure.<a href="complex-sounds-and-spectra.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>Here, the phase of the frequency components is ignored.<a href="complex-sounds-and-spectra.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>Or, you might say that the period is infinitely long.<a href="complex-sounds-and-spectra.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>This is called ‘white’ noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.<a href="complex-sounds-and-spectra.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p>If you would listen to white noise for a VERY long time, then all frequency components would indeed be equally strong.<a href="complex-sounds-and-spectra.html#fnref24" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -365,8 +313,8 @@ Zsiga, Elisabeth C. 2024. <em>The Sounds of Language: An Introduction to Phoneti
           </div>
         </div>
       </div>
-
-<a href="ch-soundwaves.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-soundtobytes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-filtering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -397,7 +345,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch03complexsounds.Rmd",
 "text": "Edit"
 },
 "history": {

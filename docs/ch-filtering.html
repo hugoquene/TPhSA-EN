@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Filtering | Tutorial on Phonetics and Speech Analysis</title>
-  <meta name="description" content="Chapter 3 Filtering | Tutorial on Phonetics and Speech Analysis." />
+  <title>Chapter 4 Filtering | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 4 Filtering | Tutorial on Phonetics and Speech Analysis." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Filtering | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:title" content="Chapter 4 Filtering | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Chapter 3 Filtering | Tutorial on Phonetics and Speech Analysis." />
+  <meta property="og:description" content="Chapter 4 Filtering | Tutorial on Phonetics and Speech Analysis." />
   <meta name="github-repo" content="rstudio/TPhSA" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Filtering | Tutorial on Phonetics and Speech Analysis" />
+  <meta name="twitter:title" content="Chapter 4 Filtering | Tutorial on Phonetics and Speech Analysis" />
   
-  <meta name="twitter:description" content="Chapter 3 Filtering | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="twitter:description" content="Chapter 4 Filtering | Tutorial on Phonetics and Speech Analysis." />
   
 
 
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-soundtobytes.html"/>
-<link rel="next" href="ch-speech.html"/>
+<link rel="prev" href="complex-sounds-and-spectra.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -56,6 +56,29 @@
 <style type="text/css">
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -109,7 +132,6 @@
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i>Questions</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
-<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
 <li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:periodicity"><i class="fa fa-check"></i><b>1.7</b> Periodic and aperiodic sounds</a></li>
@@ -119,24 +141,13 @@
 <li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
 <li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#intensity"><i class="fa fa-check"></i><b>1.8.3</b> Intensity</a></li>
 <li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
-<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2-1"><i class="fa fa-check"></i>Question 1.2</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
 <li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
 <ul>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
-</ul></li>
-<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#complex-sounds"><i class="fa fa-check"></i><b>1.10</b> Complex sounds</a>
-<ul>
-<li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#timbre"><i class="fa fa-check"></i><b>1.10.1</b> Timbre</a></li>
-<li class="chapter" data-level="1.10.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:octave"><i class="fa fa-check"></i><b>1.10.2</b> Octave</a></li>
-</ul></li>
-<li class="chapter" data-level="1.11" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#spectrum"><i class="fa fa-check"></i><b>1.11</b> Spectrum</a></li>
-<li class="chapter" data-level="1.12" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>1.12</b> Spectra of aperiodic sounds</a>
-<ul>
-<li class="chapter" data-level="1.12.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#noise"><i class="fa fa-check"></i><b>1.12.1</b> Noise</a></li>
-<li class="chapter" data-level="1.12.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:impulses"><i class="fa fa-check"></i><b>1.12.2</b> Impulses</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
@@ -150,11 +161,7 @@
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#remove-non-target-sounds"><i class="fa fa-check"></i><b>2.4.1</b> Remove non-target sounds</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:recordinglevel"><i class="fa fa-check"></i><b>2.4.2</b> Check recording level</a></li>
-<li class="chapter" data-level="2.4.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:avoidlossyformats"><i class="fa fa-check"></i><b>2.4.3</b> Avoid lossy audio formats</a></li>
 <li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
-<li class="chapter" data-level="2.4.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-phone"><i class="fa fa-check"></i><b>2.4.5</b> On your phone</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-play-back-a-digital-sound"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
 <li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-a-digital-sound"><i class="fa fa-check"></i><b>2.6</b> How to manipulate a digital sound</a>
@@ -163,29 +170,33 @@
 <li class="chapter" data-level="2.6.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.6.2</b> Concatenate</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>3</b> Filtering</a>
+<li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
-<li class="chapter" data-level="3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#types-of-filters"><i class="fa fa-check"></i><b>3.2</b> Types of filters</a></li>
-<li class="chapter" data-level="3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>3.3</b> Properties of filters</a>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>3.3.1</b> Cutoff frequency</a></li>
-<li class="chapter" data-level="3.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>3.3.2</b> Slope</a></li>
-<li class="chapter" data-level="3.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>3.3.3</b> Bandwidth</a></li>
+<li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
+<li class="chapter" data-level="3.1.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:octave"><i class="fa fa-check"></i><b>3.1.2</b> Octave</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>3.4</b> Emphasis filters</a></li>
-<li class="chapter" data-level="3.5" data-path="ch-filtering.html"><a href="ch-filtering.html#time-envelope"><i class="fa fa-check"></i><b>3.5</b> Time envelope</a></li>
-</ul></li>
-<li class="part"><span><b>Part II: Speech</b></span></li>
-<li class="chapter" data-level="4" data-path="ch-speech.html"><a href="ch-speech.html"><i class="fa fa-check"></i><b>4</b> Speech</a>
+<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a></li>
+<li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch-speech.html"><a href="ch-speech.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
-<li class="chapter" data-level="4.2" data-path="ch-speech.html"><a href="ch-speech.html#resonance"><i class="fa fa-check"></i><b>4.2</b> Resonance</a></li>
-<li class="chapter" data-level="4.3" data-path="ch-speech.html"><a href="ch-speech.html#source-filter-model"><i class="fa fa-check"></i><b>4.3</b> Source-filter-model</a></li>
-<li class="chapter" data-level="4.4" data-path="ch-speech.html"><a href="ch-speech.html#formants"><i class="fa fa-check"></i><b>4.4</b> Formants</a></li>
-<li class="chapter" data-level="4.5" data-path="ch-speech.html"><a href="ch-speech.html#spectrogram"><i class="fa fa-check"></i><b>4.5</b> Spectrogram</a></li>
-<li class="chapter" data-level="4.6" data-path="ch-speech.html"><a href="ch-speech.html#pitch"><i class="fa fa-check"></i><b>4.6</b> Pitch</a></li>
-<li class="chapter" data-level="4.7" data-path="ch-speech.html"><a href="ch-speech.html#intensity-1"><i class="fa fa-check"></i><b>4.7</b> Intensity</a></li>
+<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
+<li class="chapter" data-level="3.3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:impulses"><i class="fa fa-check"></i><b>3.3.2</b> Impulses</a></li>
+<li class="chapter" data-level="3.3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#adsr-envelope"><i class="fa fa-check"></i><b>3.3.3</b> ADSR envelope</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-filtering.html"><a href="ch-filtering.html#time-envelope"><i class="fa fa-check"></i><b>4.5</b> Time envelope</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -208,42 +219,41 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-filtering" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Filtering<a href="ch-filtering.html#ch-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ch-filtering" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Filtering<a href="ch-filtering.html#ch-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><em>Chapter keywords</em>: TBA</p>
-<div id="introduction" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Introduction<a href="ch-filtering.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction<a href="ch-filtering.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A filter is a device that changes the spectrum of the input signal, by enhancing certain frequency components and/or by attenuating others. Filters play an important role in speech analysis. Filters can be of an acoustic nature (e.g. an organ pipe, or the human vocal tract) or they can work by electronic means. We already encountered filters as a routine component in (or just before) analog-to-digital conversion of a sound wave (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>) to prevent aliasing.</p>
 </div>
-<div id="types-of-filters" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Types of filters<a href="ch-filtering.html#types-of-filters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:typesoffilters" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Types of filters<a href="ch-filtering.html#sec:typesoffilters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are four different basic types of filters, differing in their frequency characteristics (specifying which frequency components are attenuated and which are enhanced).</p>
 <ul>
-<li><strong>Low-pass</strong> filters (Fig.<a href="ch-filtering.html#fig:lowpassfilter">3.1</a> allow lower frequencies to pass through, but higher frequencies are attenuated.</li>
+<li><strong>Low-pass</strong> filters (Fig.<a href="ch-filtering.html#fig:lowpassfilter">4.1</a> allow lower frequencies to pass through, but higher frequencies are attenuated.</li>
 </ul>
-<pre><code>## Loading required package: hqmisc</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:lowpassfilter"></span>
 <img src="TPhSA-EN_files/figure-html/lowpassfilter-1.png" alt="Frequency characteristic of a low-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave." width="672" />
 <p class="caption">
-Figure 3.1: Frequency characteristic of a low-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave.
+Figure 4.1: Frequency characteristic of a low-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave.
 </p>
 </div>
 <ul>
-<li><strong>high-pass filters</strong> (Fig.<a href="ch-filtering.html#fig:highpassfilter">3.2</a>) do the reverse: they allow higher frequencies to pass through, but lower frequencies are attenuated.</li>
+<li><strong>high-pass filters</strong> (Fig.<a href="ch-filtering.html#fig:highpassfilter">4.2</a>) do the reverse: they allow higher frequencies to pass through, but lower frequencies are attenuated.</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:highpassfilter"></span>
 <img src="TPhSA-EN_files/figure-html/highpassfilter-1.png" alt="Frequency characteristic of a high-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave." width="672" />
 <p class="caption">
-Figure 3.2: Frequency characteristic of a high-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave.
+Figure 4.2: Frequency characteristic of a high-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave.
 </p>
 </div>
 <ul>
-<li><strong>band-pass filters</strong> (Fig.<a href="ch-filtering.html#fig:bandpassfilter">3.3</a>) allow frequencies within a certain frequency band to pass through, and they attenuate frequencies outside this pass band.</li>
+<li><strong>band-pass filters</strong> (Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>) allow frequencies within a certain frequency band to pass through, and they attenuate frequencies outside this pass band.</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bandpassfilter"></span>
 <img src="TPhSA-EN_files/figure-html/bandpassfilter-1.png" alt="Frequency characteristic of a band-pass filter, with a pass band from 1 to 2 kHz (one octave), and with slopes of -12 dB per octave on both sides." width="672" />
 <p class="caption">
-Figure 3.3: Frequency characteristic of a band-pass filter, with a pass band from 1 to 2 kHz (one octave), and with slopes of -12 dB per octave on both sides.
+Figure 4.3: Frequency characteristic of a band-pass filter, with a pass band from 1 to 2 kHz (one octave), and with slopes of -12 dB per octave on both sides.
 </p>
 </div>
 <p>– A tuneable band-pass filter is essential for producing a spectrogram.</p>
@@ -252,48 +262,48 @@ Figure 3.3: Frequency characteristic of a band-pass filter, with a pass band fro
 </blockquote>
 <p>– A telephone works as a bandpass filter with a fixed pass band of 300 to 3400 Hz.</p>
 <ul>
-<li><strong>band-reject</strong> or <strong>notch filters</strong> (Fig.<a href="ch-filtering.html#fig:bandrejectfilter">3.4</a>) again do the reverse: they attenuate frequencies within a certain frequency band, and allow frequencies outside this band to pass through.</li>
+<li><strong>band-reject</strong> or <strong>notch filters</strong> (Fig.<a href="ch-filtering.html#fig:bandrejectfilter">4.4</a>) again do the reverse: they attenuate frequencies within a certain frequency band, and allow frequencies outside this band to pass through.</li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bandrejectfilter"></span>
 <img src="TPhSA-EN_files/figure-html/bandrejectfilter-1.png" alt="Frequency characteristic of a band-reject filter, with a reject band from 1 to 2 kHz (one octave), and with slopes of -24 dB per octave on both sides." width="672" />
 <p class="caption">
-Figure 3.4: Frequency characteristic of a band-reject filter, with a reject band from 1 to 2 kHz (one octave), and with slopes of -24 dB per octave on both sides.
+Figure 4.4: Frequency characteristic of a band-reject filter, with a reject band from 1 to 2 kHz (one octave), and with slopes of -24 dB per octave on both sides.
 </p>
 </div>
 </div>
-<div id="properties-of-filters" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Properties of filters<a href="ch-filtering.html#properties-of-filters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="properties-of-filters" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Properties of filters<a href="ch-filtering.html#properties-of-filters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As shown in the figures above, a filter is characterised by two properties, viz. the <em>cutoff frequency</em> and the <em>slope</em>. Band-pass and band-reject filters are also characterised by their <em>bandwidth</em>.</p>
-<div id="cutoff-frequency" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Cutoff frequency<a href="ch-filtering.html#cutoff-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="cutoff-frequency" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Cutoff frequency<a href="ch-filtering.html#cutoff-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The cutoff frequency(ies) separates the pass band(s) and reject band(s) of the filter, that is, the frequency components that are attenuated and those that are passed through unattenuated. It is defined at the frequency where the attenuation is <span class="math inline">\(-3\)</span> dB, as illustrated in the filter characteristics above.</p>
 </div>
-<div id="slope" class="section level3 hasAnchor" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Slope<a href="ch-filtering.html#slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency (§<a href="ch-soundwaves.html#sec:octave">1.10.2</a>), that is, in dB per octave<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<div id="slope" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Slope<a href="ch-filtering.html#slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency (§<a href="complex-sounds-and-spectra.html#sec:octave">3.1.2</a>), that is, in dB per octave<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
 </div>
-<div id="bandwidth" class="section level3 hasAnchor" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Bandwidth<a href="ch-filtering.html#bandwidth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="bandwidth" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Bandwidth<a href="ch-filtering.html#bandwidth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Band pass filters and band reject filters are also characterised by their bandwidth: the width of the frequency span affected by the filter, equal to the distance between the <em>two</em> cutoff frequencies of such filters.</p>
-<p>This distance may be expressed as the musical interval between the lower and higher cutoff frequencies. Both filters shown in Figures <a href="ch-filtering.html#fig:bandpassfilter">3.3</a> and <a href="ch-filtering.html#fig:bandrejectfilter">3.4</a> are so-called “octave band” filters, because the cutoff frequencies are one octave apart (§<a href="ch-soundwaves.html#sec:octave">1.10.2</a>) with a frequency ratio of 1:2.</p>
-<p>In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequences are so-called “third band” filters. Both octave-band and third-band filters are widely used in phonetic research.</p>
+<p>This distance may be expressed as the musical interval between the lower and higher cutoff frequencies. Both filters shown in Figures <a href="ch-filtering.html#fig:bandpassfilter">4.3</a> and <a href="ch-filtering.html#fig:bandrejectfilter">4.4</a> are so-called “octave band” filters, because the cutoff frequencies are one octave apart (§<a href="complex-sounds-and-spectra.html#sec:octave">3.1.2</a>) with a frequency ratio of 1:2.</p>
+<p>In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequency ratios are so-called “third band” filters. Both octave-band and third-band filters are widely used in phonetic research.</p>
 </div>
 </div>
-<div id="emphasis-filters" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Emphasis filters<a href="ch-filtering.html#emphasis-filters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="emphasis-filters" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Emphasis filters<a href="ch-filtering.html#emphasis-filters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>TODO crossref source-filter, spectral slope of speech</p>
 </blockquote>
-<p>For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of <span class="math inline">\(-6\)</span> dB/octave. On average, the amplitude of higher frequency components decreases by about <span class="math inline">\(-6\)</span> dB for each doubling of the frequency (<a href="ch-soundwaves.html#sec:octave">1.10.2</a>).
-Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called <em>pre-emphasis</em> filter, which modifies the overall spectral slope by <span class="math inline">\(+6\)</span> dB per octave. This boosting of higher-frequency components ideally results in a flat (horizontal) spectral envelope<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, with equal amplitudes for all frequency components. This renders spectral details equally discernible across the full spectral range.</p>
-<p>The reverse operation is called <em>de-emphasis</em> filtering: this changes the overall spectral slope by <span class="math inline">\(-6\)</span> dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (<span class="math inline">\(-6\)</span> dB/oct) from the white noise (<span class="math inline">\(0\)</span> dB/oct) in Fig.<a href="#fig:spectrum-whitebrownnoises"><strong>??</strong></a>.</p>
+<p>For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of <span class="math inline">\(-6\)</span> dB/octave. On average, the amplitude of higher frequency components decreases by about <span class="math inline">\(-6\)</span> dB for each doubling of the frequency (§<a href="complex-sounds-and-spectra.html#sec:octave">3.1.2</a>).
+Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called <em>pre-emphasis</em> filter, which modifies the overall spectral slope by <span class="math inline">\(+6\)</span> dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range.</p>
+<p>The reverse operation is called <em>de-emphasis</em> filtering: this changes the overall spectral slope by <span class="math inline">\(-6\)</span> dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (<span class="math inline">\(-6\)</span> dB/oct) from the white noise (<span class="math inline">\(0\)</span> dB/oct) in Fig.<a href="complex-sounds-and-spectra.html#fig:spectrum-whitebrownnoises">3.3</a>.</p>
 <div id="box-praatemphasis" class="praatbox">
 <p>Select an input Sound object in the Praat Objects window. Then choose <code>Filter &gt; Filter (pre-emphasis)...</code> for pre-emphasis filtering, or choose <code>Filter &gt; Filter (de-emphasis)...</code> for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz.<br />
 The resulting filtered output Sound object is again added at the bottom of the list of objects.</p>
 </div>
 </div>
-<div id="time-envelope" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Time envelope<a href="ch-filtering.html#time-envelope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="time-envelope" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Time envelope<a href="ch-filtering.html#time-envelope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>TBA</p>
 </blockquote>
@@ -305,14 +315,11 @@ The resulting filtered output Sound object is again added at the bottom of the l
 
 </div>
 </div>
-
-
-
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Note that the band reject filter in Fig.<a href="ch-filtering.html#fig:bandrejectfilter">3.4</a> has steeper slopes than the band pass filter in Fig.<a href="ch-filtering.html#fig:bandpassfilter">3.3</a>.<a href="ch-filtering.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>The overall average slope of the spectral envelope of speech changes from <span class="math inline">\(-6\)</span> to <span class="math inline">\(-6+6=0\)</span> dB per octave.<a href="ch-filtering.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="25">
+<li id="fn25"><p>Note that the band reject filter in Fig.<a href="ch-filtering.html#fig:bandrejectfilter">4.4</a> has steeper slopes than the band pass filter in Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>.<a href="ch-filtering.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>The overall average slope of the spectral envelope of speech changes from <span class="math inline">\(-6\)</span> to <span class="math inline">\(-6+6=0\)</span> dB per octave.<a href="ch-filtering.html#fnref26" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -320,8 +327,8 @@ The resulting filtered output Sound object is again added at the bottom of the l
           </div>
         </div>
       </div>
-<a href="ch-soundtobytes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-speech.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="complex-sounds-and-spectra.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -352,7 +359,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch03filtering.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch04filtering.Rmd",
 "text": "Edit"
 },
 "history": {

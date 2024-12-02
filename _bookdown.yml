@@ -2,8 +2,8 @@ book_filename: "TPhSA-EN"
 rmd_files: ["index.Rmd",
             "ch01soundwaves.Rmd",
             "ch02convertingsoundtobytes.Rmd",
-            "ch03filtering.Rmd",
-            "ch04speech.Rmd",
+            "ch03complexsounds.Rmd",
+            "ch04filtering.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 language:

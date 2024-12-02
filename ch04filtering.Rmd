@@ -1,0 +1,170 @@
+# Filtering {#ch-filtering}
+
+*Chapter keywords*: TBA
+
+## Introduction
+
+A filter is a device that changes the spectrum of the input signal, by enhancing certain frequency components and/or by attenuating others. Filters play an important role in speech analysis. Filters can be of an acoustic nature (e.g. an organ pipe, or the human vocal tract) or they can work by electronic means. We already encountered filters as a routine component in (or just before) analog-to-digital conversion of a sound wave (§\@ref(sec:samplingfrequency)) to prevent aliasing. 
+
+## Types of filters {#sec:typesoffilters}
+
+There are four different basic types of filters, differing in their frequency characteristics (specifying which frequency components are attenuated and which are enhanced). 
+
+- **Low-pass** filters (Fig.\@ref(fig:lowpassfilter) allow lower frequencies to pass through, but higher frequencies are attenuated.  
+
+```{r lowpassfilter, echo=FALSE, fig.cap="Frequency characteristic of a low-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave.", fig.align="center"}
+cf <- 1000
+require(hqmisc)
+plot(1:1, 1:1, log="x", xlim=c(400,10000), ylim=c(-36,5),
+     xlab="Frequency (kHz)", ylab="Amplitude (dB)",
+     xaxt="n", yaxt="n" ) 
+abline(v=c(0.5,1,2,4,8,16)*1000, lty=3 )
+axis( side=1, at=c(0.5,1,2,4,8,16)*1000,
+      labels=c(0.5,1,2,4,8,16) )
+abline(h=c(-36,-24,-12,-3,0), lty=3)
+axis( side=2, at=c(-36,-24,-12,0), 
+      labels=c(-36,-24,-12,0) ) 
+axis( side=4, at=-3, labels="-3" )
+ffh <- st2f( -3, base=1000 ) # 3 ST below 1000 Hz
+abline( v=ffh, lty=3)
+axis( side=1, at=ffh, labels=round(ffh/1000,3), line=1, tick=FALSE )
+segments(x0=ffh,y0=0,x1=16000,y1=-48, col="darkred", lwd=4)
+segments(x0=1,y0=0,x1=ffh,y1=0, col="darkred", lwd=4)
+# segments(x0=0,y0=+3,x1=1000-155,y1=+3, col="darkred", lwd=4)
+```
+
+- **high-pass filters** (Fig.\@ref(fig:highpassfilter)) do the reverse: they allow higher frequencies to pass through, but lower frequencies are attenuated.
+
+```{r highpassfilter, echo=FALSE, fig.cap="Frequency characteristic of a high-pass filter, with cutoff frequency 1000 Hz, and slope of -12 dB per octave.", fig.align="center"}
+# CF <- 1000
+require(hqmisc)
+plot(1:1, 1:1, log="x", xlim=c(400,10000), ylim=c(-36,5),
+     xlab="Frequency (kHz)", ylab="Amplitude (dB)",
+     xaxt="n", yaxt="n" ) 
+abline(v=c(0.5,1,2,4,8,16)*1000, lty=3 )
+axis( side=1, at=c(0.5,1,2,4,8,16)*1000,
+      labels=c(0.5,1,2,4,8,16) )
+abline(h=c(-36,-24,-12,-3,0), lty=3)
+axis( side=2, at=c(-36,-24,-12,0), 
+      labels=c(-36,-24,-12,0) ) 
+axis( side=4, at=-3, labels="-3" )
+ffl <- st2f( +3, base=1000 ) # 3 ST above 1000 Hz
+abline( v=ffl, lty=3)
+axis( side=1, at=ffl, labels=round(ffl/1000,3), line=1, tick=FALSE )
+segments(x1=ffl, y1=0, x0=125, y0=-36, col="darkblue", lwd=4)
+segments(x0=ffl, y1=0, x1=20000, y=0, col="darkblue", lwd=4)
+# segments(x0=0,y0=+3,x1=1000-155,y1=+3, col="darkred", lwd=4)
+```
+
+- **band-pass filters** (Fig.\@ref(fig:bandpassfilter)) allow frequencies within a certain frequency band to pass through, and they attenuate frequencies outside this pass band.
+
+```{r bandpassfilter, echo=FALSE, fig.cap="Frequency characteristic of a band-pass filter, with a pass band from 1 to 2 kHz (one octave), and with slopes of -12 dB per octave on both sides.", fig.align="center"}
+# CF <- 1000
+require(hqmisc)
+plot(1:1, 1:1, log="x", xlim=c(400,10000), ylim=c(-36,5),
+     xlab="Frequency (kHz)", ylab="Amplitude (dB)",
+     xaxt="n", yaxt="n" ) 
+abline(v=c(0.5,1,2,4,8,16)*1000, lty=3 )
+axis( side=1, at=c(0.5,1,2,4,8,16)*1000,
+      labels=c(0.5,1,2,4,8,16) )
+abline(h=c(-36,-24,-12,-3,0), lty=3)
+axis( side=2, at=c(-36,-24,-12,0), 
+      labels=c(-36,-24,-12,0) ) 
+axis( side=4, at=-3, labels="-3" )
+ffl <- st2f( +3, base=1000 ) # 3 ST above 1000 Hz
+ffh <- st2f( -3, base=2000 ) # 3 ST below 2000 Hz
+abline( v=c(ffl,ffh), lty=3)
+axis( side=1, at=c(ffl,ffh), 
+      labels=round(c(ffl,ffh)/1000,3), line=1, tick=FALSE )
+segments(x1=ffl, y1=0, x0=125, y0=-36, col="darkviolet", lwd=4)
+segments(x0=ffl, y1=0, x1=ffh, y=0, col="darkviolet", lwd=4)
+segments(x0=ffh, y0=0, x1=16000, y1=-36, col="darkviolet", lwd=4)
+# segments(x0=0,y0=+3,x1=1000-155,y1=+3, col="darkred", lwd=4)
+```
+-- A tuneable band-pass filter is essential for producing a spectrogram.
+
+> TODO crossref spectrogram
+
+-- A telephone works as a bandpass filter with a fixed pass band of 300 to 3400 Hz.  
+
+- **band-reject** or **notch filters** (Fig.\@ref(fig:bandrejectfilter)) again do the reverse: they attenuate frequencies within a certain frequency band, and allow frequencies outside this band to pass through.
+
+```{r bandrejectfilter, echo=FALSE, fig.cap="Frequency characteristic of a band-reject filter, with a reject band from 1 to 2 kHz (one octave), and with slopes of -24 dB per octave on both sides.", fig.align="center"}
+# CF <- 1000
+require(hqmisc)
+plot(1:1, 1:1, log="x", xlim=c(400,10000), ylim=c(-36,5),
+     xlab="Frequency (kHz)", ylab="Amplitude (dB)",
+     xaxt="n", yaxt="n" ) 
+abline(v=c(0.5,1,2,4,8,16)*1000, lty=3 )
+axis( side=1, at=c(0.5,1,2,4,8,16)*1000,
+      labels=c(0.5,1,2,4,8,16) )
+abline(h=c(-36,-24,-12,-3,0), lty=3)
+axis( side=2, at=c(-36,-24,-12,0), 
+      labels=c(-36,-24,-12,0) ) 
+axis( side=4, at=-3, labels="-3" )
+ffl <- st2f( -1.5, base=1000 ) # 1.5 ST below 1000 Hz
+ffh <- st2f( +1.5, base=2000 ) # 1.5 ST above 2000 Hz
+ffm <- st2f( +6, base=1000 ) # mid between 1 and 2 kHz, 1 khz +6 ST
+abline( v=c(ffl,ffh), lty=3)
+axis( side=1, at=c(ffl,ffh), 
+      labels=round(c(ffl,ffh)/1000,3), line=1, tick=FALSE )
+axis( side=3, at=ffm, labels=round(ffm/1000,3) )
+segments(x1=ffl, y1=0, x0=125, y0=0, col="darkviolet", lwd=4)
+segments(x0=ffl, y0=0, x1=ffm, y1=-12, col="darkviolet", lwd=4 )
+segments(x1=ffh, y1=0, x0=ffm, y0=-12, col="darkviolet", lwd=4 )
+# segments(x0=1000, y1=0, x1=2000, y=0, col="darkviolet", lwd=4)
+segments(x0=ffh, y0=0, x1=16000, y1=0, col="darkviolet", lwd=4)
+# segments(x0=0,y0=+3,x1=1000-155,y1=+3, col="darkred", lwd=4)
+```
+
+## Properties of filters 
+
+As shown in the figures above, a filter is characterised by two properties, viz. the *cutoff frequency* and the *slope*. Band-pass and band-reject filters are also characterised by their *bandwidth*. 
+
+### Cutoff frequency
+
+The cutoff frequency(ies) separates the pass band(s) and reject band(s) of the filter, that is, the frequency components that are attenuated and those that are passed through unattenuated. It is defined at the frequency where the attenuation is $-3$ dB, as illustrated in the filter characteristics above. 
+
+### Slope
+
+The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency  (§\@ref(sec:octave)), that is, in dB per octave^[Note that the band reject filter in Fig.\@ref(fig:bandrejectfilter) has steeper slopes than the band pass filter in Fig.\@ref(fig:bandpassfilter).]. 
+
+### Bandwidth
+
+Band pass filters and band reject filters are also characterised by their bandwidth: the width of the frequency span affected by the filter, equal to the distance between the *two* cutoff frequencies of such filters. 
+
+This distance may be expressed as the musical interval between the lower and higher cutoff frequencies. Both filters shown in Figures \@ref(fig:bandpassfilter) and \@ref(fig:bandrejectfilter) are so-called "octave band" filters, because the cutoff frequencies are one octave apart (§\@ref(sec:octave)) with a frequency ratio of 1:2.
+
+In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequency ratios are so-called "third band" filters. Both octave-band and third-band filters are widely used in phonetic research. 
+
+
+## Emphasis filters
+
+> TODO crossref source-filter, spectral slope of speech
+
+For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of $-6$ dB/octave. On average, the amplitude of higher frequency components decreases by about $-6$ dB for each doubling of the frequency (§\@ref(sec:octave)). 
+Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called *pre-emphasis* filter, which modifies the overall spectral slope by $+6$ dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech^[The overall average slope of the spectral envelope of speech changes from $-6$ to $-6+6=0$ dB per octave.], with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range. 
+
+The reverse operation is called *de-emphasis* filtering: this changes the overall spectral slope by $-6$ dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise ($-6$ dB/oct) from the white noise ($0$ dB/oct) in Fig.\@ref(fig:spectrum-whitebrownnoises).
+
+::: {#box-praatemphasis .praatbox}
+
+Select an input Sound object in the Praat Objects window. Then choose `Filter > Filter (pre-emphasis)...` for pre-emphasis filtering, or choose `Filter > Filter (de-emphasis)...` for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz. \
+The resulting filtered output Sound object is again added at the bottom of the list of objects. 
+
+:::
+
+## Time envelope
+
+> TBA 
+
+Attack
+
+Decay
+
+Sustain
+
+Release
+
+Not only applicable to filter characteristics. 
+

@@ -1,4 +1,3 @@
-
 # Converting sound to bytes {#ch-soundtobytes}
 
 *Chapter keywords*: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain. 
@@ -40,9 +39,7 @@ The sampling frequency (symbol $f_s$) is the frequency with which digital sample
 
 ::: {#nyquist .warningbox}
 
-The sampling frequency $f_s$ must be at least $2 \times$ the highest frequency $f$ in the analog source sound. This means that the source sound may not contain any (components with) frequencies above $f_s / 2$, the so-called 'nyquist frequency'. In practice this is guaranteed by low-pass filtering the source sound, with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency, This filtering is routinely done before AD conversion, by the AD conversion hardware. 
-
-> TODO add crossref to filtering section 
+The sampling frequency $f_s$ must be at least $2 \times$ the highest frequency $f$ in the analog source sound. This means that the source sound may not contain any (components with) frequencies above $f_s / 2$, the so-called 'nyquist frequency'. In practice this is guaranteed by *low-pass* filtering the source sound (see §\@ref(sec:typesoffilters)), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency, This filtering is routinely done before AD conversion, by the AD conversion hardware. 
 
 For speech, most acoustic information is contained in the frequency range up to 8 kHz. Given the previous paragraph, this means that we need a sampling frequency of at least 16 kHz^[This is the typical sampling frequency in VoIP, "wideband speech".] or higher. In most phonetic projects, the most relevant phonetic information is contained in the frequency range up to 16 kHz, for which a sampling frequency of $f_s = 32$ kHz^[This is the standard sampling frequency for FM radio.] is adequate. 
 For music, relevant information may be contained in the full audible range up to 22 kHz, and the standard sampling frequency is 44.1 kHz^[This is the standard sampling frequency for audio CDs.]. 
@@ -83,15 +80,13 @@ Background: Phonetic analyses typically aim at finding acoustic properties in th
 - Switch off any non-essential equipment, and try to attenuate non-target sounds from elsewhere. Even if you cannot hear a difference, the equipment sounds and outside sounds may interfere with the target sound signal, resulting in unwanted artefacts. 
 
 - Despite all these precautions, outside sounds may still interfere. This happens in particular with low-frequency signals, e.g. due to traffic outside, elevators elsewhere in the building, and so forth. These interfering sounds are typically outside the frequency range of speech. Therefore we can easily remove them, by high-pass filtering the target speech signal, *before* DA conversion. 
-  - Use a high-pass filter that will discard frequencies below a certain cut-off frequency. 
-  - Set the cut-off frequency well below the lowest possible frequency (component) in your target sound, say, a cutoff frequency of about 60 Hz.
-
-> TODO add crossref to filtering
+  - Use a high-pass filter that will discard frequencies below a certain cut-off frequency (see §\@ref(sec:typesoffilters)). 
+  - Set the cut-off frequency well below the lowest possible frequency (component) in your target speech, say, a cutoff frequency of about 50 to 60 Hz.
 
 ### Check recording level {#sec:recordinglevel}
 
 **During your recording, check the level of the recording**. \
-If the recording level is too low, then the target signal is too weak, andthe background noise (including quantization noise) is relatively strong. It's very difficult or impossible to fix the signal-to-noise ratio later, so you need to **fix this now**, during the recording. \
+If the recording level is too low, then the target signal is too weak, and the background noise (including quantization noise) is relatively strong. It's very difficult or impossible to fix the signal-to-noise ratio later, so you need to **fix this now**, during the recording. \
 If the recording level is too high, then the loudest portions of the target signal will be too strong, leading to "clipping" or distortion. It is impossible to fix this later, so you need to **fix this now**, during the recording. \
 There are several ways to adjust the level of the recording: 
   - by adjusting the level of the input channel (maybe called `Gain`), in your computer settings, 
