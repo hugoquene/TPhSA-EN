@@ -139,7 +139,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.8.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8.1</b> Frequency</a></li>
 <li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
-<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#intensity"><i class="fa fa-check"></i><b>1.8.3</b> Intensity</a></li>
+<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
 <li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
 <li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
@@ -175,15 +175,17 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
-<li class="chapter" data-level="3.1.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:octave"><i class="fa fa-check"></i><b>3.1.2</b> Octave</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a></li>
+<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
+<ul>
+<li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
+<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
 <li class="chapter" data-level="3.3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:impulses"><i class="fa fa-check"></i><b>3.3.2</b> Impulses</a></li>
-<li class="chapter" data-level="3.3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#adsr-envelope"><i class="fa fa-check"></i><b>3.3.3</b> ADSR envelope</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#envelope"><i class="fa fa-check"></i><b>3.4</b> Envelope</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
 <ul>
@@ -196,7 +198,6 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a></li>
-<li class="chapter" data-level="4.5" data-path="ch-filtering.html"><a href="ch-filtering.html#time-envelope"><i class="fa fa-check"></i><b>4.5</b> Time envelope</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -269,18 +270,6 @@ The more a sound <em>wave</em> moves away from the source, the more particles of
 Remember that the sound <em>wave</em> travels through the medium, but the particles in the medium remain more or less in place.
 </p>
 </details>
-<!-- this question is unnecessary and the answer is incorrect --
-
-### Question 1.2 {-}
-
-What parameters influence the speed of a sound wave?
-
-<details>
-  <summary>Answer 1.2</summary>
-  <p>The propagation speed of a sound wave depends on the acoustic medium: different media have a different characteristic sound propagation speed. In gases (like air) the sound speed is lower than in liquids or solids, as the particles are less close to one another (the medium is less dense). Moreover, factors such as temperature and pressure influence the density of the acoustic medium, and thus these factors indirectly influence the speed of sound in the medium. Heat, for instance, makes the particles less close to one another, and thus slows down the sound speed. For gases such as air, sound speed is determined by their chemical composition.</p>
-</details>
-
--->
 </div>
 </div>
 </div>
@@ -322,21 +311,154 @@ Figure 1.2: Oscillogram of a periodic sound (in black), with indications of the 
 <p>The frequency (symbol <span class="math inline">\(f\)</span>) of a sound wave is the number of repeated cycles or periods (of air pressure variations) within a time interval. Only periodic sounds do have such repetitions, and thus a frequency. The frequency of a sound is perceived as its <em>pitch</em> or tone. Frequency is expressed in periods per second, or Hertz units, named after Heinrich Rudolf Hertz (1857-–1894)<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.
 Each of these periods or cycles corresponds to the repeating fluctuation between two consecutive maxima, or between corresponding ‘zero crossings’ of adjacent periods. In Figure <a href="ch-soundwaves.html#fig:speech-oscillogram">1.1</a>, in the vowel /i/, we count 14 periods in 0.065 seconds, so <span class="math inline">\(f \approx 14/0.065 \approx 215\)</span> Hz. These periods have a duration of about <span class="math inline">\(T \approx 0.065/14 \approx 0.0046\)</span> s<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>. Period <span class="math inline">\(T\)</span> and frequency <span class="math inline">\(f\)</span> are each other’s inverse, so <span class="math inline">\(f=1/T\)</span> and <span class="math inline">\(T=1/f\)</span>.</p>
 <p>In the transverse stadium wave, the period <span class="math inline">\(T\)</span> is the time interval between two consecutive actions of standing up by the same person (e.g. <span class="math inline">\(T=5\)</span> s), and frequency <span class="math inline">\(f\)</span> is the number of actions that occur within a given time unit (e.g. <span class="math inline">\(f=1/T=1/5\)</span> Hz).</p>
+<div id="sec:octave" class="section level4 hasAnchor" number="1.8.1.1">
+<h4><span class="header-section-number">1.8.1.1</span> Octave<a href="ch-soundwaves.html#sec:octave" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>An octave refers to a frequency ratio of <span class="math inline">\(1:2\)</span> or <span class="math inline">\(2:1\)</span>, that is, doubling or halving of the frequency. An octave is the distance between 12 semitones (guitar frets or piano keys, counting black and white keys). If you sing or play a musical note (e.g. note <code>A2</code> with <span class="math inline">\(f=110\)</span> Hz), and then jump to the next higher octave, then the new note <code>A3</code> has a frequency of <span class="math inline">\(2 \times 110=220\)</span> Hz. The next higher octave note <code>A4</code> has a frequency of <span class="math inline">\(2 \times 220=440\)</span> Hz.<br />
+(As an aside: doubling the frequency means halving the wavelength, and vice versa, see §<a href="ch-soundwaves.html#sec:wavelength">1.8.5</a> below).</p>
+</div>
 </div>
 <div id="sec:amplitude" class="section level3 hasAnchor" number="1.8.2">
 <h3><span class="header-section-number">1.8.2</span> Amplitude<a href="ch-soundwaves.html#sec:amplitude" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The amplitude (symbol <span class="math inline">\(A\)</span>) of a sound wave is the extent of the variations in air pressure (due to compression and rarefaction), measured in Pascal units of pressure. With some simplification, the amplitude of a sound wave is perceived as its <em>loudness</em> or ‘volume’. In an oscillogram, the amplitude corresponds directly to the maximum vertical displacement, that is, to the peak deviation in air pressure relative to the ambient reference pressure).</p>
 <p>In the transverse stadium wave, the amplitude could be thought of as the extent to which persons raise their hands: the heighth of the wave crests.</p>
-<p>In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of <em>intensity</em>, which will be discussed in §XXX below.</p>
-<!-- add ref -->
-<!--
-Uit proefnemingen is gebleken dat de gevoeligheid van het menselijk gehoor ongeveer correspondeert met de logaritme van de intensiteit van het geluid (zie hieronder). Dit gegeven, plus het feit dat de maximaal toelaatbare geluidsdruk wel een factor 1\,000\,000 (=$10^6$) groter kan zijn dan de minimaal waarneembare geluidsdruk, leidt tot het gebruik van een logaritmische schaal voor geluidsintensiteiten of geluidsdrukken. Op zo'n schaal kunnen zowel heel kleine als heel grote waarden (in grafieken bijv.) met dezelfde relatieve nauwkeurigheid worden weergegeven. 
--->
+<p>In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of <em>intensity</em>, which is discussed in §<a href="ch-soundwaves.html#sec:intensity">1.8.3</a> below.</p>
+<p><strong>Study tip</strong>: The sections on amplitude and on intensity (including decibels) are rather difficult. In first pass, just read these sections globally. After having finished the entire chapter (or more), return for a deeper second pass through these sections. Compare the explanations in these sections with those in your textbook, and then return for a third pass through these sections.</p>
+<div id="rms-amplitude" class="section level4 hasAnchor" number="1.8.2.1">
+<h4><span class="header-section-number">1.8.2.1</span> RMS amplitude<a href="ch-soundwaves.html#rms-amplitude" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>How can we calculate the mean or average amplitude of a sound wave, over a particular stretch of time? We do this by squaring the amplitude values, then averaging the squared values, and then taking the Root of the Mean of the Squares. The resulting value is termed the <strong>RMS</strong> amplitude, and it is equivalent to the <em>standard deviation</em> of the amplitude, computed over a particular stretch of time.</p>
+<p>In a simple sinewave tone, as in Figure <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>, the RMS of the amplitude corresponds to <span class="math inline">\(0.707 \times\)</span> the maximum or peak amplitude.</p>
 </div>
-<div id="intensity" class="section level3 hasAnchor" number="1.8.3">
-<h3><span class="header-section-number">1.8.3</span> Intensity<a href="ch-soundwaves.html#intensity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="decibels" class="section level4 hasAnchor" number="1.8.3.1">
-<h4><span class="header-section-number">1.8.3.1</span> Decibels<a href="ch-soundwaves.html#decibels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="sec:intensity" class="section level3 hasAnchor" number="1.8.3">
+<h3><span class="header-section-number">1.8.3</span> Energy, power, intensity<a href="ch-soundwaves.html#sec:intensity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Amplitude is related to the pressure variations of a sound wave (with pressure defined as force per unit area; §<a href="ch-soundwaves.html#sec:pressure">1.5</a>). The <em>energy</em> of the sound wave is its capacity to do work, that is, to exert a force on (and thus causing displacement of) particles of the medium, that is, to propagate. Thus we want to consider the amount of acoustic energy, imparted by the vibrating sound source, and transmitted throughout the medium by causing particles to bump into each another. Energy is expressed in Joule (J) units; one Joule “is equal to the amount of work done when a force of one newton displaces a mass through a distance of one metre in the direction of that force” (&lt; <a href="https://en.wikipedia.org/wiki/Joule" class="uri">https://en.wikipedia.org/wiki/Joule</a>&gt;).</p>
+<p>We saw earlier that we may regard the sound propagating through the medium as an imaginary expanding sphere (see §<a href="ch-soundwaves.html#sec:soundwave">1.2</a>). Consider the sound of a single impulse, say a hammer hitting a nail, with air as the medium of propagation. The energy of the sound remains constant, but as the sound propagates, the imaginary sphere expands, and the original energy is distributed over a wider area of that imaginary sphere. The variations in air pressure decrease as the sphere expands, that is, as the distance to the sound source increases.</p>
+<p>Energy is independent from the time dimension: a continuous sound having an energy of 10 J for 1 second involves as much total energy as a continuous sound having an energy of 5 J for 2 seconds. When studying sounds, however, we typically do take time into account: we are interested in the amount of energy of a sound <em>per second</em>. This is termed the <em>power</em> of the sound. Power is expressed in Watt (W) units; one Watt equals 1 Joule per second. By analogy, you may consider a lamp of 10 W burning for 1 hour, and another lamp of 5 W burning for 2 hours. Both lamps have consumed equal amounts of energy (in principle), but the lamp with higher power converts more energy <em>per hour</em> into light: it shines brighter.</p>
+<p>For sound waves, we are interested in the amount of power, but now expressed per unit area on the imaginary sphere of propagation of the sound wave in the medium (see §<a href="ch-soundwaves.html#sec:soundwave">1.2</a>). How much acoustic energy is transferred in the wave, by particles colliding with their neigboring particles, per time and per area? This property is termed the <strong>intensity</strong> of the sound. Intensity is expressed in units of energy per square meter perpendicular to the direction of propagation (<span class="math inline">\(\textrm{W}/\textrm{m}^2\)</span>).</p>
+<p>The intensity of a sound drops off as the distance to the sound source increases<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. The sound of a hammer hitting a nail has an intensity <span class="math inline">\(I/1 = I\)</span> at a distance of <span class="math inline">\(1 \times r\)</span>, but only an intensity of <span class="math inline">\(I /2^2 = I/4\)</span> at a double distance of <span class="math inline">\(2 \times r\)</span>.</p>
+<p>The intensity of a sound is proportional to the maximum pressure variations of that sound, with
+<span class="math display">\[I = \frac{1}{2} \cdot \frac{p^2}{\rho \cdot c}\]</span>
+where <span class="math inline">\(p\)</span> is the RMS amplitude of pressure variations, <span class="math inline">\(\rho\)</span> is density of the medium (for air, <span class="math inline">\(\rho = 1.29\ \textrm{kg}/\textrm{m}^3\)</span>) and <span class="math inline">\(c\)</span> is speed of sound (in air, <span class="math inline">\(c = 332\ \textrm{m}/\textrm{s}\)</span> at 0°C, see §<a href="ch-soundwaves.html#sec:speedofsound">1.4</a>). A simple sine wave (as in Fig. <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>) with frequency <span class="math inline">\(f=1000\)</span> Hz and with RMS amplitude of pressure of <span class="math inline">\(p=2 \cdot 10^{-5}\ \textrm{N}/\textrm{m}^2\)</span> has an intensity <span class="math inline">\(I = 4.7 \cdot 10^{-13}\ \textrm{W}/\textrm{m}^2\)</span>.
+Because <span class="math inline">\(1/2\)</span> and <span class="math inline">\(\rho\)</span> and <span class="math inline">\(c\)</span> are approximately constant, the relationship between intensity <span class="math inline">\(I\)</span> and air pressure <span class="math inline">\(p\)</span> is often simplified as <span class="math inline">\(I \propto p^2\)</span>.</p>
+<p>Experiments have shown that the sensitivity of the human ear corresponds approximately with the <em>logarithm</em> of the intensity (at the eardrum). This makes it attractive to use logarithmic scales for sound pressure and for the intensity of a sound. Such a scale allows us to represent very large and very small values with equal perceptual accuracy across the scale.</p>
+<div id="sec:logarithm" class="section level4 hasAnchor" number="1.8.3.1">
+<h4><span class="header-section-number">1.8.3.1</span> Logarithm<a href="ch-soundwaves.html#sec:logarithm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <em>logarithm</em> of a number <span class="math inline">\(x\)</span>, or <span class="math inline">\(\log(x)\)</span>, is the exponent or power to which you must raise a given base number in order to obtain <span class="math inline">\(x\)</span>. For the base number, we often use <span class="math inline">\(10\)</span> or <span class="math inline">\(2\)</span>. So-called ‘natural logarithms’ have <span class="math inline">\(e \approx 2.7\)</span> as the base number, and these are often indicated as <span class="math inline">\(\ln(x)\)</span>. For example,
+<span class="math display">\[^{10}\log(1000)=3\]</span>
+since <span class="math display">\[10^3=1000\]</span></p>
+<p>One advantage of using logarithms is that multiplication of two numbers is simplified to addition of their logarithms (using a common base):
+<span class="math display">\[100 \cdot 1000 = 100000\]</span>
+<span class="math display">\[10^2 \cdot 10^3 = 10^{2+3} = 10^5\]</span>
+<span class="math display">\[^{10}\log(100) + ^{10}\log(1000) =2+3= ^{10}\log(100000) =5\]</span></p>
+<p>Another advantage is that large <em>ratios</em> (e.g. of sound intensities or frequencies) are easier to express as logarithms:
+<span class="math display">\[10 : 1000 = 10^1 : 10^3\]</span>
+<span class="math display">\[^{10}\log(10) : ^{10}\log(1000) = 1 : 3\]</span></p>
+<p>Intensity is perceived in an approximately logarithmic fashion: each tenfold increase of intensity (logarithm using base <span class="math inline">\(10\)</span>) is perceived as one equal step in intensity, as further explained below. In a similar fashion, frequency too is perceived in logarithmic fashion: each twofold increase of frequency (doubling, logarithm using base <span class="math inline">\(2\)</span>) is perceived as one equal step in frequency, viz. by one octave (§<a href="ch-soundwaves.html#sec:octave">1.8.1.1</a>).</p>
+</div>
+<div id="decibel" class="section level4 hasAnchor" number="1.8.3.2">
+<h4><span class="header-section-number">1.8.3.2</span> Decibel<a href="ch-soundwaves.html#decibel" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In practice, the sound pressure or sound intensity is expressed not in absolute units, but as a <em>ratio</em> relative to the sound pressure or the sound intensity of a reference sound. One of the reasons for this practice is that equal ratios are perceived as equal steps or differences<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p>In practice, the sound pressure or intensity of a target sound is compared with some reference sound pressure or intensity, and the target-to-reference ratio is then expressed on a logarithmic scale.
+The target-to-reference ratio is typically expressed on a logarithmic scale, in <strong>decibel</strong> units (dB), named after Alexander Graham Bell (1847-1922, inventor of the telephone).
+Several different references are commonly used:</p>
+<ul>
+<li><p>a reference sound that has a standard RMS pressure of <span class="math inline">\(p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}\)</span>, and/or a standard intensity of <span class="math inline">\(I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2\)</span>. This is the weakest sound perceived by humans<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.
+While the reference <span class="math inline">\(p_0\)</span> is expressed in RMS units of sound pressure (in Pascal units), ratios using <span class="math inline">\(p_0\)</span> as absolute reference are termed <code>dB Sound Pressure Level</code> or <code>dB(SPL)</code>, see Table <a href="ch-soundwaves.html#tab:decibels">1.1</a> below.<br />
+(Aside: In the reference sound, the air particles move back and forth over a tiny distance, roughly the same as the size of the molecules in air! If our hearing would be just slightly more sensitive, we would just hear the constant (brown) noise of the Brownian movement of the particles in the atmosphere (see §<a href="complex-sounds-and-spectra.html#sec:noise">3.3.1</a>).)</p></li>
+<li><p>the smallest sound pressure perceived by a particular <em>individual</em> listener (test participant, patient) at a particular frequency in a particular ear, this is called the ‘sensation level’ (of that ear, listener, frequency). Comparisons using this relative threshold are termed <code>dB (SL)</code>; this allows us to present auditory stimuli with an equal subjective loudness across listeners and across ears.</p></li>
+<li><p>the <em>loudest</em> sound (highest pressure, or voltage, or intensity) that a device can process without distorting the input signal; incoming sounds are expressed in negative dB units below this reference.</p></li>
+</ul>
+<p>For sound intensity levels:
+<span class="math display">\[L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)\]</span>
+where <span class="math inline">\(L_I\)</span> is the level of intensity, in dB, <span class="math inline">\(I\)</span> is the intensity of the target sound, and <span class="math inline">\(I_0\)</span> is the intensity of the reference sound (see above), <span class="math inline">\(I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2\)</span>.</p>
+<p>For sound pressure levels, using RMS amplitude of sound pressure:
+<span class="math display">\[  L_p = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)
+        = 10 \cdot  ^{10}\log \left( \frac{p}{p_0} \right)^2
+        = 20 \cdot  ^{10}\log \left( \frac{p}{p_0} \right) \]</span>
+where <span class="math inline">\(L_p\)</span> is the level of sound pressure, in dB, <span class="math inline">\(p\)</span> is the RMS amplitude of the target sound, and <span class="math inline">\(p_0\)</span> is the RMS amplitude of the reference sound (see above), <span class="math inline">\(p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}\)</span>.</p>
+<p>A doubling of the sound pressure, that is, of the RMS amplitude (factor 2, ratio 2) means an increase of the sound pressure level by +6 dB, see footnote<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.
+A doubling of the intensity means an increase of the sound intensity by +3 dB, see footnote<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.
+By definition, a value of 0 dB means that the target sound has the same sound pressure and/or same intensity as that of the chosen reference sound.</p>
+<p>Table <a href="ch-soundwaves.html#tab:decibels">1.1</a> shows some examples of sound pressure levels (in dB) under various circumstances.</p>
+<table>
+<caption><span id="tab:decibels">Table 1.1: </span> Examples of sound pressure levels in dB (SPL), in various situations.</caption>
+<colgroup>
+<col width="47%" />
+<col width="52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>dB (SPL)</th>
+<th align="left">situation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td align="left">Reference value; absolute threshold of sine wave sound with <span class="math inline">\(f=1000\)</span> Hz</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td align="left">Average threshold of hearing for 50% of listeners <span class="citation">(<a href="#ref-Fletcher_1953">Fletcher 1953, Ch.8</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td align="left">Leaves rustling in forest</td>
+</tr>
+<tr class="even">
+<td>27</td>
+<td align="left">Outside in Hermit Basin, at the bottom of the Grand Canyon, USA <span class="citation">(<a href="#ref-Dahl_Miller_Cato_Andrew_2007">Dahl et al. 2007</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td align="left">Whispering</td>
+</tr>
+<tr class="even">
+<td>35</td>
+<td align="left">Outside in residential area, at night</td>
+</tr>
+<tr class="odd">
+<td>40</td>
+<td align="left">Quiet room</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td align="left">Average conversation (at 1.5 m distance)</td>
+</tr>
+<tr class="odd">
+<td>65</td>
+<td align="left">Pedestrian city area</td>
+</tr>
+<tr class="even">
+<td>80</td>
+<td align="left">Shouting, singing (at 1.5 m distance); street noise</td>
+</tr>
+<tr class="odd">
+<td>92</td>
+<td align="left">Outside on emergency lane of busy highway (200 cars/min, 60 mph) <span class="citation">(<a href="#ref-Dahl_Miller_Cato_Andrew_2007">Dahl et al. 2007</a>)</span></td>
+</tr>
+<tr class="even">
+<td>100</td>
+<td align="left">Loud orchestra</td>
+</tr>
+<tr class="odd">
+<td>120</td>
+<td align="left">Threshold of pain</td>
+</tr>
+<tr class="even">
+<td>130</td>
+<td align="left">Jet engine (at 30 m distance)</td>
+</tr>
+<tr class="odd">
+<td>172</td>
+<td align="left">Krakatoa eruption, 1893 (at 165 km distance) (<a href="https://www.popsci.com/story/science/loudest-sounds-ever-measured/" class="uri">https://www.popsci.com/story/science/loudest-sounds-ever-measured/</a>)</td>
+</tr>
+<tr class="even">
+<td>192</td>
+<td align="left">Loudest sound possible in air, rarefactions are vacuum (<a href="https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure" class="uri">https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure</a>)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="sec:phase" class="section level3 hasAnchor" number="1.8.4">
@@ -387,7 +509,7 @@ Figure 1.3: Snapshot of the pressure of a sound wave in air, varying with distan
 <p>After starting the program, <code>Praat</code> opens two windows: an <em>Objects</em> window (typically on the left) and a <em>Picture</em> window (typically on the right).</p>
 <div id="objects" class="section level3 unnumbered hasAnchor">
 <h3>Objects<a href="ch-soundwaves.html#objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In <code>Praat</code>, signals and derived representations are all seen as objects. Objects may have different types, e.g. Sound, Spectrum, Pitch, etc<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.<br />
+<p>In <code>Praat</code>, signals and derived representations are all seen as objects. Objects may have different types, e.g. Sound, Spectrum, Pitch, etc<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.<br />
 Each type of object comes with pre-defined operations that are possible. If you select an object of a different type, then the buttons (operations) change with the object type.
 As an analogy, consider the various types of objects in your room: clothing items and human bodies may be washed, food may be cooked but human bodies may not be cooked, furniture and food items may be opened but human bodies may not be opened, clothing can be inside furniture, etc. Moreover, relations between object types are also specified: for example, a plant can become a food item (by means of cooking), but a human body may not.</p>
 <p>Before working with an object, you need to select that object, by clicking on it in the list of objects displayed in the Praat Objects window.</p>
@@ -407,6 +529,12 @@ As an analogy, consider the various types of objects in your room: clothing item
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Dahl_Miller_Cato_Andrew_2007" class="csl-entry">
+Dahl, Peter H., James H. Miller, Douglas H. Cato, and Rex K. Andrew. 2007. <span>“Underwater Ambient Noise.”</span> <em>Acoustics Today</em> 3 (1): 23–33. https://doi.org/<a href="https://doi.org/10.1121/1.2961145">https://doi.org/10.1121/1.2961145</a>.
+</div>
+<div id="ref-Fletcher_1953" class="csl-entry">
+Fletcher, Harvey. 1953. <em>Speech and Hearing in Communication</em>. New York: Van Nostrand.
+</div>
 <div id="ref-Harris_1971" class="csl-entry">
 Harris, Cyril M. 1971. <span>“Effects of Humidity on the Velocity of Sound in Air.”</span> <em>The Journal of the Acoustical Society of America</em> 49 (3B): 890–93. <a href="https://doi.org/10.1121/1.1912429">https://doi.org/10.1121/1.1912429</a>.
 </div>
@@ -426,7 +554,12 @@ Shadle, Christine H. 2010. <span>“The Aerodynamics of Speech.”</span> In <em
 <li id="fn5"><p>The clearest examples are provided by unvoiced fricative consonants, such as /f, s/.<a href="ch-soundwaves.html#fnref5" class="footnote-back">↩︎</a></p></li>
 <li id="fn6"><p>In older texts you may find ‘cycles per second’, abbreviated ‘cps’.<a href="ch-soundwaves.html#fnref6" class="footnote-back">↩︎</a></p></li>
 <li id="fn7"><p>More exactly, the period <em>is</em> 0.0046 s.<a href="ch-soundwaves.html#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>By convention, object types are written with a capital; this helps to distinguish physical properties (e.g. the intensity of a sound) from the <code>Praat</code> representations of those properties (e.g. the Intensity object computed from a Sound object, both within <code>Praat</code>).<a href="ch-soundwaves.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>The intensity on the surface of the sphere undergoes a dropoff which can be calculated as <span class="math inline">\(I=I_s/4πr^2\)</span>, with <span class="math inline">\(I_s\)</span> being the intensity at the source, and <span class="math inline">\(r\)</span> being the radius of the sphere, that is, the distance from the source.<a href="ch-soundwaves.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>This may be clear from the piano keyboard: each doubling of frequency (ratio <span class="math inline">\(1:2\)</span>) is perceived as one equal octave step (divided into 12 semitone keys).<a href="ch-soundwaves.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>This reference is the <em>minimal</em> hearing threshold, achieved only by the 1% most sensitive listeners. The <em>average</em> hearing threshold, achieved by 50% of listeners, is at about +16 dB relative to this reference value <span class="citation">(<a href="#ref-Fletcher_1953">Fletcher 1953, fig. 96</a>)</span>, see below.<a href="ch-soundwaves.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p><span class="math inline">\(20\cdot ^{10}\log \left( \frac{2}{1} \right) = 20 \cdot ^{10}\log (2) =  20 (0.30103) = 6.0206 \approx 6\)</span><a href="ch-soundwaves.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p><span class="math inline">\(10\cdot ^{10}\log \left( \frac{2}{1} \right) = 10 \cdot ^{10}\log (2) =   10 (0.30103) = 3.0103 \approx 3\)</span><a href="ch-soundwaves.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>By convention, object types are written with a capital; this helps to distinguish physical properties (e.g. the intensity of a sound) from the <code>Praat</code> representations of those properties (e.g. the Intensity object computed from a Sound object, both within <code>Praat</code>).<a href="ch-soundwaves.html#fnref13" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -1,12 +1,12 @@
 # Complex sounds and spectra
 
-*Chapter keywords*: sinewave sound, complex sound, spectrum, FFT, fourier analysis, harmonics, fundamental, overtone, component, timbre, 
+*Chapter keywords*: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse. 
 
 ## Introduction 
 
 The *sine wave*, depicted in Fig. \@ref(fig:example-oscillogram), is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum^[Drawing the position of a swinging pendulum over time will result in the same figure.]. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature -- although the sound of a tuning fork comes quite close to a sinewave pattern. 
 
-By contrast, *complex sounds* have more complex wave patterns. All natural periodic sounds are complex sounds. **A complex sound can be regarded as the sum of multiple sine wave sounds.** This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed 'frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called 'Fourier analysis' of a complex sound, these frequency components are being estimated. 
+By contrast, *complex sounds* have more complex wave patterns. All natural periodic sounds are complex sounds. **A complex sound can be regarded as the sum of multiple sine wave sounds.** This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed 'frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called 'Fourier analysis' or 'Fourier Transform' of a complex sound, these frequency components are being estimated from the waveform^[There is also a faster version of the Fourier transform, called 'Fast Fourier Transform' or FFT, which requires significantly fewer computations; FFT requires that the number of samples to be analysed is a power of $2$.].
 
 If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \@ref(fig:fourier-oscillogram) provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz ($T=.01$) and 200 Hz ($T=.005$) and 400 Hz ($T=.0025$), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the *fundamental*, and its frequency is called the *fundamental frequency* (symbol $f_0$) of the complex periodic sound; we hear this $f_0$ as its pitch. The higher components are called *overtones*. The fundamental and overtones are collectively called *harmonics*: the fundamental is the first harmonic, the first overtone is the second harmonic, etc. 
 **In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.**  
@@ -56,11 +56,6 @@ A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The 
 
 Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property. 
 
-### Octave {#sec:octave}
-
-An octave refers to a fundamental frequency ratio of $1:2$ or $2:1$, that is, doubling or halving of the fundamental frequency. It is the distance between 12 semitones (piano keys, counting black and white keys). If you sing or play a musical note (e.g. note `A2` with $f=110$ Hz), and then jump to the next higher octave, then the new note `A3` has a frequency of $2 \times 110=220$ Hz. 
-(As an aside: doubling the frequency means halving the wavelength, and vice versa, see §\@ref(sec:wavelength)).
-
 ## Spectrum
 
 An unchanging sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. 
@@ -71,13 +66,24 @@ Figure \@ref(fig:complex100n200n400) shows an oscillogram on the left (of the sa
 knitr::include_graphics("figures/complex100n200n400.png")
 ```
 
+::: {#questions-spectrum .questionbox}
+
+### Questions {-}
+
+#### Question 3.1 {-}
+
+Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitude of 40 dB SPL. 
+
+:::
+
+
 > TODO Praat instruction box
 
 ## Spectra of aperiodic sounds
 
 Stable noise and brief impulses are two types of aperiodic signals (§\@ref(sec:periodicity)): the variations in air pressure do not follow a regular periodic pattern^[Or, you might say that the period is infinitely long.]. Aperiodic sounds do not have a fundamental frequency (because there is no regular period), and their phase is undefined, but aperiodic sounds do have an amplitude and a spectral composition. 
 
-### Noise 
+### Noise {#sec:noise}
 
 First we discuss *stable* aperiodic sounds: **noise**. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at *every* frequency. The relative amplitudes of the many frequency components determines the timbre of the noise. 
 
@@ -88,7 +94,7 @@ In so-called *brown noise*, the spectral envelope decreases by $-6$ dB per octav
 knitr::include_graphics("figures/whitebrownnoises.png")
 ```
 
-The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time^[If you would listen to white noise for a VERY long time, then all frequency components would indeed be equally strong.], with (c) a particular sampling frequency of the noise. 
+The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time^[If you would listen to white noise for an infinitely long time, then all frequency components would indeed be equally strong.], with (c) a particular sampling frequency of the noise. 
 
 ### Impulses {#sec:impulses}
 
@@ -96,8 +102,21 @@ An **impulse** is a very brief and *transient* sound, such as a hand clap or tic
 
 An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g. at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by *fading in* the sound, see §\@ref(sec:fades) for more. 
 
-### ADSR envelope
+## Envelope
 
-> discuss here ??
+The *envelope* of a sound describes how the properties of that sound change over time. This concept is best described by regarding the amplitude of a sound: the 'amplitude envelope'. However, a sound may at the same time have multiple and different envelopes for its amplitude, for its (fundamental) frequency, and for (a singular parameter of) its timbre. Even the properties of a filter may follow an envelope, that is, they may change over time (see Ch. \@ref(ch-filtering)).
 
-impulse has brief A and D, low S, R n/a
+The concept of the *envelope* of a sound property stems from electronic music (synthesizers); critical time points are the onset and offset of a key being pressed on the keyboard of the synthesizer. However, the envelope is also a helpful concept for describing analog musical sounds (e.g. picking a guitar string) and speech sounds (e.g. plosive vs fricative consonants).  
+
+```{r envelope, echo=FALSE, fig.cap="A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from  $https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg$, used under CC-BY-SA license.", fig.align="center"}
+knitr::include_graphics("figures/ADSR_parameter.png")
+```
+
+> A 
+> D 
+> S 
+> R
+
+<!-- While the concept of the *envelope* of a sound stems from electronic music (synthesizers), it is also helpful in understanding the difference between e.g. fricative consonants (as in 'sheep', with gradual onset, slower attack of amplitude) vs. affricate consonants (as in 'cheap', with abrupt onset, fast attack of amplitude). This contrast may be manipulated convincingly by only varying the attack time of the (isolated) word. -->
+
+In terms of its amplitude, we may regard a brief impulse sound (click or pulse, see §\@ref(sec:impulses) above) as having very short attack and decay times, a zero sustain level, and zero release time.  

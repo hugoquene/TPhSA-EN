@@ -52,19 +52,6 @@ Explain why a sound wave loses energy the further it is spread from the oscillat
   <p>Remember that the sound *wave* travels through the medium, but the particles in the medium remain more or less in place.</p>
 </details>
 
-<!-- this question is unnecessary and the answer is incorrect --
-
-### Question 1.2 {-}
-
-What parameters influence the speed of a sound wave?
-
-<details>
-  <summary>Answer 1.2</summary>
-  <p>The propagation speed of a sound wave depends on the acoustic medium: different media have a different characteristic sound propagation speed. In gases (like air) the sound speed is lower than in liquids or solids, as the particles are less close to one another (the medium is less dense). Moreover, factors such as temperature and pressure influence the density of the acoustic medium, and thus these factors indirectly influence the speed of sound in the medium. Heat, for instance, makes the particles less close to one another, and thus slows down the sound speed. For gases such as air, sound speed is determined by their chemical composition.</p>
-</details>
-
---> 
-
 :::
 
 ## Oscillogram {#sec:oscillogram}
@@ -130,23 +117,118 @@ Each of these periods or cycles corresponds to the repeating fluctuation between
 
 In the transverse stadium wave, the period $T$ is the time interval between two consecutive actions of standing up by the same person (e.g. $T=5$ s), and frequency $f$ is the number of actions that occur within a given time unit (e.g. $f=1/T=1/5$ Hz). 
 
+#### Octave {#sec:octave}
+
+An octave refers to a frequency ratio of $1:2$ or $2:1$, that is, doubling or halving of the frequency. An octave is the distance between 12 semitones (guitar frets or piano keys, counting black and white keys). If you sing or play a musical note (e.g. note `A2` with $f=110$ Hz), and then jump to the next higher octave, then the new note `A3` has a frequency of $2 \times 110=220$ Hz. The next higher octave note `A4` has a frequency of $2 \times 220=440$ Hz.  
+(As an aside: doubling the frequency means halving the wavelength, and vice versa, see §\@ref(sec:wavelength) below).
+
 ### Amplitude {#sec:amplitude}
 
 The amplitude (symbol $A$) of a sound wave is the extent of the variations in air pressure (due to compression and rarefaction), measured in Pascal units of pressure. With some simplification, the amplitude of a sound wave is perceived as its *loudness* or 'volume'. In an oscillogram, the amplitude corresponds directly to the maximum vertical displacement, that is, to the peak deviation in air pressure relative to the ambient reference pressure). 
 
 In the transverse stadium wave, the amplitude could be thought of as the extent to which persons raise their hands: the heighth of the wave crests.
 
-In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of *intensity*, which will be discussed in §XXX below.  
+In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of *intensity*, which is discussed in §\@ref(sec:intensity) below.  
 
-<!-- add ref -->
+**Study tip**: The sections on amplitude and on intensity (including decibels) are rather difficult. In first pass, just read these sections globally. After having finished the entire chapter (or more), return for a deeper second pass through these sections. Compare the explanations in these sections with those in your textbook, and then return for a third pass through these sections. 
 
-<!--
-Uit proefnemingen is gebleken dat de gevoeligheid van het menselijk gehoor ongeveer correspondeert met de logaritme van de intensiteit van het geluid (zie hieronder). Dit gegeven, plus het feit dat de maximaal toelaatbare geluidsdruk wel een factor 1\,000\,000 (=$10^6$) groter kan zijn dan de minimaal waarneembare geluidsdruk, leidt tot het gebruik van een logaritmische schaal voor geluidsintensiteiten of geluidsdrukken. Op zo'n schaal kunnen zowel heel kleine als heel grote waarden (in grafieken bijv.) met dezelfde relatieve nauwkeurigheid worden weergegeven. 
--->
+#### RMS amplitude
 
-### Intensity
+How can we calculate the mean or average amplitude of a sound wave, over a particular stretch of time? We do this by squaring the amplitude values, then averaging the squared values, and then taking the Root of the Mean of the Squares. The resulting value is termed the **RMS** amplitude, and it is equivalent to the *standard deviation* of the amplitude, computed over a particular stretch of time. 
 
-#### Decibels 
+In a simple sinewave tone, as in Figure \@ref(fig:example-oscillogram), the RMS of the amplitude corresponds to $0.707 \times$ the maximum or peak amplitude.
+
+### Energy, power, intensity {#sec:intensity}
+
+Amplitude is related to the pressure variations of a sound wave (with pressure defined as force per unit area; §\@ref(sec:pressure)). The *energy* of the sound wave is its capacity to do work, that is, to exert a force on (and thus causing displacement of) particles of the medium, that is, to propagate. Thus we want to consider the amount of acoustic energy, imparted by the vibrating sound source, and transmitted throughout the medium by causing particles to bump into each another. Energy is expressed in Joule (J) units; one Joule "is equal to the amount of work done when a force of one newton displaces a mass through a distance of one metre in the direction of that force" (< https://en.wikipedia.org/wiki/Joule>). 
+
+We saw earlier that we may regard the sound propagating through the medium as an imaginary expanding sphere (see §\@ref(sec:soundwave)). Consider the sound of a single impulse, say a hammer hitting a nail, with air as the medium of propagation. The energy of the sound remains constant, but as the sound propagates, the imaginary sphere expands, and the original energy is distributed over a wider area of that imaginary sphere. The variations in air pressure decrease as the sphere expands, that is, as the distance to the sound source increases. 
+
+Energy is independent from the time dimension: a continuous sound having an energy of 10 J for 1 second involves as much total energy as a continuous sound having an energy of 5 J for 2 seconds. When studying sounds, however, we typically do take time into account: we are interested in the amount of energy of a sound *per second*. This is termed the *power* of the sound. Power is expressed in Watt (W) units; one Watt equals 1 Joule per second. By analogy, you may consider a lamp of 10 W burning for 1 hour, and another lamp of 5 W burning for 2 hours. Both lamps have consumed equal amounts of energy (in principle), but the lamp with higher power converts more energy *per hour* into light: it shines brighter. 
+
+For sound waves, we are interested in the amount of power, but now expressed per unit area on the imaginary sphere of propagation of the sound wave in the medium (see §\@ref(sec:soundwave)). How much acoustic energy is transferred in the wave, by particles colliding with their neigboring particles, per time and per area? This property is termed the **intensity** of the sound. Intensity is expressed in units of energy per square meter perpendicular to the direction of propagation ($\textrm{W}/\textrm{m}^2$). 
+
+The intensity of a sound drops off as the distance to the sound source increases^[The intensity on the surface of the sphere undergoes a dropoff which can be calculated as $I=I_s/4πr^2$, with $I_s$ being the intensity at the source, and $r$ being the radius of the sphere, that is, the distance from the source.]. The sound of a hammer hitting a nail has an intensity $I/1 = I$ at a distance of $1 \times r$, but only an intensity of $I /2^2 = I/4$ at a double distance of $2 \times r$.  
+
+The intensity of a sound is proportional to the maximum pressure variations of that sound, with
+$$I = \frac{1}{2} \cdot \frac{p^2}{\rho \cdot c}$$ 
+where $p$ is the RMS amplitude of pressure variations, $\rho$ is density of the medium (for air, $\rho = 1.29\ \textrm{kg}/\textrm{m}^3$) and $c$ is speed of sound (in air, $c = 332\ \textrm{m}/\textrm{s}$ at 0°C, see §\@ref(sec:speedofsound)). A simple sine wave (as in Fig. \@ref(fig:example-oscillogram)) with frequency $f=1000$ Hz and with RMS amplitude of pressure of $p=2 \cdot 10^{-5}\ \textrm{N}/\textrm{m}^2$ has an intensity $I = 4.7 \cdot 10^{-13}\ \textrm{W}/\textrm{m}^2$.
+Because $1/2$ and $\rho$ and $c$ are approximately constant, the relationship between intensity $I$ and air pressure $p$ is often simplified as $I \propto p^2$.  
+
+Experiments have shown that the sensitivity of the human ear corresponds approximately with the *logarithm* of the intensity (at the eardrum). This makes it attractive to use logarithmic scales for sound pressure and for the intensity of a sound. Such a scale allows us to represent very large and very small values with equal perceptual accuracy across the scale. 
+
+#### Logarithm {#sec:logarithm}
+
+The *logarithm* of a number $x$, or $\log(x)$, is the exponent or power to which you must raise a given base number in order to obtain $x$. For the base number, we often use $10$ or $2$. So-called 'natural logarithms' have $e \approx 2.7$ as the base number, and these are often indicated as $\ln(x)$. For example, 
+$$^{10}\log(1000)=3$$
+since $$10^3=1000$$
+
+One advantage of using logarithms is that multiplication of two numbers is simplified to addition of their logarithms (using a common base):
+$$100 \cdot 1000 = 100000$$
+$$10^2 \cdot 10^3 = 10^{2+3} = 10^5$$
+$$^{10}\log(100) + ^{10}\log(1000) =2+3= ^{10}\log(100000) =5$$
+
+Another advantage is that large *ratios* (e.g. of sound intensities or frequencies) are easier to express as logarithms:
+$$10 : 1000 = 10^1 : 10^3$$
+$$^{10}\log(10) : ^{10}\log(1000) = 1 : 3$$
+
+Intensity is perceived in an approximately logarithmic fashion: each tenfold increase of intensity (logarithm using base $10$) is perceived as one equal step in intensity, as further explained below. In a similar fashion, frequency too is perceived in logarithmic fashion: each twofold increase of frequency (doubling, logarithm using base $2$) is perceived as one equal step in frequency, viz. by one octave (§\@ref(sec:octave)). 
+
+#### Decibel 
+
+In practice, the sound pressure or sound intensity is expressed not in absolute units, but as a *ratio* relative to the sound pressure or the sound intensity of a reference sound. One of the reasons for this practice is that equal ratios are perceived as equal steps or differences^[This may be clear from the piano keyboard: each doubling of frequency (ratio $1:2$) is perceived as one equal octave step (divided into 12 semitone keys).]
+
+In practice, the sound pressure or intensity of a target sound is compared with some reference sound pressure or intensity, and the target-to-reference ratio is then expressed on a logarithmic scale.
+The target-to-reference ratio is typically expressed on a logarithmic scale, in **decibel** units (dB), named after Alexander Graham Bell (1847-1922, inventor of the telephone). 
+Several different references are commonly used:
+
+- a reference sound that has a standard RMS pressure of $p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}$, and/or a standard intensity of $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. This is the weakest sound perceived by humans^[This reference is the *minimal* hearing threshold, achieved only by the 1% most sensitive listeners. The *average* hearing threshold, achieved by 50% of listeners, is at about +16 dB relative to this reference value [@Fletcher_1953, Fig.96], see below.]. 
+While the reference $p_0$ is expressed in RMS units of sound pressure (in Pascal units), ratios using $p_0$ as absolute reference are termed `dB Sound Pressure Level` or `dB(SPL)`, see Table \@ref(tab:decibels) below.\
+(Aside: In the reference sound, the air particles move back and forth over a tiny distance, roughly the same as the size of the molecules in air! If our hearing would be just slightly more sensitive, we would just hear the constant (brown) noise of the Brownian movement of the particles in the atmosphere (see §\@ref(sec:noise)).)
+
+- the smallest sound pressure perceived by a particular *individual* listener (test participant, patient) at a particular frequency in a particular ear, this is called the 'sensation level' (of that ear, listener, frequency). Comparisons using this relative threshold are termed `dB (SL)`; this allows us to present auditory stimuli with an equal subjective loudness across listeners and across ears. 
+
+- the *loudest* sound (highest pressure, or voltage, or intensity) that a device can process without distorting the input signal; incoming sounds are expressed in negative dB units below this reference.
+
+
+For sound intensity levels:
+$$L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)$$
+where $L_I$ is the level of intensity, in dB, $I$ is the intensity of the target sound, and $I_0$ is the intensity of the reference sound (see above), $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. 
+
+For sound pressure levels, using RMS amplitude of sound pressure:
+$$	L_p = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) 
+		= 10 \cdot  ^{10}\log \left( \frac{p}{p_0} \right)^2 
+		= 20 \cdot  ^{10}\log \left( \frac{p}{p_0} \right) $$
+where $L_p$ is the level of sound pressure, in dB, $p$ is the RMS amplitude of the target sound, and $p_0$ is the RMS amplitude of the reference sound (see above), $p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}$. 
+
+A doubling of the sound pressure, that is, of the RMS amplitude (factor 2, ratio 2) means an increase of the sound pressure level by +6 dB, see footnote^[$20\cdot ^{10}\log \left( \frac{2}{1} \right) = 20 \cdot ^{10}\log (2) =	20 (0.30103) = 6.0206 \approx 6$]. 
+A doubling of the intensity means an increase of the sound intensity by +3 dB, see footnote^[$10\cdot ^{10}\log \left( \frac{2}{1} \right) = 10 \cdot ^{10}\log (2) =	10 (0.30103) = 3.0103 \approx 3$].
+By definition, a value of 0 dB means that the target sound has the same sound pressure and/or same intensity as that of the chosen reference sound.
+
+
+Table \@ref(tab:decibels) shows some examples of sound pressure levels (in dB) under various circumstances. 
+
+Table: (#tab:decibels) Examples of sound pressure levels in dB (SPL), in various situations. 
+
+| dB (SPL) | situation | 
+| -------- | :-------- |
+|       0  | Reference value; absolute threshold of sine wave sound with $f=1000$ Hz |
+|      16  | Average threshold of hearing for 50% of listeners [@Fletcher_1953, Ch.8] |
+|      20  | Leaves rustling in forest | 
+|      27  | Outside in Hermit Basin, at the bottom of the Grand Canyon, USA [@Dahl_Miller_Cato_Andrew_2007] |
+|      30  | Whispering | 
+|      35  | Outside in residential area, at night |
+|      40  | Quiet room | 
+|      60  | Average conversation (at 1.5 m distance) |
+|      65  | Pedestrian city area |
+|      80  | Shouting, singing (at 1.5 m distance); street noise |
+|      92  | Outside on emergency lane of busy highway (200 cars/min, 60 mph) [@Dahl_Miller_Cato_Andrew_2007] | 
+|     100  | Loud orchestra |
+|     120  | Threshold of pain |
+|     130  | Jet engine (at 30 m distance) | 
+|     172  | Krakatoa eruption, 1893 (at 165 km distance)  (<https://www.popsci.com/story/science/loudest-sounds-ever-measured/>) |
+|     192  | Loudest sound possible in air, rarefactions are vacuum (<https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure>) |
+
 
 ### Phase {#sec:phase}
 
