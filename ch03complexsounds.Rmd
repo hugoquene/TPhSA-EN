@@ -6,7 +6,7 @@
 
 The *sine wave*, depicted in Fig. \@ref(fig:example-oscillogram), is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum^[Drawing the position of a swinging pendulum over time will result in the same figure.]. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature -- although the sound of a tuning fork comes quite close to a sinewave pattern. 
 
-By contrast, *complex sounds* have more complex wave patterns. All natural periodic sounds are complex sounds. **A complex sound can be regarded as the sum of multiple sine wave sounds.** This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed 'frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called 'Fourier analysis' or 'Fourier Transform' of a complex sound, these frequency components are being estimated from the waveform^[There is also a faster version of the Fourier transform, called 'Fast Fourier Transform' or FFT, which requires significantly fewer computations; FFT requires that the number of samples to be analysed is a power of $2$.].
+By contrast, *complex sounds* have more complex wave patterns. All natural periodic sounds are complex sounds. **A complex sound can be regarded as the sum of multiple sine wave sounds.** This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed 'frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called 'Fourier analysis' or 'Fourier Transform' of a complex sound, these frequency components are being estimated from the waveform. 
 
 If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \@ref(fig:fourier-oscillogram) provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz ($T=.01$) and 200 Hz ($T=.005$) and 400 Hz ($T=.0025$), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the *fundamental*, and its frequency is called the *fundamental frequency* (symbol $f_0$) of the complex periodic sound; we hear this $f_0$ as its pitch. The higher components are called *overtones*. The fundamental and overtones are collectively called *harmonics*: the fundamental is the first harmonic, the first overtone is the second harmonic, etc. 
 **In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.**  
@@ -58,7 +58,7 @@ Timbre is not a one-dimensional property of a sound (as frequency and amplitude 
 
 ## Spectrum
 
-An unchanging sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. 
+A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. 
 
 Figure \@ref(fig:complex100n200n400) shows an oscillogram on the left (of the same complex sound as shown in Fig. \@ref(fig:fourier-oscillogram), and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)^[Here, the phase of the frequency components is ignored.]. Hence, a spectrum shows the frequency and amplitude of each component. 
 
@@ -76,8 +76,26 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 
 :::
 
+<P>
 
-> TODO Praat instruction box
+::: {#box-praatspectrum .praatbox}
+
+### How to obtain a spectrum in `Praat`
+
+- In the `Praat` object window, select a Sound object.
+
+- Next, in the `Praat` object window, choose `Analyse spectrum >` and then `To Spectrum...`. 
+
+- `Praat` offers two versions, regular and fast, of the Fourier analysis to estimate a spectrum. The faster version of the Fourier transform is termed 'Fast Fourier Transform' or FFT, and it requires significantly fewer computations. FFT requires that the number of samples to be analysed is a power of $2$. If you choose the `Fast` version by ticking the box, then `Praat` adds zeroes to your sound in order to meet this requirement. 
+
+- The result is a Spectrum object calculated over the entire Sound (plus additional zeroes, in FFT), and this Spectrum object is added at the bottom of the list of objects. 
+
+- Remember to `Save` this Spectrum object if you wish. 
+
+- As the spectral representation (spectrum, horizontal axis is frequency) is equivalent with the temporal representation (oscillogram, horizontal axis is time), the Spectrum object may be reconverted again into Sound, by means of "inverse fourier transform". 
+To do so, select the Spectrum object, select button `Sound >` and then `To Sound`. 
+
+:::
 
 ## Spectra of aperiodic sounds
 
@@ -112,11 +130,11 @@ The concept of the *envelope* of a sound property stems from electronic music (s
 knitr::include_graphics("figures/ADSR_parameter.png")
 ```
 
+> TODO: add text
+
 > A 
 > D 
 > S 
 > R
-
-<!-- While the concept of the *envelope* of a sound stems from electronic music (synthesizers), it is also helpful in understanding the difference between e.g. fricative consonants (as in 'sheep', with gradual onset, slower attack of amplitude) vs. affricate consonants (as in 'cheap', with abrupt onset, fast attack of amplitude). This contrast may be manipulated convincingly by only varying the attack time of the (isolated) word. -->
 
 In terms of its amplitude, we may regard a brief impulse sound (click or pulse, see §\@ref(sec:impulses) above) as having very short attack and decay times, a zero sustain level, and zero release time.  

@@ -31,7 +31,7 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 
 ## Key parameters in AD conversion
 
-The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the *sampling frequency*, and the number of bits used to describe the amplitude value of the sample: the *amplitude resolution*. These are explained below. 
+The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the *sampling frequency*, and the second parameter is the number of bits used to describe the amplitude value of the sample: the *amplitude resolution*. These two parameters are further explained below. 
 
 ### Sampling frequency {#sec:samplingfrequency}
 
@@ -181,14 +181,11 @@ The amplitude scale factor is chosen so that the maximum sample value is a parti
 
 #### Scale intensity
 
-> TODO add crossref intensity SPL
-
 `Modify > Scale intensity...`.\
-The amplitude scale factor is chosen so that the average *intensity* of the resulting sound is the specified target intensity in dB SPL (see §XXX). `Praat` warns you that the result may contain clipped samples, with amplitude values exceeding the maximum possible value. Such clipped samples will lead to distorted sound when played back. 
+The amplitude scale factor is chosen so that the average *intensity* of the resulting sound is the specified target intensity in dB SPL (see §\@ref(sec:intensity)). `Praat` warns you that the result may contain clipped samples, with amplitude values exceeding the maximum possible value. Such clipped samples will lead to distorted sound when played back. 
 
 :::
 
-<!-- dummy text here -->
 <p>
 
 ::: {#fades .warningbox}

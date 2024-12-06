@@ -54,6 +54,7 @@ complex-sounds-and-spectra
 introduction
 timbre
 spectrum
+how-to-obtain-a-spectrum-in-praat
 spectra-of-aperiodic-sounds
 sec:noise
 sec:impulses
@@ -66,3 +67,4 @@ cutoff-frequency
 slope
 bandwidth
 emphasis-filters
+how-to-apply-a-predeemphasis-filter

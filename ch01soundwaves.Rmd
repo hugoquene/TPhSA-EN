@@ -172,18 +172,21 @@ Another advantage is that large *ratios* (e.g. of sound intensities or frequenci
 $$10 : 1000 = 10^1 : 10^3$$
 $$^{10}\log(10) : ^{10}\log(1000) = 1 : 3$$
 
+::: {#log1 .warningbox}
+By definition, $x^0=1$, and $^x\log(1)=0$, for any base $x$. 
+::: 
+
 Intensity is perceived in an approximately logarithmic fashion: each tenfold increase of intensity (logarithm using base $10$) is perceived as one equal step in intensity, as further explained below. In a similar fashion, frequency too is perceived in logarithmic fashion: each twofold increase of frequency (doubling, logarithm using base $2$) is perceived as one equal step in frequency, viz. by one octave (§\@ref(sec:octave)). 
 
 #### Decibel 
 
 In practice, the sound pressure or sound intensity is expressed not in absolute units, but as a *ratio* relative to the sound pressure or the sound intensity of a reference sound. One of the reasons for this practice is that equal ratios are perceived as equal steps or differences^[This may be clear from the piano keyboard: each doubling of frequency (ratio $1:2$) is perceived as one equal octave step (divided into 12 semitone keys).]
 
-In practice, the sound pressure or intensity of a target sound is compared with some reference sound pressure or intensity, and the target-to-reference ratio is then expressed on a logarithmic scale.
-The target-to-reference ratio is typically expressed on a logarithmic scale, in **decibel** units (dB), named after Alexander Graham Bell (1847-1922, inventor of the telephone). 
+In practice, the sound pressure or intensity of a target sound is compared with some reference sound pressure or intensity, and the target-to-reference ratio is then expressed on a logarithmic scale, in **decibel** units (dB). The decibel unit is named after Alexander Graham Bell (1847-1922, inventor of the telephone). 
 Several different references are commonly used:
 
 - a reference sound that has a standard RMS pressure of $p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}$, and/or a standard intensity of $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. This is the weakest sound perceived by humans^[This reference is the *minimal* hearing threshold, achieved only by the 1% most sensitive listeners. The *average* hearing threshold, achieved by 50% of listeners, is at about +16 dB relative to this reference value [@Fletcher_1953, Fig.96], see below.]. 
-While the reference $p_0$ is expressed in RMS units of sound pressure (in Pascal units), ratios using $p_0$ as absolute reference are termed `dB Sound Pressure Level` or `dB(SPL)`, see Table \@ref(tab:decibels) below.\
+As this reference $p_0$ is expressed in RMS units of sound pressure (in Pascal units), ratios using this $p_0$ as absolute reference are termed `dB Sound Pressure Level` or `dB(SPL)`, as in Table \@ref(tab:decibels) below.\
 (Aside: In the reference sound, the air particles move back and forth over a tiny distance, roughly the same as the size of the molecules in air! If our hearing would be just slightly more sensitive, we would just hear the constant (brown) noise of the Brownian movement of the particles in the atmosphere (see §\@ref(sec:noise)).)
 
 - the smallest sound pressure perceived by a particular *individual* listener (test participant, patient) at a particular frequency in a particular ear, this is called the 'sensation level' (of that ear, listener, frequency). Comparisons using this relative threshold are termed `dB (SL)`; this allows us to present auditory stimuli with an equal subjective loudness across listeners and across ears. 
@@ -193,7 +196,8 @@ While the reference $p_0$ is expressed in RMS units of sound pressure (in Pascal
 
 For sound intensity levels:
 $$L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)$$
-where $L_I$ is the level of intensity, in dB, $I$ is the intensity of the target sound, and $I_0$ is the intensity of the reference sound (see above), $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. 
+where $L_I$ is the level of intensity, in dB, $I$ is the intensity of the target sound, and $I_0$ is the intensity of the reference sound (see above), $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. \
+Working through this formula from the inside out, (1) we take the target-to-reference ratio, (2) we take the logarithm of that ratio (using 10 as base number): this is the Bel unit, and (3) we multiply by 10 to obtain *deci*bel units.  
 
 For sound pressure levels, using RMS amplitude of sound pressure:
 $$	L_p = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) 
@@ -205,6 +209,13 @@ A doubling of the sound pressure, that is, of the RMS amplitude (factor 2, ratio
 A doubling of the intensity means an increase of the sound intensity by +3 dB, see footnote^[$10\cdot ^{10}\log \left( \frac{2}{1} \right) = 10 \cdot ^{10}\log (2) =	10 (0.30103) = 3.0103 \approx 3$].
 By definition, a value of 0 dB means that the target sound has the same sound pressure and/or same intensity as that of the chosen reference sound.
 
+::: {#questions-0dB .questionbox}
+
+#### Question 1.2 {-}
+
+Check that the last sentence above holds true. 
+
+::: 
 
 Table \@ref(tab:decibels) shows some examples of sound pressure levels (in dB) under various circumstances. 
 
@@ -243,13 +254,9 @@ In the transverse stadium wave, phase corresponds to the difference in time betw
 
 ::: {#questions-phase .questionbox}
 
-### Question 1.2 {-}
+### Question 1.3 {-}
 
 Continue this thought experiment, with two stadium waves having the same frequency on the lower and upper benches, and with phase $\varphi=0.5$ between the lower and upper sections. What would the resulting wave pattern look like? 
-<details>
-  <summary>No answer provided</summary>
-  <p>...So... think this through... </p>
-</details>
 
 ::: 
 

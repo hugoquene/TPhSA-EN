@@ -141,7 +141,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
 <li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
 <li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
-<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.3"><i class="fa fa-check"></i>Question 1.3</a></li>
 <li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
@@ -179,6 +179,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
 <ul>
 <li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum-in-praat"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum in <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
@@ -197,7 +198,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
 <li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter"><i class="fa fa-check"></i><b>4.4.1</b> How to apply a (pre|de)emphasis filter</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -249,7 +253,7 @@ The analog electrical signal is then passed on from the microphone to…</p></li
 </div>
 <div id="key-parameters-in-ad-conversion" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Key parameters in AD conversion<a href="ch-soundtobytes.html#key-parameters-in-ad-conversion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the <em>sampling frequency</em>, and the number of bits used to describe the amplitude value of the sample: the <em>amplitude resolution</em>. These are explained below.</p>
+<p>The digital signal obtained by analog-to-digital conversion is an approximation of the original (analog) sound. Two key parameters determine the accuracy of the digital approximation, and thus the quality of the digital sound recording. The first parameter is the number of samples taken per second: the <em>sampling frequency</em>, and the second parameter is the number of bits used to describe the amplitude value of the sample: the <em>amplitude resolution</em>. These two parameters are further explained below.</p>
 <div id="sec:samplingfrequency" class="section level3 hasAnchor" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Sampling frequency<a href="ch-soundtobytes.html#sec:samplingfrequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The sampling frequency (symbol <span class="math inline">\(f_s\)</span>) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the time dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §<a href="ch-soundwaves.html#sec:frequency">1.8.1</a>). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled <span class="math inline">\(2000 \times\)</span> per second.</p>
@@ -377,14 +381,10 @@ The amplitude scale factor is chosen so that the maximum sample value is a parti
 </div>
 <div id="scale-intensity" class="section level4 hasAnchor" number="2.6.1.2">
 <h4><span class="header-section-number">2.6.1.2</span> Scale intensity<a href="ch-soundtobytes.html#scale-intensity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<blockquote>
-<p>TODO add crossref intensity SPL</p>
-</blockquote>
 <p><code>Modify &gt; Scale intensity...</code>.<br />
-The amplitude scale factor is chosen so that the average <em>intensity</em> of the resulting sound is the specified target intensity in dB SPL (see §XXX). <code>Praat</code> warns you that the result may contain clipped samples, with amplitude values exceeding the maximum possible value. Such clipped samples will lead to distorted sound when played back.</p>
+The amplitude scale factor is chosen so that the average <em>intensity</em> of the resulting sound is the specified target intensity in dB SPL (see §<a href="ch-soundwaves.html#sec:intensity">1.8.3</a>). <code>Praat</code> warns you that the result may contain clipped samples, with amplitude values exceeding the maximum possible value. Such clipped samples will lead to distorted sound when played back.</p>
 </div>
 </div>
-<!-- dummy text here -->
 <p>
 <div id="fades" class="warningbox">
 <div id="sec:fades" class="section level4 hasAnchor" number="2.6.1.3">

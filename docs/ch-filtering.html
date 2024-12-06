@@ -141,7 +141,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
 <li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
 <li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
-<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.2"><i class="fa fa-check"></i>Question 1.2</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.3"><i class="fa fa-check"></i>Question 1.3</a></li>
 <li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
@@ -179,6 +179,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
 <ul>
 <li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum-in-praat"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum in <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
@@ -197,7 +198,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
 <li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#emphasis-filters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter"><i class="fa fa-check"></i><b>4.4.1</b> How to apply a (pre|de)emphasis filter</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -281,7 +285,7 @@ Figure 4.4: Frequency characteristic of a band-reject filter, with a reject band
 </div>
 <div id="slope" class="section level3 hasAnchor" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Slope<a href="ch-filtering.html#slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency (§<a href="ch-soundwaves.html#sec:octave">1.8.1.1</a>), that is, in dB per octave<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>.</p>
+<p>The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency (§<a href="ch-soundwaves.html#sec:octave">1.8.1.1</a>), that is, in dB per octave<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
 </div>
 <div id="bandwidth" class="section level3 hasAnchor" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> Bandwidth<a href="ch-filtering.html#bandwidth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -296,20 +300,23 @@ Figure 4.4: Frequency characteristic of a band-reject filter, with a reject band
 <p>TODO crossref source-filter, spectral slope of speech</p>
 </blockquote>
 <p>For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of <span class="math inline">\(-6\)</span> dB/octave. On average, the amplitude of higher frequency components decreases by about <span class="math inline">\(-6\)</span> dB for each doubling of the frequency (§<a href="ch-soundwaves.html#sec:octave">1.8.1.1</a>).
-Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called <em>pre-emphasis</em> filter, which modifies the overall spectral slope by <span class="math inline">\(+6\)</span> dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>, with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range.</p>
+Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called <em>pre-emphasis</em> filter, which modifies the overall spectral slope by <span class="math inline">\(+6\)</span> dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>, with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range.</p>
 <p>The reverse operation is called <em>de-emphasis</em> filtering: this changes the overall spectral slope by <span class="math inline">\(-6\)</span> dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (<span class="math inline">\(-6\)</span> dB/oct) from the white noise (<span class="math inline">\(0\)</span> dB/oct) in Fig.<a href="complex-sounds-and-spectra.html#fig:spectrum-whitebrownnoises">3.3</a>.</p>
 <div id="box-praatemphasis" class="praatbox">
-<p>Select an input Sound object in the Praat Objects window. Then choose <code>Filter &gt; Filter (pre-emphasis)...</code> for pre-emphasis filtering, or choose <code>Filter &gt; Filter (de-emphasis)...</code> for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz.<br />
+<div id="how-to-apply-a-predeemphasis-filter" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> How to apply a (pre|de)emphasis filter<a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Select an input Sound object in the <code>Praat</code> Objects window. Then choose <code>Filter &gt; Filter (pre-emphasis)...</code> for pre-emphasis filtering, or choose <code>Filter &gt; Filter (de-emphasis)...</code> for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz.<br />
 The resulting filtered output Sound object is again added at the bottom of the list of objects.</p>
+</div>
 </div>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="31">
-<li id="fn31"><p>Note that the band reject filter in Fig.<a href="ch-filtering.html#fig:bandrejectfilter">4.4</a> has steeper slopes than the band pass filter in Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>.<a href="ch-filtering.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p>The overall average slope of the spectral envelope of speech changes from <span class="math inline">\(-6\)</span> to <span class="math inline">\(-6+6=0\)</span> dB per octave.<a href="ch-filtering.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<ol start="30">
+<li id="fn30"><p>Note that the band reject filter in Fig.<a href="ch-filtering.html#fig:bandrejectfilter">4.4</a> has steeper slopes than the band pass filter in Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>.<a href="ch-filtering.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn31"><p>The overall average slope of the spectral envelope of speech changes from <span class="math inline">\(-6\)</span> to <span class="math inline">\(-6+6=0\)</span> dB per octave.<a href="ch-filtering.html#fnref31" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
