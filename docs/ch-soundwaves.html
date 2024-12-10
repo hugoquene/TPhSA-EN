@@ -149,6 +149,10 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
 <li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
 </ul></li>
+<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#how-to-draw-and-save-an-oscillogram"><i class="fa fa-check"></i><b>1.10</b> How to draw and save an oscillogram</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#open-an-audio-file"><i class="fa fa-check"></i><b>1.10.1</b> Open an audio file</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
 <ul>
@@ -279,8 +283,8 @@ Remember that the sound <em>wave</em> travels through the medium, but the partic
 </div>
 <div id="sec:oscillogram" class="section level2 hasAnchor" number="1.6">
 <h2><span class="header-section-number">1.6</span> Oscillogram<a href="ch-soundwaves.html#sec:oscillogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As explained in §<a href="ch-soundwaves.html#sec:soundwave">1.2</a> above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In chapter <a href="ch-soundtobytes.html#ch-soundtobytes">2</a> we’ll learn how to measure, record and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the <strong>oscillogram</strong>.
-(We need the oscillogram to explain important properties of sound waves.)</p>
+<p>As explained in §<a href="ch-soundwaves.html#sec:soundwave">1.2</a> above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized, in the form of a so-called <strong>oscillogram</strong> or graphical representation of a sound wave.<br />
+(In chapter <a href="ch-soundtobytes.html#ch-soundtobytes">2</a> we’ll learn how to measure, record and store a sound wave. Here, we jump ahead and present the oscillogram, in order to explain important properties of sound waves.)</p>
 <p>In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.
 Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-oscillogram"></span>
@@ -520,14 +524,61 @@ As an analogy, consider the various types of objects in your room: clothing item
 <p>Before working with an object, you need to select that object, by clicking on it in the list of objects displayed in the Praat Objects window.</p>
 <p>Objects of any type may be saved and opened using the <code>Save</code> and <code>Open</code> options in the top menu of the Objects window. This is a great way to save the objects resulting from your phonetic analyses, i.e., to save your results.</p>
 <p>The buttons at the bottom of the Objects window are <em>always</em> available for objects of any type: <code>Rename...</code>, <code>Copy...</code>, <code>Inspect</code> (to take a deeper look), <code>Info</code>, and <code>Remove</code>.</p>
-<p>We will often work with objects of the <em>Sound</em> type. Such a Sound object is a digital sound (sampled audio), which you can Play or Scale or Convert or Combine, etc. You may analyze a Sound, which will typically result in an object of a different type (e.g. Pitch). Sound objects can be opened from disk, and saved as audio files in a wide variety of audio formats.</p>
+<p>We will often work with objects of the <em>Sound</em> type. Such a Sound object is a digital sound (sampled audio), which you can Play or Scale or Convert or Combine, etc. You may analyze a Sound, which will typically result in an object of a different type (e.g. Pitch). Sound objects can be opened from disk, and they can be saved as audio files in a wide variety of audio formats.</p>
 </div>
 <div id="picture-window" class="section level3 unnumbered hasAnchor">
 <h3>Picture window<a href="ch-soundwaves.html#picture-window" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>Praat</code> will draw its visualisations (figures) in its Praat Picture window. The figure will be scaled to the area with the pink boundary, the so-called viewport. By changing the viewport after drawing a part of a figure, you may obtain multiple visualizations in a single figure, as will be illustrated in this tutorial.</p>
-<p>The combined figure in the viewport may be saved (<code>File &gt; Save</code>) or printed (<code>File &gt; Print</code>) in the top menu of the Praat Picture window.</p>
-<p>You may also save the figure in a different way, as a “recipe” set of instructions to re-create the figure (<code>File &gt; Save as Praat picture file</code>), for later reuse.</p>
+<p>The combined figure in the viewport may be saved (<code>File &gt; Save</code>) or printed (<code>File &gt; Print</code>) in the top menu of the Praat Picture window.
+You may also save the figure in a different way, as a “recipe” set of instructions to re-create the figure (<code>File &gt; Save as Praat picture file</code>), for later reuse.</p>
 </div>
+</div>
+</div>
+<P>
+<div id="box-open" class="praatbox">
+<div id="how-to-draw-and-save-an-oscillogram" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> How to draw and save an oscillogram<a href="ch-soundwaves.html#how-to-draw-and-save-an-oscillogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="open-an-audio-file" class="section level3 hasAnchor" number="1.10.1">
+<h3><span class="header-section-number">1.10.1</span> Open an audio file<a href="ch-soundwaves.html#open-an-audio-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>In the <code>Praat</code> Objects window, go to the top menu, choose <code>Open</code>, then <code>Read from file...</code> and pick the desired audio file. It will be loaded as a Sound object at the bottom of the list of objects in the <code>Praat</code> Objects window.</li>
+</ul>
+<p>For the time being, selecting a short audio will make it easier for you to explore how <code>Praat</code> works; choose an audio file containing only a few seconds of sound.</p>
+<ul>
+<li><p><strong>The last-added object in the list is selected automatically.</strong></p></li>
+<li><p>In the <code>Praat</code> objects window, go to the bottom menu, choose <code>Info</code>. If it does not exist, <code>Praat</code> will open an additional window, titled <code>Praat Info</code>. In this window you’ll see all kinds of meta-data (data about data) of the selected Sound object, with numbers in scientific notation (see below).</p></li>
+</ul>
+</div>
+</div>
+</div>
+<P>
+<div id="scientificnotation" class="warningbox">
+<div id="sec:scientificnotation" class="section level4 hasAnchor" number="1.10.1.1">
+<h4><span class="header-section-number">1.10.1.1</span> Scientific notation<a href="ch-soundwaves.html#sec:scientificnotation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The scientific notation of a number such as <code>9.876e-2</code> is to be read as <span class="math inline">\(9.876 \times 10^{-2} = 9.876 \times 0.01 = 0.09876\)</span>; for background see <a href="https://en.wikipedia.org/wiki/Scientific_notation" class="uri">https://en.wikipedia.org/wiki/Scientific_notation</a>.</p>
+</div>
+</div>
+<P>
+<div id="box-draw" class="praatbox">
+<div id="draw-an-oscillogram" class="section level3 hasAnchor" number="1.10.2">
+<h3><span class="header-section-number">1.10.2</span> Draw an oscillogram<a href="ch-soundwaves.html#draw-an-oscillogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>In the <code>Praat</code> Objects window, select a Sound object.</p></li>
+<li><p>Next, in the <code>Praat</code> Object window, choose <code>Draw &gt; Draw...</code> and use default values for all arguments or options (button <code>Standards</code>).</p></li>
+<li><p>After pressing <code>OK</code>, the dialogue menu disappears, and the oscillogram of the Sound is drawn in the selected viewport area in the Picture window, with some basic labeling of axes (if option <code>Garnish</code> is on).</p></li>
+<li><p>If you are not happy with the resulting figure: in the <code>Praat</code> Picture window, choose <code>Edit &gt; Erase all</code>, or <code>Edit &gt; Undo</code>, and start again at the top of this section.</p></li>
+</ul>
+</div>
+<div id="save-a-picture" class="section level3 hasAnchor" number="1.10.3">
+<h3><span class="header-section-number">1.10.3</span> Save a picture<a href="ch-soundwaves.html#save-a-picture" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Check the page setup: in the <code>Praat</code> Picture window, choose <code>File &gt; Page setup...</code>, and check the settings.</p></li>
+<li><p>You can save the selected Viewport area in several formats:  
+<code>PDF</code> is best for publication-quality figures.  
+<code>PNG</code> format is best for on-screen images (blogs, web pages, documentation). A graphical resolution of 300 pixels per inch-on-screen (dots per inch, or dpi) if often adequate, since that graphical resolution is typically better than most computer screens (but you can try out 600 dpi for your setup).  
+<code>EPS</code> format is nowadays less popular, but may offer downstream flexibility (read documentation about this format).</p></li>
+<li><p>Store the graphical (image) file in an appropriate folder on your computer, under an appropriate file name that will still make sense to you in a year’s time. Make a note in your journal about where you’ve saved this file, and about the contents of the file.</p></li>
+</ul>
 </div>
 </div>
 

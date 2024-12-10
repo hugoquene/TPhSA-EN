@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 06 Dec 2024 14:00}
+\date{Document compiled 10 Dec 2024 22:29}
 
 \begin{document}
 \maketitle
@@ -267,8 +267,8 @@ Remember that the sound \emph{wave} travels through the medium, but the particle
 
 \section{Oscillogram}\label{sec:oscillogram}
 
-As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized. (In chapter \ref{ch-soundtobytes} we'll learn how to measure, record and store a sound wave.) Here, we jump ahead and present a graphical representation of a sound wave: the \textbf{oscillogram}.
-(We need the oscillogram to explain important properties of sound waves.)
+As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized, in the form of a so-called \textbf{oscillogram} or graphical representation of a sound wave.\\
+(In chapter \ref{ch-soundtobytes} we'll learn how to measure, record and store a sound wave. Here, we jump ahead and present the oscillogram, in order to explain important properties of sound waves.)
 
 In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline\footnote{The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.}.
 Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.
@@ -519,7 +519,7 @@ Objects of any type may be saved and opened using the \texttt{Save} and \texttt{
 
 The buttons at the bottom of the Objects window are \emph{always} available for objects of any type: \texttt{Rename...}, \texttt{Copy...}, \texttt{Inspect} (to take a deeper look), \texttt{Info}, and \texttt{Remove}.
 
-We will often work with objects of the \emph{Sound} type. Such a Sound object is a digital sound (sampled audio), which you can Play or Scale or Convert or Combine, etc. You may analyze a Sound, which will typically result in an object of a different type (e.g.~Pitch). Sound objects can be opened from disk, and saved as audio files in a wide variety of audio formats.
+We will often work with objects of the \emph{Sound} type. Such a Sound object is a digital sound (sampled audio), which you can Play or Scale or Convert or Combine, etc. You may analyze a Sound, which will typically result in an object of a different type (e.g.~Pitch). Sound objects can be opened from disk, and they can be saved as audio files in a wide variety of audio formats.
 
 \subsection*{Picture window}\label{picture-window}
 \addcontentsline{toc}{subsection}{Picture window}
@@ -527,8 +527,60 @@ We will often work with objects of the \emph{Sound} type. Such a Sound object is
 \texttt{Praat} will draw its visualisations (figures) in its Praat Picture window. The figure will be scaled to the area with the pink boundary, the so-called viewport. By changing the viewport after drawing a part of a figure, you may obtain multiple visualizations in a single figure, as will be illustrated in this tutorial.
 
 The combined figure in the viewport may be saved (\texttt{File\ \textgreater{}\ Save}) or printed (\texttt{File\ \textgreater{}\ Print}) in the top menu of the Praat Picture window.
-
 You may also save the figure in a different way, as a ``recipe'' set of instructions to re-create the figure (\texttt{File\ \textgreater{}\ Save\ as\ Praat\ picture\ file}), for later reuse.
+
+\phantomsection\label{box-open}
+\section{How to draw and save an oscillogram}\label{how-to-draw-and-save-an-oscillogram}
+
+\subsection{Open an audio file}\label{open-an-audio-file}
+
+\begin{itemize}
+\tightlist
+\item
+  In the \texttt{Praat} Objects window, go to the top menu, choose \texttt{Open}, then \texttt{Read\ from\ file...} and pick the desired audio file. It will be loaded as a Sound object at the bottom of the list of objects in the \texttt{Praat} Objects window.
+\end{itemize}
+
+For the time being, selecting a short audio will make it easier for you to explore how \texttt{Praat} works; choose an audio file containing only a few seconds of sound.
+
+\begin{itemize}
+\item
+  \textbf{The last-added object in the list is selected automatically.}
+\item
+  In the \texttt{Praat} objects window, go to the bottom menu, choose \texttt{Info}. If it does not exist, \texttt{Praat} will open an additional window, titled \texttt{Praat\ Info}. In this window you'll see all kinds of meta-data (data about data) of the selected Sound object, with numbers in scientific notation (see below).
+\end{itemize}
+
+\phantomsection\label{scientificnotation}
+\subsubsection{Scientific notation}\label{sec:scientificnotation}
+
+The scientific notation of a number such as \texttt{9.876e-2} is to be read as \(9.876 \times 10^{-2} = 9.876 \times 0.01 = 0.09876\); for background see \url{https://en.wikipedia.org/wiki/Scientific_notation}.
+
+\phantomsection\label{box-draw}
+\subsection{Draw an oscillogram}\label{draw-an-oscillogram}
+
+\begin{itemize}
+\item
+  In the \texttt{Praat} Objects window, select a Sound object.
+\item
+  Next, in the \texttt{Praat} Object window, choose \texttt{Draw\ \textgreater{}\ Draw...} and use default values for all arguments or options (button \texttt{Standards}).
+\item
+  After pressing \texttt{OK}, the dialogue menu disappears, and the oscillogram of the Sound is drawn in the selected viewport area in the Picture window, with some basic labeling of axes (if option \texttt{Garnish} is on).
+\item
+  If you are not happy with the resulting figure: in the \texttt{Praat} Picture window, choose \texttt{Edit\ \textgreater{}\ Erase\ all}, or \texttt{Edit\ \textgreater{}\ Undo}, and start again at the top of this section.
+\end{itemize}
+
+\subsection{Save a picture}\label{save-a-picture}
+
+\begin{itemize}
+\item
+  Check the page setup: in the \texttt{Praat} Picture window, choose \texttt{File\ \textgreater{}\ Page\ setup...}, and check the settings.
+\item
+  You can save the selected Viewport area in several formats: ~
+  \texttt{PDF} is best for publication-quality figures. ~
+  \texttt{PNG} format is best for on-screen images (blogs, web pages, documentation). A graphical resolution of 300 pixels per inch-on-screen (dots per inch, or dpi) if often adequate, since that graphical resolution is typically better than most computer screens (but you can try out 600 dpi for your setup). ~
+  \texttt{EPS} format is nowadays less popular, but may offer downstream flexibility (read documentation about this format).
+\item
+  Store the graphical (image) file in an appropriate folder on your computer, under an appropriate file name that will still make sense to you in a year's time. Make a note in your journal about where you've saved this file, and about the contents of the file.
+\end{itemize}
 
 \chapter{Converting sound to bytes}\label{ch-soundtobytes}
 
@@ -564,11 +616,11 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
 \item
   A good microphone is a very sensitive and very expensive device. Treat it with great care. Never blow into a microphone (it's far better to just say \texttt{test} or \texttt{check} or anything with plosive and fricative consonants). Do not tap on its surface.
 \item
-  Do not plug or unplug the microphone into/from a ``hot'' port (first set the port's input/output volume to zero, then plug/unplug).
+  Do not plug or unplug the microphone into/from a ``hot'' port. First set the port's input/output volume to zero, then plug/unplug.
 \item
   Do not speak \emph{into} the microphone, but just over it or alongside. The microphone should measure sounds, but \emph{not} the flow of air coming out of a speaker's mouth and nose. If the microphone comes with a foam cap to dampen airflow, then use it.
 \item
-  Do not touch the microphone while it is working; this will result in undesired (and often loud) contact sounds in the output signal.
+  Do not touch the microphone while it is picking up sound; this will result in undesired (and often loud) contact sounds in the output signal.
 \end{itemize}
 
 \section{Key parameters in AD conversion}\label{key-parameters-in-ad-conversion}
@@ -577,7 +629,7 @@ The digital signal obtained by analog-to-digital conversion is an approximation 
 
 \subsection{Sampling frequency}\label{sec:samplingfrequency}
 
-The sampling frequency (symbol \(f_s\)) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the time dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf.~§\ref{sec:frequency}). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled \(2000 \times\) per second.
+The sampling frequency (symbol \(f_s\)) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the \emph{time} dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf.~§\ref{sec:frequency}). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled \(2000 \times\) per second.
 
 \phantomsection\label{nyquist}
 The sampling frequency \(f_s\) must be at least \(2 \times\) the highest frequency \(f\) in the analog source sound. This means that the source sound may not contain any (components with) frequencies above \(f_s / 2\), the so-called `nyquist frequency'. In practice this is guaranteed by \emph{low-pass} filtering the source sound (see §\ref{sec:typesoffilters}), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency, This filtering is routinely done before AD conversion, by the AD conversion hardware.
@@ -594,7 +646,7 @@ For music, relevant information may be contained in the full audible range up to
 
 \subsection{Amplitude resolution}\label{amplitude-resolution}
 
-The amplitude resolution, or quantization, refers to the number of separate steps in amplitude (voltage) that are discerned during sampling. Again, with a higher amplitude resolution, the digital signal better (more closely) approximates the analog source in the amplitude dimension, resulting in a better digital recording. The amplitude resolution is expressed in bits\footnote{1 bit or binary digit is a single digit in the binary system. A binary digit can only have 2 possible values, \(0\) or \(1\) (just as a decimal digit can have 10 possible values, \(0\) to \(9\)).} or bytes\footnote{1 byte is 8 bits, or \(2^8=256\) possible values.}.
+The amplitude resolution, or quantization, refers to the number of separate steps in amplitude (voltage) that are discerned during sampling. Again, with a higher amplitude resolution, the digital signal better (more closely) approximates the analog source in the \emph{amplitude} dimension, resulting in a better digital recording. The amplitude resolution is expressed in bits\footnote{1 bit or binary digit is a single digit in the binary system. A binary digit can only have 2 possible values, \(0\) or \(1\) (just as a decimal digit can have 10 possible values, \(0\) to \(9\)).} or bytes\footnote{1 byte is 8 bits, or \(2^8=256\) possible values.}.
 
 The recorded amplitude values are discrete, and because of the ``jump'' from one discrete amplitude step to the next-higher or next-lower value, the amplitude values are ``rounded'' to some extent. This rounding or quantization results in audible noise in the digital signal. This rounding noise amounts to half a step of possible amplitude values. If we have more amplitude values (higher amplitude resolution) then the rounding off becomes less noticeable\footnote{Notice that one bit is required to record the sign of the value (positive or negative), so with 1 byte of resolution we can in principle record 256 possible amplitude values, running from -128 to +128, with rounding noise having an amplitude of \(0.5/128\) or \(1/256\) of the maximum amplitude. This corresponds to a signal-to-quantization-noise ratio of 50 dB. In practice, however, amplitude values are not stored as integer numbers but as floating numbers.}.
 

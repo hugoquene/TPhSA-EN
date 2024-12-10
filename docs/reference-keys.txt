@@ -29,6 +29,11 @@ decibel
 sec:phase
 sec:wavelength
 sec:praatintro
+how-to-draw-and-save-an-oscillogram
+open-an-audio-file
+sec:scientificnotation
+draw-an-oscillogram
+save-a-picture
 ch-soundtobytes
 sec:ADCoverview
 sec:microphone
