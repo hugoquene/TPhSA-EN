@@ -322,7 +322,7 @@ You may also save the figure in a different way, as a "recipe" set of instructio
 
 ::: {#box-open .praatbox}
 
-## How to draw and save an oscillogram 
+## How to draw an oscillogram 
 
 ### Open an audio file
 
@@ -358,7 +358,7 @@ The scientific notation of a number such as `9.876e-2` is to be read as $9.876 \
 
 - After pressing `OK`, the dialogue menu disappears, and the oscillogram of the Sound is drawn in the selected viewport area in the Picture window, with some basic labeling of axes (if option `Garnish` is on). 
 
-- If you are not happy with the resulting figure: in the `Praat` Picture window, choose `Edit > Erase all`, or `Edit > Undo`, and start again at the top of this section. 
+- If you are not happy with the resulting figure: in the `Praat` Picture window, choose `Edit > Erase all`, or `Edit > Undo`, and start again at the top of this subsection. 
 
 ### Save a picture
 
@@ -367,8 +367,8 @@ The scientific notation of a number such as `9.876e-2` is to be read as $9.876 \
 - You can save the selected Viewport area in several formats: \ 
 `PDF` is best for publication-quality figures. \ 
 `PNG` format is best for on-screen images (blogs, web pages, documentation). A graphical resolution of 300 pixels per inch-on-screen (dots per inch, or dpi) if often adequate, since that graphical resolution is typically better than most computer screens (but you can try out 600 dpi for your setup). \ 
-`EPS` format is nowadays less popular, but may offer downstream flexibility (read documentation about this format).  
+`EPS` format is nowadays less popular, but may offer flexibility for downstream image processing (check documentation about this format). 
 
-- Store the graphical (image) file in an appropriate folder on your computer, under an appropriate file name that will still make sense to you in a year's time. Make a note in your journal about where you've saved this file, and about the contents of the file.
+- Store the graphical (image) file in an appropriate folder for your project on your computer, under an appropriate file name, that will still make sense to you in a year's time. Make a note in your journal about where you've saved this file, and about the contents of the file.
 
 :::

@@ -73,3 +73,5 @@ slope
 bandwidth
 emphasis-filters
 how-to-apply-a-predeemphasis-filter
+how-to-draw-an-oscillogram
+on-your-phone
