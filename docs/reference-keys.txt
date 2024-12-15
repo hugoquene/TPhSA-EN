@@ -25,11 +25,11 @@ sec:amplitude
 rms-amplitude
 sec:intensity
 sec:logarithm
-decibel
+sec:decibel
 sec:phase
 sec:wavelength
 sec:praatintro
-how-to-draw-and-save-an-oscillogram
+how-to-draw-an-oscillogram
 open-an-audio-file
 sec:scientificnotation
 draw-an-oscillogram
@@ -73,5 +73,4 @@ slope
 bandwidth
 emphasis-filters
 how-to-apply-a-predeemphasis-filter
-how-to-draw-an-oscillogram
 on-your-phone

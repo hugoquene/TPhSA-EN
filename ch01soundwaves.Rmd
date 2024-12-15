@@ -148,7 +148,7 @@ Energy is independent from the time dimension: a continuous sound having an ener
 
 For sound waves, we are interested in the amount of power, but now expressed per unit area on the imaginary sphere of propagation of the sound wave in the medium (see §\@ref(sec:soundwave)). How much acoustic energy is transferred in the wave, by particles colliding with their neigboring particles, per time and per area? This property is termed the **intensity** of the sound. Intensity is expressed in units of energy per square meter perpendicular to the direction of propagation ($\textrm{W}/\textrm{m}^2$). 
 
-The intensity of a sound drops off as the distance to the sound source increases^[The intensity on the surface of the sphere undergoes a dropoff which can be calculated as $I=I_s/4πr^2$, with $I_s$ being the intensity at the source, and $r$ being the radius of the sphere, that is, the distance from the source.]. The sound of a hammer hitting a nail has an intensity $I/1 = I$ at a distance of $1 \times r$, but only an intensity of $I /2^2 = I/4$ at a double distance of $2 \times r$.  
+The intensity of a sound drops off as the distance to the sound source increases^[The intensity on the surface of the sphere undergoes a dropoff which can be calculated as $I=I_s/4πr^2$, with $I_s$ being the intensity at the source, and $r$ being the radius of the sphere, that is, the distance from the source.]. The sound of a hammer hitting a nail has an intensity $I/1 = I$ at a distance of $1 \cdot r$, but only an intensity of $I /3^2 = I/9$ at a triple distance of $3 \cdot r$. If you double the distance from $r$ to $2r$, the intensity is significantly reduced by $-14$ dB (§\@ref(sec:decibel)). **Protect your ears** against loud sounds by moving away from the sound source!
 
 The intensity of a sound is proportional to the maximum pressure variations of that sound, with
 $$I = \frac{1}{2} \cdot \frac{p^2}{\rho \cdot c}$$ 
@@ -178,11 +178,16 @@ By definition, $x^0=1$, and $^x\log(1)=0$, for any base $x$.
 
 Intensity is perceived in an approximately logarithmic fashion: each tenfold increase of intensity (logarithm using base $10$) is perceived as one equal step in intensity, as further explained below. In a similar fashion, frequency too is perceived in logarithmic fashion: each twofold increase of frequency (doubling, logarithm using base $2$) is perceived as one equal step in frequency, viz. by one octave (§\@ref(sec:octave)). 
 
-#### Decibel 
+#### Decibel {#sec:decibel}
 
-In practice, the sound pressure or sound intensity is expressed not in absolute units, but as a *ratio* relative to the sound pressure or the sound intensity of a reference sound. One of the reasons for this practice is that equal ratios are perceived as equal steps or differences^[This may be clear from the piano keyboard: each doubling of frequency (ratio $1:2$) is perceived as one equal octave step (divided into 12 semitone keys).]
+Sound intensity or sound pressure is not expressed in absolute units, but in relative decibel units. The *decibel* unit of intensity (or of sound pressure) is based on three steps [@Fry_1979, p.91ff]: 
 
-In practice, the sound pressure or intensity of a target sound is compared with some reference sound pressure or intensity, and the target-to-reference ratio is then expressed on a logarithmic scale, in **decibel** units (dB). The decibel unit is named after Alexander Graham Bell (1847-1922, inventor of the telephone). 
+1. Take the **ratio** of the intensities (pressures) of a target sound, and the intensity (or pressure) of some reference sound -- more about that reference sound in the next paragraphs; 
+
+2. Take the **logarithm** (§\@ref(sec:logarithm)) of that intensity ratio (pressure ratio); this results in a log ratio, in *Bel* units, named after Alexander Graham Bell (1847-1922, inventor of the telephone). 
+
+3. **Multiply** the logarithm **by 10** to obtain the intensity ratio in *decibel* units. 
+
 Several different references are commonly used:
 
 - a reference sound that has a standard RMS pressure of $p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}$, and/or a standard intensity of $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. This is the weakest sound perceived by humans^[This reference is the *minimal* hearing threshold, achieved only by the 1% most sensitive listeners. The *average* hearing threshold, achieved by 50% of listeners, is at about +16 dB relative to this reference value [@Fletcher_1953, Fig.96], see below.]. 
@@ -193,11 +198,17 @@ As this reference $p_0$ is expressed in RMS units of sound pressure (in Pascal u
 
 - the *loudest* sound (highest pressure, or voltage, or intensity) that a device can process without distorting the input signal; incoming sounds are expressed in negative dB units below this reference.
 
-
-For sound intensity levels:
+Putting the three steps together, we see that for sound intensity levels:
 $$L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)$$
-where $L_I$ is the level of intensity, in dB, $I$ is the intensity of the target sound, and $I_0$ is the intensity of the reference sound (see above), $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. \
-Working through this formula from the inside out, (1) we take the target-to-reference ratio, (2) we take the logarithm of that ratio (using 10 as base number): this is the Bel unit, and (3) we multiply by 10 to obtain *deci*bel units.  
+where $L_I$ is the level of intensity, in dB, $I$ is the intensity of the target sound, and $I_0$ is the intensity of the reference sound (see above), e.g. $I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2$. \
+The three steps may be followed by working through this formula from the inside out: (1) we take the target-to-reference ratio, (2) we take the logarithm of that ratio (using 10 as base number), and (3) we multiply by 10 to obtain *deci*bel units.  
+
+If the target sound has an intensity $I$ which is $10000\times$ as large as $I_0$, then 
+
+$$L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) = 
+10 \cdot ^{10}\log \left( 10000 \right) = 
+10 \cdot 4 = 40\ \textrm{dB}$$
+
 
 For sound pressure levels, using RMS amplitude of sound pressure:
 $$	L_p = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) 
@@ -205,8 +216,12 @@ $$	L_p = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)
 		= 20 \cdot  ^{10}\log \left( \frac{p}{p_0} \right) $$
 where $L_p$ is the level of sound pressure, in dB, $p$ is the RMS amplitude of the target sound, and $p_0$ is the RMS amplitude of the reference sound (see above), $p_0 = 2 \cdot 10^{-5}\ \textrm{Pa}$. 
 
-A doubling of the sound pressure, that is, of the RMS amplitude (factor 2, ratio 2) means an increase of the sound pressure level by +6 dB, see footnote^[$20\cdot ^{10}\log \left( \frac{2}{1} \right) = 20 \cdot ^{10}\log (2) =	20 (0.30103) = 6.0206 \approx 6$]. 
-A doubling of the intensity means an increase of the sound intensity by +3 dB, see footnote^[$10\cdot ^{10}\log \left( \frac{2}{1} \right) = 10 \cdot ^{10}\log (2) =	10 (0.30103) = 3.0103 \approx 3$].
+A doubling of the sound pressure, that is, of the RMS amplitude (factor 2, ratio 2) means an increase of the sound pressure level by +6 dB:
+$$20\cdot ^{10}\log \left( \frac{2}{1} \right) = 20 \cdot ^{10}\log (2) =	20 (0.30103) = 6.0206 \approx 6$$
+
+A doubling of the intensity means an increase of the sound intensity by +3 dB:
+$$10\cdot ^{10}\log \left( \frac{2}{1} \right) = 10 \cdot ^{10}\log (2) =	10 (0.30103) = 3.0103 \approx 3$$
+
 By definition, a value of 0 dB means that the target sound has the same sound pressure and/or same intensity as that of the chosen reference sound.
 
 ::: {#questions-0dB .questionbox}
@@ -217,28 +232,30 @@ Check that the last sentence above holds true.
 
 ::: 
 
-Table \@ref(tab:decibels) shows some examples of sound pressure levels (in dB) under various circumstances. 
+Table \@ref(tab:decibels) shows some examples of sound intensities under various circumstances [@Fry_1979, p.94].
 
-Table: (#tab:decibels) Examples of sound pressure levels in dB (SPL), in various situations. 
+Table: (#tab:decibels) Examples of sound intensities in dB (SPL), in various situations. 
 
 | dB (SPL) | situation | 
 | -------- | :-------- |
-|       0  | Reference value; absolute threshold of sine wave sound with $f=1000$ Hz |
-|      16  | Average threshold of hearing for 50% of listeners [@Fletcher_1953, Ch.8] |
-|      20  | Leaves rustling in forest | 
-|      27  | Outside in Hermit Basin, at the bottom of the Grand Canyon, USA [@Dahl_Miller_Cato_Andrew_2007] |
-|      30  | Whispering | 
-|      35  | Outside in residential area, at night |
-|      40  | Quiet room | 
-|      60  | Average conversation (at 1.5 m distance) |
-|      65  | Pedestrian city area |
-|      80  | Shouting, singing (at 1.5 m distance); street noise |
-|      92  | Outside on emergency lane of busy highway (200 cars/min, 60 mph) [@Dahl_Miller_Cato_Andrew_2007] | 
-|     100  | Loud orchestra |
-|     120  | Threshold of pain |
-|     130  | Jet engine (at 30 m distance) | 
-|     172  | Krakatoa eruption, 1893 (at 165 km distance)  (<https://www.popsci.com/story/science/loudest-sounds-ever-measured/>) |
 |     192  | Loudest sound possible in air, rarefactions are vacuum (<https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure>) |
+|     172  | Krakatoa eruption, 1893 (at 165 km distance)  (<https://www.popsci.com/story/science/loudest-sounds-ever-measured/>) |
+|     130  | Jet engine (at 30 m distance) | 
+|     120  | Threshold of pain |
+|     103  | Recommended maximum level in clubs and venues in the Netherlands (average over 15 min, peaks may be higher) | 
+|     100  | Symphony orchestra playing 'fortissimo' |
+|      92  | Outside on emergency lane of busy highway (200 cars/min, 60 mph) [@Dahl_Miller_Cato_Andrew_2007] | 
+|      85  | Hearing protection is obligatory for employees in the Netherlands |  
+|      80  | Shouting, singing (at 1.5 m distance); street noise |
+|      65  | Pedestrian city area |
+|      60  | Average conversation (at 1.5 m distance) |
+|      40  | Quiet room | 
+|   35-40  | Outside in residential area, at night |
+|      30  | Whispering | 
+|      27  | Outside in Hermit Basin, at the bottom of the Grand Canyon, USA [@Dahl_Miller_Cato_Andrew_2007] |
+|      20  | Background inside audio studio | 
+|      16  | Average threshold of hearing for 50% of listeners [@Fletcher_1953, Ch.8] |
+|       0  | Reference value; absolute threshold of sine wave sound with $f=1000$ Hz |
 
 
 ### Phase {#sec:phase}
@@ -367,7 +384,7 @@ The scientific notation of a number such as `9.876e-2` is to be read as $9.876 \
 - You can save the selected Viewport area in several formats: \ 
 `PDF` is best for publication-quality figures. \ 
 `PNG` format is best for on-screen images (blogs, web pages, documentation). A graphical resolution of 300 pixels per inch-on-screen (dots per inch, or dpi) if often adequate, since that graphical resolution is typically better than most computer screens (but you can try out 600 dpi for your setup). \ 
-`EPS` format is nowadays less popular, but may offer flexibility for downstream image processing (check documentation about this format). 
+`EPS` format is nowadays less popular, but may offer flexibility for downstream image processing (check documentation about this format).  
 
 - Store the graphical (image) file in an appropriate folder for your project on your computer, under an appropriate file name, that will still make sense to you in a year's time. Make a note in your journal about where you've saved this file, and about the contents of the file.
 
