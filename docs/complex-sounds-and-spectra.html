@@ -233,7 +233,7 @@ div.csl-indent {
 <p><em>Chapter keywords</em>: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse.</p>
 <div id="introduction" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Introduction<a href="complex-sounds-and-spectra.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <em>sine wave</em>, depicted in Fig. <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>, is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature – although the sound of a tuning fork comes quite close to a sinewave pattern.</p>
+<p>The <em>sine wave</em>, depicted in Fig. <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>, is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature – although the sound of a tuning fork comes quite close to a sinewave pattern.</p>
 <p>By contrast, <em>complex sounds</em> have more complex wave patterns. All natural periodic sounds are complex sounds. <strong>A complex sound can be regarded as the sum of multiple sine wave sounds.</strong> This relation has been described by the French mathematician, baron J.B.J. Fourier (1768–1830). The sine waves are termed ‘frequency components’ of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called ‘Fourier analysis’ or ‘Fourier Transform’ of a complex sound, these frequency components are being estimated from the waveform.</p>
 <p>If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a> provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz (<span class="math inline">\(T=.01\)</span>) and 200 Hz (<span class="math inline">\(T=.005\)</span>) and 400 Hz (<span class="math inline">\(T=.0025\)</span>), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the <em>fundamental</em>, and its frequency is called the <em>fundamental frequency</em> (symbol <span class="math inline">\(f_0\)</span>) of the complex periodic sound; we hear this <span class="math inline">\(f_0\)</span> as its pitch. The higher components are called <em>overtones</em>. The fundamental and overtones are collectively called <em>harmonics</em>: the fundamental is the first harmonic, the first overtone is the second harmonic, etc.
 <strong>In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.</strong></p>
@@ -260,7 +260,7 @@ A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The 
 <div id="spectrum" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Spectrum<a href="complex-sounds-and-spectra.html#spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a <em>spectrum</em>.</p>
-<p>Figure <a href="complex-sounds-and-spectra.html#fig:complex100n200n400">3.2</a> shows an oscillogram on the left (of the same complex sound as shown in Fig. <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a>, and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>. Hence, a spectrum shows the frequency and amplitude of each component.</p>
+<p>Figure <a href="complex-sounds-and-spectra.html#fig:complex100n200n400">3.2</a> shows an oscillogram on the left (of the same complex sound as shown in Fig. <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a>, and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>. Hence, a spectrum shows the frequency and amplitude of each component.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:complex100n200n400"></span>
 <img src="figures/complex100n200n400.png" alt="Oscillogram (left) and spectrum (right) of a complex periodic sound."  />
 <p class="caption">
@@ -294,11 +294,11 @@ To do so, select the Spectrum object, select button <code>Sound &gt;</code> and 
 </div>
 <div id="spectra-of-aperiodic-sounds" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Spectra of aperiodic sounds<a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Stable noise and brief impulses are two types of aperiodic signals (§<a href="ch-soundwaves.html#sec:periodicity">1.7</a>): the variations in air pressure do not follow a regular periodic pattern<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>. Aperiodic sounds do not have a fundamental frequency (because there is no regular period), and their phase is undefined, but aperiodic sounds do have an amplitude and a spectral composition.</p>
+<p>Stable noise and brief impulses are two types of aperiodic signals (§<a href="ch-soundwaves.html#sec:periodicity">1.7</a>): the variations in air pressure do not follow a regular periodic pattern<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>. Aperiodic sounds do not have a fundamental frequency (because there is no regular period), and their phase is undefined, but aperiodic sounds do have an amplitude and a spectral composition.</p>
 <div id="sec:noise" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Noise<a href="complex-sounds-and-spectra.html#sec:noise" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First we discuss <em>stable</em> aperiodic sounds: <strong>noise</strong>. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at <em>every</em> frequency. The relative amplitudes of the many frequency components determines the timbre of the noise.</p>
-<p>In <em>white noise</em>, all frequency components are equally strong<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>, and thus the spectral envelope is flat.
+<p>In <em>white noise</em>, all frequency components are equally strong<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, and thus the spectral envelope is flat.
 In so-called <em>brown noise</em>, the spectral envelope decreases by <span class="math inline">\(-6\)</span> dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research whenever we need to mask speech.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrum-whitebrownnoises"></span>
 <img src="figures/whitebrownnoises.png" alt="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz)."  />
@@ -306,7 +306,7 @@ In so-called <em>brown noise</em>, the spectral envelope decreases by <span clas
 Figure 3.3: Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).
 </p>
 </div>
-<p>The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, with (c) a particular sampling frequency of the noise.</p>
+<p>The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>, with (c) a particular sampling frequency of the noise.</p>
 </div>
 <div id="sec:impulses" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Impulses<a href="complex-sounds-and-spectra.html#sec:impulses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -339,12 +339,12 @@ R</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="22">
-<li id="fn22"><p>Drawing the position of a swinging pendulum over time will result in the same figure.<a href="complex-sounds-and-spectra.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>Here, the phase of the frequency components is ignored.<a href="complex-sounds-and-spectra.html#fnref23" class="footnote-back">↩︎</a></p></li>
-<li id="fn24"><p>Or, you might say that the period is infinitely long.<a href="complex-sounds-and-spectra.html#fnref24" class="footnote-back">↩︎</a></p></li>
-<li id="fn25"><p>This is called ‘white’ noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.<a href="complex-sounds-and-spectra.html#fnref25" class="footnote-back">↩︎</a></p></li>
-<li id="fn26"><p>If you would listen to white noise for an infinitely long time, then all frequency components would indeed be equally strong.<a href="complex-sounds-and-spectra.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<ol start="23">
+<li id="fn23"><p>Drawing the position of a swinging pendulum over time will result in the same figure.<a href="complex-sounds-and-spectra.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p>Here, the phase of the frequency components is ignored.<a href="complex-sounds-and-spectra.html#fnref24" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p>Or, you might say that the period is infinitely long.<a href="complex-sounds-and-spectra.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>This is called ‘white’ noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.<a href="complex-sounds-and-spectra.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p>If you would listen to white noise for an infinitely long time, then all frequency components would indeed be equally strong.<a href="complex-sounds-and-spectra.html#fnref27" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

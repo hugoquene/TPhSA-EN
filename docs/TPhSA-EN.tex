@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 15 Dec 2024 18:36}
+\date{Document compiled 15 Dec 2024 19:03}
 
 \begin{document}
 \maketitle
@@ -348,7 +348,7 @@ Energy is independent from the time dimension: a continuous sound having an ener
 
 For sound waves, we are interested in the amount of power, but now expressed per unit area on the imaginary sphere of propagation of the sound wave in the medium (see §\ref{sec:soundwave}). How much acoustic energy is transferred in the wave, by particles colliding with their neigboring particles, per time and per area? This property is termed the \textbf{intensity} of the sound. Intensity is expressed in units of energy per square meter perpendicular to the direction of propagation (\(\textrm{W}/\textrm{m}^2\)).
 
-The intensity of a sound drops off as the distance to the sound source increases\footnote{The intensity on the surface of the sphere undergoes a dropoff which can be calculated as \(I=I_s/4πr^2\), with \(I_s\) being the intensity at the source, and \(r\) being the radius of the sphere, that is, the distance from the source.}. The sound of a hammer hitting a nail has an intensity \(I/1 = I\) at a distance of \(1 \cdot r\), but only an intensity of \(I /3^2 = I/9\) at a triple distance of \(3 \cdot r\). If you double the distance from \(r\) to \(2r\), the intensity is reduced by \(-14\) dB (§@(sec:decibel)). \textbf{Protect your ears} against loud sounds by moving away from the sound source!
+The intensity of a sound drops off as the distance to the sound source increases\footnote{The intensity on the surface of the sphere undergoes a dropoff which can be calculated as \(I=I_s/4πr^2\), with \(I_s\) being the intensity at the source, and \(r\) being the radius of the sphere, that is, the distance from the source.}. The sound of a hammer hitting a nail has an intensity \(I/1 = I\) at a distance of \(1 \cdot r\), but only an intensity of \(I /3^2 = I/9\) at a triple distance of \(3 \cdot r\). If you double the distance from \(r\) to \(2r\), the intensity is significantly reduced by \(-14\) dB (§\ref{sec:decibel})\footnote{Even increasing the distance by only 25\% reduces the intensity significantly by \(-4\) dB.}. \textbf{Protect your ears} against loud sounds by moving away from the sound source!
 
 The intensity of a sound is proportional to the maximum pressure variations of that sound, with
 \[I = \frac{1}{2} \cdot \frac{p^2}{\rho \cdot c}\]
@@ -384,11 +384,11 @@ Sound intensity or sound pressure is not expressed in absolute units, but in rel
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Take the \textbf{ratio} of the intensities (pressures) of a target sound, and the intensity (or pressure) of some reference sound -- more about that reference sound in the next paragraphs;
+  Take the \textbf{ratio} of the intensities (pressures) of a target sound, and that of some reference sound -- more about the choice of reference sound in the next paragraphs;
 \item
-  Take the \textbf{logarithm} (§\ref{sec:logarithm}) of that intensity ratio (pressure ratio); this results in a log ratio, in \emph{Bel} units, named after Alexander Graham Bell (1847-1922, inventor of the telephone).
+  Take the \textbf{logarithm} (§\ref{sec:logarithm}) of that intensity ratio (pressure ratio); this results in a log ratio, in \emph{Bel} units, named after Alexander Graham Bell (1847-1922, inventor of the telephone);
 \item
-  \textbf{Multiply} the logarithm \textbf{by \(10\)} to obtain the intensity ratio in \emph{decibel} units.
+  \textbf{Multiply} the logarithm \textbf{by 10} to obtain the intensity ratio in \emph{decibel} units.
 \end{enumerate}
 
 Several different references are commonly used:
@@ -406,11 +406,10 @@ Several different references are commonly used:
 
 Putting the three steps together, we see that for sound intensity levels:
 \[L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)\]
-where \(L_I\) is the level of intensity, in dB, \(I\) is the intensity of the target sound, and \(I_0\) is the intensity of the reference sound (see above), \(I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2\).\\
+where \(L_I\) is the level of intensity, in dB, \(I\) is the intensity of the target sound, and \(I_0\) is the intensity of the reference sound (see above), e.g.~\(I_0 = 10^{-12}\ \textrm{W}/\textrm{m}^2\).\\
 The three steps may be followed by working through this formula from the inside out: (1) we take the target-to-reference ratio, (2) we take the logarithm of that ratio (using 10 as base number), and (3) we multiply by 10 to obtain \emph{deci}bel units.
 
 If the target sound has an intensity \(I\) which is \(10000\times\) as large as \(I_0\), then
-
 \[L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) = 
 10 \cdot ^{10}\log \left( 10000 \right) = 
 10 \cdot 4 = 40\ \textrm{dB}\]

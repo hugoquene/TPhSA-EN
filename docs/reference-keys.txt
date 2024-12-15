@@ -73,4 +73,3 @@ slope
 bandwidth
 emphasis-filters
 how-to-apply-a-predeemphasis-filter
-on-your-phone
