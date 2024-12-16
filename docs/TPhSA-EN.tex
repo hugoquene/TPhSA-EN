@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 16 Dec 2024 17:53}
+\date{Document compiled 16 Dec 2024 20:00}
 
 \begin{document}
 \maketitle
@@ -270,8 +270,8 @@ Remember that the sound \emph{wave} travels through the medium, but the particle
 As explained in §\ref{sec:soundwave} above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized, in the form of a so-called \textbf{oscillogram} or graphical representation of a sound wave.\\
 (In chapter \ref{ch-soundtobytes} we'll learn how to measure, record and store a sound wave. Here, we jump ahead and present the oscillogram, in order to explain important properties of sound waves.)
 
-In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline\footnote{The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.}.
-Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location.
+In an oscillogram such as Figure \ref{fig:speech-oscillogram}, the horizontal axis represents the time dimension\footnote{Often abbreviated to \(t\).}, and the vertical axis represents the air pressure. The pressure fluctuations (compression and rarefaction) are displayed as vertical deviations relative to the horizontal baseline\footnote{The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.}.
+Thus an oscillogram records the back-and-forth movements of the particles of the medium, indirectly, by recording the fluctuations in relative pressure, at a fixed location.
 
 \begin{figure}
 
@@ -282,7 +282,7 @@ Thus an oscillogram records the back-and-forth movements of the air particles, i
 \caption{Oscillogram of the word *speech*, with boundaries between segments.}\label{fig:speech-oscillogram}
 \end{figure}
 
-An oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure.
+Thus an oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure.
 
 The visualisation in an oscillogram may suggest, misleadingly, that the air particles themselves dance ``up and down'' (transverse) while the sound wave travels ``from left to right'', like waves on the surface of a body of water. That is not true: sound in air travels in \emph{longitudinal} sound waves, resulting in the air pressure variations that are visualized in the oscillogram.
 
@@ -897,16 +897,12 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
   To do so, select the Spectrum object, select button \texttt{Sound\ \textgreater{}} and then \texttt{To\ Sound}.
 \end{itemize}
 
-\phantomsection\label{box-praatspectrum}
+\phantomsection\label{box-praatspectralslice}
 \subsection{\texorpdfstring{How to obtain a spectral `slice' in \texttt{Praat}}{How to obtain a spectral `slice' in Praat}}\label{how-to-obtain-a-spectral-slice-in-praat}
 
-Only rarely are we interested in the spectrum of an entire Sound object. Typicall, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the vowel sound in Figure \ref{fig:speech-oscillogram} at \(t \approx 0.210\) seconds.
+Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \ref{fig:speech-oscillogram}, at \(t \approx 0.210\) seconds.
 
-This can be done in \texttt{Praat} by means of two features we will explore in depth only later, viz.~the SoundEditor and the Spectrogram.
-
-\begin{quote}
-TODO crossref SoundEditor and crossref Spectrogram
-\end{quote}
+This can be done by means of two features in \texttt{Praat} which we will explore in depth only later, viz.~the SoundEditor and the Spectrogram.
 
 \begin{itemize}
 \item
@@ -920,9 +916,18 @@ TODO crossref SoundEditor
 \end{quote}
 
 \begin{itemize}
+\tightlist
 \item
-  In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram.\\
-  A short window (e.g.~0.005 s) will show more detail in the time domain, but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics may be invisible). A long window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the \texttt{Praat} Help information available in the menu window, try various window lengths, and notice the differences in the subsequent spectral slices.
+  In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram (see §REF).
+\end{itemize}
+
+\begin{quote}
+TODO crossref Spectrogram, and merge paragraphs.
+\end{quote}
+
+A \emph{short} window (e.g.~0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A \emph{long} window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the \texttt{Praat} Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.
+
+\begin{itemize}
 \item
   In the SoundEditor window, go to \texttt{Spectrogram...} and then choose \texttt{View\ spectral\ slice}. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.\ref{fig:speech-spectralslice} for an example.
 \item
@@ -935,13 +940,13 @@ TODO crossref SoundEditor
 
 }
 
-\caption{Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at t=0.210 s. With this window length, individual harmonics are clearly visible in the resulting spectrum.}\label{fig:speech-spectralslice}
+\caption{Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at *t*=0.210 s. }\label{fig:speech-spectralslice}
 \end{figure}
 
 \begin{itemize}
 \tightlist
 \item
-  In Fig.\ref{fig:speech-spectralslice}, the 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}). Also notice the overall downward slope of the spectrum (see §\ref{sec:emphasisfilters} and §REF).
+  In Fig.\ref{fig:speech-spectralslice}, the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}). Also notice the overall downward slope of the spectrum (see §\ref{sec:emphasisfilters} and §REF).
 \end{itemize}
 
 \begin{quote}

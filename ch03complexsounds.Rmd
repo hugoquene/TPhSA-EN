@@ -99,15 +99,13 @@ To do so, select the Spectrum object, select button `Sound >` and then `To Sound
 
 <P>
 
-::: {#box-praatspectrum .praatbox}
+::: {#box-praatspectralslice .praatbox}
 
 ### How to obtain a spectral 'slice' in `Praat`
 
-Only rarely are we interested in the spectrum of an entire Sound object. Typicall, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the vowel sound in Figure \@ref(fig:speech-oscillogram) at $t \approx 0.210$ seconds. 
+Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \@ref(fig:speech-oscillogram), at $t \approx 0.210$ seconds. 
 
-This can be done in `Praat` by means of two features we will explore in depth only later, viz. the SoundEditor and the Spectrogram. 
-
-> TODO crossref SoundEditor and crossref Spectrogram
+This can be done by means of two features in `Praat` which we will explore in depth only later, viz. the SoundEditor and the Spectrogram. 
 
 - In the `Praat` object window, select a Sound object.
 
@@ -115,18 +113,21 @@ This can be done in `Praat` by means of two features we will explore in depth on
 
 > TODO crossref SoundEditor
 
-- In the SoundEditor window, go to `Spectrogram...` and then `Spectrogram settings`. Here we may need to adjust the setting for `Window length`. `Praat` will average the resulting spectrum over the time window of $2\times$ this value, centered around the position of the cursor in the oscillogram.  
-A short window (e.g. 0.005 s) will show more detail in the time domain, but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics may be invisible). A long window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the `Praat` Help information available in the menu window, try various window lengths, and notice the differences in the subsequent spectral slices. 
+- In the SoundEditor window, go to `Spectrogram...` and then `Spectrogram settings`. Here we may need to adjust the setting for `Window length`. `Praat` will average the resulting spectrum over the time window of $2\times$ this value, centered around the position of the cursor in the oscillogram (see §REF).
+
+> TODO crossref Spectrogram, and merge paragraphs.
+
+A *short* window (e.g. 0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A *long* window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the `Praat` Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices. 
 
 - In the SoundEditor window, go to `Spectrogram...` and then choose `View spectral slice`. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.\@ref(fig:speech-spectralslice) for an example. 
 
 - In the SpectrumEditor window, if you click inside the spectrum, the frequency and amplitude coordinates are shown. Placing the cursor on a spectral peak in the SpectrumEditor can be done by means of the button `Spectrum` in the top row, then choose `Move cursor to nearest peak`. 
 
-```{r speech-spectralslice, echo=FALSE, fig.cap="Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at t=0.210 s. With this window length, individual harmonics are clearly visible in the resulting spectrum.", fig.align="center"}
+```{r speech-spectralslice, echo=FALSE, fig.cap="Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at *t*=0.210 s. ", fig.align="center"}
 knitr::include_graphics("figures/Spectrum_speech_word_0_210.png")
 ```
 
-- In Fig.\@ref(fig:speech-spectralslice), the 10th harmonic is at 2195 Hz, which suggests that $f_0 \approx 219$ Hz (see §\@ref(sec:FTintro)). Also notice the overall downward slope of the spectrum (see §\@ref(sec:emphasisfilters) and §REF). 
+- In Fig.\@ref(fig:speech-spectralslice), the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that $f_0 \approx 219$ Hz (see §\@ref(sec:FTintro)). Also notice the overall downward slope of the spectrum (see §\@ref(sec:emphasisfilters) and §REF). 
 
 > TODO crosslink to spectral slope
 

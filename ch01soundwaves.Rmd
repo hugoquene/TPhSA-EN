@@ -59,14 +59,14 @@ Explain why a sound wave loses energy the further it is spread from the oscillat
 As explained in §\@ref(sec:soundwave) above, a sound wave consists of pressure fluctuations caused by the molecules of the acoustic medium crowding together (compression) and moving apart (rarefaction). These oscillations in air pressure can be measured and visualized, in the form of a so-called **oscillogram** or graphical representation of a sound wave.  
 (In chapter \@ref(ch-soundtobytes) we'll learn how to measure, record and store a sound wave. Here, we jump ahead and present the oscillogram, in order to explain important properties of sound waves.)
 
-In an oscillogram, the horizontal axis represents the time dimension, and the vertical axis represents the air pressure. The air pressure fluctuations (compression and rarefaction) are displayed here as vertical deviations relative to the horizontal baseline^[The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.]. 
-Thus an oscillogram records the back-and-forth movements of the air particles, indirectly, by recording the fluctuations in relative air pressure, at a fixed location. 
+In an oscillogram such as Figure \@ref(fig:speech-oscillogram), the horizontal axis represents the time dimension^[Often abbreviated to $t$.], and the vertical axis represents the air pressure. The  pressure fluctuations (compression and rarefaction) are displayed as vertical deviations relative to the horizontal baseline^[The baseline represents the ambient average air pressure. By convention, higher air pressure is on the top side and lower air pressure at the bottom side of an oscillogram.]. 
+Thus an oscillogram records the back-and-forth movements of the particles of the medium, indirectly, by recording the fluctuations in relative pressure, at a fixed location. 
 
 ```{r speech-oscillogram, echo=FALSE, fig.cap="Oscillogram of the word *speech*, with boundaries between segments.", fig.align="center"}
 knitr::include_graphics("figures/speech_word_oscillogram.png")
 ```
 
-An oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure. 
+Thus an oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure. 
 
 The visualisation in an oscillogram may suggest, misleadingly, that the air particles themselves dance "up and down" (transverse) while the sound wave travels "from left to right", like waves on the surface of a body of water. That is not true: sound in air travels in *longitudinal* sound waves, resulting in the air pressure variations that are visualized in the oscillogram.    
 
