@@ -176,14 +176,15 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:FTintro"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
 <ul>
 <li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
-<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum-in-praat"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum in <code>Praat</code></a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-an-entire-spectrum-in-praat"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain an entire Spectrum in <code>Praat</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice-in-praat"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’ in <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
@@ -194,7 +195,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
 <li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
 <li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
 <ul>
@@ -388,7 +389,7 @@ where <span class="math inline">\(L_I\)</span> is the level of intensity, in dB,
 The three steps may be followed by working through this formula from the inside out: (1) we take the target-to-reference ratio, (2) we take the logarithm of that ratio (using 10 as base number), and (3) we multiply by 10 to obtain <em>deci</em>bel units.</p>
 <p>If the target sound has an intensity <span class="math inline">\(I\)</span> which is <span class="math inline">\(10000\times\)</span> as large as <span class="math inline">\(I_0\)</span>, then
 <span class="math display">\[L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) =
-10 \cdot ^{10}\log \left( 10000 \right) =
+10 \cdot ^{10}\log \left( \frac{10000}{1} \right) =
 10 \cdot 4 = 40\ \textrm{dB}\]</span></p>
 <p>For sound pressure levels, using RMS amplitude of sound pressure:
 <span class="math display">\[  L_p = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right)

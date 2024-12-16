@@ -205,7 +205,7 @@ The three steps may be followed by working through this formula from the inside 
 
 If the target sound has an intensity $I$ which is $10000\times$ as large as $I_0$, then 
 $$L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) = 
-10 \cdot ^{10}\log \left( 10000 \right) = 
+10 \cdot ^{10}\log \left( \frac{10000}{1} \right) = 
 10 \cdot 4 = 40\ \textrm{dB}$$
 
 

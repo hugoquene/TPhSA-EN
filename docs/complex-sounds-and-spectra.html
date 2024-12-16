@@ -176,14 +176,15 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:FTintro"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
 <ul>
 <li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
-<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum-in-praat"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum in <code>Praat</code></a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-an-entire-spectrum-in-praat"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain an entire Spectrum in <code>Praat</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice-in-praat"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’ in <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
@@ -194,7 +195,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
 <li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
 <li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
 <ul>
@@ -231,8 +232,8 @@ div.csl-indent {
 <div id="complex-sounds-and-spectra" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Complex sounds and spectra<a href="complex-sounds-and-spectra.html#complex-sounds-and-spectra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><em>Chapter keywords</em>: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse.</p>
-<div id="introduction" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Introduction<a href="complex-sounds-and-spectra.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:FTintro" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction<a href="complex-sounds-and-spectra.html#sec:FTintro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <em>sine wave</em>, depicted in Fig. <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>, is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature – although the sound of a tuning fork comes quite close to a sinewave pattern.</p>
 <p>By contrast, <em>complex sounds</em> have more complex wave patterns. All natural periodic sounds are complex sounds. <strong>A complex sound can be regarded as the sum of multiple sine wave sounds.</strong> This relation has been described by the French mathematician, baron J.B.J. Fourier (1768–1830). The sine waves are termed ‘frequency components’ of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called ‘Fourier analysis’ or ‘Fourier Transform’ of a complex sound, these frequency components are being estimated from the waveform.</p>
 <p>If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a> provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz (<span class="math inline">\(T=.01\)</span>) and 200 Hz (<span class="math inline">\(T=.005\)</span>) and 400 Hz (<span class="math inline">\(T=.0025\)</span>), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the <em>fundamental</em>, and its frequency is called the <em>fundamental frequency</em> (symbol <span class="math inline">\(f_0\)</span>) of the complex periodic sound; we hear this <span class="math inline">\(f_0\)</span> as its pitch. The higher components are called <em>overtones</em>. The fundamental and overtones are collectively called <em>harmonics</em>: the fundamental is the first harmonic, the first overtone is the second harmonic, etc.
@@ -278,16 +279,50 @@ Figure 3.2: Oscillogram (left) and spectrum (right) of a complex periodic sound.
 </div>
 <P>
 <div id="box-praatspectrum" class="praatbox">
-<div id="how-to-obtain-a-spectrum-in-praat" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> How to obtain a spectrum in <code>Praat</code><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="how-to-obtain-an-entire-spectrum-in-praat" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> How to obtain an entire Spectrum in <code>Praat</code><a href="complex-sounds-and-spectra.html#how-to-obtain-an-entire-spectrum-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
 <li><p>Next, in the <code>Praat</code> object window, choose <code>Analyse spectrum &gt;</code> and then <code>To Spectrum...</code>.</p></li>
 <li><p><code>Praat</code> offers two versions, regular and fast, of the Fourier analysis to estimate a spectrum. The faster version of the Fourier transform is termed ‘Fast Fourier Transform’ or FFT, and it requires significantly fewer computations. FFT requires that the number of samples to be analysed is a power of <span class="math inline">\(2\)</span>. If you choose the <code>Fast</code> version by ticking the box, then <code>Praat</code> adds zeroes to your sound in order to meet this requirement.</p></li>
-<li><p>The result is a Spectrum object calculated over the entire Sound (plus additional zeroes, in FFT), and this Spectrum object is added at the bottom of the list of objects.</p></li>
+<li><p>The result is a Spectrum object calculated <em>over the entire Sound</em> (plus additional zeroes, in FFT), and this Spectrum object is added at the bottom of the list of objects.</p></li>
 <li><p>Remember to <code>Save</code> this Spectrum object if you wish.</p></li>
 <li><p>As the spectral representation (spectrum, horizontal axis is frequency) is equivalent with the temporal representation (oscillogram, horizontal axis is time), the Spectrum object may be reconverted again into Sound, by means of “inverse fourier transform”.
 To do so, select the Spectrum object, select button <code>Sound &gt;</code> and then <code>To Sound</code>.</p></li>
+</ul>
+</div>
+</div>
+<P>
+<div id="box-praatspectrum" class="praatbox">
+<div id="how-to-obtain-a-spectral-slice-in-praat" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> How to obtain a spectral ‘slice’ in <code>Praat</code><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Only rarely are we interested in the spectrum of an entire Sound object. Typicall, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the vowel sound in Figure <a href="ch-soundwaves.html#fig:speech-oscillogram">1.1</a> at <span class="math inline">\(t \approx 0.210\)</span> seconds.</p>
+<p>This can be done in <code>Praat</code> by means of two features we will explore in depth only later, viz. the SoundEditor and the Spectrogram.</p>
+<blockquote>
+<p>TODO crossref SoundEditor and crossref Spectrogram</p>
+</blockquote>
+<ul>
+<li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
+<li><p>Next, in the <code>Praat</code> object window, choose <code>View &amp; Edit</code>. This will open a so-called SoundEditor window, with the oscillogram as its main feature.</p></li>
+</ul>
+<blockquote>
+<p>TODO crossref SoundEditor</p>
+</blockquote>
+<ul>
+<li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then <code>Spectrogram settings</code>. Here we may need to adjust the setting for <code>Window length</code>. <code>Praat</code> will average the resulting spectrum over the time window of <span class="math inline">\(2\times\)</span> this value, centered around the position of the cursor in the oscillogram.<br />
+A short window (e.g. 0.005 s) will show more detail in the time domain, but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics may be invisible). A long window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the <code>Praat</code> Help information available in the menu window, try various window lengths, and notice the differences in the subsequent spectral slices.</p></li>
+<li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then choose <code>View spectral slice</code>. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.<a href="complex-sounds-and-spectra.html#fig:speech-spectralslice">3.3</a> for an example.</p></li>
+<li><p>In the SpectrumEditor window, if you click inside the spectrum, the frequency and amplitude coordinates are shown. Placing the cursor on a spectral peak in the SpectrumEditor can be done by means of the button <code>Spectrum</code> in the top row, then choose <code>Move cursor to nearest peak</code>.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-spectralslice"></span>
+<img src="figures/Spectrum_speech_word_0_210.png" alt="Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at t=0.210 s. With this window length, individual harmonics are clearly visible in the resulting spectrum."  />
+<p class="caption">
+Figure 3.3: Spectral slice of the /i/ vowel in the word <em>speech</em>, estimated over 0.015 s on either side of the cursor at t=0.210 s. With this window length, individual harmonics are clearly visible in the resulting spectrum.
+</p>
+</div>
+<ul>
+<li><p>In Fig.<a href="complex-sounds-and-spectra.html#fig:speech-spectralslice">3.3</a> the 10th harmonic is at 2195 Hz, which suggests that <span class="math inline">\(f_0 \approx 219\)</span> Hz (see §<a href="complex-sounds-and-spectra.html#sec:FTintro">3.1</a>).</p></li>
+<li><p>Remember to <code>Save</code> the Spectrum object if you wish.</p></li>
 </ul>
 </div>
 </div>
@@ -303,7 +338,7 @@ In so-called <em>brown noise</em>, the spectral envelope decreases by <span clas
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrum-whitebrownnoises"></span>
 <img src="figures/whitebrownnoises.png" alt="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz)."  />
 <p class="caption">
-Figure 3.3: Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).
+Figure 3.4: Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).
 </p>
 </div>
 <p>The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>, with (c) a particular sampling frequency of the noise.</p>
@@ -321,7 +356,7 @@ Figure 3.3: Spectra of white noise (left) and of brown noise (right), with a lin
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:envelope"></span>
 <img src="figures/ADSR_parameter.png" alt="A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from  $https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg$, used under CC-BY-SA license."  />
 <p class="caption">
-Figure 3.4: A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from <span class="math inline">\(https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg\)</span>, used under CC-BY-SA license.
+Figure 3.5: A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from <span class="math inline">\(https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg\)</span>, used under CC-BY-SA license.
 </p>
 </div>
 <blockquote>

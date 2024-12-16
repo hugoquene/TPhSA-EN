@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 15 Dec 2024 19:03}
+\date{Document compiled 16 Dec 2024 17:41}
 
 \begin{document}
 \maketitle
@@ -411,7 +411,7 @@ The three steps may be followed by working through this formula from the inside 
 
 If the target sound has an intensity \(I\) which is \(10000\times\) as large as \(I_0\), then
 \[L_I = 10 \cdot ^{10}\log \left( \frac{I}{I_0} \right) = 
-10 \cdot ^{10}\log \left( 10000 \right) = 
+10 \cdot ^{10}\log \left( \frac{10000}{1} \right) = 
 10 \cdot 4 = 40\ \textrm{dB}\]
 
 For sound pressure levels, using RMS amplitude of sound pressure:
@@ -820,7 +820,7 @@ Then choose \texttt{Combine\ \textgreater{}\ Concatenate} in the Objects window.
 
 \emph{Chapter keywords}: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse.
 
-\section{Introduction}\label{introduction}
+\section{Introduction}\label{sec:FTintro}
 
 The \emph{sine wave}, depicted in Fig. \ref{fig:example-oscillogram}, is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum\footnote{Drawing the position of a swinging pendulum over time will result in the same figure.}. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature -- although the sound of a tuning fork comes quite close to a sinewave pattern.
 
@@ -879,7 +879,7 @@ Figure \ref{fig:complex100n200n400} shows an oscillogram on the left (of the sam
 Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitude of 40 dB SPL.
 
 \phantomsection\label{box-praatspectrum}
-\subsection{\texorpdfstring{How to obtain a spectrum in \texttt{Praat}}{How to obtain a spectrum in Praat}}\label{how-to-obtain-a-spectrum-in-praat}
+\subsection{\texorpdfstring{How to obtain an entire Spectrum in \texttt{Praat}}{How to obtain an entire Spectrum in Praat}}\label{how-to-obtain-an-entire-spectrum-in-praat}
 
 \begin{itemize}
 \item
@@ -889,12 +889,60 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 \item
   \texttt{Praat} offers two versions, regular and fast, of the Fourier analysis to estimate a spectrum. The faster version of the Fourier transform is termed `Fast Fourier Transform' or FFT, and it requires significantly fewer computations. FFT requires that the number of samples to be analysed is a power of \(2\). If you choose the \texttt{Fast} version by ticking the box, then \texttt{Praat} adds zeroes to your sound in order to meet this requirement.
 \item
-  The result is a Spectrum object calculated over the entire Sound (plus additional zeroes, in FFT), and this Spectrum object is added at the bottom of the list of objects.
+  The result is a Spectrum object calculated \emph{over the entire Sound} (plus additional zeroes, in FFT), and this Spectrum object is added at the bottom of the list of objects.
 \item
   Remember to \texttt{Save} this Spectrum object if you wish.
 \item
   As the spectral representation (spectrum, horizontal axis is frequency) is equivalent with the temporal representation (oscillogram, horizontal axis is time), the Spectrum object may be reconverted again into Sound, by means of ``inverse fourier transform''.
   To do so, select the Spectrum object, select button \texttt{Sound\ \textgreater{}} and then \texttt{To\ Sound}.
+\end{itemize}
+
+\phantomsection\label{box-praatspectrum}
+\subsection{\texorpdfstring{How to obtain a spectral `slice' in \texttt{Praat}}{How to obtain a spectral `slice' in Praat}}\label{how-to-obtain-a-spectral-slice-in-praat}
+
+Only rarely are we interested in the spectrum of an entire Sound object. Typicall, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the vowel sound in Figure \ref{fig:speech-oscillogram} at \(t \approx 0.210\) seconds.
+
+This can be done in \texttt{Praat} by means of two features we will explore in depth only later, viz.~the SoundEditor and the Spectrogram.
+
+\begin{quote}
+TODO crossref SoundEditor and crossref Spectrogram
+\end{quote}
+
+\begin{itemize}
+\item
+  In the \texttt{Praat} object window, select a Sound object.
+\item
+  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature.
+\end{itemize}
+
+\begin{quote}
+TODO crossref SoundEditor
+\end{quote}
+
+\begin{itemize}
+\item
+  In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram.\\
+  A short window (e.g.~0.005 s) will show more detail in the time domain, but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics may be invisible). A long window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the \texttt{Praat} Help information available in the menu window, try various window lengths, and notice the differences in the subsequent spectral slices.
+\item
+  In the SoundEditor window, go to \texttt{Spectrogram...} and then choose \texttt{View\ spectral\ slice}. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.\ref{fig:speech-spectralslice} for an example.
+\item
+  In the SpectrumEditor window, if you click inside the spectrum, the frequency and amplitude coordinates are shown. Placing the cursor on a spectral peak in the SpectrumEditor can be done by means of the button \texttt{Spectrum} in the top row, then choose \texttt{Move\ cursor\ to\ nearest\ peak}.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{figures/Spectrum_speech_word_0_210} 
+
+}
+
+\caption{Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at t=0.210 s. With this window length, individual harmonics are clearly visible in the resulting spectrum.}\label{fig:speech-spectralslice}
+\end{figure}
+
+\begin{itemize}
+\item
+  In Fig.\ref{fig:speech-spectralslice} the 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}).
+\item
+  Remember to \texttt{Save} the Spectrum object if you wish.
 \end{itemize}
 
 \section{Spectra of aperiodic sounds}\label{spectra-of-aperiodic-sounds}
@@ -957,7 +1005,7 @@ In terms of its amplitude, we may regard a brief impulse sound (click or pulse, 
 
 \emph{Chapter keywords}: TBA
 
-\section{Introduction}\label{introduction-1}
+\section{Introduction}\label{introduction}
 
 A filter is a device that changes the spectrum of the input signal, by enhancing certain frequency components and/or by attenuating others. Filters play an important role in speech analysis. Filters can be of an acoustic nature (e.g.~an organ pipe, or the human vocal tract) or they can work by electronic means. We already encountered filters as a routine component in (or just before) analog-to-digital conversion of a sound wave (§\ref{sec:samplingfrequency}) to prevent aliasing.
 
