@@ -138,11 +138,11 @@ This distance may be expressed as the musical interval between the lower and hig
 In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequency ratios are so-called "third band" filters. Both octave-band and third-band filters are widely used in phonetic research. 
 
 
-## Emphasis filters
+## Emphasis filters {#sec:emphasisfilters}
 
 > TODO crossref source-filter, spectral slope of speech
 
-For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of $-6$ dB/octave. On average, the amplitude of higher frequency components decreases by about $-6$ dB for each doubling of the frequency (§\@ref(sec:octave)). 
+For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of $-6$ dB/octave. This downward slope was also visible in the spectral slice in Fig.\@ref(fig:speech-spectralslice). On average, the amplitude of higher frequency components decreases by about $-6$ dB for each doubling of the frequency (§\@ref(sec:octave)). 
 Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called *pre-emphasis* filter, which modifies the overall spectral slope by $+6$ dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech^[The overall average slope of the spectral envelope of speech changes from $-6$ to $-6+6=0$ dB per octave.], with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range. 
 
 The reverse operation is called *de-emphasis* filtering: this changes the overall spectral slope by $-6$ dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise ($-6$ dB/oct) from the white noise ($0$ dB/oct) in Fig.\@ref(fig:spectrum-whitebrownnoises).

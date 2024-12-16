@@ -73,5 +73,5 @@ properties-of-filters
 cutoff-frequency
 slope
 bandwidth
-emphasis-filters
+sec:emphasisfilters
 how-to-apply-a-predeemphasis-filter

@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 16 Dec 2024 17:41}
+\date{Document compiled 16 Dec 2024 17:53}
 
 \begin{document}
 \maketitle
@@ -939,8 +939,17 @@ TODO crossref SoundEditor
 \end{figure}
 
 \begin{itemize}
+\tightlist
 \item
-  In Fig.\ref{fig:speech-spectralslice} the 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}).
+  In Fig.\ref{fig:speech-spectralslice}, the 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}). Also notice the overall downward slope of the spectrum (see §\ref{sec:emphasisfilters} and §REF).
+\end{itemize}
+
+\begin{quote}
+TODO crosslink to spectral slope
+\end{quote}
+
+\begin{itemize}
+\tightlist
 \item
   Remember to \texttt{Save} the Spectrum object if you wish.
 \end{itemize}
@@ -1101,13 +1110,13 @@ This distance may be expressed as the musical interval between the lower and hig
 
 In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequency ratios are so-called ``third band'' filters. Both octave-band and third-band filters are widely used in phonetic research.
 
-\section{Emphasis filters}\label{emphasis-filters}
+\section{Emphasis filters}\label{sec:emphasisfilters}
 
 \begin{quote}
 TODO crossref source-filter, spectral slope of speech
 \end{quote}
 
-For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of \(-6\) dB/octave. On average, the amplitude of higher frequency components decreases by about \(-6\) dB for each doubling of the frequency (§\ref{sec:octave}).
+For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of \(-6\) dB/octave. This downward slope was also visible in the spectral slice in Fig.\ref{fig:speech-spectralslice}. On average, the amplitude of higher frequency components decreases by about \(-6\) dB for each doubling of the frequency (§\ref{sec:octave}).
 Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called \emph{pre-emphasis} filter, which modifies the overall spectral slope by \(+6\) dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech\footnote{The overall average slope of the spectral envelope of speech changes from \(-6\) to \(-6+6=0\) dB per octave.}, with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range.
 
 The reverse operation is called \emph{de-emphasis} filtering: this changes the overall spectral slope by \(-6\) dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (\(-6\) dB/oct) from the white noise (\(0\) dB/oct) in Fig.\ref{fig:spectrum-whitebrownnoises}.
