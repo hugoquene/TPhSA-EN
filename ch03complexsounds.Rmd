@@ -58,9 +58,9 @@ Timbre is not a one-dimensional property of a sound (as frequency and amplitude 
 
 ## Spectrum
 
-A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. 
+A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. A spectrum is useful to assess the frequency components of a signal, which are far easier to determine in a spectrum than in an oscillogram. A rainbow reveals the spectum of sunlight: water droplets refract the incoming light into its frequency components. Similarly, complex sounds may be broken down into their (high and/or low) frequency components.  
 
-Figure \@ref(fig:complex100n200n400) shows an oscillogram on the left (of the same complex sound as shown in Fig. \@ref(fig:fourier-oscillogram), and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)^[Here, the phase of the frequency components is ignored.]. Hence, a spectrum shows the frequency and amplitude of each component. 
+Figure \@ref(fig:complex100n200n400) shows an oscillogram on the left (of the same complex sound as shown in Fig. \@ref(fig:fourier-oscillogram), and its matching spectrum on the right. The spectrum shows the amplitude along the vertical axis, of each frequency component along the horizontal axis.^[Here, the phase of the frequency components is ignored.]. Thus, a spectrum shows the frequency and amplitude of each component. 
 
 ```{r complex100n200n400, echo=FALSE, fig.cap="Oscillogram (left) and spectrum (right) of a complex periodic sound.", fig.align="center"}
 knitr::include_graphics("figures/complex100n200n400.png")
@@ -80,7 +80,7 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 
 ::: {#box-praatspectrum .praatbox}
 
-### How to obtain an entire Spectrum in `Praat`
+### How to obtain a spectrum
 
 - In the `Praat` object window, select a Sound object.
 
@@ -101,7 +101,7 @@ To do so, select the Spectrum object, select button `Sound >` and then `To Sound
 
 ::: {#box-praatspectralslice .praatbox}
 
-### How to obtain a spectral 'slice' in `Praat`
+### How to obtain a spectral 'slice'
 
 Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \@ref(fig:speech-oscillogram), at $t \approx 0.210$ seconds. 
 

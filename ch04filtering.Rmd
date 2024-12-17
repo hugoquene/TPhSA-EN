@@ -151,8 +151,9 @@ The reverse operation is called *de-emphasis* filtering: this changes the overal
 
 ### How to apply a (pre|de)emphasis filter
 
-Select an input Sound object in the `Praat` Objects window. Then choose `Filter > Filter (pre-emphasis)...` for pre-emphasis filtering, or choose `Filter > Filter (de-emphasis)...` for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 70 Hz. \
-The resulting filtered output Sound object is again added at the bottom of the list of objects. 
+- Select an input Sound object in the `Praat` Objects window. Then choose `Filter > Filter (pre-emphasis)...` for pre-emphasis filtering, or choose `Filter > Filter (de-emphasis)...` for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g. 60 Hz.
+
+- The resulting filtered output Sound object is again added at the bottom of the list of objects. 
 
 :::
 
