@@ -60,8 +60,8 @@ complex-sounds-and-spectra
 sec:FTintro
 timbre
 spectrum
-how-to-obtain-an-entire-spectrum-in-praat
-how-to-obtain-a-spectral-slice-in-praat
+how-to-obtain-a-spectrum
+how-to-obtain-a-spectral-slice
 spectra-of-aperiodic-sounds
 sec:noise
 sec:impulses

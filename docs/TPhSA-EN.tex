@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 16 Dec 2024 20:00}
+\date{Document compiled 18 Dec 2024 14:33}
 
 \begin{document}
 \maketitle
@@ -856,9 +856,9 @@ Timbre is not a one-dimensional property of a sound (as frequency and amplitude 
 
 \section{Spectrum}\label{spectrum}
 
-A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a \emph{spectrum}.
+A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a \emph{spectrum}. A spectrum is useful to assess the frequency components of a signal, which are far easier to determine in a spectrum than in an oscillogram. A rainbow reveals the spectum of sunlight: water droplets refract the incoming light into its frequency components (colors). Similarly, complex sounds may be broken down into their (high and/or low) frequency components.
 
-Figure \ref{fig:complex100n200n400} shows an oscillogram on the left (of the same complex sound as shown in Fig. \ref{fig:fourier-oscillogram}, and its matching spectrum on the right. The spectrum shows the amplitude (along the vertical axis) of each frequency component (along horizontal axis)\footnote{Here, the phase of the frequency components is ignored.}. Hence, a spectrum shows the frequency and amplitude of each component.
+Figure \ref{fig:complex100n200n400} shows an oscillogram on the left (of the same complex sound as shown in Fig. \ref{fig:fourier-oscillogram}), and its matching spectrum on the right. The spectrum shows the amplitude along the vertical axis, of each frequency component along the horizontal axis. (The phases of the frequency components are ignored.) Thus, a spectrum shows the frequency and amplitude of each component.
 
 \begin{figure}
 
@@ -879,7 +879,7 @@ Figure \ref{fig:complex100n200n400} shows an oscillogram on the left (of the sam
 Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitude of 40 dB SPL.
 
 \phantomsection\label{box-praatspectrum}
-\subsection{\texorpdfstring{How to obtain an entire Spectrum in \texttt{Praat}}{How to obtain an entire Spectrum in Praat}}\label{how-to-obtain-an-entire-spectrum-in-praat}
+\subsection{How to obtain a spectrum}\label{how-to-obtain-a-spectrum}
 
 \begin{itemize}
 \item
@@ -898,7 +898,7 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 \end{itemize}
 
 \phantomsection\label{box-praatspectralslice}
-\subsection{\texorpdfstring{How to obtain a spectral `slice' in \texttt{Praat}}{How to obtain a spectral `slice' in Praat}}\label{how-to-obtain-a-spectral-slice-in-praat}
+\subsection{How to obtain a spectral `slice'}\label{how-to-obtain-a-spectral-slice}
 
 Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \ref{fig:speech-oscillogram}, at \(t \approx 0.210\) seconds.
 
@@ -1129,8 +1129,12 @@ The reverse operation is called \emph{de-emphasis} filtering: this changes the o
 \phantomsection\label{box-praatemphasis}
 \subsection{How to apply a (pre\textbar de)emphasis filter}\label{how-to-apply-a-predeemphasis-filter}
 
-Select an input Sound object in the \texttt{Praat} Objects window. Then choose \texttt{Filter\ \textgreater{}\ Filter\ (pre-emphasis)...} for pre-emphasis filtering, or choose \texttt{Filter\ \textgreater{}\ Filter\ (de-emphasis)...} for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g.~70 Hz.\\
-The resulting filtered output Sound object is again added at the bottom of the list of objects.
+\begin{itemize}
+\item
+  Select an input Sound object in the \texttt{Praat} Objects window. Then choose \texttt{Filter\ \textgreater{}\ Filter\ (pre-emphasis)...} for pre-emphasis filtering, or choose \texttt{Filter\ \textgreater{}\ Filter\ (de-emphasis)...} for de-emphasis filtering. The filter only applies above a certain cutoff frequency, to be specified. Choose a cutoff frequency below the lowest speech frequency, e.g.~60 Hz.
+\item
+  The resulting filtered output Sound object is again added at the bottom of the list of objects.
+\end{itemize}
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 
