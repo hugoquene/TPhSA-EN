@@ -4,6 +4,8 @@ rmd_files: ["index.Rmd",
             "ch02convertingsoundtobytes.Rmd",
             "ch03complexsounds.Rmd",
             "ch04filtering.Rmd",
+            "ch05formants.Rmd",
+            "ch06spectrograms.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 language:

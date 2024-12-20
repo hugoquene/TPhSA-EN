@@ -158,7 +158,7 @@ An **impulse** is a very brief and *transient* sound, such as a hand clap or tic
 
 An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g. at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by *fading in* the sound, see §\@ref(sec:fades) for more. 
 
-## Envelope
+## Envelope {#sec:envelope}
 
 The *envelope* of a sound describes how the properties of that sound change over time. This concept is best described by regarding the amplitude of a sound: the 'amplitude envelope'. However, a sound may at the same time have multiple and different envelopes for its amplitude, for its (fundamental) frequency, and for (a singular parameter of) its timbre. Even the properties of a filter may follow an envelope, that is, they may change over time (see Ch. \@ref(ch-filtering)).
 
