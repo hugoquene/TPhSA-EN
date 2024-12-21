@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true \and true}
-\date{Document compiled 18 Dec 2024 14:33}
+\date{Document compiled 21 Dec 2024 15:14}
 
 \begin{document}
 \maketitle
@@ -854,7 +854,7 @@ A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The 
 
 Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property.
 
-\section{Spectrum}\label{spectrum}
+\section{Spectrum}\label{sec:spectrum}
 
 A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a \emph{spectrum}. A spectrum is useful to assess the frequency components of a signal, which are far easier to determine in a spectrum than in an oscillogram. A rainbow reveals the spectum of sunlight: water droplets refract the incoming light into its frequency components (colors). Similarly, complex sounds may be broken down into their (high and/or low) frequency components.
 
@@ -987,7 +987,7 @@ An \textbf{impulse} is a very brief and \emph{transient} sound, such as a hand c
 
 An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g.~at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by \emph{fading in} the sound, see §\ref{sec:fades} for more.
 
-\section{Envelope}\label{envelope}
+\section{Envelope}\label{sec:envelope}
 
 The \emph{envelope} of a sound describes how the properties of that sound change over time. This concept is best described by regarding the amplitude of a sound: the `amplitude envelope'. However, a sound may at the same time have multiple and different envelopes for its amplitude, for its (fundamental) frequency, and for (a singular parameter of) its timbre. Even the properties of a filter may follow an envelope, that is, they may change over time (see Ch. \ref{ch-filtering}).
 
@@ -1135,6 +1135,84 @@ The reverse operation is called \emph{de-emphasis} filtering: this changes the o
 \item
   The resulting filtered output Sound object is again added at the bottom of the list of objects.
 \end{itemize}
+
+\part*{Part II: Speech}\label{part-part-ii-speech}
+\addcontentsline{toc}{part}{Part II: Speech}
+
+\chapter{Speech sounds}\label{ch-speechsounds}
+
+\emph{Chapter keywords}: resonance, formant, formants
+
+\section{Resonance}\label{resonance}
+
+Imagine that you tap a glass object with a metal object -- briefly and not too hard. The glass resonates at a particular frequency, which depends on the shape and mass of the glass, and you hear a resounding `ting' sound. What is going on?
+
+Your tapping force initiates many different vibrations within the glass. Some of these vibrations have a wavelength (§\ref{sec:wavelength}) that equals the dimensions of the glass. The vibrations at these particular wavelengths are reinforced, while other non-matching vibrations are attenuated. This is termed \textbf{resonance}. The amplified frequencies are termed `resonant frequencies' or `natural frequencies'. The primary resonant frequency, which is amplified the most, is also termed the `eigen' frequency of the resonating object. Very quickly, the non-resonant frequencies are dampened out, and the glass continues to vibrate at its resonant frequency (or frequencies). The vibrating glass constitutes a sound source, the sound of which propagates in the surrounding air (see Ch.\ref{ch-soundwaves}), and we hear a `ping' sound. The envelope (§\ref{sec:envelope}) of this `ping' sound depends on the material (composition), mass, and shape (and contents) of the vibrating object.
+
+Almost all physical bodies have a tendency to resonate at their natural frequencies: not only a glass but also a pendulum, a swing, a bridge, all musical instruments, a rope on a flagpole \citep[§61]{Minnaert_1970v2}, the column of air in an organ pipe, the volume of air in a hall or venue -- and, importantly, also the body of air in the human vocal tract.
+
+As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, with a sound source at one end. This is an \emph{idealization} of e.g.~an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.)
+
+The principle of resonance is explained by Christian Huygens as follows (in a letter in November 1693):
+
+\begin{quote}
+``Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a {[}periodic{]} musical tone; similarly the length of an organ pipe determines its {[}resonant{]} tone, because the vibrations of air arrive at small intervals of time which are equal to the time which {[}the vibrations{]} need to move back and forth through the length of the organ pipe, as it is closed at one end.'' \citep[571, transl. HQ]{Huygens_1905}
+\end{quote}
+
+The natural frequencies resonate (are amplified) because their wavelength matches the length \(L\) of the tube: the compressions and rarefactions of one period coincide with those of the next period in time, so that the amplitude of the pressure variations increases for the resonant frequencies: the resonant frequencies are amplified and other frequencies are attenuated. Thus the tube acts as a bandpass filter (albeit different from the one illustrated in Fig.\ref{fig:bandpassfilter}).
+
+\section{Formants}\label{formants}
+
+The ideal tube discussed above (uniform, straight, closed at one end) acts as a single resonator: it amplifies its natural frequencies and attenuates other frequencies. The natural frequencies of such a tube are
+\[F_n = \frac{2n-1}{4} \cdot \frac{c}{L}\]
+where \(n\) is the ranking number of the natural frequency, \(c\) is the speed of sound (353 m/s, see §\ref{sec:speedofsound}), and \(L\) is the length of the tube \citep[139]{Stevens_1998} \footnote{And the corresponding \emph{wavelengths} of these natural frequencies are \(\frac{4}{2n-1}\cdot L\) \citep[60]{Nooteboom_Cohen_1984}}.
+If we assume that the vocal tract of an adult female speaker has length \(L=0.15\) m, then the first resonant frequency of this speaker's vocal tract is at \(F_1 = \frac{1}{4} \cdot \frac{353}{0.15} = 588\ \textrm{Hz}\). In reality, the natural frequency is slightly lower\footnote{This is due to absorption and radiation and to the vocal tract being not straight but bended, all of which factors are outside the scope of this introductory text.} at \(F_1 \approx 550\ \textrm{Hz}\).
+Similarly, her \(F_2 \approx 1650\ \textrm{Hz}\) and \(F_3 \approx 2750\ \textrm{Hz}\).
+
+The natural frequencies of the tube are termed its \textbf{formants}, a term coined by Ludimar Hermann (1838--1914)\footnote{Formants are a property of the tube or of the vocal tract (and of the medium), and not of the sounds coming out of that tube or tract, but this distinction is seldom relevant and seldom made.}.
+
+Figure \ref{fig:uniform-vt-transfer} shows the transfer function of the uniform vocal tract (open at one end) of a male speaker. This figure is to be interpreted like a spectrum (§\ref{sec:spectrum}) or bandpass filter response (Fig.\ref{fig:bandpassfilter}).
+Because the male vocal tract is slightly longer than that of a female speaker, the formants are slightly lower, with \(F_1 = 500\ \textrm{Hz}\) here.
+
+\begin{figure}
+
+{\centering \includegraphics{figures/formants_stevens01_b} 
+
+}
+
+\caption{Overall transfer function of the (uniform and open) vocal tract of a male speaker. Adapted from Stevens (1998), Fig.3.3(b); from <https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance>}\label{fig:uniform-vt-transfer}
+\end{figure}
+
+\begin{quote}
+TODO discuss uniform tube WITH constriction, TWO coupled resonators
+\end{quote}
+
+In the spectrum of the recorded /i/ vowel in Fig.\ref{fig:speech-spectralslice-i}, we see that harmonics are amplified around formants \(F_1 \approx 350\ \textrm{Hz}\) and \(F_2 \approx 2700\ \textrm{Hz}\), and attenuated at other frequencies. This formant pattern is characteristic for an /i/ vowel produced by an adult female speaker \citep[Table II]{Peterson_Barney_1952}.
+
+\begin{figure}
+
+{\centering \includegraphics{figures/speech_word_0_210_spectrum} 
+
+}
+
+\caption{Spectral slice of the /i/ vowel in the word *speech*.}\label{fig:speech-spectralslice-i}
+\end{figure}
+
+\subsection{How to measure formants}\label{how-to-measure-formants}
+
+\begin{quote}
+TODO from Spectrum to Formants objects, without Spectrogram
+\end{quote}
+
+\section{Source-filter theory of speech production}\label{source-filter-theory-of-speech-production}
+
+\begin{quote}
+TODO Discuss in this chapter
+\end{quote}
+
+\subsection{Vowels}\label{vowels}
+
+\subsection{Consonants}\label{consonants}
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 
