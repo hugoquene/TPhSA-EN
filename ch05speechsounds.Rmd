@@ -1,0 +1,94 @@
+# (PART\*) Part II: Speech {-}
+
+# Speech sounds {#ch-speechsounds}
+
+*Chapter keywords*: resonance, formant, formants
+
+## Resonance
+
+Imagine that you tap a glass object with a metal object -- briefly and not too hard. The glass resonates at a particular frequency, which depends on the shape and mass of the glass, and you hear a resounding 'ting' sound. What is going on? 
+
+Your tapping force initiates many different vibrations within the glass. Some of these vibrations have a wavelength (§\@ref(sec:wavelength)) that equals the dimensions of the glass. The vibrations at these particular wavelengths are reinforced, while other non-matching vibrations are attenuated. This is termed **resonance**. The amplified frequencies are termed 'resonant frequencies' or 'natural frequencies'. The primary resonant frequency, which is amplified the most, is also termed the 'eigen' frequency of the resonating object. Very quickly, the non-resonant frequencies are dampened out, and the glass continues to vibrate at its resonant frequency (or frequencies). The vibrating glass constitutes a sound source, the sound of which propagates in the surrounding air (see Ch.\@ref(ch-soundwaves)), and we hear a 'ping' sound. The envelope (§\@ref(sec:envelope)) of this 'ping' sound depends on the material (composition), mass, and shape (and contents) of the vibrating object.
+
+Almost all physical bodies have a tendency to resonate at their natural frequencies: not only a glass but also a pendulum, a swing, a bridge, all musical instruments, a rope on a flagpole [@Minnaert_1970v2, §61], the column of air in an organ pipe, the volume of air in a hall or venue -- and, importantly, also the body of air in the human vocal tract.  
+
+As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, with a sound source at one end, as illustrated in Figure \@ref(fig:onetube). This is an *idealization* of e.g. an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.). 
+
+```{r onetube, echo=FALSE, fig.cap="Uniform straight tube of length L. After Stevens (1998), Figure 3.8.", fig.align="center"}
+knitr::include_graphics("figures/onetube.png")
+```
+
+The principle of resonance is explained by Christian Huygens as follows (in a letter in November 1693):
+
+> "Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a [periodic] musical tone; similarly the length of an organ pipe determines its [resonant] tone, because the vibrations of air arrive at small intervals of time which are equal to the time which [the vibrations] need to move back and forth through the length of the organ pipe, as it is closed at one end." [@Huygens_1905, p.571, transl. HQ]
+
+The natural frequencies resonate (are amplified) because their wavelength matches the length $L$ of the tube: the compressions and rarefactions of one period coincide with those of the next period in time, so that the amplitudes of the pressure variations add up, and thus increase for the resonant frequencies: the resonant frequencies are amplified and other frequencies are attenuated^[Around its natural frequencies, the tube acts as a bandpass filter (albeit with a filter characteristic different from the one illustrated in Fig.\@ref(fig:bandpassfilter)).].
+
+## Formants
+
+### one uniform tube {#sec:onetube}
+
+Above, we discussed the resonance in an ideal, uniform tube (straight, and closed at one end, see Fig.\@ref(sec:onetube)). This tube may be regarded as a single tube with the same (uniform) diameter across its length, and it is similar to the vocal tract of a human speaker producing a continuous schwa vowel /ə/. This vocal tract acts as a single resonator: it amplifies its natural frequencies and attenuates other frequencies. 
+
+The natural frequencies of such a uniform tube are 
+$$F_n = \frac{2n-1}{4} \cdot \frac{c}{L}$$
+where $n$ is the ranking number of the natural frequency, $c$ is the speed of sound (353 m/s, see §\@ref(sec:speedofsound)), and $L$ is the length of the tube [@Stevens_1998, p.139] ^[And the corresponding *wavelengths* of these natural frequencies are $\frac{4}{2n-1}\cdot L$ [@Nooteboom_Cohen_1984, p.60].].
+If we assume that the vocal tract of an adult male speaker has length $L=0.17$ m, then the first resonant frequency of this speaker's vocal tract would be at $F_1 = \frac{1}{4} \cdot \frac{353}{0.17} = 519\ \textrm{Hz}$. In reality, the natural frequency is slightly lower^[This is due to absorption and radiation and to the vocal tract being not straight but bended, all of which factors are outside the scope of this introductory text.] at $F_1 \approx 500\ \textrm{Hz}$.
+Similarly, his $F_2 \approx 1500\ \textrm{Hz}$ and $F_3 \approx 2500\ \textrm{Hz}$, etc, as shown in Figure \@ref(fig:uniform-vt-transfer).
+A female vocal tract is slightly shorter than that of a male speaker (we assume $L=0.15$ m for a female vocal tract), thus we find that for a female vocal tract her $F_1 \approx 550\ \textrm{Hz}$, $F_2 \approx 1650\ \textrm{Hz}$ and $F_3 \approx 2750\ \textrm{Hz}$. 
+
+These natural frequencies of the vocal tract are termed its **formants**, a term coined by Ludimar Hermann (1838--1914)^[Formants are a property of the tube or of the vocal tract (and of the medium in it), and not of the sounds coming out of that tube or tract, but this distinction is seldom relevant and seldom made.]. 
+
+Figure \@ref(fig:uniform-vt-transfer) shows the transfer function and formants of the uniform vocal tract (open at one end) of a male speaker. This figure is to be interpreted like a spectrum (§\@ref(sec:spectrum)) or bandpass filter response (Fig.\@ref(fig:bandpassfilter)).
+
+```{r uniform-vt-transfer, echo=FALSE, fig.cap="Overall transfer function of the (uniform and open) vocal tract of a male speaker. Adapted from Stevens (1998), Fig.3.3(b); from <https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance>", fig.align="center"}
+knitr::include_graphics("figures/formants_stevens01_b.png")
+```
+
+### multiple tubes {#sec:moretubes}
+
+A special property of the *human* vocal tract is that is not a fixed tube, such as the one-tube idealization above, but that it can be *articulated*^[in the classical sense of "having two or more sections connected by a flexible joint" (*New Oxford Dictionary of English* 1998).] into multiple tubes, with varying shapes and varying cross-sections. This *articulation* of the vocal tract allows humans to produce many different vowel and consonant sounds, with different phonetic properties. Thus **the articulated and articulating vocal tract allows us to convey linguistic meaning by means of speech.**
+
+First we look at the two-tube configuration in Figure \@ref(fig:twotube) [after @Stevens_1998, Fig.3.13, p.143]; this is similar to the human vocal tract producing a low vowel /ɑ/. Due to the low position of the jaw and the tongue, the pharynx is relatively narrow while the oral cavity is relatively wide. This system of two tubes acts as a single system of two *coupled* resonators. The natural frequencies depend on the respective lengths $L_1$ and $L_2$ and the respective cross-sections $A_1$ and $A_2$, that is, the natural frequencies of the narrower tube affect those of the wider tube, and vice versa. This coupling results in a higher $F_1$ and lower $F_2$ for this two-tube configuration [@Stevens_1998, Fig.3.14], relative to those for the uniform tube (§\@ref(sec:onetube)). Indeed, for /ɑ/, average formant values are (for males) $F_1=730$ and $F_2=1090$ Hz, and (for females) $F_1=850$ and $F_2=1220$ Hz. 
+
+```{r twotube, echo=FALSE, fig.cap="Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13.", fig.align="center"}
+knitr::include_graphics("figures/twotube.png")
+```
+
+Even more complex is the configuration in Figure \@ref(fig:threetube) [after @Stevens_1998, Fig.3.15, p.144]; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length $L$ of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\@ref(fig:threetube), the natural frequencies come out as approximately $F_1=300$ Hz (mainly due to constriction), $F_2=1900$ Hz (back cavity), and $F_3=2200$ Hz (front cavity) [@Johnson_2003, p.97] for a male vocal tract. 
+
+```{r threetube, echo=FALSE, fig.cap="Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2003), Figure 5.3.", fig.align="center"}
+knitr::include_graphics("figures/threetube.png")
+```
+
+In the spectrum of the recorded /i/ vowel produced by a *female* speaker, in Fig.\@ref(fig:speech-spectralslice-i), we see that harmonics are amplified around formants $F_1 \approx 400\ \textrm{Hz}$ and $F_2 \approx 2600\ \textrm{Hz}$. The $F_3 \approx 3000\ \textrm{Hz}$ is poorly visible in this spectrum. This formant pattern characterizes an /i/ vowel spoken by an adult female speaker [@Peterson_Barney_1952, Table II].  
+
+```{r speech-spectralslice-i, echo=FALSE, fig.cap="Spectral slice of the /i/ vowel in the word *speech*.", fig.align="center"}
+knitr::include_graphics("figures/speech_word_0_210_spectrum.png")
+```
+
+### How to measure formants
+
+::: {#box-praatformants .praatbox}
+
+The safest method for measuring formants is to *bypass* the spectrum, and measure formants directly from a Sound object.
+
+
+- Select an input Sound object in the `Praat` Objects window. Then choose `Analyse spectum >` and then `To formant (burg)...`. 
+
+- As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 5 to 5500 Hz. Choose appropriate `Maximum number of formants` and matching `Formant ceiling` values for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\@ref(sec:samplingfrequency))^[See the `Help` information here, in particular its last paragraph.]. 
+Leave other arguments at their default (standard) values. Click `OK`.
+
+- The resulting Formant object is again added at the bottom of the list of objects. 
+
+- You may `Draw` or `Tabulate` or interactively `Query` the formant values (frequencies and bandwidths per formant per time frame). 
+
+:::
+
+## Source-filter theory of speech production
+
+> TODO discuss source-filter-theory here
+
+### Vowels
+
+### Consonants

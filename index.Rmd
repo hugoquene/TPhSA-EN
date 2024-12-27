@@ -3,7 +3,6 @@ title: "Tutorial on Phonetics and Speech Analysis"
 author: 
   - name: <a href='https://www.hugoquene.nl' target='_blank'>Hugo Quené</a>
     affiliation: Utrecht University
-  - name: <a href='https://www.cliziawelker.com' target='_blank'>Clizia Welker</a>
 date: "Document compiled `r format(Sys.time(), '%d %b %Y %H:%M')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -114,7 +113,7 @@ This work is based on an earlier tutorial (2006-2007) titled <cite>Tutorial for 
 The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024.  
 
 
-```{r class.source='fold-hide', include=FALSE}
+```{r bibpackages, class.source='fold-hide', include=FALSE}
 # automatically create a bib database for R packages that are used 
 # require(lattice)
 # require(nnet)

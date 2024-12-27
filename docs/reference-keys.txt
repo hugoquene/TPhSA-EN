@@ -11,7 +11,10 @@ fig:lowpassfilter
 fig:highpassfilter
 fig:bandpassfilter
 fig:bandrejectfilter
+fig:onetube
 fig:uniform-vt-transfer
+fig:twotube
+fig:threetube
 fig:speech-spectralslice-i
 ch-soundwaves
 sound
@@ -80,6 +83,8 @@ how-to-apply-a-predeemphasis-filter
 ch-speechsounds
 resonance
 formants
+sec:onetube
+sec:moretubes
 how-to-measure-formants
 source-filter-theory-of-speech-production
 vowels

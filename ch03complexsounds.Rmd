@@ -56,7 +56,7 @@ A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The 
 
 Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property. 
 
-## Spectrum
+## Spectrum {#sec:spectrum}
 
 A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a *spectrum*. A spectrum is useful to assess the frequency components of a signal, which are far easier to determine in a spectrum than in an oscillogram. A rainbow reveals the spectum of sunlight: water droplets refract the incoming light into its frequency components (colors). Similarly, complex sounds may be broken down into their (high and/or low) frequency components.  
 

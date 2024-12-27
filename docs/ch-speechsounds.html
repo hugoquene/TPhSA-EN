@@ -214,7 +214,9 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
 <li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#how-to-measure-formants"><i class="fa fa-check"></i><b>5.2.1</b> How to measure formants</a></li>
+<li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#how-to-measure-formants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#source-filter-theory-of-speech-production"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
 <ul>
@@ -251,50 +253,82 @@ div.csl-indent {
 <p>Imagine that you tap a glass object with a metal object – briefly and not too hard. The glass resonates at a particular frequency, which depends on the shape and mass of the glass, and you hear a resounding ‘ting’ sound. What is going on?</p>
 <p>Your tapping force initiates many different vibrations within the glass. Some of these vibrations have a wavelength (§<a href="ch-soundwaves.html#sec:wavelength">1.8.5</a>) that equals the dimensions of the glass. The vibrations at these particular wavelengths are reinforced, while other non-matching vibrations are attenuated. This is termed <strong>resonance</strong>. The amplified frequencies are termed ‘resonant frequencies’ or ‘natural frequencies’. The primary resonant frequency, which is amplified the most, is also termed the ‘eigen’ frequency of the resonating object. Very quickly, the non-resonant frequencies are dampened out, and the glass continues to vibrate at its resonant frequency (or frequencies). The vibrating glass constitutes a sound source, the sound of which propagates in the surrounding air (see Ch.<a href="ch-soundwaves.html#ch-soundwaves">1</a>), and we hear a ‘ping’ sound. The envelope (§<a href="complex-sounds-and-spectra.html#sec:envelope">3.4</a>) of this ‘ping’ sound depends on the material (composition), mass, and shape (and contents) of the vibrating object.</p>
 <p>Almost all physical bodies have a tendency to resonate at their natural frequencies: not only a glass but also a pendulum, a swing, a bridge, all musical instruments, a rope on a flagpole <span class="citation">(<a href="#ref-Minnaert_1970v2">Minnaert 1970, vol. 2, sec. 61</a>)</span>, the column of air in an organ pipe, the volume of air in a hall or venue – and, importantly, also the body of air in the human vocal tract.</p>
-<p>As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, with a sound source at one end. This is an <em>idealization</em> of e.g. an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.)</p>
+<p>As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, with a sound source at one end, as illustrated in Figure <a href="ch-speechsounds.html#fig:onetube">5.1</a>. This is an <em>idealization</em> of e.g. an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:onetube"></span>
+<img src="figures/onetube.png" alt="Uniform straight tube of length L. After Stevens (1998), Figure 3.8."  />
+<p class="caption">
+Figure 5.1: Uniform straight tube of length L. After Stevens (1998), Figure 3.8.
+</p>
+</div>
 <p>The principle of resonance is explained by Christian Huygens as follows (in a letter in November 1693):</p>
 <blockquote>
 <p>“Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a [periodic] musical tone; similarly the length of an organ pipe determines its [resonant] tone, because the vibrations of air arrive at small intervals of time which are equal to the time which [the vibrations] need to move back and forth through the length of the organ pipe, as it is closed at one end.” <span class="citation">(<a href="#ref-Huygens_1905">Huygens 1905, 10:571</a>, transl. HQ)</span></p>
 </blockquote>
-<p>The natural frequencies resonate (are amplified) because their wavelength matches the length <span class="math inline">\(L\)</span> of the tube: the compressions and rarefactions of one period coincide with those of the next period in time, so that the amplitude of the pressure variations increases for the resonant frequencies: the resonant frequencies are amplified and other frequencies are attenuated. Thus the tube acts as a bandpass filter (albeit different from the one illustrated in Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>).</p>
+<p>The natural frequencies resonate (are amplified) because their wavelength matches the length <span class="math inline">\(L\)</span> of the tube: the compressions and rarefactions of one period coincide with those of the next period in time, so that the amplitudes of the pressure variations add up, and thus increase for the resonant frequencies: the resonant frequencies are amplified and other frequencies are attenuated<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
 </div>
 <div id="formants" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Formants<a href="ch-speechsounds.html#formants" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The ideal tube discussed above (uniform, straight, closed at one end) acts as a single resonator: it amplifies its natural frequencies and attenuates other frequencies. The natural frequencies of such a tube are
+<div id="sec:onetube" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> one uniform tube<a href="ch-speechsounds.html#sec:onetube" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Above, we discussed the resonance in an ideal, uniform tube (straight, and closed at one end, see Fig.<a href="ch-speechsounds.html#sec:onetube">5.2.1</a>). This tube may be regarded as a single tube with the same (uniform) diameter across its length, and it is similar to the vocal tract of a human speaker producing a continuous schwa vowel /ə/. This vocal tract acts as a single resonator: it amplifies its natural frequencies and attenuates other frequencies.</p>
+<p>The natural frequencies of such a uniform tube are
 <span class="math display">\[F_n = \frac{2n-1}{4} \cdot \frac{c}{L}\]</span>
-where <span class="math inline">\(n\)</span> is the ranking number of the natural frequency, <span class="math inline">\(c\)</span> is the speed of sound (353 m/s, see §<a href="ch-soundwaves.html#sec:speedofsound">1.4</a>), and <span class="math inline">\(L\)</span> is the length of the tube <span class="citation">(<a href="#ref-Stevens_1998">Stevens 1998, 139</a>)</span> <a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.
-If we assume that the vocal tract of an adult female speaker has length <span class="math inline">\(L=0.15\)</span> m, then the first resonant frequency of this speaker’s vocal tract is at <span class="math inline">\(F_1 = \frac{1}{4} \cdot \frac{353}{0.15} = 588\ \textrm{Hz}\)</span>. In reality, the natural frequency is slightly lower<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a> at <span class="math inline">\(F_1 \approx 550\ \textrm{Hz}\)</span>.
-Similarly, her <span class="math inline">\(F_2 \approx 1650\ \textrm{Hz}\)</span> and <span class="math inline">\(F_3 \approx 2750\ \textrm{Hz}\)</span>.</p>
-<p>The natural frequencies of the tube are termed its <strong>formants</strong>, a term coined by Ludimar Hermann (1838–1914)<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
-<p>Figure <a href="ch-speechsounds.html#fig:uniform-vt-transfer">5.1</a> shows the transfer function of the uniform vocal tract (open at one end) of a male speaker. This figure is to be interpreted like a spectrum (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) or bandpass filter response (Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>).
-Because the male vocal tract is slightly longer than that of a female speaker, the formants are slightly lower, with <span class="math inline">\(F_1 = 500\ \textrm{Hz}\)</span> here.</p>
+where <span class="math inline">\(n\)</span> is the ranking number of the natural frequency, <span class="math inline">\(c\)</span> is the speed of sound (353 m/s, see §<a href="ch-soundwaves.html#sec:speedofsound">1.4</a>), and <span class="math inline">\(L\)</span> is the length of the tube <span class="citation">(<a href="#ref-Stevens_1998">Stevens 1998, 139</a>)</span> <a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>.
+If we assume that the vocal tract of an adult male speaker has length <span class="math inline">\(L=0.17\)</span> m, then the first resonant frequency of this speaker’s vocal tract would be at <span class="math inline">\(F_1 = \frac{1}{4} \cdot \frac{353}{0.17} = 519\ \textrm{Hz}\)</span>. In reality, the natural frequency is slightly lower<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a> at <span class="math inline">\(F_1 \approx 500\ \textrm{Hz}\)</span>.
+Similarly, his <span class="math inline">\(F_2 \approx 1500\ \textrm{Hz}\)</span> and <span class="math inline">\(F_3 \approx 2500\ \textrm{Hz}\)</span>, etc, as shown in Figure <a href="ch-speechsounds.html#fig:uniform-vt-transfer">5.2</a>.
+A female vocal tract is slightly shorter than that of a male speaker (we assume <span class="math inline">\(L=0.15\)</span> m for a female vocal tract), thus we find that for a female vocal tract her <span class="math inline">\(F_1 \approx 550\ \textrm{Hz}\)</span>, <span class="math inline">\(F_2 \approx 1650\ \textrm{Hz}\)</span> and <span class="math inline">\(F_3 \approx 2750\ \textrm{Hz}\)</span>.</p>
+<p>These natural frequencies of the vocal tract are termed its <strong>formants</strong>, a term coined by Ludimar Hermann (1838–1914)<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
+<p>Figure <a href="ch-speechsounds.html#fig:uniform-vt-transfer">5.2</a> shows the transfer function and formants of the uniform vocal tract (open at one end) of a male speaker. This figure is to be interpreted like a spectrum (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) or bandpass filter response (Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:uniform-vt-transfer"></span>
 <img src="figures/formants_stevens01_b.png" alt="Overall transfer function of the (uniform and open) vocal tract of a male speaker. Adapted from Stevens (1998), Fig.3.3(b); from &lt;https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance&gt;"  />
 <p class="caption">
-Figure 5.1: Overall transfer function of the (uniform and open) vocal tract of a male speaker. Adapted from Stevens (1998), Fig.3.3(b); from <a href="https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance" class="uri">https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance</a>
+Figure 5.2: Overall transfer function of the (uniform and open) vocal tract of a male speaker. Adapted from Stevens (1998), Fig.3.3(b); from <a href="https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance" class="uri">https://www.mq.edu.au/faculty-of-medicine-health-and-human-sciences/departments-and-schools/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/acoustic-theory-of-speech-production/vocal-tract-resonance</a>
 </p>
 </div>
-<blockquote>
-<p>TODO discuss uniform tube WITH constriction, TWO coupled resonators</p>
-</blockquote>
-<p>In the spectrum of the recorded /i/ vowel in Fig.<a href="ch-speechsounds.html#fig:speech-spectralslice-i">5.2</a>, we see that harmonics are amplified around formants <span class="math inline">\(F_1 \approx 350\ \textrm{Hz}\)</span> and <span class="math inline">\(F_2 \approx 2700\ \textrm{Hz}\)</span>, and attenuated at other frequencies. This formant pattern is characteristic for an /i/ vowel produced by an adult female speaker <span class="citation">(<a href="#ref-Peterson_Barney_1952">Peterson and Barney 1952</a>, Table II)</span>.</p>
+</div>
+<div id="sec:moretubes" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> multiple tubes<a href="ch-speechsounds.html#sec:moretubes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A special property of the <em>human</em> vocal tract is that is not a fixed tube, such as the one-tube idealization above, but that it can be <em>articulated</em><a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a> into multiple tubes, with varying shapes and varying cross-sections. This <em>articulation</em> of the vocal tract allows humans to produce many different vowel and consonant sounds, with different phonetic properties. Thus <strong>the articulated and articulating vocal tract allows us to convey linguistic meaning by means of speech.</strong></p>
+<p>First we look at the two-tube configuration in Figure <a href="ch-speechsounds.html#fig:twotube">5.3</a> <span class="citation">(after <a href="#ref-Stevens_1998">Stevens 1998, figs. 3.13, p.143</a>)</span>; this is similar to the human vocal tract producing a low vowel /ɑ/. Due to the low position of the jaw and the tongue, the pharynx is relatively narrow while the oral cavity is relatively wide. This system of two tubes acts as a single system of two <em>coupled</em> resonators. The natural frequencies depend on the respective lengths <span class="math inline">\(L_1\)</span> and <span class="math inline">\(L_2\)</span> and the respective cross-sections <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>, that is, the natural frequencies of the narrower tube affect those of the wider tube, and vice versa. This coupling results in a higher <span class="math inline">\(F_1\)</span> and lower <span class="math inline">\(F_2\)</span> for this two-tube configuration <span class="citation">(<a href="#ref-Stevens_1998">Stevens 1998, fig. 3.14</a>)</span>, relative to those for the uniform tube (§<a href="ch-speechsounds.html#sec:onetube">5.2.1</a>). Indeed, for /ɑ/, average formant values are (for males) <span class="math inline">\(F_1=730\)</span> and <span class="math inline">\(F_2=1090\)</span> Hz, and (for females) <span class="math inline">\(F_1=850\)</span> and <span class="math inline">\(F_2=1220\)</span> Hz.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:twotube"></span>
+<img src="figures/twotube.png" alt="Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13."  />
+<p class="caption">
+Figure 5.3: Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13.
+</p>
+</div>
+<p>Even more complex is the configuration in Figure <a href="ch-speechsounds.html#fig:threetube">5.4</a> <span class="citation">(after <a href="#ref-Stevens_1998">Stevens 1998, figs. 3.15, p.144</a>)</span>; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length <span class="math inline">\(L\)</span> of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.<a href="ch-speechsounds.html#fig:threetube">5.4</a>, the natural frequencies come out as approximately <span class="math inline">\(F_1=300\)</span> Hz (mainly due to constriction), <span class="math inline">\(F_2=1900\)</span> Hz (back cavity), and <span class="math inline">\(F_3=2200\)</span> Hz (front cavity) <span class="citation">(<a href="#ref-Johnson_2003">Johnson 2003, 97</a>)</span> for a male vocal tract.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:threetube"></span>
+<img src="figures/threetube.png" alt="Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2003), Figure 5.3."  />
+<p class="caption">
+Figure 5.4: Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2003), Figure 5.3.
+</p>
+</div>
+<p>In the spectrum of the recorded /i/ vowel produced by a <em>female</em> speaker, in Fig.<a href="ch-speechsounds.html#fig:speech-spectralslice-i">5.5</a>, we see that harmonics are amplified around formants <span class="math inline">\(F_1 \approx 400\ \textrm{Hz}\)</span> and <span class="math inline">\(F_2 \approx 2600\ \textrm{Hz}\)</span>. The <span class="math inline">\(F_3 \approx 3000\ \textrm{Hz}\)</span> is poorly visible in this spectrum. This formant pattern characterizes an /i/ vowel spoken by an adult female speaker <span class="citation">(<a href="#ref-Peterson_Barney_1952">Peterson and Barney 1952</a>, Table II)</span>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-spectralslice-i"></span>
 <img src="figures/speech_word_0_210_spectrum.png" alt="Spectral slice of the /i/ vowel in the word *speech*."  />
 <p class="caption">
-Figure 5.2: Spectral slice of the /i/ vowel in the word <em>speech</em>.
+Figure 5.5: Spectral slice of the /i/ vowel in the word <em>speech</em>.
 </p>
 </div>
-<div id="how-to-measure-formants" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> How to measure formants<a href="ch-speechsounds.html#how-to-measure-formants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>TODO from Spectrum to Formants objects, without Spectrogram</p>
-</blockquote>
+</div>
+<div id="how-to-measure-formants" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> How to measure formants<a href="ch-speechsounds.html#how-to-measure-formants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="box-praatformants" class="praatbox">
+<p>The safest method for measuring formants is to <em>bypass</em> the spectrum, and measure formants directly from a Sound object.</p>
+<ul>
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window. Then choose <code>Analyse spectum &gt;</code> and then <code>To formant (burg)...</code>.</p></li>
+<li><p>As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 5 to 5500 Hz. Choose appropriate <code>Maximum number of formants</code> and matching <code>Formant ceiling</code> values for your speaker; these values depend on the length of the speaker’s vocal tract and on your sampling frequency (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>)<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.
+Leave other arguments at their default (standard) values. Click <code>OK</code>.</p></li>
+<li><p>The resulting Formant object is again added at the bottom of the list of objects.</p></li>
+<li><p>You may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> the formant values (frequencies and bandwidths per formant per time frame).</p></li>
+</ul>
+</div>
 </div>
 </div>
 <div id="source-filter-theory-of-speech-production" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Source-filter theory of speech production<a href="ch-speechsounds.html#source-filter-theory-of-speech-production" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
-<p>TODO Discuss in this chapter</p>
+<p>TODO discuss source-filter-theory here</p>
 </blockquote>
 <div id="vowels" class="section level3 hasAnchor" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Vowels<a href="ch-speechsounds.html#vowels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -309,6 +343,9 @@ Figure 5.2: Spectral slice of the /i/ vowel in the word <em>speech</em>.
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Huygens_1905" class="csl-entry">
 Huygens, Christiaan. 1905. <em>Oeuvres Complètes, Publiées Par La Société Hollandaise Des Sciences</em>. Vol. 10. La Haye: M. Nijhoff. <a href="http://archive.org/details/oeuvrescomplte10huyguoft">http://archive.org/details/oeuvrescomplte10huyguoft</a>.
+</div>
+<div id="ref-Johnson_2003" class="csl-entry">
+Johnson, Keith. 2003. <em>Acoustic and Auditory Phonetics</em>. 2nd ed. Malden, MA: Blackwell.
 </div>
 <div id="ref-Minnaert_1970v2" class="csl-entry">
 Minnaert, M. 1970. <em>De Natuurkunde van ’t Vrije Veld</em>. Vol. 2. Zutphen: Thieme.
@@ -326,9 +363,12 @@ Stevens, Kenneth N. 1998. <em>Acoustic Phonetics</em>. Cambridge, MA: MIT Press.
 <div class="footnotes">
 <hr />
 <ol start="30">
-<li id="fn30"><p>And the corresponding <em>wavelengths</em> of these natural frequencies are <span class="math inline">\(\frac{4}{2n-1}\cdot L\)</span> <span class="citation">(<a href="#ref-Nooteboom_Cohen_1984">Nooteboom and Cohen 1984, 60</a>)</span><a href="ch-speechsounds.html#fnref30" class="footnote-back">↩︎</a></p></li>
-<li id="fn31"><p>This is due to absorption and radiation and to the vocal tract being not straight but bended, all of which factors are outside the scope of this introductory text.<a href="ch-speechsounds.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p>Formants are a property of the tube or of the vocal tract (and of the medium), and not of the sounds coming out of that tube or tract, but this distinction is seldom relevant and seldom made.<a href="ch-speechsounds.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>Around its natural frequencies, the tube acts as a bandpass filter (albeit with a filter characteristic different from the one illustrated in Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>).<a href="ch-speechsounds.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn31"><p>And the corresponding <em>wavelengths</em> of these natural frequencies are <span class="math inline">\(\frac{4}{2n-1}\cdot L\)</span> <span class="citation">(<a href="#ref-Nooteboom_Cohen_1984">Nooteboom and Cohen 1984, 60</a>)</span>.<a href="ch-speechsounds.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p>This is due to absorption and radiation and to the vocal tract being not straight but bended, all of which factors are outside the scope of this introductory text.<a href="ch-speechsounds.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>Formants are a property of the tube or of the vocal tract (and of the medium in it), and not of the sounds coming out of that tube or tract, but this distinction is seldom relevant and seldom made.<a href="ch-speechsounds.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>in the classical sense of “having two or more sections connected by a flexible joint” (<em>New Oxford Dictionary of English</em> 1998).<a href="ch-speechsounds.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>See the <code>Help</code> information here, in particular its last paragraph.<a href="ch-speechsounds.html#fnref35" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
