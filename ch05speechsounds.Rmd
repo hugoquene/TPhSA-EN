@@ -83,6 +83,7 @@ Leave other arguments at their default (standard) values. Click `OK`.
 
 - You may `Draw` or `Tabulate` or interactively `Query` the formant values (frequencies and bandwidths per formant per time frame). 
 
+- Remember to `Save` the Formant object if you wish. 
 :::
 
 ## Source-filter theory of speech production
