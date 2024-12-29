@@ -4,7 +4,7 @@
 
 *Chapter keywords*: resonance, formant, formants
 
-## Resonance
+## Resonance {#sec:resonance}
 
 Imagine that you tap a glass object with a metal object -- briefly and not too hard. The glass resonates at a particular frequency, which depends on the shape and mass of the glass, and you hear a resounding 'ting' sound. What is going on? 
 
@@ -12,9 +12,9 @@ Your tapping force initiates many different vibrations within the glass. Some of
 
 Almost all physical bodies have a tendency to resonate at their natural frequencies: not only a glass but also a pendulum, a swing, a bridge, all musical instruments, a rope on a flagpole [@Minnaert_1970v2, §61], the column of air in an organ pipe, the volume of air in a hall or venue -- and, importantly, also the body of air in the human vocal tract.  
 
-As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, with a sound source at one end, as illustrated in Figure \@ref(fig:onetube). This is an *idealization* of e.g. an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.). 
+As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, open at one end and having a sound source at the other closed end, as illustrated in Figure \@ref(fig:onetube). This is an *idealization* of e.g. an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.). 
 
-```{r onetube, echo=FALSE, fig.cap="Uniform straight tube of length L. After Stevens (1998), Figure 3.8.", fig.align="center"}
+```{r onetube, echo=FALSE, fig.cap="Uniform straight tube of length L, open at one end, and having a sound source at the closed end. After Stevens (1998), Figure 3.8.", fig.align="center"}
 knitr::include_graphics("figures/onetube.png")
 ```
 
@@ -22,9 +22,9 @@ The principle of resonance is explained by Christian Huygens as follows (in a le
 
 > "Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a [periodic] musical tone; similarly the length of an organ pipe determines its [resonant] tone, because the vibrations of air arrive at small intervals of time which are equal to the time which [the vibrations] need to move back and forth through the length of the organ pipe, as it is closed at one end." [@Huygens_1905, p.571, transl. HQ]
 
-The natural frequencies resonate (are amplified) because their wavelength matches the length $L$ of the tube: the compressions and rarefactions of one period coincide with those of the next period in time, so that the amplitudes of the pressure variations add up, and thus increase for the resonant frequencies: the resonant frequencies are amplified and other frequencies are attenuated^[Around its natural frequencies, the tube acts as a bandpass filter (albeit with a filter characteristic different from the one illustrated in Fig.\@ref(fig:bandpassfilter)).].
+The natural frequencies resonate (are amplified) because their wavelength matches the length $L$ of the tube: the compressions and rarefactions of a wave period going "one way" coincide with those of the reflected wave going the "other way", so that the amplitudes of the pressure variations add up, and thus increase, for some frequencies, viz. the resonant or natural frequencies. Sound waves with frequencies close to the resonant frequencies are thus amplified and those with other frequencies are attenuated^[In other words, the tube acts as a bandpass filter around its natural frequencies, albeit with a filter characteristic different from the one illustrated in Fig.\@ref(fig:bandpassfilter).].
 
-## Formants
+## Formants {#sec:formants}
 
 ### one uniform tube {#sec:onetube}
 
