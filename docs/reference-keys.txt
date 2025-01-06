@@ -81,11 +81,11 @@ bandwidth
 sec:emphasisfilters
 how-to-apply-a-predeemphasis-filter
 ch-speechsounds
-resonance
-formants
+sec:resonance
+sec:formants
 sec:onetube
 sec:moretubes
 how-to-measure-formants
-source-filter-theory-of-speech-production
-vowels
-consonants
+sec:sourcefilter
+production-of-vowels
+production-of-consonants

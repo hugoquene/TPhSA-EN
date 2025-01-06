@@ -211,17 +211,17 @@ div.csl-indent {
 <li class="part"><span><b>Part II: Speech</b></span></li>
 <li class="chapter" data-level="5" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html"><i class="fa fa-check"></i><b>5</b> Speech sounds</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
-<li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
+<li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
 <li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
 <li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#how-to-measure-formants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#source-filter-theory-of-speech-production"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
+<li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:sourcefilter"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#vowels"><i class="fa fa-check"></i><b>5.3.1</b> Vowels</a></li>
-<li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#consonants"><i class="fa fa-check"></i><b>5.3.2</b> Consonants</a></li>
+<li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-vowels"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -304,12 +304,9 @@ For music, relevant information may be contained in the full audible range up to
 <p>In order to obtain a high-quality recording, it helps to attenuate all non-target sounds, in various ways:</p>
 <ul>
 <li>If available, use a sound-attenuating cabin or booth. The booth will help to insulate your target signal from unwanted other sounds. Close the door of the booth properly. Leave non-essential equipment (watches, phones) outside the booth.<br />
-If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings.<br />
-Background: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker’s articulations and prosody. However, similar spectral properties (e.g. resonances, formants, see §XXX) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</li>
+If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings.</li>
 </ul>
-<blockquote>
-<p>TODO crossref formants.</p>
-</blockquote>
+<p><strong>Background</strong>: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker’s articulations and prosody. However, similar spectral properties (e.g. resonances, formants, see §<a href="ch-speechsounds.html#sec:formants">5.2</a>) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
 <ul>
 <li><p>If there is a lot of noise or non-target speech, try using a <em>directional</em> microphone, which only or mostly picks up sounds coming from one direction, and which attenuates sounds from other directions. Vary the position of the microphone and make test recordings.</p></li>
 <li><p>Switch off any non-essential equipment, and try to attenuate non-target sounds from elsewhere. Even if you cannot hear a difference, the equipment sounds and outside sounds may interfere with the target sound signal, resulting in unwanted artefacts.</p></li>
@@ -442,7 +439,7 @@ Then choose <code>Combine &gt; Concatenate</code> in the Objects window. The res
 <li id="fn19"><p>1 byte is 8 bits, or <span class="math inline">\(2^8=256\)</span> possible values.<a href="ch-soundtobytes.html#fnref19" class="footnote-back">↩︎</a></p></li>
 <li id="fn20"><p>Notice that one bit is required to record the sign of the value (positive or negative), so with 1 byte of resolution we can in principle record 256 possible amplitude values, running from -128 to +128, with rounding noise having an amplitude of <span class="math inline">\(0.5/128\)</span> or <span class="math inline">\(1/256\)</span> of the maximum amplitude. This corresponds to a signal-to-quantization-noise ratio of 50 dB. In practice, however, amplitude values are not stored as integer numbers but as floating numbers.<a href="ch-soundtobytes.html#fnref20" class="footnote-back">↩︎</a></p></li>
 <li id="fn21"><p>This is also the standard amplitude resolution for audio CDs.<a href="ch-soundtobytes.html#fnref21" class="footnote-back">↩︎</a></p></li>
-<li id="fn22"><p><em>Frequency</em> and <em>formant</em> measurements may be suspect if the corresponding <em>wavelength</em> is a multiple of one of the dimensions of the room (see §<a href="ch-soundwaves.html#sec:wavelength">1.8.5</a>); or if the reported frequency is below 100 Hz; or if the reliability of the frequency measurement is low. <a href="ch-soundtobytes.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p><em>Frequency</em> and <em>formant</em> measurements may be suspect if the corresponding <em>wavelength</em> (for frequencies) or wavelength <span class="math inline">\(\times 4\)</span> (for formants) is a multiple of one of the dimensions of the room (see §<a href="ch-soundwaves.html#sec:wavelength">1.8.5</a>); or if the reported frequency is below 100 Hz; or if the reliability of the frequency measurement is low. <a href="ch-soundtobytes.html#fnref22" class="footnote-back">↩︎</a></p></li>
 <li id="fn23"><p>One of the so-called Harvard test sentences, from list 3, <a href="https://en.wikipedia.org/wiki/Harvard_sentences" class="uri">https://en.wikipedia.org/wiki/Harvard_sentences</a>. In Dutch, a popular test sentence is <em>Het leven is mooi als de zon schijnt</em>.<a href="ch-soundtobytes.html#fnref23" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

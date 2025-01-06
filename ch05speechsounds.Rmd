@@ -55,9 +55,9 @@ First we look at the two-tube configuration in Figure \@ref(fig:twotube) [after 
 knitr::include_graphics("figures/twotube.png")
 ```
 
-Even more complex is the configuration in Figure \@ref(fig:threetube) [after @Stevens_1998, Fig.3.15, p.144]; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length $L$ of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\@ref(fig:threetube), the natural frequencies come out as approximately $F_1=300$ Hz (mainly due to constriction), $F_2=1900$ Hz (back cavity), and $F_3=2200$ Hz (front cavity) [@Johnson_2003, p.97] for a male vocal tract. 
+Even more complex is the configuration in Figure \@ref(fig:threetube) [after @Stevens_1998, Fig.3.15, p.144]; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length $L$ of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\@ref(fig:threetube), the natural frequencies come out as approximately $F_1=300$ Hz (mainly due to constriction), $F_2=1900$ Hz (back cavity), and $F_3=2200$ Hz (front cavity) [@Johnson_2012, p.137] for a male vocal tract. 
 
-```{r threetube, echo=FALSE, fig.cap="Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2003), Figure 5.3.", fig.align="center"}
+```{r threetube, echo=FALSE, fig.cap="Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2012), Figure 6.3.", fig.align="center"}
 knitr::include_graphics("figures/threetube.png")
 ```
 
@@ -76,7 +76,7 @@ The safest method for measuring formants is to *bypass* the spectrum, and measur
 
 - Select an input Sound object in the `Praat` Objects window. Then choose `Analyse spectum >` and then `To formant (burg)...`. 
 
-- As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 5 to 5500 Hz. Choose appropriate `Maximum number of formants` and matching `Formant ceiling` values for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\@ref(sec:samplingfrequency))^[See the `Help` information here, in particular its last paragraph.]. 
+- As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate `Maximum number of formants` and choose the matching `Formant ceiling` value for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\@ref(sec:samplingfrequency))^[See the `Help` information in the `Praat` menu, in particular its last paragraph.]. 
 Leave other arguments at their default (standard) values. Click `OK`.
 
 - The resulting Formant object is again added at the bottom of the list of objects. 
@@ -86,10 +86,26 @@ Leave other arguments at their default (standard) values. Click `OK`.
 - Remember to `Save` the Formant object if you wish. 
 :::
 
-## Source-filter theory of speech production
+## Source-filter theory of speech production {#sec:sourcefilter}
 
-> TODO discuss source-filter-theory here
+According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter [@Fant_1970] [@Tokuda_2021]. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source. 
 
-### Vowels
+Several types of **source** sounds may be generated, separately or in combination, of which the most important are:
 
-### Consonants
+- phonation (periodic sound produced by vibration of the vocal cords),
+
+- whisper (aperiodic sound produced by air turbulence at the glottis), 
+
+- explosion or frication (aperiodic sound produced by air turbulence at a constriction in the vocal tract),
+
+- ingressive sounds (e.g. clicks; aperiodic and transient sound produced at a constriction in the vocal tract, with ingressive airstream).
+
+These source sounds are then modified by the acoustic **filter**, formed by the (part of the) vocal tract that is between the sound source and the outside air. The shape of that (part of the) vocal tract may be varied (articulated), with noticeable and meaningful phonetic effects. The (part of the) vocal tract works as a filter, by means of resonance (§\@ref(sec:resonance)).  
+
+This summary of the source-filter theory ignores a third component of speech production, viz. the effect of sound **radiation** at the lips. The radiation may be regarded as a high-pass filter with an overall slope of $+6$ dB per octave (§\@ref(sec:typesoffilters))^[Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.]. This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored. 
+
+### Production of vowels
+
+> TODO mention -6 dB slope of speech (phonation+radiation)
+
+### Production of consonants

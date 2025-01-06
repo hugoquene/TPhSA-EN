@@ -85,7 +85,7 @@ TBA
 
 This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by 
 @Rietveld_VanHeuven_2009 (in Dutch), 
-@Johnson_2011, 
+@Johnson_2012, 
 @Ladefoged_Johnson_2015,  
 @Reetz_Jongman_2020, and 
 @Zsiga_2024. 

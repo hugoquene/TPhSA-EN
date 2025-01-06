@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 28 Dec 2024 10:31}
+\date{Document compiled 06 Jan 2025 17:06}
 
 \begin{document}
 \maketitle
@@ -176,7 +176,7 @@ TBA
 
 This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by
 \citet{Rietveld_VanHeuven_2009} (in Dutch),
-\citet{Johnson_2011},
+\citet{Johnson_2012},
 \citet{Ladefoged_Johnson_2015},\\
 \citet{Reetz_Jongman_2020}, and
 \citet{Zsiga_2024}.
@@ -685,13 +685,10 @@ In order to obtain a high-quality recording, it helps to attenuate all non-targe
 \tightlist
 \item
   If available, use a sound-attenuating cabin or booth. The booth will help to insulate your target signal from unwanted other sounds. Close the door of the booth properly. Leave non-essential equipment (watches, phones) outside the booth.\\
-  If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings.\\
-  Background: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g.~resonances, formants, see §XXX) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room\footnote{\emph{Frequency} and \emph{formant} measurements may be suspect if the corresponding \emph{wavelength} is a multiple of one of the dimensions of the room (see §\ref{sec:wavelength}); or if the reported frequency is below 100 Hz; or if the reliability of the frequency measurement is low.}.
+  If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings.
 \end{itemize}
 
-\begin{quote}
-TODO crossref formants.
-\end{quote}
+\textbf{Background}: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g.~resonances, formants, see §\ref{sec:formants}) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room\footnote{\emph{Frequency} and \emph{formant} measurements may be suspect if the corresponding \emph{wavelength} (for frequencies) or wavelength \(\times 4\) (for formants) is a multiple of one of the dimensions of the room (see §\ref{sec:wavelength}); or if the reported frequency is below 100 Hz; or if the reliability of the frequency measurement is low.}.
 
 \begin{itemize}
 \item
@@ -1143,7 +1140,7 @@ The reverse operation is called \emph{de-emphasis} filtering: this changes the o
 
 \emph{Chapter keywords}: resonance, formant, formants
 
-\section{Resonance}\label{resonance}
+\section{Resonance}\label{sec:resonance}
 
 Imagine that you tap a glass object with a metal object -- briefly and not too hard. The glass resonates at a particular frequency, which depends on the shape and mass of the glass, and you hear a resounding `ting' sound. What is going on?
 
@@ -1151,7 +1148,7 @@ Your tapping force initiates many different vibrations within the glass. Some of
 
 Almost all physical bodies have a tendency to resonate at their natural frequencies: not only a glass but also a pendulum, a swing, a bridge, all musical instruments, a rope on a flagpole \citep[§61]{Minnaert_1970v2}, the column of air in an organ pipe, the volume of air in a hall or venue -- and, importantly, also the body of air in the human vocal tract.
 
-As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, with a sound source at one end, as illustrated in Figure \ref{fig:onetube}. This is an \emph{idealization} of e.g.~an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.).
+As a first approximation, let us consider a simple straight tube, uniform in diameter over its entire length, filled with air of 37°C, open at one end and having a sound source at the other closed end, as illustrated in Figure \ref{fig:onetube}. This is an \emph{idealization} of e.g.~an organ pipe, a flute, or of a human speaker producing a continuous schwa vowel /ə/. (It differs somewhat from a concert hall, in that the tube is open at one end.).
 
 \begin{figure}
 
@@ -1159,7 +1156,7 @@ As a first approximation, let us consider a simple straight tube, uniform in dia
 
 }
 
-\caption{Uniform straight tube of length L. After Stevens (1998), Figure 3.8.}\label{fig:onetube}
+\caption{Uniform straight tube of length L, open at one end, and having a sound source at the closed end. After Stevens (1998), Figure 3.8.}\label{fig:onetube}
 \end{figure}
 
 The principle of resonance is explained by Christian Huygens as follows (in a letter in November 1693):
@@ -1168,9 +1165,9 @@ The principle of resonance is explained by Christian Huygens as follows (in a le
 ``Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a {[}periodic{]} musical tone; similarly the length of an organ pipe determines its {[}resonant{]} tone, because the vibrations of air arrive at small intervals of time which are equal to the time which {[}the vibrations{]} need to move back and forth through the length of the organ pipe, as it is closed at one end.'' \citep[571, transl. HQ]{Huygens_1905}
 \end{quote}
 
-The natural frequencies resonate (are amplified) because their wavelength matches the length \(L\) of the tube: the compressions and rarefactions of one period coincide with those of the next period in time, so that the amplitudes of the pressure variations add up, and thus increase for the resonant frequencies: the resonant frequencies are amplified and other frequencies are attenuated\footnote{Around its natural frequencies, the tube acts as a bandpass filter (albeit with a filter characteristic different from the one illustrated in Fig.\ref{fig:bandpassfilter}).}.
+The natural frequencies resonate (are amplified) because their wavelength matches the length \(L\) of the tube: the compressions and rarefactions of a wave period going ``one way'' coincide with those of the reflected wave going the ``other way'', so that the amplitudes of the pressure variations add up, and thus increase, for some frequencies, viz.~the resonant or natural frequencies. Sound waves with frequencies close to the resonant frequencies are thus amplified and those with other frequencies are attenuated\footnote{In other words, the tube acts as a bandpass filter around its natural frequencies, albeit with a filter characteristic different from the one illustrated in Fig.\ref{fig:bandpassfilter}.}.
 
-\section{Formants}\label{formants}
+\section{Formants}\label{sec:formants}
 
 \subsection{one uniform tube}\label{sec:onetube}
 
@@ -1211,7 +1208,7 @@ First we look at the two-tube configuration in Figure \ref{fig:twotube} \citep[a
 \caption{Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13.}\label{fig:twotube}
 \end{figure}
 
-Even more complex is the configuration in Figure \ref{fig:threetube} \citep[after][Fig.3.15, p.144]{Stevens_1998}; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length \(L\) of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\ref{fig:threetube}, the natural frequencies come out as approximately \(F_1=300\) Hz (mainly due to constriction), \(F_2=1900\) Hz (back cavity), and \(F_3=2200\) Hz (front cavity) \citep[97]{Johnson_2003} for a male vocal tract.
+Even more complex is the configuration in Figure \ref{fig:threetube} \citep[after][Fig.3.15, p.144]{Stevens_1998}; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length \(L\) of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\ref{fig:threetube}, the natural frequencies come out as approximately \(F_1=300\) Hz (mainly due to constriction), \(F_2=1900\) Hz (back cavity), and \(F_3=2200\) Hz (front cavity) \citep[137]{Johnson_2012} for a male vocal tract.
 
 \begin{figure}
 
@@ -1219,7 +1216,7 @@ Even more complex is the configuration in Figure \ref{fig:threetube} \citep[afte
 
 }
 
-\caption{Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2003), Figure 5.3.}\label{fig:threetube}
+\caption{Three-tube configuration, with a back cavity (left), constriction, and front cavity (right). After Johnson (2012), Figure 6.3.}\label{fig:threetube}
 \end{figure}
 
 In the spectrum of the recorded /i/ vowel produced by a \emph{female} speaker, in Fig.\ref{fig:speech-spectralslice-i}, we see that harmonics are amplified around formants \(F_1 \approx 400\ \textrm{Hz}\) and \(F_2 \approx 2600\ \textrm{Hz}\). The \(F_3 \approx 3000\ \textrm{Hz}\) is poorly visible in this spectrum. This formant pattern characterizes an /i/ vowel spoken by an adult female speaker \citep[Table II]{Peterson_Barney_1952}.
@@ -1242,7 +1239,7 @@ The safest method for measuring formants is to \emph{bypass} the spectrum, and m
 \item
   Select an input Sound object in the \texttt{Praat} Objects window. Then choose \texttt{Analyse\ spectum\ \textgreater{}} and then \texttt{To\ formant\ (burg)...}.
 \item
-  As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 5 to 5500 Hz. Choose appropriate \texttt{Maximum\ number\ of\ formants} and matching \texttt{Formant\ ceiling} values for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\ref{sec:samplingfrequency})\footnote{See the \texttt{Help} information here, in particular its last paragraph.}.
+  As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate \texttt{Maximum\ number\ of\ formants} and choose the matching \texttt{Formant\ ceiling} value for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\ref{sec:samplingfrequency})\footnote{See the \texttt{Help} information in the \texttt{Praat} menu, in particular its last paragraph.}.
   Leave other arguments at their default (standard) values. Click \texttt{OK}.
 \item
   The resulting Formant object is again added at the bottom of the list of objects.
@@ -1252,15 +1249,34 @@ The safest method for measuring formants is to \emph{bypass} the spectrum, and m
   Remember to \texttt{Save} the Formant object if you wish.
 \end{itemize}
 
-\section{Source-filter theory of speech production}\label{source-filter-theory-of-speech-production}
+\section{Source-filter theory of speech production}\label{sec:sourcefilter}
+
+According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter \citep{Fant_1970} \citep{Tokuda_2021}. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source.
+
+Several types of \textbf{source} sounds may be generated, separately or in combination, of which the most important are:
+
+\begin{itemize}
+\item
+  phonation (periodic sound produced by vibration of the vocal cords),
+\item
+  whisper (aperiodic sound produced by air turbulence at the glottis),
+\item
+  explosion or frication (aperiodic sound produced by air turbulence at a constriction in the vocal tract),
+\item
+  ingressive sounds (e.g.~clicks; aperiodic and transient sound produced at a constriction in the vocal tract, with ingressive airstream).
+\end{itemize}
+
+These source sounds are then modified by the acoustic \textbf{filter}, formed by the (part of the) vocal tract that is between the sound source and the outside air. The shape of that (part of the) vocal tract may be varied (articulated), with noticeable and meaningful phonetic effects. The (part of the) vocal tract works as a filter, by means of resonance (§\ref{sec:resonance}).
+
+This summary of the source-filter theory ignores a third component of speech production, viz.~the effect of sound \textbf{radiation} at the lips. The radiation may be regarded as a high-pass filter with an overall slope of \(+6\) dB per octave (§\ref{sec:typesoffilters})\footnote{Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.}. This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored.
+
+\subsection{Production of vowels}\label{production-of-vowels}
 
 \begin{quote}
-TODO discuss source-filter-theory here
+TODO mention -6 dB slope of speech (phonation+radiation)
 \end{quote}
 
-\subsection{Vowels}\label{vowels}
-
-\subsection{Consonants}\label{consonants}
+\subsection{Production of consonants}\label{production-of-consonants}
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 
