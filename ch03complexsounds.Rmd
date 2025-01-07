@@ -127,9 +127,7 @@ A *short* window (e.g. 0.005 s) will show more detail in the time domain (showin
 knitr::include_graphics("figures/Spectrum_speech_word_0_210.png")
 ```
 
-- In Fig.\@ref(fig:speech-spectralslice), the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that $f_0 \approx 219$ Hz (see §\@ref(sec:FTintro)). Also notice the overall downward slope of the spectrum (see §\@ref(sec:emphasisfilters) and §REF). 
-
-> TODO crosslink to spectral slope
+- In Fig.\@ref(fig:speech-spectralslice), the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that $f_0 \approx 219$ Hz (see §\@ref(sec:FTintro)). Also notice the overall downward slope of the spectrum (see §\@ref(sec:emphasisfilters) and §\@ref(sec:vowelproduction)). 
 
 - Remember to `Save` the Spectrum object if you wish. 
 

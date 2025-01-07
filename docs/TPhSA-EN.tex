@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 07 Jan 2025 13:11}
+\date{Document compiled 07 Jan 2025 16:32}
 
 \begin{document}
 \maketitle
@@ -490,8 +490,8 @@ Phase is expressed relative to the period \(T\), but it is not expressed in time
 In the transverse stadium wave, phase corresponds to the difference in time between the sit-down-moment of one group of persons, and the comparable sit-down-moment of another group of persons in a different section of the stadium. Imagine two waves rolling along the stadium benches: one wave on the lower benches, and a different wave on the upper benches. The two waves may be out of phase (lower and upper persons sit down at different times) or in phase (lower and upper person sit down at the same time) -- irrespective of whether the two waves have the same or different frequencies.
 
 \phantomsection\label{questions-phase}
-\subsection*{Question 1.3}\label{question-1.3}
-\addcontentsline{toc}{subsection}{Question 1.3}
+\subsubsection*{Question 1.3}\label{question-1.3}
+\addcontentsline{toc}{subsubsection}{Question 1.3}
 
 Continue this thought experiment, with two stadium waves having the same frequency on the lower and upper benches, and with phase \(\varphi=0.5\) between the lower and upper sections. What would the resulting wave pattern look like?
 
@@ -508,12 +508,18 @@ Sounds with higher frequency have shorter wavelength, and vice versa. A periodic
 
 }
 
-\caption{Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with c=343 m/s in the air. }\label{fig:example-wavelength}
+\caption{Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with $c=343$ m/s in air. }\label{fig:example-wavelength}
 \end{figure}
 
-\begin{quote}
-TODO adjust wavelenght plot
-\end{quote}
+\phantomsection\label{questions-wavelength}
+\subsubsection*{Question 1.4}\label{question-1.4}
+\addcontentsline{toc}{subsubsection}{Question 1.4}
+
+What is the frequency of the sound depicted in Figure \ref{fig:example-wavelength}?
+
+Answer 1.4
+
+\(f = c / \lambda = 343 / 1.715 = 200\ \textrm{Hz}\)
 
 In the transverse stadium wave, the wavelength \(\lambda\) is the distance in meters (on the same bench) between two persons in two consecutive periods who reach the highest point of their sit-stand-arms-up cycle. This is the distance the wave has traveled between the two moments at which a person repeats the same action. If we assume that \(c=10\) m/s and \(f=0.2\) Hz (as very rough estimates), we find that the wavelength \(\lambda=c/f=10/0.2=50\) meter.
 
@@ -941,17 +947,8 @@ A \emph{short} window (e.g.~0.005 s) will show more detail in the time domain (s
 \end{figure}
 
 \begin{itemize}
-\tightlist
 \item
-  In Fig.\ref{fig:speech-spectralslice}, the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}). Also notice the overall downward slope of the spectrum (see §\ref{sec:emphasisfilters} and §REF).
-\end{itemize}
-
-\begin{quote}
-TODO crosslink to spectral slope
-\end{quote}
-
-\begin{itemize}
-\tightlist
+  In Fig.\ref{fig:speech-spectralslice}, the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that \(f_0 \approx 219\) Hz (see §\ref{sec:FTintro}). Also notice the overall downward slope of the spectrum (see §\ref{sec:emphasisfilters} and §\ref{sec:vowelproduction}).
 \item
   Remember to \texttt{Save} the Spectrum object if you wish.
 \end{itemize}
@@ -1195,12 +1192,12 @@ A single formant is characterised by two properties:
 \item
   its peak \emph{frequency}, or formant frequency,
 \item
-  its \emph{bandwidth} or `peakness', that is the width of the spectral envelope \(3\) dB below the peak amplitude of that formant; note that a larger bandwidth value corresponds with a wider, flatter, and less peaked formant\footnote{The term \emph{formant quality} may refer to the inverse of the formant bandwidth, i.e.~\(1/\textrm{bandwidth}\); a larger quality value corresponds with a narrower, higher, and more peaked formant.}.
+  its \emph{bandwidth} or `peakness', that is the width of the spectral envelope \(3\) dB below the peak amplitude of that formant; a larger bandwidth value corresponds with a wider, flatter, and less peaked formant\footnote{The term \emph{formant quality} may refer to the inverse of the formant bandwidth, i.e.~\(1/\textrm{bandwidth}\); a larger quality value corresponds with a narrower, higher, and more peaked formant.}.
 \end{itemize}
 
 \subsection{multiple tubes}\label{sec:moretubes}
 
-A special property of the \emph{human} vocal tract is that is not a fixed tube, such as the one-tube idealization above, but that it can be \emph{articulated}\footnote{in the classical sense of ``having two or more sections connected by a flexible joint'' (\emph{New Oxford Dictionary of English} 1998).} into multiple tubes, with varying shapes and varying cross-sections. This \emph{articulation} of the vocal tract allows humans to produce many different vowel and consonant sounds, with different phonetic properties. Thus \textbf{the articulated and articulating vocal tract allows us to convey linguistic meaning by means of speech.}
+A special property of the \emph{human} vocal tract is that is not a fixed tube, such as the one-tube idealization above, but that it can be \emph{articulated}\footnote{in the classical sense of ``having two or more sections connected by a flexible joint'' (\emph{New Oxford Dictionary of English} 1998).} into multiple tubes, with varying shapes and varying cross-sections. This \emph{articulation} of the vocal tract allows humans to produce many different vowel and consonant sounds, with different phonetic properties. Thus \textbf{the articulated and articulating vocal tract allows humans to convey linguistic meaning by means of speech.}
 
 First we look at the two-tube configuration in Figure \ref{fig:twotube} \citep[after][Fig.3.13, p.143]{Stevens_1998}; this is similar to the human vocal tract producing a low vowel /ɑ/. Due to the low position of the jaw and the tongue, the pharynx is relatively narrow while the oral cavity is relatively wide. This system of two tubes acts as a single system of two \emph{coupled} resonators. The natural frequencies depend on the respective lengths \(L_1\) and \(L_2\) and the respective cross-sections \(A_1\) and \(A_2\), that is, the natural frequencies of the narrower tube affect those of the wider tube, and vice versa. This coupling results in a higher \(F_1\) and lower \(F_2\) for this two-tube configuration \citep[Fig.3.14]{Stevens_1998}, relative to those for the uniform tube (§\ref{sec:onetube}). Indeed, for /ɑ/, average formant values are (for males) \(F_1=730\) and \(F_2=1090\) Hz, and (for females) \(F_1=850\) and \(F_2=1220\) Hz.
 

@@ -270,7 +270,7 @@ In the transverse stadium wave, phase corresponds to the difference in time betw
 
 ::: {#questions-phase .questionbox}
 
-### Question 1.3 {-}
+#### Question 1.3 {-}
 
 Continue this thought experiment, with two stadium waves having the same frequency on the lower and upper benches, and with phase $\varphi=0.5$ between the lower and upper sections. What would the resulting wave pattern look like? 
 
@@ -283,12 +283,13 @@ $$\lambda = c / f$$
 $$\lambda = c \, T$$
 Sounds with higher frequency have shorter wavelength, and vice versa. A periodic sound with $f=440$ Hz has a wavelength in air of $\lambda \approx 343/440 = 0.7795$ meter. 
 
-```{r example-wavelength, echo=FALSE, fig.cap="Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with c=343 m/s in the air. ", fig.align="center"}
-plot( xx,yy, xlim=c(0,.010), ylim=c(-.8,+0.8), 
+```{r example-wavelength, echo=FALSE, fig.cap="Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with $c=343$ m/s in air. ", fig.align="center"}
+# shift time axis
+plot( xx-0.00014,yy, xlim=c(0,.010), ylim=c(-.8,+0.8), 
       xlab="Distance (m)", 
       ylab="Relative pressure", type="l", lwd=2, xaxt="n" )
 abline(h=0, lty=2)
-abline(v=0, lty=2)
+# abline(v=0, lty=2)
 abline(v=0.00035+c(0,1)*T, lty=2)
 arrows( x0=0.00035, y0=.7, x1=0.00035+T,
         lwd=3, angle=15, col="darkred", code=3 )
@@ -298,8 +299,18 @@ text( x=.00035+T/2, y=0.7, pos=1, labels="Wavelength", cex=1.25,
 axis( at=0.00035+(0:2)*T, labels=(0:2)*343/200, side=1 )
 ```
 
-> TODO adjust wavelenght plot
+::: {#questions-wavelength .questionbox}
 
+#### Question 1.4 {-}
+
+What is the frequency of the sound depicted in Figure \@ref(fig:example-wavelength)?
+
+<details>
+  <summary>Answer 1.4</summary>
+  <p>$f = c / \lambda = 343 / 1.715 = 200\ \textrm{Hz}$</p>
+</details>
+
+::: 
 In the transverse stadium wave, the wavelength $\lambda$ is the distance in meters (on the same bench) between two persons in two consecutive periods who reach the highest point of their sit-stand-arms-up cycle. This is the distance the wave has traveled between the two moments at which a person repeats the same action. If we assume that $c=10$ m/s and $f=0.2$ Hz (as very rough estimates), we find that the wavelength $\lambda=c/f=10/0.2=50$ meter. 
 
 -----
