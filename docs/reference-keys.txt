@@ -16,6 +16,7 @@ fig:uniform-vt-transfer
 fig:twotube
 fig:threetube
 fig:speech-spectralslice-i
+fig:source-filter
 ch-soundwaves
 sound
 sec:soundwave
@@ -87,5 +88,5 @@ sec:onetube
 sec:moretubes
 how-to-measure-formants
 sec:sourcefilter
-production-of-vowels
+sec:vowelproduction
 production-of-consonants

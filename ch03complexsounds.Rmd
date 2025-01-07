@@ -144,7 +144,7 @@ Stable noise and brief impulses are two types of aperiodic signals (§\@ref(sec:
 First we discuss *stable* aperiodic sounds: **noise**. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at *every* frequency. The relative amplitudes of the many frequency components determines the timbre of the noise. 
 
 In *white noise*, all frequency components are equally strong^[This is called 'white' noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.], and thus the spectral envelope is flat. 
-In so-called *brown noise*, the spectral envelope decreases by $-6$ dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research whenever we need to mask speech.
+In so-called *brown noise*, the spectral envelope decreases by $-6$ dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech (cf. §\@ref(sec:vowelproduction)), brown noise is often used in phonetic research whenever we need to mask speech.
 
 ```{r spectrum-whitebrownnoises, echo=FALSE, fig.cap="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).", fig.align="center"}
 knitr::include_graphics("figures/whitebrownnoises.png")

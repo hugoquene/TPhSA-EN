@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 06 Jan 2025 17:06}
+\date{Document compiled 07 Jan 2025 12:21}
 
 \begin{document}
 \maketitle
@@ -965,7 +965,7 @@ Stable noise and brief impulses are two types of aperiodic signals (§\ref{sec:p
 First we discuss \emph{stable} aperiodic sounds: \textbf{noise}. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at \emph{every} frequency. The relative amplitudes of the many frequency components determines the timbre of the noise.
 
 In \emph{white noise}, all frequency components are equally strong\footnote{This is called `white' noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.}, and thus the spectral envelope is flat.
-In so-called \emph{brown noise}, the spectral envelope decreases by \(-6\) dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech, brown noise is often used in phonetic research whenever we need to mask speech.
+In so-called \emph{brown noise}, the spectral envelope decreases by \(-6\) dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech (cf.~§\ref{sec:vowelproduction}), brown noise is often used in phonetic research whenever we need to mask speech.
 
 \begin{figure}
 
@@ -1114,11 +1114,7 @@ In a musical third interval, the frequencies have a ratio of 4:5; filters with t
 
 \section{Emphasis filters}\label{sec:emphasisfilters}
 
-\begin{quote}
-TODO crossref source-filter, spectral slope of speech
-\end{quote}
-
-For reasons that we will see later (in §REF), the spectrum of speech has a typical overall spectral slope of \(-6\) dB/octave. This downward slope was also visible in the spectral slice in Fig.\ref{fig:speech-spectralslice}. On average, the amplitude of higher frequency components decreases by about \(-6\) dB for each doubling of the frequency (§\ref{sec:octave}).
+For reasons that we will see later (in §\ref{sec:vowelproduction}), the spectrum of speech has a typical overall spectral slope of \(-6\) dB per octave (in its voiced parts). This downward overall slope was also visible in the spectral slice in Fig.\ref{fig:speech-spectralslice}. Thus, the amplitude of higher frequency components decreases by about \(-6\) dB on average for each doubling of the frequency (§\ref{sec:octave}).
 Consequently, spectral details of higher-frequency components tend to be poorly visible in the analysis. As a remedy, we can apply a so-called \emph{pre-emphasis} filter, which modifies the overall spectral slope by \(+6\) dB per octave. This boosting of higher-frequency components ideally results in a flat spectral envelope of speech\footnote{The overall average slope of the spectral envelope of speech changes from \(-6\) to \(-6+6=0\) dB per octave.}, with equal amplitudes for all frequency components in speech. This makes the spectral details of speech equally discernible across the full spectral range.
 
 The reverse operation is called \emph{de-emphasis} filtering: this changes the overall spectral slope by \(-6\) dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (\(-6\) dB/oct) from the white noise (\(0\) dB/oct) in Fig.\ref{fig:spectrum-whitebrownnoises}.
@@ -1138,7 +1134,7 @@ The reverse operation is called \emph{de-emphasis} filtering: this changes the o
 
 \chapter{Speech sounds}\label{ch-speechsounds}
 
-\emph{Chapter keywords}: resonance, formant, formants
+\emph{Chapter keywords}: resonance, formant, formants, tube, tube model, spectral slope, source, filter, radiation, source-filter model, speech production.
 
 \section{Resonance}\label{sec:resonance}
 
@@ -1251,7 +1247,7 @@ The safest method for measuring formants is to \emph{bypass} the spectrum, and m
 
 \section{Source-filter theory of speech production}\label{sec:sourcefilter}
 
-According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter \citep{Fant_1970} \citep{Tokuda_2021}. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source.
+According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter \citep{Fant_1970}. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source (although source-filter interactions do occur in actual speech production; \citet{Tokuda_2021}, §4).
 
 Several types of \textbf{source} sounds may be generated, separately or in combination, of which the most important are:
 
@@ -1266,17 +1262,30 @@ Several types of \textbf{source} sounds may be generated, separately or in combi
   ingressive sounds (e.g.~clicks; aperiodic and transient sound produced at a constriction in the vocal tract, with ingressive airstream).
 \end{itemize}
 
-These source sounds are then modified by the acoustic \textbf{filter}, formed by the (part of the) vocal tract that is between the sound source and the outside air. The shape of that (part of the) vocal tract may be varied (articulated), with noticeable and meaningful phonetic effects. The (part of the) vocal tract works as a filter, by means of resonance (§\ref{sec:resonance}).
+These source sounds are then modified by the acoustic \textbf{filter}, formed by the (part of the) vocal tract that is between the sound source and the outside air. The shape of that (part of the) vocal tract may be varied (articulated), with noticeable and meaningful phonetic effects. The (part of the) vocal tract works as a filter, by means of resonance (§\ref{sec:resonance}). Figure \ref{fig:source-filter} summarizes the model for the production of vowels with phonation as source sound.
 
-This summary of the source-filter theory ignores a third component of speech production, viz.~the effect of sound \textbf{radiation} at the lips. The radiation may be regarded as a high-pass filter with an overall slope of \(+6\) dB per octave (§\ref{sec:typesoffilters})\footnote{Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.}. This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored.
+\begin{figure}
 
-\subsection{Production of vowels}\label{production-of-vowels}
+{\centering \includegraphics{figures/source-filter-theory34-l} 
 
-\begin{quote}
-TODO mention -6 dB slope of speech (phonation+radiation)
-\end{quote}
+}
+
+\caption{Diagrammatic summary of the source-filter theory of speech production; figure by Perry C. Hanavan, from <https://image.slideserve.com/325813/source-filter-theory34-l.jpg>.}\label{fig:source-filter}
+\end{figure}
+
+Figure \ref{fig:source-filter} also illustrates a third component of the source-filter theory of speech production, viz.~the effect of sound \textbf{radiation} at the lips. The radiation may be regarded as a high-pass filter with an overall slope of \(+6\) dB per octave (§\ref{sec:typesoffilters})\footnote{Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.} \footnote{This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored.}.
+
+\subsection{Production of vowels}\label{sec:vowelproduction}
+
+Figure \ref{fig:source-filter} illustrates how \textbf{vowels} are typically produced. The source sound is the voicing sound (phonation) generated by the vibration of the vocal cords in the larynx. (The \emph{glottis} is the opening between the two vocal folds.) This phonation sound has a spectral slope of about \(-12\) dB per octave. This phonation sound is subsequently modified or filtered by the vocal tract, which amplifies certain frequencies (\emph{formants}, §\ref{sec:formants}). Finally the filtered sound is radiated from the lips, which modifies the spectral slope by \(+6\) dB per octave. The resulting vowel sound has an overall spectral slope of \(-6\) dB per octave, as mentioned in §\ref{sec:emphasisfilters} above.
 
 \subsection{Production of consonants}\label{production-of-consonants}
+
+For \textbf{voiceless} (and egressive) consonants, the source sound is the turbulent noise generated at a constriction or closure of the vocal tract; this source sound may be regarded as white noise (§\ref{sec:noise}). This noise typically has a flat spectral slope (\(0\) dB per octave). This noise sound is subsequently modified or filtered by the part of the vocal tract that is between the place of closure or constriction, and the outside air; certain frequencies are amplified and other frequencies may be attenuated.\\
+
+\textbf{Ingressive} consonants are produced by the same acoustic-phonetic processes, albeit with an ingressive (inward) air stream.
+
+For \textbf{voiced} (and egressive) consonants, the situation is more complex: typically two source sounds are generated \emph{simultaneously}: a turbulent noise sound generated at a constriction or closure in the vocal tract, as well as the voicing sound (phonation) generated by the vibration of the vocal cords in the larynx. The periodic voicing sound is filtered by the entire vocal tract, as vowels are, while the aperiodic (noise) sound is filtered only by the `downstream' part of the vocal tract.
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 
