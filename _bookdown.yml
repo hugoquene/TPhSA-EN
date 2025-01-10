@@ -5,6 +5,7 @@ rmd_files: ["index.Rmd",
             "ch03complexsounds.Rmd",
             "ch04filtering.Rmd",
             "ch05speechsounds.Rmd",
+            "ch06spectrograms.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 language:
