@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="ch-filtering.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="ch-spectrograms.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -112,7 +112,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-textbooks"><i class="fa fa-check"></i>Recommended textbooks</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#sec:textbooks"><i class="fa fa-check"></i><b>0.1</b> Recommended textbooks</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
@@ -200,7 +200,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
 <li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
-<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:filterbandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:emphasisfilters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
 <ul>
@@ -222,6 +222,18 @@ div.csl-indent {
 <li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:vowelproduction"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
 <li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html"><i class="fa fa-check"></i><b>6</b> Spectrograms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-make-a-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#spectrogram"><i class="fa fa-check"></i><b>6.4.1</b> Spectrogram</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#speecheditor"><i class="fa fa-check"></i><b>6.4.2</b> SpeechEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -314,6 +326,8 @@ Figure 5.4: Three-tube configuration, with a back cavity (left), constriction, a
 Figure 5.5: Spectral slice of the /i/ vowel in the word <em>speech</em>.
 </p>
 </div>
+<p>Formants are numbered by their peak frequency, and are named ‘F1’, ‘F2’, ‘F3’, etc. (The fundamental frequency of a sound is called <span class="math inline">\(f_0\)</span>, see <a href="complex-sounds-and-spectra.html#sec:FTintro">3.1</a>.)
+The different vowels in any language have different formant patterns, and the first two or three formants are most important for distinguishing vowels. Because various sections of the articulated vocal tract have <em>interacting</em> resonances (as explained above), formant frequencies cannot be mapped easily on articulatory features. Nevertheless, with considerable simplification, there is a negative correlation between vowel F1 and the height of the tongue (lower tongue, higher F1, see Fig.<a href="ch-speechsounds.html#fig:twotube">5.3</a>), and between vowel F2 and the front–back position of the tongue (more fronted tongue, higher F2, see Fig.<a href="ch-speechsounds.html#fig:threetube">5.4</a>). These patterns are typically illustrated in a diagram depicting vowel formants in the F1-by-F2 plane<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>, in your phonetics textbook. F3 is involved in the contrast between rounded and unrounded vowels (such as /i/ vs. /y/).</p>
 </div>
 <div id="how-to-measure-formants" class="section level3 hasAnchor" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> How to measure formants<a href="ch-speechsounds.html#how-to-measure-formants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -321,7 +335,7 @@ Figure 5.5: Spectral slice of the /i/ vowel in the word <em>speech</em>.
 <p>The safest method for measuring formants is to <em>bypass</em> the spectrum, and measure formants directly from a Sound object.</p>
 <ul>
 <li><p>Select an input Sound object in the <code>Praat</code> Objects window. Then choose <code>Analyse spectum &gt;</code> and then <code>To formant (burg)...</code>.</p></li>
-<li><p>As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate <code>Maximum number of formants</code> and choose the matching <code>Formant ceiling</code> value for your speaker; these values depend on the length of the speaker’s vocal tract and on your sampling frequency (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>)<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.
+<li><p>As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate <code>Maximum number of formants</code> and choose the matching <code>Formant ceiling</code> value for your speaker; these values depend on the length of the speaker’s vocal tract and on your sampling frequency (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>)<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.
 Leave other arguments at their default (standard) values. Click <code>OK</code>.</p></li>
 <li><p>The resulting Formant object is again added at the bottom of the list of objects.</p></li>
 <li><p>You may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> the formant values (frequencies and bandwidths per formant per time frame).</p></li>
@@ -347,10 +361,11 @@ Leave other arguments at their default (standard) values. Click <code>OK</code>.
 Figure 5.6: Diagrammatic summary of the source-filter theory of speech production; figure by Perry C. Hanavan, from <a href="https://image.slideserve.com/325813/source-filter-theory34-l.jpg" class="uri">https://image.slideserve.com/325813/source-filter-theory34-l.jpg</a>.
 </p>
 </div>
-<p>Figure <a href="ch-speechsounds.html#fig:source-filter">5.6</a> also illustrates a third component of the source-filter theory of speech production, viz. the effect of sound <strong>radiation</strong> at the lips. The radiation may be regarded as a high-pass filter with an overall slope of <span class="math inline">\(+6\)</span> dB per octave (§<a href="ch-filtering.html#sec:typesoffilters">4.2</a>)<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a> <a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
+<p>Figure <a href="ch-speechsounds.html#fig:source-filter">5.6</a> also illustrates a third component of the source-filter theory of speech production, viz. the effect of sound <strong>radiation</strong> at the lips. The radiation may be regarded as a high-pass filter with an overall slope of <span class="math inline">\(+6\)</span> dB per octave (§<a href="ch-filtering.html#sec:typesoffilters">4.2</a>)<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a> <a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.</p>
 <div id="sec:vowelproduction" class="section level3 hasAnchor" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Production of vowels<a href="ch-speechsounds.html#sec:vowelproduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Figure <a href="ch-speechsounds.html#fig:source-filter">5.6</a> illustrates how <strong>vowels</strong> are typically produced. The source sound is the voicing sound (phonation) generated by the vibration of the vocal cords in the larynx. (The <em>glottis</em> is the opening between the two vocal folds.) This phonation sound has a spectral slope of about <span class="math inline">\(-12\)</span> dB per octave. This phonation sound is subsequently modified or filtered by the vocal tract, which amplifies certain frequencies (<em>formants</em>, §<a href="ch-speechsounds.html#sec:formants">5.2</a>). Finally the filtered sound is radiated from the lips, which modifies the spectral slope by <span class="math inline">\(+6\)</span> dB per octave. The resulting vowel sound has an overall spectral slope of <span class="math inline">\(-6\)</span> dB per octave, as mentioned in §<a href="ch-filtering.html#sec:emphasisfilters">4.4</a> above.</p>
+<p>Remember that <em>harmonics</em> including <span class="math inline">\(f_0\)</span> depend on the source signal (phonation), while <em>formants</em> depend on the filter (vocal tract). Consequently, a formant frequency does not have to coincide with a harmonic: in the output spectrum in Fig.<a href="ch-speechsounds.html#fig:source-filter">5.6</a>, for example, F1 falls between the second and third harmonic.</p>
 </div>
 <div id="production-of-consonants" class="section level3 hasAnchor" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Production of consonants<a href="ch-speechsounds.html#production-of-consonants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -399,9 +414,10 @@ Tokuda, Isao. 2021. <span>“The Source–Filter Theory of Speech.”</span> In 
 <li id="fn33"><p>Formants are a property of the tube or of the vocal tract (and of the medium in it), and not of the sounds coming out of that tube or tract, but this distinction is seldom relevant and seldom made.<a href="ch-speechsounds.html#fnref33" class="footnote-back">↩︎</a></p></li>
 <li id="fn34"><p>The term <em>formant quality</em> may refer to the inverse of the formant bandwidth, i.e. <span class="math inline">\(1/\textrm{bandwidth}\)</span>; a larger quality value corresponds with a narrower, higher, and more peaked formant.<a href="ch-speechsounds.html#fnref34" class="footnote-back">↩︎</a></p></li>
 <li id="fn35"><p>in the classical sense of “having two or more sections connected by a flexible joint” (<em>New Oxford Dictionary of English</em> 1998).<a href="ch-speechsounds.html#fnref35" class="footnote-back">↩︎</a></p></li>
-<li id="fn36"><p>See the <code>Help</code> information in the <code>Praat</code> menu, in particular its last paragraph.<a href="ch-speechsounds.html#fnref36" class="footnote-back">↩︎</a></p></li>
-<li id="fn37"><p>Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.<a href="ch-speechsounds.html#fnref37" class="footnote-back">↩︎</a></p></li>
-<li id="fn38"><p>This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored.<a href="ch-speechsounds.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>In that diagram, the scales may be displayed in Bark units, and the F1 axis may have been reversed, in order to clarify the relation between articulatory features and formant frequencies.<a href="ch-speechsounds.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>See the <code>Help</code> information in the <code>Praat</code> menu, in particular its last paragraph.<a href="ch-speechsounds.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.<a href="ch-speechsounds.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn39"><p>This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored.<a href="ch-speechsounds.html#fnref39" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -410,7 +426,7 @@ Tokuda, Isao. 2021. <span>“The Source–Filter Theory of Speech.”</span> In 
         </div>
       </div>
 <a href="ch-filtering.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-spectrograms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

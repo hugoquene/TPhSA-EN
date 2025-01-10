@@ -129,7 +129,7 @@ The cutoff frequency(ies) separates the pass band(s) and reject band(s) of the f
 
 The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency  (§\@ref(sec:octave)), that is, in dB per octave^[Note that the band reject filter in Fig.\@ref(fig:bandrejectfilter) has steeper slopes than the band pass filter in Fig.\@ref(fig:bandpassfilter).]. 
 
-### Bandwidth
+### Bandwidth {#sec:filterbandwidth}
 
 Band pass filters and band reject filters are also characterised by their bandwidth: the width of the frequency span affected by the filter, equal to the distance between the *two* cutoff frequencies of such filters. 
 

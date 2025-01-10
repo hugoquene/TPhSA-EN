@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="github-repo" content="rstudio/TPhSA" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis" />
+  
+  <meta name="twitter:description" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-speechsounds.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Tutorial on Phonetics and Speech Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aims"><i class="fa fa-check"></i>Aims</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#under-construction"><i class="fa fa-check"></i>Under construction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-tutorial"><i class="fa fa-check"></i>How to use this tutorial</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-software"><i class="fa fa-check"></i>Recommended software</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#sec:textbooks"><i class="fa fa-check"></i><b>0.1</b> Recommended textbooks</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part I: Sounds</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html"><i class="fa fa-check"></i><b>1</b> Sound waves</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sound"><i class="fa fa-check"></i><b>1.1</b> Sound</a></li>
+<li class="chapter" data-level="1.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:soundwave"><i class="fa fa-check"></i><b>1.2</b> Sound wave</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#acoustic-media"><i class="fa fa-check"></i><b>1.3</b> Acoustic media</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:speedofsound"><i class="fa fa-check"></i><b>1.4</b> The speed of sound</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:pressure"><i class="fa fa-check"></i><b>1.5</b> Pressure</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i>Questions</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
+<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:periodicity"><i class="fa fa-check"></i><b>1.7</b> Periodic and aperiodic sounds</a></li>
+<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:keypropertiessound"><i class="fa fa-check"></i><b>1.8</b> Key properties of a sound wave</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8.1</b> Frequency</a></li>
+<li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
+<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
+<li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
+<li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#how-to-draw-an-oscillogram"><i class="fa fa-check"></i><b>1.10</b> How to draw an oscillogram</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#open-an-audio-file"><i class="fa fa-check"></i><b>1.10.1</b> Open an audio file</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:ADCoverview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#key-parameters-in-ad-conversion"><i class="fa fa-check"></i><b>2.3</b> Key parameters in AD conversion</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:samplingfrequency"><i class="fa fa-check"></i><b>2.3.1</b> Sampling frequency</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#amplitude-resolution"><i class="fa fa-check"></i><b>2.3.2</b> Amplitude resolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
+<ul>
+<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-play-back-a-digital-sound"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
+<li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-a-digital-sound"><i class="fa fa-check"></i><b>2.6</b> How to manipulate a digital sound</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#scale"><i class="fa fa-check"></i><b>2.6.1</b> Scale</a></li>
+<li class="chapter" data-level="2.6.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.6.2</b> Concatenate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:FTintro"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
+<ul>
+<li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum</a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
+<li class="chapter" data-level="3.3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:impulses"><i class="fa fa-check"></i><b>3.3.2</b> Impulses</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:envelope"><i class="fa fa-check"></i><b>3.4</b> Envelope</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:filterbandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:emphasisfilters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter"><i class="fa fa-check"></i><b>4.4.1</b> How to apply a (pre|de)emphasis filter</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part II: Speech</b></span></li>
+<li class="chapter" data-level="5" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html"><i class="fa fa-check"></i><b>5</b> Speech sounds</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#how-to-measure-formants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:sourcefilter"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:vowelproduction"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html"><i class="fa fa-check"></i><b>6</b> Spectrograms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-make-a-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#spectrogram"><i class="fa fa-check"></i><b>6.4.1</b> Spectrogram</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#speecheditor"><i class="fa fa-check"></i><b>6.4.2</b> SpeechEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial on Phonetics and Speech Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-spectrograms" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Spectrograms<a href="ch-spectrograms.html#ch-spectrograms" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Chapter keywords</em>: spectrogram, center frequency, bandwidth, broadband, narrowband, detail, smearing, formant.</p>
+<div id="sec:spectrogram-intro" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction<a href="ch-spectrograms.html#sec:spectrogram-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As we saw, a spectrum (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) shows the various frequency components of a complex signal, such as the formants of a vowel (§<a href="ch-speechsounds.html#sec:formants">5.2</a>). However, a spectrum either shows the frequency composition of an entire digital sound, or it shows the frequency composition of a brief ‘slice’ or frame or window of that sound (box <a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>).</p>
+<p>In order to track spectral changes over time, we would need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This visualisation is called a <strong>spectrogram</strong>. As in an oscillogram, <em>time</em> is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, <em>frequency</em> is shown along the vertical axis. <em>Amplitude</em> is shown in the degree of blackness (or in coloring).
+The example spectrogram in Figure <a href="ch-spectrograms.html#fig:merel-spectrogram">6.1</a> visualizes a blackbird song, showing the amplitudes (blackness) of the frequency components (vertically), varying over time (horizontally).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:merel-spectrogram"></span>
+<img src="figures/merel-spectrogram.png" alt="Spectrogram of a brief part of song by a blackbird."  />
+<p class="caption">
+Figure 6.1: Spectrogram of a brief part of song by a blackbird.
+</p>
+</div>
+<p>In this spectrogram you see an initial steep fall chirp, followed by three repetitions of a two-tone ‘syllable’, against a background of other birdsong.</p>
+<p>Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>). This bandpass filter was initially set to a low <em>center frequency</em>, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single ‘line’ of the figure. Then the frequency band of the filter was increased slightly, to produce the next ‘line’ of the figure. This was repeated across the entire range of frequencies<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>. Moreover, a spectrograph used to have two fixed settings for the <em>bandwidth</em> of the band-pass filter (§<a href="ch-filtering.html#sec:filterbandwidth">4.3.3</a>): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively.</p>
+</div>
+<div id="broadband-spectrogram" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Broadband spectrogram<a href="ch-spectrograms.html#broadband-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In a broad-band spectrogram, as in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-broad">6.2</a>, the bandwidth used in the spectral analysis is relatively wide (by convention, 260 Hz).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-word-spectrogram-broad"></span>
+<img src="figures/speech_word_spectrogram_5ms.png" alt="Oscillogram, broad-band spectrum at 0.210 s, and broad-band spectrogram of the word *speech*."  />
+<p class="caption">
+Figure 6.2: Oscillogram, broad-band spectrum at 0.210 s, and broad-band spectrogram of the word <em>speech</em>.
+</p>
+</div>
+<p>The wide bandwidth results in less detail (more smearing) in the frequency dimension, while allowing more detail in the time dimension. We can see temporal events in great detail, such as individual periods of voiced parts, and noise bursts in plosive or affricate consonants. On the other hand, frequencies are blurred or smeared. This makes it easier, however, to see formants (§<a href="ch-speechsounds.html#sec:formants">5.2</a>) in the vowels, and to see other “broad” spectral properties in the consonants.</p>
+</div>
+<div id="narrowband-spectrogram" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Narrowband spectrogram<a href="ch-spectrograms.html#narrowband-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In a narrow-band spectrogram, as in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-narrow">6.3</a>, the bandwidth used in the spectral analysis is relatively narrow (by convention, 43 Hz).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-word-spectrogram-narrow"></span>
+<img src="figures/speech_word_spectrogram_30ms.png" alt="Oscillogram, narrow-band spectrum at 0.210 s, and narrow-band spectrogram of the word *speech*."  />
+<p class="caption">
+Figure 6.3: Oscillogram, narrow-band spectrum at 0.210 s, and narrow-band spectrogram of the word <em>speech</em>.
+</p>
+</div>
+<p>The narrow bandwidth results in more detail in the frequency dimension, while allowing less detail (more smearing) in the time dimension. We can see frequencies in great detail, such as individual harmonics in voiced parts. On the other hand, brief temporal events such as noise bursts are blurred or smeared.</p>
+</div>
+<div id="how-to-make-a-spectrogram" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> How to make a spectrogram<a href="ch-spectrograms.html#how-to-make-a-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>TODO REVISE this entire section</p>
+</blockquote>
+<ul>
+<li>Call the file zinleven1 to the objects window</li>
+<li>select it and click on Edit. By default, you should get both the oscillogram and the spectrogram of the signal. In Praat the settings are saved from session to session, so if the spectrogram is not displayed, go to View &gt; Show analyses &gt; Show spectrogram</li>
+<li>there is also another way to create a spectrogram, namely by creating a spectrogram object first. Try this out: from the objects window, after having selected the sound file, go to spectrogram (button on the right) &gt; To spectrogram. Beforehand, you have to set the spectrogram parameters. Their meaning is discussed below. You can also keep the default values. A new object (Spectrogram) appears in the objects window, select it and go to View. However, by opening the spectrogram in this way, it is not possible to change the setting parameters afterwards (unless by opening a new spectrogram), so it is handier to open it following the first route suggested</li>
+</ul>
+<div id="spectrogram" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Spectrogram<a href="ch-spectrograms.html#spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sound… to Spectrogram, Settings, Draw resulting object</p>
+</div>
+<div id="speecheditor" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> SpeechEditor<a href="ch-spectrograms.html#speecheditor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="how-to-read-a-spectrogram" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> How to read a spectrogram<a href="ch-spectrograms.html#how-to-read-a-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>(with Clizia Welker)</p>
+<p>This paragraph intends to provide some hints on how to read a spectrogram. For a more detailed explanation please refer to your textbook on phonetics (see §<a href="index.html#sec:textbooks">0.1</a>).
+While by observing an oscillogram it is only possible to identify large phonetic classes, the spectrogram provides us with enough information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about</p>
+<ul>
+<li><p>the frequency values of the formants,</p></li>
+<li><p>the energy pattern throughout the spectrogram,</p></li>
+<li><p>the formant transitions (from vowel to consonants and from consonants to vowels).</p></li>
+</ul>
+<p>Except for the formant transitions (see below), these features may be found in a spectrum too, but spectrograms allow us to inspect these features over time.</p>
+<p>In order to read a spectrogram, we need to remember that:</p>
+<ul>
+<li><p>the blacker regions are frequency regions with a high degree of energy (§<a href="ch-spectrograms.html#sec:spectrogram-intro">6.1</a>),</p></li>
+<li><p>the black band at the bottom of the spectrogram displays the <span class="math inline">\(f_0\)</span> in voiced parts; it may be difficult to distinguish fundamental <span class="math inline">\(f_0\)</span> from formant F1 (especially in closed vowels, which have a low F1 close to <span class="math inline">\(f_0\)</span> <a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>),</p></li>
+<li><p>vowels are characterised by a clear formant pattern (§<a href="ch-speechsounds.html#sec:formants">5.2</a>), visible as horizontal black bands,</p></li>
+<li><p>consonants (especially voiceless ones) do not have a clear formant pattern, but the distribution of energy throughout the spectrum helps us identifying them,</p></li>
+<li><p>the vertical bands at regular time intervals in the broad-band spectrogram correspond to the glottal pulses (cycles of opening and closing of the vocal folds).</p></li>
+</ul>
+<p><strong>Vowels</strong> may be distinguished through their formant values, especially through F1, F2 and F3; consult a vowel diagram in your textbook.</p>
+<p><strong>Dipthongs</strong> (such as in the Dutch words <em>bij</em>, <em>bui</em> and <em>bouw</em>) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values.</p>
+<p>For <strong>voiced consonants</strong> in a CV context, formant frequencies change relatively rapidly. The <em>F2</em> value in the vowel from which the formant travels in this formant transition is often called the ‘F2 locus’, and this locus is correlated with the place of articulation of the consonant. The F2 transition is also due to the fact that acoustic resonators (tube sections) are uncoupled at the moment of closure or frication, but become coupled as the mouth opens.
+For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.<br />
+In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth.
+In VC contexts we see similar patterns, but reversed in time.</p>
+<p>While <strong>voiceless consonants</strong> are not characterised by formants (even in an intervocalic context), their place of articulation may be assessed by looking at which frequency regions display a high concentration of energy. Moreover, in CV context, the rapid F2 transitions may seem to travel from the same F2 locus as for corresponding voiced consonants with the same place of articulation, albeit with formants less visible in transitions involving voiceless consonants.</p>
+<p>In producing <strong>alveolar</strong> consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial segment [s] in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-broad">6.2</a>. In palatal consonants (such as the final segment in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called ‘spectral centre of gravity’ in the resulting speech is correspondingly lower.</p>
+<p><strong>Nasal and lateral</strong> consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators).</p>
+<p>For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbook on phonetics.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="40">
+<li id="fn40"><p>Thus a spectrograph required several minutes to produce a single spectrogram.<a href="ch-spectrograms.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>If speaking or singing at high fundamental <span class="math inline">\(f_0\)</span>, the <span class="math inline">\(f_0\)</span> may even be higher than F1, thus rendering F1 inaudible.<a href="ch-spectrograms.html#fnref41" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-speechsounds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch06spectrograms.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

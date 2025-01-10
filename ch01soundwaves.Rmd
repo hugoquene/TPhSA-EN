@@ -307,7 +307,7 @@ What is the frequency of the sound depicted in Figure \@ref(fig:example-waveleng
 
 <details>
   <summary>Answer 1.4</summary>
-  <p>$f = c / \lambda = 343 / 1.715 = 200\ \textrm{Hz}$</p>
+  <p>$f = c / \lambda = 343 / 1.715 = 200\ \textrm{Hz}$ [(m/s)/(m) = 1/s]</p>
 </details>
 
 ::: 

@@ -78,7 +78,7 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 
 <P>
 
-::: {#box-praatspectrum .praatbox}
+::: {#box:praatspectrum .praatbox}
 
 ### How to obtain a spectrum
 

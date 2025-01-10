@@ -112,7 +112,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-textbooks"><i class="fa fa-check"></i>Recommended textbooks</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#sec:textbooks"><i class="fa fa-check"></i><b>0.1</b> Recommended textbooks</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
@@ -200,7 +200,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
 <li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
-<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#bandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:filterbandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:emphasisfilters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
 <ul>
@@ -222,6 +222,18 @@ div.csl-indent {
 <li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:vowelproduction"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
 <li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html"><i class="fa fa-check"></i><b>6</b> Spectrograms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-make-a-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#spectrogram"><i class="fa fa-check"></i><b>6.4.1</b> Spectrogram</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#speecheditor"><i class="fa fa-check"></i><b>6.4.2</b> SpeechEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -307,8 +319,8 @@ Figure 4.4: Frequency characteristic of a band-reject filter, with a reject band
 <h3><span class="header-section-number">4.3.2</span> Slope<a href="ch-filtering.html#slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The slope of the filter indicates the steepness of the attenuation between the pass band(s) and reject band(s). It is commonly expressed in dB attenuation per octave change in frequency (§<a href="ch-soundwaves.html#sec:octave">1.8.1.1</a>), that is, in dB per octave<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
 </div>
-<div id="bandwidth" class="section level3 hasAnchor" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> Bandwidth<a href="ch-filtering.html#bandwidth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sec:filterbandwidth" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Bandwidth<a href="ch-filtering.html#sec:filterbandwidth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Band pass filters and band reject filters are also characterised by their bandwidth: the width of the frequency span affected by the filter, equal to the distance between the <em>two</em> cutoff frequencies of such filters.</p>
 <p>This distance may be expressed as the musical interval between the lower and higher cutoff frequencies. Both filters shown in Figures <a href="ch-filtering.html#fig:bandpassfilter">4.3</a> and <a href="ch-filtering.html#fig:bandrejectfilter">4.4</a> are so-called “octave band” filters, because the cutoff frequencies are one octave apart (§<a href="ch-soundwaves.html#sec:octave">1.8.1.1</a>) with a frequency ratio of 1:2.</p>
 <p>In a musical third interval, the frequencies have a ratio of 4:5; filters with these cutoff frequency ratios are so-called “third band” filters. Both octave-band and third-band filters are widely used in phonetic research.</p>

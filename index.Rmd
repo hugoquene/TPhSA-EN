@@ -81,7 +81,7 @@ Commands or formulas that you have to type will be shown `in this way` too. (Com
 
 TBA
 
-## Recommended textbooks {-}
+## Recommended textbooks {#sec:textbooks}
 
 This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by 
 @Rietveld_VanHeuven_2009 (in Dutch), 

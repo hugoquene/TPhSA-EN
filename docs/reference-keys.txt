@@ -17,6 +17,10 @@ fig:twotube
 fig:threetube
 fig:speech-spectralslice-i
 fig:source-filter
+fig:merel-spectrogram
+fig:speech-word-spectrogram-broad
+fig:speech-word-spectrogram-narrow
+sec:textbooks
 ch-soundwaves
 sound
 sec:soundwave
@@ -78,7 +82,7 @@ sec:typesoffilters
 properties-of-filters
 cutoff-frequency
 slope
-bandwidth
+sec:filterbandwidth
 sec:emphasisfilters
 how-to-apply-a-predeemphasis-filter
 ch-speechsounds
@@ -90,3 +94,11 @@ how-to-measure-formants
 sec:sourcefilter
 sec:vowelproduction
 production-of-consonants
+ch-spectrograms
+sec:spectrogram-intro
+broadband-spectrogram
+narrowband-spectrogram
+how-to-make-a-spectrogram
+spectrogram
+speecheditor
+how-to-read-a-spectrogram
