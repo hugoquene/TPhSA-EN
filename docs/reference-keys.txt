@@ -71,7 +71,7 @@ sec:FTintro
 timbre
 sec:spectrum
 how-to-obtain-a-spectrum
-how-to-obtain-a-spectral-slice
+sec:spectralslice
 spectra-of-aperiodic-sounds
 sec:noise
 sec:impulses
@@ -98,7 +98,7 @@ ch-spectrograms
 sec:spectrogram-intro
 broadband-spectrogram
 narrowband-spectrogram
-how-to-make-a-spectrogram
-spectrogram
-speecheditor
+sec:howto-spectrogram
+to-spectrogram-directly
+from-soundeditor
 how-to-read-a-spectrogram

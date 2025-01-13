@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 10 Jan 2025 16:47}
+\date{Document compiled 13 Jan 2025 23:35}
 
 \begin{document}
 \maketitle
@@ -900,11 +900,11 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 \end{itemize}
 
 \phantomsection\label{box-praatspectralslice}
-\subsection{How to obtain a spectral `slice'}\label{how-to-obtain-a-spectral-slice}
+\subsection{How to obtain a spectral `slice'}\label{sec:spectralslice}
 
 Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \ref{fig:speech-oscillogram}, at \(t \approx 0.210\) seconds.
 
-This can be done by means of two features in \texttt{Praat} which we will explore in depth only later, viz.~the SoundEditor and the Spectrogram.
+This can be done by means of two features in \texttt{Praat} which we will explore in depth only later, viz.~the SoundEditor and the Spectrogram (Ch.\ref{ch-spectrograms}.
 
 \begin{itemize}
 \item
@@ -918,18 +918,9 @@ TODO crossref SoundEditor
 \end{quote}
 
 \begin{itemize}
-\tightlist
 \item
-  In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram (see §REF).
-\end{itemize}
-
-\begin{quote}
-TODO crossref Spectrogram, and merge paragraphs.
-\end{quote}
-
-A \emph{short} window (e.g.~0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A \emph{long} window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the \texttt{Praat} Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.
-
-\begin{itemize}
+  In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram (see §\ref{sec:howto-spectrogram}).\\
+  A \emph{short} window (e.g.~0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A \emph{long} window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read §\ref{sec:howto-spectrogram}, read the \texttt{Praat} Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.
 \item
   In the SoundEditor window, go to \texttt{Spectrogram...} and then choose \texttt{View\ spectral\ slice}. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.\ref{fig:speech-spectralslice} for an example.
 \item
@@ -1306,7 +1297,7 @@ Because the egressive airstream from the lungs is used to drive the phonation at
 
 As we saw, a spectrum (§\ref{sec:spectrum}) shows the various frequency components of a complex signal, such as the formants of a vowel (§\ref{sec:formants}). However, a spectrum either shows the frequency composition of an entire digital sound, or it shows the frequency composition of a brief `slice' or frame or window of that sound (box \ref{sec:spectrum}).
 
-In order to track spectral changes over time, we would need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This visualisation is called a \textbf{spectrogram}. As in an oscillogram, \emph{time} is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, \emph{frequency} is shown along the vertical axis. \emph{Amplitude} is shown in the degree of blackness (or in coloring).
+In order to track spectral changes over time, we need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This most important visualisation in speech analysis is called a \textbf{spectrogram}. As in an oscillogram, \emph{time} is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, \emph{frequency} is shown along the vertical axis. \emph{Amplitude} is shown in the degree of blackness (or in coloring).
 The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a blackbird song, showing the amplitudes (blackness) of the frequency components (vertically), varying over time (horizontally).
 
 \begin{figure}
@@ -1318,9 +1309,9 @@ The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a black
 \caption{Spectrogram of a brief part of song by a blackbird.}\label{fig:merel-spectrogram}
 \end{figure}
 
-In this spectrogram you see an initial steep fall chirp, followed by three repetitions of a two-tone `syllable', against a background of other birdsong.
+In this spectrogram you see an initial steeply falling `chirp' sound, followed by three repetitions of a two-tone `syllable', against a background of other birdsong.
 
-Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\ref{fig:bandpassfilter}). This bandpass filter was initially set to a low \emph{center frequency}, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single `line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next `line' of the figure. This was repeated across the entire range of frequencies\footnote{Thus a spectrograph required several minutes to produce a single spectrogram.}. Moreover, a spectrograph used to have two fixed settings for the \emph{bandwidth} of the band-pass filter (§\ref{sec:filterbandwidth}): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively.
+Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\ref{fig:bandpassfilter}). This bandpass filter was initially set to a low \emph{center frequency}, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single `line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next `line' of the figure. This was repeated across the entire range of frequencies\footnote{Thus a spectrograph required several minutes to produce a single spectrogram.}. Moreover, a spectrograph used to have two fixed settings for the \emph{bandwidth} of the band-pass filter (§\ref{sec:filterbandwidth}): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\ref{sec:spectralslice}).
 
 \section{Broadband spectrogram}\label{broadband-spectrogram}
 
@@ -1352,34 +1343,74 @@ In a narrow-band spectrogram, as in Fig.\ref{fig:speech-word-spectrogram-narrow}
 
 The narrow bandwidth results in more detail in the frequency dimension, while allowing less detail (more smearing) in the time dimension. We can see frequencies in great detail, such as individual harmonics in voiced parts. On the other hand, brief temporal events such as noise bursts are blurred or smeared.
 
-\section{How to make a spectrogram}\label{how-to-make-a-spectrogram}
+\phantomsection\label{box-praatspectrogram}
+\section{How to make a spectrogram}\label{sec:howto-spectrogram}
+
+There are two ways to create a spectrogram of a sound recording: either directly, or by means of the SoundEditor.
+
+\subsection{to Spectrogram directly}\label{to-spectrogram-directly}
+
+\begin{itemize}
+\item
+  Select an input Sound object in the \texttt{Praat} Objects window. Then choose \texttt{Analyse\ spectum\ \textgreater{}}, then \texttt{To\ Spectrogram...}.
+\item
+  The parameter \texttt{Window\ length} determines the filter bandwidth used to create the spectrogram. For a broadband spectrogram, choose \(0.005\ \textrm{s}\); for a narrowband spectrogram, choose \(0.030\ \textrm{s}\).
+  For the spectrogram of birdsong in Fig.\ref{fig:merel-spectrogram}, an intermediate value of 0.015 s was used.\\
+  Set \texttt{Window\ shape} to \texttt{Gaussian}.\\
+  Leave other arguments at their default (standard) values. Click \texttt{OK}.
+\item
+  The resulting Spectrogram object is again added at the bottom of the list of objects.
+\item
+  You may \texttt{Draw\ \textgreater{}\ Paint...} the spectrogram. Specify the time and frequency range, as well as the dynamic range (of amplitude in dB, between darkest and lightest colour).\\
+  The \texttt{Pre-emphasis} slope helps in discerning visual details in the higher frequencies, as explained in §\ref{sec:emphasisfilters} and §\ref{sec:vowelproduction}; the default value of \(+6\) dB per octave works well in most situations.
+\item
+  Remember to \texttt{Save} the Spectrogram object if you wish.
+\end{itemize}
+
+\subsection{from SoundEditor}\label{from-soundeditor}
+
+This method is similar to the spectral analysis described in §\ref{sec:spectralslice}. Using this method, your spectrogram in the SoundEditor is immediately updated if you change (\texttt{Apply}) values for the analysis parameters (which may be convenient), but extracting and saving the Spectrogram requires some extra work.
+
+\begin{itemize}
+\item
+  In the \texttt{Praat} object window, select a Sound object.
+\item
+  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature.
+\end{itemize}
 
 \begin{quote}
-TODO REVISE this entire section
+TODO crossref SoundEditor
 \end{quote}
 
 \begin{itemize}
-\tightlist
 \item
-  Call the file zinleven1 to the objects window
+  In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}.
 \item
-  select it and click on Edit. By default, you should get both the oscillogram and the spectrogram of the signal. In Praat the settings are saved from session to session, so if the spectrogram is not displayed, go to View \textgreater{} Show analyses \textgreater{} Show spectrogram
+  The parameter \texttt{Window\ length} determines the filter bandwidth used to create the spectrogram. For a broadband spectrogram, choose \(0.005\ \textrm{s}\); for a narrowband spectrogram, choose \(0.030\ \textrm{s}\).
+  For the spectrogram of birdsong in Fig.\ref{fig:merel-spectrogram}, an intermediate value of 0.015 s was used.\\
+  Set the \texttt{Dynamic\ range} (of amplitude in dB) between darkest and lightest colour to some value between \(40\) and \(55\) dB (try different values by using \texttt{Apply}, and notice the differences in the resulting spectrogram).
+  Leave other arguments at their default (standard) values. Click \texttt{OK}.
 \item
-  there is also another way to create a spectrogram, namely by creating a spectrogram object first. Try this out: from the objects window, after having selected the sound file, go to spectrogram (button on the right) \textgreater{} To spectrogram. Beforehand, you have to set the spectrogram parameters. Their meaning is discussed below. You can also keep the default values. A new object (Spectrogram) appears in the objects window, select it and go to View. However, by opening the spectrogram in this way, it is not possible to change the setting parameters afterwards (unless by opening a new spectrogram), so it is handier to open it following the first route suggested
+  Make sure that you can see the Spectrogram in the SoundEditor, by selecting the option \texttt{Spectrogram\ \textgreater{}\ View\ Spectrogram}. This setting is saved from session to session, so you may have to switch \texttt{on} the spectrogram view.
+\item
+  If you are happy with the spectrogram in the SoundEditor panel, you can then choose \texttt{Spectrogram\ \textgreater{}\ Paint\ visible\ spectrogram...} in order to draw that spectrogram in the Picture window.
+\item
+  You can also \texttt{Extract} and then \texttt{Save} the spectrogram from the SoundEditor.
 \end{itemize}
-
-\subsection{Spectrogram}\label{spectrogram}
-
-Sound\ldots{} to Spectrogram, Settings, Draw resulting object
-
-\subsection{SpeechEditor}\label{speecheditor}
 
 \section{How to read a spectrogram}\label{how-to-read-a-spectrogram}
 
 (with Clizia Welker)
 
-This paragraph intends to provide some hints on how to read a spectrogram. For a more detailed explanation please refer to your textbook on phonetics (see §\ref{sec:textbooks}).
-While by observing an oscillogram it is only possible to identify large phonetic classes, the spectrogram provides us with enough information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about
+\phantomsection\label{box-spectrogram}
+This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to \emph{segment} (cut up) a speech signal into syllables or phones, and/or need to \emph{transcribe} (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (see §\ref{sec:textbooks}), and see Chapter XX on segmenting and labeling speech. Rob Hagiwara also offers valuable instructions and background on his website at
+\url{https://home.cc.umanitoba.ca/~robh/howto.html}.
+
+\begin{quote}
+TODO link to chapter on segmenting and labeling
+\end{quote}
+
+While by observing an oscillogram it is only possible to identify broad phonetic classes, the spectrogram provides us with sufficient information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about
 
 \begin{itemize}
 \item
@@ -1413,8 +1444,8 @@ In order to read a spectrogram, we need to remember that:
 
 For \textbf{voiced consonants} in a CV context, formant frequencies change relatively rapidly. The \emph{F2} value in the vowel from which the formant travels in this formant transition is often called the `F2 locus', and this locus is correlated with the place of articulation of the consonant. The F2 transition is also due to the fact that acoustic resonators (tube sections) are uncoupled at the moment of closure or frication, but become coupled as the mouth opens.
 For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.\\
-In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth.
-In VC contexts we see similar patterns, but reversed in time.
+In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth.\\
+In VC contexts we see similar patterns as in CV contexts, but reversed in time.
 
 While \textbf{voiceless consonants} are not characterised by formants (even in an intervocalic context), their place of articulation may be assessed by looking at which frequency regions display a high concentration of energy. Moreover, in CV context, the rapid F2 transitions may seem to travel from the same F2 locus as for corresponding voiced consonants with the same place of articulation, albeit with formants less visible in transitions involving voiceless consonants.
 
@@ -1422,7 +1453,7 @@ In producing \textbf{alveolar} consonants, the vocal tract is divided into two s
 
 \textbf{Nasal and lateral} consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators).
 
-For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbook on phonetics.
+For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 

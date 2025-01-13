@@ -6,16 +6,16 @@
 
 As we saw, a spectrum (§\@ref(sec:spectrum)) shows the various frequency components of a complex signal, such as the formants of a vowel (§\@ref(sec:formants)). However, a spectrum either shows the frequency composition of an entire digital sound, or it shows the frequency composition of a brief 'slice' or frame or window of that sound (box \@ref(sec:spectrum)). 
 
-In order to track spectral changes over time, we would need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This visualisation is called a **spectrogram**. As in an oscillogram, *time* is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, *frequency* is shown along the vertical axis. *Amplitude* is shown in the degree of blackness (or in coloring). 
+In order to track spectral changes over time, we need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This most important visualisation in speech analysis is called a **spectrogram**. As in an oscillogram, *time* is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, *frequency* is shown along the vertical axis. *Amplitude* is shown in the degree of blackness (or in coloring). 
 The example spectrogram in Figure \@ref(fig:merel-spectrogram) visualizes a blackbird song, showing the amplitudes (blackness) of the frequency components (vertically), varying over time (horizontally). 
 
 ```{r merel-spectrogram, echo=FALSE, fig.cap="Spectrogram of a brief part of song by a blackbird.", fig.align="center"}
 knitr::include_graphics("figures/merel-spectrogram.png")
 ```
 
-In this spectrogram you see an initial steep fall chirp, followed by three repetitions of a two-tone 'syllable', against a background of other birdsong. 
+In this spectrogram you see an initial steeply falling 'chirp' sound, followed by three repetitions of a two-tone 'syllable', against a background of other birdsong. 
 
-Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\@ref(fig:bandpassfilter)). This bandpass filter was initially set to a low *center frequency*, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single 'line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next 'line' of the figure. This was repeated across the entire range of frequencies^[Thus a spectrograph required several minutes to produce a single spectrogram.]. Moreover, a spectrograph used to have two fixed settings for the *bandwidth* of the band-pass filter (§\@ref(sec:filterbandwidth)): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. 
+Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\@ref(fig:bandpassfilter)). This bandpass filter was initially set to a low *center frequency*, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single 'line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next 'line' of the figure. This was repeated across the entire range of frequencies^[Thus a spectrograph required several minutes to produce a single spectrogram.]. Moreover, a spectrograph used to have two fixed settings for the *bandwidth* of the band-pass filter (§\@ref(sec:filterbandwidth)): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\@ref(sec:spectralslice)).
 
 ## Broadband spectrogram
 
@@ -37,26 +37,67 @@ knitr::include_graphics("figures/speech_word_spectrogram_30ms.png")
 
 The narrow bandwidth results in more detail in the frequency dimension, while allowing less detail (more smearing) in the time dimension. We can see frequencies in great detail, such as individual harmonics in voiced parts. On the other hand, brief temporal events such as noise bursts are blurred or smeared. 
 
-## How to make a spectrogram
+::: {#box-praatspectrogram .praatbox}
 
-> TODO REVISE this entire section 
+## How to make a spectrogram {#sec:howto-spectrogram}
 
- - Call the file zinleven1 to the objects window
-- select it and click on Edit. By default, you  should get both the oscillogram and the spectrogram of the signal. In Praat the settings are saved from session to session, so if the spectrogram is not displayed, go to View > Show analyses > Show spectrogram
-- there is also another way to create a spectrogram, namely by creating a spectrogram object first. Try this  out: from the objects window, after having selected the sound file, go to spectrogram (button on the right) >  To spectrogram. Beforehand, you have to set the spectrogram parameters. Their meaning is discussed below. You can also keep the default values. A new object (Spectrogram) appears in the objects window, select it and go to View. However, by opening the spectrogram in this way, it is not possible to change the setting parameters afterwards (unless by opening a new spectrogram), so it is handier to open it following the first route suggested
+There are two ways to create a spectrogram of a sound recording: either directly, or by means of the SoundEditor. 
 
-### Spectrogram
+### to Spectrogram directly
 
-Sound... to Spectrogram, Settings, Draw resulting object
+- Select an input Sound object in the `Praat` Objects window. Then choose `Analyse spectum >`, then `To Spectrogram...`. 
 
-### SpeechEditor
+- The parameter `Window length` determines the filter bandwidth used to create the spectrogram. For a broadband spectrogram, choose $0.005\ \textrm{s}$; for a narrowband spectrogram, choose $0.030\ \textrm{s}$. 
+For the spectrogram of birdsong in Fig.\@ref(fig:merel-spectrogram), an intermediate value of 0.015 s was used.\
+Set `Window shape` to `Gaussian`.\
+Leave other arguments at their default (standard) values. Click `OK`.
+
+- The resulting Spectrogram object is again added at the bottom of the list of objects. 
+
+- You may `Draw > Paint...` the spectrogram. Specify the time and frequency range, as well as the dynamic range (of amplitude in dB, between darkest and lightest colour).\
+The `Pre-emphasis` slope helps in discerning visual details in the higher frequencies, as explained in §\@ref(sec:emphasisfilters) and §\@ref(sec:vowelproduction); the default value of $+6$ dB per octave works well in most situations. 
+
+- Remember to `Save` the Spectrogram object if you wish. 
+
+### from SoundEditor 
+
+This method is similar to the spectral analysis described in §\@ref(sec:spectralslice). Using this method, your spectrogram in the SoundEditor is immediately updated if you change (`Apply`) values for the analysis parameters (which may be convenient), but extracting and saving the Spectrogram requires some extra work. 
+
+- In the `Praat` object window, select a Sound object.
+
+- Next, in the `Praat` object window, choose `View & Edit`. This will open a so-called SoundEditor window, with the oscillogram as its main feature. 
+
+> TODO crossref SoundEditor
+
+- In the SoundEditor window, go to `Spectrogram...` and then `Spectrogram settings`. 
+
+- The parameter `Window length` determines the filter bandwidth used to create the spectrogram. For a broadband spectrogram, choose $0.005\ \textrm{s}$; for a narrowband spectrogram, choose $0.030\ \textrm{s}$. 
+For the spectrogram of birdsong in Fig.\@ref(fig:merel-spectrogram), an intermediate value of 0.015 s was used.\
+Set the `Dynamic range` (of amplitude in dB) between darkest and lightest colour to some value between $40$ and $55$ dB (try different values by using `Apply`, and notice the differences in the resulting spectrogram). 
+Leave other arguments at their default (standard) values. Click `OK`.
+
+- Make sure that you can see the Spectrogram in the SoundEditor, by selecting the option `Spectrogram > View Spectrogram`. This setting is saved from session to session, so you may have to switch `on` the spectrogram view.  
+
+- If you are happy with the spectrogram in the SoundEditor panel, you can then choose `Spectrogram > Paint visible spectrogram...` in order to draw that spectrogram in the Picture window. 
+
+- You can also `Extract` and then `Save` the spectrogram from the SoundEditor. 
+
+:::
 
 ## How to read a spectrogram
 
 (with Clizia Welker)
 
-This paragraph intends to provide some hints on how to read a spectrogram. For a more detailed explanation please refer to your textbook on phonetics (see §\@ref(sec:textbooks)).
-While by observing an oscillogram it is only possible to identify large phonetic classes, the spectrogram provides us with enough information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about
+::: {#box-spectrogram .warningbox}
+
+This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to *segment* (cut up) a speech signal into syllables or phones, and/or need to *transcribe* (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (see §\@ref(sec:textbooks)), and see Chapter XX on segmenting and labeling speech. Rob Hagiwara also offers valuable instructions and background on his website at 
+<https://home.cc.umanitoba.ca/~robh/howto.html>. 
+
+> TODO link to chapter on segmenting and labeling
+
+::: 
+
+While by observing an oscillogram it is only possible to identify broad phonetic classes, the spectrogram provides us with sufficient information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about
 
 - the frequency values of the formants,
 
@@ -83,9 +124,9 @@ In order to read a spectrogram, we need to remember that:
 **Dipthongs** (such as in the Dutch words *bij*, *bui* and *bouw*) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values. 
 
 For **voiced consonants** in a CV context, formant frequencies change relatively rapidly. The *F2* value in the vowel from which the formant travels in this formant transition is often called the 'F2 locus', and this locus is correlated with the place of articulation of the consonant. The F2 transition is also due to the fact that acoustic resonators (tube sections) are uncoupled at the moment of closure or frication, but become coupled as the mouth opens.
-For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.  
-In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth. 
-In VC contexts we see similar patterns, but reversed in time.
+For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.   
+In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth.   
+In VC contexts we see similar patterns as in CV contexts, but reversed in time.
 
 While **voiceless consonants** are not characterised by formants (even in an intervocalic context), their place of articulation may be assessed by looking at which frequency regions display a high concentration of energy. Moreover, in CV context, the rapid F2 transitions may seem to travel from the same F2 locus as for corresponding voiced consonants with the same place of articulation, albeit with formants less visible in transitions involving voiceless consonants.
 
@@ -93,4 +134,4 @@ In producing **alveolar** consonants, the vocal tract is divided into two smalle
 
 **Nasal and lateral** consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators). 
 
-For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbook on phonetics. 
+For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section. 

@@ -183,7 +183,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
 <li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum</a></li>
-<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectralslice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
@@ -228,10 +228,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
 <li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
 <li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
-<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-make-a-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#spectrogram"><i class="fa fa-check"></i><b>6.4.1</b> Spectrogram</a></li>
-<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#speecheditor"><i class="fa fa-check"></i><b>6.4.2</b> SpeechEditor</a></li>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#from-soundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
 </ul></li>
@@ -321,10 +321,10 @@ To do so, select the Spectrum object, select button <code>Sound &gt;</code> and 
 </div>
 <P>
 <div id="box-praatspectralslice" class="praatbox">
-<div id="how-to-obtain-a-spectral-slice" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> How to obtain a spectral ‘slice’<a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sec:spectralslice" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> How to obtain a spectral ‘slice’<a href="complex-sounds-and-spectra.html#sec:spectralslice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure <a href="ch-soundwaves.html#fig:speech-oscillogram">1.1</a>, at <span class="math inline">\(t \approx 0.210\)</span> seconds.</p>
-<p>This can be done by means of two features in <code>Praat</code> which we will explore in depth only later, viz. the SoundEditor and the Spectrogram.</p>
+<p>This can be done by means of two features in <code>Praat</code> which we will explore in depth only later, viz. the SoundEditor and the Spectrogram (Ch.<a href="ch-spectrograms.html#ch-spectrograms">6</a>.</p>
 <ul>
 <li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
 <li><p>Next, in the <code>Praat</code> object window, choose <code>View &amp; Edit</code>. This will open a so-called SoundEditor window, with the oscillogram as its main feature.</p></li>
@@ -333,13 +333,8 @@ To do so, select the Spectrum object, select button <code>Sound &gt;</code> and 
 <p>TODO crossref SoundEditor</p>
 </blockquote>
 <ul>
-<li>In the SoundEditor window, go to <code>Spectrogram...</code> and then <code>Spectrogram settings</code>. Here we may need to adjust the setting for <code>Window length</code>. <code>Praat</code> will average the resulting spectrum over the time window of <span class="math inline">\(2\times\)</span> this value, centered around the position of the cursor in the oscillogram (see §REF).</li>
-</ul>
-<blockquote>
-<p>TODO crossref Spectrogram, and merge paragraphs.</p>
-</blockquote>
-<p>A <em>short</em> window (e.g. 0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A <em>long</em> window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read the <code>Praat</code> Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.</p>
-<ul>
+<li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then <code>Spectrogram settings</code>. Here we may need to adjust the setting for <code>Window length</code>. <code>Praat</code> will average the resulting spectrum over the time window of <span class="math inline">\(2\times\)</span> this value, centered around the position of the cursor in the oscillogram (see §<a href="ch-spectrograms.html#sec:howto-spectrogram">6.4</a>).<br />
+A <em>short</em> window (e.g. 0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A <em>long</em> window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read §<a href="ch-spectrograms.html#sec:howto-spectrogram">6.4</a>, read the <code>Praat</code> Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.</p></li>
 <li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then choose <code>View spectral slice</code>. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.<a href="complex-sounds-and-spectra.html#fig:speech-spectralslice">3.3</a> for an example.</p></li>
 <li><p>In the SpectrumEditor window, if you click inside the spectrum, the frequency and amplitude coordinates are shown. Placing the cursor on a spectral peak in the SpectrumEditor can be done by means of the button <code>Spectrum</code> in the top row, then choose <code>Move cursor to nearest peak</code>.</p></li>
 </ul>

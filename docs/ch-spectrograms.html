@@ -183,7 +183,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
 <li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum</a></li>
-<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectral-slice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectralslice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
 <ul>
@@ -228,10 +228,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
 <li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
 <li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
-<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-make-a-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#spectrogram"><i class="fa fa-check"></i><b>6.4.1</b> Spectrogram</a></li>
-<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#speecheditor"><i class="fa fa-check"></i><b>6.4.2</b> SpeechEditor</a></li>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#from-soundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
 </ul></li>
@@ -262,7 +262,7 @@ div.csl-indent {
 <div id="sec:spectrogram-intro" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Introduction<a href="ch-spectrograms.html#sec:spectrogram-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As we saw, a spectrum (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) shows the various frequency components of a complex signal, such as the formants of a vowel (§<a href="ch-speechsounds.html#sec:formants">5.2</a>). However, a spectrum either shows the frequency composition of an entire digital sound, or it shows the frequency composition of a brief ‘slice’ or frame or window of that sound (box <a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>).</p>
-<p>In order to track spectral changes over time, we would need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This visualisation is called a <strong>spectrogram</strong>. As in an oscillogram, <em>time</em> is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, <em>frequency</em> is shown along the vertical axis. <em>Amplitude</em> is shown in the degree of blackness (or in coloring).
+<p>In order to track spectral changes over time, we need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This most important visualisation in speech analysis is called a <strong>spectrogram</strong>. As in an oscillogram, <em>time</em> is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, <em>frequency</em> is shown along the vertical axis. <em>Amplitude</em> is shown in the degree of blackness (or in coloring).
 The example spectrogram in Figure <a href="ch-spectrograms.html#fig:merel-spectrogram">6.1</a> visualizes a blackbird song, showing the amplitudes (blackness) of the frequency components (vertically), varying over time (horizontally).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:merel-spectrogram"></span>
 <img src="figures/merel-spectrogram.png" alt="Spectrogram of a brief part of song by a blackbird."  />
@@ -270,8 +270,8 @@ The example spectrogram in Figure <a href="ch-spectrograms.html#fig:merel-spectr
 Figure 6.1: Spectrogram of a brief part of song by a blackbird.
 </p>
 </div>
-<p>In this spectrogram you see an initial steep fall chirp, followed by three repetitions of a two-tone ‘syllable’, against a background of other birdsong.</p>
-<p>Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>). This bandpass filter was initially set to a low <em>center frequency</em>, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single ‘line’ of the figure. Then the frequency band of the filter was increased slightly, to produce the next ‘line’ of the figure. This was repeated across the entire range of frequencies<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>. Moreover, a spectrograph used to have two fixed settings for the <em>bandwidth</em> of the band-pass filter (§<a href="ch-filtering.html#sec:filterbandwidth">4.3.3</a>): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively.</p>
+<p>In this spectrogram you see an initial steeply falling ‘chirp’ sound, followed by three repetitions of a two-tone ‘syllable’, against a background of other birdsong.</p>
+<p>Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.<a href="ch-filtering.html#fig:bandpassfilter">4.3</a>). This bandpass filter was initially set to a low <em>center frequency</em>, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single ‘line’ of the figure. Then the frequency band of the filter was increased slightly, to produce the next ‘line’ of the figure. This was repeated across the entire range of frequencies<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>. Moreover, a spectrograph used to have two fixed settings for the <em>bandwidth</em> of the band-pass filter (§<a href="ch-filtering.html#sec:filterbandwidth">4.3.3</a>): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §<a href="complex-sounds-and-spectra.html#sec:spectralslice">3.2.2</a>).</p>
 </div>
 <div id="broadband-spectrogram" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Broadband spectrogram<a href="ch-spectrograms.html#broadband-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -295,29 +295,58 @@ Figure 6.3: Oscillogram, narrow-band spectrum at 0.210 s, and narrow-band spectr
 </div>
 <p>The narrow bandwidth results in more detail in the frequency dimension, while allowing less detail (more smearing) in the time dimension. We can see frequencies in great detail, such as individual harmonics in voiced parts. On the other hand, brief temporal events such as noise bursts are blurred or smeared.</p>
 </div>
-<div id="how-to-make-a-spectrogram" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> How to make a spectrogram<a href="ch-spectrograms.html#how-to-make-a-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="box-praatspectrogram" class="praatbox">
+<div id="sec:howto-spectrogram" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> How to make a spectrogram<a href="ch-spectrograms.html#sec:howto-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two ways to create a spectrogram of a sound recording: either directly, or by means of the SoundEditor.</p>
+<div id="to-spectrogram-directly" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> to Spectrogram directly<a href="ch-spectrograms.html#to-spectrogram-directly" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window. Then choose <code>Analyse spectum &gt;</code>, then <code>To Spectrogram...</code>.</p></li>
+<li><p>The parameter <code>Window length</code> determines the filter bandwidth used to create the spectrogram. For a broadband spectrogram, choose <span class="math inline">\(0.005\ \textrm{s}\)</span>; for a narrowband spectrogram, choose <span class="math inline">\(0.030\ \textrm{s}\)</span>.
+For the spectrogram of birdsong in Fig.<a href="ch-spectrograms.html#fig:merel-spectrogram">6.1</a>, an intermediate value of 0.015 s was used.<br />
+Set <code>Window shape</code> to <code>Gaussian</code>.<br />
+Leave other arguments at their default (standard) values. Click <code>OK</code>.</p></li>
+<li><p>The resulting Spectrogram object is again added at the bottom of the list of objects.</p></li>
+<li><p>You may <code>Draw &gt; Paint...</code> the spectrogram. Specify the time and frequency range, as well as the dynamic range (of amplitude in dB, between darkest and lightest colour).<br />
+The <code>Pre-emphasis</code> slope helps in discerning visual details in the higher frequencies, as explained in §<a href="ch-filtering.html#sec:emphasisfilters">4.4</a> and §<a href="ch-speechsounds.html#sec:vowelproduction">5.3.1</a>; the default value of <span class="math inline">\(+6\)</span> dB per octave works well in most situations.</p></li>
+<li><p>Remember to <code>Save</code> the Spectrogram object if you wish.</p></li>
+</ul>
+</div>
+<div id="from-soundeditor" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> from SoundEditor<a href="ch-spectrograms.html#from-soundeditor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This method is similar to the spectral analysis described in §<a href="complex-sounds-and-spectra.html#sec:spectralslice">3.2.2</a>. Using this method, your spectrogram in the SoundEditor is immediately updated if you change (<code>Apply</code>) values for the analysis parameters (which may be convenient), but extracting and saving the Spectrogram requires some extra work.</p>
+<ul>
+<li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
+<li><p>Next, in the <code>Praat</code> object window, choose <code>View &amp; Edit</code>. This will open a so-called SoundEditor window, with the oscillogram as its main feature.</p></li>
+</ul>
 <blockquote>
-<p>TODO REVISE this entire section</p>
+<p>TODO crossref SoundEditor</p>
 </blockquote>
 <ul>
-<li>Call the file zinleven1 to the objects window</li>
-<li>select it and click on Edit. By default, you should get both the oscillogram and the spectrogram of the signal. In Praat the settings are saved from session to session, so if the spectrogram is not displayed, go to View &gt; Show analyses &gt; Show spectrogram</li>
-<li>there is also another way to create a spectrogram, namely by creating a spectrogram object first. Try this out: from the objects window, after having selected the sound file, go to spectrogram (button on the right) &gt; To spectrogram. Beforehand, you have to set the spectrogram parameters. Their meaning is discussed below. You can also keep the default values. A new object (Spectrogram) appears in the objects window, select it and go to View. However, by opening the spectrogram in this way, it is not possible to change the setting parameters afterwards (unless by opening a new spectrogram), so it is handier to open it following the first route suggested</li>
+<li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then <code>Spectrogram settings</code>.</p></li>
+<li><p>The parameter <code>Window length</code> determines the filter bandwidth used to create the spectrogram. For a broadband spectrogram, choose <span class="math inline">\(0.005\ \textrm{s}\)</span>; for a narrowband spectrogram, choose <span class="math inline">\(0.030\ \textrm{s}\)</span>.
+For the spectrogram of birdsong in Fig.<a href="ch-spectrograms.html#fig:merel-spectrogram">6.1</a>, an intermediate value of 0.015 s was used.<br />
+Set the <code>Dynamic range</code> (of amplitude in dB) between darkest and lightest colour to some value between <span class="math inline">\(40\)</span> and <span class="math inline">\(55\)</span> dB (try different values by using <code>Apply</code>, and notice the differences in the resulting spectrogram).
+Leave other arguments at their default (standard) values. Click <code>OK</code>.</p></li>
+<li><p>Make sure that you can see the Spectrogram in the SoundEditor, by selecting the option <code>Spectrogram &gt; View Spectrogram</code>. This setting is saved from session to session, so you may have to switch <code>on</code> the spectrogram view.</p></li>
+<li><p>If you are happy with the spectrogram in the SoundEditor panel, you can then choose <code>Spectrogram &gt; Paint visible spectrogram...</code> in order to draw that spectrogram in the Picture window.</p></li>
+<li><p>You can also <code>Extract</code> and then <code>Save</code> the spectrogram from the SoundEditor.</p></li>
 </ul>
-<div id="spectrogram" class="section level3 hasAnchor" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> Spectrogram<a href="ch-spectrograms.html#spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sound… to Spectrogram, Settings, Draw resulting object</p>
 </div>
-<div id="speecheditor" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> SpeechEditor<a href="ch-spectrograms.html#speecheditor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
 <div id="how-to-read-a-spectrogram" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> How to read a spectrogram<a href="ch-spectrograms.html#how-to-read-a-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>(with Clizia Welker)</p>
-<p>This paragraph intends to provide some hints on how to read a spectrogram. For a more detailed explanation please refer to your textbook on phonetics (see §<a href="index.html#sec:textbooks">0.1</a>).
-While by observing an oscillogram it is only possible to identify large phonetic classes, the spectrogram provides us with enough information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about</p>
+<div id="box-spectrogram" class="warningbox">
+<p>This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to <em>segment</em> (cut up) a speech signal into syllables or phones, and/or need to <em>transcribe</em> (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (see §<a href="index.html#sec:textbooks">0.1</a>), and see Chapter XX on segmenting and labeling speech. Rob Hagiwara also offers valuable instructions and background on his website at
+<a href="https://home.cc.umanitoba.ca/~robh/howto.html" class="uri">https://home.cc.umanitoba.ca/~robh/howto.html</a>.</p>
+<blockquote>
+<p>TODO link to chapter on segmenting and labeling</p>
+</blockquote>
+</div>
+<p>While by observing an oscillogram it is only possible to identify broad phonetic classes, the spectrogram provides us with sufficient information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about</p>
 <ul>
 <li><p>the frequency values of the formants,</p></li>
 <li><p>the energy pattern throughout the spectrogram,</p></li>
@@ -336,12 +365,12 @@ While by observing an oscillogram it is only possible to identify large phonetic
 <p><strong>Dipthongs</strong> (such as in the Dutch words <em>bij</em>, <em>bui</em> and <em>bouw</em>) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values.</p>
 <p>For <strong>voiced consonants</strong> in a CV context, formant frequencies change relatively rapidly. The <em>F2</em> value in the vowel from which the formant travels in this formant transition is often called the ‘F2 locus’, and this locus is correlated with the place of articulation of the consonant. The F2 transition is also due to the fact that acoustic resonators (tube sections) are uncoupled at the moment of closure or frication, but become coupled as the mouth opens.
 For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.<br />
-In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth.
-In VC contexts we see similar patterns, but reversed in time.</p>
+In CV context, rapid F1 transitions are related to the degree of jaw opening, with F1 increasing from zero to its vowel value during opening of the mouth.<br />
+In VC contexts we see similar patterns as in CV contexts, but reversed in time.</p>
 <p>While <strong>voiceless consonants</strong> are not characterised by formants (even in an intervocalic context), their place of articulation may be assessed by looking at which frequency regions display a high concentration of energy. Moreover, in CV context, the rapid F2 transitions may seem to travel from the same F2 locus as for corresponding voiced consonants with the same place of articulation, albeit with formants less visible in transitions involving voiceless consonants.</p>
 <p>In producing <strong>alveolar</strong> consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial segment [s] in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-broad">6.2</a>. In palatal consonants (such as the final segment in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called ‘spectral centre of gravity’ in the resulting speech is correspondingly lower.</p>
 <p><strong>Nasal and lateral</strong> consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators).</p>
-<p>For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbook on phonetics.</p>
+<p>For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.</p>
 
 </div>
 </div>
