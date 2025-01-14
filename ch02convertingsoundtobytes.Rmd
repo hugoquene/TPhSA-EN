@@ -65,7 +65,7 @@ For any audio recording, there are a few essential precautions that you'll have 
 
 ::: {#recording .warningbox}
 
-### Remove non-target sounds 
+### Remove non-target sounds {#sec:removenontargetsounds}
 
 In order to obtain a high-quality recording, it helps to attenuate all non-target sounds, in various ways:
 

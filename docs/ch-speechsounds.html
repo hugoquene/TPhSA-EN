@@ -235,6 +235,25 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html"><i class="fa fa-check"></i><b>7</b> Segmenting and labeling speech sounds</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#segmenting-speech"><i class="fa fa-check"></i><b>7.1</b> Segmenting speech</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-segment-speech-in-praat"><i class="fa fa-check"></i><b>7.1.1</b> How to segment speech in <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#labeling-speech-sounds"><i class="fa fa-check"></i><b>7.2</b> Labeling speech sounds</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-label-speech-sounds-in-praat"><i class="fa fa-check"></i><b>7.2.1</b> How to label speech sounds in <code>Praat</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-in-speech"><i class="fa fa-check"></i><b>8.1</b> Pauses in speech</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.2</b> Durations</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#pitch"><i class="fa fa-check"></i><b>8.3</b> Pitch</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity"><i class="fa fa-check"></i><b>8.4</b> Intensity</a></li>
+<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.5</b> Stresses and accents</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -342,6 +361,16 @@ Leave other arguments at their default (standard) values. Click <code>OK</code>.
 <li><p>You may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> the formant values (frequencies and bandwidths per formant per time frame).</p></li>
 <li><p>Remember to <code>Save</code> the Formant object if you wish.</p></li>
 </ul>
+</div>
+<P>
+<div id="box:formantanalysis" class="warningbox">
+<p>Remember that the results from your formant analysis may be <strong>suspect</strong>:</p>
+<ul>
+<li><p>if the reported formant frequency is low, say below 200 Hz,</p></li>
+<li><p>if the reported formant bandwidth is large (formant quality is low),</p></li>
+<li><p>if the <em>wavelength</em> (<span class="math inline">\(4\times \lambda\)</span>) of the reported formant frequency matches one of the dimensions of the recording room.</p></li>
+</ul>
+<p>For background, see §<a href="ch-soundtobytes.html#sec:removenontargetsounds">2.4.1</a> above.</p>
 </div>
 </div>
 </div>

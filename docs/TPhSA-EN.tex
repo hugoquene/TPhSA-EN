@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 14 Jan 2025 14:07}
+\date{Document compiled 14 Jan 2025 19:34}
 
 \begin{document}
 \maketitle
@@ -688,7 +688,7 @@ In phonetics, the most common amplitude resolution is 16 bits, or \(2^{16} = 655
 For any audio recording, there are a few essential precautions that you'll have to attend to, to obtain high-quality recordings suitable for subsequent analysis and re-distribution.
 
 \phantomsection\label{recording}
-\subsection{Remove non-target sounds}\label{remove-non-target-sounds}
+\subsection{Remove non-target sounds}\label{sec:removenontargetsounds}
 
 In order to obtain a high-quality recording, it helps to attenuate all non-target sounds, in various ways:
 
@@ -1252,6 +1252,20 @@ The safest method for measuring formants is to \emph{bypass} the spectrum, and m
   Remember to \texttt{Save} the Formant object if you wish.
 \end{itemize}
 
+\phantomsection\label{box:formantanalysis}
+Remember that the results from your formant analysis may be \textbf{suspect}:
+
+\begin{itemize}
+\item
+  if the reported formant frequency is low, say below 200 Hz,
+\item
+  if the reported formant bandwidth is large (formant quality is low),
+\item
+  if the \emph{wavelength} (\(4\times \lambda\)) of the reported formant frequency matches one of the dimensions of the recording room.
+\end{itemize}
+
+For background, see §\ref{sec:removenontargetsounds} above.
+
 \section{Source-filter theory of speech production}\label{sec:sourcefilter}
 
 According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter \citep{Fant_1970}. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source (although source-filter interactions do occur in actual speech production; \citet{Tokuda_2021}, §4).
@@ -1463,6 +1477,40 @@ In producing \textbf{alveolar} consonants, the vocal tract is divided into two s
 \textbf{Nasal and lateral} consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators).
 
 For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.
+
+\chapter{Segmenting and labeling speech sounds}\label{ch-segmentinglabeling}
+
+\emph{Chapter keywords}: TODO .
+
+\begin{quote}
+TODO add text here
+\end{quote}
+
+\section{Segmenting speech}\label{segmenting-speech}
+
+\subsection{\texorpdfstring{How to segment speech in \texttt{Praat}}{How to segment speech in Praat}}\label{how-to-segment-speech-in-praat}
+
+\section{Labeling speech sounds}\label{labeling-speech-sounds}
+
+\subsection{\texorpdfstring{How to label speech sounds in \texttt{Praat}}{How to label speech sounds in Praat}}\label{how-to-label-speech-sounds-in-praat}
+
+\chapter{Prosody}\label{ch-prosody}
+
+\emph{Chapter keywords}: TODO .
+
+\begin{quote}
+TODO add text here
+\end{quote}
+
+\section{Pauses in speech}\label{pauses-in-speech}
+
+\section{Durations}\label{durations}
+
+\section{Pitch}\label{pitch}
+
+\section{Intensity}\label{intensity}
+
+\section{Stresses and accents}\label{stresses-and-accents}
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 

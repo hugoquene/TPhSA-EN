@@ -52,7 +52,7 @@ key-parameters-in-ad-conversion
 sec:samplingfrequency
 amplitude-resolution
 how-to-record-a-sound
-remove-non-target-sounds
+sec:removenontargetsounds
 sec:recordinglevel
 sec:avoidlossyformats
 on-your-computer-using-praat
@@ -102,3 +102,14 @@ sec:howto-spectrogram
 to-spectrogram-directly
 from-soundeditor
 how-to-read-a-spectrogram
+ch-segmentinglabeling
+segmenting-speech
+how-to-segment-speech-in-praat
+labeling-speech-sounds
+how-to-label-speech-sounds-in-praat
+ch-prosody
+pauses-in-speech
+durations
+pitch
+intensity
+stresses-and-accents
