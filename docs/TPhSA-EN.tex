@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 14 Jan 2025 19:34}
+\date{Document compiled 14 Jan 2025 21:32}
 
 \begin{document}
 \maketitle
@@ -699,7 +699,7 @@ In order to obtain a high-quality recording, it helps to attenuate all non-targe
   If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings.
 \end{itemize}
 
-\textbf{Background}: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g.~resonances, formants, see §\ref{sec:formants}) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room\footnote{\emph{Frequency} and \emph{formant} measurements may be suspect if the corresponding \emph{wavelength} (for frequencies) or wavelength \(\times 4\) (for formants) is a multiple of one of the dimensions of the room (see §\ref{sec:wavelength}); or if the reported frequency is below 100 Hz; or if the reliability of the frequency measurement is low.}.
+\textbf{Background}: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g.~resonances, formants, see §\ref{sec:formants}) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room\footnote{\emph{Frequency} and \emph{formant} measurements may be suspect if the corresponding \emph{wavelength} (for frequencies) or wavelength \(\times 4\) or wavelength \(\times 2\) (for formants) corresponds to one of the dimensions of the room (see §\ref{sec:wavelength} and §\ref{sec:measureformants}); or if the reported formant frequency is below 200 Hz; or if the reliability of the frequency measurement is low.}.
 
 \begin{itemize}
 \item
@@ -1228,12 +1228,12 @@ In the spectrum of the recorded /i/ vowel produced by a \emph{female} speaker, i
 \caption{Spectral slice of the /i/ vowel in the word *speech*.}\label{fig:speech-spectralslice-i}
 \end{figure}
 
-Formants are numbered by their peak frequency, and are named `F1', `F2', `F3', etc. (The fundamental frequency of a sound is called \(f_0\), see \ref{sec:FTintro}.)
+Formants are numbered by their peak frequency, and are named `F1', `F2', `F3', etc. (The fundamental frequency of a sound is called \(f_0\), see §\ref{sec:FTintro}.)
 The different vowels in any language have different formant patterns, and the first two or three formants are most important for distinguishing vowels. Because various sections of the articulated vocal tract have \emph{interacting} resonances (as explained above), formant frequencies cannot be mapped easily on articulatory features. Nevertheless, with considerable simplification, there is a negative correlation between vowel F1 and the height of the tongue (lower tongue, higher F1, see Fig.\ref{fig:twotube}), and between vowel F2 and the front--back position of the tongue (more fronted tongue, higher F2, see Fig.\ref{fig:threetube}). These patterns are typically illustrated in a diagram depicting vowel formants in the F1-by-F2 plane\footnote{In that diagram, the scales may be displayed in Bark units, and the F1 axis may have been reversed, in order to clarify the relation between articulatory features and formant frequencies.}, in your phonetics textbook. F3 is involved in the contrast between rounded and unrounded vowels (such as /i/ vs.~/y/).
 
-For further background on \emph{formants}, see \citep{Aalto_Malinen_Vainio_2018}.
+For further background on \emph{formants}, see \citet{Aalto_Malinen_Vainio_2018}.
 
-\subsection{How to measure formants}\label{how-to-measure-formants}
+\subsection{How to measure formants}\label{sec:measureformants}
 
 \phantomsection\label{box-praatformants}
 The safest method for measuring formants is to \emph{bypass} the spectrum, and measure formants directly from a Sound object.
@@ -1261,7 +1261,7 @@ Remember that the results from your formant analysis may be \textbf{suspect}:
 \item
   if the reported formant bandwidth is large (formant quality is low),
 \item
-  if the \emph{wavelength} (\(4\times \lambda\)) of the reported formant frequency matches one of the dimensions of the recording room.
+  if the corresponding \emph{wavelength} of the reported formant frequency (§\ref{sec:wavelength}) matches one of the dimensions of the recording room: for example, an \(F1 \approx 86\ \textrm{Hz}\) may be due to the length of \(L=2.00\ \textrm{m}\) of the recording room {[}for a tube closed at \emph{both} ends, like the room, \(Fn=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}\){]}.
 \end{itemize}
 
 For background, see §\ref{sec:removenontargetsounds} above.

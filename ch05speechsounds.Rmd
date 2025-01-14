@@ -73,13 +73,13 @@ In the spectrum of the recorded /i/ vowel produced by a *female* speaker, in Fig
 knitr::include_graphics("figures/speech_word_0_210_spectrum.png")
 ```
 
-Formants are numbered by their peak frequency, and are named 'F1', 'F2', 'F3', etc. (The fundamental frequency of a sound is called $f_0$, see \@ref(sec:FTintro).)
+Formants are numbered by their peak frequency, and are named 'F1', 'F2', 'F3', etc. (The fundamental frequency of a sound is called $f_0$, see §\@ref(sec:FTintro).)
 The different vowels in any language have different formant patterns, and the first two or three formants are most important for distinguishing vowels. Because various sections of the articulated vocal tract have *interacting* resonances (as explained above), formant frequencies cannot be mapped easily on articulatory features. Nevertheless, with considerable simplification, there is a negative correlation between vowel F1 and the height of the tongue (lower tongue, higher F1, see Fig.\@ref(fig:twotube)), and between vowel F2 and the front--back position of the tongue (more fronted tongue, higher F2, see Fig.\@ref(fig:threetube)). These patterns are typically illustrated in a diagram depicting vowel formants in the F1-by-F2 plane^[In that diagram, the scales may be displayed in Bark units, and the F1 axis may have been reversed, in order to clarify the relation between articulatory features and formant frequencies.], in your phonetics textbook. F3 is involved in the contrast between rounded and unrounded vowels (such as /i/ vs. /y/).
 
-For further background on *formants*, see [@Aalto_Malinen_Vainio_2018].
+For further background on *formants*, see @Aalto_Malinen_Vainio_2018.
 
 
-### How to measure formants
+### How to measure formants {#sec:measureformants}
 
 ::: {#box-praatformants .praatbox}
 
@@ -107,7 +107,7 @@ Remember that the results from your formant analysis may be **suspect**:
 
 * if the reported formant bandwidth is large (formant quality is low), 
 
-* if the *wavelength* ($4\times \lambda$) of the reported formant frequency matches one of the dimensions of the recording room.
+* if the corresponding *wavelength* of the reported formant frequency (§\@ref(sec:wavelength)) matches one of the dimensions of the recording room: for example, an $F1 \approx 86\ \textrm{Hz}$ may be due to the length of $L=2.00\ \textrm{m}$ of the recording room [for a tube closed at *both* ends, like the room, $Fn=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}$]. 
 
 For background, see §\@ref(sec:removenontargetsounds) above.
 

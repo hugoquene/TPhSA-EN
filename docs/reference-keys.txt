@@ -90,7 +90,7 @@ sec:resonance
 sec:formants
 sec:onetube
 sec:moretubes
-how-to-measure-formants
+sec:measureformants
 sec:sourcefilter
 sec:vowelproduction
 production-of-consonants

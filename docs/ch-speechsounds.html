@@ -215,7 +215,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
 <li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
-<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#how-to-measure-formants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:measureformants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:sourcefilter"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
 <ul>
@@ -345,12 +345,12 @@ Figure 5.4: Three-tube configuration, with a back cavity (left), constriction, a
 Figure 5.5: Spectral slice of the /i/ vowel in the word <em>speech</em>.
 </p>
 </div>
-<p>Formants are numbered by their peak frequency, and are named ‘F1’, ‘F2’, ‘F3’, etc. (The fundamental frequency of a sound is called <span class="math inline">\(f_0\)</span>, see <a href="complex-sounds-and-spectra.html#sec:FTintro">3.1</a>.)
+<p>Formants are numbered by their peak frequency, and are named ‘F1’, ‘F2’, ‘F3’, etc. (The fundamental frequency of a sound is called <span class="math inline">\(f_0\)</span>, see §<a href="complex-sounds-and-spectra.html#sec:FTintro">3.1</a>.)
 The different vowels in any language have different formant patterns, and the first two or three formants are most important for distinguishing vowels. Because various sections of the articulated vocal tract have <em>interacting</em> resonances (as explained above), formant frequencies cannot be mapped easily on articulatory features. Nevertheless, with considerable simplification, there is a negative correlation between vowel F1 and the height of the tongue (lower tongue, higher F1, see Fig.<a href="ch-speechsounds.html#fig:twotube">5.3</a>), and between vowel F2 and the front–back position of the tongue (more fronted tongue, higher F2, see Fig.<a href="ch-speechsounds.html#fig:threetube">5.4</a>). These patterns are typically illustrated in a diagram depicting vowel formants in the F1-by-F2 plane<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>, in your phonetics textbook. F3 is involved in the contrast between rounded and unrounded vowels (such as /i/ vs. /y/).</p>
-<p>For further background on <em>formants</em>, see <span class="citation">(<a href="#ref-Aalto_Malinen_Vainio_2018">Aalto, Malinen, and Vainio 2018</a>)</span>.</p>
+<p>For further background on <em>formants</em>, see <span class="citation">Aalto, Malinen, and Vainio (<a href="#ref-Aalto_Malinen_Vainio_2018">2018</a>)</span>.</p>
 </div>
-<div id="how-to-measure-formants" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> How to measure formants<a href="ch-speechsounds.html#how-to-measure-formants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sec:measureformants" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> How to measure formants<a href="ch-speechsounds.html#sec:measureformants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="box-praatformants" class="praatbox">
 <p>The safest method for measuring formants is to <em>bypass</em> the spectrum, and measure formants directly from a Sound object.</p>
 <ul>
@@ -368,7 +368,7 @@ Leave other arguments at their default (standard) values. Click <code>OK</code>.
 <ul>
 <li><p>if the reported formant frequency is low, say below 200 Hz,</p></li>
 <li><p>if the reported formant bandwidth is large (formant quality is low),</p></li>
-<li><p>if the <em>wavelength</em> (<span class="math inline">\(4\times \lambda\)</span>) of the reported formant frequency matches one of the dimensions of the recording room.</p></li>
+<li><p>if the corresponding <em>wavelength</em> of the reported formant frequency (§<a href="ch-soundwaves.html#sec:wavelength">1.8.5</a>) matches one of the dimensions of the recording room: for example, an <span class="math inline">\(F1 \approx 86\ \textrm{Hz}\)</span> may be due to the length of <span class="math inline">\(L=2.00\ \textrm{m}\)</span> of the recording room [for a tube closed at <em>both</em> ends, like the room, <span class="math inline">\(Fn=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}\)</span>].</p></li>
 </ul>
 <p>For background, see §<a href="ch-soundtobytes.html#sec:removenontargetsounds">2.4.1</a> above.</p>
 </div>
