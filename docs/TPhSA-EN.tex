@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 13 Jan 2025 23:35}
+\date{Document compiled 14 Jan 2025 14:07}
 
 \begin{document}
 \maketitle
@@ -169,14 +169,16 @@ Commands or formulas that you have to type will be shown \texttt{in\ this\ way} 
 \section*{Structure of this tutorial}\label{structure-of-this-tutorial}
 \addcontentsline{toc}{section}{Structure of this tutorial}
 
-TBA
+\begin{quote}
+TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
+\end{quote}
 
 \section{Recommended textbooks}\label{sec:textbooks}
 
 This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by
 \citet{Rietveld_VanHeuven_2009} (in Dutch),
 \citet{Johnson_2012},
-\citet{Ladefoged_Johnson_2015},\\
+\citet{Ladefoged_Johnson_2015},
 \citet{Reetz_Jongman_2020}, and
 \citet{Zsiga_2024}.
 
@@ -192,19 +194,23 @@ This work is licensed under the \emph{GNU GPL 3} license (for details see
 \subsection*{Citation}\label{citation}
 \addcontentsline{toc}{subsection}{Citation}
 
-TBA
+\begin{quote}
+TODO add citation instructions
+\end{quote}
 
 \subsection*{Technical details}\label{technical-details}
 \addcontentsline{toc}{subsection}{Technical details}
 
-TBA
+\begin{quote}
+TODO add tech details
+\end{quote}
 
 \subsection*{History}\label{history}
 \addcontentsline{toc}{subsection}{History}
 
 This work is based on an earlier tutorial (2006-2007) titled Tutorial for self study: basics of phonetics and how to use Praat by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck.
 
-The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024.
+The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2025.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1001,7 +1007,7 @@ In terms of its amplitude, we may regard a brief impulse sound (click or pulse, 
 
 \chapter{Filtering}\label{ch-filtering}
 
-\emph{Chapter keywords}: TBA
+\emph{Chapter keywords}: filter, resonance, resonator, Helmholtz, frequency, frequency component, cutoff, slope, bandwidth, emphasis, pre-emphasis, de-emphasis, spectral envelope.
 
 \section{Introduction}\label{introduction}
 
@@ -1225,6 +1231,8 @@ In the spectrum of the recorded /i/ vowel produced by a \emph{female} speaker, i
 Formants are numbered by their peak frequency, and are named `F1', `F2', `F3', etc. (The fundamental frequency of a sound is called \(f_0\), see \ref{sec:FTintro}.)
 The different vowels in any language have different formant patterns, and the first two or three formants are most important for distinguishing vowels. Because various sections of the articulated vocal tract have \emph{interacting} resonances (as explained above), formant frequencies cannot be mapped easily on articulatory features. Nevertheless, with considerable simplification, there is a negative correlation between vowel F1 and the height of the tongue (lower tongue, higher F1, see Fig.\ref{fig:twotube}), and between vowel F2 and the front--back position of the tongue (more fronted tongue, higher F2, see Fig.\ref{fig:threetube}). These patterns are typically illustrated in a diagram depicting vowel formants in the F1-by-F2 plane\footnote{In that diagram, the scales may be displayed in Bark units, and the F1 axis may have been reversed, in order to clarify the relation between articulatory features and formant frequencies.}, in your phonetics textbook. F3 is involved in the contrast between rounded and unrounded vowels (such as /i/ vs.~/y/).
 
+For further background on \emph{formants}, see \citep{Aalto_Malinen_Vainio_2018}.
+
 \subsection{How to measure formants}\label{how-to-measure-formants}
 
 \phantomsection\label{box-praatformants}
@@ -1311,7 +1319,7 @@ The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a black
 
 In this spectrogram you see an initial steeply falling `chirp' sound, followed by three repetitions of a two-tone `syllable', against a background of other birdsong.
 
-Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\ref{fig:bandpassfilter}). This bandpass filter was initially set to a low \emph{center frequency}, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single `line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next `line' of the figure. This was repeated across the entire range of frequencies\footnote{Thus a spectrograph required several minutes to produce a single spectrogram.}. Moreover, a spectrograph used to have two fixed settings for the \emph{bandwidth} of the band-pass filter (§\ref{sec:filterbandwidth}): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\ref{sec:spectralslice}).
+Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\ref{fig:bandpassfilter}). This bandpass filter was initially set to a low \emph{center frequency}, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single horizontal `line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next `line' of the figure. This was repeated across the entire range of frequencies\footnote{Thus a spectrograph required several minutes to produce a single spectrogram.}. Moreover, a spectrograph used to have two fixed settings for the \emph{bandwidth} of the band-pass filter (§\ref{sec:filterbandwidth}): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\ref{sec:spectralslice} and see below).
 
 \section{Broadband spectrogram}\label{broadband-spectrogram}
 
@@ -1403,8 +1411,7 @@ TODO crossref SoundEditor
 (with Clizia Welker)
 
 \phantomsection\label{box-spectrogram}
-This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to \emph{segment} (cut up) a speech signal into syllables or phones, and/or need to \emph{transcribe} (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (see §\ref{sec:textbooks}), and see Chapter XX on segmenting and labeling speech. Rob Hagiwara also offers valuable instructions and background on his website at
-\url{https://home.cc.umanitoba.ca/~robh/howto.html}.
+This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to \emph{segment} (cut up) a speech signal into syllables or phones, and/or need to \emph{transcribe} (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\ref{sec:textbooks}), and see Chapter XX on segmenting and labeling speech. Also consult the valuable instructions and background on \href{https://home.cc.umanitoba.ca/~robh/howto.html}{how to read a spectrogram} by Rob Hagiwara.
 
 \begin{quote}
 TODO link to chapter on segmenting and labeling
@@ -1448,6 +1455,8 @@ In CV context, rapid F1 transitions are related to the degree of jaw opening, wi
 In VC contexts we see similar patterns as in CV contexts, but reversed in time.
 
 While \textbf{voiceless consonants} are not characterised by formants (even in an intervocalic context), their place of articulation may be assessed by looking at which frequency regions display a high concentration of energy. Moreover, in CV context, the rapid F2 transitions may seem to travel from the same F2 locus as for corresponding voiced consonants with the same place of articulation, albeit with formants less visible in transitions involving voiceless consonants.
+
+The distinction between voiced and voiceless plosive consonants largely depends on the \textbf{voice onset time (VOT)}, ``defined by the time elapsed between the release of the stop consonant constriction (sometimes called the ``burst'') and the onset of periodicity in the following voiced segment'' \citep{Rubin_2022}. The release or burst is visible as a brief noise segment; the following voiced segment typically has initial formant transitions (see above), and visible glottal pulses or visible harmonics (see above).
 
 In producing \textbf{alveolar} consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial segment {[}s{]} in Fig.\ref{fig:speech-word-spectrogram-broad}. In palatal consonants (such as the final segment in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called `spectral centre of gravity' in the resulting speech is correspondingly lower.
 

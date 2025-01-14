@@ -15,7 +15,7 @@ knitr::include_graphics("figures/merel-spectrogram.png")
 
 In this spectrogram you see an initial steeply falling 'chirp' sound, followed by three repetitions of a two-tone 'syllable', against a background of other birdsong. 
 
-Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\@ref(fig:bandpassfilter)). This bandpass filter was initially set to a low *center frequency*, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single 'line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next 'line' of the figure. This was repeated across the entire range of frequencies^[Thus a spectrograph required several minutes to produce a single spectrogram.]. Moreover, a spectrograph used to have two fixed settings for the *bandwidth* of the band-pass filter (§\@ref(sec:filterbandwidth)): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\@ref(sec:spectralslice)).
+Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\@ref(fig:bandpassfilter)). This bandpass filter was initially set to a low *center frequency*, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single horizontal 'line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next 'line' of the figure. This was repeated across the entire range of frequencies^[Thus a spectrograph required several minutes to produce a single spectrogram.]. Moreover, a spectrograph used to have two fixed settings for the *bandwidth* of the band-pass filter (§\@ref(sec:filterbandwidth)): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\@ref(sec:spectralslice) and see below).
 
 ## Broadband spectrogram
 
@@ -90,8 +90,7 @@ Leave other arguments at their default (standard) values. Click `OK`.
 
 ::: {#box-spectrogram .warningbox}
 
-This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to *segment* (cut up) a speech signal into syllables or phones, and/or need to *transcribe* (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (see §\@ref(sec:textbooks)), and see Chapter XX on segmenting and labeling speech. Rob Hagiwara also offers valuable instructions and background on his website at 
-<https://home.cc.umanitoba.ca/~robh/howto.html>. 
+This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to *segment* (cut up) a speech signal into syllables or phones, and/or need to *transcribe* (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\@ref(sec:textbooks)), and see Chapter XX on segmenting and labeling speech. Also consult the valuable instructions and background on [how to read a spectrogram](https://home.cc.umanitoba.ca/~robh/howto.html) by Rob Hagiwara.  
 
 > TODO link to chapter on segmenting and labeling
 
@@ -129,6 +128,8 @@ In CV context, rapid F1 transitions are related to the degree of jaw opening, wi
 In VC contexts we see similar patterns as in CV contexts, but reversed in time.
 
 While **voiceless consonants** are not characterised by formants (even in an intervocalic context), their place of articulation may be assessed by looking at which frequency regions display a high concentration of energy. Moreover, in CV context, the rapid F2 transitions may seem to travel from the same F2 locus as for corresponding voiced consonants with the same place of articulation, albeit with formants less visible in transitions involving voiceless consonants.
+
+The distinction between voiced and voiceless plosive consonants largely depends on the **voice onset time (VOT)**, "defined by the time elapsed between the release of the stop consonant constriction (sometimes called the “burst”) and the onset of periodicity in the following voiced segment" [@Rubin_2022]. The release or burst is visible as a brief noise segment; the following voiced segment typically has initial formant transitions (see above), and visible glottal pulses or visible harmonics (see above). 
 
 In producing **alveolar** consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial segment [s] in Fig.\@ref(fig:speech-word-spectrogram-broad). In palatal consonants (such as the final segment in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called 'spectral centre of gravity' in the resulting speech is correspondingly lower. 
 

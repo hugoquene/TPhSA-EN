@@ -1,6 +1,6 @@
 # Filtering {#ch-filtering}
 
-*Chapter keywords*: TBA
+*Chapter keywords*: filter, resonance, resonator, Helmholtz, frequency, frequency component, cutoff, slope, bandwidth, emphasis, pre-emphasis, de-emphasis, spectral envelope.
 
 ## Introduction
 
