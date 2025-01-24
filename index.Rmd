@@ -83,11 +83,13 @@ Commands or formulas that you have to type will be shown `in this way` too. (Com
 
 ## Recommended textbooks {#sec:textbooks}
 
-This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by 
+This tutorial is intended to be used in addition to one or more textbooks in phonetics, to which this tutorial will provide additional background knowledge. 
+Some excellent textbooks and introductions in phonetics are those by 
 @Rietveld_VanHeuven_2009 (in Dutch), 
 @Johnson_2012, 
 @Ladefoged_Johnson_2015, 
-@Reetz_Jongman_2020, and 
+@Reetz_Jongman_2020, 
+@Beňuš_2021, and 
 @Zsiga_2024. 
 
 

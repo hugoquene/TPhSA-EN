@@ -16,6 +16,14 @@
   border: 3px solid darkred; 
   border-radius: 5px;
 }
+.smallprintbox {
+  padding: 0.5em;
+  /* background: #FCFCFC; /* very light grey */
+  /* border: 2px solid grey; */
+  /* border-radius: 3px; */
+  font-size: smaller;
+  margin-left: 3em;
+}
 .center {
   text-align: center;
 }

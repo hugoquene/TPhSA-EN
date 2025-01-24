@@ -153,7 +153,7 @@ crossref to 'avoid lossy formats'
 > TBA
 -->
 
-## How to play back a digital sound 
+## How to play back a digital sound {#sec:playback}
 
 Once again, we assume that you use a computer equipped with an analog **output port** for playing back sounds. Check that audio output is audible, using your computer system settings for sound output to your loudspeakers or headphones. 
 
@@ -165,7 +165,7 @@ In the Objects window, select the Sound object(s) that you want to play back. Th
 
 :::
 
-## How to manipulate a digital sound
+## How to manipulate and edit a digital sound
 
 ### Scale 
 
@@ -185,13 +185,61 @@ The amplitude scale factor is chosen so that the average *intensity* of the resu
 
 :::
 
+### Excise part of a sound recording
+
+In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file. 
+`Praat` contains a so-called SoundEditor to perform these tasks. However, reliably delimiting or segmenting a fragment of a speech utterance does require the background knowledge provided in the following chapters --- and practice. Segmenting speech, and using the SoundEditor, will be further discussed in Chapter \@ref(ch-segmentinglabeling). Below are some brief starter instructions. 
+
+::: {#box-soundeditor .praatbox}
+
+- Select an input Sound object in the `Praat` Objects window. 
+
+- Choose `View & Edit`.
+This will open a SoundEditor window.
+Figure Fig.\@ref(fig:window-soundeditor) shows an example of a SoundEditor, displaying the fragment *...a small window to get this...* spoken by a male speaker of American English; the single word *window* is highlighted. 
+
+```{r window-soundeditor, echo=FALSE, fig.cap="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.", fig.align="center"}
+knitr::include_graphics("figures/asmallwindowtogetthis_SoundEditor2050124.png")
+```
+
+::: {#box-windowsfile-details .smallprintbox}
+
+The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
+
+The SoundEditor contains a lot of information! On the top you always see an oscillogram (§\@ref(sec:oscillogram)). Below, there are additional and overlapping visualisations of the Spectrogram (Ch.\@ref(ch-spectrograms)), Pitch, Intensity, Formants (§\@ref(sec:formants)), and voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them `off` by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the `Show` option. 
+
+:::
+
+- In the SoundEditor window, you can select a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.\@ref(fig:window-soundeditor). 
+
+- You can play back the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from `Praat`, consult §\@ref(sec:playback) above.
+
+- In the SoundEditor window, you can use the buttons in the lower left corner to **zoom** `in`, `out`, to zoom out to the entire sound (`all`), or to zoom to the `sel`ected part. 
+- You can also select a part of the recording by specifying the start and end times explicitly: choose `Time > Select...` and enter the start and end times. 
+
+- By convention, the selected part should begin and end at **positive zero crossings** (where the signal changes from negative to positive; see §\@ref(sec:fades) below). You can find these precise places as follows (disregarding shortcuts in `Praat`):
+
+-- put the cursor in the approximate area where the boundary should be located;
+-- choose `Sound > Move cursor to nearest zero crossing`;
+-- ask Praat to report the cursor location in its Info window: `Time : Get cursor`, and note this time;
+-- do this for both start and end of the selection part;
+-- use these noted times to set the selection part as described above. 
+
+In this way, the word *window* was selected in the SoundEditor in Fig.\@ref(fig:window-soundeditor). 
+
+- To save the selected part as a separate audio file: in the SoundEditor, choose `File > Save selected sound as WAV file...`. 
+Provide the appropriate folder and file name, and click `OK`. 
+
+:::
+
 <p>
 
 ::: {#fades .warningbox}
 
-#### Fades {#sec:fades}
+### Fades {#sec:fades}
 
-An abrupt change in amplitude may occur at the beginning and/or at the end of a sound file. Such an abrupt change will be heard as an impulse sound (see §\@ref(sec:impulses)), that is, as a clicking sound. Due to the workings of the ear, this impulse may briefly mask subsequent sounds, i.e., affect the perception of subsequent sounds. In order to avoid these artefacts, it is common practice to enforce a gradual fade-in (at the onset, from zero) and fade-out (to zero). This is especially important if you intend to play back the sound to listeners.
+An abrupt change in amplitude may occur at the beginning and/or at the end of a sound file. Such an abrupt change will be heard as an impulse sound (see §\@ref(sec:impulses)), that is, as a clicking sound. This may happen with speech cut out of a longer speech utterance.
+Due to the workings of the ear, such an impulse may briefly mask subsequent sounds, i.e., affect the perception of subsequent sounds. In order to avoid these artefacts, it is common practice to enforce a gradual fade-in (at the onset, from zero) and fade-out (to zero). This is especially important if you intend to play back the sound to listeners.
 
 :::
 

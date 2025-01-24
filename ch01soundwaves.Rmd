@@ -66,6 +66,13 @@ Thus an oscillogram records the back-and-forth movements of the particles of the
 knitr::include_graphics("figures/speech_word_oscillogram.png")
 ```
 
+
+::: {#box-speechfile-details .smallprintbox}
+
+The oscillogram in Fig.\@ref(fig:speech-oscillogram) shows a fragment of speech, taken from the audio file named  `1-4-17_City_Council_SLASH_1-4-17_City_Council_DOT_mp3_00029.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
+
+:::
+
 Thus an oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure. 
 
 The visualisation in an oscillogram may suggest, misleadingly, that the air particles themselves dance "up and down" (transverse) while the sound wave travels "from left to right", like waves on the surface of a body of water. That is not true: sound in air travels in *longitudinal* sound waves, resulting in the air pressure variations that are visualized in the oscillogram.    
@@ -130,7 +137,7 @@ In the transverse stadium wave, the amplitude could be thought of as the extent 
 
 In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of *intensity*, which is discussed in §\@ref(sec:intensity) below.  
 
-**Study tip**: The sections on amplitude and on intensity (including decibels) are rather difficult. In first pass, just read these sections globally. After having finished the entire chapter (or more), return for a deeper second pass through these sections. Compare the explanations in these sections with those in your textbook, and then return for a third pass through these sections. 
+**Study tip**: The sections on amplitude and on intensity (including decibels) are rather difficult. In first pass, just read these sections globally. After having finished the entire chapter (or more), return for a deeper second pass through these sections. Compare the explanations in these sections with those in your textbook(s), and then return for a third pass through these sections. 
 
 #### RMS amplitude
 

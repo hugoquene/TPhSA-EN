@@ -79,9 +79,9 @@ The different vowels in any language have different formant patterns, and the fi
 For further background on *formants*, see @Aalto_Malinen_Vainio_2018.
 
 
-### How to measure formants {#sec:measureformants}
-
 ::: {#box-praatformants .praatbox}
+
+### How to measure formants {#sec:measureformants}
 
 The safest method for measuring formants is to *bypass* the spectrum, and measure formants directly from a Sound object.
 
@@ -107,7 +107,7 @@ Remember that the results from your formant analysis may be **suspect**:
 
 * if the reported formant bandwidth is large (formant quality is low), 
 
-* if the corresponding *wavelength* of the reported formant frequency (§\@ref(sec:wavelength)) matches one of the dimensions of the recording room: for example, an $F1 \approx 86\ \textrm{Hz}$ may be due to the length of $L=2.00\ \textrm{m}$ of the recording room [for a tube closed at *both* ends, like the room, $Fn=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}$]. 
+* if the corresponding *wavelength* of the reported formant frequency (§\@ref(sec:wavelength)) matches one of the dimensions of the recording room: for example, an $F1 \approx 86\ \textrm{Hz}$ may be due to the length of $L=2.00\ \textrm{m}$ of the recording room [for a tube closed at *both* ends, like the room, $F_n=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}$]. 
 
 For background, see §\@ref(sec:removenontargetsounds) above.
 

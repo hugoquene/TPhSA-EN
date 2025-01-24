@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 14 Jan 2025 21:32}
+\date{Document compiled 25 Jan 2025 00:40}
 
 \begin{document}
 \maketitle
@@ -175,11 +175,13 @@ TODO add structure description and pointers: Part I sounds (acoustics), Part II 
 
 \section{Recommended textbooks}\label{sec:textbooks}
 
-This tutorial is intended to be used in addition to one or more textbook(s) in Phonetics, to which this tutorial will provide additional background knowledge. Some excellent textbooks in Phonetics are those by
+This tutorial is intended to be used in addition to one or more textbooks in phonetics, to which this tutorial will provide additional background knowledge.
+Some excellent textbooks and introductions in phonetics are those by
 \citet{Rietveld_VanHeuven_2009} (in Dutch),
 \citet{Johnson_2012},
 \citet{Ladefoged_Johnson_2015},
-\citet{Reetz_Jongman_2020}, and
+\citet{Reetz_Jongman_2020},
+\citet{Beňuš_2021}, and
 \citet{Zsiga_2024}.
 
 \section*{Details}\label{details}
@@ -287,6 +289,9 @@ Thus an oscillogram records the back-and-forth movements of the particles of the
 \caption{Oscillogram of the word *speech*, with boundaries between segments.}\label{fig:speech-oscillogram}
 \end{figure}
 
+\phantomsection\label{box-speechfile-details}
+The oscillogram in Fig.\ref{fig:speech-oscillogram} shows a fragment of speech, taken from the audio file named \texttt{1-4-17\_City\_Council\_SLASH\_1-4-17\_City\_Council\_DOT\_mp3\_00029.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
+
 Thus an oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure.
 
 The visualisation in an oscillogram may suggest, misleadingly, that the air particles themselves dance ``up and down'' (transverse) while the sound wave travels ``from left to right'', like waves on the surface of a body of water. That is not true: sound in air travels in \emph{longitudinal} sound waves, resulting in the air pressure variations that are visualized in the oscillogram.
@@ -335,7 +340,7 @@ In the transverse stadium wave, the amplitude could be thought of as the extent 
 
 In practice, the amount of energy in a (longitudinal) sound wave is better assessed in the form of \emph{intensity}, which is discussed in §\ref{sec:intensity} below.
 
-\textbf{Study tip}: The sections on amplitude and on intensity (including decibels) are rather difficult. In first pass, just read these sections globally. After having finished the entire chapter (or more), return for a deeper second pass through these sections. Compare the explanations in these sections with those in your textbook, and then return for a third pass through these sections.
+\textbf{Study tip}: The sections on amplitude and on intensity (including decibels) are rather difficult. In first pass, just read these sections globally. After having finished the entire chapter (or more), return for a deeper second pass through these sections. Compare the explanations in these sections with those in your textbook(s), and then return for a third pass through these sections.
 
 \subsubsection{RMS amplitude}\label{rms-amplitude}
 
@@ -782,7 +787,7 @@ For storage, you should save this object as an audio file on your computer's har
   In order to open an audio file from your computer hard disk, from the top menu in the Objects window, choose \texttt{Open\ \textgreater{}\ Read\ from\ file...}, and pick the target audio file.
 \end{itemize}
 
-\section{How to play back a digital sound}\label{how-to-play-back-a-digital-sound}
+\section{How to play back a digital sound}\label{sec:playback}
 
 Once again, we assume that you use a computer equipped with an analog \textbf{output port} for playing back sounds. Check that audio output is audible, using your computer system settings for sound output to your loudspeakers or headphones.
 
@@ -791,7 +796,7 @@ There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from
 \phantomsection\label{box-praatplay}
 In the Objects window, select the Sound object(s) that you want to play back. Then press the \texttt{Play} button in the Objects window. You might interrupt the playback with the \texttt{Esc} key, but this depends on your playback settings (see the paragraphs above). (If you have selected multiple Sound objects, then they will be played consecutively, \emph{without} a pause in between; see §\ref{sec:concatenate}.)
 
-\section{How to manipulate a digital sound}\label{how-to-manipulate-a-digital-sound}
+\section{How to manipulate and edit a digital sound}\label{how-to-manipulate-and-edit-a-digital-sound}
 
 \subsection{Scale}\label{scale}
 
@@ -808,10 +813,68 @@ The amplitude scale factor is chosen so that the maximum sample value is a parti
 \texttt{Modify\ \textgreater{}\ Scale\ intensity...}.\\
 The amplitude scale factor is chosen so that the average \emph{intensity} of the resulting sound is the specified target intensity in dB SPL (see §\ref{sec:intensity}). \texttt{Praat} warns you that the result may contain clipped samples, with amplitude values exceeding the maximum possible value. Such clipped samples will lead to distorted sound when played back.
 
-\phantomsection\label{fades}
-\subsubsection{Fades}\label{sec:fades}
+\subsection{Excise part of a sound recording}\label{excise-part-of-a-sound-recording}
 
-An abrupt change in amplitude may occur at the beginning and/or at the end of a sound file. Such an abrupt change will be heard as an impulse sound (see §\ref{sec:impulses}), that is, as a clicking sound. Due to the workings of the ear, this impulse may briefly mask subsequent sounds, i.e., affect the perception of subsequent sounds. In order to avoid these artefacts, it is common practice to enforce a gradual fade-in (at the onset, from zero) and fade-out (to zero). This is especially important if you intend to play back the sound to listeners.
+In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file.
+\texttt{Praat} contains a so-called SoundEditor to perform these tasks. However, reliably delimiting or segmenting a fragment of a speech utterance does require the background knowledge provided in the following chapters --- and practice. Segmenting speech, and using the SoundEditor, will be further discussed in Chapter \ref{ch-segmentinglabeling}. Below are some brief starter instructions.
+
+\phantomsection\label{box-soundeditor}
+\begin{itemize}
+\item
+  Select an input Sound object in the \texttt{Praat} Objects window.
+\item
+  Choose \texttt{View\ \&\ Edit}.
+  This will open a SoundEditor window.
+  Figure Fig.\ref{fig:window-soundeditor} shows an example of a SoundEditor, displaying the fragment \emph{\ldots a small window to get this\ldots{}} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{figures/asmallwindowtogetthis_SoundEditor2050124} 
+
+}
+
+\caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor}
+\end{figure}
+
+\phantomsection\label{box-windowsfile-details}
+The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
+
+The SoundEditor contains a lot of information! On the top you always see an oscillogram (§\ref{sec:oscillogram}). Below, there are additional and overlapping visualisations of the Spectrogram (Ch.\ref{ch-spectrograms}), Pitch, Intensity, Formants (§\ref{sec:formants}), and voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them \texttt{off} by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the \texttt{Show} option.
+
+\begin{itemize}
+\item
+  In the SoundEditor window, you can select a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.\ref{fig:window-soundeditor}.
+\item
+  You can play back the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from \texttt{Praat}, consult §\ref{sec:playback} above.
+\item
+  In the SoundEditor window, you can use the buttons in the lower left corner to \textbf{zoom} \texttt{in}, \texttt{out}, to zoom out to the entire sound (\texttt{all}), or to zoom to the \texttt{sel}ected part.
+\item
+  You can also select a part of the recording by specifying the start and end times explicitly: choose \texttt{Time\ \textgreater{}\ Select...} and enter the start and end times.
+\item
+  By convention, the selected part should begin and end at \textbf{positive zero crossings} (where the signal changes from negative to positive; see §\ref{sec:fades} below). You can find these precise places as follows (disregarding shortcuts in \texttt{Praat}):
+\end{itemize}
+
+-- put the cursor in the approximate area where the boundary should be located;
+-- choose \texttt{Sound\ \textgreater{}\ Move\ cursor\ to\ nearest\ zero\ crossing};
+-- ask Praat to report the cursor location in its Info window: \texttt{Time\ :\ Get\ cursor}, and note this time;
+-- do this for both start and end of the selection part;
+-- use these noted times to set the selection part as described above.
+
+In this way, the word \emph{window} was selected in the SoundEditor in Fig.\ref{fig:window-soundeditor}.
+
+\begin{itemize}
+\tightlist
+\item
+  To save the selected part as a separate audio file: in the SoundEditor, choose \texttt{File\ \textgreater{}\ Save\ selected\ sound\ as\ WAV\ file...}.
+  Provide the appropriate folder and file name, and click \texttt{OK}.
+\end{itemize}
+
+\phantomsection\label{fades}
+\subsection{Fades}\label{sec:fades}
+
+An abrupt change in amplitude may occur at the beginning and/or at the end of a sound file. Such an abrupt change will be heard as an impulse sound (see §\ref{sec:impulses}), that is, as a clicking sound. This may happen with speech cut out of a longer speech utterance.
+Due to the workings of the ear, such an impulse may briefly mask subsequent sounds, i.e., affect the perception of subsequent sounds. In order to avoid these artefacts, it is common practice to enforce a gradual fade-in (at the onset, from zero) and fade-out (to zero). This is especially important if you intend to play back the sound to listeners.
 
 \phantomsection\label{box-praatfades}
 These smooth fades can be made in \texttt{Praat} by choosing \texttt{Modify\ \textgreater{}\ Fade\ in...} and \texttt{Modify\ \textgreater{}\ Fade\ out...}, with a fade duration of about 0.005 to 0.010 second. Samples affected by the fade are multiplied with a factor increasing from 0 to 1 during fade-in, or decreasing from 1 to 0 during fade-out.
@@ -1233,9 +1296,9 @@ The different vowels in any language have different formant patterns, and the fi
 
 For further background on \emph{formants}, see \citet{Aalto_Malinen_Vainio_2018}.
 
+\phantomsection\label{box-praatformants}
 \subsection{How to measure formants}\label{sec:measureformants}
 
-\phantomsection\label{box-praatformants}
 The safest method for measuring formants is to \emph{bypass} the spectrum, and measure formants directly from a Sound object.
 
 \begin{itemize}
@@ -1261,7 +1324,7 @@ Remember that the results from your formant analysis may be \textbf{suspect}:
 \item
   if the reported formant bandwidth is large (formant quality is low),
 \item
-  if the corresponding \emph{wavelength} of the reported formant frequency (§\ref{sec:wavelength}) matches one of the dimensions of the recording room: for example, an \(F1 \approx 86\ \textrm{Hz}\) may be due to the length of \(L=2.00\ \textrm{m}\) of the recording room {[}for a tube closed at \emph{both} ends, like the room, \(Fn=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}\){]}.
+  if the corresponding \emph{wavelength} of the reported formant frequency (§\ref{sec:wavelength}) matches one of the dimensions of the recording room: for example, an \(F1 \approx 86\ \textrm{Hz}\) may be due to the length of \(L=2.00\ \textrm{m}\) of the recording room {[}for a tube closed at \emph{both} ends, like the room, \(F_n=(n/2)\cdot(c/2.00)) \approx 86\ \textrm{Hz}\){]}.
 \end{itemize}
 
 For background, see §\ref{sec:removenontargetsounds} above.
@@ -1313,7 +1376,7 @@ Because the egressive airstream from the lungs is used to drive the phonation at
 
 \chapter{Spectrograms}\label{ch-spectrograms}
 
-\emph{Chapter keywords}: spectrogram, center frequency, bandwidth, broadband, narrowband, detail, smearing, formant.
+\emph{Chapter keywords}: spectrogram, center frequency, bandwidth, broadband, narrowband, detail, smearing, formant, amplitude, frequency, time, component, harmonic, glottal pulse.
 
 \section{Introduction}\label{sec:spectrogram-intro}
 
@@ -1472,19 +1535,64 @@ While \textbf{voiceless consonants} are not characterised by formants (even in a
 
 The distinction between voiced and voiceless plosive consonants largely depends on the \textbf{voice onset time (VOT)}, ``defined by the time elapsed between the release of the stop consonant constriction (sometimes called the ``burst'') and the onset of periodicity in the following voiced segment'' \citep{Rubin_2022}. The release or burst is visible as a brief noise segment; the following voiced segment typically has initial formant transitions (see above), and visible glottal pulses or visible harmonics (see above).
 
-In producing \textbf{alveolar} consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial segment {[}s{]} in Fig.\ref{fig:speech-word-spectrogram-broad}. In palatal consonants (such as the final segment in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called `spectral centre of gravity' in the resulting speech is correspondingly lower.
+In producing \textbf{alveolar} consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial consonant {[}s{]} in Fig.\ref{fig:speech-word-spectrogram-broad}. In \textbf{palatal} consonants (such as the final consonant in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called `spectral centre of gravity' in the resulting consonant is correspondingly lower.
 
-\textbf{Nasal and lateral} consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators).
+\textbf{Nasal and lateral} consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to the acoustic \emph{coupling} between branching cavities.
 
 For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.
 
 \chapter{Segmenting and labeling speech sounds}\label{ch-segmentinglabeling}
 
-\emph{Chapter keywords}: TODO .
+\begin{quote}
+TODO expand keywords
+\end{quote}
+
+\emph{Chapter keywords}: phonetics, linguistic units, coarticulation.
+
+\section{Introduction}\label{introduction-1}
+
+Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called \textbf{coarticulation}, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive \emph{handwriting}.
+
+The complex relation between linguistic and spoken units is illustrated in Figure XX. Boundaries between linguistic units are not clearly present, due to coarticulation, some units have no acoustic manifestation at all, and some units are difficult to identify or transcribe, once again due to coarticulation.
 
 \begin{quote}
-TODO add text here
+TODO insert figure here
 \end{quote}
+
+Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. Thus segmenting and labeling speech addresses the core issue in phonetics, viz.~how abstract linguistic units and meanings are related to their concrete physical realization, both in production and in perception of spoken language.
+
+In this chapter, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
+
+\phantomsection\label{box-praattextgrid}
+\section{TextGrid objects}\label{textgrid-objects}
+
+\texttt{Praat} has a special type of object for annotation, called a \textbf{TextGrid}. A \texttt{TextGrid} object may contain multiple layers, or \texttt{tiers}, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g.~the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:
+
+\begin{itemize}
+\item
+  \texttt{interval\ tiers} containing time intervals (corresponding with e.g.~words, phones, utterances); these intervals have boundaries and they may have labels, and
+\item
+  \texttt{point\ tiers} containing time points (e.g.~moments of intensity peaks); these points have a single time point (moment) and they may have labels.
+\end{itemize}
+
+As explained in the \texttt{Praat} tutorial on annotation (in the Help system), the easiest way to create a TextGrid matching a Sound recording is as follows:
+
+\begin{itemize}
+\item
+  Select an input Sound object in the \texttt{Praat} Objects window.
+\item
+  Choose \texttt{Annotate\ \textgreater{}} and then \texttt{To\ TextGrid...}.
+\item
+  In the subsequent menu (Sound to TextGrid), just type the names of the respective tiers, separated by blanks only, e.g.~\texttt{word\ phone}. (You can later rename the tiers.)
+\item
+  In the same menu, specify which of the tiers are \texttt{point\ tiers}, by typing the names (again) of the point tiers. Tiers not mentioned as point tiers will be created as \texttt{interval\ tiers}. (See above for the distinction between these two kinds of tiers.) Then click \texttt{OK}.
+\item
+  The resulting TextGrid object is again added at the bottom of the list of objects. The TextGrid object has the same begin and end times as the Sound from which it was created, and it will have the tier(s) as specified, but there will be no information yet within the tier(s).
+\item
+  You may \texttt{Draw} or \texttt{Tabulate} or interactively \texttt{Query} or \texttt{Modify} the contents of the TextGrid. (Choose \texttt{Modify} to rename tiers.)
+\item
+  Remember to \texttt{Save} the TextGrid object if you wish.
+\end{itemize}
 
 \section{Segmenting speech}\label{segmenting-speech}
 

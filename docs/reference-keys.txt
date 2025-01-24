@@ -2,6 +2,7 @@ fig:speech-oscillogram
 fig:example-oscillogram
 tab:decibels
 fig:example-wavelength
+fig:window-soundeditor
 fig:fourier-oscillogram
 fig:complex100n200n400
 fig:speech-spectralslice
@@ -59,11 +60,12 @@ on-your-computer-using-praat
 sec:praatrecord
 sec:praatsave
 sec:praatopen
-how-to-play-back-a-digital-sound
-how-to-manipulate-a-digital-sound
+sec:playback
+how-to-manipulate-and-edit-a-digital-sound
 scale
 scale-amplitude
 scale-intensity
+excise-part-of-a-sound-recording
 sec:fades
 sec:concatenate
 complex-sounds-and-spectra
@@ -103,6 +105,8 @@ to-spectrogram-directly
 from-soundeditor
 how-to-read-a-spectrogram
 ch-segmentinglabeling
+introduction-1
+textgrid-objects
 segmenting-speech
 how-to-segment-speech-in-praat
 labeling-speech-sounds

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Segmenting and labeling speech sounds | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 7 Segmenting and labeling speech sounds | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Segmenting and labeling speech sounds | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 7 Segmenting and labeling speech sounds | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="github-repo" content="rstudio/TPhSA" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Segmenting and labeling speech sounds | Tutorial on Phonetics and Speech Analysis" />
+  
+  <meta name="twitter:description" content="Chapter 7 Segmenting and labeling speech sounds | Tutorial on Phonetics and Speech Analysis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-spectrograms.html"/>
+<link rel="next" href="ch-prosody.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Tutorial on Phonetics and Speech Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aims"><i class="fa fa-check"></i>Aims</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#under-construction"><i class="fa fa-check"></i>Under construction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-tutorial"><i class="fa fa-check"></i>How to use this tutorial</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-software"><i class="fa fa-check"></i>Recommended software</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#sec:textbooks"><i class="fa fa-check"></i><b>0.1</b> Recommended textbooks</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part I: Sounds</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html"><i class="fa fa-check"></i><b>1</b> Sound waves</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sound"><i class="fa fa-check"></i><b>1.1</b> Sound</a></li>
+<li class="chapter" data-level="1.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:soundwave"><i class="fa fa-check"></i><b>1.2</b> Sound wave</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#acoustic-media"><i class="fa fa-check"></i><b>1.3</b> Acoustic media</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:speedofsound"><i class="fa fa-check"></i><b>1.4</b> The speed of sound</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:pressure"><i class="fa fa-check"></i><b>1.5</b> Pressure</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i>Questions</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
+<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:periodicity"><i class="fa fa-check"></i><b>1.7</b> Periodic and aperiodic sounds</a></li>
+<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:keypropertiessound"><i class="fa fa-check"></i><b>1.8</b> Key properties of a sound wave</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8.1</b> Frequency</a></li>
+<li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
+<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
+<li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
+<li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#how-to-draw-an-oscillogram"><i class="fa fa-check"></i><b>1.10</b> How to draw an oscillogram</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#open-an-audio-file"><i class="fa fa-check"></i><b>1.10.1</b> Open an audio file</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:ADCoverview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#key-parameters-in-ad-conversion"><i class="fa fa-check"></i><b>2.3</b> Key parameters in AD conversion</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:samplingfrequency"><i class="fa fa-check"></i><b>2.3.1</b> Sampling frequency</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#amplitude-resolution"><i class="fa fa-check"></i><b>2.3.2</b> Amplitude resolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
+<ul>
+<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:playback"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
+<li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-and-edit-a-digital-sound"><i class="fa fa-check"></i><b>2.6</b> How to manipulate and edit a digital sound</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#scale"><i class="fa fa-check"></i><b>2.6.1</b> Scale</a></li>
+<li class="chapter" data-level="2.6.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#excise-part-of-a-sound-recording"><i class="fa fa-check"></i><b>2.6.2</b> Excise part of a sound recording</a></li>
+<li class="chapter" data-level="2.6.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:fades"><i class="fa fa-check"></i><b>2.6.3</b> Fades</a></li>
+<li class="chapter" data-level="2.6.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.6.4</b> Concatenate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:FTintro"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
+<ul>
+<li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum</a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectralslice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
+<li class="chapter" data-level="3.3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:impulses"><i class="fa fa-check"></i><b>3.3.2</b> Impulses</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:envelope"><i class="fa fa-check"></i><b>3.4</b> Envelope</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:filterbandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:emphasisfilters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter"><i class="fa fa-check"></i><b>4.4.1</b> How to apply a (pre|de)emphasis filter</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part II: Speech</b></span></li>
+<li class="chapter" data-level="5" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html"><i class="fa fa-check"></i><b>5</b> Speech sounds</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:measureformants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:sourcefilter"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:vowelproduction"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html"><i class="fa fa-check"></i><b>6</b> Spectrograms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#from-soundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html"><i class="fa fa-check"></i><b>7</b> Segmenting and labeling speech sounds</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#textgrid-objects"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#segmenting-speech"><i class="fa fa-check"></i><b>7.3</b> Segmenting speech</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-segment-speech-in-praat"><i class="fa fa-check"></i><b>7.3.1</b> How to segment speech in <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#labeling-speech-sounds"><i class="fa fa-check"></i><b>7.4</b> Labeling speech sounds</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-label-speech-sounds-in-praat"><i class="fa fa-check"></i><b>7.4.1</b> How to label speech sounds in <code>Praat</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-in-speech"><i class="fa fa-check"></i><b>8.1</b> Pauses in speech</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.2</b> Durations</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#pitch"><i class="fa fa-check"></i><b>8.3</b> Pitch</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity"><i class="fa fa-check"></i><b>8.4</b> Intensity</a></li>
+<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.5</b> Stresses and accents</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial on Phonetics and Speech Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-segmentinglabeling" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Segmenting and labeling speech sounds<a href="ch-segmentinglabeling.html#ch-segmentinglabeling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>TODO expand keywords</p>
+</blockquote>
+<p><em>Chapter keywords</em>: phonetics, linguistic units, coarticulation.</p>
+<div id="introduction-1" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Introduction<a href="ch-segmentinglabeling.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called <strong>coarticulation</strong>, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive <em>handwriting</em>.</p>
+<p>The complex relation between linguistic and spoken units is illustrated in Figure XX. Boundaries between linguistic units are not clearly present, due to coarticulation, some units have no acoustic manifestation at all, and some units are difficult to identify or transcribe, once again due to coarticulation.</p>
+<blockquote>
+<p>TODO insert figure here</p>
+</blockquote>
+<p>Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. Thus segmenting and labeling speech addresses the core issue in phonetics, viz. how abstract linguistic units and meanings are related to their concrete physical realization, both in production and in perception of spoken language.</p>
+<p>In this chapter, we discuss <strong>segments</strong>, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss <strong>labels</strong> (transcription), and thus we assume also that that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).</p>
+</div>
+<div id="box-praattextgrid" class="praatbox">
+<div id="textgrid-objects" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> TextGrid objects<a href="ch-segmentinglabeling.html#textgrid-objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Praat</code> has a special type of object for annotation, called a <strong>TextGrid</strong>. A <code>TextGrid</code> object may contain multiple layers, or <code>tiers</code>, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g. the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:</p>
+<ul>
+<li><p><code>interval tiers</code> containing time intervals (corresponding with e.g. words, phones, utterances); these intervals have boundaries and they may have labels, and</p></li>
+<li><p><code>point tiers</code> containing time points (e.g. moments of intensity peaks); these points have a single time point (moment) and they may have labels.</p></li>
+</ul>
+<p>As explained in the <code>Praat</code> tutorial on annotation (in the Help system), the easiest way to create a TextGrid matching a Sound recording is as follows:</p>
+<ul>
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window.</p></li>
+<li><p>Choose <code>Annotate &gt;</code> and then <code>To TextGrid...</code>.</p></li>
+<li><p>In the subsequent menu (Sound to TextGrid), just type the names of the respective tiers, separated by blanks only, e.g. <code>word phone</code>. (You can later rename the tiers.)</p></li>
+<li><p>In the same menu, specify which of the tiers are <code>point tiers</code>, by typing the names (again) of the point tiers. Tiers not mentioned as point tiers will be created as <code>interval tiers</code>. (See above for the distinction between these two kinds of tiers.) Then click <code>OK</code>.</p></li>
+<li><p>The resulting TextGrid object is again added at the bottom of the list of objects. The TextGrid object has the same begin and end times as the Sound from which it was created, and it will have the tier(s) as specified, but there will be no information yet within the tier(s).</p></li>
+<li><p>You may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> or <code>Modify</code> the contents of the TextGrid. (Choose <code>Modify</code> to rename tiers.)</p></li>
+<li><p>Remember to <code>Save</code> the TextGrid object if you wish.</p></li>
+</ul>
+</div>
+</div>
+<div id="segmenting-speech" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Segmenting speech<a href="ch-segmentinglabeling.html#segmenting-speech" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="how-to-segment-speech-in-praat" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> How to segment speech in <code>Praat</code><a href="ch-segmentinglabeling.html#how-to-segment-speech-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="labeling-speech-sounds" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Labeling speech sounds<a href="ch-segmentinglabeling.html#labeling-speech-sounds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="how-to-label-speech-sounds-in-praat" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> How to label speech sounds in <code>Praat</code><a href="ch-segmentinglabeling.html#how-to-label-speech-sounds-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-spectrograms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-prosody.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch07segmentinglabeling.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

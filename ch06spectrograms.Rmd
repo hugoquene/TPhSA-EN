@@ -1,6 +1,6 @@
 # Spectrograms {#ch-spectrograms}
 
-*Chapter keywords*: spectrogram, center frequency, bandwidth, broadband, narrowband, detail, smearing, formant. 
+*Chapter keywords*: spectrogram, center frequency, bandwidth, broadband, narrowband, detail, smearing, formant, amplitude, frequency, time, component, harmonic, glottal pulse.  
 
 ## Introduction {#sec:spectrogram-intro}
 
@@ -131,8 +131,8 @@ While **voiceless consonants** are not characterised by formants (even in an int
 
 The distinction between voiced and voiceless plosive consonants largely depends on the **voice onset time (VOT)**, "defined by the time elapsed between the release of the stop consonant constriction (sometimes called the “burst”) and the onset of periodicity in the following voiced segment" [@Rubin_2022]. The release or burst is visible as a brief noise segment; the following voiced segment typically has initial formant transitions (see above), and visible glottal pulses or visible harmonics (see above). 
 
-In producing **alveolar** consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial segment [s] in Fig.\@ref(fig:speech-word-spectrogram-broad). In palatal consonants (such as the final segment in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called 'spectral centre of gravity' in the resulting speech is correspondingly lower. 
+In producing **alveolar** consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial consonant [s] in Fig.\@ref(fig:speech-word-spectrogram-broad). In **palatal** consonants (such as the final consonant in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called 'spectral centre of gravity' in the resulting consonant is correspondingly lower. 
 
-**Nasal and lateral** consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to frequencies being actively attenuated (as a result of the acoustic coupling between branching resonators). 
+**Nasal and lateral** consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to the acoustic *coupling* between branching cavities. 
 
 For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section. 

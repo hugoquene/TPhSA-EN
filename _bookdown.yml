@@ -6,6 +6,8 @@ rmd_files: ["index.Rmd",
             "ch04filtering.Rmd",
             "ch05speechsounds.Rmd",
             "ch06spectrograms.Rmd",
+            "ch07segmentinglabeling.Rmd",
+            "ch08prosody.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 language:

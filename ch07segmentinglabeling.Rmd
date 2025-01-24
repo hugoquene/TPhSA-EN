@@ -1,0 +1,51 @@
+# Segmenting and labeling speech sounds {#ch-segmentinglabeling}
+
+> TODO expand keywords
+
+*Chapter keywords*: phonetics, linguistic units, coarticulation.  
+
+## Introduction
+
+Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called **coarticulation**, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive *handwriting*. 
+
+The complex relation between linguistic and spoken units is illustrated in Figure XX. Boundaries between linguistic units are not clearly present, due to coarticulation, some units have no acoustic manifestation at all, and some units are difficult to identify or transcribe, once again due to coarticulation. 
+
+> TODO insert figure here
+
+Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. Thus segmenting and labeling speech addresses the core issue in phonetics, viz. how abstract linguistic units and meanings are related to their concrete physical realization, both in production and in perception of spoken language. 
+
+In this chapter, we discuss **segments**, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss **labels** (transcription), and thus we assume also that that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes). 
+
+::: {#box-praattextgrid .praatbox}
+
+## TextGrid objects
+
+`Praat` has a special type of object for annotation, called a **TextGrid**. A `TextGrid` object may contain multiple layers, or `tiers`, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g. the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:
+
+- `interval tiers` containing time intervals (corresponding with e.g. words, phones, utterances); these intervals have boundaries and they may have labels, and 
+
+- `point tiers` containing time points (e.g. moments of intensity peaks); these points have a single time point (moment) and they may have labels. 
+
+As explained in the `Praat` tutorial on annotation (in the Help system), the easiest way to create a TextGrid matching a Sound recording is as follows:
+
+- Select an input Sound object in the `Praat` Objects window. 
+- Choose `Annotate >` and then `To TextGrid...`.  
+
+- In the subsequent menu (Sound to TextGrid), just type the names of the respective tiers, separated by blanks only, e.g. `word phone`. (You can later rename the tiers.) 
+
+- In the same menu, specify which of the tiers are `point tiers`, by typing the names (again) of the point tiers. Tiers not mentioned as point tiers will be created as `interval tiers`. (See above for the distinction between these two kinds of tiers.) Then click `OK`.
+
+- The resulting TextGrid object is again added at the bottom of the list of objects. The TextGrid object has the same begin and end times as the Sound from which it was created, and it will have the tier(s) as specified, but there will be no information yet within the tier(s). 
+
+- You may `Draw` or `Tabulate` or interactively `Query` or `Modify` the contents of the TextGrid. (Choose `Modify` to rename tiers.)
+
+- Remember to `Save` the TextGrid object if you wish. 
+:::
+
+## Segmenting speech
+
+### How to segment speech in `Praat`
+
+## Labeling speech sounds
+
+### How to label speech sounds in `Praat`
