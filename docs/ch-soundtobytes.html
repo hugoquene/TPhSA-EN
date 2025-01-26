@@ -441,13 +441,17 @@ The amplitude scale factor is chosen so that the average <em>intensity</em> of t
 <div id="excise-part-of-a-sound-recording" class="section level3 hasAnchor" number="2.6.2">
 <h3><span class="header-section-number">2.6.2</span> Excise part of a sound recording<a href="ch-soundtobytes.html#excise-part-of-a-sound-recording" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file.
-<code>Praat</code> contains a so-called SoundEditor to perform these tasks. However, reliably delimiting or segmenting a fragment of a speech utterance does require the background knowledge provided in the following chapters — and practice. Segmenting speech, and using the SoundEditor, will be further discussed in Chapter <a href="ch-segmentinglabeling.html#ch-segmentinglabeling">7</a>. Below are some brief starter instructions.</p>
+<code>Praat</code> contains a so-called SoundEditor to perform these tasks.</p>
+<div id="box-segmenting" class="warningbox">
+<p>Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters — and practice. Segmenting speech, and using the SoundEditor, will also be discussed in Chapter <a href="ch-segmentinglabeling.html#ch-segmentinglabeling">7</a>. Below are some brief starter instructions.</p>
+</div>
+<P>
 <div id="box-soundeditor" class="praatbox">
 <ul>
 <li><p>Select an input Sound object in the <code>Praat</code> Objects window.</p></li>
 <li><p>Choose <code>View &amp; Edit</code>.
 This will open a SoundEditor window.
-Figure Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows an example of a SoundEditor, displaying the fragment <em>…a small window to get this…</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.</p></li>
+Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows an example of a SoundEditor, displaying the fragment <em>…a small window to get this…</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.</p></li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor"></span>
 <img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted."  />
@@ -457,24 +461,30 @@ Figure 2.1: SoundEditor window, showing oscillogram and spectrogram of the fragm
 </div>
 <div id="box-windowsfile-details" class="smallprintbox">
 <p>The SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.</p>
-<p>The SoundEditor contains a lot of information! On the top you always see an oscillogram (§<a href="ch-soundwaves.html#sec:oscillogram">1.6</a>). Below, there are additional and overlapping visualisations of the Spectrogram (Ch.<a href="ch-spectrograms.html#ch-spectrograms">6</a>), Pitch, Intensity, Formants (§<a href="ch-speechsounds.html#sec:formants">5.2</a>), and voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them <code>off</code> by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the <code>Show</code> option.</p>
 </div>
+<p>The SoundEditor contains a lot of information! In the top panel you always see an oscillogram (§<a href="ch-soundwaves.html#sec:oscillogram">1.6</a>). Below, there may be additional and overlapping visualisations of the Spectrogram (Ch.<a href="ch-spectrograms.html#ch-spectrograms">6</a>), Pitch, Intensity, Formants (§<a href="ch-speechsounds.html#sec:formants">5.2</a>), and/or voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them <code>off</code> by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the <code>Show</code> option.</p>
 <ul>
-<li><p>In the SoundEditor window, you can select a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p></li>
-<li><p>You can play back the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from <code>Praat</code>, consult §<a href="ch-soundtobytes.html#sec:playback">2.5</a> above.</p></li>
+<li><p>In the SoundEditor window, you can <strong>select</strong> a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p></li>
+<li><p>You can <strong>play back</strong> the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from <code>Praat</code>, consult §<a href="ch-soundtobytes.html#sec:playback">2.5</a> above.</p></li>
 <li><p>In the SoundEditor window, you can use the buttons in the lower left corner to <strong>zoom</strong> <code>in</code>, <code>out</code>, to zoom out to the entire sound (<code>all</code>), or to zoom to the <code>sel</code>ected part.</p></li>
 <li><p>You can also select a part of the recording by specifying the start and end times explicitly: choose <code>Time &gt; Select...</code> and enter the start and end times.</p></li>
 <li><p>By convention, the selected part should begin and end at <strong>positive zero crossings</strong> (where the signal changes from negative to positive; see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> below). You can find these precise places as follows (disregarding shortcuts in <code>Praat</code>):</p></li>
 </ul>
+<blockquote>
+<p>TODO level 2 list</p>
+</blockquote>
 <p>– put the cursor in the approximate area where the boundary should be located;
 – choose <code>Sound &gt; Move cursor to nearest zero crossing</code>;
 – ask Praat to report the cursor location in its Info window: <code>Time : Get cursor</code>, and note this time;
 – do this for both start and end of the selection part;
 – use these noted times to set the selection part as described above.</p>
-<p>In this way, the word <em>window</em> was selected in the SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p>
 <ul>
-<li>To save the selected part as a separate audio file: in the SoundEditor, choose <code>File &gt; Save selected sound as WAV file...</code>.
-Provide the appropriate folder and file name, and click <code>OK</code>.</li>
+<li><p>In this way, the word <em>window</em> was selected in the SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p></li>
+<li><p>To <strong>save</strong> the selected part as a separate audio file: in the SoundEditor, choose <code>File &gt; Save selected sound as WAV file...</code>.
+Provide the appropriate folder and file name, and click <code>OK</code>.</p></li>
+<li><p>You may also <strong>extract</strong> the selected part into a new Sound object in <code>Praat</code>. In the SoundEditor window, choose <code>Sound &gt; Extract selected sound (preserve times)</code> if you wish to maintain the same times as in your source recording: the new Sound object will have a starting time equal to the starting time of the selection in the source recording. If you want your new Sound to start at zero, then choose <code>Sound &gt; Extract selected sound (time from 0)</code>.</p></li>
+<li><p>The new Sound object may need a fade-in and fade-out (see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> below).</p></li>
+<li><p>Remember to save this new Sound object (see §<a href="ch-soundtobytes.html#sec:praatsave">2.4.4.2</a>) if you wish to keep it.</p></li>
 </ul>
 </div>
 <p>

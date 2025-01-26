@@ -65,14 +65,14 @@
 \contentsline {subsubsection}{\numberline {2.6.1.1}Scale amplitude}{38}{subsubsection.2.6.1.1}%
 \contentsline {subsubsection}{\numberline {2.6.1.2}Scale intensity}{38}{subsubsection.2.6.1.2}%
 \contentsline {subsection}{\numberline {2.6.2}Excise part of a sound recording}{39}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Fades}{40}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.3}Fades}{41}{subsection.2.6.3}%
 \contentsline {subsection}{\numberline {2.6.4}Concatenate}{41}{subsection.2.6.4}%
 \contentsline {chapter}{\numberline {3}Complex sounds and spectra}{43}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction}{43}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Timbre}{44}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Spectrum}{45}{section.3.2}%
-\contentsline {subsection}{Questions}{46}{section*.48}%
-\contentsline {subsubsection}{Question 3.1}{46}{section*.49}%
+\contentsline {subsection}{Questions}{46}{section*.49}%
+\contentsline {subsubsection}{Question 3.1}{46}{section*.50}%
 \contentsline {subsection}{\numberline {3.2.1}How to obtain a spectrum}{46}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}How to obtain a spectral `slice'}{46}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Spectra of aperiodic sounds}{47}{section.3.3}%
@@ -88,7 +88,7 @@
 \contentsline {subsection}{\numberline {4.3.3}Bandwidth}{54}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}Emphasis filters}{55}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}How to apply a (pre\textbar de)emphasis filter}{55}{subsection.4.4.1}%
-\contentsline {part}{Part II: Speech}{59}{part*.53}%
+\contentsline {part}{Part II: Speech}{59}{part*.54}%
 \contentsline {chapter}{\numberline {5}Speech sounds}{59}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Resonance}{59}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Formants}{61}{section.5.2}%

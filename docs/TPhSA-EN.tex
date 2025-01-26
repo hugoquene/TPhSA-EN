@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 25 Jan 2025 00:40}
+\date{Document compiled 26 Jan 2025 22:12}
 
 \begin{document}
 \maketitle
@@ -816,7 +816,10 @@ The amplitude scale factor is chosen so that the average \emph{intensity} of the
 \subsection{Excise part of a sound recording}\label{excise-part-of-a-sound-recording}
 
 In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file.
-\texttt{Praat} contains a so-called SoundEditor to perform these tasks. However, reliably delimiting or segmenting a fragment of a speech utterance does require the background knowledge provided in the following chapters --- and practice. Segmenting speech, and using the SoundEditor, will be further discussed in Chapter \ref{ch-segmentinglabeling}. Below are some brief starter instructions.
+\texttt{Praat} contains a so-called SoundEditor to perform these tasks.
+
+\phantomsection\label{box-segmenting}
+Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech, and using the SoundEditor, will also be discussed in Chapter \ref{ch-segmentinglabeling}. Below are some brief starter instructions.
 
 \phantomsection\label{box-soundeditor}
 \begin{itemize}
@@ -825,7 +828,7 @@ In many projects, we wish to excise (cut out) a part of a recording, and save th
 \item
   Choose \texttt{View\ \&\ Edit}.
   This will open a SoundEditor window.
-  Figure Fig.\ref{fig:window-soundeditor} shows an example of a SoundEditor, displaying the fragment \emph{\ldots a small window to get this\ldots{}} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
+  Figure \ref{fig:window-soundeditor} shows an example of a SoundEditor, displaying the fragment \emph{\ldots a small window to get this\ldots{}} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
 \end{itemize}
 
 \begin{figure}
@@ -840,13 +843,13 @@ In many projects, we wish to excise (cut out) a part of a recording, and save th
 \phantomsection\label{box-windowsfile-details}
 The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
 
-The SoundEditor contains a lot of information! On the top you always see an oscillogram (§\ref{sec:oscillogram}). Below, there are additional and overlapping visualisations of the Spectrogram (Ch.\ref{ch-spectrograms}), Pitch, Intensity, Formants (§\ref{sec:formants}), and voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them \texttt{off} by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the \texttt{Show} option.
+The SoundEditor contains a lot of information! In the top panel you always see an oscillogram (§\ref{sec:oscillogram}). Below, there may be additional and overlapping visualisations of the Spectrogram (Ch.\ref{ch-spectrograms}), Pitch, Intensity, Formants (§\ref{sec:formants}), and/or voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them \texttt{off} by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the \texttt{Show} option.
 
 \begin{itemize}
 \item
-  In the SoundEditor window, you can select a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.\ref{fig:window-soundeditor}.
+  In the SoundEditor window, you can \textbf{select} a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.\ref{fig:window-soundeditor}.
 \item
-  You can play back the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from \texttt{Praat}, consult §\ref{sec:playback} above.
+  You can \textbf{play back} the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from \texttt{Praat}, consult §\ref{sec:playback} above.
 \item
   In the SoundEditor window, you can use the buttons in the lower left corner to \textbf{zoom} \texttt{in}, \texttt{out}, to zoom out to the entire sound (\texttt{all}), or to zoom to the \texttt{sel}ected part.
 \item
@@ -855,19 +858,28 @@ The SoundEditor contains a lot of information! On the top you always see an osci
   By convention, the selected part should begin and end at \textbf{positive zero crossings} (where the signal changes from negative to positive; see §\ref{sec:fades} below). You can find these precise places as follows (disregarding shortcuts in \texttt{Praat}):
 \end{itemize}
 
+\begin{quote}
+TODO level 2 list
+\end{quote}
+
 -- put the cursor in the approximate area where the boundary should be located;
 -- choose \texttt{Sound\ \textgreater{}\ Move\ cursor\ to\ nearest\ zero\ crossing};
 -- ask Praat to report the cursor location in its Info window: \texttt{Time\ :\ Get\ cursor}, and note this time;
 -- do this for both start and end of the selection part;
 -- use these noted times to set the selection part as described above.
 
-In this way, the word \emph{window} was selected in the SoundEditor in Fig.\ref{fig:window-soundeditor}.
-
 \begin{itemize}
-\tightlist
 \item
-  To save the selected part as a separate audio file: in the SoundEditor, choose \texttt{File\ \textgreater{}\ Save\ selected\ sound\ as\ WAV\ file...}.
+  In this way, the word \emph{window} was selected in the SoundEditor in Fig.\ref{fig:window-soundeditor}.
+\item
+  To \textbf{save} the selected part as a separate audio file: in the SoundEditor, choose \texttt{File\ \textgreater{}\ Save\ selected\ sound\ as\ WAV\ file...}.
   Provide the appropriate folder and file name, and click \texttt{OK}.
+\item
+  You may also \textbf{extract} the selected part into a new Sound object in \texttt{Praat}. In the SoundEditor window, choose \texttt{Sound\ \textgreater{}\ Extract\ selected\ sound\ (preserve\ times)} if you wish to maintain the same times as in your source recording: the new Sound object will have a starting time equal to the starting time of the selection in the source recording. If you want your new Sound to start at zero, then choose \texttt{Sound\ \textgreater{}\ Extract\ selected\ sound\ (time\ from\ 0)}.
+\item
+  The new Sound object may need a fade-in and fade-out (see §\ref{sec:fades} below).
+\item
+  Remember to save this new Sound object (see §\ref{sec:praatsave}) if you wish to keep it.
 \end{itemize}
 
 \phantomsection\label{fades}
