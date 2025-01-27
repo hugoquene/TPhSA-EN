@@ -21,6 +21,7 @@ fig:source-filter
 fig:merel-spectrogram
 fig:speech-word-spectrogram-broad
 fig:speech-word-spectrogram-narrow
+fig:window-soundeditor-again
 sec:textbooks
 ch-soundwaves
 sound
@@ -103,7 +104,7 @@ narrowband-spectrogram
 sec:howto-spectrogram
 to-spectrogram-directly
 from-soundeditor
-how-to-read-a-spectrogram
+sec:readspectrogram
 ch-segmentinglabeling
 introduction-1
 textgrid-objects

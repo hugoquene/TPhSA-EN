@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 26 Jan 2025 22:12}
+\date{Document compiled 27 Jan 2025 11:42}
 
 \begin{document}
 \maketitle
@@ -1495,7 +1495,7 @@ TODO crossref SoundEditor
   You can also \texttt{Extract} and then \texttt{Save} the spectrogram from the SoundEditor.
 \end{itemize}
 
-\section{How to read a spectrogram}\label{how-to-read-a-spectrogram}
+\section{How to read a spectrogram}\label{sec:readspectrogram}
 
 (with Clizia Welker)
 
@@ -1565,15 +1565,34 @@ TODO expand keywords
 
 Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called \textbf{coarticulation}, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive \emph{handwriting}.
 
-The complex relation between linguistic and spoken units is illustrated in Figure XX. Boundaries between linguistic units are not clearly present, due to coarticulation, some units have no acoustic manifestation at all, and some units are difficult to identify or transcribe, once again due to coarticulation.
+The complex relation between linguistic and spoken units is illustrated in Figure \ref{fig:window-soundeditor-again} which is a copy of Figure \ref{fig:window-soundeditor}.
 
-\begin{quote}
-TODO insert figure here
-\end{quote}
+\begin{figure}
 
-Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. Thus segmenting and labeling speech addresses the core issue in phonetics, viz.~how abstract linguistic units and meanings are related to their concrete physical realization, both in production and in perception of spoken language.
+{\centering \includegraphics{figures/asmallwindowtogetthis_SoundEditor2050124} 
 
-In this chapter, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
+}
+
+\caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor-again}
+\end{figure}
+
+\phantomsection\label{box-windowsfile-details}
+The SoundEditor in Fig.\ref{fig:window-soundeditor-again} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
+
+Figure \ref{fig:window-soundeditor-again} illustrates the following three\footnote{You may also notice the F2 locus of the {[}d{]} in \emph{window}, at 2.118 s and \textasciitilde1800 Hz, see §\ref{sec:readspectrogram}, voiced consonants.} characteristics of casual, fluent speech:
+
+\begin{itemize}
+\item
+  Boundaries between speech segments are not clearly present, due to coarticulation, e.g.~between the vowel and the final consonant of {[}smɔɫ{]} \emph{small}.
+\item
+  Some speech segments have hardly any acoustic-phonetic manifestation at all, e.g.~the final consonant of \emph{get};
+\item
+  Some speech segments are difficult to transcribe, e.g.~the vowel in the last syllable of \emph{window}: diphthong {[}ˈwɪndoʊ{]} or monophthong {[}ˈwɪndoː{]} ?
+\end{itemize}
+
+Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. In sum, segmenting and labeling speech addresses the core issue in phonetics, viz.~how abstract linguistic units and meanings are related to their concrete physical realizations, both in production and in perception of spoken language.
+
+In this chapter, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
 
 \phantomsection\label{box-praattextgrid}
 \section{TextGrid objects}\label{textgrid-objects}

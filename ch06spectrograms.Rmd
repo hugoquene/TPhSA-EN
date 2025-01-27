@@ -84,7 +84,7 @@ Leave other arguments at their default (standard) values. Click `OK`.
 
 :::
 
-## How to read a spectrogram
+## How to read a spectrogram {#sec:readspectrogram}
 
 (with Clizia Welker)
 

@@ -235,7 +235,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
 <li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#from-soundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#how-to-read-a-spectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:readspectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html"><i class="fa fa-check"></i><b>7</b> Segmenting and labeling speech sounds</a>
 <ul>
@@ -288,12 +288,24 @@ div.csl-indent {
 <div id="introduction-1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Introduction<a href="ch-segmentinglabeling.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called <strong>coarticulation</strong>, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive <em>handwriting</em>.</p>
-<p>The complex relation between linguistic and spoken units is illustrated in Figure XX. Boundaries between linguistic units are not clearly present, due to coarticulation, some units have no acoustic manifestation at all, and some units are difficult to identify or transcribe, once again due to coarticulation.</p>
-<blockquote>
-<p>TODO insert figure here</p>
-</blockquote>
-<p>Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. Thus segmenting and labeling speech addresses the core issue in phonetics, viz. how abstract linguistic units and meanings are related to their concrete physical realization, both in production and in perception of spoken language.</p>
-<p>In this chapter, we discuss <strong>segments</strong>, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss <strong>labels</strong> (transcription), and thus we assume also that that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).</p>
+<p>The complex relation between linguistic and spoken units is illustrated in Figure <a href="ch-segmentinglabeling.html#fig:window-soundeditor-again">7.1</a> which is a copy of Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-again"></span>
+<img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted."  />
+<p class="caption">
+Figure 7.1: SoundEditor window, showing oscillogram and spectrogram of the fragment <em>…a small window to get this…</em>, with the word <em>window</em> highlighted.
+</p>
+</div>
+<div id="box-windowsfile-details" class="smallprintbox">
+<p>The SoundEditor in Fig.<a href="ch-segmentinglabeling.html#fig:window-soundeditor-again">7.1</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.</p>
+</div>
+<p>Figure <a href="ch-segmentinglabeling.html#fig:window-soundeditor-again">7.1</a> illustrates the following three<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a> characteristics of casual, fluent speech:</p>
+<ul>
+<li><p>Boundaries between speech segments are not clearly present, due to coarticulation, e.g. between the vowel and the final consonant of [smɔɫ] <em>small</em>.</p></li>
+<li><p>Some speech segments have hardly any acoustic-phonetic manifestation at all, e.g. the final consonant of <em>get</em>;</p></li>
+<li><p>Some speech segments are difficult to transcribe, e.g. the vowel in the last syllable of <em>window</em>: diphthong [ˈwɪndoʊ] or monophthong [ˈwɪndoː] ?</p></li>
+</ul>
+<p>Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. In sum, segmenting and labeling speech addresses the core issue in phonetics, viz. how abstract linguistic units and meanings are related to their concrete physical realizations, both in production and in perception of spoken language.</p>
+<p>In this chapter, we discuss <strong>segments</strong>, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss <strong>labels</strong> (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).</p>
 </div>
 <div id="box-praattextgrid" class="praatbox">
 <div id="textgrid-objects" class="section level2 hasAnchor" number="7.2">
@@ -328,6 +340,18 @@ div.csl-indent {
 
 </div>
 </div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021" class="csl-entry">
+Galvez, Daniel, Greg Diamos, Juan Ciro, Juan Felipe Cerón, Keith Achorn, Anjali Gopi, David Kanter, Maximilian Lam, Mark Mazumder, and Vijay Janapa Reddi. 2021. <span>“The People’s Speech: A Large-Scale Diverse English Speech Recognition Dataset for Commercial Usage,”</span> November. <a href="https://doi.org/10.48550/arXiv.2111.09344">https://doi.org/10.48550/arXiv.2111.09344</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="42">
+<li id="fn42"><p>You may also notice the F2 locus of the [d] in <em>window</em>, at 2.118 s and ~1800 Hz, see §<a href="ch-spectrograms.html#sec:readspectrogram">6.5</a>, voiced consonants.<a href="ch-segmentinglabeling.html#fnref42" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
