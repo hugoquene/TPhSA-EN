@@ -288,7 +288,7 @@ div.csl-indent {
 <ol style="list-style-type: decimal">
 <li><p>the <strong>microphone</strong>: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and displacements of the membrane (caused by the sound pressure wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm), depending on the design of the microphone. For instructions about how to handle a microphone, see the text box in §<a href="ch-soundtobytes.html#sec:microphone">2.2</a>) below.
 The analog electrical signal is then passed on from the microphone to…</p></li>
-<li><p>the <strong>analog-to-digital-converter</strong> (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called ‘sampling’. Sampling a signal is done with a certain ‘sampling frequency’ (number of measurements per second) and with a certain precision of measurement (known as ‘amplitude resolution’), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> <a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p></li>
+<li><p>the <strong>analog-to-digital-converter</strong> (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC repeatedly measures the input signal, and reports the digital output value of that input signal. This process is also called ‘sampling’. Sampling a signal is done with a certain ‘sampling frequency’ (number of repeated measurements per second) and with a certain precision of measurement (known as ‘amplitude resolution’), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> <a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p></li>
 </ol>
 <p>Very soon, whenever you want to hear sound from a computer or from a telephone connection, you will also need</p>
 <ol start="3" style="list-style-type: decimal">
@@ -313,13 +313,17 @@ The analog electrical signal is then passed on from the microphone to…</p></li
 <h3><span class="header-section-number">2.3.1</span> Sampling frequency<a href="ch-soundtobytes.html#sec:samplingfrequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The sampling frequency (symbol <span class="math inline">\(f_s\)</span>) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the <em>time</em> dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §<a href="ch-soundwaves.html#sec:frequency">1.8.1</a>). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled <span class="math inline">\(2000 \times\)</span> per second.</p>
 <div id="nyquist" class="warningbox">
-<p>The sampling frequency <span class="math inline">\(f_s\)</span> must be at least <span class="math inline">\(2 \times\)</span> the highest frequency <span class="math inline">\(f\)</span> in the analog source sound. This means that the source sound may not contain any (components with) frequencies above <span class="math inline">\(f_s / 2\)</span>, the so-called ‘nyquist frequency’. In practice this is guaranteed by <em>low-pass</em> filtering the source sound (see §<a href="ch-filtering.html#sec:typesoffilters">4.2</a>), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency, This filtering is routinely done before AD conversion, by the AD conversion hardware.</p>
+<p>The sampling frequency <span class="math inline">\(f_s\)</span> must be at least <span class="math inline">\(2 \times\)</span> the highest frequency <span class="math inline">\(f\)</span> in the analog source sound. Thus, the source sound may not contain any components with frequencies above <span class="math inline">\(f_s / 2\)</span>, the so-called ‘nyquist frequency’ (this requirement follows from the so-called ‘Nyquist theorem’). In practice this requirement is guaranteed by <em>low-pass</em> filtering the source sound (see §<a href="ch-filtering.html#sec:typesoffilters">4.2</a> about filtering), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency. This filtering is routinely done before AD conversion, by the AD conversion hardware.</p>
 <p>For speech, most acoustic information is contained in the frequency range up to 8 kHz. Given the previous paragraph, this means that we need a sampling frequency of at least 16 kHz<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> or higher. In most phonetic projects, the most relevant phonetic information is contained in the frequency range up to 16 kHz, for which a sampling frequency of <span class="math inline">\(f_s = 32\)</span> kHz<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> is adequate.
 For music, relevant information may be contained in the full audible range up to 22 kHz, and the standard sampling frequency is 44.1 kHz<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.</p>
 <ul>
 <li><p>Check the sampling frequency before making a digital recording, set it to an appropriate value, write down the sampling frequency in your lab journal, and mention it in your report.</p></li>
 <li><p>Using a higher sampling frequencies will result in proportionally larger digital sound files, which require longer processing times and more computer storage.</p></li>
 </ul>
+</div>
+<P>
+<div id="box:telephonebandwidth" class="smallprintbox">
+<p>Aside: In the past, analogue telephones used a limited bandwidth of 300 to 3400 Hz; this allowed low-cost transmission of speech that was still intelligible. Such ‘telephone speech’ may be sampled at <span class="math inline">\(f_s = 8\ \textrm{kHz}\)</span>, capturing acoustic information in the frequency range up to 4 kHz. You may encounter legacy speech recordings sampled at 8 kHz, and/or research reports mentioning this <span class="math inline">\(f_s\)</span> value.</p>
 </div>
 </div>
 <div id="amplitude-resolution" class="section level3 hasAnchor" number="2.3.2">
@@ -331,7 +335,7 @@ For music, relevant information may be contained in the full audible range up to
 </div>
 <div id="how-to-record-a-sound" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> How to record a sound<a href="ch-soundtobytes.html#how-to-record-a-sound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For any audio recording, there are a few essential precautions that you’ll have to attend to, to obtain high-quality recordings suitable for subsequent analysis and re-distribution.</p>
+<p>For any audio recording, there are a few <strong>essential precautions</strong> that you’ll have to attend to, in order to obtain high-quality recordings suitable for subsequent analysis and re-distribution.</p>
 <div id="recording" class="warningbox">
 <div id="sec:removenontargetsounds" class="section level3 hasAnchor" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Remove non-target sounds<a href="ch-soundtobytes.html#sec:removenontargetsounds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -375,7 +379,7 @@ For phonetic research, it is generally better to record in ‘lossless’ audio 
 <div id="sec:praatrecord" class="section level4 hasAnchor" number="2.4.4.1">
 <h4><span class="header-section-number">2.4.4.1</span> Record<a href="ch-soundtobytes.html#sec:praatrecord" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li><p>In the Praat Objects window, select <code>New &gt; Record mono sound</code>.
+<li><p>In the <code>Praat</code> Objects window, select <code>New &gt; Record mono sound</code>.
 In most situations it is not necessary to record stereo sounds.</p></li>
 <li><p>Choose the appropriate sampling frequency, e.g. 22050 Hz (see §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>). You may receive an error message if the chosen sampling frequency is incompatible with your computer.</p></li>
 <li><p>Click <code>Record</code>, and speak a test sentence into the microphone, e.g. <em>The source of the huge river is the clear spring</em><a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, or make a test recording of your sound source. After testing, click <code>Stop</code>.</p></li>
@@ -468,17 +472,14 @@ Figure 2.1: SoundEditor window, showing oscillogram and spectrogram of the fragm
 <li><p>You can <strong>play back</strong> the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from <code>Praat</code>, consult §<a href="ch-soundtobytes.html#sec:playback">2.5</a> above.</p></li>
 <li><p>In the SoundEditor window, you can use the buttons in the lower left corner to <strong>zoom</strong> <code>in</code>, <code>out</code>, to zoom out to the entire sound (<code>all</code>), or to zoom to the <code>sel</code>ected part.</p></li>
 <li><p>You can also select a part of the recording by specifying the start and end times explicitly: choose <code>Time &gt; Select...</code> and enter the start and end times.</p></li>
-<li><p>By convention, the selected part should begin and end at <strong>positive zero crossings</strong> (where the signal changes from negative to positive; see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> below). You can find these precise places as follows (disregarding shortcuts in <code>Praat</code>):</p></li>
-</ul>
-<blockquote>
-<p>TODO level 2 list</p>
-</blockquote>
-<p>– put the cursor in the approximate area where the boundary should be located;
-– choose <code>Sound &gt; Move cursor to nearest zero crossing</code>;
-– ask Praat to report the cursor location in its Info window: <code>Time : Get cursor</code>, and note this time;
-– do this for both start and end of the selection part;
-– use these noted times to set the selection part as described above.</p>
+<li><p>By convention, the selected part should begin and end at <strong>positive zero crossings</strong> (where the signal changes from negative to positive; see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> below). You can find these precise places as follows (disregarding shortcuts in <code>Praat</code>):</p>
 <ul>
+<li>put the cursor in the approximate area where the boundary should be located;</li>
+<li>choose <code>Sound &gt; Move cursor to nearest zero crossing</code>;</li>
+<li>ask <code>Praat</code> to report the cursor location in its Info window: <code>Time : Get cursor</code>, and note this time;</li>
+<li>do this for both start and end of the selection part;</li>
+<li>use these noted times to set the selection part as described above.</li>
+</ul></li>
 <li><p>In this way, the word <em>window</em> was selected in the SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p></li>
 <li><p>To <strong>save</strong> the selected part as a separate audio file: in the SoundEditor, choose <code>File &gt; Save selected sound as WAV file...</code>.
 Provide the appropriate folder and file name, and click <code>OK</code>.</p></li>
@@ -505,7 +506,7 @@ Due to the workings of the ear, such an impulse may briefly mask subsequent soun
 <h3><span class="header-section-number">2.6.4</span> Concatenate<a href="ch-soundtobytes.html#sec:concatenate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In phonetic research, we often want to construct a “chain” of sounds in a particular order e.g. (1) a warning beep, (2) a silent portion of fixed duration, and (3) a speech stimulus. This can be achieved in several ways; the most basic operation is to “concatenate”, that is, to create a “chain” of sound objects.</p>
 <div id="box-praatconcatenate" class="praatbox">
-<p>In the Praat Objects window, select the Sound objects <em>in the order in which they are to be concatenated</em>, e.g. (1) beep, (2) silence, (3) stimulus. In order to select multiple Sound objects from the list, in a specified order, press <code>Command</code> while selecting objects. 
+<p>In the <code>Praat</code> Objects window, select the Sound objects <em>in the order in which they are to be concatenated</em>, e.g. (1) beep, (2) silence, (3) stimulus. In order to select multiple Sound objects from the list, in a specified order, press <code>Command</code> while selecting objects. 
 Then choose <code>Combine &gt; Concatenate</code> in the Objects window. The resulting “chain” of Sounds will be added to the BOTTOM of the list of objects. Remember to save this new Sound object (see §<a href="ch-soundtobytes.html#sec:praatsave">2.4.4.2</a>).</p>
 </div>
 

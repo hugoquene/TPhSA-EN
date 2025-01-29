@@ -9,7 +9,7 @@ In order to process sounds by means of a computer program, or telephone, we firs
 (1) the **microphone**: this device transforms variations in air pressure into matching variations in an electrical signal. The microphone has a thin membrane, and displacements of the membrane (caused by the sound pressure wave hitting the membrane) are transformed into proportional fluctuations in electric current (Ampere), electric voltage (Volt) or electric resistance (Ohm), depending on the design of the microphone. For instructions about how to handle a microphone, see the text box in §\@ref(sec:microphone)) below. 
 The analog electrical signal is then passed on from the microphone to...
 
-(2) the **analog-to-digital-converter** (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC measures the input signal, and reports the digital output value of that input signal. This process is also called 'sampling'. Sampling a signal is done with a certain 'sampling frequency' (number of measurements per second) and with a certain precision of measurement (known as 'amplitude resolution'), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)^[The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.] ^[In a speaker's telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.]
+(2) the **analog-to-digital-converter** (ADC): this device converts a continuous, analog electrical signal into a stream of discrete, digital numbers. The ADC repeatedly measures the input signal, and reports the digital output value of that input signal. This process is also called 'sampling'. Sampling a signal is done with a certain 'sampling frequency' (number of repeated measurements per second) and with a certain precision of measurement (known as 'amplitude resolution'), both explained below. The result is an output stream of digital numbers (in bytes), to be handled further by computer software (e.g. to be displayed, compressed, transmitted, stored, played back, etc.)^[The input signal to be sampled often comes from a microphone, but other signals may also be sampled, e.g. the signal coming from an electro-encephalogram (EEG) electrode.] ^[In a speaker's telephone, the stream of numbers (output from the ADC) constitutes the input for subsequent processing and data compression, even before speech data are transmitted to the receiving phone.]
 
 Very soon, whenever you want to hear sound from a computer or from a telephone connection, you will also need 
 
@@ -39,7 +39,7 @@ The sampling frequency (symbol $f_s$) is the frequency with which digital sample
 
 ::: {#nyquist .warningbox}
 
-The sampling frequency $f_s$ must be at least $2 \times$ the highest frequency $f$ in the analog source sound. This means that the source sound may not contain any (components with) frequencies above $f_s / 2$, the so-called 'nyquist frequency'. In practice this is guaranteed by *low-pass* filtering the source sound (see §\@ref(sec:typesoffilters)), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency, This filtering is routinely done before AD conversion, by the AD conversion hardware. 
+The sampling frequency $f_s$ must be at least $2 \times$ the highest frequency $f$ in the analog source sound. Thus, the source sound may not contain any components with frequencies above $f_s / 2$, the so-called 'nyquist frequency' (this requirement follows from the so-called 'Nyquist theorem'). In practice this requirement is guaranteed by *low-pass* filtering the source sound (see §\@ref(sec:typesoffilters) about filtering), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency. This filtering is routinely done before AD conversion, by the AD conversion hardware. 
 
 For speech, most acoustic information is contained in the frequency range up to 8 kHz. Given the previous paragraph, this means that we need a sampling frequency of at least 16 kHz^[This is the typical sampling frequency in VoIP, "wideband speech".] or higher. In most phonetic projects, the most relevant phonetic information is contained in the frequency range up to 16 kHz, for which a sampling frequency of $f_s = 32$ kHz^[This is the standard sampling frequency for FM radio.] is adequate. 
 For music, relevant information may be contained in the full audible range up to 22 kHz, and the standard sampling frequency is 44.1 kHz^[This is the standard sampling frequency for audio CDs.]. 
@@ -50,6 +50,11 @@ For music, relevant information may be contained in the full audible range up to
 
 :::
 
+<P>
+
+::: {#box:telephonebandwidth .smallprintbox}
+Aside: In the past, analogue telephones used a limited bandwidth of 300 to 3400 Hz; this allowed low-cost transmission of speech that was still intelligible. Such 'telephone speech' may be sampled at $f_s = 8\ \textrm{kHz}$, capturing acoustic information in the frequency range up to 4 kHz. You may encounter legacy speech recordings sampled at 8 kHz, and/or research reports mentioning this $f_s$ value.  
+:::
 
 ### Amplitude resolution
 
@@ -61,7 +66,7 @@ In phonetics, the most common amplitude resolution is 16 bits, or $2^{16} = 6553
 
 ## How to record a sound
 
-For any audio recording, there are a few essential precautions that you'll have to attend to, to obtain high-quality recordings suitable for subsequent analysis and re-distribution. 
+For any audio recording, there are a few **essential precautions** that you'll have to attend to, in order to obtain high-quality recordings suitable for subsequent analysis and re-distribution. 
 
 ::: {#recording .warningbox}
 
@@ -111,7 +116,7 @@ There is a helpful option in `Praat`, from the *main* menu (not from the Objects
 
 #### Record {#sec:praatrecord}
 
-- In the Praat Objects window, select `New > Record mono sound`.
+- In the `Praat` Objects window, select `New > Record mono sound`.
 In most situations it is not necessary to record stereo sounds. 
 
 - Choose the appropriate sampling frequency, e.g. 22050 Hz (see §\@ref(sec:samplingfrequency)). You may receive an error message if the chosen sampling frequency is incompatible with your computer. 
@@ -226,14 +231,11 @@ The SoundEditor contains a lot of information! In the top panel you always see a
 - You can also select a part of the recording by specifying the start and end times explicitly: choose `Time > Select...` and enter the start and end times. 
 
 - By convention, the selected part should begin and end at **positive zero crossings** (where the signal changes from negative to positive; see §\@ref(sec:fades) below). You can find these precise places as follows (disregarding shortcuts in `Praat`):
-
-> TODO level 2 list
-
--- put the cursor in the approximate area where the boundary should be located;
--- choose `Sound > Move cursor to nearest zero crossing`;
--- ask Praat to report the cursor location in its Info window: `Time : Get cursor`, and note this time;
--- do this for both start and end of the selection part;
--- use these noted times to set the selection part as described above. 
+  - put the cursor in the approximate area where the boundary should be located;
+  - choose `Sound > Move cursor to nearest zero crossing`;
+  - ask `Praat` to report the cursor location in its Info window: `Time : Get cursor`, and note this time;
+  - do this for both start and end of the selection part;
+  - use these noted times to set the selection part as described above. 
 
 - In this way, the word *window* was selected in the SoundEditor in Fig.\@ref(fig:window-soundeditor). 
 
@@ -274,7 +276,7 @@ In phonetic research, we often want to construct a "chain" of sounds in a partic
 
 ::: {#box-praatconcatenate .praatbox}
 
-In the Praat Objects window, select the Sound objects *in the order in which they are to be concatenated*, e.g. (1) beep, (2) silence, (3) stimulus. In order to select multiple Sound objects from the list, in a specified order, press `Command` while selecting objects.\ 
+In the `Praat` Objects window, select the Sound objects *in the order in which they are to be concatenated*, e.g. (1) beep, (2) silence, (3) stimulus. In order to select multiple Sound objects from the list, in a specified order, press `Command` while selecting objects.\ 
 Then choose `Combine > Concatenate` in the Objects window. The resulting "chain" of Sounds will be added to the BOTTOM of the list of objects. Remember to save this new Sound object (see §\@ref(sec:praatsave)).
 
 :::

@@ -50,20 +50,20 @@
 \contentsline {section}{\numberline {2.2}How to handle a microphone}{32}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Key parameters in AD conversion}{32}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Sampling frequency}{33}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Amplitude resolution}{33}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Amplitude resolution}{34}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}How to record a sound}{34}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Remove non-target sounds}{34}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Check recording level}{35}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Check recording level}{36}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Avoid lossy audio formats}{36}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}On your computer, using \texttt {Praat}}{36}{subsection.2.4.4}%
-\contentsline {subsubsection}{\numberline {2.4.4.1}Record}{36}{subsubsection.2.4.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.4.1}Record}{37}{subsubsection.2.4.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.4.2}Save}{37}{subsubsection.2.4.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.4.3}Open}{37}{subsubsection.2.4.4.3}%
-\contentsline {section}{\numberline {2.5}How to play back a digital sound}{37}{section.2.5}%
+\contentsline {subsubsection}{\numberline {2.4.4.3}Open}{38}{subsubsection.2.4.4.3}%
+\contentsline {section}{\numberline {2.5}How to play back a digital sound}{38}{section.2.5}%
 \contentsline {section}{\numberline {2.6}How to manipulate and edit a digital sound}{38}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Scale}{38}{subsection.2.6.1}%
 \contentsline {subsubsection}{\numberline {2.6.1.1}Scale amplitude}{38}{subsubsection.2.6.1.1}%
-\contentsline {subsubsection}{\numberline {2.6.1.2}Scale intensity}{38}{subsubsection.2.6.1.2}%
+\contentsline {subsubsection}{\numberline {2.6.1.2}Scale intensity}{39}{subsubsection.2.6.1.2}%
 \contentsline {subsection}{\numberline {2.6.2}Excise part of a sound recording}{39}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Fades}{41}{subsection.2.6.3}%
 \contentsline {subsection}{\numberline {2.6.4}Concatenate}{41}{subsection.2.6.4}%
@@ -71,8 +71,8 @@
 \contentsline {section}{\numberline {3.1}Introduction}{43}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Timbre}{44}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Spectrum}{45}{section.3.2}%
-\contentsline {subsection}{Questions}{46}{section*.49}%
-\contentsline {subsubsection}{Question 3.1}{46}{section*.50}%
+\contentsline {subsection}{Questions}{46}{section*.50}%
+\contentsline {subsubsection}{Question 3.1}{46}{section*.51}%
 \contentsline {subsection}{\numberline {3.2.1}How to obtain a spectrum}{46}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}How to obtain a spectral `slice'}{46}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Spectra of aperiodic sounds}{47}{section.3.3}%
@@ -88,7 +88,7 @@
 \contentsline {subsection}{\numberline {4.3.3}Bandwidth}{54}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}Emphasis filters}{55}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}How to apply a (pre\textbar de)emphasis filter}{55}{subsection.4.4.1}%
-\contentsline {part}{Part II: Speech}{59}{part*.54}%
+\contentsline {part}{Part II: Speech}{59}{part*.55}%
 \contentsline {chapter}{\numberline {5}Speech sounds}{59}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Resonance}{59}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Formants}{61}{section.5.2}%
