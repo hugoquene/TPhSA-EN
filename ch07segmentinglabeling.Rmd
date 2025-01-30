@@ -4,7 +4,7 @@
 
 *Chapter keywords*: phonetics, linguistic units, segments, sounds, coarticulation.  
 
-## Introduction
+## Introduction {#sec:coarticulation-intro}
 
 Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called **coarticulation**, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive *handwriting*. 
 
@@ -34,7 +34,7 @@ In this chapter, we discuss **segments**, and thus we assume that speech sounds 
 
 ::: {#box-praattextgrid .praatbox}
 
-## TextGrid objects
+## TextGrid objects {#sec:textgrids}
 
 `Praat` has a special type of object for annotation, called a **TextGrid**. A `TextGrid` object may contain multiple layers, or `tiers`, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g. the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:
 
@@ -58,10 +58,53 @@ As explained in the `Praat` tutorial on annotation (in the Help system), the eas
 - Remember to `Save` the TextGrid object if you wish. 
 :::
 
-## Segmenting speech
+## How to segment and label speech sounds in `Praat`
 
-### How to segment speech in `Praat`
+In practice, it's easiest to set segment boundaries (segmentation) and to label those segments (labeling or transcription) at the same time. The boundaries and labels are kept in a TextGrid object. 
 
-## Labeling speech sounds
+::: {#box-praattextgrideditor .praatbox}
 
-### How to label speech sounds in `Praat`
+The recommended workflow in `Praat` is as follows.
+
+(1) Open the speech recording to annotate as a Sound object (see §sec:praatopen).
+
+(2) Create a corresponding TextGrid (see  §\@ref(sec:textgrids) above).
+
+(3) Select *both* the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press `Command` while selecting objects.
+
+(4) Choose the button labeled `View & Edit`; this will open a TextGrid Editor window, which is quite similar to the SoundEditor window (see  §\@ref(sec:praatsoundeditor)).
+
+Figure \@ref(fig:window-textgrideditor) shows an example of a TextGridEditor, displaying the fragment *a small window to get this right* spoken by a male speaker of American English; the single word *window* is highlighted. 
+In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the `word` (interval) tier for orthographic transcription, and the `phone` (interval) tier for broad phonetic transcription. And in this illustration, `Praat` focuses on the `word` tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier. 
+
+```{r window-textgrideditor, echo=FALSE, fig.cap="TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted.", fig.align="center"}
+knitr::include_graphics("figures/asmallwindowtogetthisright_TextGridEditor20250130.png")
+```
+
+::: {#box-windowsfile-details-3 .smallprintbox}
+
+The SoundEditor in Fig.\@ref(fig:window-textgrideditor) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
+
+:::
+
+(5) In the TextGridEditor: \
+(a) if you click in the oscillogram or spectrogram, then the vertical cursor moves to that position. Moreover, a *candidate boundary* appears in the annotation tiers; it is marked by a small circle or 'handle' at the upper end of the boundary mark in a tier. You may accept the proposed boundary by clicking on its 'handle'. By repeatedly placing boundaries, you can **segment** the continuous speech signal into consecutive discrete intervals within the annotation tiers. \
+(b) You may **copy** a boundary from one tier to another by clicking within a tier on the boundary to copy (e.g. from the `word` to the `phone` tier). Again, a *candidate boundary* appears in the other annotation tier(s) (if there are any other tiers, of course). Again, you may accept the proposed boundary by clicking on its 'handle'.\
+(c) You may **move** a boundary in the TextGridEditor as follows. Select the boundary by clicking on it, then drag it to an earlier or later position. It is recommended to place boundaries at zero crossings: to do so, choose `Boundary > Move to nearest zero crossing` (see §\@ref(sec:praatsoundeditor) for background). (In order to move the *cursor*, choose `Sound > Move cursor to nearest zero crossing`).\
+(d) If you are not happy with a boundary, you can **remove** it by first selecting the boundary (click on it), then choose `Boundary > Remove`.\
+(e) If you click in an interval in a tier, then that interval is selected. You can **listen** to the selected interval, or the neigboring parts, using the buttons labeled with durations. 
+
+(6) Still in the TextGridEditor:\
+If you click in an interval in a tier, then that interval is selected. As soon as you type a character, or pick a phonetic symbol from the righthand chart, that symbol is used as the transcription **label** for the selected interval in the focused tier.\
+Phonetic symbols are explained in your phonetics textbook and in the @HandbookIPA_1999. 
+
+(7) Boundaries and labels are modified (added, moved, removed, etc) *immediately* in the TextGrid. If you are done, you may close the TextGridEditor window, and the contents of the TextGrid are kept in the TextGrid object that you've just edited. 
+
+(8) Back in the `Praat` Objects window:\
+you may `Draw` or `Tabulate` or interactively `Query` or `Modify` the contents of the TextGrid. (Choose `Modify` to rename tiers.)\
+The `Tabulate` command is convenient if you wish to export the TextGrid information as a dataset for further analysis. Each interval of each tier is written as a separate row in the dataset. After having saved the resulting table from `Praat`, you could use your statistical software on this tabulated-and-exported dataset, e.g. to count words, to compute average segment durations, etc etc.\
+(For statistical guidance, see this tutorial on [Quantitative Methods and Statistics](https://hugoquene.github.io/QMS-EN/).
+
+(9) Remember to `Save` the TextGrid object if you wish. 
+
+:::

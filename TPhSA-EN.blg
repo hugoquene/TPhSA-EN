@@ -6,6 +6,8 @@ Database file #1: book.bib
 Database file #2: packages.bib
 Database file #3: pandoc.bib
 Database file #4: tphsa.bib
+Warning--to sort, need author, editor, or key in HandbookIPA_1999
+Warning--empty author and editor in HandbookIPA_1999
 Warning--empty chapter and pages in Aalto_Malinen_Vainio_2018
 Warning--empty publisher in Aalto_Malinen_Vainio_2018
 Warning--empty journal in Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021
@@ -15,45 +17,45 @@ Warning--empty publisher in Rubin_2022
 Warning--can't use both author and editor fields in Shadle_2010
 Warning--empty chapter and pages in Tokuda_2021
 Warning--empty publisher in Tokuda_2021
-You've used 25 entries,
+You've used 26 entries,
             1935 wiz_defined-function locations,
-            636 strings with 7135 characters,
-and the built_in function-call counts, 8233 in all, are:
-= -- 763
+            640 strings with 7280 characters,
+and the built_in function-call counts, 8481 in all, are:
+= -- 784
 > -- 295
 < -- 24
 + -- 108
 - -- 94
-* -- 637
-:= -- 1474
-add.period$ -- 71
-call.type$ -- 25
-change.case$ -- 160
-chr.to.int$ -- 25
-cite$ -- 34
-duplicate$ -- 363
-empty$ -- 607
+* -- 658
+:= -- 1510
+add.period$ -- 74
+call.type$ -- 26
+change.case$ -- 164
+chr.to.int$ -- 26
+cite$ -- 38
+duplicate$ -- 379
+empty$ -- 637
 format.name$ -- 131
-if$ -- 1604
+if$ -- 1656
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 42
-newline$ -- 124
+missing$ -- 43
+newline$ -- 129
 num.names$ -- 75
-pop$ -- 193
+pop$ -- 201
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 177
 quote$ -- 0
-skip$ -- 266
+skip$ -- 274
 stack$ -- 0
-substring$ -- 403
-swap$ -- 42
+substring$ -- 416
+swap$ -- 43
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 9
+type$ -- 116
+warning$ -- 11
 while$ -- 54
 width$ -- 0
-write$ -- 321
-(There were 9 warnings)
+write$ -- 333
+(There were 11 warnings)

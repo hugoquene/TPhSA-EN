@@ -22,6 +22,7 @@ fig:merel-spectrogram
 fig:speech-word-spectrogram-broad
 fig:speech-word-spectrogram-narrow
 fig:window-soundeditor-again
+fig:window-textgrideditor
 sec:textbooks
 ch-soundwaves
 sound
@@ -66,7 +67,7 @@ how-to-manipulate-and-edit-a-digital-sound
 scale
 scale-amplitude
 scale-intensity
-excise-part-of-a-sound-recording
+sec:praatsoundeditor
 sec:fades
 sec:concatenate
 complex-sounds-and-spectra
@@ -106,12 +107,9 @@ to-spectrogram-directly
 from-soundeditor
 sec:readspectrogram
 ch-segmentinglabeling
-introduction-1
-textgrid-objects
-segmenting-speech
-how-to-segment-speech-in-praat
-labeling-speech-sounds
-how-to-label-speech-sounds-in-praat
+sec:coarticulation-intro
+sec:textgrids
+how-to-segment-and-label-speech-sounds-in-praat
 ch-prosody
 pauses-in-speech
 durations

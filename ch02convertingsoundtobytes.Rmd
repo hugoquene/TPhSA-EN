@@ -190,14 +190,14 @@ The amplitude scale factor is chosen so that the average *intensity* of the resu
 
 :::
 
-### Excise part of a sound recording
+### Excise part of a sound recording {#sec:praatsoundeditor}
 
 In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file. 
 `Praat` contains a so-called SoundEditor to perform these tasks. 
 
 ::: {#box-segmenting .warningbox}
 
-Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech, and using the SoundEditor, will also be discussed in Chapter \@ref(ch-segmentinglabeling). Below are some brief starter instructions. 
+Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \@ref(ch-segmentinglabeling). Below are some brief starter instructions. 
 
 :::
 

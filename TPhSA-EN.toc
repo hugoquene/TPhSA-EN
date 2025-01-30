@@ -109,13 +109,10 @@
 \contentsline {chapter}{\numberline {7}Segmenting and labeling speech sounds}{77}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Introduction}{77}{section.7.1}%
 \contentsline {section}{\numberline {7.2}TextGrid objects}{79}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Segmenting speech}{80}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}How to segment speech in \texttt {Praat}}{80}{subsection.7.3.1}%
-\contentsline {section}{\numberline {7.4}Labeling speech sounds}{80}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}How to label speech sounds in \texttt {Praat}}{80}{subsection.7.4.1}%
-\contentsline {chapter}{\numberline {8}Prosody}{81}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Pauses in speech}{81}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Durations}{81}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Pitch}{81}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Intensity}{81}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Stresses and accents}{81}{section.8.5}%
+\contentsline {section}{\numberline {7.3}How to segment and label speech sounds in \texttt {Praat}}{80}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Prosody}{83}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Pauses in speech}{83}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Durations}{83}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Pitch}{83}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Intensity}{83}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Stresses and accents}{83}{section.8.5}%

@@ -170,7 +170,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-and-edit-a-digital-sound"><i class="fa fa-check"></i><b>2.6</b> How to manipulate and edit a digital sound</a>
 <ul>
 <li class="chapter" data-level="2.6.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#scale"><i class="fa fa-check"></i><b>2.6.1</b> Scale</a></li>
-<li class="chapter" data-level="2.6.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#excise-part-of-a-sound-recording"><i class="fa fa-check"></i><b>2.6.2</b> Excise part of a sound recording</a></li>
+<li class="chapter" data-level="2.6.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:praatsoundeditor"><i class="fa fa-check"></i><b>2.6.2</b> Excise part of a sound recording</a></li>
 <li class="chapter" data-level="2.6.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:fades"><i class="fa fa-check"></i><b>2.6.3</b> Fades</a></li>
 <li class="chapter" data-level="2.6.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.6.4</b> Concatenate</a></li>
 </ul></li>
@@ -239,16 +239,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html"><i class="fa fa-check"></i><b>7</b> Segmenting and labeling speech sounds</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#textgrid-objects"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
-<li class="chapter" data-level="7.3" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#segmenting-speech"><i class="fa fa-check"></i><b>7.3</b> Segmenting speech</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-segment-speech-in-praat"><i class="fa fa-check"></i><b>7.3.1</b> How to segment speech in <code>Praat</code></a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#labeling-speech-sounds"><i class="fa fa-check"></i><b>7.4</b> Labeling speech sounds</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-label-speech-sounds-in-praat"><i class="fa fa-check"></i><b>7.4.1</b> How to label speech sounds in <code>Praat</code></a></li>
-</ul></li>
+<li class="chapter" data-level="7.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-segment-and-label-speech-sounds-in-praat"><i class="fa fa-check"></i><b>7.3</b> How to segment and label speech sounds in <code>Praat</code></a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
 <ul>
@@ -285,8 +278,8 @@ div.csl-indent {
 <p>TODO expand keywords</p>
 </blockquote>
 <p><em>Chapter keywords</em>: phonetics, linguistic units, segments, sounds, coarticulation.</p>
-<div id="introduction-1" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Introduction<a href="ch-segmentinglabeling.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:coarticulation-intro" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Introduction<a href="ch-segmentinglabeling.html#sec:coarticulation-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called <strong>coarticulation</strong>, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive <em>handwriting</em>.</p>
 <p>The complex relation between linguistic and spoken units is illustrated in Figure <a href="ch-segmentinglabeling.html#fig:window-soundeditor-again">7.1</a> which is a copy of Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-again"></span>
@@ -308,8 +301,8 @@ Figure 7.1: SoundEditor window, showing oscillogram and spectrogram of the fragm
 <p>In this chapter, we discuss <strong>segments</strong>, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss <strong>labels</strong> (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).</p>
 </div>
 <div id="box-praattextgrid" class="praatbox">
-<div id="textgrid-objects" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> TextGrid objects<a href="ch-segmentinglabeling.html#textgrid-objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:textgrids" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> TextGrid objects<a href="ch-segmentinglabeling.html#sec:textgrids" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>Praat</code> has a special type of object for annotation, called a <strong>TextGrid</strong>. A <code>TextGrid</code> object may contain multiple layers, or <code>tiers</code>, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g. the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:</p>
 <ul>
 <li><p><code>interval tiers</code> containing time intervals (corresponding with e.g. words, phones, utterances); these intervals have boundaries and they may have labels, and</p></li>
@@ -327,24 +320,65 @@ Figure 7.1: SoundEditor window, showing oscillogram and spectrogram of the fragm
 </ul>
 </div>
 </div>
-<div id="segmenting-speech" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Segmenting speech<a href="ch-segmentinglabeling.html#segmenting-speech" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="how-to-segment-speech-in-praat" class="section level3 hasAnchor" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> How to segment speech in <code>Praat</code><a href="ch-segmentinglabeling.html#how-to-segment-speech-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="how-to-segment-and-label-speech-sounds-in-praat" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> How to segment and label speech sounds in <code>Praat</code><a href="ch-segmentinglabeling.html#how-to-segment-and-label-speech-sounds-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In practice, it’s easiest to set segment boundaries (segmentation) and to label those segments (labeling or transcription) at the same time. The boundaries and labels are kept in a TextGrid object.</p>
+<div id="box-praattextgrideditor" class="praatbox">
+<p>The recommended workflow in <code>Praat</code> is as follows.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the speech recording to annotate as a Sound object (see §sec:praatopen).</p></li>
+<li><p>Create a corresponding TextGrid (see §<a href="ch-segmentinglabeling.html#sec:textgrids">7.2</a> above).</p></li>
+<li><p>Select <em>both</em> the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press <code>Command</code> while selecting objects.</p></li>
+<li><p>Choose the button labeled <code>View &amp; Edit</code>; this will open a TextGrid Editor window, which is quite similar to the SoundEditor window (see §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.6.2</a>).</p></li>
+</ol>
+<p>Figure <a href="ch-segmentinglabeling.html#fig:window-textgrideditor">7.2</a> shows an example of a TextGridEditor, displaying the fragment <em>a small window to get this right</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.
+In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the <code>word</code> (interval) tier for orthographic transcription, and the <code>phone</code> (interval) tier for broad phonetic transcription. And in this illustration, <code>Praat</code> focuses on the <code>word</code> tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-textgrideditor"></span>
+<img src="figures/asmallwindowtogetthisright_TextGridEditor20250130.png" alt="TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted."  />
+<p class="caption">
+Figure 7.2: TextGridEditor window, showing oscillogram, spectrogram, and <code>word</code> and <code>phone</code> annotation tiers of the fragment <em>…a small window to get this right</em>; the word <em>window</em> is highlighted.
+</p>
 </div>
+<div id="box-windowsfile-details-3" class="smallprintbox">
+<p>The SoundEditor in Fig.<a href="ch-segmentinglabeling.html#fig:window-textgrideditor">7.2</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.</p>
 </div>
-<div id="labeling-speech-sounds" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Labeling speech sounds<a href="ch-segmentinglabeling.html#labeling-speech-sounds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="how-to-label-speech-sounds-in-praat" class="section level3 hasAnchor" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> How to label speech sounds in <code>Praat</code><a href="ch-segmentinglabeling.html#how-to-label-speech-sounds-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol start="5" style="list-style-type: decimal">
+<li>In the TextGridEditor:<br />
+</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>if you click in the oscillogram or spectrogram, then the vertical cursor moves to that position. Moreover, a <em>candidate boundary</em> appears in the annotation tiers; it is marked by a small circle or ‘handle’ at the upper end of the boundary mark in a tier. You may accept the proposed boundary by clicking on its ‘handle’. By repeatedly placing boundaries, you can <strong>segment</strong> the continuous speech signal into consecutive discrete intervals within the annotation tiers.<br />
+</li>
+<li>You may <strong>copy</strong> a boundary from one tier to another by clicking within a tier on the boundary to copy (e.g. from the <code>word</code> to the <code>phone</code> tier). Again, a <em>candidate boundary</em> appears in the other annotation tier(s) (if there are any other tiers, of course). Again, you may accept the proposed boundary by clicking on its ‘handle’.<br />
+</li>
+<li>You may <strong>move</strong> a boundary in the TextGridEditor as follows. Select the boundary by clicking on it, then drag it to an earlier or later position. It is recommended to place boundaries at zero crossings: to do so, choose <code>Boundary &gt; Move to nearest zero crossing</code> (see §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.6.2</a> for background). (In order to move the <em>cursor</em>, choose <code>Sound &gt; Move cursor to nearest zero crossing</code>).<br />
+</li>
+<li>If you are not happy with a boundary, you can <strong>remove</strong> it by first selecting the boundary (click on it), then choose <code>Boundary &gt; Remove</code>.<br />
+</li>
+<li>If you click in an interval in a tier, then that interval is selected. You can <strong>listen</strong> to the selected interval, or the neigboring parts, using the buttons labeled with durations.</li>
+</ol>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Still in the TextGridEditor:<br />
+If you click in an interval in a tier, then that interval is selected. As soon as you type a character, or pick a phonetic symbol from the righthand chart, that symbol is used as the transcription <strong>label</strong> for the selected interval in the focused tier.<br />
+Phonetic symbols are explained in your phonetics textbook and in the <span class="citation"><em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em> (<a href="#ref-HandbookIPA_1999">1999</a>)</span>.</p></li>
+<li><p>Boundaries and labels are modified (added, moved, removed, etc) <em>immediately</em> in the TextGrid. If you are done, you may close the TextGridEditor window, and the contents of the TextGrid are kept in the TextGrid object that you’ve just edited.</p></li>
+<li><p>Back in the <code>Praat</code> Objects window:<br />
+you may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> or <code>Modify</code> the contents of the TextGrid. (Choose <code>Modify</code> to rename tiers.)<br />
+The <code>Tabulate</code> command is convenient if you wish to export the TextGrid information as a dataset for further analysis. Each interval of each tier is written as a separate row in the dataset. After having saved the resulting table from <code>Praat</code>, you could use your statistical software on this tabulated-and-exported dataset, e.g. to count words, to compute average segment durations, etc etc.<br />
+(For statistical guidance, see this tutorial on <a href="https://hugoquene.github.io/QMS-EN/">Quantitative Methods and Statistics</a>.</p></li>
+<li><p>Remember to <code>Save</code> the TextGrid object if you wish.</p></li>
+</ol>
+</div>
 
-</div>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021" class="csl-entry">
 Galvez, Daniel, Greg Diamos, Juan Ciro, Juan Felipe Cerón, Keith Achorn, Anjali Gopi, David Kanter, Maximilian Lam, Mark Mazumder, and Vijay Janapa Reddi. 2021. <span>“The People’s Speech: A Large-Scale Diverse English Speech Recognition Dataset for Commercial Usage,”</span> November. <a href="https://doi.org/10.48550/arXiv.2111.09344">https://doi.org/10.48550/arXiv.2111.09344</a>.
+</div>
+<div id="ref-HandbookIPA_1999" class="csl-entry">
+<em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em>. 1999. Cambridge: Cambridge University Press.
 </div>
 </div>
 <div class="footnotes">

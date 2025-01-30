@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 29 Jan 2025 10:14}
+\date{Document compiled 30 Jan 2025 23:07}
 
 \begin{document}
 \maketitle
@@ -816,13 +816,13 @@ The amplitude scale factor is chosen so that the maximum sample value is a parti
 \texttt{Modify\ \textgreater{}\ Scale\ intensity...}.\\
 The amplitude scale factor is chosen so that the average \emph{intensity} of the resulting sound is the specified target intensity in dB SPL (see §\ref{sec:intensity}). \texttt{Praat} warns you that the result may contain clipped samples, with amplitude values exceeding the maximum possible value. Such clipped samples will lead to distorted sound when played back.
 
-\subsection{Excise part of a sound recording}\label{excise-part-of-a-sound-recording}
+\subsection{Excise part of a sound recording}\label{sec:praatsoundeditor}
 
 In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file.
 \texttt{Praat} contains a so-called SoundEditor to perform these tasks.
 
 \phantomsection\label{box-segmenting}
-Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech, and using the SoundEditor, will also be discussed in Chapter \ref{ch-segmentinglabeling}. Below are some brief starter instructions.
+Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \ref{ch-segmentinglabeling}. Below are some brief starter instructions.
 
 \phantomsection\label{box-soundeditor}
 \begin{itemize}
@@ -1565,7 +1565,7 @@ TODO expand keywords
 
 \emph{Chapter keywords}: phonetics, linguistic units, segments, sounds, coarticulation.
 
-\section{Introduction}\label{introduction-1}
+\section{Introduction}\label{sec:coarticulation-intro}
 
 Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called \textbf{coarticulation}, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive \emph{handwriting}.
 
@@ -1599,7 +1599,7 @@ Subsequently, listener retrieve the indended units (sounds, words, meanings) fro
 In this chapter, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
 
 \phantomsection\label{box-praattextgrid}
-\section{TextGrid objects}\label{textgrid-objects}
+\section{TextGrid objects}\label{sec:textgrids}
 
 \texttt{Praat} has a special type of object for annotation, called a \textbf{TextGrid}. A \texttt{TextGrid} object may contain multiple layers, or \texttt{tiers}, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g.~the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:
 
@@ -1629,13 +1629,80 @@ As explained in the \texttt{Praat} tutorial on annotation (in the Help system), 
   Remember to \texttt{Save} the TextGrid object if you wish.
 \end{itemize}
 
-\section{Segmenting speech}\label{segmenting-speech}
+\section{\texorpdfstring{How to segment and label speech sounds in \texttt{Praat}}{How to segment and label speech sounds in Praat}}\label{how-to-segment-and-label-speech-sounds-in-praat}
 
-\subsection{\texorpdfstring{How to segment speech in \texttt{Praat}}{How to segment speech in Praat}}\label{how-to-segment-speech-in-praat}
+In practice, it's easiest to set segment boundaries (segmentation) and to label those segments (labeling or transcription) at the same time. The boundaries and labels are kept in a TextGrid object.
 
-\section{Labeling speech sounds}\label{labeling-speech-sounds}
+\phantomsection\label{box-praattextgrideditor}
+The recommended workflow in \texttt{Praat} is as follows.
 
-\subsection{\texorpdfstring{How to label speech sounds in \texttt{Praat}}{How to label speech sounds in Praat}}\label{how-to-label-speech-sounds-in-praat}
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  Open the speech recording to annotate as a Sound object (see §sec:praatopen).
+\item
+  Create a corresponding TextGrid (see §\ref{sec:textgrids} above).
+\item
+  Select \emph{both} the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press \texttt{Command} while selecting objects.
+\item
+  Choose the button labeled \texttt{View\ \&\ Edit}; this will open a TextGrid Editor window, which is quite similar to the SoundEditor window (see §\ref{sec:praatsoundeditor}).
+\end{enumerate}
+
+Figure \ref{fig:window-textgrideditor} shows an example of a TextGridEditor, displaying the fragment \emph{a small window to get this right} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
+In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the \texttt{word} (interval) tier for orthographic transcription, and the \texttt{phone} (interval) tier for broad phonetic transcription. And in this illustration, \texttt{Praat} focuses on the \texttt{word} tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier.
+
+\begin{figure}
+
+{\centering \includegraphics{figures/asmallwindowtogetthisright_TextGridEditor20250130} 
+
+}
+
+\caption{TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted.}\label{fig:window-textgrideditor}
+\end{figure}
+
+\phantomsection\label{box-windowsfile-details-3}
+The SoundEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  In the TextGridEditor:\\
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  if you click in the oscillogram or spectrogram, then the vertical cursor moves to that position. Moreover, a \emph{candidate boundary} appears in the annotation tiers; it is marked by a small circle or `handle' at the upper end of the boundary mark in a tier. You may accept the proposed boundary by clicking on its `handle'. By repeatedly placing boundaries, you can \textbf{segment} the continuous speech signal into consecutive discrete intervals within the annotation tiers.\\
+\item
+  You may \textbf{copy} a boundary from one tier to another by clicking within a tier on the boundary to copy (e.g.~from the \texttt{word} to the \texttt{phone} tier). Again, a \emph{candidate boundary} appears in the other annotation tier(s) (if there are any other tiers, of course). Again, you may accept the proposed boundary by clicking on its `handle'.\\
+\item
+  You may \textbf{move} a boundary in the TextGridEditor as follows. Select the boundary by clicking on it, then drag it to an earlier or later position. It is recommended to place boundaries at zero crossings: to do so, choose \texttt{Boundary\ \textgreater{}\ Move\ to\ nearest\ zero\ crossing} (see §\ref{sec:praatsoundeditor} for background). (In order to move the \emph{cursor}, choose \texttt{Sound\ \textgreater{}\ Move\ cursor\ to\ nearest\ zero\ crossing}).\\
+\item
+  If you are not happy with a boundary, you can \textbf{remove} it by first selecting the boundary (click on it), then choose \texttt{Boundary\ \textgreater{}\ Remove}.\\
+\item
+  If you click in an interval in a tier, then that interval is selected. You can \textbf{listen} to the selected interval, or the neigboring parts, using the buttons labeled with durations.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\item
+  Still in the TextGridEditor:\\
+  If you click in an interval in a tier, then that interval is selected. As soon as you type a character, or pick a phonetic symbol from the righthand chart, that symbol is used as the transcription \textbf{label} for the selected interval in the focused tier.\\
+  Phonetic symbols are explained in your phonetics textbook and in the \citet{HandbookIPA_1999}.
+\item
+  Boundaries and labels are modified (added, moved, removed, etc) \emph{immediately} in the TextGrid. If you are done, you may close the TextGridEditor window, and the contents of the TextGrid are kept in the TextGrid object that you've just edited.
+\item
+  Back in the \texttt{Praat} Objects window:\\
+  you may \texttt{Draw} or \texttt{Tabulate} or interactively \texttt{Query} or \texttt{Modify} the contents of the TextGrid. (Choose \texttt{Modify} to rename tiers.)\\
+  The \texttt{Tabulate} command is convenient if you wish to export the TextGrid information as a dataset for further analysis. Each interval of each tier is written as a separate row in the dataset. After having saved the resulting table from \texttt{Praat}, you could use your statistical software on this tabulated-and-exported dataset, e.g.~to count words, to compute average segment durations, etc etc.\\
+  (For statistical guidance, see this tutorial on \href{https://hugoquene.github.io/QMS-EN/}{Quantitative Methods and Statistics}.
+\item
+  Remember to \texttt{Save} the TextGrid object if you wish.
+\end{enumerate}
 
 \chapter{Prosody}\label{ch-prosody}
 
