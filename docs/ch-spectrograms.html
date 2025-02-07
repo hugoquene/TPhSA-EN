@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="ch-speechsounds.html"/>
-<link rel="next" href="ch-segmentinglabeling.html"/>
+<link rel="next" href="ch-annotation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -233,15 +233,16 @@ div.csl-indent {
 <li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
-<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#from-soundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogramsoundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:readspectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#more-about-using-the-soundeditor-secsoundeditor3"><i class="fa fa-check"></i><b>6.6</b> More about using the SoundEditor {sec:soundeditor3}</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html"><i class="fa fa-check"></i><b>7</b> Segmenting and labeling speech sounds</a>
+<li class="chapter" data-level="7" data-path="ch-annotation.html"><a href="ch-annotation.html"><i class="fa fa-check"></i><b>7</b> Annotating speech sounds</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
-<li class="chapter" data-level="7.3" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-segment-and-label-speech-sounds-in-praat"><i class="fa fa-check"></i><b>7.3</b> How to segment and label speech sounds in <code>Praat</code></a></li>
+<li class="chapter" data-level="7.1" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
 <ul>
@@ -329,8 +330,8 @@ The <code>Pre-emphasis</code> slope helps in discerning visual details in the hi
 <li><p>Remember to <code>Save</code> the Spectrogram object if you wish.</p></li>
 </ul>
 </div>
-<div id="from-soundeditor" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> from SoundEditor<a href="ch-spectrograms.html#from-soundeditor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sec:spectrogramsoundeditor" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> from SoundEditor<a href="ch-spectrograms.html#sec:spectrogramsoundeditor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This method is similar to the spectral analysis described in §<a href="complex-sounds-and-spectra.html#sec:spectralslice">3.2.2</a>. Using this method, your spectrogram in the SoundEditor is immediately updated if you change (<code>Apply</code>) values for the analysis parameters (which may be convenient), but extracting and saving the Spectrogram requires some extra work.</p>
 <ul>
 <li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
@@ -347,7 +348,7 @@ Set the <code>Dynamic range</code> (of amplitude in dB) between darkest and ligh
 Leave other arguments at their default (standard) values. Click <code>OK</code>.</p></li>
 <li><p>Make sure that you can see the Spectrogram in the SoundEditor, by selecting the option <code>Spectrogram &gt; View Spectrogram</code>. This setting is saved from session to session, so you may have to switch <code>on</code> the spectrogram view.</p></li>
 <li><p>If you are happy with the spectrogram in the SoundEditor panel, you can then choose <code>Spectrogram &gt; Paint visible spectrogram...</code> in order to draw that spectrogram in the Picture window.</p></li>
-<li><p>You can also <code>Extract</code> and then <code>Save</code> the spectrogram from the SoundEditor.</p></li>
+<li><p>You can also <code>Extract</code> and then <code>Save</code> the spectrogram from the SoundEditor in order to save it as an object in the Objects window.</p></li>
 </ul>
 </div>
 </div>
@@ -356,10 +357,7 @@ Leave other arguments at their default (standard) values. Click <code>OK</code>.
 <h2><span class="header-section-number">6.5</span> How to read a spectrogram<a href="ch-spectrograms.html#sec:readspectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>(with Clizia Welker)</p>
 <div id="box-spectrogram" class="warningbox">
-<p>This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to <em>segment</em> (cut up) a speech signal into syllables or phones, and/or need to <em>transcribe</em> (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §<a href="index.html#sec:textbooks">0.1</a>), and see Chapter XX on segmenting and labeling speech. Also consult the valuable instructions and background on <a href="https://home.cc.umanitoba.ca/~robh/howto.html">how to read a spectrogram</a> by Rob Hagiwara.</p>
-<blockquote>
-<p>TODO link to chapter on segmenting and labeling</p>
-</blockquote>
+<p>This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to <em>annotate</em> a speech recording, that is, dividing or segmenting it into syllables or phones, and/or transcribing (labeling) the words or sounds spoken. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §<a href="index.html#sec:textbooks">0.1</a>), and see Chapter <a href="ch-annotation.html#ch-annotation">7</a> on annotating speech. Also consult the valuable instructions and background on <a href="https://home.cc.umanitoba.ca/~robh/howto.html">how to read a spectrogram</a> by Rob Hagiwara.</p>
 </div>
 <p>While by observing an oscillogram it is only possible to identify broad phonetic classes, the spectrogram provides us with sufficient information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about</p>
 <ul>
@@ -387,11 +385,61 @@ In VC contexts we see similar patterns as in CV contexts, but reversed in time.<
 <p>In producing <strong>alveolar</strong> consonants, the vocal tract is divided into two smaller cavities: a large back cavity, and a small front cavity between the alveolar obstruction and the outside air. Due to its small size, the front cavity yields resonances in the higher frequency regions, as we can see in the initial consonant [s] in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-broad">6.2</a>. In <strong>palatal</strong> consonants (such as the final consonant in the same spectrogram), the place of artiulation is more backward, the front cavity is larger, and the so-called ‘spectral centre of gravity’ in the resulting consonant is correspondingly lower.</p>
 <p><strong>Nasal and lateral</strong> consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to the acoustic <em>coupling</em> between branching cavities.</p>
 <p>For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.</p>
+</div>
+<div id="more-about-using-the-soundeditor-secsoundeditor3" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> More about using the SoundEditor {sec:soundeditor3}<a href="ch-spectrograms.html#more-about-using-the-soundeditor-secsoundeditor3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In several sections above we have encountered the SoundEditor: in §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.6.2</a> and in §<a href="ch-spectrograms.html#sec:spectrogramsoundeditor">6.4.2</a>. Please re-read those sections before you continue.
+The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter <a href="ch-prosody.html#ch-prosody">8</a>).
+Here we will provide some additional instructions not yet covered in the sections above.</p>
+<div id="box-soundeditor-3" class="praatbox">
+<ul>
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window.</p></li>
+<li><p>Choose <code>View &amp; Edit</code>.
+This will open a <strong>SoundEditor</strong> window.
+Figure <a href="ch-spectrograms.html#fig:window-soundeditor-3">6.4</a> shows an example of a SoundEditor, displaying the fragment <em>why is it so good</em> spoken by a female speaker of English; the single word <em>why</em> is highlighted.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-3"></span>
+<img src="figures/s321f1-1_informal_fragment_SoundEditor20250203.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *why is it so good...*, with the word *why* highlighted."  />
+<p class="caption">
+Figure 6.4: SoundEditor window, showing oscillogram and spectrogram of the fragment <em>why is it so good…</em>, with the word <em>why</em> highlighted.
+</p>
+</div>
+<div id="box-windowsfile-details" class="smallprintbox">
+<blockquote>
+<p>TODO REVISE</p>
+</blockquote>
+<p>The SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.</p>
+</div>
+<p>The SoundEditor contains a lot of information! In the top panel you always see an oscillogram (§<a href="ch-soundwaves.html#sec:oscillogram">1.6</a>). Below, there may be additional and overlapping visualisations of the Spectrogram (Ch.<a href="ch-spectrograms.html#ch-spectrograms">6</a>), Pitch, Intensity, Formants (§<a href="ch-speechsounds.html#sec:formants">5.2</a>), and/or voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them <code>off</code> by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the <code>Show</code> option.</p>
+<ul>
+<li><p>In the SoundEditor window, you can <strong>select</strong> a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p></li>
+<li><p>You can <strong>play back</strong> the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from <code>Praat</code>, consult §<a href="ch-soundtobytes.html#sec:playback">2.5</a> above.</p></li>
+<li><p>In the SoundEditor window, you can use the buttons in the lower left corner to <strong>zoom</strong> <code>in</code>, <code>out</code>, to zoom out to the entire sound (<code>all</code>), or to zoom to the <code>sel</code>ected part.</p></li>
+<li><p>You can also select a part of the recording by specifying the start and end times explicitly: choose <code>Time &gt; Select...</code> and enter the start and end times.</p></li>
+<li><p>By convention, the selected part should begin and end at <strong>positive zero crossings</strong> (where the signal changes from negative to positive; see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> below). You can find these precise places as follows (disregarding shortcuts in <code>Praat</code>):</p>
+<ul>
+<li>put the cursor in the approximate area where the boundary should be located;</li>
+<li>choose <code>Sound &gt; Move cursor to nearest zero crossing</code>;</li>
+<li>ask <code>Praat</code> to report the cursor location in its Info window: <code>Time : Get cursor</code>, and note this time;</li>
+<li>do this for both start and end of the selection part;</li>
+<li>use these noted times to set the selection part as described above.</li>
+</ul></li>
+<li><p>In this way, the word <em>window</em> was selected in the SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p></li>
+<li><p>To <strong>save</strong> the selected part as a separate audio file: in the SoundEditor, choose <code>File &gt; Save selected sound as WAV file...</code>.
+Provide the appropriate folder and file name, and click <code>OK</code>.</p></li>
+<li><p>You may also <strong>extract</strong> the selected part into a new Sound object in <code>Praat</code>. In the SoundEditor window, choose <code>Sound &gt; Extract selected sound (preserve times)</code> if you wish to maintain the same times as in your source recording: the new Sound object will have a starting time equal to the starting time of the selection in the source recording. If you want your new Sound to start at zero, then choose <code>Sound &gt; Extract selected sound (time from 0)</code>.</p></li>
+<li><p>The new Sound object may need a fade-in and fade-out (see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> below).</p></li>
+<li><p>Remember to save this new Sound object (see §<a href="ch-soundtobytes.html#sec:praatsave">2.4.4.2</a>) if you wish to keep it.</p></li>
+</ul>
+</div>
 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021" class="csl-entry">
+Galvez, Daniel, Greg Diamos, Juan Ciro, Juan Felipe Cerón, Keith Achorn, Anjali Gopi, David Kanter, Maximilian Lam, Mark Mazumder, and Vijay Janapa Reddi. 2021. <span>“The People’s Speech: A Large-Scale Diverse English Speech Recognition Dataset for Commercial Usage,”</span> November. <a href="https://doi.org/10.48550/arXiv.2111.09344">https://doi.org/10.48550/arXiv.2111.09344</a>.
+</div>
 <div id="ref-Rubin_2022" class="csl-entry">
 Rubin, Philip. 2022. <span>“Arthur Abramson.”</span> In <em>Oxford Research Encyclopedia of Linguistics</em>. <a href="https://doi.org/10.1093/acrefore/9780199384655.013.923">https://doi.org/10.1093/acrefore/9780199384655.013.923</a>.
 </div>
@@ -409,7 +457,7 @@ Rubin, Philip. 2022. <span>“Arthur Abramson.”</span> In <em>Oxford Research 
         </div>
       </div>
 <a href="ch-speechsounds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-segmentinglabeling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-annotation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

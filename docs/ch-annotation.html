@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis</title>
-  <meta name="description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
+  <title>Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis." />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:title" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
+  <meta property="og:description" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis." />
   <meta name="github-repo" content="rstudio/TPhSA" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis" />
+  <meta name="twitter:title" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis" />
   
-  <meta name="twitter:description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="twitter:description" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis." />
   
 
 
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-soundtobytes.html"/>
-<link rel="next" href="ch-filtering.html"/>
+<link rel="prev" href="ch-spectrograms.html"/>
+<link rel="next" href="ch-prosody.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -273,148 +273,125 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="complex-sounds-and-spectra" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Complex sounds and spectra<a href="complex-sounds-and-spectra.html#complex-sounds-and-spectra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><em>Chapter keywords</em>: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse.</p>
-<div id="sec:FTintro" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Introduction<a href="complex-sounds-and-spectra.html#sec:FTintro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <em>sine wave</em>, depicted in Fig. <a href="ch-soundwaves.html#fig:example-oscillogram">1.2</a>, is the simplest sound possible. It is composed of the simplest back-and-forth variation or oscillation in air pressure, similar to the regular swing pattern or oscillation of a pendulum<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>. We only encounter sine wave sounds if they are artificially generated, and hardly ever in nature – although the sound of a tuning fork comes quite close to a sinewave pattern.</p>
-<p>By contrast, <em>complex sounds</em> have more complex wave patterns. All natural periodic sounds are complex sounds. <strong>A complex sound can be regarded as the sum of multiple sine wave sounds.</strong> This relation has been described by the French mathematician, baron J.B.J. Fourier (1768–1830). The sine waves are termed ‘frequency components’ of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called ‘Fourier analysis’ or ‘Fourier Transform’ of a complex sound, these frequency components are being estimated from the waveform.</p>
-<p>If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a> provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz (<span class="math inline">\(T=.01\)</span>) and 200 Hz (<span class="math inline">\(T=.005\)</span>) and 400 Hz (<span class="math inline">\(T=.0025\)</span>), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the <em>fundamental</em>, and its frequency is called the <em>fundamental frequency</em> (symbol <span class="math inline">\(f_0\)</span>) of the complex periodic sound; we hear this <span class="math inline">\(f_0\)</span> as its pitch. The higher components are called <em>overtones</em>. The fundamental and overtones are collectively called <em>harmonics</em>: the fundamental is the first harmonic, the first overtone is the second harmonic, etc.
-<strong>In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.</strong></p>
-<blockquote>
-<p>TODO crossref pitch, missing fundamental</p>
-</blockquote>
-<p>Typical examples of periodic complex sounds are the vowel sounds in normal speech. The properties of a periodic complex sound depend on the amplitudes, frequencies and phases of its component harmonics.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fourier-oscillogram"></span>
-<img src="TPhSA-EN_files/figure-html/fourier-oscillogram-1.png" alt="Oscillograms of three sinewave sounds and their resulting complex periodic sound." width="672" />
+<div id="ch-annotation" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Annotating speech sounds<a href="ch-annotation.html#ch-annotation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Chapter keywords</em>: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, TextGridEditor.</p>
+<div id="sec:coarticulation-intro" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Introduction<a href="ch-annotation.html#sec:coarticulation-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Annotating speech is at the core of phonetic analysis. Annotation means that abstract linguistic symbols are linked to the concrete physical speech stream — somewhat similar to subtitling.</p>
+<p>Most projects involve some sort of annotation of speech, as researchers may be interested in e.g. how an intended (abstract) sound is produced acoustically-phonetically, how a meaningful phonological contrast is realized in speech, how an acoustic-phonetic feature such as F2 locus is perceived, etc.</p>
+<p>In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called <strong>coarticulation</strong>, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive <em>handwriting</em>.</p>
+<p>The complex relation between linguistic and spoken units is illustrated in Figure <a href="ch-annotation.html#fig:window-soundeditor-again">7.1</a> which is a copy of Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-again"></span>
+<img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted."  />
 <p class="caption">
-Figure 3.1: Oscillograms of three sinewave sounds and their resulting complex periodic sound.
+Figure 7.1: SoundEditor window, showing oscillogram and spectrogram of the fragment <em>…a small window to get this…</em>, with the word <em>window</em> highlighted.
 </p>
 </div>
-<div id="timbre" class="section level3 hasAnchor" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Timbre<a href="complex-sounds-and-spectra.html#timbre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Two periodic complex sounds, having the same overall amplitude and fundamental frequency, may differ strongly in their character.
-The general name for this property is <em>timbre</em>.
-Timbre depends on the relative amplitudes of the harmonics, and hence very many different timbres are possible.
-For aperiodic sounds, timbre also depends on the relative amplitudes of the (infinitely many) frequency components.
-A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The difference between distinct vowels, such as /a/ vs. /i/, spoken by the same person at the same pitch and amplitude, is also a matter of timbre, as is the difference between similar but distinct consonant sounds, such as /s/ vs. /ʃ/.</p>
-<p>Timbre is not a one-dimensional property of a sound (as frequency and amplitude are), but a multi-dimensional property.</p>
+<div id="box-windowsfile-details-again" class="smallprintbox">
+<p>The SoundEditor in Fig.<a href="ch-annotation.html#fig:window-soundeditor-again">7.1</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.</p>
 </div>
-</div>
-<div id="sec:spectrum" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Spectrum<a href="complex-sounds-and-spectra.html#sec:spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a <em>spectrum</em>. A spectrum is useful to assess the frequency components of a signal, which are far easier to determine in a spectrum than in an oscillogram. A rainbow reveals the spectum of sunlight: water droplets refract the incoming light into its frequency components (colors). Similarly, complex sounds may be broken down into their (high and/or low) frequency components.</p>
-<p>Figure <a href="complex-sounds-and-spectra.html#fig:complex100n200n400">3.2</a> shows an oscillogram on the left (of the same complex sound as shown in Fig. <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a>), and its matching spectrum on the right. The spectrum shows the amplitude along the vertical axis, of each frequency component along the horizontal axis. (The phases of the frequency components are ignored.) Thus, a spectrum shows the frequency and amplitude of each component.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:complex100n200n400"></span>
-<img src="figures/complex100n200n400.png" alt="Oscillogram (left) and spectrum (right) of a complex periodic sound."  />
-<p class="caption">
-Figure 3.2: Oscillogram (left) and spectrum (right) of a complex periodic sound.
-</p>
-</div>
-<div id="questions-spectrum" class="questionbox">
-<div id="questions-2" class="section level3 unnumbered hasAnchor">
-<h3>Questions<a href="complex-sounds-and-spectra.html#questions-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="question-3.1" class="section level4 unnumbered hasAnchor">
-<h4>Question 3.1<a href="complex-sounds-and-spectra.html#question-3.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitude of 40 dB SPL.</p>
-</div>
-</div>
-</div>
-<P>
-<div id="box:praatspectrum" class="praatbox">
-<div id="how-to-obtain-a-spectrum" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> How to obtain a spectrum<a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Figure <a href="ch-annotation.html#fig:window-soundeditor-again">7.1</a> illustrates the following three<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a> characteristics of casual, fluent speech:</p>
 <ul>
-<li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
-<li><p>Next, in the <code>Praat</code> object window, choose <code>Analyse spectrum &gt;</code> and then <code>To Spectrum...</code>.</p></li>
-<li><p><code>Praat</code> offers two versions, regular and fast, of the Fourier analysis to estimate a spectrum. The faster version of the Fourier transform is termed ‘Fast Fourier Transform’ or FFT, and it requires significantly fewer computations. FFT requires that the number of samples to be analysed is a power of <span class="math inline">\(2\)</span>. If you choose the <code>Fast</code> version by ticking the box, then <code>Praat</code> adds zeroes to your sound in order to meet this requirement.</p></li>
-<li><p>The result is a Spectrum object calculated <em>over the entire Sound</em> (plus additional zeroes, in FFT), and this Spectrum object is added at the bottom of the list of objects.</p></li>
-<li><p>Remember to <code>Save</code> this Spectrum object if you wish.</p></li>
-<li><p>As the spectral representation (spectrum, horizontal axis is frequency) is equivalent with the temporal representation (oscillogram, horizontal axis is time), the Spectrum object may be reconverted again into Sound, by means of “inverse fourier transform”.
-To do so, select the Spectrum object, select button <code>Sound &gt;</code> and then <code>To Sound</code>.</p></li>
+<li><p>Boundaries between discrete speech segments are not clearly present, due to coarticulation. For example, there is strong articulatory and acoustic overlap between the vowel and the final consonant of [smɔɫ] <em>small</em>, making it almost impossible to demarcate these two sounds.</p></li>
+<li><p>Some speech segments have hardly any acoustic-phonetic manifestation at all, e.g. the final consonant of <em>get</em>;</p></li>
+<li><p>Some speech segments are difficult to transcribe, e.g. the vowel in the last syllable of <em>window</em>: diphthong [ˈwɪndoʊ] or monophthong [ˈwɪndoː] ?</p></li>
+</ul>
+<p>Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. In sum, segmenting and labeling speech addresses the core issue in phonetics, viz. how abstract linguistic units and meanings are related to their concrete physical realizations, both in production and in perception of spoken language.</p>
+<p>In this chapter on annotation, we discuss <strong>segments</strong>, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss <strong>labels</strong> (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).</p>
+</div>
+<div id="box-praattextgrid" class="praatbox">
+<div id="sec:textgrids" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> TextGrid objects<a href="ch-annotation.html#sec:textgrids" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Annotation involves both segmentation (defining boundaries between speech intervals) and labeling or transcribing (assigning symbol labels to those intervals). In <code>Praat</code>, the object that holds this type of information (boundaries, time points, and labels) is called the <strong>TextGrid</strong>.</p>
+<p>A <code>TextGrid</code> object may contain multiple layers, or <code>tiers</code>, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g. the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:</p>
+<ul>
+<li><p><code>interval tiers</code> containing time intervals (corresponding with e.g. words, phones, utterances); these intervals have boundaries and they may have labels, and</p></li>
+<li><p><code>point tiers</code> containing time points (e.g. moments of intensity peaks); these points have a single time point (moment) and they may have labels.</p></li>
+</ul>
+<p>As explained in the <code>Praat</code> tutorial on annotation (in the Help system), the easiest way to create a TextGrid matching a Sound recording is as follows:</p>
+<ul>
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window.</p></li>
+<li><p>Choose <code>Annotate &gt;</code> and then <code>To TextGrid...</code>.</p></li>
+<li><p>In the subsequent menu (Sound to TextGrid), just type the names of the respective tiers, separated by blanks only, e.g. <code>word phone</code>. (You can later rename the tiers.)</p></li>
+<li><p>In the same menu, specify which of the tiers are <code>point tiers</code>, by typing the names (again) of the point tiers. Tiers not mentioned as point tiers will be created as <code>interval tiers</code>. (See above for the distinction between these two kinds of tiers.) Then click <code>OK</code>.</p></li>
+<li><p>The resulting TextGrid object is again added at the bottom of the list of objects. The TextGrid object has the same begin and end times as the Sound from which it was created, and it will have the tier(s) as specified, but there will be no information yet within the tier(s).</p></li>
+<li><p>You may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> or <code>Modify</code> the contents of the TextGrid. (Choose <code>Modify</code> to rename tiers.)</p></li>
+<li><p>Remember to <code>Save</code> the TextGrid object if you wish.</p></li>
 </ul>
 </div>
 </div>
-<P>
-<div id="box-praatspectralslice" class="praatbox">
-<div id="sec:spectralslice" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> How to obtain a spectral ‘slice’<a href="complex-sounds-and-spectra.html#sec:spectralslice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure <a href="ch-soundwaves.html#fig:speech-oscillogram">1.1</a>, at <span class="math inline">\(t \approx 0.210\)</span> seconds.</p>
-<p>This can be done by means of two features in <code>Praat</code> which we will explore in depth only later, viz. the SoundEditor and the Spectrogram (Ch.<a href="ch-spectrograms.html#ch-spectrograms">6</a>.</p>
-<ul>
-<li><p>In the <code>Praat</code> object window, select a Sound object.</p></li>
-<li><p>Next, in the <code>Praat</code> object window, choose <code>View &amp; Edit</code>. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more details and instructions about the SoundEditor, see §@ref(#sec:praatsoundeditor).</p></li>
-<li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then <code>Spectrogram settings</code>. Here we may need to adjust the setting for <code>Window length</code>. <code>Praat</code> will average the resulting spectrum over the time window of <span class="math inline">\(2\times\)</span> this value, centered around the position of the cursor in the oscillogram (see §<a href="ch-spectrograms.html#sec:howto-spectrogram">6.4</a>).<br />
-A <em>short</em> window (e.g. 0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A <em>long</em> window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read §<a href="ch-spectrograms.html#sec:howto-spectrogram">6.4</a>, read the <code>Praat</code> Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.</p></li>
-<li><p>In the SoundEditor window, go to <code>Spectrogram...</code> and then choose <code>View spectral slice</code>. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.<a href="complex-sounds-and-spectra.html#fig:speech-spectralslice">3.3</a> for an example.</p></li>
-<li><p>In the SpectrumEditor window, if you click inside the spectrum, the frequency and amplitude coordinates are shown. Placing the cursor on a spectral peak in the SpectrumEditor can be done by means of the button <code>Spectrum</code> in the top row, then choose <code>Move cursor to nearest peak</code>.</p></li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-spectralslice"></span>
-<img src="figures/Spectrum_speech_word_0_210.png" alt="Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at *t*=0.210 s. "  />
+<div id="sec:howtoannotate" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> How to annotate speech sounds<a href="ch-annotation.html#sec:howtoannotate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In practice, it’s easiest to place boundaries (segmentation) and to label the resulting intervals or segments (labeling or transcription) at the same time. The boundaries, intervals and labels are kept in a TextGrid object (see §<a href="ch-annotation.html#sec:textgrids">7.2</a> above).</p>
+<div id="box-praattextgrideditor" class="praatbox">
+<p>The recommended workflow in <code>Praat</code> is as follows.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the speech recording to annotate as a Sound object (see §sec:praatopen).</p></li>
+<li><p>Create a corresponding TextGrid (see §<a href="ch-annotation.html#sec:textgrids">7.2</a> above).</p></li>
+<li><p>Select <em>both</em> the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press <code>Command</code> while selecting objects.</p></li>
+<li><p>Choose the button labeled <code>View &amp; Edit</code>; this will open a TextGridEditor window.<br />
+The TexGridEditor is very similar to the SoundEditor window which we encountered earlier (see §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.6.2</a> and REF for details about the SoundEditor, which are also applicable to the TextGridEditor).</p></li>
+</ol>
+<p>Figure <a href="ch-annotation.html#fig:window-textgrideditor">7.2</a> shows an example of a TextGridEditor, displaying the fragment <em>a small window to get this right</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.
+In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the <code>word</code> (interval) tier for orthographic transcription, and the <code>phone</code> (interval) tier for broad phonetic transcription. And in this illustration, <code>Praat</code> focuses on the <code>word</code> tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-textgrideditor"></span>
+<img src="figures/asmallwindowtogetthisright_TextGridEditor20250130.png" alt="TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted."  />
 <p class="caption">
-Figure 3.3: Spectral slice of the /i/ vowel in the word <em>speech</em>, estimated over 0.015 s on either side of the cursor at <em>t</em>=0.210 s.
+Figure 7.2: TextGridEditor window, showing oscillogram, spectrogram, and <code>word</code> and <code>phone</code> annotation tiers of the fragment <em>…a small window to get this right</em>; the word <em>window</em> is highlighted.
 </p>
 </div>
-<ul>
-<li><p>In Fig.<a href="complex-sounds-and-spectra.html#fig:speech-spectralslice">3.3</a>, the individual harmonics are clearly visible in the spectrum. The 10th harmonic is at 2195 Hz, which suggests that <span class="math inline">\(f_0 \approx 219\)</span> Hz (see §<a href="complex-sounds-and-spectra.html#sec:FTintro">3.1</a>). Also notice the overall downward slope of the spectrum (see §<a href="ch-filtering.html#sec:emphasisfilters">4.4</a> and §<a href="ch-speechsounds.html#sec:vowelproduction">5.3.1</a>).</p></li>
-<li><p>Remember to <code>Save</code> the Spectrum object if you wish.</p></li>
-</ul>
+<div id="box-windowsfile-details-third" class="smallprintbox">
+<p>The TextGridEditor in Fig.<a href="ch-annotation.html#fig:window-textgrideditor">7.2</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.<br />
+Notice the absence of a <code>phone</code> boundary between the vowel and coda consonant of <em>small</em>, as well as the intrusive [d] between <em>small</em> and <em>window</em>.</p>
 </div>
+<ol start="5" style="list-style-type: decimal">
+<li>In the TextGridEditor:<br />
+</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>if you click in the oscillogram or spectrogram, then the vertical cursor moves to that position. Moreover, a <em>candidate boundary</em> appears in the annotation tiers; it is marked by a small circle or ‘handle’ at the upper end of the boundary mark in a tier. You may accept the proposed boundary by clicking on its ‘handle’. This will <strong>add</strong> the boundary.<br />
+Note that there is always an (implicit) boundary at the beginning and at the end of the TextGrid – you don’t need to add boundaries there. Consequently, when you start annotating, the interval tier(s) in your TextGrid already contain(s) a single interval that encompasses the entire Sound.<br />
+Adding a boundary means splitting the current interval into two.<br />
+Thus, if you repeatedly add boundaries, and thus define new intervals between boundaries, you <em>segment</em> the continuous speech signal into consecutive discrete intervals within the annotation tier(s).<br />
+</p></li>
+<li><p>You may <strong>copy</strong> a boundary from one tier to another by clicking within a tier on the boundary to copy (e.g. from the <code>word</code> to the <code>phone</code> tier). Again, a <em>candidate boundary</em> appears in the other annotation tier(s) (if there are any other tiers, of course). Again, you may accept the proposed boundary by clicking on its ‘handle’.<br />
+</p></li>
+<li><p>You may <strong>move</strong> a boundary in the TextGridEditor as follows. Select the boundary by clicking on it, then drag it to an earlier or later position. It is recommended to place boundaries at zero crossings: to do so, choose <code>Boundary &gt; Move to nearest zero crossing</code> (see §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.6.2</a> for background). (In order to move the <em>cursor</em>, choose <code>Sound &gt; Move cursor to nearest zero crossing</code>).<br />
+</p></li>
+<li><p>If you are not happy with a boundary, you can <strong>remove</strong> it by first selecting the boundary (click on it), then choose <code>Boundary &gt; Remove</code>.<br />
+</p></li>
+<li><p>If you click in an interval in a tier, then that interval is selected. You can <strong>listen</strong> to the selected interval, or the neigboring parts, using the buttons labeled with durations.<br />
+In addition to looking at the oscillogram and spectrogram, listening is a great way to check whether a boundary is placed correctly (phoneticians typically report this as “using audiovisual feedback”). For example, I verified the boundary between [ɹ] and [aɪ] in the final word <em>right</em> in Fig.<a href="ch-annotation.html#fig:window-textgrideditor">7.2</a>, by repeatedly listening to the [ɹ] and [aɪ] intervals, meanwhile adjusting the boundary so that their demarcation sounded optimal in my ears: minimal [aɪ] within the [ɹ] segment, and minimal [ɹ] within the [aɪ] segment.</p></li>
+</ol>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Still in the TextGridEditor:<br />
+If you click in an interval in a tier, then that interval is selected. As soon as you type a character, or pick a phonetic symbol from the righthand chart, that symbol is used as the transcription <strong>label</strong> for the selected interval in the focused tier.<br />
+Phonetic symbols are explained in your phonetics textbook and in the <span class="citation"><em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em> (<a href="#ref-HandbookIPA_1999">1999</a>)</span>.</p></li>
+<li><p>Boundaries and labels are modified (added, moved, removed, etc) <em>immediately</em> in the TextGrid. If you are done, you may close the TextGridEditor window, and the contents of the TextGrid are kept in the TextGrid object that you’ve just edited.</p></li>
+<li><p>Back in the <code>Praat</code> Objects window:<br />
+you may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> or <code>Modify</code> the contents of the TextGrid. (Choose <code>Modify</code> to rename tiers.)<br />
+The <code>Tabulate</code> command is convenient if you wish to export the TextGrid information as a dataset for further analysis. Each interval of each tier is written as a separate row in the dataset. After having saved the resulting table from <code>Praat</code>, you could use your statistical software on this tabulated-and-exported dataset, e.g. to count words, to compute average segment durations, etc etc.<br />
+(For statistical guidance, see this tutorial on <a href="https://hugoquene.github.io/QMS-EN/">Quantitative Methods and Statistics</a>.</p></li>
+<li><p>Remember to <code>Save</code> the TextGrid object if you wish.</p></li>
+</ol>
 </div>
-</div>
-<div id="spectra-of-aperiodic-sounds" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Spectra of aperiodic sounds<a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Stable noise and brief impulses are two types of aperiodic signals (§<a href="ch-soundwaves.html#sec:periodicity">1.7</a>): the variations in air pressure do not follow a regular periodic pattern<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>. Aperiodic sounds do not have a fundamental frequency (because there is no regular period), and their phase is undefined, but aperiodic sounds do have an amplitude and a spectral composition.</p>
-<div id="sec:noise" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Noise<a href="complex-sounds-and-spectra.html#sec:noise" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>First we discuss <em>stable</em> aperiodic sounds: <strong>noise</strong>. You might say that a noisy sound has an infinite number of frequency components. That is, the components are not only harmonics of the fundamental frequency (as with periodic complex sounds), but may be found at <em>every</em> frequency. The relative amplitudes of the many frequency components determines the timbre of the noise.</p>
-<p>In <em>white noise</em>, all frequency components are equally strong<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, and thus the spectral envelope is flat.
-In so-called <em>brown noise</em>, the spectral envelope decreases by <span class="math inline">\(-6\)</span> dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech (cf. §<a href="ch-speechsounds.html#sec:vowelproduction">5.3.1</a>), brown noise is often used in phonetic research whenever we need to mask speech.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrum-whitebrownnoises"></span>
-<img src="figures/whitebrownnoises.png" alt="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz)."  />
-<p class="caption">
-Figure 3.4: Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).
-</p>
-</div>
-<p>The random deviations from the ideal, smooth spectral envelope are due to (a) the random variability inherent in noise, and (b) the fact that the spectrum was calculated over a finite amount of time<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>, with (c) a particular sampling frequency of the noise.</p>
-</div>
-<div id="sec:impulses" class="section level3 hasAnchor" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Impulses<a href="complex-sounds-and-spectra.html#sec:impulses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>An <strong>impulse</strong> is a very brief and <em>transient</em> sound, such as a hand clap or tick. Acoustically, a very brief impulse sound is like a brief burst of white noise, with a flat spectral envelope. The shorter the impulse, the flatter the spectral envelope becomes.</p>
-<p>An impulse may occur unintentionally if the amplitude suddenly increases from zero to a high value, e.g. at the onset of a sound recording starting at a nonzero value. The resulting noise burst should be effectively removed by <em>fading in</em> the sound, see §<a href="ch-soundtobytes.html#sec:fades">2.6.3</a> for more.</p>
-</div>
-</div>
-<div id="sec:envelope" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Envelope<a href="complex-sounds-and-spectra.html#sec:envelope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <em>envelope</em> of a sound describes how the properties of that sound change over time. This concept is best described by regarding the amplitude of a sound: the ‘amplitude envelope’. However, a sound may at the same time have multiple and different envelopes for its amplitude, for its (fundamental) frequency, and for (a singular parameter of) its timbre. Even the properties of a filter may follow an envelope, that is, they may change over time (see Ch. <a href="ch-filtering.html#ch-filtering">4</a>).</p>
-<p>The concept of the <em>envelope</em> of a sound property stems from electronic music (synthesizers); critical time points are the onset and offset of a key being pressed on the keyboard of the synthesizer. However, the envelope is also a helpful concept for describing analog musical sounds (e.g. picking a guitar string) and speech sounds (e.g. plosive vs fricative consonants).</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:envelope"></span>
-<img src="figures/ADSR_parameter.png" alt="A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from  $https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg$, used under CC-BY-SA license."  />
-<p class="caption">
-Figure 3.5: A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from <span class="math inline">\(https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg\)</span>, used under CC-BY-SA license.
-</p>
-</div>
-<blockquote>
-<p>TODO: add text</p>
-</blockquote>
-<blockquote>
-<p>A
-D
-S
-R</p>
-</blockquote>
-<p>In terms of its amplitude, we may regard a brief impulse sound (click or pulse, see §<a href="complex-sounds-and-spectra.html#sec:impulses">3.3.2</a> above) as having very short attack and decay times, a zero sustain level, and zero release time.</p>
 
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021" class="csl-entry">
+Galvez, Daniel, Greg Diamos, Juan Ciro, Juan Felipe Cerón, Keith Achorn, Anjali Gopi, David Kanter, Maximilian Lam, Mark Mazumder, and Vijay Janapa Reddi. 2021. <span>“The People’s Speech: A Large-Scale Diverse English Speech Recognition Dataset for Commercial Usage,”</span> November. <a href="https://doi.org/10.48550/arXiv.2111.09344">https://doi.org/10.48550/arXiv.2111.09344</a>.
+</div>
+<div id="ref-HandbookIPA_1999" class="csl-entry">
+<em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em>. 1999. Cambridge: Cambridge University Press.
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="24">
-<li id="fn24"><p>Drawing the position of a swinging pendulum over time will result in the same figure.<a href="complex-sounds-and-spectra.html#fnref24" class="footnote-back">↩︎</a></p></li>
-<li id="fn25"><p>Or, you might say that the period is infinitely long.<a href="complex-sounds-and-spectra.html#fnref25" class="footnote-back">↩︎</a></p></li>
-<li id="fn26"><p>This is called ‘white’ noise by analogy with white light, in which all frequency components in the visible part of the electromagnetic spectrum are equally strong.<a href="complex-sounds-and-spectra.html#fnref26" class="footnote-back">↩︎</a></p></li>
-<li id="fn27"><p>If you would listen to white noise for an infinitely long time, then all frequency components would indeed be equally strong.<a href="complex-sounds-and-spectra.html#fnref27" class="footnote-back">↩︎</a></p></li>
+<ol start="42">
+<li id="fn42"><p>You may also notice the F2 locus of the [d] in <em>window</em>, at 2.118 s and ~1800 Hz, see §<a href="ch-spectrograms.html#sec:readspectrogram">6.5</a>, voiced consonants.<a href="ch-annotation.html#fnref42" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -422,8 +399,8 @@ R</p>
           </div>
         </div>
       </div>
-<a href="ch-soundtobytes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-filtering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-spectrograms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-prosody.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -454,7 +431,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch03complexsounds.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch07annotation.Rmd",
 "text": "Edit"
 },
 "history": {

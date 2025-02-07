@@ -233,15 +233,16 @@ div.csl-indent {
 <li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
-<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#from-soundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogramsoundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:readspectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#more-about-using-the-soundeditor-secsoundeditor3"><i class="fa fa-check"></i><b>6.6</b> More about using the SoundEditor {sec:soundeditor3}</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html"><i class="fa fa-check"></i><b>7</b> Segmenting and labeling speech sounds</a>
+<li class="chapter" data-level="7" data-path="ch-annotation.html"><a href="ch-annotation.html"><i class="fa fa-check"></i><b>7</b> Annotating speech sounds</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
-<li class="chapter" data-level="7.3" data-path="ch-segmentinglabeling.html"><a href="ch-segmentinglabeling.html#how-to-segment-and-label-speech-sounds-in-praat"><i class="fa fa-check"></i><b>7.3</b> How to segment and label speech sounds in <code>Praat</code></a></li>
+<li class="chapter" data-level="7.1" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
 <ul>
@@ -274,7 +275,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="ch-soundtobytes" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Converting sound to bytes<a href="ch-soundtobytes.html#ch-soundtobytes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><em>Chapter keywords</em>: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain.</p>
+<p><em>Chapter keywords</em>: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain, SoundEditor.</p>
 <div id="sec:ADCoverview" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Overview<a href="ch-soundtobytes.html#sec:ADCoverview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In order to process sounds by means of a computer program, or telephone, we first need to convert that sound, the variations in air pressure, to numbers that are then further processed by a computer or by a telephone device. This is a two-step process, involving at least two key components in order:</p>
@@ -440,14 +441,14 @@ The amplitude scale factor is chosen so that the average <em>intensity</em> of t
 <p>In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file.
 <code>Praat</code> contains a so-called SoundEditor to perform these tasks.</p>
 <div id="box-segmenting" class="warningbox">
-<p>Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters — and practice. Segmenting speech will also be discussed in Chapter <a href="ch-segmentinglabeling.html#ch-segmentinglabeling">7</a>. Below are some brief starter instructions.</p>
+<p>Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters — and practice. Segmenting speech will also be discussed in Chapter <a href="ch-annotation.html#ch-annotation">7</a> on phonetic annotation. Below are some brief starter instructions.</p>
 </div>
 <P>
 <div id="box-soundeditor" class="praatbox">
 <ul>
 <li><p>Select an input Sound object in the <code>Praat</code> Objects window.</p></li>
 <li><p>Choose <code>View &amp; Edit</code>.
-This will open a SoundEditor window.
+This will open a <strong>SoundEditor</strong> window.
 Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows an example of a SoundEditor, displaying the fragment <em>…a small window to get this…</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.</p></li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor"></span>

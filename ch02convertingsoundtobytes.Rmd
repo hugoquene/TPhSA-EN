@@ -1,6 +1,6 @@
 # Converting sound to bytes {#ch-soundtobytes}
 
-*Chapter keywords*: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain. 
+*Chapter keywords*: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain, SoundEditor. 
 
 ## Overview {#sec:ADCoverview}
 
@@ -197,7 +197,7 @@ In many projects, we wish to excise (cut out) a part of a recording, and save th
 
 ::: {#box-segmenting .warningbox}
 
-Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \@ref(ch-segmentinglabeling). Below are some brief starter instructions. 
+Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \@ref(ch-annotation) on phonetic annotation. Below are some brief starter instructions. 
 
 :::
 
@@ -208,7 +208,7 @@ Reliably segmenting or delimiting fragments of a speech utterance requires the b
 - Select an input Sound object in the `Praat` Objects window. 
 
 - Choose `View & Edit`.
-This will open a SoundEditor window.
+This will open a **SoundEditor** window.
 Figure \@ref(fig:window-soundeditor) shows an example of a SoundEditor, displaying the fragment *...a small window to get this...* spoken by a male speaker of American English; the single word *window* is highlighted. 
 
 ```{r window-soundeditor, echo=FALSE, fig.cap="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.", fig.align="center"}

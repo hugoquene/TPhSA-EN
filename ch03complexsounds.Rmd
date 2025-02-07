@@ -109,11 +109,9 @@ This can be done by means of two features in `Praat` which we will explore in de
 
 - In the `Praat` object window, select a Sound object.
 
-- Next, in the `Praat` object window, choose `View & Edit`. This will open a so-called SoundEditor window, with the oscillogram as its main feature. 
+- Next, in the `Praat` object window, choose `View & Edit`. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more details and instructions about the SoundEditor, see §\@ref(#sec:praatsoundeditor). 
 
-> TODO crossref SoundEditor
-
-- In the SoundEditor window, go to `Spectrogram...` and then `Spectrogram settings`. Here we may need to adjust the setting for `Window length`. `Praat` will average the resulting spectrum over the time window of $2\times$ this value, centered around the position of the cursor in the oscillogram (see §\@ref(sec:howto-spectrogram)).\
+- In the SoundEditor window, go to `Spectrogram...` and then `Spectrogram settings`. Here we may need to adjust the setting for `Window length`. `Praat` will average the resulting spectrum over the time window of $2\times$ this value, centered around the position of the cursor in the oscillogram (see §\@ref(sec:howto-spectrogram)). \
 A *short* window (e.g. 0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A *long* window (e.g. 0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read §\@ref(sec:howto-spectrogram), read the `Praat` Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices. 
 
 - In the SoundEditor window, go to `Spectrogram...` and then choose `View spectral slice`. As a first result, a new Spectrum object is added in the Objects window. The spectrum in this object is estimated over the window length on either side of the cursor position. Secondly, this new Spectrum object is opened in a SpectrumEditor window, see Fig.\@ref(fig:speech-spectralslice) for an example. 

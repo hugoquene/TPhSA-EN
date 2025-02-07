@@ -113,6 +113,8 @@ For background, see §\@ref(sec:removenontargetsounds) above.
 
 :::
 
+Formant frequencies are also available in the SoundEditor (§\@ref(sec:praatsoundeditor)); these formant frequencies are computed in the same way as described above. 
+
 ## Source-filter theory of speech production {#sec:sourcefilter}
 
 According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter [@Fant_1970]. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source (although source-filter interactions do occur in actual speech production; @Tokuda_2021, §4). 

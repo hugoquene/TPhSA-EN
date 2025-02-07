@@ -59,7 +59,7 @@ The `Pre-emphasis` slope helps in discerning visual details in the higher freque
 
 - Remember to `Save` the Spectrogram object if you wish. 
 
-### from SoundEditor 
+### from SoundEditor {#sec:spectrogramsoundeditor}
 
 This method is similar to the spectral analysis described in §\@ref(sec:spectralslice). Using this method, your spectrogram in the SoundEditor is immediately updated if you change (`Apply`) values for the analysis parameters (which may be convenient), but extracting and saving the Spectrogram requires some extra work. 
 
@@ -80,7 +80,7 @@ Leave other arguments at their default (standard) values. Click `OK`.
 
 - If you are happy with the spectrogram in the SoundEditor panel, you can then choose `Spectrogram > Paint visible spectrogram...` in order to draw that spectrogram in the Picture window. 
 
-- You can also `Extract` and then `Save` the spectrogram from the SoundEditor. 
+- You can also `Extract` and then `Save` the spectrogram from the SoundEditor in order to save it as an object in the Objects window. 
 
 :::
 
@@ -90,9 +90,7 @@ Leave other arguments at their default (standard) values. Click `OK`.
 
 ::: {#box-spectrogram .warningbox}
 
-This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to *segment* (cut up) a speech signal into syllables or phones, and/or need to *transcribe* (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\@ref(sec:textbooks)), and see Chapter XX on segmenting and labeling speech. Also consult the valuable instructions and background on [how to read a spectrogram](https://home.cc.umanitoba.ca/~robh/howto.html) by Rob Hagiwara.  
-
-> TODO link to chapter on segmenting and labeling
+This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to *annotate* a speech recording, that is, dividing or segmenting it into syllables or phones, and/or transcribing (labeling) the words or sounds spoken. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\@ref(sec:textbooks)), and see Chapter \@ref(ch-annotation) on annotating speech. Also consult the valuable instructions and background on [how to read a spectrogram](https://home.cc.umanitoba.ca/~robh/howto.html) by Rob Hagiwara.  
 
 ::: 
 
@@ -136,3 +134,58 @@ In producing **alveolar** consonants, the vocal tract is divided into two smalle
 **Nasal and lateral** consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to the acoustic *coupling* between branching cavities. 
 
 For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section. 
+
+## More about using the SoundEditor {sec:soundeditor3}
+
+In several sections above we have encountered the SoundEditor: in §\@ref(sec:praatsoundeditor) and in §\@ref(sec:spectrogramsoundeditor). Please re-read those sections before you continue. 
+The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter \@ref(ch-prosody)). 
+Here we will provide some additional instructions not yet covered in the sections above. 
+
+::: {#box-soundeditor-3 .praatbox}
+
+- Select an input Sound object in the `Praat` Objects window. 
+
+- Choose `View & Edit`.
+This will open a **SoundEditor** window.
+Figure \@ref(fig:window-soundeditor-3) shows an example of a SoundEditor, displaying the fragment *why is it so good* spoken by a female speaker of English; the single word *why* is highlighted. 
+
+```{r window-soundeditor-3, echo=FALSE, fig.cap="SoundEditor window, showing oscillogram and spectrogram of the fragment *why is it so good...*, with the word *why* highlighted.", fig.align="center"}
+knitr::include_graphics("figures/s321f1-1_informal_fragment_SoundEditor20250203.png")
+```
+
+::: {#box-windowsfile-details .smallprintbox}
+
+> TODO REVISE
+
+The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
+
+:::
+
+The SoundEditor contains a lot of information! In the top panel you always see an oscillogram (§\@ref(sec:oscillogram)). Below, there may be additional and overlapping visualisations of the Spectrogram (Ch.\@ref(ch-spectrograms)), Pitch, Intensity, Formants (§\@ref(sec:formants)), and/or voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them `off` by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the `Show` option. 
+
+- In the SoundEditor window, you can **select** a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.\@ref(fig:window-soundeditor). 
+
+- You can **play back** the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from `Praat`, consult §\@ref(sec:playback) above.
+
+- In the SoundEditor window, you can use the buttons in the lower left corner to **zoom** `in`, `out`, to zoom out to the entire sound (`all`), or to zoom to the `sel`ected part. 
+- You can also select a part of the recording by specifying the start and end times explicitly: choose `Time > Select...` and enter the start and end times. 
+
+- By convention, the selected part should begin and end at **positive zero crossings** (where the signal changes from negative to positive; see §\@ref(sec:fades) below). You can find these precise places as follows (disregarding shortcuts in `Praat`):
+  - put the cursor in the approximate area where the boundary should be located;
+  - choose `Sound > Move cursor to nearest zero crossing`;
+  - ask `Praat` to report the cursor location in its Info window: `Time : Get cursor`, and note this time;
+  - do this for both start and end of the selection part;
+  - use these noted times to set the selection part as described above. 
+
+- In this way, the word *window* was selected in the SoundEditor in Fig.\@ref(fig:window-soundeditor). 
+
+- To **save** the selected part as a separate audio file: in the SoundEditor, choose `File > Save selected sound as WAV file...`. 
+Provide the appropriate folder and file name, and click `OK`. 
+
+- You may also **extract** the selected part into a new Sound object in `Praat`. In the SoundEditor window, choose `Sound > Extract selected sound (preserve times)` if you wish to maintain the same times as in your source recording: the new Sound object will have a starting time equal to the starting time of the selection in the source recording. If you want your new Sound to start at zero, then choose `Sound > Extract selected sound (time from 0)`.  
+
+- The new Sound object may need a fade-in and fade-out (see §\@ref(sec:fades) below). 
+
+- Remember to save this new Sound object (see §\@ref(sec:praatsave)) if you wish to keep it. 
+
+:::
