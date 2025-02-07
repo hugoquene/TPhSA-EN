@@ -153,39 +153,14 @@ Figure \@ref(fig:window-soundeditor-3) shows an example of a SoundEditor, displa
 knitr::include_graphics("figures/s321f1-1_informal_fragment_SoundEditor20250203.png")
 ```
 
-::: {#box-windowsfile-details .smallprintbox}
-
-> TODO REVISE
+::: {#box-windowsfile-details-again .smallprintbox}
 
 The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
 
 :::
 
-The SoundEditor contains a lot of information! In the top panel you always see an oscillogram (§\@ref(sec:oscillogram)). Below, there may be additional and overlapping visualisations of the Spectrogram (Ch.\@ref(ch-spectrograms)), Pitch, Intensity, Formants (§\@ref(sec:formants)), and/or voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them `off` by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the `Show` option. 
+In this example, the SoundEditor shows the oscillogram (§\@ref(sec:oscillogram)), the spectrogram (Ch.\@ref(ch-spectrograms)), as well as formant frequencies (§\@ref(sec:formants)) overlaid. Although the formants do match the black bands in the oscillogram, the ranking of spectral peaks to formants may be off, e.g. around the boundary between *why* and *it*. 
 
-- In the SoundEditor window, you can **select** a part of the recording with your mouse. The selected area is marked in pink in the oscillogram panel of the SoundEditor window, as shown in Fig.\@ref(fig:window-soundeditor). 
-
-- You can **play back** the selected part, or the parts before/after it, by clicking the appropriate buttons (labeled with the durations of those parts). For more information about audio playback from `Praat`, consult §\@ref(sec:playback) above.
-
-- In the SoundEditor window, you can use the buttons in the lower left corner to **zoom** `in`, `out`, to zoom out to the entire sound (`all`), or to zoom to the `sel`ected part. 
-- You can also select a part of the recording by specifying the start and end times explicitly: choose `Time > Select...` and enter the start and end times. 
-
-- By convention, the selected part should begin and end at **positive zero crossings** (where the signal changes from negative to positive; see §\@ref(sec:fades) below). You can find these precise places as follows (disregarding shortcuts in `Praat`):
-  - put the cursor in the approximate area where the boundary should be located;
-  - choose `Sound > Move cursor to nearest zero crossing`;
-  - ask `Praat` to report the cursor location in its Info window: `Time : Get cursor`, and note this time;
-  - do this for both start and end of the selection part;
-  - use these noted times to set the selection part as described above. 
-
-- In this way, the word *window* was selected in the SoundEditor in Fig.\@ref(fig:window-soundeditor). 
-
-- To **save** the selected part as a separate audio file: in the SoundEditor, choose `File > Save selected sound as WAV file...`. 
-Provide the appropriate folder and file name, and click `OK`. 
-
-- You may also **extract** the selected part into a new Sound object in `Praat`. In the SoundEditor window, choose `Sound > Extract selected sound (preserve times)` if you wish to maintain the same times as in your source recording: the new Sound object will have a starting time equal to the starting time of the selection in the source recording. If you want your new Sound to start at zero, then choose `Sound > Extract selected sound (time from 0)`.  
-
-- The new Sound object may need a fade-in and fade-out (see §\@ref(sec:fades) below). 
-
-- Remember to save this new Sound object (see §\@ref(sec:praatsave)) if you wish to keep it. 
+> explain about saving analysis results from SoundEditor 
 
 :::
