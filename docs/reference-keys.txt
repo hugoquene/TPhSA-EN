@@ -25,7 +25,6 @@ fig:window-soundeditor-3
 fig:window-soundeditor-again
 fig:window-textgrideditor
 sec:textbooks
-acknowledgements
 ch-soundwaves
 sound
 sec:soundwave
@@ -65,6 +64,7 @@ sec:praatrecord
 sec:praatsave
 sec:praatopen
 sec:playback
+sec:whattosay
 how-to-manipulate-and-edit-a-digital-sound
 scale
 scale-amplitude
@@ -119,4 +119,16 @@ durations
 pitch
 intensity
 stresses-and-accents
-on-your-phone
+app-saywhat
+introduction-1
+dutch
+single-sentences
+plomp-and-mimpen-sentences
+coherent-texts
+de-noordenwind-en-de-zon
+english
+harvard-sentences
+coherent-texts-1
+rainbow-passage
+the-north-wind-and-the-sun
+the-boy-who-cried-wolf

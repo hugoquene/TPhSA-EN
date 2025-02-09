@@ -155,11 +155,11 @@ knitr::include_graphics("figures/s321f1-1_informal_fragment_SoundEditor20250203.
 
 ::: {#box-windowsfile-details-again .smallprintbox}
 
-The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio file named `s321f1-1.wav` from the Longitudinal UCU English Accents corpus (LUCEA; @Orr_Quené_2017). The utterance shown is taken from the informal monologue part of the recording. 
+The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio recording named `s321f1-1` from the Longitudinal UCU English Accents corpus (LUCEA; @Orr_Quené_2017). The utterance shown is taken from the informal monologue part of that recording. 
 
 :::
 
-In this example, the SoundEditor shows the oscillogram (§\@ref(sec:oscillogram)), the spectrogram (Ch.\@ref(ch-spectrograms)), as well as formant frequencies (§\@ref(sec:formants)) overlaid. Although the formants do match the black bands in the oscillogram, the ranking of spectral peaks to formants may be off, e.g. around the boundary between *why* and *it*. 
+In this example, the SoundEditor shows the oscillogram (§\@ref(sec:oscillogram)), the spectrogram (Ch.\@ref(ch-spectrograms)), as well as formant frequencies (§\@ref(sec:formants)) overlaid. Although the formants do match the dark bands in the oscillogram, the ranking of formants to spectral peaks may be off, e.g. around the boundary between *why* and *it*. 
 
 You can ask `Praat` to report to its Info window the time of the cursor (`Time > Get cursor`), the frequency of the cursor in the spectrogram (`Spectrogram > Get frequency at frequency cursor`) and the spectral power at the cursor in the spectrogram (`Spectrogram > Get spectral power at cursor cross`). You can also query each formant frequency (`Formants > Get first formant`, etc); see §\@ref(sec:formants) for more explanation about formants. 
 
@@ -173,8 +173,8 @@ A helpful command to know in the SoundEditor is `Formants > Formant listing`. Th
 
 ::: {#box:clearinfo .warningbox}
 
-In `Praat`, each new writing action such as `Query`, `Get`, `Tabulate`, etc, first **clears** the Info window, thus erasing any contents in the Info window. If you wish to keep information from the Info window, you have to `Save` or export its contents *before* the next writing action!
+In `Praat`, each new writing action such as `Query`, `Get`, `Tabulate`, `Info`, etc, first **clears** the Info window, and thus any existing content in the Info window is **erased**. If you wish to keep information from the Info window, you have to `Save` or export its contents *before* the next writing action!
 
-You can also clear the Info window manually, by choosing `File > Clear` in the Info window.  
+You can also clear the Info window manually, by choosing `File > Clear` within the Info window.  
 
 :::

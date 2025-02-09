@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A What to say? | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="A What to say? | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A What to say? | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A What to say? | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="github-repo" content="rstudio/TPhSA" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A What to say? | Tutorial on Phonetics and Speech Analysis" />
+  
+  <meta name="twitter:description" content="A What to say? | Tutorial on Phonetics and Speech Analysis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-prosody.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Tutorial on Phonetics and Speech Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aims"><i class="fa fa-check"></i>Aims</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#under-construction"><i class="fa fa-check"></i>Under construction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-tutorial"><i class="fa fa-check"></i>How to use this tutorial</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-software"><i class="fa fa-check"></i>Recommended software</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#sec:textbooks"><i class="fa fa-check"></i><b>0.1</b> Recommended textbooks</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Sounds</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html"><i class="fa fa-check"></i><b>1</b> Sound waves</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sound"><i class="fa fa-check"></i><b>1.1</b> Sound</a></li>
+<li class="chapter" data-level="1.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:soundwave"><i class="fa fa-check"></i><b>1.2</b> Sound wave</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#acoustic-media"><i class="fa fa-check"></i><b>1.3</b> Acoustic media</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:speedofsound"><i class="fa fa-check"></i><b>1.4</b> The speed of sound</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:pressure"><i class="fa fa-check"></i><b>1.5</b> Pressure</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i>Questions</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
+<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:periodicity"><i class="fa fa-check"></i><b>1.7</b> Periodic and aperiodic sounds</a></li>
+<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:keypropertiessound"><i class="fa fa-check"></i><b>1.8</b> Key properties of a sound wave</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8.1</b> Frequency</a></li>
+<li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
+<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
+<li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
+<li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#how-to-draw-an-oscillogram"><i class="fa fa-check"></i><b>1.10</b> How to draw an oscillogram</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#open-an-audio-file"><i class="fa fa-check"></i><b>1.10.1</b> Open an audio file</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:ADCoverview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#key-parameters-in-ad-conversion"><i class="fa fa-check"></i><b>2.3</b> Key parameters in AD conversion</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:samplingfrequency"><i class="fa fa-check"></i><b>2.3.1</b> Sampling frequency</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#amplitude-resolution"><i class="fa fa-check"></i><b>2.3.2</b> Amplitude resolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
+<ul>
+<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:playback"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
+<li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:whattosay"><i class="fa fa-check"></i><b>2.6</b> What to say?</a></li>
+<li class="chapter" data-level="2.7" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-and-edit-a-digital-sound"><i class="fa fa-check"></i><b>2.7</b> How to manipulate and edit a digital sound</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#scale"><i class="fa fa-check"></i><b>2.7.1</b> Scale</a></li>
+<li class="chapter" data-level="2.7.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:praatsoundeditor"><i class="fa fa-check"></i><b>2.7.2</b> Excise part of a sound recording</a></li>
+<li class="chapter" data-level="2.7.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:fades"><i class="fa fa-check"></i><b>2.7.3</b> Fades</a></li>
+<li class="chapter" data-level="2.7.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.7.4</b> Concatenate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:FTintro"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
+<ul>
+<li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum</a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectralslice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
+<li class="chapter" data-level="3.3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:impulses"><i class="fa fa-check"></i><b>3.3.2</b> Impulses</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:envelope"><i class="fa fa-check"></i><b>3.4</b> Envelope</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:filterbandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:emphasisfilters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter"><i class="fa fa-check"></i><b>4.4.1</b> How to apply a (pre|de)emphasis filter</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part II: Speech</b></span></li>
+<li class="chapter" data-level="5" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html"><i class="fa fa-check"></i><b>5</b> Speech sounds</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:measureformants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:sourcefilter"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:vowelproduction"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html"><i class="fa fa-check"></i><b>6</b> Spectrograms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogramsoundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:readspectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:soundeditor3"><i class="fa fa-check"></i><b>6.6</b> More about using the SoundEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-annotation.html"><a href="ch-annotation.html"><i class="fa fa-check"></i><b>7</b> Annotating speech sounds</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-in-speech"><i class="fa fa-check"></i><b>8.1</b> Pauses in speech</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.2</b> Durations</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#pitch"><i class="fa fa-check"></i><b>8.3</b> Pitch</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity"><i class="fa fa-check"></i><b>8.4</b> Intensity</a></li>
+<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.5</b> Stresses and accents</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="app-saywhat.html"><a href="app-saywhat.html#introduction-1"><i class="fa fa-check"></i><b>A.1</b> Introduction</a></li>
+<li class="chapter" data-level="A.2" data-path="app-saywhat.html"><a href="app-saywhat.html#dutch"><i class="fa fa-check"></i><b>A.2</b> Dutch</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="app-saywhat.html"><a href="app-saywhat.html#single-sentences"><i class="fa fa-check"></i><b>A.2.1</b> single sentences</a></li>
+<li class="chapter" data-level="A.2.2" data-path="app-saywhat.html"><a href="app-saywhat.html#plomp-and-mimpen-sentences"><i class="fa fa-check"></i><b>A.2.2</b> Plomp and Mimpen sentences</a></li>
+<li class="chapter" data-level="A.2.3" data-path="app-saywhat.html"><a href="app-saywhat.html#coherent-texts"><i class="fa fa-check"></i><b>A.2.3</b> coherent texts</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="app-saywhat.html"><a href="app-saywhat.html#english"><i class="fa fa-check"></i><b>A.3</b> English</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="app-saywhat.html"><a href="app-saywhat.html#harvard-sentences"><i class="fa fa-check"></i><b>A.3.1</b> Harvard sentences</a></li>
+<li class="chapter" data-level="A.3.2" data-path="app-saywhat.html"><a href="app-saywhat.html#coherent-texts-1"><i class="fa fa-check"></i><b>A.3.2</b> coherent texts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial on Phonetics and Speech Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="app-saywhat" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">A</span> What to say?<a href="app-saywhat.html#app-saywhat" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-1" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">A.1</span> Introduction<a href="app-saywhat.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>What should the human talker (such as yourself, perhaps) say for a speech recording? That question is not trivial, and the answer depends strongly on the purpose of your recording, and hence (typically) on your research question.</p>
+<p>Many relevant considerations are discussed by Rob van Son (University of Amsterdam) on his webpage <a href="https://www.fon.hum.uva.nl/rob/SpeakableTexts.html">Speakable Texts</a>, to which the following overview is strongly indebted.
+For example, <em>read</em> speech (of the texts listed in this appendix) has the advantage that multiple talkers produce comparable linguistic content, but the downside is that reading differs significantly from typical, <em>spontaneous</em> speech (e.g. in how speech is prepared mentally). So, you need to consider the words to be spoken in relation to your research topic and research question.</p>
+<hr />
+</div>
+<div id="dutch" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">A.2</span> Dutch<a href="app-saywhat.html#dutch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="single-sentences" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">A.2.1</span> single sentences<a href="app-saywhat.html#single-sentences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A single Dutch sentence, used for decades in Phonetics lab classes at Utrecht University:</p>
+<blockquote>
+<p>Het leven is mooi als de zon schijnt.</p>
+</blockquote>
+<p>A singe Dutch sentence from colleagues at Leiden University, containing key vowels of the Dutch vowel space, in a brief sentence containing only monosyllabic words:</p>
+<blockquote>
+<p>In de hoek staat een fiets.</p>
+</blockquote>
+</div>
+<div id="plomp-and-mimpen-sentences" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">A.2.2</span> Plomp and Mimpen sentences<a href="app-saywhat.html#plomp-and-mimpen-sentences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In order to assess speech intelligibility, <span class="citation">Plomp and Mimpen (<a href="#ref-Plomp_Mimpen_1979">1979</a>)</span> constructed 10 lists of 13 Dutch sentences. The 130 sentences “represent conversational speech” (p.44), are 8 to 9 syllables long, and avoid long words (3 or more syllables). The resulting Speech Reception Threshold (expressed as a signal-to-noise ratio, §<a href="ch-soundwaves.html#sec:decibel">1.8.3.2</a>) typically varies by about 1 dB.</p>
+<p>Some example sentences:</p>
+<blockquote>
+<p>1-1: De bal vloog over de schutting.<br />
+4-9: De witte zwaan dook onder water.<br />
+5-3: Een kopje koffie zal goed smaken.<br />
+10-3: De zon gaat in het westen onder.</p>
+</blockquote>
+</div>
+<div id="coherent-texts" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">A.2.3</span> coherent texts<a href="app-saywhat.html#coherent-texts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="de-noordenwind-en-de-zon" class="section level4 hasAnchor" number="9.2.3.1">
+<h4><span class="header-section-number">A.2.3.1</span> De noordenwind en de zon<a href="app-saywhat.html#de-noordenwind-en-de-zon" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The standard Dutch passage of the IPA:</p>
+<blockquote>
+<p>De noordenwind en de zon.<br />
+De noordenwind en de zon waren erover aan het redetwisten wie de sterkste was van hen beiden.
+Juist op dat moment kwam er een reiziger aan, die gehuld was in een warme mantel.
+Ze kwamen overeen dat degene die het eerst erin zou slagen de reiziger zijn mantel te doen uittrekken, de sterkste zou worden geacht.
+De noordenwind begon toen uit alle macht te blazen, maar hoe harder hij blies, des te dichter trok de reiziger zijn mantel om zich heen; en ten lange leste gaf de noordenwind het op.
+Daarna begon de zon krachtig te stralen, en hierop trok de reiziger onmiddellijk zijn mantel uit.
+De noordenwind moest dus wel bekennen dat de zon van hen beiden de sterkste was.</p>
+</blockquote>
+<p>Source: <span class="citation"><em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em> (<a href="#ref-HandbookIPA_1999">1999</a>)</span><br />
+See also: <a href="https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun">The North Wind and the Sun</a></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="english" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">A.3</span> English<a href="app-saywhat.html#english" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="harvard-sentences" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">A.3.1</span> Harvard sentences<a href="app-saywhat.html#harvard-sentences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The so-called “Harvard Sentences” were part of a 1969 guideline about how to assess speech quality and transmission. The phonetically balanced set consists of 72 sets of 10 sentences each.</p>
+<p>Some example sentences:</p>
+<blockquote>
+<p>1-9: Four hours of steady work faced us.<br />
+2-2: A rod is used to catch pink salmon.<br />
+26-9: These pills do less good than others.</p>
+</blockquote>
+<p>See also: <a href="https://en.wikipedia.org/wiki/Harvard_sentences">Harvard sentences</a> and <a href="https://doi.org/10.1109/IEEESTD.1969.7405210" class="uri">https://doi.org/10.1109/IEEESTD.1969.7405210</a></p>
+</div>
+<div id="coherent-texts-1" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">A.3.2</span> coherent texts<a href="app-saywhat.html#coherent-texts-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="rainbow-passage" class="section level4 hasAnchor" number="9.3.2.1">
+<h4><span class="header-section-number">A.3.2.1</span> Rainbow passage<a href="app-saywhat.html#rainbow-passage" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>An often-used text in phonetic research:</p>
+<blockquote>
+<p>When the sunlight strikes raindrops in the air they act like a prism and form a rainbow.
+The rainbow is a division of white light into many beautiful colors.
+These take the shape of a long round arch with its path high above, and its two ends apparently beyond the horizon.
+There is, according to legend, a boiling pot of gold at one end.
+People look, but no one ever finds it.
+When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow. (…)</p>
+</blockquote>
+<p>Source: Fairbanks, G. (1960). <em>Voice and articulation drillbook</em>, 2nd ed. (pp.124-139). New York: Harper &amp; Row.<br />
+See also: <a href="https://www.york.ac.uk/media/languageandlinguistics/documents/currentstudents/linguisticsresources/Standardised-reading.pdf" class="uri">https://www.york.ac.uk/media/languageandlinguistics/documents/currentstudents/linguisticsresources/Standardised-reading.pdf</a></p>
+</div>
+<div id="the-north-wind-and-the-sun" class="section level4 hasAnchor" number="9.3.2.2">
+<h4><span class="header-section-number">A.3.2.2</span> The North Wind and the Sun<a href="app-saywhat.html#the-north-wind-and-the-sun" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The standard English passage of the IPA:</p>
+<blockquote>
+<p>The North Wind and the Sun<br />
+The North Wind and the Sun were disputing which was the stronger, when a traveller came along wrapped in a
+warm cloak. They agreed that the one who first succeeded in making the traveller take his cloak off should be considered stronger than the other. Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveller fold his cloak around him; and at last the North Wind gave up the attempt. Then the Sun shone out warmly, and immediately the traveller took off his cloak. And so the North Wind was obliged to confess that the Sun was the stronger of the two.</p>
+</blockquote>
+<p>Source: <span class="citation"><em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em> (<a href="#ref-HandbookIPA_1999">1999</a>)</span><br />
+See also: <a href="https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun">The North Wind and the Sun</a></p>
+</div>
+<div id="the-boy-who-cried-wolf" class="section level4 hasAnchor" number="9.3.2.3">
+<h4><span class="header-section-number">A.3.2.3</span> The Boy Who Cried Wolf<a href="app-saywhat.html#the-boy-who-cried-wolf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="citation">Deterding (<a href="#ref-Deterding_2006">2006</a>)</span> has proposed a longer alternative text to assess pronunciation of English. The text begins as follows:</p>
+<blockquote>
+<p>The Boy Who Cried Wolf<br />
+There was once a poor shepherd boy who used to watch his flocks in the fields next to a dark forest near the foot of a mountain. One hot afternoon, he thought up a good plan to get some company for himself and also have a little fun. (…)</p>
+</blockquote>
+<p>Source: <span class="citation">Deterding (<a href="#ref-Deterding_2006">2006</a>)</span><br />
+See also: <a href="https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf">The Boy Who Cried Wolf</a>. This text was also used in the LUCEA corpus <span class="citation">(<a href="#ref-Orr_Quené_2017">Orr and Quené 2017</a>)</span>.</p>
+<hr />
+
+</div>
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Deterding_2006" class="csl-entry">
+Deterding, David. 2006. <span>“The North Wind Versus a Wolf: Short Texts for the Description and Measurement of English Pronunciation.”</span> <em>Journal of the International Phonetic Association</em> 36 (2): 187–96. <a href="https://doi.org/10.1017/S0025100306002544">https://doi.org/10.1017/S0025100306002544</a>.
+</div>
+<div id="ref-HandbookIPA_1999" class="csl-entry">
+<em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em>. 1999. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-Orr_Quené_2017" class="csl-entry">
+Orr, Rosemary, and Hugo Quené. 2017. <span>“D-LUCEA: Curation of the UCU Accent Project Data.”</span> In <em>CLARIN in the Low Countries</em>, edited by Jan Odijk and Arjan van Hessen, 181–93. London: Ubiquity. <a href="http://dx.doi.org/10.5334/bbi.15">http://dx.doi.org/10.5334/bbi.15</a>.
+</div>
+<div id="ref-Plomp_Mimpen_1979" class="csl-entry">
+Plomp, R., and A. M. Mimpen. 1979. <span>“Improving the Reliability of Testing the Speech Reception Threshold for Sentences.”</span> <em>International Journal of Audiology</em> 18 (1): 43–52.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-prosody.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/a1saywhat.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 09 Feb 2025 17:24}
+\date{Document compiled 09 Feb 2025 22:52}
 
 \begin{document}
 \maketitle
@@ -166,16 +166,9 @@ Options in software menus, as well as texts in on-screen buttons, will be shown 
 The notation \texttt{Main\ \textgreater{}\ Sub} means: first choose option \texttt{Main} from the main menu, after which a submenu will appear, then choose option \texttt{Sub} from the submenu.
 Commands or formulas that you have to type will be shown \texttt{in\ this\ way} too. (Commands typically need to be terminated with typing \texttt{Enter} or \texttt{Return} or \texttt{␍} or \texttt{⏎} -- which however will not be specified in the instructions.)
 
-\section*{Structure of this tutorial}\label{structure-of-this-tutorial}
-\addcontentsline{toc}{section}{Structure of this tutorial}
-
-\begin{quote}
-TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
-\end{quote}
-
 \section{Recommended textbooks}\label{sec:textbooks}
 
-This tutorial is intended to be used in addition to one or more textbooks in phonetics, to which this tutorial will provide additional background knowledge.
+This tutorial guide is intended to be used in addition to one or more textbooks in phonetics, to which this tutorial will provide additional background knowledge.
 Some excellent textbooks and introductions in phonetics are those by
 \citet{Rietveld_VanHeuven_2009} (in Dutch),
 \citet{Johnson_2012},
@@ -183,6 +176,13 @@ Some excellent textbooks and introductions in phonetics are those by
 \citet{Reetz_Jongman_2020},
 \citet{Beňuš_2021}, and
 \citet{Zsiga_2024}.
+
+\section*{Structure of this tutorial}\label{structure-of-this-tutorial}
+\addcontentsline{toc}{section}{Structure of this tutorial}
+
+\begin{quote}
+TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
+\end{quote}
 
 \section*{Details}\label{details}
 \addcontentsline{toc}{section}{Details}
@@ -214,7 +214,8 @@ This work is based on an earlier tutorial (2006-2007) titled Tutorial for self s
 
 The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2025.
 
-\section{Acknowledgements}\label{acknowledgements}
+\section*{Acknowledgements}\label{acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
 
 As indicated in the \emph{History} subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions by many.
 
@@ -763,7 +764,9 @@ There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from
 \item
   Choose the appropriate sampling frequency, e.g.~22050 Hz (see §\ref{sec:samplingfrequency}). You may receive an error message if the chosen sampling frequency is incompatible with your computer.
 \item
-  Click \texttt{Record}, and speak a test sentence into the microphone, e.g.~\emph{The source of the huge river is the clear spring}\footnote{One of the so-called Harvard test sentences, from list 3, \url{https://en.wikipedia.org/wiki/Harvard_sentences}. In Dutch, a popular test sentence is \emph{Het leven is mooi als de zon schijnt}.}, or make a test recording of your sound source. After testing, click \texttt{Stop}.
+  Click \texttt{Record}, and speak a test sentence into the microphone, or make a test recording of your talker, or other sound source.\\
+  See §\ref{sec:whattosay} for ideas about \textbf{what} you, or your test talker, might say for the recording.\\
+  After making a test recording, click \texttt{Stop}.
 \item
   \textbf{While recording, check the level of the recording} (§\ref{sec:recordinglevel}).\\
   In \texttt{Praat}, make sure that your recording level is in the yellow zone, with occasional peaks in the red zone, but without clipping.
@@ -804,6 +807,10 @@ There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from
 
 \phantomsection\label{box-praatplay}
 In the Objects window, select the Sound object(s) that you want to play back. Then press the \texttt{Play} button in the Objects window. You might interrupt the playback with the \texttt{Esc} key, but this depends on your playback settings (see the paragraphs above). (If you have selected multiple Sound objects, then they will be played consecutively, \emph{without} a pause in between; see §\ref{sec:concatenate}.)
+
+\section{What to say?}\label{sec:whattosay}
+
+What should the human talker (such as yourself, perhaps) say for a speech recording? Appendix @\ref(app-saywhat) lists some sentences and texts for Dutch and English.
 
 \section{How to manipulate and edit a digital sound}\label{how-to-manipulate-and-edit-a-digital-sound}
 
@@ -1580,9 +1587,9 @@ Here we will provide some additional instructions not yet covered in the section
 \end{figure}
 
 \phantomsection\label{box-windowsfile-details-again}
-The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio file named \texttt{s321f1-1.wav} from the Longitudinal UCU English Accents corpus (LUCEA; \citet{Orr_Quené_2017}). The utterance shown is taken from the informal monologue part of the recording.
+The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio recording named \texttt{s321f1-1} from the Longitudinal UCU English Accents corpus (LUCEA; \citet{Orr_Quené_2017}). The utterance shown is taken from the informal monologue part of that recording.
 
-In this example, the SoundEditor shows the oscillogram (§\ref{sec:oscillogram}), the spectrogram (Ch.\ref{ch-spectrograms}), as well as formant frequencies (§\ref{sec:formants}) overlaid. Although the formants do match the black bands in the oscillogram, the ranking of spectral peaks to formants may be off, e.g.~around the boundary between \emph{why} and \emph{it}.
+In this example, the SoundEditor shows the oscillogram (§\ref{sec:oscillogram}), the spectrogram (Ch.\ref{ch-spectrograms}), as well as formant frequencies (§\ref{sec:formants}) overlaid. Although the formants do match the dark bands in the oscillogram, the ranking of formants to spectral peaks may be off, e.g.~around the boundary between \emph{why} and \emph{it}.
 
 You can ask \texttt{Praat} to report to its Info window the time of the cursor (\texttt{Time\ \textgreater{}\ Get\ cursor}), the frequency of the cursor in the spectrogram (\texttt{Spectrogram\ \textgreater{}\ Get\ frequency\ at\ frequency\ cursor}) and the spectral power at the cursor in the spectrogram (\texttt{Spectrogram\ \textgreater{}\ Get\ spectral\ power\ at\ cursor\ cross}). You can also query each formant frequency (\texttt{Formants\ \textgreater{}\ Get\ first\ formant}, etc); see §\ref{sec:formants} for more explanation about formants.
 
@@ -1591,13 +1598,13 @@ A helpful command to know in the SoundEditor is \texttt{Formants\ \textgreater{}
 \texttt{Praat} writes its output to its \texttt{Info} window, the contents of which may be saved.
 
 \phantomsection\label{box:clearinfo}
-In \texttt{Praat}, each new writing action such as \texttt{Query}, \texttt{Get}, \texttt{Tabulate}, etc, first \textbf{clears} the Info window, thus erasing any contents in the Info window. If you wish to keep information from the Info window, you have to \texttt{Save} or export its contents \emph{before} the next writing action!
+In \texttt{Praat}, each new writing action such as \texttt{Query}, \texttt{Get}, \texttt{Tabulate}, \texttt{Info}, etc, first \textbf{clears} the Info window, and thus any existing content in the Info window is \textbf{erased}. If you wish to keep information from the Info window, you have to \texttt{Save} or export its contents \emph{before} the next writing action!
 
-You can also clear the Info window manually, by choosing \texttt{File\ \textgreater{}\ Clear} in the Info window.
+You can also clear the Info window manually, by choosing \texttt{File\ \textgreater{}\ Clear} within the Info window.
 
 \chapter{Annotating speech sounds}\label{ch-annotation}
 
-\emph{Chapter keywords}: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, TextGridEditor.
+\emph{Chapter keywords}: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, SoundEditor, TextGridEditor.
 
 \section{Introduction}\label{sec:coarticulation-intro}
 
@@ -1681,7 +1688,7 @@ The recommended workflow in \texttt{Praat} is as follows.
 \begin{enumerate}
 \def\labelenumi{(\arabic{enumi})}
 \item
-  Open the speech recording to annotate as a Sound object (see §sec:praatopen).
+  Open the speech recording to annotate as a Sound object (see §\ref{sec:praatopen}).
 \item
   Create a corresponding TextGrid (see §\ref{sec:textgrids} above).
 \item
@@ -1770,6 +1777,131 @@ TODO add text here
 \section{Intensity}\label{intensity}
 
 \section{Stresses and accents}\label{stresses-and-accents}
+
+\appendix
+
+
+\chapter{What to say?}\label{app-saywhat}
+
+\section{Introduction}\label{introduction-1}
+
+What should the human talker (such as yourself, perhaps) say for a speech recording? That question is not trivial, and the answer depends strongly on the purpose of your recording, and hence (typically) on your research question.
+
+Many relevant considerations are discussed by Rob van Son (University of Amsterdam) on his webpage \href{https://www.fon.hum.uva.nl/rob/SpeakableTexts.html}{Speakable Texts}, to which the following overview is strongly indebted.
+For example, \emph{read} speech (of the texts listed in this appendix) has the advantage that multiple talkers produce comparable linguistic content, but the downside is that reading differs significantly from typical, \emph{spontaneous} speech (e.g.~in how speech is prepared mentally). So, you need to consider the words to be spoken in relation to your research topic and research question.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Dutch}\label{dutch}
+
+\subsection{single sentences}\label{single-sentences}
+
+A single Dutch sentence, used for decades in Phonetics lab classes at Utrecht University:
+
+\begin{quote}
+Het leven is mooi als de zon schijnt.
+\end{quote}
+
+A singe Dutch sentence from colleagues at Leiden University, containing key vowels of the Dutch vowel space, in a brief sentence containing only monosyllabic words:
+
+\begin{quote}
+In de hoek staat een fiets.
+\end{quote}
+
+\subsection{Plomp and Mimpen sentences}\label{plomp-and-mimpen-sentences}
+
+In order to assess speech intelligibility, \citet{Plomp_Mimpen_1979} constructed 10 lists of 13 Dutch sentences. The 130 sentences ``represent conversational speech'' (p.44), are 8 to 9 syllables long, and avoid long words (3 or more syllables). The resulting Speech Reception Threshold (expressed as a signal-to-noise ratio, §\ref{sec:decibel}) typically varies by about 1 dB.
+
+Some example sentences:
+
+\begin{quote}
+1-1: De bal vloog over de schutting.\\
+4-9: De witte zwaan dook onder water.\\
+5-3: Een kopje koffie zal goed smaken.\\
+10-3: De zon gaat in het westen onder.
+\end{quote}
+
+\subsection{coherent texts}\label{coherent-texts}
+
+\subsubsection{De noordenwind en de zon}\label{de-noordenwind-en-de-zon}
+
+The standard Dutch passage of the IPA:
+
+\begin{quote}
+De noordenwind en de zon.\\
+De noordenwind en de zon waren erover aan het redetwisten wie de sterkste was van hen beiden.
+Juist op dat moment kwam er een reiziger aan, die gehuld was in een warme mantel.
+Ze kwamen overeen dat degene die het eerst erin zou slagen de reiziger zijn mantel te doen uittrekken, de sterkste zou worden geacht.
+De noordenwind begon toen uit alle macht te blazen, maar hoe harder hij blies, des te dichter trok de reiziger zijn mantel om zich heen; en ten lange leste gaf de noordenwind het op.
+Daarna begon de zon krachtig te stralen, en hierop trok de reiziger onmiddellijk zijn mantel uit.
+De noordenwind moest dus wel bekennen dat de zon van hen beiden de sterkste was.
+\end{quote}
+
+Source: \citet{HandbookIPA_1999}\\
+See also: \href{https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun}{The North Wind and the Sun}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{English}\label{english}
+
+\subsection{Harvard sentences}\label{harvard-sentences}
+
+The so-called ``Harvard Sentences'' were part of a 1969 guideline about how to assess speech quality and transmission. The phonetically balanced set consists of 72 sets of 10 sentences each.
+
+Some example sentences:
+
+\begin{quote}
+1-9: Four hours of steady work faced us.\\
+2-2: A rod is used to catch pink salmon.\\
+26-9: These pills do less good than others.
+\end{quote}
+
+See also: \href{https://en.wikipedia.org/wiki/Harvard_sentences}{Harvard sentences} and \url{https://doi.org/10.1109/IEEESTD.1969.7405210}
+
+\subsection{coherent texts}\label{coherent-texts-1}
+
+\subsubsection{Rainbow passage}\label{rainbow-passage}
+
+An often-used text in phonetic research:
+
+\begin{quote}
+When the sunlight strikes raindrops in the air they act like a prism and form a rainbow.
+The rainbow is a division of white light into many beautiful colors.
+These take the shape of a long round arch with its path high above, and its two ends apparently beyond the horizon.
+There is, according to legend, a boiling pot of gold at one end.
+People look, but no one ever finds it.
+When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow. (\ldots)
+\end{quote}
+
+Source: Fairbanks, G. (1960). \emph{Voice and articulation drillbook}, 2nd ed.~(pp.124-139). New York: Harper \& Row.\\
+See also: \url{https://www.york.ac.uk/media/languageandlinguistics/documents/currentstudents/linguisticsresources/Standardised-reading.pdf}
+
+\subsubsection{The North Wind and the Sun}\label{the-north-wind-and-the-sun}
+
+The standard English passage of the IPA:
+
+\begin{quote}
+The North Wind and the Sun\\
+The North Wind and the Sun were disputing which was the stronger, when a traveller came along wrapped in a
+warm cloak. They agreed that the one who first succeeded in making the traveller take his cloak off should be considered stronger than the other. Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveller fold his cloak around him; and at last the North Wind gave up the attempt. Then the Sun shone out warmly, and immediately the traveller took off his cloak. And so the North Wind was obliged to confess that the Sun was the stronger of the two.
+\end{quote}
+
+Source: \citet{HandbookIPA_1999}\\
+See also: \href{https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun}{The North Wind and the Sun}
+
+\subsubsection{The Boy Who Cried Wolf}\label{the-boy-who-cried-wolf}
+
+\citet{Deterding_2006} has proposed a longer alternative text to assess pronunciation of English. The text begins as follows:
+
+\begin{quote}
+The Boy Who Cried Wolf\\
+There was once a poor shepherd boy who used to watch his flocks in the fields next to a dark forest near the foot of a mountain. One hot afternoon, he thought up a good plan to get some company for himself and also have a little fun. (\ldots)
+\end{quote}
+
+Source: \citet{Deterding_2006}\\
+See also: \href{https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf}{The Boy Who Cried Wolf}. This text was also used in the LUCEA corpus \citep{Orr_Quené_2017}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 

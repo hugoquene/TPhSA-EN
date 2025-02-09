@@ -1,0 +1,111 @@
+# (APPENDIX) Appendices {-}
+
+# What to say? {#app-saywhat}
+
+
+## Introduction
+
+What should the human talker (such as yourself, perhaps) say for a speech recording? That question is not trivial, and the answer depends strongly on the purpose of your recording, and hence (typically) on your research question. 
+
+Many relevant considerations are discussed by Rob van Son (University of Amsterdam) on his webpage [Speakable Texts](https://www.fon.hum.uva.nl/rob/SpeakableTexts.html), to which the following overview is strongly indebted.
+For example, *read* speech (of the texts listed in this appendix) has the advantage that multiple talkers produce comparable linguistic content, but the downside is that reading differs significantly from typical, *spontaneous* speech (e.g. in how speech is prepared mentally). So, you need to consider the words to be spoken in relation to your research topic and research question. 
+
+---
+
+## Dutch
+
+### single sentences
+
+A single Dutch sentence, used for decades in Phonetics lab classes at Utrecht University: 
+
+> Het leven is mooi als de zon schijnt.
+
+A singe Dutch sentence from colleagues at Leiden University, containing key vowels of the Dutch vowel space, in a brief sentence containing only monosyllabic words: 
+
+> In de hoek staat een fiets. 
+
+### Plomp and Mimpen sentences
+
+In order to assess speech intelligibility, @Plomp_Mimpen_1979 constructed 10 lists of 13 Dutch sentences. The 130 sentences "represent conversational speech" (p.44), are 8 to 9 syllables long, and avoid long words (3 or more syllables). The resulting Speech Reception Threshold (expressed as a signal-to-noise ratio, §\@ref(sec:decibel)) typically varies by about 1 dB.
+
+Some example sentences:
+
+> 1-1: De bal vloog over de schutting. \
+> 4-9: De witte zwaan dook onder water. \
+> 5-3: Een kopje koffie zal goed smaken. \
+> 10-3: De zon gaat in het westen onder. 
+
+### coherent texts
+
+#### De noordenwind en de zon 
+
+The standard Dutch passage of the IPA:
+
+> De noordenwind en de zon. \
+> De noordenwind en de zon waren erover aan het redetwisten wie de sterkste was van hen beiden.
+Juist op dat moment kwam er een reiziger aan, die gehuld was in een warme mantel.
+Ze kwamen overeen dat degene die het eerst erin zou slagen de reiziger zijn mantel te doen uittrekken, de sterkste zou worden geacht.
+De noordenwind begon toen uit alle macht te blazen, maar hoe harder hij blies, des te dichter trok de reiziger zijn mantel om zich heen; en ten lange leste gaf de noordenwind het op.
+Daarna begon de zon krachtig te stralen, en hierop trok de reiziger onmiddellijk zijn mantel uit.
+De noordenwind moest dus wel bekennen dat de zon van hen beiden de sterkste was.
+
+Source: @HandbookIPA_1999 \
+See also: [The North Wind and the Sun](https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun)
+
+---
+
+## English 
+
+### Harvard sentences 
+
+The so-called "Harvard Sentences" were part of a 1969 guideline about how to assess speech quality and transmission. The phonetically balanced set consists of 72 sets of 10 sentences each. 
+
+Some example sentences: 
+
+> 1-9: Four hours of steady work faced us. \
+> 2-2: A rod is used to catch pink salmon. \
+> 26-9: These pills do less good than others.
+
+See also: [Harvard sentences](https://en.wikipedia.org/wiki/Harvard_sentences) and <https://doi.org/10.1109/IEEESTD.1969.7405210>
+
+
+### coherent texts
+
+#### Rainbow passage
+
+An often-used text in phonetic research: 
+
+> When the sunlight strikes raindrops in the air they act like a prism and form a rainbow.
+The rainbow is a division of white light into many beautiful colors.
+These take the shape of a long round arch with its path high above, and its two ends apparently beyond the horizon.
+There is, according to legend, a boiling pot of gold at one end.
+People look, but no one ever finds it.
+When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow. (...)
+
+
+Source: Fairbanks, G. (1960). *Voice and articulation drillbook*, 2nd ed. (pp.124-139). New York: Harper & Row. \
+See also: <https://www.york.ac.uk/media/languageandlinguistics/documents/currentstudents/linguisticsresources/Standardised-reading.pdf>
+
+#### The North Wind and the Sun 
+
+The standard English passage of the IPA:
+
+> The North Wind and the Sun \
+> The North Wind and the Sun were disputing which was the stronger, when a traveller came along wrapped in a
+warm cloak. They agreed that the one who first succeeded in making the traveller take his cloak off should be considered stronger than the other. Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveller fold his cloak around him; and at last the North Wind gave up the attempt. Then the Sun shone out warmly, and immediately the traveller took off his cloak. And so the North Wind was obliged to confess that the Sun was the stronger of the two.
+
+Source: @HandbookIPA_1999 \
+See also: [The North Wind and the Sun](https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun)
+
+
+#### The Boy Who Cried Wolf
+
+@Deterding_2006 has proposed a longer alternative text to assess pronunciation of English. The text begins as follows:
+
+> The Boy Who Cried Wolf \
+> There was once a poor shepherd boy who used to watch his flocks in the fields next to a dark forest near the foot of a mountain. One hot afternoon, he thought up a good plan to get some company for himself and also have a little fun. (...)
+
+Source: @Deterding_2006 \
+See also: [The Boy Who Cried Wolf](https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf). This text was also used in the LUCEA corpus [@Orr_Quené_2017].
+
+---

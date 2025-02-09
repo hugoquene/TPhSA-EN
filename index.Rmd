@@ -77,13 +77,9 @@ The notation `Main > Sub` means: first choose option `Main` from the main menu, 
 Commands or formulas that you have to type will be shown `in this way` too. (Commands typically need to be terminated with typing `Enter` or `Return` or `␍` or `⏎` -- which however will not be specified in the instructions.)
 :::
 
-## Structure of this tutorial {-}
-
-> TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
-
 ## Recommended textbooks {#sec:textbooks}
 
-This tutorial is intended to be used in addition to one or more textbooks in phonetics, to which this tutorial will provide additional background knowledge. 
+This tutorial guide is intended to be used in addition to one or more textbooks in phonetics, to which this tutorial will provide additional background knowledge. 
 Some excellent textbooks and introductions in phonetics are those by 
 @Rietveld_VanHeuven_2009 (in Dutch), 
 @Johnson_2012, 
@@ -92,6 +88,9 @@ Some excellent textbooks and introductions in phonetics are those by
 @Beňuš_2021, and 
 @Zsiga_2024. 
 
+## Structure of this tutorial {-}
+
+> TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
 
 ## Details {-}
 
@@ -127,7 +126,7 @@ knitr::write_bib( c(
 ), 'packages.bib')
 ```
 
-## Acknowledgements
+## Acknowledgements {-}
 
 As indicated in the *History* subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions by many. 
 

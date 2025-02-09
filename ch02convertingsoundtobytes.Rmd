@@ -121,7 +121,9 @@ In most situations it is not necessary to record stereo sounds.
 
 - Choose the appropriate sampling frequency, e.g. 22050 Hz (see §\@ref(sec:samplingfrequency)). You may receive an error message if the chosen sampling frequency is incompatible with your computer. 
 
-- Click `Record`, and speak a test sentence into the microphone, e.g. *The source of the huge river is the clear spring*^[One of the so-called Harvard test sentences, from list 3, <https://en.wikipedia.org/wiki/Harvard_sentences>. In Dutch, a popular test sentence is *Het leven is mooi als de zon schijnt*.], or make a test recording of your sound source. After testing, click `Stop`. 
+- Click `Record`, and speak a test sentence into the microphone, or make a test recording of your talker, or other sound source. \
+See §\@ref(sec:whattosay) for ideas about **what** you, or your test talker, might say for the recording.\
+After making a test recording, click `Stop`. 
 
 - **While recording, check the level of the recording** (§\@ref(sec:recordinglevel)). \
 In `Praat`, make sure that your recording level is in the yellow zone, with occasional peaks in the red zone, but without clipping. 
@@ -169,6 +171,10 @@ There is a helpful option in `Praat`, from the *main* menu (not from the Objects
 In the Objects window, select the Sound object(s) that you want to play back. Then press the `Play` button in the Objects window. You might interrupt the playback with the `Esc` key, but this depends on your playback settings (see the paragraphs above). (If you have selected multiple Sound objects, then they will be played consecutively, *without* a pause in between; see §\@ref(sec:concatenate).)
 
 :::
+
+## What to say? {#sec:whattosay}
+
+What should the human talker (such as yourself, perhaps) say for a speech recording? Appendix @\ref(app-saywhat) lists some sentences and texts for Dutch and English. 
 
 ## How to manipulate and edit a digital sound
 
