@@ -152,6 +152,8 @@ div.csl-indent {
 <li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#how-to-draw-an-oscillogram"><i class="fa fa-check"></i><b>1.10</b> How to draw an oscillogram</a>
 <ul>
 <li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#open-an-audio-file"><i class="fa fa-check"></i><b>1.10.1</b> Open an audio file</a></li>
+<li class="chapter" data-level="1.10.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#draw-an-oscillogram"><i class="fa fa-check"></i><b>1.10.2</b> Draw an oscillogram</a></li>
+<li class="chapter" data-level="1.10.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#save-a-picture"><i class="fa fa-check"></i><b>1.10.3</b> Save a picture</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
@@ -165,7 +167,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-record-a-sound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
 <ul>
+<li class="chapter" data-level="2.4.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:removenontargetsounds"><i class="fa fa-check"></i><b>2.4.1</b> Remove non-target sounds</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:recordinglevel"><i class="fa fa-check"></i><b>2.4.2</b> Check recording level</a></li>
+<li class="chapter" data-level="2.4.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:avoidlossyformats"><i class="fa fa-check"></i><b>2.4.3</b> Avoid lossy audio formats</a></li>
 <li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
+<li class="chapter" data-level="2.4.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-phone"><i class="fa fa-check"></i><b>2.4.5</b> On your phone</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:playback"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
 <li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-and-edit-a-digital-sound"><i class="fa fa-check"></i><b>2.6</b> How to manipulate and edit a digital sound</a>
@@ -276,13 +282,13 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="ch-annotation" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Annotating speech sounds<a href="ch-annotation.html#ch-annotation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><em>Chapter keywords</em>: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, TextGridEditor.</p>
+<p><em>Chapter keywords</em>: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, SoundEditor, TextGridEditor.</p>
 <div id="sec:coarticulation-intro" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Introduction<a href="ch-annotation.html#sec:coarticulation-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Annotating speech is at the core of phonetic analysis. Annotation means that abstract linguistic symbols are linked to the concrete physical speech stream — somewhat similar to subtitling.</p>
 <p>Most projects involve some sort of annotation of speech, as researchers may be interested in e.g. how an intended (abstract) sound is produced acoustically-phonetically, how a meaningful phonological contrast is realized in speech, how an acoustic-phonetic feature such as F2 locus is perceived, etc.</p>
 <p>In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called <strong>coarticulation</strong>, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive <em>handwriting</em>.</p>
-<p>The complex relation between linguistic and spoken units is illustrated in Figure <a href="ch-annotation.html#fig:window-soundeditor-again">7.1</a> which is a copy of Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p>
+<p>The complex relation between linguistic and spoken units is illustrated in Figure <a href="ch-annotation.html#fig:window-soundeditor-again">7.1</a> which is a copy of Figure <a href="#fig:window-soundeditor"><strong>??</strong></a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-again"></span>
 <img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted."  />
 <p class="caption">
@@ -329,7 +335,7 @@ Figure 7.1: SoundEditor window, showing oscillogram and spectrogram of the fragm
 <div id="box-praattextgrideditor" class="praatbox">
 <p>The recommended workflow in <code>Praat</code> is as follows.</p>
 <ol style="list-style-type: decimal">
-<li><p>Open the speech recording to annotate as a Sound object (see §sec:praatopen).</p></li>
+<li><p>Open the speech recording to annotate as a Sound object (see §<a href="ch-soundtobytes.html#sec:praatopen">2.4.4.3</a>).</p></li>
 <li><p>Create a corresponding TextGrid (see §<a href="ch-annotation.html#sec:textgrids">7.2</a> above).</p></li>
 <li><p>Select <em>both</em> the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press <code>Command</code> while selecting objects.</p></li>
 <li><p>Choose the button labeled <code>View &amp; Edit</code>; this will open a TextGridEditor window.<br />
@@ -452,20 +458,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

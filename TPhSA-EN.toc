@@ -13,6 +13,7 @@
 \contentsline {subsection}{Citation}{9}{section*.15}%
 \contentsline {subsection}{Technical details}{9}{section*.16}%
 \contentsline {subsection}{History}{10}{section*.17}%
+\contentsline {section}{\numberline {0.2}Acknowledgements}{10}{section.0.2}%
 \contentsline {part}{Part I: Sounds}{13}{part*.18}%
 \contentsline {chapter}{\numberline {1}Sound waves}{13}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Sound}{13}{section.1.1}%
@@ -106,13 +107,14 @@
 \contentsline {subsection}{\numberline {6.4.1}to Spectrogram directly}{73}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}from SoundEditor}{73}{subsection.6.4.2}%
 \contentsline {section}{\numberline {6.5}How to read a spectrogram}{74}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Segmenting and labeling speech sounds}{77}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Introduction}{77}{section.7.1}%
-\contentsline {section}{\numberline {7.2}TextGrid objects}{79}{section.7.2}%
-\contentsline {section}{\numberline {7.3}How to segment and label speech sounds in \texttt {Praat}}{80}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Prosody}{83}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Pauses in speech}{83}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Durations}{83}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Pitch}{83}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Intensity}{83}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Stresses and accents}{83}{section.8.5}%
+\contentsline {section}{\numberline {6.6}More about using the SoundEditor}{76}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Annotating speech sounds}{79}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{79}{section.7.1}%
+\contentsline {section}{\numberline {7.2}TextGrid objects}{81}{section.7.2}%
+\contentsline {section}{\numberline {7.3}How to annotate speech sounds}{82}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Prosody}{87}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Pauses in speech}{87}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Durations}{87}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Pitch}{87}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Intensity}{87}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Stresses and accents}{87}{section.8.5}%

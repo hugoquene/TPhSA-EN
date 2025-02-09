@@ -1,6 +1,6 @@
 # Annotating speech sounds {#ch-annotation}
 
-*Chapter keywords*: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, TextGridEditor. 
+*Chapter keywords*: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, SoundEditor, TextGridEditor. 
 
 ## Introduction {#sec:coarticulation-intro}
 
@@ -73,7 +73,7 @@ In practice, it's easiest to place boundaries (segmentation) and to label the re
 
 The recommended workflow in `Praat` is as follows.
 
-(1) Open the speech recording to annotate as a Sound object (see §sec:praatopen).
+(1) Open the speech recording to annotate as a Sound object (see §\@ref(sec:praatopen)).
 
 (2) Create a corresponding TextGrid (see  §\@ref(sec:textgrids) above).
 

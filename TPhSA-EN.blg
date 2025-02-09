@@ -12,50 +12,51 @@ Warning--empty chapter and pages in Aalto_Malinen_Vainio_2018
 Warning--empty publisher in Aalto_Malinen_Vainio_2018
 Warning--empty journal in Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021
 Warning--empty publisher in Ladefoged_Johnson_2015
+Warning--can't use both author and editor fields in Orr_Quené_2017
 Warning--empty chapter and pages in Rubin_2022
 Warning--empty publisher in Rubin_2022
 Warning--can't use both author and editor fields in Shadle_2010
 Warning--empty chapter and pages in Tokuda_2021
 Warning--empty publisher in Tokuda_2021
-You've used 26 entries,
+You've used 27 entries,
             1935 wiz_defined-function locations,
-            640 strings with 7280 characters,
-and the built_in function-call counts, 8481 in all, are:
-= -- 784
-> -- 295
-< -- 24
-+ -- 108
-- -- 94
-* -- 658
-:= -- 1510
-add.period$ -- 74
-call.type$ -- 26
-change.case$ -- 164
-chr.to.int$ -- 26
-cite$ -- 38
-duplicate$ -- 379
-empty$ -- 637
-format.name$ -- 131
-if$ -- 1656
+            650 strings with 7436 characters,
+and the built_in function-call counts, 9015 in all, are:
+= -- 842
+> -- 308
+< -- 26
++ -- 112
+- -- 98
+* -- 688
+:= -- 1581
+add.period$ -- 77
+call.type$ -- 27
+change.case$ -- 170
+chr.to.int$ -- 27
+cite$ -- 40
+duplicate$ -- 413
+empty$ -- 673
+format.name$ -- 138
+if$ -- 1782
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 43
-newline$ -- 129
-num.names$ -- 75
-pop$ -- 201
+missing$ -- 45
+newline$ -- 134
+num.names$ -- 78
+pop$ -- 211
 preamble$ -- 1
-purify$ -- 177
+purify$ -- 184
 quote$ -- 0
-skip$ -- 274
+skip$ -- 309
 stack$ -- 0
-substring$ -- 416
-swap$ -- 43
-text.length$ -- 3
+substring$ -- 446
+swap$ -- 64
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
-warning$ -- 11
-while$ -- 54
+type$ -- 120
+warning$ -- 12
+while$ -- 57
 width$ -- 0
-write$ -- 333
-(There were 11 warnings)
+write$ -- 347
+(There were 12 warnings)
