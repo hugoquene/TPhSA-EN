@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis</title>
   <meta name="description" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis." />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
@@ -120,6 +120,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
 </ul></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>0.2</b> Acknowledgements</a></li>
 </ul></li>
 <li class="part"><span><b>Part I: Sounds</b></span></li>
 <li class="chapter" data-level="1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html"><i class="fa fa-check"></i><b>1</b> Sound waves</a>
@@ -236,7 +237,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogramsoundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:readspectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
-<li class="chapter" data-level="6.6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#more-about-using-the-soundeditor-secsoundeditor3"><i class="fa fa-check"></i><b>6.6</b> More about using the SoundEditor {sec:soundeditor3}</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:soundeditor3"><i class="fa fa-check"></i><b>6.6</b> More about using the SoundEditor</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch-annotation.html"><a href="ch-annotation.html"><i class="fa fa-check"></i><b>7</b> Annotating speech sounds</a>
 <ul>
@@ -386,8 +387,8 @@ In VC contexts we see similar patterns as in CV contexts, but reversed in time.<
 <p><strong>Nasal and lateral</strong> consonants are phonetically complex. They resemble vowels, but the vocal tract has additional cavities during the production of these sounds: for nasals, the nasal cavity, and for laterals, additional cavities under and aside of the tongue. The resulting sound has resonances due to these cavities, as well as anti-resonances due to the acoustic <em>coupling</em> between branching cavities.</p>
 <p>For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.</p>
 </div>
-<div id="more-about-using-the-soundeditor-secsoundeditor3" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> More about using the SoundEditor {sec:soundeditor3}<a href="ch-spectrograms.html#more-about-using-the-soundeditor-secsoundeditor3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:soundeditor3" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> More about using the SoundEditor<a href="ch-spectrograms.html#sec:soundeditor3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In several sections above we have encountered the SoundEditor: in §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.6.2</a> and in §<a href="ch-spectrograms.html#sec:spectrogramsoundeditor">6.4.2</a>. Please re-read those sections before you continue.
 The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter <a href="ch-prosody.html#ch-prosody">8</a>).
 Here we will provide some additional instructions not yet covered in the sections above.</p>
@@ -405,20 +406,25 @@ Figure 6.4: SoundEditor window, showing oscillogram and spectrogram of the fragm
 </p>
 </div>
 <div id="box-windowsfile-details-again" class="smallprintbox">
-<p>The SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows a fragment of speech, taken from the audio file named <code>10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac</code> from the <em>Peoples Speech</em> corpus at <a href="https://huggingface.co/datasets/MLCommons/peoples_speech" class="uri">https://huggingface.co/datasets/MLCommons/peoples_speech</a>. For details about that corpus, see <span class="citation">Galvez et al. (<a href="#ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021">2021</a>)</span>.</p>
+<p>The SoundEditor in Fig.<a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows a fragment of speech, taken from the audio file named <code>s321f1-1.wav</code> from the Longitudinal UCU English Accents corpus (LUCEA; <span class="citation">Orr and Quené (<a href="#ref-Orr_Quené_2017">2017</a>)</span>). The utterance shown is taken from the informal monologue part of the recording.</p>
 </div>
 <p>In this example, the SoundEditor shows the oscillogram (§<a href="ch-soundwaves.html#sec:oscillogram">1.6</a>), the spectrogram (Ch.<a href="ch-spectrograms.html#ch-spectrograms">6</a>), as well as formant frequencies (§<a href="ch-speechsounds.html#sec:formants">5.2</a>) overlaid. Although the formants do match the black bands in the oscillogram, the ranking of spectral peaks to formants may be off, e.g. around the boundary between <em>why</em> and <em>it</em>.</p>
-<blockquote>
-<p>explain about saving analysis results from SoundEditor</p>
-</blockquote>
+<p>You can ask <code>Praat</code> to report to its Info window the time of the cursor (<code>Time &gt; Get cursor</code>), the frequency of the cursor in the spectrogram (<code>Spectrogram &gt; Get frequency at frequency cursor</code>) and the spectral power at the cursor in the spectrogram (<code>Spectrogram &gt; Get spectral power at cursor cross</code>). You can also query each formant frequency (<code>Formants &gt; Get first formant</code>, etc); see §<a href="ch-speechsounds.html#sec:formants">5.2</a> for more explanation about formants.</p>
+<p>A helpful command to know in the SoundEditor is <code>Formants &gt; Formant listing</code>. This will show the frequencies and bandwidths of <em>all</em> formants. If you have selected part of the sound, then <em>all</em> formant measurements at <em>all</em> time points in the selection will be listed. Otherwise, <em>all</em> formants at the current time point will be listed.</p>
+<p><code>Praat</code> writes its output to its <code>Info</code> window, the contents of which may be saved.</p>
+</div>
+<P>
+<div id="box:clearinfo" class="warningbox">
+<p>In <code>Praat</code>, each new writing action such as <code>Query</code>, <code>Get</code>, <code>Tabulate</code>, etc, first <strong>clears</strong> the Info window, thus erasing any contents in the Info window. If you wish to keep information from the Info window, you have to <code>Save</code> or export its contents <em>before</em> the next writing action!</p>
+<p>You can also clear the Info window manually, by choosing <code>File &gt; Clear</code> in the Info window.</p>
 </div>
 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021" class="csl-entry">
-Galvez, Daniel, Greg Diamos, Juan Ciro, Juan Felipe Cerón, Keith Achorn, Anjali Gopi, David Kanter, Maximilian Lam, Mark Mazumder, and Vijay Janapa Reddi. 2021. <span>“The People’s Speech: A Large-Scale Diverse English Speech Recognition Dataset for Commercial Usage,”</span> November. <a href="https://doi.org/10.48550/arXiv.2111.09344">https://doi.org/10.48550/arXiv.2111.09344</a>.
+<div id="ref-Orr_Quené_2017" class="csl-entry">
+Orr, Rosemary, and Hugo Quené. 2017. <span>“D-LUCEA: Curation of the UCU Accent Project Data.”</span> In <em>CLARIN in the Low Countries</em>, edited by Jan Odijk and Arjan van Hessen, 181–93. London: Ubiquity. <a href="http://dx.doi.org/10.5334/bbi.15">http://dx.doi.org/10.5334/bbi.15</a>.
 </div>
 <div id="ref-Rubin_2022" class="csl-entry">
 Rubin, Philip. 2022. <span>“Arthur Abramson.”</span> In <em>Oxford Research Encyclopedia of Linguistics</em>. <a href="https://doi.org/10.1093/acrefore/9780199384655.013.923">https://doi.org/10.1093/acrefore/9780199384655.013.923</a>.

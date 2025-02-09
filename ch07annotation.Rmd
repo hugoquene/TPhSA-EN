@@ -22,13 +22,15 @@ The SoundEditor in Fig.\@ref(fig:window-soundeditor-again) shows a fragment of s
 
 :::
 
-Figure \@ref(fig:window-soundeditor-again) illustrates the following three^[You may also notice the F2 locus of the [d] in *window*, at 2.118 s and ~1800 Hz, see §\@ref(sec:readspectrogram), voiced consonants.] characteristics of casual, fluent speech:
+Figure \@ref(fig:window-soundeditor-again) illustrates several important characteristics of casual, fluent speech:
 
 * Boundaries between discrete speech segments are not clearly present, due to coarticulation. For example, there is strong articulatory and acoustic overlap between the vowel and the final consonant of [smɔɫ] *small*, making it almost impossible to demarcate these two sounds. 
 
 * Some speech segments have hardly any acoustic-phonetic manifestation at all, e.g. the final consonant of *get*;
 
 * Some speech segments are difficult to transcribe, e.g. the vowel in the last syllable of *window*: diphthong [ˈwɪndoʊ] or monophthong [ˈwɪndoː] ?
+
+* You may also notice the F2 locus of the [d] in *window*, at 2.118 s and ~1800 Hz, see §\@ref(sec:readspectrogram), voiced consonants.
 
 Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. In sum, segmenting and labeling speech addresses the core issue in phonetics, viz. how abstract linguistic units and meanings are related to their concrete physical realizations, both in production and in perception of spoken language. 
 
@@ -78,7 +80,9 @@ The recommended workflow in `Praat` is as follows.
 (3) Select *both* the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press `Command` while selecting objects.
 
 (4) Choose the button labeled `View & Edit`; this will open a TextGridEditor window. \
-The TexGridEditor is very similar to the SoundEditor window which we encountered earlier (see §\@ref(sec:praatsoundeditor) and REF for details about the SoundEditor, which are also applicable to the TextGridEditor). 
+The TexGridEditor is very similar to the SoundEditor window which we encountered earlier (see §§\@ref(sec:praatsoundeditor) and
+\@ref(sec:spectrogramsoundeditor) and 
+\@ref(sec:soundeditor3) for details about the SoundEditor, which are also applicable to the TextGridEditor). 
 
 Figure \@ref(fig:window-textgrideditor) shows an example of a TextGridEditor, displaying the fragment *a small window to get this right* spoken by a male speaker of American English; the single word *window* is highlighted. 
 In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the `word` (interval) tier for orthographic transcription, and the `phone` (interval) tier for broad phonetic transcription. And in this illustration, `Praat` focuses on the `word` tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier. 
@@ -113,7 +117,7 @@ Phonetic symbols are explained in your phonetics textbook and in the @HandbookIP
 (8) Back in the `Praat` Objects window:\
 you may `Draw` or `Tabulate` or interactively `Query` or `Modify` the contents of the TextGrid. (Choose `Modify` to rename tiers.)\
 The `Tabulate` command is convenient if you wish to export the TextGrid information as a dataset for further analysis. Each interval of each tier is written as a separate row in the dataset. After having saved the resulting table from `Praat`, you could use your statistical software on this tabulated-and-exported dataset, e.g. to count words, to compute average segment durations, etc etc.\
-(For statistical guidance, see this tutorial on [Quantitative Methods and Statistics](https://hugoquene.github.io/QMS-EN/).
+(For statistical guidance, see this tutorial on [Quantitative Methods and Statistics](https://hugoquene.github.io/QMS-EN/)).
 
 (9) Remember to `Save` the TextGrid object if you wish. 
 

@@ -135,7 +135,7 @@ In producing **alveolar** consonants, the vocal tract is divided into two smalle
 
 For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section. 
 
-## More about using the SoundEditor {sec:soundeditor3}
+## More about using the SoundEditor {#sec:soundeditor3}
 
 In several sections above we have encountered the SoundEditor: in §\@ref(sec:praatsoundeditor) and in §\@ref(sec:spectrogramsoundeditor). Please re-read those sections before you continue. 
 The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter \@ref(ch-prosody)). 
@@ -155,12 +155,26 @@ knitr::include_graphics("figures/s321f1-1_informal_fragment_SoundEditor20250203.
 
 ::: {#box-windowsfile-details-again .smallprintbox}
 
-The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
+The SoundEditor in Fig.\@ref(fig:window-soundeditor) shows a fragment of speech, taken from the audio file named `s321f1-1.wav` from the Longitudinal UCU English Accents corpus (LUCEA; @Orr_Quené_2017). The utterance shown is taken from the informal monologue part of the recording. 
 
 :::
 
 In this example, the SoundEditor shows the oscillogram (§\@ref(sec:oscillogram)), the spectrogram (Ch.\@ref(ch-spectrograms)), as well as formant frequencies (§\@ref(sec:formants)) overlaid. Although the formants do match the black bands in the oscillogram, the ranking of spectral peaks to formants may be off, e.g. around the boundary between *why* and *it*. 
 
-> explain about saving analysis results from SoundEditor 
+You can ask `Praat` to report to its Info window the time of the cursor (`Time > Get cursor`), the frequency of the cursor in the spectrogram (`Spectrogram > Get frequency at frequency cursor`) and the spectral power at the cursor in the spectrogram (`Spectrogram > Get spectral power at cursor cross`). You can also query each formant frequency (`Formants > Get first formant`, etc); see §\@ref(sec:formants) for more explanation about formants. 
+
+A helpful command to know in the SoundEditor is `Formants > Formant listing`. This will show the frequencies and bandwidths of *all* formants. If you have selected part of the sound, then *all* formant measurements at *all* time points in the selection will be listed. Otherwise, *all* formants at the current time point will be listed. 
+
+`Praat` writes its output to its `Info` window, the contents of which may be saved. 
+
+:::
+
+<P>
+
+::: {#box:clearinfo .warningbox}
+
+In `Praat`, each new writing action such as `Query`, `Get`, `Tabulate`, etc, first **clears** the Info window, thus erasing any contents in the Info window. If you wish to keep information from the Info window, you have to `Save` or export its contents *before* the next writing action!
+
+You can also clear the Info window manually, by choosing `File > Clear` in the Info window.  
 
 :::

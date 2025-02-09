@@ -127,9 +127,17 @@ knitr::write_bib( c(
 ), 'packages.bib')
 ```
 
+## Acknowledgements
+
+As indicated in the *History* subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions by many. 
+
+In addition, I am thankful for the many helpful comments and suggestions to improve this tutorial text: thank you Jing Tang! 
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+# https://yihui.org/tinytex/r/#debugging
+options(tinytex.verbose = TRUE)
 ```
 

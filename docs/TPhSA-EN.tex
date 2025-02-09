@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 30 Jan 2025 23:07}
+\date{Document compiled 09 Feb 2025 17:24}
 
 \begin{document}
 \maketitle
@@ -213,6 +213,12 @@ TODO add tech details
 This work is based on an earlier tutorial (2006-2007) titled Tutorial for self study: basics of phonetics and how to use Praat by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck.
 
 The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2025.
+
+\section{Acknowledgements}\label{acknowledgements}
+
+As indicated in the \emph{History} subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions by many.
+
+In addition, I am thankful for the many helpful comments and suggestions to improve this tutorial text: thank you Jing Tang!
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -620,7 +626,7 @@ The scientific notation of a number such as \texttt{9.876e-2} is to be read as \
 
 \chapter{Converting sound to bytes}\label{ch-soundtobytes}
 
-\emph{Chapter keywords}: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain.
+\emph{Chapter keywords}: analog-to-digital conversion, digital-to-analog conversion, AD, DA, ADC, DAC, microphone, sound insulation, directional, filtering, sampling, sampling frequency, nyquist frequency, amplitude resolution, quantization, rounding, noise, recording level, gain, clipping, audio formats, codec, lossy, lossless, scale, fade, concatenate, chain, SoundEditor.
 
 \section{Overview}\label{sec:ADCoverview}
 
@@ -822,7 +828,7 @@ In many projects, we wish to excise (cut out) a part of a recording, and save th
 \texttt{Praat} contains a so-called SoundEditor to perform these tasks.
 
 \phantomsection\label{box-segmenting}
-Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \ref{ch-segmentinglabeling}. Below are some brief starter instructions.
+Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \ref{ch-annotation} on phonetic annotation. Below are some brief starter instructions.
 
 \phantomsection\label{box-soundeditor}
 \begin{itemize}
@@ -830,7 +836,7 @@ Reliably segmenting or delimiting fragments of a speech utterance requires the b
   Select an input Sound object in the \texttt{Praat} Objects window.
 \item
   Choose \texttt{View\ \&\ Edit}.
-  This will open a SoundEditor window.
+  This will open a \textbf{SoundEditor} window.
   Figure \ref{fig:window-soundeditor} shows an example of a SoundEditor, displaying the fragment \emph{\ldots a small window to get this\ldots{}} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
 \end{itemize}
 
@@ -995,14 +1001,7 @@ This can be done by means of two features in \texttt{Praat} which we will explor
 \item
   In the \texttt{Praat} object window, select a Sound object.
 \item
-  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature.
-\end{itemize}
-
-\begin{quote}
-TODO crossref SoundEditor
-\end{quote}
-
-\begin{itemize}
+  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more details and instructions about the SoundEditor, see §@ref(\#sec:praatsoundeditor).
 \item
   In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram (see §\ref{sec:howto-spectrogram}).\\
   A \emph{short} window (e.g.~0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A \emph{long} window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read §\ref{sec:howto-spectrogram}, read the \texttt{Praat} Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.
@@ -1345,6 +1344,8 @@ Remember that the results from your formant analysis may be \textbf{suspect}:
 
 For background, see §\ref{sec:removenontargetsounds} above.
 
+Formant frequencies are also available in the SoundEditor (§\ref{sec:praatsoundeditor}); these formant frequencies are computed in the same way as described above.
+
 \section{Source-filter theory of speech production}\label{sec:sourcefilter}
 
 According to the source-filter theory, speech is produced by first generating a source sound, which is subsequently modified by an acoustic filter \citep{Fant_1970}. The theory postulates that source and filter are two independent and subsequent components in speech production, in particular, that the filter does not affect the source (although source-filter interactions do occur in actual speech production; \citet{Tokuda_2021}, §4).
@@ -1468,7 +1469,7 @@ There are two ways to create a spectrogram of a sound recording: either directly
   Remember to \texttt{Save} the Spectrogram object if you wish.
 \end{itemize}
 
-\subsection{from SoundEditor}\label{from-soundeditor}
+\subsection{from SoundEditor}\label{sec:spectrogramsoundeditor}
 
 This method is similar to the spectral analysis described in §\ref{sec:spectralslice}. Using this method, your spectrogram in the SoundEditor is immediately updated if you change (\texttt{Apply}) values for the analysis parameters (which may be convenient), but extracting and saving the Spectrogram requires some extra work.
 
@@ -1496,7 +1497,7 @@ TODO crossref SoundEditor
 \item
   If you are happy with the spectrogram in the SoundEditor panel, you can then choose \texttt{Spectrogram\ \textgreater{}\ Paint\ visible\ spectrogram...} in order to draw that spectrogram in the Picture window.
 \item
-  You can also \texttt{Extract} and then \texttt{Save} the spectrogram from the SoundEditor.
+  You can also \texttt{Extract} and then \texttt{Save} the spectrogram from the SoundEditor in order to save it as an object in the Objects window.
 \end{itemize}
 
 \section{How to read a spectrogram}\label{sec:readspectrogram}
@@ -1504,11 +1505,7 @@ TODO crossref SoundEditor
 (with Clizia Welker)
 
 \phantomsection\label{box-spectrogram}
-This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to \emph{segment} (cut up) a speech signal into syllables or phones, and/or need to \emph{transcribe} (label) the words or sounds in a speech recording. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\ref{sec:textbooks}), and see Chapter XX on segmenting and labeling speech. Also consult the valuable instructions and background on \href{https://home.cc.umanitoba.ca/~robh/howto.html}{how to read a spectrogram} by Rob Hagiwara.
-
-\begin{quote}
-TODO link to chapter on segmenting and labeling
-\end{quote}
+This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to \emph{annotate} a speech recording, that is, dividing or segmenting it into syllables or phones, and/or transcribing (labeling) the words or sounds spoken. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\ref{sec:textbooks}), and see Chapter \ref{ch-annotation} on annotating speech. Also consult the valuable instructions and background on \href{https://home.cc.umanitoba.ca/~robh/howto.html}{how to read a spectrogram} by Rob Hagiwara.
 
 While by observing an oscillogram it is only possible to identify broad phonetic classes, the spectrogram provides us with sufficient information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about
 
@@ -1557,17 +1554,58 @@ In producing \textbf{alveolar} consonants, the vocal tract is divided into two s
 
 For more tips and tricks and background about how to identify speech segments in a spectrogram, please consult your textbooks on phonetics, as well as the resources mentioned in the first paragraph of this section.
 
-\chapter{Segmenting and labeling speech sounds}\label{ch-segmentinglabeling}
+\section{More about using the SoundEditor}\label{sec:soundeditor3}
 
-\begin{quote}
-TODO expand keywords
-\end{quote}
+In several sections above we have encountered the SoundEditor: in §\ref{sec:praatsoundeditor} and in §\ref{sec:spectrogramsoundeditor}. Please re-read those sections before you continue.
+The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter \ref{ch-prosody}).
+Here we will provide some additional instructions not yet covered in the sections above.
 
-\emph{Chapter keywords}: phonetics, linguistic units, segments, sounds, coarticulation.
+\phantomsection\label{box-soundeditor-3}
+\begin{itemize}
+\item
+  Select an input Sound object in the \texttt{Praat} Objects window.
+\item
+  Choose \texttt{View\ \&\ Edit}.
+  This will open a \textbf{SoundEditor} window.
+  Figure \ref{fig:window-soundeditor-3} shows an example of a SoundEditor, displaying the fragment \emph{why is it so good} spoken by a female speaker of English; the single word \emph{why} is highlighted.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{figures/s321f1-1_informal_fragment_SoundEditor20250203} 
+
+}
+
+\caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *why is it so good...*, with the word *why* highlighted.}\label{fig:window-soundeditor-3}
+\end{figure}
+
+\phantomsection\label{box-windowsfile-details-again}
+The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio file named \texttt{s321f1-1.wav} from the Longitudinal UCU English Accents corpus (LUCEA; \citet{Orr_Quené_2017}). The utterance shown is taken from the informal monologue part of the recording.
+
+In this example, the SoundEditor shows the oscillogram (§\ref{sec:oscillogram}), the spectrogram (Ch.\ref{ch-spectrograms}), as well as formant frequencies (§\ref{sec:formants}) overlaid. Although the formants do match the black bands in the oscillogram, the ranking of spectral peaks to formants may be off, e.g.~around the boundary between \emph{why} and \emph{it}.
+
+You can ask \texttt{Praat} to report to its Info window the time of the cursor (\texttt{Time\ \textgreater{}\ Get\ cursor}), the frequency of the cursor in the spectrogram (\texttt{Spectrogram\ \textgreater{}\ Get\ frequency\ at\ frequency\ cursor}) and the spectral power at the cursor in the spectrogram (\texttt{Spectrogram\ \textgreater{}\ Get\ spectral\ power\ at\ cursor\ cross}). You can also query each formant frequency (\texttt{Formants\ \textgreater{}\ Get\ first\ formant}, etc); see §\ref{sec:formants} for more explanation about formants.
+
+A helpful command to know in the SoundEditor is \texttt{Formants\ \textgreater{}\ Formant\ listing}. This will show the frequencies and bandwidths of \emph{all} formants. If you have selected part of the sound, then \emph{all} formant measurements at \emph{all} time points in the selection will be listed. Otherwise, \emph{all} formants at the current time point will be listed.
+
+\texttt{Praat} writes its output to its \texttt{Info} window, the contents of which may be saved.
+
+\phantomsection\label{box:clearinfo}
+In \texttt{Praat}, each new writing action such as \texttt{Query}, \texttt{Get}, \texttt{Tabulate}, etc, first \textbf{clears} the Info window, thus erasing any contents in the Info window. If you wish to keep information from the Info window, you have to \texttt{Save} or export its contents \emph{before} the next writing action!
+
+You can also clear the Info window manually, by choosing \texttt{File\ \textgreater{}\ Clear} in the Info window.
+
+\chapter{Annotating speech sounds}\label{ch-annotation}
+
+\emph{Chapter keywords}: phonetics, linguistic units, sounds, coarticulation, annotating, annotation, segment, segments, segmenting, label, labels, labeling, transcribing, transcription, symbol, TextGrid, TextGridEditor.
 
 \section{Introduction}\label{sec:coarticulation-intro}
 
-Segmenting speech and labeling speech are at the core of phonetic analysis. In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called \textbf{coarticulation}, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive \emph{handwriting}.
+Annotating speech is at the core of phonetic analysis. Annotation means that abstract linguistic symbols are linked to the concrete physical speech stream --- somewhat similar to subtitling.
+
+Most projects involve some sort of annotation of speech, as researchers may be interested in e.g.~how an intended (abstract) sound is produced acoustically-phonetically, how a meaningful phonological contrast is realized in speech, how an acoustic-phonetic feature such as F2 locus is perceived, etc.
+
+In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called \textbf{coarticulation}, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive \emph{handwriting}.
 
 The complex relation between linguistic and spoken units is illustrated in Figure \ref{fig:window-soundeditor-again} which is a copy of Figure \ref{fig:window-soundeditor}.
 
@@ -1580,28 +1618,32 @@ The complex relation between linguistic and spoken units is illustrated in Figur
 \caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor-again}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details}
+\phantomsection\label{box-windowsfile-details-again}
 The SoundEditor in Fig.\ref{fig:window-soundeditor-again} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
 
-Figure \ref{fig:window-soundeditor-again} illustrates the following three\footnote{You may also notice the F2 locus of the {[}d{]} in \emph{window}, at 2.118 s and \textasciitilde1800 Hz, see §\ref{sec:readspectrogram}, voiced consonants.} characteristics of casual, fluent speech:
+Figure \ref{fig:window-soundeditor-again} illustrates several important characteristics of casual, fluent speech:
 
 \begin{itemize}
 \item
-  Boundaries between speech segments are not clearly present, due to coarticulation, e.g.~between the vowel and the final consonant of {[}smɔɫ{]} \emph{small}.
+  Boundaries between discrete speech segments are not clearly present, due to coarticulation. For example, there is strong articulatory and acoustic overlap between the vowel and the final consonant of {[}smɔɫ{]} \emph{small}, making it almost impossible to demarcate these two sounds.
 \item
   Some speech segments have hardly any acoustic-phonetic manifestation at all, e.g.~the final consonant of \emph{get};
 \item
   Some speech segments are difficult to transcribe, e.g.~the vowel in the last syllable of \emph{window}: diphthong {[}ˈwɪndoʊ{]} or monophthong {[}ˈwɪndoː{]} ?
+\item
+  You may also notice the F2 locus of the {[}d{]} in \emph{window}, at 2.118 s and \textasciitilde1800 Hz, see §\ref{sec:readspectrogram}, voiced consonants.
 \end{itemize}
 
 Subsequently, listener retrieve the indended units (sounds, words, meanings) from this continuous speech stream. In sum, segmenting and labeling speech addresses the core issue in phonetics, viz.~how abstract linguistic units and meanings are related to their concrete physical realizations, both in production and in perception of spoken language.
 
-In this chapter, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
+In this chapter on annotation, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
 
 \phantomsection\label{box-praattextgrid}
 \section{TextGrid objects}\label{sec:textgrids}
 
-\texttt{Praat} has a special type of object for annotation, called a \textbf{TextGrid}. A \texttt{TextGrid} object may contain multiple layers, or \texttt{tiers}, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g.~the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:
+Annotation involves both segmentation (defining boundaries between speech intervals) and labeling or transcribing (assigning symbol labels to those intervals). In \texttt{Praat}, the object that holds this type of information (boundaries, time points, and labels) is called the \textbf{TextGrid}.
+
+A \texttt{TextGrid} object may contain multiple layers, or \texttt{tiers}, of annotation. As a first example, a TextGrid of a single-speaker recording may have one layer of word-level transcription in regular orthography (spelling), a second layer of phone-by-phone phonetic transcription, and a third layer marking special moments of interest to the researcher, e.g.~the moment of maximum intensity of a vowel. As a second example, a TextGrid of a dialogue recording may contain two layers of word-level transcription, one for each speaker in the dialogue. These examples illustrate two distinct types of layers or tiers within a TextGrid object:
 
 \begin{itemize}
 \item
@@ -1629,9 +1671,9 @@ As explained in the \texttt{Praat} tutorial on annotation (in the Help system), 
   Remember to \texttt{Save} the TextGrid object if you wish.
 \end{itemize}
 
-\section{\texorpdfstring{How to segment and label speech sounds in \texttt{Praat}}{How to segment and label speech sounds in Praat}}\label{how-to-segment-and-label-speech-sounds-in-praat}
+\section{How to annotate speech sounds}\label{sec:howtoannotate}
 
-In practice, it's easiest to set segment boundaries (segmentation) and to label those segments (labeling or transcription) at the same time. The boundaries and labels are kept in a TextGrid object.
+In practice, it's easiest to place boundaries (segmentation) and to label the resulting intervals or segments (labeling or transcription) at the same time. The boundaries, intervals and labels are kept in a TextGrid object (see §\ref{sec:textgrids} above).
 
 \phantomsection\label{box-praattextgrideditor}
 The recommended workflow in \texttt{Praat} is as follows.
@@ -1645,7 +1687,10 @@ The recommended workflow in \texttt{Praat} is as follows.
 \item
   Select \emph{both} the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press \texttt{Command} while selecting objects.
 \item
-  Choose the button labeled \texttt{View\ \&\ Edit}; this will open a TextGrid Editor window, which is quite similar to the SoundEditor window (see §\ref{sec:praatsoundeditor}).
+  Choose the button labeled \texttt{View\ \&\ Edit}; this will open a TextGridEditor window.\\
+  The TexGridEditor is very similar to the SoundEditor window which we encountered earlier (see §§\ref{sec:praatsoundeditor} and
+  \ref{sec:spectrogramsoundeditor} and
+  \ref{sec:soundeditor3} for details about the SoundEditor, which are also applicable to the TextGridEditor).
 \end{enumerate}
 
 Figure \ref{fig:window-textgrideditor} shows an example of a TextGridEditor, displaying the fragment \emph{a small window to get this right} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
@@ -1660,8 +1705,9 @@ In this example, the TextGridEditor shows the two tiers of annotation in this pa
 \caption{TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted.}\label{fig:window-textgrideditor}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details-3}
-The SoundEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
+\phantomsection\label{box-windowsfile-details-third}
+The TextGridEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.\\
+Notice the absence of a \texttt{phone} boundary between the vowel and coda consonant of \emph{small}, as well as the intrusive {[}d{]} between \emph{small} and \emph{window}.
 
 \begin{enumerate}
 \def\labelenumi{(\arabic{enumi})}
@@ -1673,9 +1719,11 @@ The SoundEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speec
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
-\tightlist
 \item
-  if you click in the oscillogram or spectrogram, then the vertical cursor moves to that position. Moreover, a \emph{candidate boundary} appears in the annotation tiers; it is marked by a small circle or `handle' at the upper end of the boundary mark in a tier. You may accept the proposed boundary by clicking on its `handle'. By repeatedly placing boundaries, you can \textbf{segment} the continuous speech signal into consecutive discrete intervals within the annotation tiers.\\
+  if you click in the oscillogram or spectrogram, then the vertical cursor moves to that position. Moreover, a \emph{candidate boundary} appears in the annotation tiers; it is marked by a small circle or `handle' at the upper end of the boundary mark in a tier. You may accept the proposed boundary by clicking on its `handle'. This will \textbf{add} the boundary.\\
+  Note that there is always an (implicit) boundary at the beginning and at the end of the TextGrid -- you don't need to add boundaries there. Consequently, when you start annotating, the interval tier(s) in your TextGrid already contain(s) a single interval that encompasses the entire Sound.\\
+  Adding a boundary means splitting the current interval into two.\\
+  Thus, if you repeatedly add boundaries, and thus define new intervals between boundaries, you \emph{segment} the continuous speech signal into consecutive discrete intervals within the annotation tier(s).\\
 \item
   You may \textbf{copy} a boundary from one tier to another by clicking within a tier on the boundary to copy (e.g.~from the \texttt{word} to the \texttt{phone} tier). Again, a \emph{candidate boundary} appears in the other annotation tier(s) (if there are any other tiers, of course). Again, you may accept the proposed boundary by clicking on its `handle'.\\
 \item
@@ -1683,7 +1731,8 @@ The SoundEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speec
 \item
   If you are not happy with a boundary, you can \textbf{remove} it by first selecting the boundary (click on it), then choose \texttt{Boundary\ \textgreater{}\ Remove}.\\
 \item
-  If you click in an interval in a tier, then that interval is selected. You can \textbf{listen} to the selected interval, or the neigboring parts, using the buttons labeled with durations.
+  If you click in an interval in a tier, then that interval is selected. You can \textbf{listen} to the selected interval, or the neigboring parts, using the buttons labeled with durations.\\
+  In addition to looking at the oscillogram and spectrogram, listening is a great way to check whether a boundary is placed correctly (phoneticians typically report this as ``using audiovisual feedback''). For example, I verified the boundary between {[}ɹ{]} and {[}aɪ{]} in the final word \emph{right} in Fig.\ref{fig:window-textgrideditor}, by repeatedly listening to the {[}ɹ{]} and {[}aɪ{]} intervals, meanwhile adjusting the boundary so that their demarcation sounded optimal in my ears: minimal {[}aɪ{]} within the {[}ɹ{]} segment, and minimal {[}ɹ{]} within the {[}aɪ{]} segment.
 \end{enumerate}
 
 \begin{enumerate}
@@ -1699,7 +1748,7 @@ The SoundEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speec
   Back in the \texttt{Praat} Objects window:\\
   you may \texttt{Draw} or \texttt{Tabulate} or interactively \texttt{Query} or \texttt{Modify} the contents of the TextGrid. (Choose \texttt{Modify} to rename tiers.)\\
   The \texttt{Tabulate} command is convenient if you wish to export the TextGrid information as a dataset for further analysis. Each interval of each tier is written as a separate row in the dataset. After having saved the resulting table from \texttt{Praat}, you could use your statistical software on this tabulated-and-exported dataset, e.g.~to count words, to compute average segment durations, etc etc.\\
-  (For statistical guidance, see this tutorial on \href{https://hugoquene.github.io/QMS-EN/}{Quantitative Methods and Statistics}.
+  (For statistical guidance, see this tutorial on \href{https://hugoquene.github.io/QMS-EN/}{Quantitative Methods and Statistics}).
 \item
   Remember to \texttt{Save} the TextGrid object if you wish.
 \end{enumerate}
