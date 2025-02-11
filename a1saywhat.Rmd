@@ -39,17 +39,24 @@ Some example sentences:
 
 #### De noordenwind en de zon 
 
-The standard Dutch passage of the IPA:
+The standard Dutch passage of the IPA (1999 version):
 
 > De noordenwind en de zon. \
-> De noordenwind en de zon waren erover aan het redetwisten wie de sterkste was van hen beiden.
-Juist op dat moment kwam er een reiziger aan, die gehuld was in een warme mantel.
-Ze kwamen overeen dat degene die het eerst erin zou slagen de reiziger zijn mantel te doen uittrekken, de sterkste zou worden geacht.
-De noordenwind begon toen uit alle macht te blazen, maar hoe harder hij blies, des te dichter trok de reiziger zijn mantel om zich heen; en ten lange leste gaf de noordenwind het op.
-Daarna begon de zon krachtig te stralen, en hierop trok de reiziger onmiddellijk zijn mantel uit.
-De noordenwind moest dus wel bekennen dat de zon van hen beiden de sterkste was.
+> De noordenwind en de zon hadden een discussie over de vraag wie van hun tweeën de sterkste was, toen er juist iemand voorbij kwam die een dikke, warme jas aanhad. Ze spraken af dat wie de voorbijganger ertoe zou krijgen zijn jas uit te trekken de sterkste zou zijn. De noordenwind begon uit alle macht te blazen, maar hoe harder hij blies, des te dichter de voorbijganger zijn jas om zich heen trok. Tenslotte gaf de noordenwind het maar op. Vervolgens begon de zon krachtig te stralen, en onmiddellijk daarop trok de voorbijganger zijn jas uit. De noordenwind kon toen slechts beamen dat de zon de sterkste was. 
 
-Source: @HandbookIPA_1999 \
+Source: @HandbookIPA_1999, p.77.
+
+An older version of the same Dutch passage of the IPA (1949 version):
+
+> De noordenwind en de zon. \
+> De noordenwind en de zon waren erover aan het redetwisten wie de sterkste was van hun beiden.
+Juist op dat moment kwam er een reiziger aan, die gehuld was in een warme mantel.
+Ze kwamen overeen, dat degene die het eerst erin zou slagen de reiziger zijn mantel te doen uittrekken de sterkste zou worden geacht.
+De noordenwind begon toen uit alle macht te blazen, maar hoe harder hij blies, des te dichter trok de reiziger zijn mantel om zich heen; en ten langen leste gaf de noordenwind het op.
+Daarna begon de zon krachtig te stralen, en hierop trok de reiziger onmiddellijk zijn mantel uit.
+De noordenwind moest dus wel bekennen dat de zon van hun beiden de sterkste was.
+
+Source: @InternationalPhoneticAssociation_1949, p.26. \
 See also: [The North Wind and the Sun](https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun)
 
 ---
@@ -82,7 +89,6 @@ There is, according to legend, a boiling pot of gold at one end.
 People look, but no one ever finds it.
 When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow. (...)
 
-
 Source: Fairbanks, G. (1960). *Voice and articulation drillbook*, 2nd ed. (pp.124-139). New York: Harper & Row. \
 See also: <https://www.york.ac.uk/media/languageandlinguistics/documents/currentstudents/linguisticsresources/Standardised-reading.pdf>
 
@@ -92,11 +98,11 @@ The standard English passage of the IPA:
 
 > The North Wind and the Sun \
 > The North Wind and the Sun were disputing which was the stronger, when a traveller came along wrapped in a
-warm cloak. They agreed that the one who first succeeded in making the traveller take his cloak off should be considered stronger than the other. Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveller fold his cloak around him; and at last the North Wind gave up the attempt. Then the Sun shone out warmly, and immediately the traveller took off his cloak. And so the North Wind was obliged to confess that the Sun was the stronger of the two.
+warm cloak. They agreed that the one who first succeeded in making the traveller take his cloak off should be considered stronger than the other. Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveller fold his cloak around him; and at last the North Wind gave up the attempt. Then the Sun shined out warmly, and immediately the traveller took off his cloak. And so the North Wind was obliged to confess that the Sun was the stronger of the two.
 
-Source: @HandbookIPA_1999 \
+Source: @HandbookIPA_1999, p.44. \
+The 1949 version for British English had *shone* instead of *shined*; the 1949 version for American English had *began to shine* instead. \
 See also: [The North Wind and the Sun](https://en.wikipedia.org/wiki/The_North_Wind_and_the_Sun)
-
 
 #### The Boy Who Cried Wolf
 
