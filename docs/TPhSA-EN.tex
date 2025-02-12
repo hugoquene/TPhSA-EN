@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 11 Feb 2025 22:42}
+\date{Document compiled 12 Feb 2025 09:07}
 
 \begin{document}
 \maketitle
@@ -1406,8 +1406,8 @@ Because the egressive airstream from the lungs is used to drive the phonation at
 
 As we saw, a spectrum (§\ref{sec:spectrum}) shows the various frequency components of a complex signal, such as the formants of a vowel (§\ref{sec:formants}). However, a spectrum either shows the frequency composition of an entire digital sound, or it shows the frequency composition of a brief `slice' or frame or window of that sound (box \ref{sec:spectrum}).
 
-In order to track spectral changes over time, we need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This most important visualisation in speech analysis is called a \textbf{spectrogram}. As in an oscillogram, \emph{time} is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, \emph{frequency} is shown along the vertical axis. \emph{Amplitude} is shown in the degree of blackness (or in coloring).
-The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a blackbird song, showing the amplitudes (blackness) of the frequency components (vertically), varying over time (horizontally).
+In order to track spectral changes over time, we need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This most important visualisation in speech analysis is called a \textbf{spectrogram}. As in an oscillogram, \emph{time} is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, \emph{frequency} is shown along the vertical axis. \emph{Amplitude} is shown in the degree of darkness (or in coloring).
+The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a blackbird song, showing the amplitudes (darkness) of the frequency components (vertically), varying over time (horizontally).
 
 \begin{figure}
 
@@ -1420,7 +1420,7 @@ The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a black
 
 In this spectrogram you see an initial steeply falling `chirp' sound, followed by three repetitions of a two-tone `syllable', against a background of other birdsong.
 
-Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\ref{fig:bandpassfilter}). This bandpass filter was initially set to a low \emph{center frequency}, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of blackness, resulting in a single horizontal `line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next `line' of the figure. This was repeated across the entire range of frequencies\footnote{Thus a spectrograph required several minutes to produce a single spectrogram.}. Moreover, a spectrograph used to have two fixed settings for the \emph{bandwidth} of the band-pass filter (§\ref{sec:filterbandwidth}): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\ref{sec:spectralslice} and see below).
+Spectrograms used to be made by means of a special device, a sonagraph or spectrograph, which worked by means of a bandpass filter (Fig.\ref{fig:bandpassfilter}). This bandpass filter was initially set to a low \emph{center frequency}, then applied to the sound recording, and the resulting output amplitude of the filter was printed as varying degrees of darkness, resulting in a single horizontal `line' of the figure. Then the frequency band of the filter was increased slightly, to produce the next `line' of the figure. This was repeated across the entire range of frequencies\footnote{Thus a spectrograph required several minutes to produce a single spectrogram.}. Moreover, a spectrograph used to have two fixed settings for the \emph{bandwidth} of the band-pass filter (§\ref{sec:filterbandwidth}): 260 Hz for so-called broadband spectrograms, and 43 Hz for narrowband spectrograms, respectively. (Nowadays, in digital speech analysis, bandwidth is controlled indirectly, via the length of the window for spectral analysis, see §\ref{sec:spectralslice} and see below).
 
 \section{Broadband spectrogram}\label{broadband-spectrogram}
 
@@ -1531,11 +1531,11 @@ In order to read a spectrogram, we need to remember that:
 
 \begin{itemize}
 \item
-  the blacker regions are frequency regions with a high degree of energy (§\ref{sec:spectrogram-intro}),
+  the darker regions are frequency regions with a high degree of energy (§\ref{sec:spectrogram-intro}),
 \item
-  the black band at the bottom of the spectrogram displays the \(f_0\) in voiced parts; it may be difficult to distinguish fundamental \(f_0\) from formant F1 (especially in closed vowels, which have a low F1 close to \(f_0\) \footnote{If speaking or singing at high fundamental \(f_0\), the \(f_0\) may even be higher than F1, thus rendering F1 inaudible.}),
+  the dark band at the bottom of the spectrogram displays the \(f_0\) in voiced parts; it may be difficult to distinguish fundamental \(f_0\) from formant F1 (especially in closed vowels, which have a low F1 close to \(f_0\) \footnote{If speaking or singing at high fundamental \(f_0\), the \(f_0\) may even be higher than F1, thus rendering F1 inaudible.}),
 \item
-  vowels are characterised by a clear formant pattern (§\ref{sec:formants}), visible as horizontal black bands,
+  vowels are characterised by a clear formant pattern (§\ref{sec:formants}), visible as horizontal dark bands,
 \item
   consonants (especially voiceless ones) do not have a clear formant pattern, but the distribution of energy throughout the spectrum helps us identifying them,
 \item
@@ -1544,7 +1544,7 @@ In order to read a spectrogram, we need to remember that:
 
 \textbf{Vowels} may be distinguished through their formant values, especially through F1, F2 and F3; consult a vowel diagram in your textbook.
 
-\textbf{Dipthongs} (such as in the Dutch words \emph{bij}, \emph{bui} and \emph{bouw}) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values.
+\textbf{Dipthongs} (such as the vowels in the Dutch words \emph{bij}, \emph{bui}, \emph{bouw}, and in the English words \emph{mouth}, \emph{choice}, \emph{price}, \emph{face}) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values (for an example, see Fig.\ref{fig:window-soundeditor-3} below).
 
 For \textbf{voiced consonants} in a CV context, formant frequencies change relatively rapidly. The \emph{F2} value in the vowel from which the formant travels in this formant transition is often called the `F2 locus', and this locus is correlated with the place of articulation of the consonant. The F2 transition is also due to the fact that acoustic resonators (tube sections) are uncoupled at the moment of closure or frication, but become coupled as the mouth opens.
 For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.\\
@@ -1565,7 +1565,7 @@ For more tips and tricks and background about how to identify speech segments in
 
 In several sections above we have encountered the SoundEditor: in §\ref{sec:praatsoundeditor} and in §\ref{sec:spectrogramsoundeditor}. Please re-read those sections before you continue.
 The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter \ref{ch-prosody}).
-Here we will provide some additional instructions not yet covered in the sections above.
+Here we provide some additional instructions not yet covered in the sections above.
 
 \phantomsection\label{box-soundeditor-3}
 \begin{itemize}
