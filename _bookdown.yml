@@ -9,6 +9,7 @@ rmd_files: ["index.Rmd",
             "ch07annotation.Rmd",
             "ch08prosody.Rmd",
             "a1saywhat.Rmd",
+            "a2praattools.Rmd",
             "references.Rmd" ]
 output_dir: "docs"
 language:

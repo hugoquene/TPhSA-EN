@@ -132,3 +132,6 @@ coherent-texts-1
 rainbow-passage
 the-north-wind-and-the-sun
 the-boy-who-cried-wolf
+app-praat
+editors
+other-tools
