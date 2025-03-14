@@ -117,7 +117,7 @@ There is a helpful option in `Praat`, from the *main* menu (not from the Objects
 #### Record {#sec:praatrecord}
 
 - In the `Praat` Objects window, select `New > Record mono sound`.
-In most situations it is not necessary to record stereo sounds. 
+In most situations it is not necessary to record stereo sounds. This will open the `SoundRecorder` tool within Praat. 
 
 - Choose the appropriate sampling frequency, e.g. 22050 Hz (see §\@ref(sec:samplingfrequency)). You may receive an error message if the chosen sampling frequency is incompatible with your computer. 
 
