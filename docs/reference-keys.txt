@@ -22,7 +22,7 @@ fig:merel-spectrogram
 fig:speech-word-spectrogram-broad
 fig:speech-word-spectrogram-narrow
 fig:window-soundeditor-3
-fig:window-soundeditor-again
+fig:window-soundeditor-second
 fig:window-textgrideditor
 sec:textbooks
 ch-soundwaves
@@ -132,6 +132,6 @@ coherent-texts-1
 rainbow-passage
 the-north-wind-and-the-sun
 the-boy-who-cried-wolf
-app-praat
+app-praattools
 editors
 other-tools

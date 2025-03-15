@@ -65,7 +65,7 @@ This method is similar to the spectral analysis described in §\@ref(sec:spectra
 
 - In the `Praat` object window, select a Sound object.
 
-- Next, in the `Praat` object window, choose `View & Edit`. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more information about the SoundEditor, see Appendix \@ref(app:praat).
+- Next, in the `Praat` object window, choose `View & Edit`. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more information about the SoundEditor, see Appendix \@ref(app-praattools).
 
 - In the SoundEditor window, go to `Spectrogram...` and then `Spectrogram settings`. 
 

@@ -10,19 +10,19 @@ Most projects involve some sort of annotation of speech, as researchers may be i
 
 In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called **coarticulation**, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive *handwriting*. 
 
-The complex relation between linguistic and spoken units is illustrated in Figure \@ref(fig:window-soundeditor-again) which is a copy of Figure \@ref(fig:window-soundeditor). 
+The complex relation between linguistic and spoken units is illustrated in Figure \@ref(fig:window-soundeditor-second) which is a copy of Figure \@ref(fig:window-soundeditor). 
 
-```{r window-soundeditor-again, echo=FALSE, fig.cap="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.", fig.align="center"}
+```{r window-soundeditor-second, echo=FALSE, fig.cap="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.", fig.align="center"}
 knitr::include_graphics("figures/asmallwindowtogetthis_SoundEditor2050124.png")
 ```
 
-::: {#box-windowsfile-details-again .smallprintbox}
+::: {#box-windowsfile-details-second .smallprintbox}
 
-The SoundEditor in Fig.\@ref(fig:window-soundeditor-again) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
+The SoundEditor in Fig.\@ref(fig:window-soundeditor-second) shows a fragment of speech, taken from the audio file named  `10-18-17_Council_SLASH_10-18-17_Council_DOT_HD_DOT_mp3_00285.flac` from the *Peoples Speech* corpus at <https://huggingface.co/datasets/MLCommons/peoples_speech>. For details about that corpus, see @Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021.
 
 :::
 
-Figure \@ref(fig:window-soundeditor-again) illustrates several important characteristics of casual, fluent speech:
+Figure \@ref(fig:window-soundeditor-second) illustrates several important characteristics of casual, fluent speech:
 
 * Boundaries between discrete speech segments are not clearly present, due to coarticulation. For example, there is strong articulatory and acoustic overlap between the vowel and the final consonant of [smɔɫ] *small*, making it almost impossible to demarcate these two sounds. 
 
@@ -80,9 +80,10 @@ The recommended workflow in `Praat` is as follows.
 (3) Select *both* the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press `Command` while selecting objects.
 
 (4) Choose the button labeled `View & Edit`; this will open a TextGridEditor window. \
-The TexGridEditor is very similar to the SoundEditor window which we encountered earlier (see §§\@ref(sec:praatsoundeditor) and
-\@ref(sec:spectrogramsoundeditor) and 
-\@ref(sec:soundeditor3) for details about the SoundEditor, which are also applicable to the TextGridEditor). 
+The TexGridEditor is very similar to the SoundEditor window which we encountered earlier. For details about the SoundEditor, also applicable to the TextGridEditor, see §\@ref(sec:praatsoundeditor) and
+§\@ref(sec:spectrogramsoundeditor) and 
+§\@ref(sec:soundeditor3) and
+Appendix \@ref(app-praattools). 
 
 Figure \@ref(fig:window-textgrideditor) shows an example of a TextGridEditor, displaying the fragment *a small window to get this right* spoken by a male speaker of American English; the single word *window* is highlighted. 
 In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the `word` (interval) tier for orthographic transcription, and the `phone` (interval) tier for broad phonetic transcription. And in this illustration, `Praat` focuses on the `word` tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier. 

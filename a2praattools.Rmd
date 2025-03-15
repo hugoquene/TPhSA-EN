@@ -1,4 +1,4 @@
-# Index of `Praat` tools {#app-praat}
+# Index of `Praat` tools {#app-praattools}
 
 This appendix provides cross-references to sections where the various tools in Praat are explained and mentioned in the main text of the tutorial. (References may also be found by means of the Search function in the compiled HTML version.)
 

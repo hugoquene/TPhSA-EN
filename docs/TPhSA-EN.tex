@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 12 Mar 2025 23:53}
+\date{Document compiled 15 Mar 2025 09:29}
 
 \begin{document}
 \maketitle
@@ -760,7 +760,7 @@ There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from
 \begin{itemize}
 \item
   In the \texttt{Praat} Objects window, select \texttt{New\ \textgreater{}\ Record\ mono\ sound}.
-  In most situations it is not necessary to record stereo sounds.
+  In most situations it is not necessary to record stereo sounds. This will open the \texttt{SoundRecorder} tool within Praat.
 \item
   Choose the appropriate sampling frequency, e.g.~22050 Hz (see §\ref{sec:samplingfrequency}). You may receive an error message if the chosen sampling frequency is incompatible with your computer.
 \item
@@ -1002,13 +1002,13 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
 
 Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \ref{fig:speech-oscillogram}, at \(t \approx 0.210\) seconds.
 
-This can be done by means of two features in \texttt{Praat} which we will explore in depth only later, viz.~the SoundEditor and the Spectrogram (Ch.\ref{ch-spectrograms}.
+This can be done by means of two features in \texttt{Praat} which we will explore in depth only later, viz.~the SoundEditor and the Spectrogram (Ch.\ref{ch-spectrograms}).
 
 \begin{itemize}
 \item
   In the \texttt{Praat} object window, select a Sound object.
 \item
-  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more details and instructions about the SoundEditor, see §@ref(\#sec:praatsoundeditor).
+  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more details and instructions about the SoundEditor, see §\ref{sec:praatsoundeditor} and Appendix \ref{app-praattools}.
 \item
   In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}. Here we may need to adjust the setting for \texttt{Window\ length}. \texttt{Praat} will average the resulting spectrum over the time window of \(2\times\) this value, centered around the position of the cursor in the oscillogram (see §\ref{sec:howto-spectrogram}).\\
   A \emph{short} window (e.g.~0.005 s) will show more detail in the time domain (showing individual periods and transient sounds), but the resulting spectrum will be smeared in the frequency domain (so that individual harmonics are invisible). A \emph{long} window (e.g.~0.015 s) will show less detail in the time domain (so that individual periods and clicks will be smeared in the time domain), but more detail in the frequency domain (so that individual harmonics may be visible). Read §\ref{sec:howto-spectrogram}, read the \texttt{Praat} Help information available in the menu window, then try various window lengths, and notice the differences in the subsequent spectral slices.
@@ -1484,14 +1484,7 @@ This method is similar to the spectral analysis described in §\ref{sec:spectral
 \item
   In the \texttt{Praat} object window, select a Sound object.
 \item
-  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature.
-\end{itemize}
-
-\begin{quote}
-TODO crossref SoundEditor
-\end{quote}
-
-\begin{itemize}
+  Next, in the \texttt{Praat} object window, choose \texttt{View\ \&\ Edit}. This will open a so-called SoundEditor window, with the oscillogram as its main feature. For more information about the SoundEditor, see Appendix \ref{app-praattools}.
 \item
   In the SoundEditor window, go to \texttt{Spectrogram...} and then \texttt{Spectrogram\ settings}.
 \item
@@ -1614,7 +1607,7 @@ Most projects involve some sort of annotation of speech, as researchers may be i
 
 In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called \textbf{coarticulation}, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive \emph{handwriting}.
 
-The complex relation between linguistic and spoken units is illustrated in Figure \ref{fig:window-soundeditor-again} which is a copy of Figure \ref{fig:window-soundeditor}.
+The complex relation between linguistic and spoken units is illustrated in Figure \ref{fig:window-soundeditor-second} which is a copy of Figure \ref{fig:window-soundeditor}.
 
 \begin{figure}
 
@@ -1622,13 +1615,13 @@ The complex relation between linguistic and spoken units is illustrated in Figur
 
 }
 
-\caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor-again}
+\caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor-second}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details-again}
-The SoundEditor in Fig.\ref{fig:window-soundeditor-again} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
+\phantomsection\label{box-windowsfile-details-second}
+The SoundEditor in Fig.\ref{fig:window-soundeditor-second} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
 
-Figure \ref{fig:window-soundeditor-again} illustrates several important characteristics of casual, fluent speech:
+Figure \ref{fig:window-soundeditor-second} illustrates several important characteristics of casual, fluent speech:
 
 \begin{itemize}
 \item
@@ -1695,9 +1688,10 @@ The recommended workflow in \texttt{Praat} is as follows.
   Select \emph{both} the Sound and corresponding TextGrid objects; in order to select multiple objects from the list, press \texttt{Command} while selecting objects.
 \item
   Choose the button labeled \texttt{View\ \&\ Edit}; this will open a TextGridEditor window.\\
-  The TexGridEditor is very similar to the SoundEditor window which we encountered earlier (see §§\ref{sec:praatsoundeditor} and
-  \ref{sec:spectrogramsoundeditor} and
-  \ref{sec:soundeditor3} for details about the SoundEditor, which are also applicable to the TextGridEditor).
+  The TexGridEditor is very similar to the SoundEditor window which we encountered earlier. For details about the SoundEditor, also applicable to the TextGridEditor, see §\ref{sec:praatsoundeditor} and
+  §\ref{sec:spectrogramsoundeditor} and
+  §\ref{sec:soundeditor3} and
+  Appendix \ref{app-praattools}.
 \end{enumerate}
 
 Figure \ref{fig:window-textgrideditor} shows an example of a TextGridEditor, displaying the fragment \emph{a small window to get this right} spoken by a male speaker of American English; the single word \emph{window} is highlighted.
@@ -1913,23 +1907,33 @@ See also: \href{https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf}{The Boy Wh
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\chapter{\texorpdfstring{Index of \texttt{Praat} tools}{Index of Praat tools}}\label{app-praat}
+\chapter{\texorpdfstring{Index of \texttt{Praat} tools}{Index of Praat tools}}\label{app-praattools}
 
-This appendix will provide cross-references to sections where the various tools in Praat are explained and mentioned in the main text of the tutorial. (References may be found by means of the Search function in the compiled HTML version.)
+This appendix provides cross-references to sections where the various tools in Praat are explained and mentioned in the main text of the tutorial. (References may also be found by means of the Search function in the compiled HTML version.)
 
 \section{Editors}\label{editors}
 
-SoundEditor
+SoundEditor:
+§\ref{sec:praatsoundeditor},
+§\ref{sec:spectralslice},
+§\ref{sec:measureformants},
+§\ref{sec:spectrogramsoundeditor},
+§\ref{sec:soundeditor3}
 
-SpectrumEditor
+SpectrumEditor:
+§\ref{sec:spectralslice}.
 
-TextGridEditor
+TextGridEditor:
+§\ref{sec:howtoannotate},\\
+see also under ``SoundEditor''.
 
-ManipulationEditor
+ManipulationEditor:
+TBA
 
 \section{Other tools}\label{other-tools}
 
-SoundRecorder
+SoundRecorder:
+§\ref{sec:praatrecord}
 
   \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 
