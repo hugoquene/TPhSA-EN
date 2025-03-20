@@ -20,7 +20,8 @@ description: "Tutorial on Phonetics and Speech Analysis. "
 
 In this tutorial you will learn about **acoustics** (sounds), **phonetics** (speech), and **speech analysis**. 
 You will learn the core concepts in these related fields, as well as the necessary practical skills for speech analysis. 
-The aim of this tutorial is to provide you with the phonetic insights and skills in speech analysis that you need to succesfully conduct phonetic research in your own project (e.g. paper or thesis). 
+The aim of this tutorial is to provide you with the phonetic insights and skills in speech analysis that you need to succesfully conduct phonetic research in your own project (e.g. paper or thesis). This tutorial is also intended to be used as a guide in introductory courses in phonetics and speech analysis. 
+
 
 ### Under construction {-}
 
@@ -29,7 +30,7 @@ This tutorial is a work in progress, resulting from an ongoing revision of an ex
 The existing (outdated) full tutorial is still available at <https://resources.lab.hum.uu.nl/resources/phonetics/index.html>
 .
 
-More details on the origins of this tutorial are provided below. 
+More details on the ancestry of this tutorial guide are provided below. 
 
 
 ## How to use this tutorial {-} 
@@ -42,6 +43,7 @@ You will learn the most from this tutorial if you
 (4) re-read the relevant sections from this tutorial and your textbook, with the help of keywords provided per section. 
 
 ::: {#question-intro .questionbox}
+
 ### Questions {-}
 
 Text blocks such as this one will contain questions or exercises inviting you to engage with the tutorial. You will learn most if you attempt to answer these questions (preferably in writing) *before* you proceed and *before* you take a look at the answer provided. (These questions only work in the HTML version of the tutorial; other versions will just show both the question and answer subsequently.)
@@ -111,7 +113,7 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 This work is based on an earlier tutorial (2006-2007) titled <cite>Tutorial for self study: basics of phonetics and how to use Praat</cite> by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck. 
 
-The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024--2025. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide. These older instructions had been revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Alexei Nazarov, and Sanne Ditewig. 
+The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024--2025. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide, where appropriate. These older instructions were written or revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Aleksei Nazarov, and Sanne Ditewig. 
 
 
 ```{r bibpackages, class.source='fold-hide', include=FALSE}
