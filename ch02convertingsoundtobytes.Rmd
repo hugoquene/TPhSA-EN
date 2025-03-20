@@ -64,9 +64,9 @@ The recorded amplitude values are discrete, and because of the "jump" from one d
 
 In phonetics, the most common amplitude resolution is 16 bits, or $2^{16} = 65536$ different amplitude steps^[This is also the standard amplitude resolution for audio CDs.]. The quantization noise has an amplitude of $1/65636$ of the maximum amplitude; this corresponds to a signal-to-quantization-noise ratio of about 98 dB. This small amount of rounding noise is negligible. 
 
-## How to record a sound
+## How to record a sound {#sec:howtorecordsound}
 
-For any audio recording, there are a few **essential precautions** that you'll have to attend to, in order to obtain high-quality recordings suitable for subsequent analysis and re-distribution. 
+For any audio recording, there are a few **essential precautions** that you'll need to attend to, in order to obtain high-quality recordings suitable for subsequent analysis, manipulation, and/or presentation. 
 
 ::: {#recording .warningbox}
 
@@ -80,6 +80,8 @@ If a booth is not available, then find the quietest space available. Try using t
 **Background**: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g. resonances, formants, see §\@ref(sec:formants)) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room^[*Frequency* and *formant* measurements may be suspect if the corresponding *wavelength* (for frequencies) or wavelength $\times 4$ or wavelength $\times 2$ (for formants) corresponds to one of the dimensions of the room (see §\@ref(sec:wavelength) and §\@ref(sec:measureformants)); or if the reported formant frequency is below 200 Hz; or if the reliability of the frequency measurement is low. ].
 
 - If there is a lot of noise or non-target speech, try using a *directional* microphone, which only or mostly picks up sounds coming from one direction, and which attenuates sounds from other directions. Vary the position of the microphone and make test recordings. 
+
+- A headset microphone is often to be preferred over a microphone on a tripod or handheld. With a headset, the distance from the microphone to the mouth is approximately constant, and interference from background sounds and noise will be minimal. Place the microphone near the corner of the speaker's mouth, outside the air flowing from the speaker's mouth and nose.
 
 - Switch off any non-essential equipment, and try to attenuate non-target sounds from elsewhere. Even if you cannot hear a difference, the equipment sounds and outside sounds may interfere with the target sound signal, resulting in unwanted artefacts. 
 
@@ -102,6 +104,8 @@ There are several ways to adjust the level of the recording:
 
 It it tempting to record sounds digitally on smart devices which store lots of audio in compressed (lossy) formats such as MP3 or MP4. However, the lossy compression of audio data may lead to difficulties in subsequent phonetic analyses. The results may sound quite right to your ears, but  details in timing or in spectral details may nevertheless have been lost in the compression. It depends on your interests and your research questions whether or not this constitutes a problem. 
 For phonetic research, it is generally better to record in 'lossless' audio formats that do not compress the audio data, rather than in 'lossy' formats. Check whether and how your smart device can make lossless recordings: if possible at all, this will probably require a deep dive into the settings on the recording device.  
+
+For the same reason, it is better to use a cable connection between the microphone and the computer, and not a wireless (Bluetooth) connection. The Bluetooth compression will negatively affect the quality of the recording. Consequently, wireless headsets are also to be avoided as microphones. 
 
 :::
 
@@ -174,7 +178,7 @@ In the Objects window, select the Sound object(s) that you want to play back. Th
 
 ## What to say? {#sec:whattosay}
 
-What should the human talker (such as yourself, perhaps) say for a speech recording? Appendix @\ref(app-saywhat) lists some sentences and texts for Dutch and English. 
+What should the human talker (such as yourself, perhaps) say for a speech recording? Appendix \@ref(app-saywhat) lists some sentences and texts for Dutch and English. 
 
 ## How to manipulate and edit a digital sound
 

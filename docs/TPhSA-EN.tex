@@ -86,7 +86,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 15 Mar 2025 09:29}
+\date{Document compiled 20 Mar 2025 22:12}
 
 \begin{document}
 \maketitle
@@ -212,14 +212,14 @@ TODO add tech details
 
 This work is based on an earlier tutorial (2006-2007) titled Tutorial for self study: basics of phonetics and how to use Praat by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck.
 
-The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2025.
+The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2025. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide. These older instructions had been revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Alexei Nazarov, and Sanne Ditewig.
 
 \section*{Acknowledgements}\label{acknowledgements}
 \addcontentsline{toc}{section}{Acknowledgements}
 
-As indicated in the \emph{History} subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions by many.
+As indicated in the \emph{History} subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions. This work stands on the shoulders of many colleagues mentioned above.
 
-In addition, I am thankful for the many helpful comments and suggestions to improve this tutorial text: thank you Jing Tang!
+In addition, I am thankful for the helpful comments and suggestions to improve this tutorial text: thank you Jing Tang!
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -698,9 +698,9 @@ The recorded amplitude values are discrete, and because of the ``jump'' from one
 
 In phonetics, the most common amplitude resolution is 16 bits, or \(2^{16} = 65536\) different amplitude steps\footnote{This is also the standard amplitude resolution for audio CDs.}. The quantization noise has an amplitude of \(1/65636\) of the maximum amplitude; this corresponds to a signal-to-quantization-noise ratio of about 98 dB. This small amount of rounding noise is negligible.
 
-\section{How to record a sound}\label{how-to-record-a-sound}
+\section{How to record a sound}\label{sec:howtorecordsound}
 
-For any audio recording, there are a few \textbf{essential precautions} that you'll have to attend to, in order to obtain high-quality recordings suitable for subsequent analysis and re-distribution.
+For any audio recording, there are a few \textbf{essential precautions} that you'll need to attend to, in order to obtain high-quality recordings suitable for subsequent analysis, manipulation, and/or presentation.
 
 \phantomsection\label{recording}
 \subsection{Remove non-target sounds}\label{sec:removenontargetsounds}
@@ -719,6 +719,8 @@ In order to obtain a high-quality recording, it helps to attenuate all non-targe
 \begin{itemize}
 \item
   If there is a lot of noise or non-target speech, try using a \emph{directional} microphone, which only or mostly picks up sounds coming from one direction, and which attenuates sounds from other directions. Vary the position of the microphone and make test recordings.
+\item
+  A headset microphone is often to be preferred over a microphone on a tripod or handheld. With a headset, the distance from the microphone to the mouth is approximately constant, and interference from background sounds and noise will be minimal. Place the microphone near the corner of the speaker's mouth, outside the air flowing from the speaker's mouth and nose.
 \item
   Switch off any non-essential equipment, and try to attenuate non-target sounds from elsewhere. Even if you cannot hear a difference, the equipment sounds and outside sounds may interfere with the target sound signal, resulting in unwanted artefacts.
 \item
@@ -747,6 +749,8 @@ There are several ways to adjust the level of the recording:
 
 It it tempting to record sounds digitally on smart devices which store lots of audio in compressed (lossy) formats such as MP3 or MP4. However, the lossy compression of audio data may lead to difficulties in subsequent phonetic analyses. The results may sound quite right to your ears, but details in timing or in spectral details may nevertheless have been lost in the compression. It depends on your interests and your research questions whether or not this constitutes a problem.
 For phonetic research, it is generally better to record in `lossless' audio formats that do not compress the audio data, rather than in `lossy' formats. Check whether and how your smart device can make lossless recordings: if possible at all, this will probably require a deep dive into the settings on the recording device.
+
+For the same reason, it is better to use a cable connection between the microphone and the computer, and not a wireless (Bluetooth) connection. The Bluetooth compression will negatively affect the quality of the recording. Consequently, wireless headsets are also to be avoided as microphones.
 
 \subsection{\texorpdfstring{On your computer, using \texttt{Praat}}{On your computer, using Praat}}\label{on-your-computer-using-praat}
 
@@ -810,7 +814,7 @@ In the Objects window, select the Sound object(s) that you want to play back. Th
 
 \section{What to say?}\label{sec:whattosay}
 
-What should the human talker (such as yourself, perhaps) say for a speech recording? Appendix @\ref(app-saywhat) lists some sentences and texts for Dutch and English.
+What should the human talker (such as yourself, perhaps) say for a speech recording? Appendix \ref{app-saywhat} lists some sentences and texts for Dutch and English.
 
 \section{How to manipulate and edit a digital sound}\label{how-to-manipulate-and-edit-a-digital-sound}
 

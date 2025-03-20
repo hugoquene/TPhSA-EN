@@ -55,7 +55,7 @@ sec:microphone
 key-parameters-in-ad-conversion
 sec:samplingfrequency
 amplitude-resolution
-how-to-record-a-sound
+sec:howtorecordsound
 sec:removenontargetsounds
 sec:recordinglevel
 sec:avoidlossyformats

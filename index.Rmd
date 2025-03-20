@@ -111,7 +111,7 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 This work is based on an earlier tutorial (2006-2007) titled <cite>Tutorial for self study: basics of phonetics and how to use Praat</cite> by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck. 
 
-The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024--2025.  
+The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024--2025. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide. These older instructions had been revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Alexei Nazarov, and Sanne Ditewig. 
 
 
 ```{r bibpackages, class.source='fold-hide', include=FALSE}
@@ -128,9 +128,9 @@ knitr::write_bib( c(
 
 ## Acknowledgements {-}
 
-As indicated in the *History* subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions by many. 
+As indicated in the *History* subsection above, this text has been built upon older works, which in turn have benefited from text portions and from a wealth of earlier comments and suggestions. This work stands on the shoulders of many colleagues mentioned above. 
 
-In addition, I am thankful for the many helpful comments and suggestions to improve this tutorial text: thank you Jing Tang! 
+In addition, I am thankful for the helpful comments and suggestions to improve this tutorial text: thank you Jing Tang! 
 
 ---
 
