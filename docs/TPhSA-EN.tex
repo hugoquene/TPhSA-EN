@@ -48,15 +48,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -71,9 +73,6 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 \usepackage{bookmark}
@@ -86,7 +85,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 20 Mar 2025 22:30}
+\date{Document compiled 13 Jul 2025 23:07}
 
 \begin{document}
 \maketitle
@@ -396,7 +395,7 @@ Intensity is perceived in an approximately logarithmic fashion: each tenfold inc
 
 \subsubsection{Decibel}\label{sec:decibel}
 
-Sound intensity or sound pressure is not expressed in absolute units, but in relative decibel units. The \emph{decibel} unit of intensity (or of sound pressure) is based on three steps \citep[91ff]{Fry_1979}:
+Sound intensity or sound pressure is not expressed in absolute units, but in relative decibel units. The \emph{decibel} unit of intensity (or of sound pressure) is based on three steps \citep[p.91ff]{Fry_1979}:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -451,11 +450,11 @@ By definition, a value of 0 dB means that the target sound has the same sound pr
 
 Check that the last sentence above holds true.
 
-Table \ref{tab:decibels} shows some examples of sound intensities under various circumstances \citep[94]{Fry_1979}.
+Table \ref{tab:decibels} shows some examples of sound intensities under various circumstances \citep[p.94]{Fry_1979}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4706}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5294}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4706}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5294}}@{}}
 \caption{\label{tab:decibels} Examples of sound intensities in dB (SPL), in various situations.}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -476,7 +475,7 @@ situation
 \bottomrule\noalign{}
 \endlastfoot
 192 & Loudest sound possible in air, rarefactions are vacuum (\url{https://en.wikipedia.org/wiki/Sound_pressure\#Examples_of_sound_pressure}) \\
-172 & Krakatoa eruption, 1893 (at \textasciitilde160 km distance) \citep[43]{Henderson_2023} \\
+172 & Krakatoa eruption, 1893 (at \textasciitilde160 km distance) \citep[p.43]{Henderson_2023} \\
 130 & Jet engine (at 30 m distance) \\
 120 & Threshold of pain \\
 103 & Recommended maximum level in clubs and venues in the Netherlands (average over 15 min, peaks may be higher) \\
@@ -492,6 +491,7 @@ situation
 27 & Outside in Hermit Basin, at the bottom of the Grand Canyon, USA \citep{Dahl_Miller_Cato_Andrew_2007} \\
 20 & Background inside audio studio \\
 16 & Average threshold of hearing for 50\% of listeners \citep[Ch.8]{Fletcher_1953} \\
+14 & Background noise inside recording cabin at Utrecht University {[}\url{https://ils-labs.wp.hum.uu.nl/cabins/cabin-2}{]} \\
 0 & Reference value; absolute threshold of sine wave sound with \(f=1000\) Hz \\
 \end{longtable}
 
@@ -922,7 +922,7 @@ Then choose \texttt{Combine\ \textgreater{}\ Concatenate} in the Objects window.
 
 \chapter{Complex sounds and spectra}\label{complex-sounds-and-spectra}
 
-\emph{Chapter keywords}: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse.
+\emph{Chapter keywords}: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, pitch, overtone, component, timbre, octave, noise, white noise, brown noise, impulse.
 
 \section{Introduction}\label{sec:FTintro}
 
@@ -930,7 +930,7 @@ The \emph{sine wave}, depicted in Fig. \ref{fig:example-oscillogram}, is the sim
 
 By contrast, \emph{complex sounds} have more complex wave patterns. All natural periodic sounds are complex sounds. \textbf{A complex sound can be regarded as the sum of multiple sine wave sounds.} This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed `frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called `Fourier analysis' or `Fourier Transform' of a complex sound, these frequency components are being estimated from the waveform.
 
-If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \ref{fig:fourier-oscillogram} provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz (\(T=.01\)) and 200 Hz (\(T=.005\)) and 400 Hz (\(T=.0025\)), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the \emph{fundamental}, and its frequency is called the \emph{fundamental frequency} (symbol \(f_0\)) of the complex periodic sound; we hear this \(f_0\) as its pitch. The higher components are called \emph{overtones}. The fundamental and overtones are collectively called \emph{harmonics}: the fundamental is the first harmonic, the first overtone is the second harmonic, etc.
+If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \ref{fig:fourier-oscillogram} provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz (\(T=.01\)) and 200 Hz (\(T=.005\)) and 400 Hz (\(T=.0025\)), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the \emph{fundamental}, and its frequency is called the \emph{fundamental frequency} (symbol \(f_0\)) of the complex periodic sound; we hear this \(f_0\) as its \emph{pitch}. The higher components are called \emph{overtones}. The fundamental and overtones are collectively called \emph{harmonics}: the fundamental is the first harmonic, the first overtone is the second harmonic, etc.
 \textbf{In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.}
 
 \begin{quote}
@@ -1240,7 +1240,7 @@ As a first approximation, let us consider a simple straight tube, uniform in dia
 The principle of resonance is explained by Christian Huygens as follows (in a letter in November 1693):
 
 \begin{quote}
-``Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a {[}periodic{]} musical tone; similarly the length of an organ pipe determines its {[}resonant{]} tone, because the vibrations of air arrive at small intervals of time which are equal to the time which {[}the vibrations{]} need to move back and forth through the length of the organ pipe, as it is closed at one end.'' \citep[571, transl. HQ]{Huygens_1905}
+``Because every sound, or rather noise, which is repeated in equal and very small intervals, produces a {[}periodic{]} musical tone; similarly the length of an organ pipe determines its {[}resonant{]} tone, because the vibrations of air arrive at small intervals of time which are equal to the time which {[}the vibrations{]} need to move back and forth through the length of the organ pipe, as it is closed at one end.'' \citep[p.571, transl. HQ]{Huygens_1905}
 \end{quote}
 
 The natural frequencies resonate (are amplified) because their wavelength matches the length \(L\) of the tube: the compressions and rarefactions of a wave period going ``one way'' coincide with those of the reflected wave going the ``other way'', so that the amplitudes of the pressure variations add up, and thus increase, for some frequencies, viz.~the resonant or natural frequencies. Sound waves with frequencies close to the resonant frequencies are thus amplified and those with other frequencies are attenuated\footnote{In other words, the tube acts as a bandpass filter around its natural frequencies, albeit with a filter characteristic different from the one illustrated in Fig.\ref{fig:bandpassfilter}.}.
@@ -1253,7 +1253,7 @@ Above, we discussed the resonance in an ideal, uniform tube (straight, and close
 
 The natural frequencies of such a uniform tube are
 \[F_n = \frac{2n-1}{4} \cdot \frac{c}{L}\]
-where \(n\) is the ranking number of the natural frequency, \(c\) is the speed of sound (353 m/s, see §\ref{sec:speedofsound}), and \(L\) is the length of the tube \citep[139]{Stevens_1998} \footnote{And the corresponding \emph{wavelengths} of these natural frequencies are \(\frac{4}{2n-1}\cdot L\) \citep[60]{Nooteboom_Cohen_1984}.}.
+where \(n\) is the ranking number of the natural frequency, \(c\) is the speed of sound (353 m/s, see §\ref{sec:speedofsound}), and \(L\) is the length of the tube \citep[p.139]{Stevens_1998} \footnote{And the corresponding \emph{wavelengths} of these natural frequencies are \(\frac{4}{2n-1}\cdot L\) \citep[p.60]{Nooteboom_Cohen_1984}.}.
 If we assume that the vocal tract of an adult male speaker has length \(L=0.17\) m, then the first resonant frequency of this speaker's vocal tract would be at \(F_1 = \frac{1}{4} \cdot \frac{353}{0.17} = 519\ \textrm{Hz}\). In reality, the natural frequency is slightly lower\footnote{This is due to absorption and radiation and to the vocal tract being not straight but bended, all of which factors are outside the scope of this introductory text.} at \(F_1 \approx 500\ \textrm{Hz}\).
 Similarly, his \(F_2 \approx 1500\ \textrm{Hz}\) and \(F_3 \approx 2500\ \textrm{Hz}\), etc, as shown in Figure \ref{fig:uniform-vt-transfer}.
 A female vocal tract is slightly shorter than that of a male speaker (we assume \(L=0.15\) m for a female vocal tract), thus we find that for a female vocal tract her \(F_1 \approx 550\ \textrm{Hz}\), \(F_2 \approx 1650\ \textrm{Hz}\) and \(F_3 \approx 2750\ \textrm{Hz}\).
@@ -1295,7 +1295,7 @@ First we look at the two-tube configuration in Figure \ref{fig:twotube} \citep[a
 \caption{Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13.}\label{fig:twotube}
 \end{figure}
 
-Even more complex is the configuration in Figure \ref{fig:threetube} \citep[after][Fig.3.15, p.144]{Stevens_1998}; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length \(L\) of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\ref{fig:threetube}, the natural frequencies come out as approximately \(F_1=300\) Hz (mainly due to constriction), \(F_2=1900\) Hz (back cavity), and \(F_3=2200\) Hz (front cavity) \citep[137]{Johnson_2012} for a male vocal tract.
+Even more complex is the configuration in Figure \ref{fig:threetube} \citep[after][Fig.3.15, p.144]{Stevens_1998}; it is similar to the human vocal tract producing a high vowel /i/. Due to the high and front position of the tongue, the vocal tract is divided (articulated) into a back and a front cavity, with a relatively narrow constriction separating the back and front cavities. The overall length \(L\) of the vocal tract remains constant. Each of the three tube sections has its own natural frequencies, which also affect one another, the interaction depending on the lengths and areas of the tube sections. For the configuration shown in Fig.\ref{fig:threetube}, the natural frequencies come out as approximately \(F_1=300\) Hz (mainly due to constriction), \(F_2=1900\) Hz (back cavity), and \(F_3=2200\) Hz (front cavity) \citep[p.137]{Johnson_2012} for a male vocal tract.
 
 \begin{figure}
 
@@ -1762,26 +1762,91 @@ Notice the absence of a \texttt{phone} boundary between the vowel and coda conso
 
 \emph{Chapter keywords}: TODO .
 
-\begin{quote}
-TODO add text here
-\end{quote}
+\section{Introduction}\label{introduction-1}
 
-\section{Pauses in speech}\label{pauses-in-speech}
+\emph{Prosody} is the collective term for the `musical' properties of speech, which are typically established not by the sequence of speech sounds, but over larger units of speech (\citet{Nooteboom_1997}): these are also termed \emph{suprasegmental} properties (or, \emph{suprasegmentals} as a plural noun, \citet{Lehiste_1970}). Among these prosodic properties are:\\
+- the distribution of \textbf{pauses},\\
+- \textbf{tone} and \textbf{intonation} of voice pitch (§\ref{sec:frequency}, §\ref{sec:FTintro}),\\
+- \textbf{durations} of speech sounds (§\ref{sec:howtoannotate}) and speech \textbf{tempo},\\
+- \textbf{intensity} and loudness (§\ref{sec:amplitude}),\\
+- \textbf{stress} or prominence,\\
+- \textbf{accentuation} or emphasis of important words,\\
+- \textbf{rhythm},\\
+- and \textbf{voice quality}.
+
+Broadly speaking, these properties of everyday speech are seldom captured in regular writing, and we need additional symbols such as \emph{punctuation} (\citet{Parkes_1992}), \emph{emoji} and \emph{accented letters} to capture these phonetic properties in writing. (In itself, the existence and widespread use of these additional symbols illustrate the importance of prosody in speech communication.)
+
+Unfortunately, there are no simple 1:1 relations between prosodic and acoustic properties. For example, in some languages such as English and Dutch, one syllable in a polysyllabic word carries more \emph{stress} than the others: this is conveyed by segment duration, loudness, as well as pitch, in varying degrees of importance. Similarly, \emph{phrasing} is achieved by means of pausing, intonation, and/or tempo changes. And \emph{rhythm} is established by intricate combination of timing (durations) and prominence patterns. In the other direction, the duration of a vowel depends on many linguistic and phonetic factors, such as its position within its phrase and word and syllable, the stress status of the syllable, the accent status of the word, and more (\citet{Klatt_1976}).
+
+In this chapter, we will focus on the measurement and analysis of these prosodic properties of speech. Some of these properties can be manipulated too, as we will discuss in the next chapter.
+
+\section{Pauses and tempo}\label{pauses-and-tempo}
+
+Typical speech contains \textbf{pauses}, which may serve multiple functions: (1) pauses are used to demarcate linguistic units in what is said, (2) pauses occur naturally whenever speakers breathe in fresh air, (3) speakers may pause their own speech if they need extra preparation time for what they wish to say, (4) rhetorical purposes.\\
+In practice, these functions may interfere: for example, a speaker may pause \emph{within} a linguistic unit (contra 1), perhaps to select the appropriate word (see Fig.\ref{fig:s344f5-pausing} for an example). Or a speaker may produce a filled pause (contra 2) for some rhetorical or communicative purpose.
+
+Whenever a voiceless plosive (or click) sound is produced, there is a brief silent interval in the speech signal: there is neither voicing at the larynx, nor consonantal sound produced elsewhere in the vocal tract. Such silent intervals have only a brief duration, however, which makes them different from more deliberate ``real'' pauses (not due to articulation).
+Phoneticians typically set the threshold at about 0.25 seconds: brief silent intervals shorter than this threshold are regarded as articulatory (and thus as irrelevant for prosody), whereas longer silent intervals are regarded as pauses that are prosodically, phonetically, and communicatively relevant.
+
+Short silent intervals occur whenever a voiceless plosive is realized, e.g.~for a {[}p{]} (see Fig.\ref{speech-oscillogram} for an example).
+The lower threshold for a speech pause is often chosen to be 0.25 seconds (\citet{DeJong-Bosker-2013}).
+
+Shorter intervals may occur as a
+
+In typical speech production, air from the lungs is used to produce speech sounds. After a while, there is insufficient
+
+TODO welke kenmerken van pauzering, zie Bosker et al.~
+
+TODO Praat: silence, VAD, speech
+
+\begin{figure}
+
+{\centering \includegraphics{figures/s344f5_formal_fragment} 
+
+}
+
+\caption{Oscillogram and annotation of the sentence *Yeah you can you can really see how.... how diff'rent th'approaches of the students involv'd were.*}\label{fig:s344f5-pausing}
+\end{figure}
+
+\phantomsection\label{box-s344f5_pausing}
+The oscillogram and annotation in Fig.\ref{fig:s344f5-pausing} shows a spoken sentence, taken from the interview recording named \texttt{s344f5\_1.wav} from the LUCEA corpus. The sentence is taken from the formal monologue part of the interview. For details about the corpus, see \citet{Orr_Quené_2017}. Some vowels are strongly reduced, as indicated in the caption. The first phrase contains 9 realized syllables, and the second phrase 13.
+
+Figure X shows a sentence from a monologue (with preceding inhalation pause). The speaker pauses for 0.580 seconds in the middle of this sentence, possibly to search for the appropriate words to continue. The durations of the pauses and phrases of the target fragment are listed in Table X. In practice, such tables will contain many more rows of data.
+
+\begin{verbatim}
+1.132 pause 1   1.132  
+1.659 phrase 1          1.659    8
+0.580 pause 2   0.580
+3.603 phrase 2          3.603   13
+6.974 total     1.712   5.262   21
+\end{verbatim}
+
+\subsection{Pausing}\label{pausing}
+
+\subsection{Tempo}\label{tempo}
+
+From Table X we may calculate that the \textbf{speaking rate} or \textbf{speech rate} or \textbf{tempo} (including pause time) is 21 syllables in 6.974 seconds, or 3.0 syllables per second. The \textbf{articulation rate} (excluding pause time) is 21 syllables in 5.262 seconds, or 4.0 syllables per second.
 
 \section{Durations}\label{durations}
 
-\section{Pitch}\label{pitch}
+\section{Frequency (pitch)}\label{frequency-pitch}
 
-\section{Intensity}\label{intensity}
+\section{Intensity (loudness)}\label{intensity-loudness}
 
 \section{Stresses and accents}\label{stresses-and-accents}
+
+\section{Rhythm}\label{rhythm}
+
+\section{Voice quality}\label{voice-quality}
+
+TBA
 
 \appendix
 
 
 \chapter{What to say?}\label{app-saywhat}
 
-\section{Introduction}\label{introduction-1}
+\section{Introduction}\label{introduction-2}
 
 What should the human talker (such as yourself, perhaps) say for a speech recording? That question is not trivial, and the answer depends strongly on the purpose of your recording, and hence (typically) on your research question.
 
@@ -1799,6 +1864,8 @@ A single Dutch sentence, used for decades in Phonetics lab classes at Utrecht Un
 \begin{quote}
 Het leven is mooi als de zon schijnt.
 \end{quote}
+
+This Dutch sentence may have been adapted from ``wat is het leven fijn als de zon schijnt'', from the Dutch song \emph{Als de zon schijnt} (\url{https://songteksten.net/lyric/113/66239/andre-van-duin/als-de-zon-schijnt.html}, 1983).
 
 A singe Dutch sentence from colleagues at Leiden University, containing key vowels of the Dutch vowel space, in a brief sentence containing only monosyllabic words:
 

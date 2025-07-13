@@ -1,6 +1,6 @@
 # Complex sounds and spectra
 
-*Chapter keywords*: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, overtone, component, timbre, octave, noise, white noise, brown noise, impulse. 
+*Chapter keywords*: sinewave sound, complex sound, spectrum, fourier transform, fourier analysis, fast fourier transform, FFT, harmonics, fundamental, fundamental frequency, f0, pitch, overtone, component, timbre, octave, noise, white noise, brown noise, impulse. 
 
 ## Introduction {#sec:FTintro}
 
@@ -8,7 +8,7 @@ The *sine wave*, depicted in Fig. \@ref(fig:example-oscillogram), is the simples
 
 By contrast, *complex sounds* have more complex wave patterns. All natural periodic sounds are complex sounds. **A complex sound can be regarded as the sum of multiple sine wave sounds.** This relation has been described by the French mathematician, baron J.B.J. Fourier (1768--1830). The sine waves are termed 'frequency components' of the complex sound. Each of these components has its own frequency, amplitude, and phase. In a so-called 'Fourier analysis' or 'Fourier Transform' of a complex sound, these frequency components are being estimated from the waveform. 
 
-If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \@ref(fig:fourier-oscillogram) provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz ($T=.01$) and 200 Hz ($T=.005$) and 400 Hz ($T=.0025$), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the *fundamental*, and its frequency is called the *fundamental frequency* (symbol $f_0$) of the complex periodic sound; we hear this $f_0$ as its pitch. The higher components are called *overtones*. The fundamental and overtones are collectively called *harmonics*: the fundamental is the first harmonic, the first overtone is the second harmonic, etc. 
+If the complex sound has a repeating waveform, then we have a periodic complex sound, of which Figure \@ref(fig:fourier-oscillogram) provides an example. The resulting sound has been obtained by adding three frequency components, drawn in dotted lines, of 100 Hz ($T=.01$) and 200 Hz ($T=.005$) and 400 Hz ($T=.0025$), respectively. Note that the frequency with which the complex sound repeats itself, 100 Hz, is the same as that of the lowest component. This lowest component is called the *fundamental*, and its frequency is called the *fundamental frequency* (symbol $f_0$) of the complex periodic sound; we hear this $f_0$ as its *pitch*. The higher components are called *overtones*. The fundamental and overtones are collectively called *harmonics*: the fundamental is the first harmonic, the first overtone is the second harmonic, etc. 
 **In a periodic complex sound, the frequencies of the overtones are integer multiples of the fundamental.**  
 
 > TODO crossref pitch, missing fundamental

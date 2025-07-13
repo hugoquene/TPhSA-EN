@@ -261,6 +261,7 @@ Table: (#tab:decibels) Examples of sound intensities in dB (SPL), in various sit
 |      27  | Outside in Hermit Basin, at the bottom of the Grand Canyon, USA [@Dahl_Miller_Cato_Andrew_2007] |
 |      20  | Background inside audio studio | 
 |      16  | Average threshold of hearing for 50% of listeners [@Fletcher_1953, Ch.8] |
+|      14  | Background noise inside recording cabin at Utrecht University [https://ils-labs.wp.hum.uu.nl/cabins/cabin-2] |
 |       0  | Reference value; absolute threshold of sine wave sound with $f=1000$ Hz |
 
 

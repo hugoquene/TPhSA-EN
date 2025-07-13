@@ -20,6 +20,8 @@ A single Dutch sentence, used for decades in Phonetics lab classes at Utrecht Un
 
 > Het leven is mooi als de zon schijnt.
 
+This Dutch sentence may have been adapted from "wat is het leven fijn als de zon schijnt", from the Dutch song *Als de zon schijnt* (https://songteksten.net/lyric/113/66239/andre-van-duin/als-de-zon-schijnt.html, 1983).
+
 A singe Dutch sentence from colleagues at Leiden University, containing key vowels of the Dutch vowel space, in a brief sentence containing only monosyllabic words: 
 
 > In de hoek staat een fiets. 
