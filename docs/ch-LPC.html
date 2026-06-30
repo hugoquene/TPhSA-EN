@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Linear Predictive Coding | Tutorial on Phonetics and Speech Analysis</title>
+  <meta name="description" content="Chapter 8 Linear Predictive Coding | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Linear Predictive Coding | Tutorial on Phonetics and Speech Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 8 Linear Predictive Coding | Tutorial on Phonetics and Speech Analysis." />
+  <meta name="github-repo" content="rstudio/TPhSA" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Linear Predictive Coding | Tutorial on Phonetics and Speech Analysis" />
+  
+  <meta name="twitter:description" content="Chapter 8 Linear Predictive Coding | Tutorial on Phonetics and Speech Analysis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-annotation.html"/>
+<link rel="next" href="app-saywhat.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Tutorial on Phonetics and Speech Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aims"><i class="fa fa-check"></i>Aims</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#under-construction"><i class="fa fa-check"></i>Under construction</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-tutorial"><i class="fa fa-check"></i>How to use this tutorial</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-software"><i class="fa fa-check"></i>Recommended software</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructions-for-using-praat"><i class="fa fa-check"></i>Instructions for using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#sec:textbooks"><i class="fa fa-check"></i><b>0.1</b> Recommended textbooks</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-tutorial"><i class="fa fa-check"></i>Structure of this tutorial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#details"><i class="fa fa-check"></i>Details</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Sounds</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html"><i class="fa fa-check"></i><b>1</b> Sound waves</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sound"><i class="fa fa-check"></i><b>1.1</b> Sound</a></li>
+<li class="chapter" data-level="1.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:soundwave"><i class="fa fa-check"></i><b>1.2</b> Sound wave</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#acoustic-media"><i class="fa fa-check"></i><b>1.3</b> Acoustic media</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:speedofsound"><i class="fa fa-check"></i><b>1.4</b> The speed of sound</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:pressure"><i class="fa fa-check"></i><b>1.5</b> Pressure</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#questions-1"><i class="fa fa-check"></i>Questions</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#question-1.1"><i class="fa fa-check"></i>Question 1.1</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:oscillogram"><i class="fa fa-check"></i><b>1.6</b> Oscillogram</a></li>
+<li class="chapter" data-level="1.7" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:periodicity"><i class="fa fa-check"></i><b>1.7</b> Periodic and aperiodic sounds</a></li>
+<li class="chapter" data-level="1.8" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:keypropertiessound"><i class="fa fa-check"></i><b>1.8</b> Key properties of a sound wave</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:frequency"><i class="fa fa-check"></i><b>1.8.1</b> Frequency</a></li>
+<li class="chapter" data-level="1.8.2" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:amplitude"><i class="fa fa-check"></i><b>1.8.2</b> Amplitude</a></li>
+<li class="chapter" data-level="1.8.3" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:intensity"><i class="fa fa-check"></i><b>1.8.3</b> Energy, power, intensity</a></li>
+<li class="chapter" data-level="1.8.4" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:phase"><i class="fa fa-check"></i><b>1.8.4</b> Phase</a></li>
+<li class="chapter" data-level="1.8.5" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:wavelength"><i class="fa fa-check"></i><b>1.8.5</b> Wavelength</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#sec:praatintro"><i class="fa fa-check"></i><b>1.9</b> How to work with <code>Praat</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#objects"><i class="fa fa-check"></i>Objects</a></li>
+<li class="chapter" data-level="" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#picture-window"><i class="fa fa-check"></i>Picture window</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#how-to-draw-an-oscillogram"><i class="fa fa-check"></i><b>1.10</b> How to draw an oscillogram</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="ch-soundwaves.html"><a href="ch-soundwaves.html#open-an-audio-file"><i class="fa fa-check"></i><b>1.10.1</b> Open an audio file</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html"><i class="fa fa-check"></i><b>2</b> Converting sound to bytes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:ADCoverview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:microphone"><i class="fa fa-check"></i><b>2.2</b> How to handle a microphone</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#key-parameters-in-ad-conversion"><i class="fa fa-check"></i><b>2.3</b> Key parameters in AD conversion</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:samplingfrequency"><i class="fa fa-check"></i><b>2.3.1</b> Sampling frequency</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#amplitude-resolution"><i class="fa fa-check"></i><b>2.3.2</b> Amplitude resolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:howtorecordsound"><i class="fa fa-check"></i><b>2.4</b> How to record a sound</a>
+<ul>
+<li class="chapter" data-level="2.4.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#on-your-computer-using-praat"><i class="fa fa-check"></i><b>2.4.4</b> On your computer, using <code>Praat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:playback"><i class="fa fa-check"></i><b>2.5</b> How to play back a digital sound</a></li>
+<li class="chapter" data-level="2.6" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:whattosay"><i class="fa fa-check"></i><b>2.6</b> What to say?</a></li>
+<li class="chapter" data-level="2.7" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#how-to-manipulate-and-edit-a-digital-sound"><i class="fa fa-check"></i><b>2.7</b> How to manipulate and edit a digital sound</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#scale"><i class="fa fa-check"></i><b>2.7.1</b> Scale</a></li>
+<li class="chapter" data-level="2.7.2" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:praatsoundeditor"><i class="fa fa-check"></i><b>2.7.2</b> Excise part of a sound recording</a></li>
+<li class="chapter" data-level="2.7.3" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:fades"><i class="fa fa-check"></i><b>2.7.3</b> Fades</a></li>
+<li class="chapter" data-level="2.7.4" data-path="ch-soundtobytes.html"><a href="ch-soundtobytes.html#sec:concatenate"><i class="fa fa-check"></i><b>2.7.4</b> Concatenate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html"><i class="fa fa-check"></i><b>3</b> Complex sounds and spectra</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:FTintro"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#timbre"><i class="fa fa-check"></i><b>3.1.1</b> Timbre</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectrum"><i class="fa fa-check"></i><b>3.2</b> Spectrum</a>
+<ul>
+<li class="chapter" data-level="" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#questions-2"><i class="fa fa-check"></i>Questions</a></li>
+<li class="chapter" data-level="3.2.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#how-to-obtain-a-spectrum"><i class="fa fa-check"></i><b>3.2.1</b> How to obtain a spectrum</a></li>
+<li class="chapter" data-level="3.2.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:spectralslice"><i class="fa fa-check"></i><b>3.2.2</b> How to obtain a spectral ‘slice’</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#spectra-of-aperiodic-sounds"><i class="fa fa-check"></i><b>3.3</b> Spectra of aperiodic sounds</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:noise"><i class="fa fa-check"></i><b>3.3.1</b> Noise</a></li>
+<li class="chapter" data-level="3.3.2" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:impulses"><i class="fa fa-check"></i><b>3.3.2</b> Impulses</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="complex-sounds-and-spectra.html"><a href="complex-sounds-and-spectra.html#sec:envelope"><i class="fa fa-check"></i><b>3.4</b> Envelope</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-filtering.html"><a href="ch-filtering.html"><i class="fa fa-check"></i><b>4</b> Filtering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:typesoffilters"><i class="fa fa-check"></i><b>4.2</b> Types of filters</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-filtering.html"><a href="ch-filtering.html#properties-of-filters"><i class="fa fa-check"></i><b>4.3</b> Properties of filters</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch-filtering.html"><a href="ch-filtering.html#cutoff-frequency"><i class="fa fa-check"></i><b>4.3.1</b> Cutoff frequency</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch-filtering.html"><a href="ch-filtering.html#slope"><i class="fa fa-check"></i><b>4.3.2</b> Slope</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:filterbandwidth"><i class="fa fa-check"></i><b>4.3.3</b> Bandwidth</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch-filtering.html"><a href="ch-filtering.html#sec:emphasisfilters"><i class="fa fa-check"></i><b>4.4</b> Emphasis filters</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch-filtering.html"><a href="ch-filtering.html#how-to-apply-a-predeemphasis-filter"><i class="fa fa-check"></i><b>4.4.1</b> How to apply a (pre|de)emphasis filter</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Part II: Speech</b></span></li>
+<li class="chapter" data-level="5" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html"><i class="fa fa-check"></i><b>5</b> Speech sounds</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:resonance"><i class="fa fa-check"></i><b>5.1</b> Resonance</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:formants"><i class="fa fa-check"></i><b>5.2</b> Formants</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:onetube"><i class="fa fa-check"></i><b>5.2.1</b> one uniform tube</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:moretubes"><i class="fa fa-check"></i><b>5.2.2</b> multiple tubes</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:measureformants"><i class="fa fa-check"></i><b>5.2.3</b> How to measure formants</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:sourcefilter"><i class="fa fa-check"></i><b>5.3</b> Source-filter theory of speech production</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#sec:vowelproduction"><i class="fa fa-check"></i><b>5.3.1</b> Production of vowels</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch-speechsounds.html"><a href="ch-speechsounds.html#production-of-consonants"><i class="fa fa-check"></i><b>5.3.2</b> Production of consonants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html"><i class="fa fa-check"></i><b>6</b> Spectrograms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogram-intro"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#broadband-spectrogram"><i class="fa fa-check"></i><b>6.2</b> Broadband spectrogram</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#narrowband-spectrogram"><i class="fa fa-check"></i><b>6.3</b> Narrowband spectrogram</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:howto-spectrogram"><i class="fa fa-check"></i><b>6.4</b> How to make a spectrogram</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#to-spectrogram-directly"><i class="fa fa-check"></i><b>6.4.1</b> to Spectrogram directly</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:spectrogramsoundeditor"><i class="fa fa-check"></i><b>6.4.2</b> from SoundEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:readspectrogram"><i class="fa fa-check"></i><b>6.5</b> How to read a spectrogram</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-spectrograms.html"><a href="ch-spectrograms.html#sec:soundeditor3"><i class="fa fa-check"></i><b>6.6</b> More about using the SoundEditor</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-annotation.html"><a href="ch-annotation.html"><i class="fa fa-check"></i><b>7</b> Annotating speech sounds</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:coarticulation-intro"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-LPC.html"><a href="ch-LPC.html"><i class="fa fa-check"></i><b>8</b> Linear Predictive Coding</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="app-saywhat.html"><a href="app-saywhat.html#introduction-2"><i class="fa fa-check"></i><b>A.1</b> Introduction</a></li>
+<li class="chapter" data-level="A.2" data-path="app-saywhat.html"><a href="app-saywhat.html#dutch"><i class="fa fa-check"></i><b>A.2</b> Dutch</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="app-saywhat.html"><a href="app-saywhat.html#single-sentences"><i class="fa fa-check"></i><b>A.2.1</b> single sentences</a></li>
+<li class="chapter" data-level="A.2.2" data-path="app-saywhat.html"><a href="app-saywhat.html#plomp-and-mimpen-sentences"><i class="fa fa-check"></i><b>A.2.2</b> Plomp and Mimpen sentences</a></li>
+<li class="chapter" data-level="A.2.3" data-path="app-saywhat.html"><a href="app-saywhat.html#coherent-texts"><i class="fa fa-check"></i><b>A.2.3</b> coherent texts</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="app-saywhat.html"><a href="app-saywhat.html#english"><i class="fa fa-check"></i><b>A.3</b> English</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="app-saywhat.html"><a href="app-saywhat.html#harvard-sentences"><i class="fa fa-check"></i><b>A.3.1</b> Harvard sentences</a></li>
+<li class="chapter" data-level="A.3.2" data-path="app-saywhat.html"><a href="app-saywhat.html#coherent-texts-1"><i class="fa fa-check"></i><b>A.3.2</b> coherent texts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="app-praattools.html"><a href="app-praattools.html"><i class="fa fa-check"></i><b>B</b> Index of <code>Praat</code> tools</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="app-praattools.html"><a href="app-praattools.html#editors"><i class="fa fa-check"></i><b>B.1</b> Editors</a></li>
+<li class="chapter" data-level="B.2" data-path="app-praattools.html"><a href="app-praattools.html#other-tools"><i class="fa fa-check"></i><b>B.2</b> Other tools</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="app-lexicalsets.html"><a href="app-lexicalsets.html"><i class="fa fa-check"></i><b>C</b> Lexical sets</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial on Phonetics and Speech Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-LPC" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Linear Predictive Coding<a href="ch-LPC.html#ch-LPC" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Chapter keywords</em>: Linear Predictive Coding, source-filter theory, source, filter,
+spectrum, time domain, frequency domain,
+fundamental, harmonics, formant, formant frequency, formant bandwidth, glottal source, phonation, noise, sampling frequency, gain, f0, pitch, frame, frame rate, window, window length.</p>
+<div id="introduction-1" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Introduction<a href="ch-LPC.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>(with Clizia Welker)</p>
+<p>Now that we know about spectra (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) and about the source-filter theory of speech production (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>), we can discuss <em>Linear Predictive Coding</em> or <em>LPC</em> (key references are: <span class="citation">Markel and Gray (<a href="#ref-Markel_Gray_1976">1976</a>)</span>, <span class="citation">Atal and Schroeder (<a href="#ref-Atal_Schroeder_1978">1978</a>)</span>).</p>
+<p>LPC is a method used to analyze and compress the spectral information in speech. The essentials of the LPC analysis will be explained below. LPC analysis achieves two major goals at the same time:</p>
+<ul>
+<li><p>The resulting parameters are far fewer in number than the original speech signal. Thus LPC reduces the bandwidth required to encode and transmit speech, which in turn allows for more telephone calls per bandwidth, hence cheaper phone calls. (As an indication, the data compression is by a factor of about 20).</p></li>
+<li><p>If done correctly, and with several caveats, (some of) the resulting parameters may be interpreted phonetically as formant frequencies and formant bandwidths.</p></li>
+</ul>
+</div>
+<div id="sec:inversefiltering" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Inverse filtering<a href="ch-LPC.html#sec:inversefiltering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>LPC works in the time domain (typically over a brief windowed portion of the input signal), but it is easier to explain in the frequency domain.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:a8000lpc"></span>
+<img src="figures/aa_8000_lpc.png" alt="Spectrum of an [a] vowel, overlaid with (green) the assumed spectral slope of the glottal source, (red) the inverse LPC filter, and (blue) the resulting LPC spectral envelope" width="1800" />
+<p class="caption">
+Figure 8.1: Spectrum of an [a] vowel, overlaid with (green) the assumed spectral slope of the glottal source, (red) the inverse LPC filter, and (blue) the resulting LPC spectral envelope
+</p>
+</div>
+<p>To start, let us have a look at a spectral slice of a <em>vowel</em> [a], drawn in BLACK in Figure <a href="ch-LPC.html#fig:a8000lpc">8.1</a> (see also §<a href="complex-sounds-and-spectra.html#sec:spectralslice">3.2.2</a>).
+At the left we see the first harmonic, the fundamental frequency, at <span class="math inline">\(f_0 = 108.5\,\textrm{Hz}\)</span>. The other harmonics are multiples of the fundamental (see §<a href="complex-sounds-and-spectra.html#sec:FTintro">3.1</a>): the <em>frequencies</em> of the harmonics are therefore entirely redundant, once we know that this is a voiced (periodic) sound with this <span class="math inline">\(f_0\)</span>. These two relevant LPC parameters are named <code>F0</code> and <code>VUV</code> (voiced~unvoiced). We also need to know the overall <code>Gain</code> (amplitude) of the input signal.</p>
+<p>Moreover, we also assume that the glottal (voice) source sound itself has a particular spectral shape, <em>before</em> it enters into the filter (vocal tract). Presumably, the overall spectral slope of the glottal (voice) source sound is <span class="math inline">\(-6\, \textrm{dB} / \textrm{octave}\)</span>, here drawn in GREEN <a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a> <a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>.</p>
+<p>However, what is <em>not</em> expected from the glottal source sound is (are) the major peaks in the spectral envelope at approximately 800, 1450 and 3000 Hz. As we now know, those peaks are caused by the acoustic filter, that is, by formant resonances in the vocal tract (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>, §<a href="ch-speechsounds.html#sec:formants">5.2</a>).
+LPC attempts to determine the difference between the predicted spectrum from the source (GREEN) and the actual spectrum of the signal, by means of so-called “inverse filtering”. This means that the effect of the vocal tract filter is “undone” in order to approximate the spectral envelope that we expect (GREEN): we expect no peaks (GREEN), but we do observe a peak (in the input spectrum, affecting several harmonics), so the inverse filter must suppress that peak at the peak frequency (RED).</p>
+<p>Once we have done this inverse filtering, the coefficients of the resulting inverse filter (RED) may be re-interpreted as formant frequencies (and formant bandwidth), albeit with some caution. This is shown in the BLUE spectral envelope.</p>
+<p>Finally, as a check, we can pipe the <em>presumed</em> glottal source signal (GREEN) with the proper <code>F0</code> and <code>Gain</code> into the filter, and compare the output of the filter (the predicted output speech, BLUE) with the original (BLACK). The difference between these two is termed the <em>residual</em>
+<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.
+If all has gone well, then according to the source-filter theory, the prediction should come out close to the original, and then the residual should contain only little information (noise or silence). In practice, however, the residual often contains salient phonetic properties of the speech. One reason is that the source and the filter are presumed to be independent in theory (e.g. formant frequencies are independent of <code>F0</code>) but this assumption does not always hold. Female voices in particular tend to have stronger coupling or interference between source and filter than male voices (<span class="citation">Titze (<a href="#ref-Titze_2008">2008</a>)</span>, <span class="citation">Klatt and Klatt (<a href="#ref-Klatt_Klatt_1990">1990</a>)</span>).</p>
+<p>The LPC inverse filtering as described above was performed on a brief windowed portion or <em>frame</em> of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at <span class="math inline">\(f_s = 10\  \textrm{kHz}\)</span> (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g. harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (<code>frame rate</code>), and the analysis repeats for the next frame.</p>
+<p>In this section, we have described LPC analysis (inverse filtering) for voiced vowels. This is because the source-filter theory applies better to vowels than to consonants. In the case of <em>unvoiced consonants</em>, similar principles do apply, using a similar conceptualisation. For unvoiced consonants, the LPC analysis assumes that the source sound is white noise (§<a href="complex-sounds-and-spectra.html#sec:noise">3.3.1</a>) generated somewhere in the vocal tract, with a flat spectral envelope. In <em>voiced consonants</em>, <em>two</em> source sounds are produced simultaneously: both the periodic phonation sound at the glottis, and the aperiodic noise at the constriction or closure. LPC has problems accounting for these two effects at the same time, and consequently, the residual still contains a lot of phonetic information: voiced consonants thus are rather unsuitable for LPC analysis. Consequently, the formants identified by LPC in consonants are less reliable than those in vowels.</p>
+</div>
+<div id="sec:LPC-details" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Limitations and considerations<a href="ch-LPC.html#sec:LPC-details" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>As indicated above, LPC models the spectral envelope by a <em>cascade of formant-like peaks</em>, where frequencies are amplified. LPC cannot represent so-called anti-formants, where frequencies are actively attenuated. These antiresonances do occur in nasals, nasalized vowels, laterals, and fricatives. LPC is not very suitable for the spectral analysis (nor the transmission) of these categories of speech sounds.</p></li>
+<li><p>As indicated above, LPC assumes that the <em>source and filter are two independent systems</em> (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>).
+If there is <em>interaction</em> between the source signal and the filter then the resulting LPC coefficients may be incorrect. This may happen between <code>F0</code> and the first formant in high vowels, in particular for women and children, or it may happen between formants (e.g. <code>F1</code> and <code>F2</code> in [u]) (<span class="citation">Titze (<a href="#ref-Titze_2008">2008</a>)</span>).</p></li>
+<li><p>In traditional implementations, LPC will find a fixed (but user-settable) number of spectral filter coefficients. Each formant is represented by two of these LPC coefficients, which can be interpreted as its peak frequency and its bandwidth (§<a href="ch-speechsounds.html#sec:formants">5.2</a>). The <em>chosen number of formants in the LPC analysis must match the sampling frequency</em>, and it is the task of you, the analyst, to ensure that these properties do match.
+For adult male speakers, the formants are spaced about 1000 Hz apart (§<a href="ch-speechsounds.html#sec:formants">5.2</a>). So if you expect|want to find 5 formants (10 spectral LPC coefficients) in male speech, the frequency range should be 0 to 5000 Hz, and the corresponding sampling frequency should be twice the upper limit, hence <span class="math inline">\(f_s = 5 \times 1000 \times 2 = 10000\)</span> Hz (see §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a> for the <span class="math inline">\(\times 2\)</span> part of this rule). For adult female speakers, the formants are spaced about 1100 Hz apart. If you expect|want to find 5 formants in female speech, the corresponding sampling frequency should be <span class="math inline">\(f_s = 5 \times 1100 \times 2 = 11000\)</span> Hz.</p>
+<p>Consequently, you must ensure that the number of formants found by the LPC analysis matches the sampling frequency of the input speech signal. This can be achieved in two ways:</p>
+<ul>
+<li><p>by choosing the <em>number of formants</em> in the LPC analysis proportional to the sampling frequency: the number of formants should be <span class="math inline">\(f_s/2/1000\)</span> for male speech and <span class="math inline">\(f_s/2/1100\)</span> for female speech;</p></li>
+<li><p>by setting the <em>sampling frequency</em> <span class="math inline">\(f_s\)</span> (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>) proportional to the desired number of formants, that is, by <em>downsampling</em> the speech signal to an <span class="math inline">\(f_s\)</span> that is appropriate for the desired number of formants. (For Figure <a href="ch-LPC.html#fig:a8000lpc">8.1</a>, the speech was downsampled to 8 kHz before LPC analysis, as there were only 4 formants noticeable in the original vowel from a male speaker.)<br />
+</p></li>
+</ul>
+<p>If you fail to respect this relation between number of formants and sampling frequency, then the LPC analysis may result in spurious formants (a spectral peak is incorrectly considered to be a formant<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>) or in missed formants (so that e.g. the actual F4 is reported as <code>F3</code> because the true F3 has been missed).
+For an example of this “formant confusion”, see Figure <a href="ch-spectrograms.html#fig:window-soundeditor-3">6.4</a>, in the last 5 frames within the selection.</p>
+<p>In more advanced implementations, as in Praat, the number of formants reported is independent of the sampling frequency, and such “formant confusion” is kept under control.</p>
+<p>Remember that the number of coefficients in the LPC analysis is twice the number of formants, as <em>two</em> coefficients (peak frequency and bandwidth) are required to describe <em>one</em> formant in the LPC spectrum (BLUE).</p></li>
+</ul>
+</div>
+<div id="box-praatlpc" class="praatbox">
+<div id="how-to-perform-lpc-analysis-in-praat" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> How to perform LPC analysis in Praat<a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>TODO add text</p>
+</blockquote>
+</div>
+</div>
+
+</div>
+
+
+
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Atal_Schroeder_1978" class="csl-entry">
+Atal, Bishnu S., and M. R. Schroeder. 1978. <span>“Linear Prediction Analysis of Speech Based on a Pole‐zero Representation.”</span> <em>The Journal of the Acoustical Society of America</em> 64 (5): 1310–18. <a href="https://doi.org/10.1121/1.382117">https://doi.org/10.1121/1.382117</a>.
+</div>
+<div id="ref-Klatt_Klatt_1990" class="csl-entry">
+Klatt, D. H., and Laura C. Klatt. 1990. <span>“Analysis, Synthesis, and Perception of Voice Quality Variations Among Female and Male Talkers.”</span> <em>Journal of the Acoustical Society of America</em> 87 (2): 820–57. https://doi.org/<a href="https://doi.org/10.1121/1.398894">https://doi.org/10.1121/1.398894</a>.
+</div>
+<div id="ref-Markel_Gray_1976" class="csl-entry">
+Markel, John D., and Augustine H. Gray. 1976. <em>Linear Prediction of Speech</em>. Vol. 12. Communication and Cybernetics. Springer. <a href="https://doi.org/10.1007/978-3-642-66286-7">https://doi.org/10.1007/978-3-642-66286-7</a>.
+</div>
+<div id="ref-Titze_2008" class="csl-entry">
+Titze, Ingo R. 2008. <span>“Nonlinear Source–Filter Coupling in Phonation: Theory.”</span> <em>The Journal of the Acoustical Society of America</em> 123 (5): 2733–49. <a href="https://doi.org/10.1121/1.2832337">https://doi.org/10.1121/1.2832337</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="41">
+<li id="fn41"><p>The glottal source signal has a presumed slope of <span class="math inline">\(-12\, \textrm{dB} / \textrm{octave}\)</span>. This spectral slope is combined with the effect of the radiation of the speech sound at the lips. Radiation or spreading of sound works better for higher frequencies than for low frequencies (that is one of the reasons why loudspeakers for low frequencies tend to be larger and consume more energy than those for high frequencies): this radiation effect is <span class="math inline">\(+6\, \textrm{dB} / \textrm{octave}\)</span>. For faster computation, we combine the effect of radiation into that of the glottal source, then the combined spectral slope is <span class="math inline">\(-12+6 = -6\)</span> <span class="math inline">\(\textrm{dB} / \textrm{octave}\)</span>, and then we may subsequently ignore the radiation effect.<a href="ch-LPC.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>The curved shape of the GREEN contour in Figure XX is due to the linear scale on the frequency axis, combined with the logarithmic shape of the filter envelope (octave).<a href="ch-LPC.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn43"><p>The actual procedure is computationally different but conceptually similar.<a href="ch-LPC.html#fnref43" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>Such spurious formants may have a very wide bandwidth, and thus a very low quality.<a href="ch-LPC.html#fnref44" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-annotation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app-saywhat.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/ch08lpc.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

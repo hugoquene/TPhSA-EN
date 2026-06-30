@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis</title>
   <meta name="description" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Sound waves | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
@@ -62,7 +62,6 @@
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -117,7 +116,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
@@ -246,20 +244,12 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
 <li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<li class="chapter" data-level="8" data-path="ch-LPC.html"><a href="ch-LPC.html"><i class="fa fa-check"></i><b>8</b> Linear Predictive Coding</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-and-tempo"><i class="fa fa-check"></i><b>8.2</b> Pauses and tempo</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pausing"><i class="fa fa-check"></i><b>8.2.1</b> Pausing</a></li>
-<li class="chapter" data-level="8.2.2" data-path="ch-prosody.html"><a href="ch-prosody.html#tempo"><i class="fa fa-check"></i><b>8.2.2</b> Tempo</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.3</b> Durations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#frequency-pitch"><i class="fa fa-check"></i><b>8.4</b> Frequency (pitch)</a></li>
-<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity-loudness"><i class="fa fa-check"></i><b>8.5</b> Intensity (loudness)</a></li>
-<li class="chapter" data-level="8.6" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.6</b> Stresses and accents</a></li>
-<li class="chapter" data-level="8.7" data-path="ch-prosody.html"><a href="ch-prosody.html#rhythm"><i class="fa fa-check"></i><b>8.7</b> Rhythm</a></li>
-<li class="chapter" data-level="8.8" data-path="ch-prosody.html"><a href="ch-prosody.html#voice-quality"><i class="fa fa-check"></i><b>8.8</b> Voice quality</a></li>
+<li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -282,6 +272,7 @@ div.csl-indent {
 <li class="chapter" data-level="B.1" data-path="app-praattools.html"><a href="app-praattools.html#editors"><i class="fa fa-check"></i><b>B.1</b> Editors</a></li>
 <li class="chapter" data-level="B.2" data-path="app-praattools.html"><a href="app-praattools.html#other-tools"><i class="fa fa-check"></i><b>B.2</b> Other tools</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="app-lexicalsets.html"><a href="app-lexicalsets.html"><i class="fa fa-check"></i><b>C</b> Lexical sets</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -321,7 +312,7 @@ A stadium wave provides a clear example of a transverse wave: a group of persons
 <div id="acoustic-media" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Acoustic media<a href="ch-soundwaves.html#acoustic-media" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Air is only one of the media through which sound can propagate. If your head is under water (as in a bath, pool, lake or sea), the water may carry sound waves from the sound source to your eardrums, and you do hear sounds. The propagation of sound waves is faster through liquids than through gases such as air: the closer the molecules of the medium (i.e. the higher its density), the higher the speed of sound in that medium.</p>
-<p>You can also put your ear to the ground in order to hear sounds propagated through the soil. The propagation of sound waves in solid soil is even faster than in liquids. Trying this out on dry sand on the beach, one observer noted hearing footsteps until about 25 m distant <span class="citation">(<a href="#ref-Minnaert_1970v2">Minnaert 1970, vol. 2, sec. 10</a>)</span>.</p>
+<p>You can also put your ear to the ground in order to hear sounds propagated through the soil. The propagation of sound waves in solid soil is even faster than in liquids. Trying this out on dry sand on the beach, one observer noted hearing footsteps until about 25 m distant <span class="citation">(<a href="#ref-Minnaert_1970v2">Minnaert 1970, sec. 10</a>)</span>.</p>
 </div>
 <div id="sec:speedofsound" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> The speed of sound<a href="ch-soundwaves.html#sec:speedofsound" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -363,7 +354,7 @@ Remember that the sound <em>wave</em> travels through the medium, but the partic
 <p>In an oscillogram such as Figure <a href="ch-soundwaves.html#fig:speech-oscillogram">1.1</a>, the horizontal axis represents the time dimension<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, and the vertical axis represents the air pressure. The pressure fluctuations (compression and rarefaction) are displayed as vertical deviations relative to the horizontal baseline<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.
 Thus an oscillogram records the back-and-forth movements of the particles of the medium, indirectly, by recording the fluctuations in relative pressure, at a fixed location.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-oscillogram"></span>
-<img src="figures/speech_word_oscillogram.png" alt="Oscillogram of the word *speech*, with boundaries between segments."  />
+<img src="figures/speech_word_oscillogram.png" alt="Oscillogram of the word *speech*, with boundaries between segments." width="825" />
 <p class="caption">
 Figure 1.1: Oscillogram of the word <em>speech</em>, with boundaries between segments.
 </p>
@@ -500,7 +491,7 @@ where <span class="math inline">\(L_p\)</span> is the level of sound pressure, i
 </thead>
 <tbody>
 <tr class="odd">
-<td>192</td>
+<td>191</td>
 <td align="left">Loudest sound possible in air, rarefactions are vacuum (<a href="https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure" class="uri">https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure</a>)</td>
 </tr>
 <tr class="even">
@@ -695,27 +686,27 @@ You may also save the figure in a different way, as a “recipe” set of instru
 
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Dahl_Miller_Cato_Andrew_2007" class="csl-entry">
 Dahl, Peter H., James H. Miller, Douglas H. Cato, and Rex K. Andrew. 2007. <span>“Underwater Ambient Noise.”</span> <em>Acoustics Today</em> 3 (1): 23–33. https://doi.org/<a href="https://doi.org/10.1121/1.2961145">https://doi.org/10.1121/1.2961145</a>.
 </div>
 <div id="ref-Fletcher_1953" class="csl-entry">
-Fletcher, Harvey. 1953. <em>Speech and Hearing in Communication</em>. New York: Van Nostrand.
+Fletcher, Harvey. 1953. <em>Speech and Hearing in Communication</em>. Van Nostrand.
 </div>
 <div id="ref-Fry_1979" class="csl-entry">
-Fry, D. B. 1979. <em>The Physics of Speech</em>. Cambridge: Cambridge University Press.
+Fry, D. B. 1979. <em>The Physics of Speech</em>. Cambridge University Press.
 </div>
 <div id="ref-Harris_1971" class="csl-entry">
 Harris, Cyril M. 1971. <span>“Effects of Humidity on the Velocity of Sound in Air.”</span> <em>The Journal of the Acoustical Society of America</em> 49 (3B): 890–93. <a href="https://doi.org/10.1121/1.1912429">https://doi.org/10.1121/1.1912429</a>.
 </div>
 <div id="ref-Henderson_2023" class="csl-entry">
-Henderson, Caspar. 2023. <em>A Book of Noises: Notes on the Auraculous</em>. London: Granta.
+Henderson, Caspar. 2023. <em>A Book of Noises: Notes on the Auraculous</em>. Granta.
 </div>
 <div id="ref-Minnaert_1970v2" class="csl-entry">
-Minnaert, M. 1970. <em>De Natuurkunde van ’t Vrije Veld</em>. Vol. 2. Zutphen: Thieme.
+Minnaert, M. 1970. <em>De Natuurkunde van ’t Vrije Veld</em>. Vol. 2. Thieme.
 </div>
 <div id="ref-Shadle_2010" class="csl-entry">
-Shadle, Christine H. 2010. <span>“The Aerodynamics of Speech.”</span> In <em>The Handbook of Phonetic Sciences</em>, edited by W. J. Hardcastle, John Laver, and Fiona E. Gibbon, 2nd ed., 39–80. Chichester: Wiley-Blackwell.
+Shadle, Christine H. 2010. <span>“The Aerodynamics of Speech.”</span> In <em>The Handbook of Phonetic Sciences</em>, 2nd ed., edited by W. J. Hardcastle, John Laver, and Fiona E. Gibbon. Wiley-Blackwell.
 </div>
 </div>
 <div class="footnotes">
@@ -754,42 +745,42 @@ Shadle, Christine H. 2010. <span>“The Aerodynamics of Speech.”</span> In <em
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch01soundwaves.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/ch01soundwaves.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

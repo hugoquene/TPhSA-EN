@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis</title>
   <meta name="description" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Converting sound to bytes | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
@@ -62,7 +62,6 @@
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -117,7 +116,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
@@ -246,20 +244,12 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
 <li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<li class="chapter" data-level="8" data-path="ch-LPC.html"><a href="ch-LPC.html"><i class="fa fa-check"></i><b>8</b> Linear Predictive Coding</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-and-tempo"><i class="fa fa-check"></i><b>8.2</b> Pauses and tempo</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pausing"><i class="fa fa-check"></i><b>8.2.1</b> Pausing</a></li>
-<li class="chapter" data-level="8.2.2" data-path="ch-prosody.html"><a href="ch-prosody.html#tempo"><i class="fa fa-check"></i><b>8.2.2</b> Tempo</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.3</b> Durations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#frequency-pitch"><i class="fa fa-check"></i><b>8.4</b> Frequency (pitch)</a></li>
-<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity-loudness"><i class="fa fa-check"></i><b>8.5</b> Intensity (loudness)</a></li>
-<li class="chapter" data-level="8.6" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.6</b> Stresses and accents</a></li>
-<li class="chapter" data-level="8.7" data-path="ch-prosody.html"><a href="ch-prosody.html#rhythm"><i class="fa fa-check"></i><b>8.7</b> Rhythm</a></li>
-<li class="chapter" data-level="8.8" data-path="ch-prosody.html"><a href="ch-prosody.html#voice-quality"><i class="fa fa-check"></i><b>8.8</b> Voice quality</a></li>
+<li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -282,6 +272,7 @@ div.csl-indent {
 <li class="chapter" data-level="B.1" data-path="app-praattools.html"><a href="app-praattools.html#editors"><i class="fa fa-check"></i><b>B.1</b> Editors</a></li>
 <li class="chapter" data-level="B.2" data-path="app-praattools.html"><a href="app-praattools.html#other-tools"><i class="fa fa-check"></i><b>B.2</b> Other tools</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="app-lexicalsets.html"><a href="app-lexicalsets.html"><i class="fa fa-check"></i><b>C</b> Lexical sets</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -336,7 +327,7 @@ The analog electrical signal is then passed on from the microphone to…</p></li
 <div id="sec:samplingfrequency" class="section level3 hasAnchor" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Sampling frequency<a href="ch-soundtobytes.html#sec:samplingfrequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The sampling frequency (symbol <span class="math inline">\(f_s\)</span>) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the <em>time</em> dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §<a href="ch-soundwaves.html#sec:frequency">1.8.1</a>). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled <span class="math inline">\(2000 \times\)</span> per second.</p>
-<div id="nyquist" class="warningbox">
+<div id="box-nyquist" class="warningbox">
 <p>The sampling frequency <span class="math inline">\(f_s\)</span> must be at least <span class="math inline">\(2 \times\)</span> the highest frequency <span class="math inline">\(f\)</span> in the analog source sound. Thus, the source sound may not contain any components with frequencies above <span class="math inline">\(f_s / 2\)</span>, the so-called ‘nyquist frequency’ (this requirement follows from the so-called ‘Nyquist theorem’). In practice this requirement is guaranteed by <em>low-pass</em> filtering the source sound (see §<a href="ch-filtering.html#sec:typesoffilters">4.2</a> about filtering), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency. This filtering is routinely done before AD conversion, by the AD conversion hardware.</p>
 <p>For speech, most acoustic information is contained in the frequency range up to 8 kHz. Given the previous paragraph, this means that we need a sampling frequency of at least 16 kHz<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> or higher. In most phonetic projects, the most relevant phonetic information is contained in the frequency range up to 16 kHz, for which a sampling frequency of <span class="math inline">\(f_s = 32\)</span> kHz<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> is adequate.
 For music, relevant information may be contained in the full audible range up to 22 kHz, and the standard sampling frequency is 44.1 kHz<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.</p>
@@ -490,7 +481,7 @@ This will open a <strong>SoundEditor</strong> window.
 Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a> shows an example of a SoundEditor, displaying the fragment <em>…a small window to get this…</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.</p></li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor"></span>
-<img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted."  />
+<img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted." width="1127" />
 <p class="caption">
 Figure 2.1: SoundEditor window, showing oscillogram and spectrogram of the fragment <em>…a small window to get this…</em>, with the word <em>window</em> highlighted.
 </p>
@@ -580,42 +571,42 @@ Then choose <code>Combine &gt; Concatenate</code> in the Objects window. The res
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch02convertingsoundtobytes.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/ch02convertingsoundtobytes.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

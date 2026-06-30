@@ -1,10 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
 ]{book}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -35,8 +36,8 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -64,7 +65,8 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -73,8 +75,6 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -85,7 +85,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 13 Jul 2025 23:07}
+\date{Document compiled 30 Jun 2026 15:56}
 
 \begin{document}
 \maketitle
@@ -132,7 +132,7 @@ You will learn the most from this tutorial if you
   re-read the relevant sections from this tutorial and your textbook, with the help of keywords provided per section.
 \end{enumerate}
 
-\phantomsection\label{question-intro}
+\protect\phantomsection\label{question-intro}
 \subsection*{Questions}\label{questions}
 \addcontentsline{toc}{subsection}{Questions}
 
@@ -155,7 +155,7 @@ There is an online forum (\url{https://groups.io/g/Praat-Users-List}), where use
 
 In order to install \texttt{Praat} on your computer, go to its webpage at \url{https://www.praat.org/}, and then proceed to the download page for the operating system of your computer. Follow the installation instructions on the download page for your operating system.
 
-\phantomsection\label{tech-layout}
+\protect\phantomsection\label{tech-layout}
 \subsection*{\texorpdfstring{Instructions for using \texttt{Praat}}{Instructions for using Praat}}\label{instructions-for-using-praat}
 \addcontentsline{toc}{subsection}{Instructions for using \texttt{Praat}}
 
@@ -179,9 +179,16 @@ Some excellent textbooks and introductions in phonetics are those by
 \section*{Structure of this tutorial}\label{structure-of-this-tutorial}
 \addcontentsline{toc}{section}{Structure of this tutorial}
 
-\begin{quote}
-TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
-\end{quote}
+This tutorial consists of three parts:
+
+\begin{itemize}
+\item
+  I: sounds (acoustics),
+\item
+  II: speech (phonetics),
+\item
+  III: speech technology -- under construction.
+\end{itemize}
 
 \section*{Details}\label{details}
 \addcontentsline{toc}{section}{Details}
@@ -195,23 +202,16 @@ This work is licensed under the \emph{GNU GPL 3} license (for details see
 \subsection*{Citation}\label{citation}
 \addcontentsline{toc}{subsection}{Citation}
 
-\begin{quote}
-TODO add citation instructions
-\end{quote}
+Please cite this work as follows (substitute the date):
 
-\subsection*{Technical details}\label{technical-details}
-\addcontentsline{toc}{subsection}{Technical details}
-
-\begin{quote}
-TODO add tech details
-\end{quote}
+Quené, H. (2026). \emph{Tutorial on Phonetics and Speech Analysis}. Retrieved 18 May 2026 from \url{https://hugoquene.github.io/TPhSA-EN} .
 
 \subsection*{History}\label{history}
 \addcontentsline{toc}{subsection}{History}
 
 This work is based on an earlier tutorial (2006-2007) titled Tutorial for self study: basics of phonetics and how to use Praat by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck.
 
-The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2025. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide, where appropriate. These older instructions were written or revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Aleksei Nazarov, and Sanne Ditewig.
+The 2007 version of the tutorial was subsequently revised and adapted to the current version using \texttt{R\ Markdown} \citep{rmarkdown2018} and \texttt{bookdown} \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio} by Hugo Quené in 2024--2026. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide, where appropriate. These older instructions were written or revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Aleksei Nazarov, and Sanne Ditewig.
 
 \section*{Acknowledgements}\label{acknowledgements}
 \addcontentsline{toc}{section}{Acknowledgements}
@@ -263,7 +263,7 @@ In sea water, sound travels at about 1435 m/s, in concrete 3400 m/s, in iron (e.
 Pressure is the amount of force on a surface. In physics, \emph{force} is defined as an influence causing an object to accelerate. It is expressed in Newton units; a Newton is the amount of force that increases the velocity of a 1-kilogram object by one meter per second (\(m/s\)). \emph{Pressure}, in turn, is defined as force per unit of area. It is measured in Pascal units, which correspond to Newton (N) per square meter (\(1\ Pa = 1\ N/m^2\)).
 Under normal conditions, atmospheric air pressure is centered at 1013.25 hPa (101325 Pa, an average value\footnote{This is the standard unit of 1 atmosphere. The pressure is due to the Earth's gravition force on the Earth's atmosphere.} on a medium latitude at sea level, at 0°C), with normal meteorological fluctuations of about ± 5000 Pa. Sound wave fluctuations in air pressure are far smaller, ranging from about ±20 µPa (micropascal, or ±0.00002 Pa) at the lower threshold of hearing to about ±20 Pascal at the upper threshold of hearing. Even louder sounds, with variations in air pressure exceeding about ±20 Pascal, are painful and cause hearing damage.
 
-\phantomsection\label{questions-soundwaves}
+\protect\phantomsection\label{questions-soundwaves}
 \section*{Questions}\label{questions-1}
 \addcontentsline{toc}{section}{Questions}
 
@@ -288,14 +288,14 @@ Thus an oscillogram records the back-and-forth movements of the particles of the
 
 \begin{figure}
 
-{\centering \includegraphics{figures/speech_word_oscillogram} 
+{\centering \includegraphics[width=22.92in]{figures/speech_word_oscillogram} 
 
 }
 
 \caption{Oscillogram of the word *speech*, with boundaries between segments.}\label{fig:speech-oscillogram}
 \end{figure}
 
-\phantomsection\label{box-speechfile-details}
+\protect\phantomsection\label{box-speechfile-details}
 The oscillogram in Fig.\ref{fig:speech-oscillogram} shows a fragment of speech, taken from the audio file named \texttt{1-4-17\_City\_Council\_SLASH\_1-4-17\_City\_Council\_DOT\_mp3\_00029.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
 
 Thus an oscillogram is comparable to a meteorologist's regular measurements of atmospheric air pressure at a fixed location --- albeit on far finer scales of time and of air pressure.
@@ -388,7 +388,7 @@ Another advantage is that large \emph{ratios} (e.g.~of sound intensities or freq
 \[10 : 1000 = 10^1 : 10^3\]
 \[^{10}\log(10) : ^{10}\log(1000) = 1 : 3\]
 
-\phantomsection\label{log1}
+\protect\phantomsection\label{log1}
 By definition, \(x^0=1\), and \(^x\log(1)=0\), for any base \(x\).
 
 Intensity is perceived in an approximately logarithmic fashion: each tenfold increase of intensity (logarithm using base \(10\)) is perceived as one equal step in intensity, as further explained below. In a similar fashion, frequency too is perceived in logarithmic fashion: each twofold increase of frequency (doubling, logarithm using base \(2\)) is perceived as one equal step in frequency, viz.~by one octave (§\ref{sec:octave}).
@@ -444,7 +444,7 @@ A doubling of the intensity means an increase of the sound intensity by +3 dB:
 
 By definition, a value of 0 dB means that the target sound has the same sound pressure and/or same intensity as that of the chosen reference sound.
 
-\phantomsection\label{questions-0dB}
+\protect\phantomsection\label{questions-0dB}
 \subsubsection*{Question 1.2}\label{question-1.2}
 \addcontentsline{toc}{subsubsection}{Question 1.2}
 
@@ -474,7 +474,7 @@ situation
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-192 & Loudest sound possible in air, rarefactions are vacuum (\url{https://en.wikipedia.org/wiki/Sound_pressure\#Examples_of_sound_pressure}) \\
+191 & Loudest sound possible in air, rarefactions are vacuum (\url{https://en.wikipedia.org/wiki/Sound_pressure\#Examples_of_sound_pressure}) \\
 172 & Krakatoa eruption, 1893 (at \textasciitilde160 km distance) \citep[p.43]{Henderson_2023} \\
 130 & Jet engine (at 30 m distance) \\
 120 & Threshold of pain \\
@@ -506,7 +506,7 @@ Phase is expressed relative to the period \(T\), but it is not expressed in time
 
 In the transverse stadium wave, phase corresponds to the difference in time between the sit-down-moment of one group of persons, and the comparable sit-down-moment of another group of persons in a different section of the stadium. Imagine two waves rolling along the stadium benches: one wave on the lower benches, and a different wave on the upper benches. The two waves may be out of phase (lower and upper persons sit down at different times) or in phase (lower and upper person sit down at the same time) -- irrespective of whether the two waves have the same or different frequencies.
 
-\phantomsection\label{questions-phase}
+\protect\phantomsection\label{questions-phase}
 \subsubsection*{Question 1.3}\label{question-1.3}
 \addcontentsline{toc}{subsubsection}{Question 1.3}
 
@@ -528,7 +528,7 @@ Sounds with higher frequency have shorter wavelength, and vice versa. A periodic
 \caption{Snapshot of the pressure of a sound wave in air, varying with distance from the sound source (along the horizontal axis). The snapshot was taken at a fixed moment in time, with $c=343$ m/s in air. }\label{fig:example-wavelength}
 \end{figure}
 
-\phantomsection\label{questions-wavelength}
+\protect\phantomsection\label{questions-wavelength}
 \subsubsection*{Question 1.4}\label{question-1.4}
 \addcontentsline{toc}{subsubsection}{Question 1.4}
 
@@ -542,7 +542,7 @@ In the transverse stadium wave, the wavelength \(\lambda\) is the distance in me
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\phantomsection\label{box-praatintro}
+\protect\phantomsection\label{box-praatintro}
 \section{\texorpdfstring{How to work with \texttt{Praat}}{How to work with Praat}}\label{sec:praatintro}
 
 \texttt{Praat} is a computer program designed to process, analyze and visualize speech sounds.
@@ -572,7 +572,7 @@ We will often work with objects of the \emph{Sound} type. Such a Sound object is
 The combined figure in the viewport may be saved (\texttt{File\ \textgreater{}\ Save}) or printed (\texttt{File\ \textgreater{}\ Print}) in the top menu of the Praat Picture window.
 You may also save the figure in a different way, as a ``recipe'' set of instructions to re-create the figure (\texttt{File\ \textgreater{}\ Save\ as\ Praat\ picture\ file}), for later reuse.
 
-\phantomsection\label{box-open}
+\protect\phantomsection\label{box-open}
 \section{How to draw an oscillogram}\label{how-to-draw-an-oscillogram}
 
 \subsection{Open an audio file}\label{open-an-audio-file}
@@ -592,12 +592,12 @@ For the time being, selecting a short audio will make it easier for you to explo
   In the \texttt{Praat} objects window, go to the bottom menu, choose \texttt{Info}. If it does not exist, \texttt{Praat} will open an additional window, titled \texttt{Praat\ Info}. In this window you'll see all kinds of meta-data (data about data) of the selected Sound object, with numbers in scientific notation (see below).
 \end{itemize}
 
-\phantomsection\label{scientificnotation}
+\protect\phantomsection\label{scientificnotation}
 \subsubsection{Scientific notation}\label{sec:scientificnotation}
 
 The scientific notation of a number such as \texttt{9.876e-2} is to be read as \(9.876 \times 10^{-2} = 9.876 \times 0.01 = 0.09876\); for background see \url{https://en.wikipedia.org/wiki/Scientific_notation}.
 
-\phantomsection\label{box-draw}
+\protect\phantomsection\label{box-draw}
 \subsection{Draw an oscillogram}\label{draw-an-oscillogram}
 
 \begin{itemize}
@@ -652,7 +652,7 @@ Very soon, whenever you want to hear sound from a computer or from a telephone c
   a \textbf{digital-to-analog-converter} (DAC): this device converts a stream of discrete, digital numbers into a continuous analog electrical signal, with a pre-specified conversion frequency and amplitude precision. The result is an output analog electrical signal, to be handled further by audio hardware (e.g.~to be amplified, sent to a loudspeaker, etc.)
 \end{enumerate}
 
-\phantomsection\label{mic-howto}
+\protect\phantomsection\label{mic-howto}
 \section{How to handle a microphone}\label{sec:microphone}
 
 \begin{itemize}
@@ -674,7 +674,7 @@ The digital signal obtained by analog-to-digital conversion is an approximation 
 
 The sampling frequency (symbol \(f_s\)) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the \emph{time} dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf.~§\ref{sec:frequency}). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled \(2000 \times\) per second.
 
-\phantomsection\label{nyquist}
+\protect\phantomsection\label{box-nyquist}
 The sampling frequency \(f_s\) must be at least \(2 \times\) the highest frequency \(f\) in the analog source sound. Thus, the source sound may not contain any components with frequencies above \(f_s / 2\), the so-called `nyquist frequency' (this requirement follows from the so-called `Nyquist theorem'). In practice this requirement is guaranteed by \emph{low-pass} filtering the source sound (see §\ref{sec:typesoffilters} about filtering), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency. This filtering is routinely done before AD conversion, by the AD conversion hardware.
 
 For speech, most acoustic information is contained in the frequency range up to 8 kHz. Given the previous paragraph, this means that we need a sampling frequency of at least 16 kHz\footnote{This is the typical sampling frequency in VoIP, ``wideband speech''.} or higher. In most phonetic projects, the most relevant phonetic information is contained in the frequency range up to 16 kHz, for which a sampling frequency of \(f_s = 32\) kHz\footnote{This is the standard sampling frequency for FM radio.} is adequate.
@@ -687,7 +687,7 @@ For music, relevant information may be contained in the full audible range up to
   Using a higher sampling frequencies will result in proportionally larger digital sound files, which require longer processing times and more computer storage.
 \end{itemize}
 
-\phantomsection\label{box:telephonebandwidth}
+\protect\phantomsection\label{box:telephonebandwidth}
 Aside: In the past, analogue telephones used a limited bandwidth of 300 to 3400 Hz; this allowed low-cost transmission of speech that was still intelligible. Such `telephone speech' may be sampled at \(f_s = 8\ \textrm{kHz}\), capturing acoustic information in the frequency range up to 4 kHz. You may encounter legacy speech recordings sampled at 8 kHz, and/or research reports mentioning this \(f_s\) value.
 
 \subsection{Amplitude resolution}\label{amplitude-resolution}
@@ -702,7 +702,7 @@ In phonetics, the most common amplitude resolution is 16 bits, or \(2^{16} = 655
 
 For any audio recording, there are a few \textbf{essential precautions} that you'll need to attend to, in order to obtain high-quality recordings suitable for subsequent analysis, manipulation, and/or presentation.
 
-\phantomsection\label{recording}
+\protect\phantomsection\label{recording}
 \subsection{Remove non-target sounds}\label{sec:removenontargetsounds}
 
 In order to obtain a high-quality recording, it helps to attenuate all non-target sounds, in various ways:
@@ -758,7 +758,7 @@ We assume that you use a computer equipped with a \textbf{microphone}, or with a
 
 There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from the Objects window menu): \texttt{Praat\ \textgreater{}\ Settings\ \textgreater{}\ Sound\ recording\ settings...} where you may adjust certain settings as needed.
 
-\phantomsection\label{box-praatrecord}
+\protect\phantomsection\label{box-praatrecord}
 \subsubsection{Record}\label{sec:praatrecord}
 
 \begin{itemize}
@@ -809,7 +809,7 @@ Once again, we assume that you use a computer equipped with an analog \textbf{ou
 
 There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from the Objects window menu): \texttt{Praat\ \textgreater{}\ Settings\ \textgreater{}\ Sound\ playing\ settings...} where you may adjust certain settings as needed.
 
-\phantomsection\label{box-praatplay}
+\protect\phantomsection\label{box-praatplay}
 In the Objects window, select the Sound object(s) that you want to play back. Then press the \texttt{Play} button in the Objects window. You might interrupt the playback with the \texttt{Esc} key, but this depends on your playback settings (see the paragraphs above). (If you have selected multiple Sound objects, then they will be played consecutively, \emph{without} a pause in between; see §\ref{sec:concatenate}.)
 
 \section{What to say?}\label{sec:whattosay}
@@ -822,7 +822,7 @@ What should the human talker (such as yourself, perhaps) say for a speech record
 
 Even if you have heeded all the warnings in this chapter, it may be necessary to adjust the amplitude or intensity of your digital recording. Sample values in the digital sound will be multiplied with a certain scale factor. \texttt{Praat} has different recipes to choose this scale factor.
 
-\phantomsection\label{box-praatscale}
+\protect\phantomsection\label{box-praatscale}
 \subsubsection{Scale amplitude}\label{scale-amplitude}
 
 \texttt{Modify\ \textgreater{}\ Scale\ peak...}.\\
@@ -838,10 +838,10 @@ The amplitude scale factor is chosen so that the average \emph{intensity} of the
 In many projects, we wish to excise (cut out) a part of a recording, and save that part as a separate audio file.
 \texttt{Praat} contains a so-called SoundEditor to perform these tasks.
 
-\phantomsection\label{box-segmenting}
+\protect\phantomsection\label{box-segmenting}
 Reliably segmenting or delimiting fragments of a speech utterance requires the background knowledge provided in the following chapters --- and practice. Segmenting speech will also be discussed in Chapter \ref{ch-annotation} on phonetic annotation. Below are some brief starter instructions.
 
-\phantomsection\label{box-soundeditor}
+\protect\phantomsection\label{box-soundeditor}
 \begin{itemize}
 \item
   Select an input Sound object in the \texttt{Praat} Objects window.
@@ -853,14 +853,14 @@ Reliably segmenting or delimiting fragments of a speech utterance requires the b
 
 \begin{figure}
 
-{\centering \includegraphics{figures/asmallwindowtogetthis_SoundEditor2050124} 
+{\centering \includegraphics[width=31.31in]{figures/asmallwindowtogetthis_SoundEditor2050124} 
 
 }
 
 \caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details}
+\protect\phantomsection\label{box-windowsfile-details}
 The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
 
 The SoundEditor contains a lot of information! In the top panel you always see an oscillogram (§\ref{sec:oscillogram}). Below, there may be additional and overlapping visualisations of the Spectrogram (Ch.\ref{ch-spectrograms}), Pitch, Intensity, Formants (§\ref{sec:formants}), and/or voice Pulses. These additional visualisations will be discussed later in this tutorial guide; for now, you may switch them \texttt{off} by choosing the appropriate buttons in the top of the SoundEditor window, and then unselecting the \texttt{Show} option.
@@ -903,20 +903,20 @@ The SoundEditor contains a lot of information! In the top panel you always see a
   Remember to save this new Sound object (see §\ref{sec:praatsave}) if you wish to keep it.
 \end{itemize}
 
-\phantomsection\label{fades}
+\protect\phantomsection\label{fades}
 \subsection{Fades}\label{sec:fades}
 
 An abrupt change in amplitude may occur at the beginning and/or at the end of a sound file. Such an abrupt change will be heard as an impulse sound (see §\ref{sec:impulses}), that is, as a clicking sound. This may happen with speech cut out of a longer speech utterance.
 Due to the workings of the ear, such an impulse may briefly mask subsequent sounds, i.e., affect the perception of subsequent sounds. In order to avoid these artefacts, it is common practice to enforce a gradual fade-in (at the onset, from zero) and fade-out (to zero). This is especially important if you intend to play back the sound to listeners.
 
-\phantomsection\label{box-praatfades}
+\protect\phantomsection\label{box-praatfades}
 These smooth fades can be made in \texttt{Praat} by choosing \texttt{Modify\ \textgreater{}\ Fade\ in...} and \texttt{Modify\ \textgreater{}\ Fade\ out...}, with a fade duration of about 0.005 to 0.010 second. Samples affected by the fade are multiplied with a factor increasing from 0 to 1 during fade-in, or decreasing from 1 to 0 during fade-out.
 
 \subsection{Concatenate}\label{sec:concatenate}
 
 In phonetic research, we often want to construct a ``chain'' of sounds in a particular order e.g.~(1) a warning beep, (2) a silent portion of fixed duration, and (3) a speech stimulus. This can be achieved in several ways; the most basic operation is to ``concatenate'', that is, to create a ``chain'' of sound objects.
 
-\phantomsection\label{box-praatconcatenate}
+\protect\phantomsection\label{box-praatconcatenate}
 In the \texttt{Praat} Objects window, select the Sound objects \emph{in the order in which they are to be concatenated}, e.g.~(1) beep, (2) silence, (3) stimulus. In order to select multiple Sound objects from the list, in a specified order, press \texttt{Command} while selecting objects.~
 Then choose \texttt{Combine\ \textgreater{}\ Concatenate} in the Objects window. The resulting ``chain'' of Sounds will be added to the BOTTOM of the list of objects. Remember to save this new Sound object (see §\ref{sec:praatsave}).
 
@@ -966,14 +966,14 @@ Figure \ref{fig:complex100n200n400} shows an oscillogram on the left (of the sam
 
 \begin{figure}
 
-{\centering \includegraphics{figures/complex100n200n400} 
+{\centering \includegraphics[width=50in]{figures/complex100n200n400} 
 
 }
 
 \caption{Oscillogram (left) and spectrum (right) of a complex periodic sound.}\label{fig:complex100n200n400}
 \end{figure}
 
-\phantomsection\label{questions-spectrum}
+\protect\phantomsection\label{questions-spectrum}
 \subsection*{Questions}\label{questions-2}
 \addcontentsline{toc}{subsection}{Questions}
 
@@ -982,7 +982,7 @@ Figure \ref{fig:complex100n200n400} shows an oscillogram on the left (of the sam
 
 Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitude of 40 dB SPL.
 
-\phantomsection\label{box:praatspectrum}
+\protect\phantomsection\label{box:praatspectrum}
 \subsection{How to obtain a spectrum}\label{how-to-obtain-a-spectrum}
 
 \begin{itemize}
@@ -1001,7 +1001,7 @@ Draw the spectrum of a sinewave sound with a frequency of 450 Hz and an amplitud
   To do so, select the Spectrum object, select button \texttt{Sound\ \textgreater{}} and then \texttt{To\ Sound}.
 \end{itemize}
 
-\phantomsection\label{box-praatspectralslice}
+\protect\phantomsection\label{box-praatspectralslice}
 \subsection{How to obtain a spectral `slice'}\label{sec:spectralslice}
 
 Only rarely are we interested in the spectrum of an entire Sound object. Typically, we want to inspect the spectrum of the sound only over a small time window within that sound. For example, we might want to inspect the spectrum of the /i/ vowel sound in Figure \ref{fig:speech-oscillogram}, at \(t \approx 0.210\) seconds.
@@ -1024,7 +1024,7 @@ This can be done by means of two features in \texttt{Praat} which we will explor
 
 \begin{figure}
 
-{\centering \includegraphics{figures/Spectrum_speech_word_0_210} 
+{\centering \includegraphics[width=20.61in]{figures/Spectrum_speech_word_0_210} 
 
 }
 
@@ -1051,7 +1051,7 @@ In so-called \emph{brown noise}, the spectral envelope decreases by \(-6\) dB pe
 
 \begin{figure}
 
-{\centering \includegraphics{figures/whitebrownnoises} 
+{\centering \includegraphics[width=50in]{figures/whitebrownnoises} 
 
 }
 
@@ -1074,7 +1074,7 @@ The concept of the \emph{envelope} of a sound property stems from electronic mus
 
 \begin{figure}
 
-{\centering \includegraphics{figures/ADSR_parameter} 
+{\centering \includegraphics[width=17.78in]{figures/ADSR_parameter} 
 
 }
 
@@ -1201,7 +1201,7 @@ Consequently, spectral details of higher-frequency components tend to be poorly 
 
 The reverse operation is called \emph{de-emphasis} filtering: this changes the overall spectral slope by \(-6\) dB/octave. This de-emphasis filtering was applied, for example, to obtain the brown noise (\(-6\) dB/oct) from the white noise (\(0\) dB/oct) in Fig.\ref{fig:spectrum-whitebrownnoises}.
 
-\phantomsection\label{box-praatemphasis}
+\protect\phantomsection\label{box-praatemphasis}
 \subsection{How to apply a (pre\textbar de)emphasis filter}\label{how-to-apply-a-predeemphasis-filter}
 
 \begin{itemize}
@@ -1230,7 +1230,7 @@ As a first approximation, let us consider a simple straight tube, uniform in dia
 
 \begin{figure}
 
-{\centering \includegraphics{figures/onetube} 
+{\centering \includegraphics[width=45.83in]{figures/onetube} 
 
 }
 
@@ -1264,7 +1264,7 @@ Figure \ref{fig:uniform-vt-transfer} shows the transfer function and formants of
 
 \begin{figure}
 
-{\centering \includegraphics{figures/formants_stevens01_b} 
+{\centering \includegraphics[width=8.15in]{figures/formants_stevens01_b} 
 
 }
 
@@ -1288,7 +1288,7 @@ First we look at the two-tube configuration in Figure \ref{fig:twotube} \citep[a
 
 \begin{figure}
 
-{\centering \includegraphics{figures/twotube} 
+{\centering \includegraphics[width=45.83in]{figures/twotube} 
 
 }
 
@@ -1299,7 +1299,7 @@ Even more complex is the configuration in Figure \ref{fig:threetube} \citep[afte
 
 \begin{figure}
 
-{\centering \includegraphics{figures/threetube} 
+{\centering \includegraphics[width=45.83in]{figures/threetube} 
 
 }
 
@@ -1310,7 +1310,7 @@ In the spectrum of the recorded /i/ vowel produced by a \emph{female} speaker, i
 
 \begin{figure}
 
-{\centering \includegraphics{figures/speech_word_0_210_spectrum} 
+{\centering \includegraphics[width=41.67in]{figures/speech_word_0_210_spectrum} 
 
 }
 
@@ -1322,7 +1322,7 @@ The different vowels in any language have different formant patterns, and the fi
 
 For further background on \emph{formants}, see \citet{Aalto_Malinen_Vainio_2018}.
 
-\phantomsection\label{box-praatformants}
+\protect\phantomsection\label{box-praatformants}
 \subsection{How to measure formants}\label{sec:measureformants}
 
 The safest method for measuring formants is to \emph{bypass} the spectrum, and measure formants directly from a Sound object.
@@ -1341,7 +1341,7 @@ The safest method for measuring formants is to \emph{bypass} the spectrum, and m
   Remember to \texttt{Save} the Formant object if you wish.
 \end{itemize}
 
-\phantomsection\label{box:formantanalysis}
+\protect\phantomsection\label{box:formantanalysis}
 Remember that the results from your formant analysis may be \textbf{suspect}:
 
 \begin{itemize}
@@ -1378,7 +1378,7 @@ These source sounds are then modified by the acoustic \textbf{filter}, formed by
 
 \begin{figure}
 
-{\centering \includegraphics{figures/source-filter-theory34-l} 
+{\centering \includegraphics[width=14.22in]{figures/source-filter-theory34-l} 
 
 }
 
@@ -1415,7 +1415,7 @@ The example spectrogram in Figure \ref{fig:merel-spectrogram} visualizes a black
 
 \begin{figure}
 
-{\centering \includegraphics{figures/merel-spectrogram} 
+{\centering \includegraphics[width=45.83in]{figures/merel-spectrogram} 
 
 }
 
@@ -1432,7 +1432,7 @@ In a broad-band spectrogram, as in Fig.\ref{fig:speech-word-spectrogram-broad}, 
 
 \begin{figure}
 
-{\centering \includegraphics{figures/speech_word_spectrogram_5ms} 
+{\centering \includegraphics[width=50in]{figures/speech_word_spectrogram_5ms} 
 
 }
 
@@ -1447,7 +1447,7 @@ In a narrow-band spectrogram, as in Fig.\ref{fig:speech-word-spectrogram-narrow}
 
 \begin{figure}
 
-{\centering \includegraphics{figures/speech_word_spectrogram_30ms} 
+{\centering \includegraphics[width=50in]{figures/speech_word_spectrogram_30ms} 
 
 }
 
@@ -1456,7 +1456,7 @@ In a narrow-band spectrogram, as in Fig.\ref{fig:speech-word-spectrogram-narrow}
 
 The narrow bandwidth results in more detail in the frequency dimension, while allowing less detail (more smearing) in the time dimension. We can see frequencies in great detail, such as individual harmonics in voiced parts. On the other hand, brief temporal events such as noise bursts are blurred or smeared.
 
-\phantomsection\label{box-praatspectrogram}
+\protect\phantomsection\label{box-praatspectrogram}
 \section{How to make a spectrogram}\label{sec:howto-spectrogram}
 
 There are two ways to create a spectrogram of a sound recording: either directly, or by means of the SoundEditor.
@@ -1508,7 +1508,7 @@ This method is similar to the spectral analysis described in §\ref{sec:spectral
 
 (with Clizia Welker)
 
-\phantomsection\label{box-spectrogram}
+\protect\phantomsection\label{box-spectrogram}
 This section intends to provide some hints on how to read a spectrogram. The skill of reading a spectrogram is highly useful whenever you need to \emph{annotate} a speech recording, that is, dividing or segmenting it into syllables or phones, and/or transcribing (labeling) the words or sounds spoken. For more detailed explanations, please refer to your textbooks on phonetics (for recommended textbooks see §\ref{sec:textbooks}), and see Chapter \ref{ch-annotation} on annotating speech. Also consult the valuable instructions and background on \href{https://home.cc.umanitoba.ca/~robh/howto.html}{how to read a spectrogram} by Rob Hagiwara.
 
 While by observing an oscillogram it is only possible to identify broad phonetic classes, the spectrogram provides us with sufficient information to determine the phones. It is possible to deduce the phones (with good chances of success) by exploiting information about
@@ -1564,7 +1564,7 @@ In several sections above we have encountered the SoundEditor: in §\ref{sec:pra
 The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter \ref{ch-prosody}).
 Here we provide some additional instructions not yet covered in the sections above.
 
-\phantomsection\label{box-soundeditor-3}
+\protect\phantomsection\label{box-soundeditor-3}
 \begin{itemize}
 \item
   Select an input Sound object in the \texttt{Praat} Objects window.
@@ -1576,14 +1576,14 @@ Here we provide some additional instructions not yet covered in the sections abo
 
 \begin{figure}
 
-{\centering \includegraphics{figures/s321f1-1_informal_fragment_SoundEditor20250203} 
+{\centering \includegraphics[width=28.31in]{figures/s321f1-1_informal_fragment_SoundEditor20250203} 
 
 }
 
 \caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *why is it so good...*, with the word *why* highlighted.}\label{fig:window-soundeditor-3}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details-again}
+\protect\phantomsection\label{box-windowsfile-details-again}
 The SoundEditor in Fig.\ref{fig:window-soundeditor} shows a fragment of speech, taken from the audio recording named \texttt{s321f1-1} from the Longitudinal UCU English Accents corpus (LUCEA; \citet{Orr_Quené_2017}). The utterance shown is taken from the informal monologue part of that recording.
 
 In this example, the SoundEditor shows the oscillogram (§\ref{sec:oscillogram}), the spectrogram (Ch.\ref{ch-spectrograms}), as well as formant frequencies (§\ref{sec:formants}) overlaid. Although the formants do match the dark bands in the oscillogram, the ranking of formants to spectral peaks may be off, e.g.~around the boundary between \emph{why} and \emph{it}.
@@ -1594,7 +1594,7 @@ A helpful command to know in the SoundEditor is \texttt{Formants\ \textgreater{}
 
 \texttt{Praat} writes its output to its \texttt{Info} window, the contents of which may be saved.
 
-\phantomsection\label{box:clearinfo}
+\protect\phantomsection\label{box:clearinfo}
 In \texttt{Praat}, each new writing action such as \texttt{Query}, \texttt{Get}, \texttt{Tabulate}, \texttt{Info}, etc, first \textbf{clears} the Info window, and thus any existing content in the Info window is \textbf{erased}. If you wish to keep information from the Info window, you have to \texttt{Save} or export its contents \emph{before} the next writing action!
 
 You can also clear the Info window manually, by choosing \texttt{File\ \textgreater{}\ Clear} within the Info window.
@@ -1615,14 +1615,14 @@ The complex relation between linguistic and spoken units is illustrated in Figur
 
 \begin{figure}
 
-{\centering \includegraphics{figures/asmallwindowtogetthis_SoundEditor2050124} 
+{\centering \includegraphics[width=31.31in]{figures/asmallwindowtogetthis_SoundEditor2050124} 
 
 }
 
 \caption{SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted.}\label{fig:window-soundeditor-second}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details-second}
+\protect\phantomsection\label{box-windowsfile-details-second}
 The SoundEditor in Fig.\ref{fig:window-soundeditor-second} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.
 
 Figure \ref{fig:window-soundeditor-second} illustrates several important characteristics of casual, fluent speech:
@@ -1642,7 +1642,7 @@ Subsequently, listener retrieve the indended units (sounds, words, meanings) fro
 
 In this chapter on annotation, we discuss \textbf{segments}, and thus we assume that speech sounds or segments have unambiguous boundaries. We also discuss \textbf{labels} (transcription), and thus we assume also that speech segments can be unambiguously labeled and identified as linguistic units. Nevertheless, we need to remember that actual speech sounds (speech segments, or phones) do not have a clear one-to-one relation with abstract linguistic units (phonemes).
 
-\phantomsection\label{box-praattextgrid}
+\protect\phantomsection\label{box-praattextgrid}
 \section{TextGrid objects}\label{sec:textgrids}
 
 Annotation involves both segmentation (defining boundaries between speech intervals) and labeling or transcribing (assigning symbol labels to those intervals). In \texttt{Praat}, the object that holds this type of information (boundaries, time points, and labels) is called the \textbf{TextGrid}.
@@ -1679,7 +1679,7 @@ As explained in the \texttt{Praat} tutorial on annotation (in the Help system), 
 
 In practice, it's easiest to place boundaries (segmentation) and to label the resulting intervals or segments (labeling or transcription) at the same time. The boundaries, intervals and labels are kept in a TextGrid object (see §\ref{sec:textgrids} above).
 
-\phantomsection\label{box-praattextgrideditor}
+\protect\phantomsection\label{box-praattextgrideditor}
 The recommended workflow in \texttt{Praat} is as follows.
 
 \begin{enumerate}
@@ -1703,14 +1703,14 @@ In this example, the TextGridEditor shows the two tiers of annotation in this pa
 
 \begin{figure}
 
-{\centering \includegraphics{figures/asmallwindowtogetthisright_TextGridEditor20250130} 
+{\centering \includegraphics[width=42in]{figures/asmallwindowtogetthisright_TextGridEditor20250130} 
 
 }
 
 \caption{TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted.}\label{fig:window-textgrideditor}
 \end{figure}
 
-\phantomsection\label{box-windowsfile-details-third}
+\protect\phantomsection\label{box-windowsfile-details-third}
 The TextGridEditor in Fig.\ref{fig:window-textgrideditor} shows a fragment of speech, taken from the audio file named \texttt{10-18-17\_Council\_SLASH\_10-18-17\_Council\_DOT\_HD\_DOT\_mp3\_00285.flac} from the \emph{Peoples Speech} corpus at \url{https://huggingface.co/datasets/MLCommons/peoples_speech}. For details about that corpus, see \citet{Galvez_Diamos_Ciro_Cerón_Achorn_Gopi_Kanter_Lam_Mazumder_Reddi_2021}.\\
 Notice the absence of a \texttt{phone} boundary between the vowel and coda consonant of \emph{small}, as well as the intrusive {[}d{]} between \emph{small} and \emph{window}.
 
@@ -1758,88 +1758,93 @@ Notice the absence of a \texttt{phone} boundary between the vowel and coda conso
   Remember to \texttt{Save} the TextGrid object if you wish.
 \end{enumerate}
 
-\chapter{Prosody}\label{ch-prosody}
+\chapter{Linear Predictive Coding}\label{ch-LPC}
 
-\emph{Chapter keywords}: TODO .
+\emph{Chapter keywords}: Linear Predictive Coding, source-filter theory, source, filter,
+spectrum, time domain, frequency domain,
+fundamental, harmonics, formant, formant frequency, formant bandwidth, glottal source, phonation, noise, sampling frequency, gain, f0, pitch, frame, frame rate, window, window length.
 
 \section{Introduction}\label{introduction-1}
 
-\emph{Prosody} is the collective term for the `musical' properties of speech, which are typically established not by the sequence of speech sounds, but over larger units of speech (\citet{Nooteboom_1997}): these are also termed \emph{suprasegmental} properties (or, \emph{suprasegmentals} as a plural noun, \citet{Lehiste_1970}). Among these prosodic properties are:\\
-- the distribution of \textbf{pauses},\\
-- \textbf{tone} and \textbf{intonation} of voice pitch (§\ref{sec:frequency}, §\ref{sec:FTintro}),\\
-- \textbf{durations} of speech sounds (§\ref{sec:howtoannotate}) and speech \textbf{tempo},\\
-- \textbf{intensity} and loudness (§\ref{sec:amplitude}),\\
-- \textbf{stress} or prominence,\\
-- \textbf{accentuation} or emphasis of important words,\\
-- \textbf{rhythm},\\
-- and \textbf{voice quality}.
+(with Clizia Welker)
 
-Broadly speaking, these properties of everyday speech are seldom captured in regular writing, and we need additional symbols such as \emph{punctuation} (\citet{Parkes_1992}), \emph{emoji} and \emph{accented letters} to capture these phonetic properties in writing. (In itself, the existence and widespread use of these additional symbols illustrate the importance of prosody in speech communication.)
+Now that we know about spectra (§\ref{sec:spectrum}) and about the source-filter theory of speech production (§\ref{sec:sourcefilter}), we can discuss \emph{Linear Predictive Coding} or \emph{LPC} (key references are: \citet{Markel_Gray_1976}, \citet{Atal_Schroeder_1978}).
 
-Unfortunately, there are no simple 1:1 relations between prosodic and acoustic properties. For example, in some languages such as English and Dutch, one syllable in a polysyllabic word carries more \emph{stress} than the others: this is conveyed by segment duration, loudness, as well as pitch, in varying degrees of importance. Similarly, \emph{phrasing} is achieved by means of pausing, intonation, and/or tempo changes. And \emph{rhythm} is established by intricate combination of timing (durations) and prominence patterns. In the other direction, the duration of a vowel depends on many linguistic and phonetic factors, such as its position within its phrase and word and syllable, the stress status of the syllable, the accent status of the word, and more (\citet{Klatt_1976}).
+LPC is a method used to analyze and compress the spectral information in speech. The essentials of the LPC analysis will be explained below. LPC analysis achieves two major goals at the same time:
 
-In this chapter, we will focus on the measurement and analysis of these prosodic properties of speech. Some of these properties can be manipulated too, as we will discuss in the next chapter.
+\begin{itemize}
+\item
+  The resulting parameters are far fewer in number than the original speech signal. Thus LPC reduces the bandwidth required to encode and transmit speech, which in turn allows for more telephone calls per bandwidth, hence cheaper phone calls. (As an indication, the data compression is by a factor of about 20).
+\item
+  If done correctly, and with several caveats, (some of) the resulting parameters may be interpreted phonetically as formant frequencies and formant bandwidths.
+\end{itemize}
 
-\section{Pauses and tempo}\label{pauses-and-tempo}
+\section{Inverse filtering}\label{sec:inversefiltering}
 
-Typical speech contains \textbf{pauses}, which may serve multiple functions: (1) pauses are used to demarcate linguistic units in what is said, (2) pauses occur naturally whenever speakers breathe in fresh air, (3) speakers may pause their own speech if they need extra preparation time for what they wish to say, (4) rhetorical purposes.\\
-In practice, these functions may interfere: for example, a speaker may pause \emph{within} a linguistic unit (contra 1), perhaps to select the appropriate word (see Fig.\ref{fig:s344f5-pausing} for an example). Or a speaker may produce a filled pause (contra 2) for some rhetorical or communicative purpose.
-
-Whenever a voiceless plosive (or click) sound is produced, there is a brief silent interval in the speech signal: there is neither voicing at the larynx, nor consonantal sound produced elsewhere in the vocal tract. Such silent intervals have only a brief duration, however, which makes them different from more deliberate ``real'' pauses (not due to articulation).
-Phoneticians typically set the threshold at about 0.25 seconds: brief silent intervals shorter than this threshold are regarded as articulatory (and thus as irrelevant for prosody), whereas longer silent intervals are regarded as pauses that are prosodically, phonetically, and communicatively relevant.
-
-Short silent intervals occur whenever a voiceless plosive is realized, e.g.~for a {[}p{]} (see Fig.\ref{speech-oscillogram} for an example).
-The lower threshold for a speech pause is often chosen to be 0.25 seconds (\citet{DeJong-Bosker-2013}).
-
-Shorter intervals may occur as a
-
-In typical speech production, air from the lungs is used to produce speech sounds. After a while, there is insufficient
-
-TODO welke kenmerken van pauzering, zie Bosker et al.~
-
-TODO Praat: silence, VAD, speech
+LPC works in the time domain (typically over a brief windowed portion of the input signal), but it is easier to explain in the frequency domain.
 
 \begin{figure}
 
-{\centering \includegraphics{figures/s344f5_formal_fragment} 
+{\centering \includegraphics[width=50in]{figures/aa_8000_lpc} 
 
 }
 
-\caption{Oscillogram and annotation of the sentence *Yeah you can you can really see how.... how diff'rent th'approaches of the students involv'd were.*}\label{fig:s344f5-pausing}
+\caption{Spectrum of an [a] vowel, overlaid with (green) the assumed spectral slope of the glottal source, (red) the inverse LPC filter, and (blue) the resulting LPC spectral envelope}\label{fig:a8000lpc}
 \end{figure}
 
-\phantomsection\label{box-s344f5_pausing}
-The oscillogram and annotation in Fig.\ref{fig:s344f5-pausing} shows a spoken sentence, taken from the interview recording named \texttt{s344f5\_1.wav} from the LUCEA corpus. The sentence is taken from the formal monologue part of the interview. For details about the corpus, see \citet{Orr_Quené_2017}. Some vowels are strongly reduced, as indicated in the caption. The first phrase contains 9 realized syllables, and the second phrase 13.
+To start, let us have a look at a spectral slice of a \emph{vowel} {[}a{]}, drawn in BLACK in Figure \ref{fig:a8000lpc} (see also §\ref{sec:spectralslice}).
+At the left we see the first harmonic, the fundamental frequency, at \(f_0 = 108.5\,\textrm{Hz}\). The other harmonics are multiples of the fundamental (see §\ref{sec:FTintro}): the \emph{frequencies} of the harmonics are therefore entirely redundant, once we know that this is a voiced (periodic) sound with this \(f_0\). These two relevant LPC parameters are named \texttt{F0} and \texttt{VUV} (voiced\textasciitilde unvoiced). We also need to know the overall \texttt{Gain} (amplitude) of the input signal.
 
-Figure X shows a sentence from a monologue (with preceding inhalation pause). The speaker pauses for 0.580 seconds in the middle of this sentence, possibly to search for the appropriate words to continue. The durations of the pauses and phrases of the target fragment are listed in Table X. In practice, such tables will contain many more rows of data.
+Moreover, we also assume that the glottal (voice) source sound itself has a particular spectral shape, \emph{before} it enters into the filter (vocal tract). Presumably, the overall spectral slope of the glottal (voice) source sound is \(-6\, \textrm{dB} / \textrm{octave}\), here drawn in GREEN \footnote{The glottal source signal has a presumed slope of \(-12\, \textrm{dB} / \textrm{octave}\). This spectral slope is combined with the effect of the radiation of the speech sound at the lips. Radiation or spreading of sound works better for higher frequencies than for low frequencies (that is one of the reasons why loudspeakers for low frequencies tend to be larger and consume more energy than those for high frequencies): this radiation effect is \(+6\, \textrm{dB} / \textrm{octave}\). For faster computation, we combine the effect of radiation into that of the glottal source, then the combined spectral slope is \(-12+6 = -6\) \(\textrm{dB} / \textrm{octave}\), and then we may subsequently ignore the radiation effect.} \footnote{The curved shape of the GREEN contour in Figure XX is due to the linear scale on the frequency axis, combined with the logarithmic shape of the filter envelope (octave).}.
 
-\begin{verbatim}
-1.132 pause 1   1.132  
-1.659 phrase 1          1.659    8
-0.580 pause 2   0.580
-3.603 phrase 2          3.603   13
-6.974 total     1.712   5.262   21
-\end{verbatim}
+However, what is \emph{not} expected from the glottal source sound is (are) the major peaks in the spectral envelope at approximately 800, 1450 and 3000 Hz. As we now know, those peaks are caused by the acoustic filter, that is, by formant resonances in the vocal tract (§\ref{sec:sourcefilter}, §\ref{sec:formants}).
+LPC attempts to determine the difference between the predicted spectrum from the source (GREEN) and the actual spectrum of the signal, by means of so-called ``inverse filtering''. This means that the effect of the vocal tract filter is ``undone'' in order to approximate the spectral envelope that we expect (GREEN): we expect no peaks (GREEN), but we do observe a peak (in the input spectrum, affecting several harmonics), so the inverse filter must suppress that peak at the peak frequency (RED).
 
-\subsection{Pausing}\label{pausing}
+Once we have done this inverse filtering, the coefficients of the resulting inverse filter (RED) may be re-interpreted as formant frequencies (and formant bandwidth), albeit with some caution. This is shown in the BLUE spectral envelope.
 
-\subsection{Tempo}\label{tempo}
+Finally, as a check, we can pipe the \emph{presumed} glottal source signal (GREEN) with the proper \texttt{F0} and \texttt{Gain} into the filter, and compare the output of the filter (the predicted output speech, BLUE) with the original (BLACK). The difference between these two is termed the \emph{residual}
+\footnote{The actual procedure is computationally different but conceptually similar.}.
+If all has gone well, then according to the source-filter theory, the prediction should come out close to the original, and then the residual should contain only little information (noise or silence). In practice, however, the residual often contains salient phonetic properties of the speech. One reason is that the source and the filter are presumed to be independent in theory (e.g.~formant frequencies are independent of \texttt{F0}) but this assumption does not always hold. Female voices in particular tend to have stronger coupling or interference between source and filter than male voices (\citet{Titze_2008}, \citet{Klatt_Klatt_1990}).
 
-From Table X we may calculate that the \textbf{speaking rate} or \textbf{speech rate} or \textbf{tempo} (including pause time) is 21 syllables in 6.974 seconds, or 3.0 syllables per second. The \textbf{articulation rate} (excluding pause time) is 21 syllables in 5.262 seconds, or 4.0 syllables per second.
+The LPC inverse filtering as described above was performed on a brief windowed portion or \emph{frame} of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at \(f_s = 10\  \textrm{kHz}\) (§\ref{sec:samplingfrequency}). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g.~harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (\texttt{frame\ rate}), and the analysis repeats for the next frame.
 
-\section{Durations}\label{durations}
+In this section, we have described LPC analysis (inverse filtering) for voiced vowels. This is because the source-filter theory applies better to vowels than to consonants. In the case of \emph{unvoiced consonants}, similar principles do apply, using a similar conceptualisation. For unvoiced consonants, the LPC analysis assumes that the source sound is white noise (§\ref{sec:noise}) generated somewhere in the vocal tract, with a flat spectral envelope. In \emph{voiced consonants}, \emph{two} source sounds are produced simultaneously: both the periodic phonation sound at the glottis, and the aperiodic noise at the constriction or closure. LPC has problems accounting for these two effects at the same time, and consequently, the residual still contains a lot of phonetic information: voiced consonants thus are rather unsuitable for LPC analysis. Consequently, the formants identified by LPC in consonants are less reliable than those in vowels.
 
-\section{Frequency (pitch)}\label{frequency-pitch}
+\section{Limitations and considerations}\label{sec:LPC-details}
 
-\section{Intensity (loudness)}\label{intensity-loudness}
+\begin{itemize}
+\item
+  As indicated above, LPC models the spectral envelope by a \emph{cascade of formant-like peaks}, where frequencies are amplified. LPC cannot represent so-called anti-formants, where frequencies are actively attenuated. These antiresonances do occur in nasals, nasalized vowels, laterals, and fricatives. LPC is not very suitable for the spectral analysis (nor the transmission) of these categories of speech sounds.
+\item
+  As indicated above, LPC assumes that the \emph{source and filter are two independent systems} (§\ref{sec:sourcefilter}).
+  If there is \emph{interaction} between the source signal and the filter then the resulting LPC coefficients may be incorrect. This may happen between \texttt{F0} and the first formant in high vowels, in particular for women and children, or it may happen between formants (e.g.~\texttt{F1} and \texttt{F2} in {[}u{]}) (\citet{Titze_2008}).
+\item
+  In traditional implementations, LPC will find a fixed (but user-settable) number of spectral filter coefficients. Each formant is represented by two of these LPC coefficients, which can be interpreted as its peak frequency and its bandwidth (§\ref{sec:formants}). The \emph{chosen number of formants in the LPC analysis must match the sampling frequency}, and it is the task of you, the analyst, to ensure that these properties do match.
+  For adult male speakers, the formants are spaced about 1000 Hz apart (§\ref{sec:formants}). So if you expect\textbar want to find 5 formants (10 spectral LPC coefficients) in male speech, the frequency range should be 0 to 5000 Hz, and the corresponding sampling frequency should be twice the upper limit, hence \(f_s = 5 \times 1000 \times 2 = 10000\) Hz (see §\ref{sec:samplingfrequency} for the \(\times 2\) part of this rule). For adult female speakers, the formants are spaced about 1100 Hz apart. If you expect\textbar want to find 5 formants in female speech, the corresponding sampling frequency should be \(f_s = 5 \times 1100 \times 2 = 11000\) Hz.
 
-\section{Stresses and accents}\label{stresses-and-accents}
+  Consequently, you must ensure that the number of formants found by the LPC analysis matches the sampling frequency of the input speech signal. This can be achieved in two ways:
 
-\section{Rhythm}\label{rhythm}
+  \begin{itemize}
+  \item
+    by choosing the \emph{number of formants} in the LPC analysis proportional to the sampling frequency: the number of formants should be \(f_s/2/1000\) for male speech and \(f_s/2/1100\) for female speech;
+  \item
+    by setting the \emph{sampling frequency} \(f_s\) (§\ref{sec:samplingfrequency}) proportional to the desired number of formants, that is, by \emph{downsampling} the speech signal to an \(f_s\) that is appropriate for the desired number of formants. (For Figure \ref{fig:a8000lpc}, the speech was downsampled to 8 kHz before LPC analysis, as there were only 4 formants noticeable in the original vowel from a male speaker.)\\
+  \end{itemize}
 
-\section{Voice quality}\label{voice-quality}
+  If you fail to respect this relation between number of formants and sampling frequency, then the LPC analysis may result in spurious formants (a spectral peak is incorrectly considered to be a formant\footnote{Such spurious formants may have a very wide bandwidth, and thus a very low quality.}) or in missed formants (so that e.g.~the actual F4 is reported as \texttt{F3} because the true F3 has been missed).
+  For an example of this ``formant confusion'', see Figure \ref{fig:window-soundeditor-3}, in the last 5 frames within the selection.
 
-TBA
+  In more advanced implementations, as in Praat, the number of formants reported is independent of the sampling frequency, and such ``formant confusion'' is kept under control.
+
+  Remember that the number of coefficients in the LPC analysis is twice the number of formants, as \emph{two} coefficients (peak frequency and bandwidth) are required to describe \emph{one} formant in the LPC spectrum (BLUE).
+\end{itemize}
+
+\protect\phantomsection\label{box-praatlpc}
+\section{How to perform LPC analysis in Praat}\label{how-to-perform-lpc-analysis-in-praat}
+
+\begin{quote}
+TODO add text
+\end{quote}
 
 \appendix
 
@@ -2006,6 +2011,20 @@ TBA
 SoundRecorder:
 §\ref{sec:praatrecord}
 
-  \bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
+\chapter{Lexical sets}\label{app-lexicalsets}
+
+Lexical sets are sets of words that share the same vowel, in a particular variety or accent of English.
+The concept was developed by John Wells (\citet{Wells_1982}).
+Each set is named after a representative keyword from that set.
+
+For example, one lexical sets contains the words \emph{fleece, creep, speak, leave, feel, key, people}.
+All words in this lexical set are spoken with the vowel /iː/ in the RP variety of British English, and with /i/ in the GA variety of American English. This lexical set is termed the FLEECE set, and the vowel is often called `the FLEECE vowel'\footnote{The lexical set keyword is typically printed in small capitals, which however are not available in the present environment.}.
+
+The lexical sets allow easier discussion of accents and varieties of English. Within a single variety of Englishs, the lexical sets also allow easier reference to particular vowels in that variety, without using the International Phonetic Alphabet. In order to describe `the vowel in the word \emph{dance} in General American English' we can easily say `the BATH vowel'. This also expresses the generalization that this vowel is typically realized as /æ/ in General American English and as /ɑː/ in RP British English.
+
+The full lexical sets are available in \citet{Wells_1982} and at
+\url{https://en.wikipedia.org/wiki/Lexical_set}.
+
+\bibliography{book.bib,packages.bib,pandoc.bib,tphsa.bib}
 
 \end{document}

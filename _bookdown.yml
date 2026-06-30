@@ -7,9 +7,10 @@ rmd_files: ["index.Rmd",
             "ch05speechsounds.Rmd",
             "ch06spectrograms.Rmd",
             "ch07annotation.Rmd",
-            "ch08prosody.Rmd",
+            "ch08lpc.Rmd",
             "a1saywhat.Rmd",
             "a2praattools.Rmd",
+            "a3lexicalsets.Rmd",
             "references.Rmd" ]
 output_dir: "docs"
 language:

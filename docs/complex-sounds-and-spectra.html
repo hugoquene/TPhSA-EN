@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis</title>
   <meta name="description" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Complex sounds and spectra | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
@@ -62,7 +62,6 @@
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -117,7 +116,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
@@ -246,20 +244,12 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
 <li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<li class="chapter" data-level="8" data-path="ch-LPC.html"><a href="ch-LPC.html"><i class="fa fa-check"></i><b>8</b> Linear Predictive Coding</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-and-tempo"><i class="fa fa-check"></i><b>8.2</b> Pauses and tempo</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pausing"><i class="fa fa-check"></i><b>8.2.1</b> Pausing</a></li>
-<li class="chapter" data-level="8.2.2" data-path="ch-prosody.html"><a href="ch-prosody.html#tempo"><i class="fa fa-check"></i><b>8.2.2</b> Tempo</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.3</b> Durations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#frequency-pitch"><i class="fa fa-check"></i><b>8.4</b> Frequency (pitch)</a></li>
-<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity-loudness"><i class="fa fa-check"></i><b>8.5</b> Intensity (loudness)</a></li>
-<li class="chapter" data-level="8.6" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.6</b> Stresses and accents</a></li>
-<li class="chapter" data-level="8.7" data-path="ch-prosody.html"><a href="ch-prosody.html#rhythm"><i class="fa fa-check"></i><b>8.7</b> Rhythm</a></li>
-<li class="chapter" data-level="8.8" data-path="ch-prosody.html"><a href="ch-prosody.html#voice-quality"><i class="fa fa-check"></i><b>8.8</b> Voice quality</a></li>
+<li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -282,6 +272,7 @@ div.csl-indent {
 <li class="chapter" data-level="B.1" data-path="app-praattools.html"><a href="app-praattools.html#editors"><i class="fa fa-check"></i><b>B.1</b> Editors</a></li>
 <li class="chapter" data-level="B.2" data-path="app-praattools.html"><a href="app-praattools.html#other-tools"><i class="fa fa-check"></i><b>B.2</b> Other tools</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="app-lexicalsets.html"><a href="app-lexicalsets.html"><i class="fa fa-check"></i><b>C</b> Lexical sets</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -337,7 +328,7 @@ A sound may have a dull or sharp timbre, or rich or thin, warm or metallic. The 
 <p>A sound can be represented in two equivalent ways: as a function of time (in an oscillogram), or as a function of frequency. The latter representation is called a <em>spectrum</em>. A spectrum is useful to assess the frequency components of a signal, which are far easier to determine in a spectrum than in an oscillogram. A rainbow reveals the spectum of sunlight: water droplets refract the incoming light into its frequency components (colors). Similarly, complex sounds may be broken down into their (high and/or low) frequency components.</p>
 <p>Figure <a href="complex-sounds-and-spectra.html#fig:complex100n200n400">3.2</a> shows an oscillogram on the left (of the same complex sound as shown in Fig. <a href="complex-sounds-and-spectra.html#fig:fourier-oscillogram">3.1</a>), and its matching spectrum on the right. The spectrum shows the amplitude along the vertical axis, of each frequency component along the horizontal axis. (The phases of the frequency components are ignored.) Thus, a spectrum shows the frequency and amplitude of each component.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:complex100n200n400"></span>
-<img src="figures/complex100n200n400.png" alt="Oscillogram (left) and spectrum (right) of a complex periodic sound."  />
+<img src="figures/complex100n200n400.png" alt="Oscillogram (left) and spectrum (right) of a complex periodic sound." width="1800" />
 <p class="caption">
 Figure 3.2: Oscillogram (left) and spectrum (right) of a complex periodic sound.
 </p>
@@ -381,7 +372,7 @@ A <em>short</em> window (e.g. 0.005 s) will show more detail in the time domain
 <li><p>In the SpectrumEditor window, if you click inside the spectrum, the frequency and amplitude coordinates are shown. Placing the cursor on a spectral peak in the SpectrumEditor can be done by means of the button <code>Spectrum</code> in the top row, then choose <code>Move cursor to nearest peak</code>.</p></li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-spectralslice"></span>
-<img src="figures/Spectrum_speech_word_0_210.png" alt="Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at *t*=0.210 s. "  />
+<img src="figures/Spectrum_speech_word_0_210.png" alt="Spectral slice of the /i/ vowel in the word *speech*, estimated over 0.015 s on either side of the cursor at *t*=0.210 s. " width="742" />
 <p class="caption">
 Figure 3.3: Spectral slice of the /i/ vowel in the word <em>speech</em>, estimated over 0.015 s on either side of the cursor at <em>t</em>=0.210 s.
 </p>
@@ -402,7 +393,7 @@ Figure 3.3: Spectral slice of the /i/ vowel in the word <em>speech</em>, estimat
 <p>In <em>white noise</em>, all frequency components are equally strong<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>, and thus the spectral envelope is flat.
 In so-called <em>brown noise</em>, the spectral envelope decreases by <span class="math inline">\(-6\)</span> dB per octave, so that lower frequencies are more dominant than higher frequencies. Because this spectral envelope resembles that of speech (cf. §<a href="ch-speechsounds.html#sec:vowelproduction">5.3.1</a>), brown noise is often used in phonetic research whenever we need to mask speech.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrum-whitebrownnoises"></span>
-<img src="figures/whitebrownnoises.png" alt="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz)."  />
+<img src="figures/whitebrownnoises.png" alt="Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz)." width="1800" />
 <p class="caption">
 Figure 3.4: Spectra of white noise (left) and of brown noise (right), with a linear frequency axis (in kHz).
 </p>
@@ -420,7 +411,7 @@ Figure 3.4: Spectra of white noise (left) and of brown noise (right), with a lin
 <p>The <em>envelope</em> of a sound describes how the properties of that sound change over time. This concept is best described by regarding the amplitude of a sound: the ‘amplitude envelope’. However, a sound may at the same time have multiple and different envelopes for its amplitude, for its (fundamental) frequency, and for (a singular parameter of) its timbre. Even the properties of a filter may follow an envelope, that is, they may change over time (see Ch. <a href="ch-filtering.html#ch-filtering">4</a>).</p>
 <p>The concept of the <em>envelope</em> of a sound property stems from electronic music (synthesizers); critical time points are the onset and offset of a key being pressed on the keyboard of the synthesizer. However, the envelope is also a helpful concept for describing analog musical sounds (e.g. picking a guitar string) and speech sounds (e.g. plosive vs fricative consonants).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:envelope"></span>
-<img src="figures/ADSR_parameter.png" alt="A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from  $https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg$, used under CC-BY-SA license."  />
+<img src="figures/ADSR_parameter.png" alt="A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from  $https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg$, used under CC-BY-SA license." width="640" />
 <p class="caption">
 Figure 3.5: A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from <span class="math inline">\(https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg\)</span>, used under CC-BY-SA license.
 </p>
@@ -467,42 +458,42 @@ R</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch03complexsounds.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/ch03complexsounds.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

@@ -92,7 +92,14 @@ Some excellent textbooks and introductions in phonetics are those by
 
 ## Structure of this tutorial {-}
 
-> TODO add structure description and pointers: Part I sounds (acoustics), Part II speech (phonetics), Part III ??
+This tutorial consists of three parts: 
+
+- I: sounds (acoustics),
+
+- II: speech (phonetics), 
+
+- III: speech technology -- under construction. 
+
 
 ## Details {-}
 
@@ -103,17 +110,16 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ### Citation {-}
 
-> TODO add citation instructions
+Please cite this work as follows (substitute the date):
 
-### Technical details {-}
+Quené, H. (2026). *Tutorial on Phonetics and Speech Analysis*. Retrieved 18 May 2026 from <https://hugoquene.github.io/TPhSA-EN> .
 
-> TODO add tech details
 
 ### History {-}
 
 This work is based on an earlier tutorial (2006-2007) titled <cite>Tutorial for self study: basics of phonetics and how to use Praat</cite> by Clizia Welker and Hugo Quené. In turn, that 2007 tutorial was partly based on older texts by Hugo Quené, Denise Bruin and Mirjam Wester (1996-2000); these older texts acknowledged valuable comments and suggestions by Paul Boersma, Olga van Herwijnen, Kim Koppen, Eva Sittig, Joyce Vliegen and Mieke van Wijck. 
 
-The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024--2025. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide, where appropriate. These older instructions were written or revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Aleksei Nazarov, and Sanne Ditewig. 
+The 2007 version of the tutorial was subsequently revised and adapted to the current version using `R Markdown` [@rmarkdown2018] and `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com) by Hugo Quené in 2024--2026. Relevant parts of older lab instructions were integrated in the main text of the present tutorial guide, where appropriate. These older instructions were written or revised earlier by a.o. Gerrit Bloothooft, Peter Pabon, Willemijn Heeren, Silvia Terenghi, Aleksei Nazarov, and Sanne Ditewig. 
 
 
 ```{r bibpackages, class.source='fold-hide', include=FALSE}

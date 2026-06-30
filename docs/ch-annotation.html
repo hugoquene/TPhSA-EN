@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis</title>
   <meta name="description" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Annotating speech sounds | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="ch-spectrograms.html"/>
-<link rel="next" href="ch-prosody.html"/>
+<link rel="next" href="ch-LPC.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -62,7 +62,6 @@
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -117,7 +116,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
@@ -246,20 +244,12 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
 <li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<li class="chapter" data-level="8" data-path="ch-LPC.html"><a href="ch-LPC.html"><i class="fa fa-check"></i><b>8</b> Linear Predictive Coding</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-and-tempo"><i class="fa fa-check"></i><b>8.2</b> Pauses and tempo</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pausing"><i class="fa fa-check"></i><b>8.2.1</b> Pausing</a></li>
-<li class="chapter" data-level="8.2.2" data-path="ch-prosody.html"><a href="ch-prosody.html#tempo"><i class="fa fa-check"></i><b>8.2.2</b> Tempo</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.3</b> Durations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#frequency-pitch"><i class="fa fa-check"></i><b>8.4</b> Frequency (pitch)</a></li>
-<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity-loudness"><i class="fa fa-check"></i><b>8.5</b> Intensity (loudness)</a></li>
-<li class="chapter" data-level="8.6" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.6</b> Stresses and accents</a></li>
-<li class="chapter" data-level="8.7" data-path="ch-prosody.html"><a href="ch-prosody.html#rhythm"><i class="fa fa-check"></i><b>8.7</b> Rhythm</a></li>
-<li class="chapter" data-level="8.8" data-path="ch-prosody.html"><a href="ch-prosody.html#voice-quality"><i class="fa fa-check"></i><b>8.8</b> Voice quality</a></li>
+<li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -282,6 +272,7 @@ div.csl-indent {
 <li class="chapter" data-level="B.1" data-path="app-praattools.html"><a href="app-praattools.html#editors"><i class="fa fa-check"></i><b>B.1</b> Editors</a></li>
 <li class="chapter" data-level="B.2" data-path="app-praattools.html"><a href="app-praattools.html#other-tools"><i class="fa fa-check"></i><b>B.2</b> Other tools</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="app-lexicalsets.html"><a href="app-lexicalsets.html"><i class="fa fa-check"></i><b>C</b> Lexical sets</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -313,7 +304,7 @@ div.csl-indent {
 <p>In spoken language, speakers realize abstract linguistic sound units in the form of articulatory gestures and movements and positions. The articulatory movements from one sound to the next require complex motor coordination in space and in time. In turn, this strongly affects the speech stream: the resulting speech sounds are not clearly related to the intended or the canonical linguistic sound units. Instead, the articulatory commands and their acoustic effects are smeared out over time, affecting neigboring speech sounds: this is called <strong>coarticulation</strong>, and you can read more about this in your phonetics textbook. As a result, speech is not analogous to but very different from typed or printed text; speech is rather analogous to and more similar to cursive <em>handwriting</em>.</p>
 <p>The complex relation between linguistic and spoken units is illustrated in Figure <a href="ch-annotation.html#fig:window-soundeditor-second">7.1</a> which is a copy of Figure <a href="ch-soundtobytes.html#fig:window-soundeditor">2.1</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-second"></span>
-<img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted."  />
+<img src="figures/asmallwindowtogetthis_SoundEditor2050124.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *...a small window to get this...*, with the word *window* highlighted." width="1127" />
 <p class="caption">
 Figure 7.1: SoundEditor window, showing oscillogram and spectrogram of the fragment <em>…a small window to get this…</em>, with the word <em>window</em> highlighted.
 </p>
@@ -370,7 +361,7 @@ Appendix <a href="app-praattools.html#app-praattools">B</a>.</p></li>
 <p>Figure <a href="ch-annotation.html#fig:window-textgrideditor">7.2</a> shows an example of a TextGridEditor, displaying the fragment <em>a small window to get this right</em> spoken by a male speaker of American English; the single word <em>window</em> is highlighted.
 In this example, the TextGridEditor shows the two tiers of annotation in this particular TextGrid: the <code>word</code> (interval) tier for orthographic transcription, and the <code>phone</code> (interval) tier for broad phonetic transcription. And in this illustration, <code>Praat</code> focuses on the <code>word</code> tier, as indicated by the yellow highlight; you can change the focus by clicking in a tier.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-textgrideditor"></span>
-<img src="figures/asmallwindowtogetthisright_TextGridEditor20250130.png" alt="TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted."  />
+<img src="figures/asmallwindowtogetthisright_TextGridEditor20250130.png" alt="TextGridEditor window, showing oscillogram, spectrogram, and `word` and `phone` annotation tiers of the fragment *...a small window to get this right*; the word *window* is highlighted." width="1512" />
 <p class="caption">
 Figure 7.2: TextGridEditor window, showing oscillogram, spectrogram, and <code>word</code> and <code>phone</code> annotation tiers of the fragment <em>…a small window to get this right</em>; the word <em>window</em> is highlighted.
 </p>
@@ -401,7 +392,7 @@ In addition to looking at the oscillogram and spectrogram, listening is a great 
 <ol start="6" style="list-style-type: decimal">
 <li><p>Still in the TextGridEditor:<br />
 If you click in an interval in a tier, then that interval is selected. As soon as you type a character, or pick a phonetic symbol from the righthand chart, that symbol is used as the transcription <strong>label</strong> for the selected interval in the focused tier.<br />
-Phonetic symbols are explained in your phonetics textbook and in the <span class="citation"><em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em> (<a href="#ref-HandbookIPA_1999">1999</a>)</span>.</p></li>
+Phonetic symbols are explained in your phonetics textbook and in the <span class="citation"><em>Handbook of the International Phonetic Association</em> (<a href="#ref-HandbookIPA_1999">1999</a>)</span>.</p></li>
 <li><p>Boundaries and labels are modified (added, moved, removed, etc) <em>immediately</em> in the TextGrid. If you are done, you may close the TextGridEditor window, and the contents of the TextGrid are kept in the TextGrid object that you’ve just edited.</p></li>
 <li><p>Back in the <code>Praat</code> Objects window:<br />
 you may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> or <code>Modify</code> the contents of the TextGrid. (Choose <code>Modify</code> to rename tiers.)<br />
@@ -414,9 +405,9 @@ The <code>Tabulate</code> command is convenient if you wish to export the TextGr
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-HandbookIPA_1999" class="csl-entry">
-<em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em>. 1999. Cambridge: Cambridge University Press.
+<em>Handbook of the International Phonetic Association: A Guide to the Use of the International Phonetic Alphabet</em>. 1999. Cambridge University Press.
 </div>
 </div>
             </section>
@@ -425,7 +416,7 @@ The <code>Tabulate</code> command is convenient if you wish to export the TextGr
         </div>
       </div>
 <a href="ch-spectrograms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-prosody.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-LPC.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -439,42 +430,42 @@ The <code>Tabulate</code> command is convenient if you wish to export the TextGr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch07annotation.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/ch07annotation.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

@@ -1,0 +1,13 @@
+# Lexical sets {#app-lexicalsets}
+
+Lexical sets are sets of words that share the same vowel, in a particular variety or accent of English.
+The concept was developed by John Wells (@Wells_1982). 
+Each set is named after a representative keyword from that set. 
+
+  For example, one lexical sets contains the words _fleece, creep, speak, leave, feel, key, people_. 
+  All words in this lexical set are spoken with the vowel /iː/ in the RP variety of British English, and with /i/ in the GA variety of American English. This lexical set is termed the FLEECE set, and the vowel is often called 'the FLEECE vowel'^[The lexical set keyword is typically printed in small capitals, which however are not available in the present environment.].
+
+The lexical sets allow easier discussion of accents and varieties of English. Within a single variety of Englishs, the lexical sets also allow easier reference to particular vowels in that variety, without using the International Phonetic Alphabet. In order to describe 'the vowel in the word _dance_ in General American English' we can easily say 'the BATH vowel'. This also expresses the generalization that this vowel is typically realized as /æ/ in General American English and as /ɑː/ in RP British English. 
+
+The full lexical sets are available in @Wells_1982 and at 
+<https://en.wikipedia.org/wiki/Lexical_set>. 

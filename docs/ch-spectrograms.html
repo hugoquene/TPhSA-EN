@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis</title>
   <meta name="description" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Spectrograms | Tutorial on Phonetics and Speech Analysis" />
   <meta property="og:type" content="book" />
@@ -62,7 +62,6 @@
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -117,7 +116,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#history"><i class="fa fa-check"></i>History</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
@@ -246,20 +244,12 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:textgrids"><i class="fa fa-check"></i><b>7.2</b> TextGrid objects</a></li>
 <li class="chapter" data-level="7.3" data-path="ch-annotation.html"><a href="ch-annotation.html#sec:howtoannotate"><i class="fa fa-check"></i><b>7.3</b> How to annotate speech sounds</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="ch-prosody.html"><a href="ch-prosody.html"><i class="fa fa-check"></i><b>8</b> Prosody</a>
+<li class="chapter" data-level="8" data-path="ch-LPC.html"><a href="ch-LPC.html"><i class="fa fa-check"></i><b>8</b> Linear Predictive Coding</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch-prosody.html"><a href="ch-prosody.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="ch-prosody.html"><a href="ch-prosody.html#pauses-and-tempo"><i class="fa fa-check"></i><b>8.2</b> Pauses and tempo</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="ch-prosody.html"><a href="ch-prosody.html#pausing"><i class="fa fa-check"></i><b>8.2.1</b> Pausing</a></li>
-<li class="chapter" data-level="8.2.2" data-path="ch-prosody.html"><a href="ch-prosody.html#tempo"><i class="fa fa-check"></i><b>8.2.2</b> Tempo</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="ch-prosody.html"><a href="ch-prosody.html#durations"><i class="fa fa-check"></i><b>8.3</b> Durations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-prosody.html"><a href="ch-prosody.html#frequency-pitch"><i class="fa fa-check"></i><b>8.4</b> Frequency (pitch)</a></li>
-<li class="chapter" data-level="8.5" data-path="ch-prosody.html"><a href="ch-prosody.html#intensity-loudness"><i class="fa fa-check"></i><b>8.5</b> Intensity (loudness)</a></li>
-<li class="chapter" data-level="8.6" data-path="ch-prosody.html"><a href="ch-prosody.html#stresses-and-accents"><i class="fa fa-check"></i><b>8.6</b> Stresses and accents</a></li>
-<li class="chapter" data-level="8.7" data-path="ch-prosody.html"><a href="ch-prosody.html#rhythm"><i class="fa fa-check"></i><b>8.7</b> Rhythm</a></li>
-<li class="chapter" data-level="8.8" data-path="ch-prosody.html"><a href="ch-prosody.html#voice-quality"><i class="fa fa-check"></i><b>8.8</b> Voice quality</a></li>
+<li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
+<li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -282,6 +272,7 @@ div.csl-indent {
 <li class="chapter" data-level="B.1" data-path="app-praattools.html"><a href="app-praattools.html#editors"><i class="fa fa-check"></i><b>B.1</b> Editors</a></li>
 <li class="chapter" data-level="B.2" data-path="app-praattools.html"><a href="app-praattools.html#other-tools"><i class="fa fa-check"></i><b>B.2</b> Other tools</a></li>
 </ul></li>
+<li class="chapter" data-level="C" data-path="app-lexicalsets.html"><a href="app-lexicalsets.html"><i class="fa fa-check"></i><b>C</b> Lexical sets</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -312,7 +303,7 @@ div.csl-indent {
 <p>In order to track spectral changes over time, we need a series of spectral slices, measured at fixed intervals. Thus we wish to depict three dimensions: time, amplitude, and frequency. This most important visualisation in speech analysis is called a <strong>spectrogram</strong>. As in an oscillogram, <em>time</em> is shown along the horizontal axis. Like in a spectrum, but rotated by 90°, <em>frequency</em> is shown along the vertical axis. <em>Amplitude</em> is shown in the degree of darkness (or in coloring).
 The example spectrogram in Figure <a href="ch-spectrograms.html#fig:merel-spectrogram">6.1</a> visualizes a blackbird song, showing the amplitudes (darkness) of the frequency components (vertically), varying over time (horizontally).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:merel-spectrogram"></span>
-<img src="figures/merel-spectrogram.png" alt="Spectrogram of a brief part of song by a blackbird."  />
+<img src="figures/merel-spectrogram.png" alt="Spectrogram of a brief part of song by a blackbird." width="1650" />
 <p class="caption">
 Figure 6.1: Spectrogram of a brief part of song by a blackbird.
 </p>
@@ -324,7 +315,7 @@ Figure 6.1: Spectrogram of a brief part of song by a blackbird.
 <h2><span class="header-section-number">6.2</span> Broadband spectrogram<a href="ch-spectrograms.html#broadband-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In a broad-band spectrogram, as in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-broad">6.2</a>, the bandwidth used in the spectral analysis is relatively wide (by convention, 260 Hz).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-word-spectrogram-broad"></span>
-<img src="figures/speech_word_spectrogram_5ms.png" alt="Oscillogram, broad-band spectrum at 0.210 s, and broad-band spectrogram of the word *speech*."  />
+<img src="figures/speech_word_spectrogram_5ms.png" alt="Oscillogram, broad-band spectrum at 0.210 s, and broad-band spectrogram of the word *speech*." width="1800" />
 <p class="caption">
 Figure 6.2: Oscillogram, broad-band spectrum at 0.210 s, and broad-band spectrogram of the word <em>speech</em>.
 </p>
@@ -335,7 +326,7 @@ Figure 6.2: Oscillogram, broad-band spectrum at 0.210 s, and broad-band spectrog
 <h2><span class="header-section-number">6.3</span> Narrowband spectrogram<a href="ch-spectrograms.html#narrowband-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In a narrow-band spectrogram, as in Fig.<a href="ch-spectrograms.html#fig:speech-word-spectrogram-narrow">6.3</a>, the bandwidth used in the spectral analysis is relatively narrow (by convention, 43 Hz).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:speech-word-spectrogram-narrow"></span>
-<img src="figures/speech_word_spectrogram_30ms.png" alt="Oscillogram, narrow-band spectrum at 0.210 s, and narrow-band spectrogram of the word *speech*."  />
+<img src="figures/speech_word_spectrogram_30ms.png" alt="Oscillogram, narrow-band spectrum at 0.210 s, and narrow-band spectrogram of the word *speech*." width="1800" />
 <p class="caption">
 Figure 6.3: Oscillogram, narrow-band spectrum at 0.210 s, and narrow-band spectrogram of the word <em>speech</em>.
 </p>
@@ -414,7 +405,7 @@ In VC contexts we see similar patterns as in CV contexts, but reversed in time.<
 <div id="sec:soundeditor3" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> More about using the SoundEditor<a href="ch-spectrograms.html#sec:soundeditor3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In several sections above we have encountered the SoundEditor: in §<a href="ch-soundtobytes.html#sec:praatsoundeditor">2.7.2</a> and in §<a href="ch-spectrograms.html#sec:spectrogramsoundeditor">6.4.2</a>. Please re-read those sections before you continue.
-The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter <a href="ch-prosody.html#ch-prosody">8</a>).
+The powerful SoundEditor provides you with lots of information about the sound recording: oscillogram, spectrogram, formant analysis, as well as prosodic information (which will be discussed further in Chapter <a href="#ch-prosody"><strong>??</strong></a>).
 Here we provide some additional instructions not yet covered in the sections above.</p>
 <div id="box-soundeditor-3" class="praatbox">
 <ul>
@@ -424,7 +415,7 @@ This will open a <strong>SoundEditor</strong> window.
 Figure <a href="ch-spectrograms.html#fig:window-soundeditor-3">6.4</a> shows an example of a SoundEditor, displaying the fragment <em>why is it so good</em> spoken by a female speaker of English; the single word <em>why</em> is highlighted.</p></li>
 </ul>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:window-soundeditor-3"></span>
-<img src="figures/s321f1-1_informal_fragment_SoundEditor20250203.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *why is it so good...*, with the word *why* highlighted."  />
+<img src="figures/s321f1-1_informal_fragment_SoundEditor20250203.png" alt="SoundEditor window, showing oscillogram and spectrogram of the fragment *why is it so good...*, with the word *why* highlighted." width="1019" />
 <p class="caption">
 Figure 6.4: SoundEditor window, showing oscillogram and spectrogram of the fragment <em>why is it so good…</em>, with the word <em>why</em> highlighted.
 </p>
@@ -446,7 +437,7 @@ Figure 6.4: SoundEditor window, showing oscillogram and spectrogram of the fragm
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Rubin_2022" class="csl-entry">
 Rubin, Philip. 2022. <span>“Arthur Abramson.”</span> In <em>Oxford Research Encyclopedia of Linguistics</em>. <a href="https://doi.org/10.1093/acrefore/9780199384655.013.923">https://doi.org/10.1093/acrefore/9780199384655.013.923</a>.
 </div>
@@ -478,42 +469,42 @@ Rubin, Philip. 2022. <span>“Arthur Abramson.”</span> In <em>Oxford Research 
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch06spectrograms.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/ch06spectrograms.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["TPhSA-EN.pdf", "TPhSA-EN.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

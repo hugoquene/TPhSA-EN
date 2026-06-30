@@ -244,7 +244,7 @@ Table: (#tab:decibels) Examples of sound intensities in dB (SPL), in various sit
 
 | dB (SPL) | situation | 
 | -------- | :-------- |
-|     192  | Loudest sound possible in air, rarefactions are vacuum (<https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure>) |
+|     191  | Loudest sound possible in air, rarefactions are vacuum (<https://en.wikipedia.org/wiki/Sound_pressure#Examples_of_sound_pressure>) |
 |     172  | Krakatoa eruption, 1893 (at ~160 km distance)  [@Henderson_2023, p.43] |
 |     130  | Jet engine (at 30 m distance) | 
 |     120  | Threshold of pain |

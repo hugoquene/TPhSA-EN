@@ -37,7 +37,7 @@ The digital signal obtained by analog-to-digital conversion is an approximation 
 
 The sampling frequency (symbol $f_s$) is the frequency with which digital samples are taken and stored from the original analog sound. With a higher sampling frequency, the digital signal better (more closely) approximates the analog source in the *time* dimension, resulting in a better digital recording. The sampling frequency is expressed in samples per second, in Hertz units (cf. §\@ref(sec:frequency)). A sampling frequency of 2 kHz (2000 Hz) means that the sound is sampled $2000 \times$ per second. 
 
-::: {#nyquist .warningbox}
+::: {#box-nyquist .warningbox}
 
 The sampling frequency $f_s$ must be at least $2 \times$ the highest frequency $f$ in the analog source sound. Thus, the source sound may not contain any components with frequencies above $f_s / 2$, the so-called 'nyquist frequency' (this requirement follows from the so-called 'Nyquist theorem'). In practice this requirement is guaranteed by *low-pass* filtering the source sound (see §\@ref(sec:typesoffilters) about filtering), with the nyquist frequency as cutoff, thus removing any components with frequencies higher than the nyquist frequency. This filtering is routinely done before AD conversion, by the AD conversion hardware. 
 
