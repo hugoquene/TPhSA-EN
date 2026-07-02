@@ -87,7 +87,8 @@ The safest method for measuring formants is to *bypass* the spectrum, and measur
 
 - Select an input Sound object in the `Praat` Objects window. Then choose `Analyse spectum >` and then `To formant (burg)...`. 
 
-- As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate `Maximum number of formants` and choose the matching `Formant ceiling` value for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\@ref(sec:samplingfrequency))^[See the `Help` information in the `Praat` menu, in particular its last paragraph.]. 
+- As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate `Maximum number of formants` and choose the matching `Formant ceiling` value for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (for background, see §\@ref(sec:LPC-details) and §\@ref(sec:samplingfrequency) respectively). 
+^[Also the `Help` information in the `Praat` menu, in particular its last paragraph.]. 
 Leave other arguments at their default (standard) values. Click `OK`.
 
 - The resulting Formant object is again added at the bottom of the list of objects. 
