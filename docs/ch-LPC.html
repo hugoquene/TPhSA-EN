@@ -249,7 +249,10 @@ div.csl-indent {
 <li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
 <li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
 <li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-analysis"><i class="fa fa-check"></i><b>8.4.1</b> LPC analysis</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -302,7 +305,7 @@ fundamental, harmonics, formant, formant frequency, formant bandwidth, glottal s
 <div id="introduction-1" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Introduction<a href="ch-LPC.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>(with Clizia Welker)</p>
-<p>Now that we know about spectra (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) and about the source-filter theory of speech production (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>), we can discuss <em>Linear Predictive Coding</em> or <em>LPC</em> (key references are: <span class="citation">Markel and Gray (<a href="#ref-Markel_Gray_1976">1976</a>)</span>, <span class="citation">Atal and Schroeder (<a href="#ref-Atal_Schroeder_1978">1978</a>)</span>).</p>
+<p>Now that we know about spectra (§<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>) and about the source-filter theory of speech production (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>), we can discuss <em>Linear Predictive Coding</em> or <em>LPC</em>. While this analysis method is now over 50 years old (key references are <span class="citation">Atal and Hanauer (<a href="#ref-Atal_Hanauer_1971">1971</a>)</span>, <span class="citation">Atal and Schroeder (<a href="#ref-Atal_Schroeder_1978">1978</a>)</span>, <span class="citation">Markel and Gray (<a href="#ref-Markel_Gray_1976">1976</a>)</span>), it is still highly relevant and important today (<span class="citation">Story (<a href="#ref-Story_2026">2026</a>)</span>) in speech research and telecommunication.</p>
 <p>LPC is a method used to analyze and compress the spectral information in speech. The essentials of the LPC analysis will be explained below. LPC analysis achieves two major goals at the same time:</p>
 <ul>
 <li><p>The resulting parameters are far fewer in number than the original speech signal. Thus LPC reduces the bandwidth required to encode and transmit speech, which in turn allows for more telephone calls per bandwidth, hence cheaper phone calls. (As an indication, the data compression is by a factor of about 20).</p></li>
@@ -311,7 +314,7 @@ fundamental, harmonics, formant, formant frequency, formant bandwidth, glottal s
 </div>
 <div id="sec:inversefiltering" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Inverse filtering<a href="ch-LPC.html#sec:inversefiltering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>LPC works in the time domain (typically over a brief windowed portion of the input signal), but it is easier to explain in the frequency domain.</p>
+<p>LPC works in the time domain (typically over a brief windowed portion of the input signal), but it is easier to explain in the frequency domain. <span class="citation">Story (<a href="#ref-Story_2026">2026</a>)</span> offers more detailed explanation and background.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:a8000lpc"></span>
 <img src="figures/aa_8000_lpc.png" alt="Spectrum of an [a] vowel, overlaid with (green) the assumed spectral slope of the glottal source, (red) the inverse LPC filter, and (blue) the resulting LPC spectral envelope" width="1800" />
 <p class="caption">
@@ -327,35 +330,86 @@ LPC attempts to determine the difference between the predicted spectrum from the
 <p>Finally, as a check, we can pipe the <em>presumed</em> glottal source signal (GREEN) with the proper <code>F0</code> and <code>Gain</code> into the filter, and compare the output of the filter (the predicted output speech, BLUE) with the original (BLACK). The difference between these two is termed the <em>residual</em>
 <a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.
 If all has gone well, then according to the source-filter theory, the prediction should come out close to the original, and then the residual should contain only little information (noise or silence). In practice, however, the residual often contains salient phonetic properties of the speech. One reason is that the source and the filter are presumed to be independent in theory (e.g. formant frequencies are independent of <code>F0</code>) but this assumption does not always hold. Female voices in particular tend to have stronger coupling or interference between source and filter than male voices (<span class="citation">Titze (<a href="#ref-Titze_2008">2008</a>)</span>, <span class="citation">Klatt and Klatt (<a href="#ref-Klatt_Klatt_1990">1990</a>)</span>).</p>
-<p>The LPC inverse filtering as described above was performed on a brief windowed portion or <em>frame</em> of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at <span class="math inline">\(f_s = 10\  \textrm{kHz}\)</span> (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g. harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (<code>frame rate</code>), and the analysis repeats for the next frame.</p>
+<p>The LPC inverse filtering as described above is performed on a brief windowed portion or <em>frame</em> of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at <span class="math inline">\(f_s = 10\  \textrm{kHz}\)</span> (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g. harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (<code>frame rate</code>), and the analysis repeats for the next frame.</p>
 <p>In this section, we have described LPC analysis (inverse filtering) for voiced vowels. This is because the source-filter theory applies better to vowels than to consonants. In the case of <em>unvoiced consonants</em>, similar principles do apply, using a similar conceptualisation. For unvoiced consonants, the LPC analysis assumes that the source sound is white noise (§<a href="complex-sounds-and-spectra.html#sec:noise">3.3.1</a>) generated somewhere in the vocal tract, with a flat spectral envelope. In <em>voiced consonants</em>, <em>two</em> source sounds are produced simultaneously: both the periodic phonation sound at the glottis, and the aperiodic noise at the constriction or closure. LPC has problems accounting for these two effects at the same time, and consequently, the residual still contains a lot of phonetic information: voiced consonants thus are rather unsuitable for LPC analysis. Consequently, the formants identified by LPC in consonants are less reliable than those in vowels.</p>
 </div>
 <div id="sec:LPC-details" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Limitations and considerations<a href="ch-LPC.html#sec:LPC-details" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>As indicated above, LPC models the spectral envelope by a <em>cascade of formant-like peaks</em>, where frequencies are amplified. LPC cannot represent so-called anti-formants, where frequencies are actively attenuated. These antiresonances do occur in nasals, nasalized vowels, laterals, and fricatives. LPC is not very suitable for the spectral analysis (nor the transmission) of these categories of speech sounds.</p></li>
-<li><p>As indicated above, LPC assumes that the <em>source and filter are two independent systems</em> (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>).
+<li><p>As indicated above, LPC assumes that the <em>source and filter are two independent systems</em> in series (§<a href="ch-speechsounds.html#sec:sourcefilter">5.3</a>).
 If there is <em>interaction</em> between the source signal and the filter then the resulting LPC coefficients may be incorrect. This may happen between <code>F0</code> and the first formant in high vowels, in particular for women and children, or it may happen between formants (e.g. <code>F1</code> and <code>F2</code> in [u]) (<span class="citation">Titze (<a href="#ref-Titze_2008">2008</a>)</span>).</p></li>
-<li><p>In traditional implementations, LPC will find a fixed (but user-settable) number of spectral filter coefficients. Each formant is represented by two of these LPC coefficients, which can be interpreted as its peak frequency and its bandwidth (§<a href="ch-speechsounds.html#sec:formants">5.2</a>). The <em>chosen number of formants in the LPC analysis must match the sampling frequency</em>, and it is the task of you, the analyst, to ensure that these properties do match.
-For adult male speakers, the formants are spaced about 1000 Hz apart (§<a href="ch-speechsounds.html#sec:formants">5.2</a>). So if you expect|want to find 5 formants (10 spectral LPC coefficients) in male speech, the frequency range should be 0 to 5000 Hz, and the corresponding sampling frequency should be twice the upper limit, hence <span class="math inline">\(f_s = 5 \times 1000 \times 2 = 10000\)</span> Hz (see §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a> for the <span class="math inline">\(\times 2\)</span> part of this rule). For adult female speakers, the formants are spaced about 1100 Hz apart. If you expect|want to find 5 formants in female speech, the corresponding sampling frequency should be <span class="math inline">\(f_s = 5 \times 1100 \times 2 = 11000\)</span> Hz.</p>
+<li><p>In traditional implementations, LPC will find a fixed (but user-settable) number of spectral filter coefficients that together model the spectral envelope. With some precautions, these LPC coefficients can be rearranged into peak frequencies and bandwidths of formants, ‘using’ two coefficients per formant (see §<a href="ch-speechsounds.html#sec:formants">5.2</a> for background about formants).
+The <em>chosen number of formants in the LPC analysis must match the sampling frequency</em>, and it is the task of you, the analyst, to ensure that these properties do match.
+For adult male speakers, the formants are spaced about 1000 Hz apart (see §<a href="ch-speechsounds.html#sec:formants">5.2</a>). So if you expect|want to find 5 formants (10 spectral LPC coefficients) in male speech, the frequency range should be 0 to 5000 Hz, and the corresponding sampling frequency should be twice the upper limit, hence <span class="math inline">\(f_s = 5 \times 1000 \times 2 = 10000\)</span> Hz (see §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a> about sampling frequency, esp. for the <span class="math inline">\(\times 2\)</span> part of this rule)<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.
+For adult female speakers, the formants are spaced about 1100 Hz apart. If you expect|want to find 5 formants in female speech, the corresponding sampling frequency should be <span class="math inline">\(f_s = 5 \times 1100 \times 2 = 11000\)</span> Hz.</p>
 <p>Consequently, you must ensure that the number of formants found by the LPC analysis matches the sampling frequency of the input speech signal. This can be achieved in two ways:</p>
 <ul>
-<li><p>by choosing the <em>number of formants</em> in the LPC analysis proportional to the sampling frequency: the number of formants should be <span class="math inline">\(f_s/2/1000\)</span> for male speech and <span class="math inline">\(f_s/2/1100\)</span> for female speech;</p></li>
-<li><p>by setting the <em>sampling frequency</em> <span class="math inline">\(f_s\)</span> (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>) proportional to the desired number of formants, that is, by <em>downsampling</em> the speech signal to an <span class="math inline">\(f_s\)</span> that is appropriate for the desired number of formants. (For Figure <a href="ch-LPC.html#fig:a8000lpc">8.1</a>, the speech was downsampled to 8 kHz before LPC analysis, as there were only 4 formants noticeable in the original vowel from a male speaker.)<br />
+<li><p>by choosing the <em>number of formants</em> in the LPC analysis proportional to the sampling frequency: the number of formants should be <span class="math inline">\(f_s/2/1000\)</span> for male speech <a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a> and <span class="math inline">\(f_s/2/1100\)</span> for female speech;</p></li>
+<li><p>by setting the <em>sampling frequency</em> <span class="math inline">\(f_s\)</span> (see §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>) proportional to the desired number of formants, that is, by <em>downsampling</em> the speech signal to an <span class="math inline">\(f_s\)</span> that is appropriate for the desired number of formants. (For Figure <a href="ch-LPC.html#fig:a8000lpc">8.1</a>, the speech was downsampled to 8 kHz before LPC analysis, as there were only 4 formants noticeable in the original vowel from a male speaker.)<br />
 </p></li>
 </ul>
-<p>If you fail to respect this relation between number of formants and sampling frequency, then the LPC analysis may result in spurious formants (a spectral peak is incorrectly considered to be a formant<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>) or in missed formants (so that e.g. the actual F4 is reported as <code>F3</code> because the true F3 has been missed).
+<p>If you fail to respect this relation between number of formants and sampling frequency, then the LPC analysis may result in spurious formants (a spectral peak is incorrectly considered to be a formant<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>) or in missed formants (so that e.g. the actual F4 is reported as <code>F3</code> because the true F3 has been missed).
 For an example of this “formant confusion”, see Figure <a href="ch-spectrograms.html#fig:window-soundeditor-3">6.4</a>, in the last 5 frames within the selection.</p>
-<p>In more advanced implementations, as in Praat, the number of formants reported is independent of the sampling frequency, and such “formant confusion” is kept under control.</p>
-<p>Remember that the number of coefficients in the LPC analysis is twice the number of formants, as <em>two</em> coefficients (peak frequency and bandwidth) are required to describe <em>one</em> formant in the LPC spectrum (BLUE).</p></li>
+<p>In more advanced implementations, as in <code>Praat</code> (<code>To Formant (burg)...</code>), the number of formants reported is independent of the sampling frequency, and such “formant confusion” is kept under control.</p>
+<p>Remember that the number of coefficients in the LPC analysis is twice the number of formants, because <em>two</em> coefficients (peak frequency and bandwidth) are required to describe <em>one</em> formant in the LPC spectrum (BLUE).</p></li>
 </ul>
 </div>
-<div id="box-praatlpc" class="praatbox">
-<div id="how-to-perform-lpc-analysis-in-praat" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">8.4</span> How to perform LPC analysis in Praat<a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<blockquote>
-<p>TODO add text</p>
-</blockquote>
+<div id="box-praatlpc1" class="praatbox">
+<div id="how-to-perform-lpc-analysis" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> How to perform LPC analysis<a href="ch-LPC.html#how-to-perform-lpc-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:LPC-analysis" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> LPC analysis<a href="ch-LPC.html#sec:LPC-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Praat</code> has several algorithms to perform an LPC analysis. The classical LPC algorithm as described above uses the <code>autocorrelation</code> method (<span class="citation">Markel and Gray (<a href="#ref-Markel_Gray_1976">1976</a>)</span>). For phonetic analysis, where you typically want to interpret the LPC coefficients in terms of formants (frequencies and bandwidth), the <code>burg</code> method is more appropriate (and it is the recommended method in <code>Praat</code>); here we will indeed follow the <code>burg</code> method.</p>
+</div>
+</div>
+</div>
+<P>
+<div id="box:bypassLPC" class="warningbox">
+<p>If you are only interested in the formant values, then the recommended workflow is to entirely <em>bypass the LPC analysis</em> as described in this chapter. Instead, go directly from Sound to Formants, as explained in §<a href="ch-speechsounds.html#sec:measureformants">5.2.3</a>.
+<code>Praat</code> will then take care of the limitations and considerations and complications in the LPC analysis, generally with good results. However, if your formant analysis yields unexpected or implausible results, then the LPC considerations in this chapter may help you find solutions.</p>
+</div>
+<P>
+<div id="box-praatlpc2" class="praatbox">
+<ul>
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window.</p></li>
+<li><p>Choose <code>Analyze Spectrum... &gt; To LPC... &gt; To LPC (burg)...</code>.</p>
+<ul>
+<li><p><code>Prediction order</code> refers to the desired number of LPC coefficients, which is twice the number of desired formants, taking the sampling frequency <span class="math inline">\(f_s\)</span> into account (see above).</p></li>
+<li><p><code>Window length</code> determines the time in seconds of the analysis window; the acoustic filter is assumed to be stable during this time, while the window contains several periods of the speech signal. <code>Praat</code>’s default value of 0.025 s is usually OK.</p></li>
+<li><p><code>Time step</code> determines by how much the LPC analysis window is shifted between consecutive steps (good values are 0.005 or 0.010 s).</p></li>
+<li><p><code>Pre-emphasis frequency</code>: This emphasis filter flattens the downward slope of the spectral envelope, so that spectral information in the higher frequencies is boosted (so that the higher frequencies are well represented in the output LPC coefficients). Here you can set the cutoff frequency of this filter; it’s best to leave this at 50 Hz (somewhat below the lowest speech frequency). For more background, see §<a href="ch-filtering.html#sec:emphasisfilters">4.4</a>.</p></li>
+</ul></li>
+</ul>
+<p>Then click OK. This will result in an LPC object: a series of LPC spectra, one for each frame (at <code>time step</code> intervals and with the chosen frame <code>length</code>).</p>
+<ul>
+<li>Remember to <code>Save</code> the LPC object if you wish.</li>
+</ul>
+<div id="formants" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> Formants<a href="ch-LPC.html#formants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the LPC object, you can extract formant information by choosing <code>To Formant</code>.</p>
+<ul>
+<li><p>You may then <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> the resulting formant values (frequencies and bandwidths per formant per time frame).</p></li>
+<li><p>Remember to <code>Save</code> the Formant object if you wish.</p></li>
+</ul>
+</div>
+<div id="sec:LPC-spectralslice" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> Spectral slice<a href="ch-LPC.html#sec:LPC-spectralslice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the LPC object, you can also extract a spectral slice (a spectrum at a particular time) by choosing <code>To Spectrum (slice)...</code> Use the same values for deemphasis as you chose for <code>preemphasis</code> in the analysis.</p>
+<p>The resulting Spectrum object contains a typical LPC spectrum, which (ideally) represents the smoothed spectral envelope of the filter, irrespective of the source signal. For more background about spectra, see §<a href="complex-sounds-and-spectra.html#sec:spectrum">3.2</a>.</p>
+<ul>
+<li>You may then <code>Draw</code> this spectrum (spectral slice), perhaps combined with the spectrum of the input signal, as in Figure <a href="ch-LPC.html#fig:a8000lpc">8.1</a> above (in blue). Or you can inspect it interactively (<code>View &amp; Edit</code>) as any spectrum.</li>
+</ul>
+</div>
+<div id="extract-residual" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> Extract residual<a href="ch-LPC.html#extract-residual" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To check the LPC analysis, you may compute the <em>residual</em> from the original sound and the LPC spectrum (see §<a href="ch-LPC.html#sec:inversefiltering">8.2</a> above).
+Select both the Sound and the LPC object (use Command+click to select two objects).
+Then choose <code>Filter (inverse)...</code></p>
+<p>The resulting Sound equals the input Sound “minus” the LPC smoothed filter (i.e., the input Sound filtered by the LPC filter), for each frame.
+Ideally, the residual should contain little or no phonetic information: it should be difficult to comprehend it and difficult to recognize the speaker.
+In practice, the residual often does contain relevant phonetic information.</p>
+<p>You may also inverse-filter the entire input Sound with the LPC spectrum at a particular time (frame). This may be helpful to assess possible “formant confusion” as described above (§<a href="ch-LPC.html#sec:LPC-details">8.3</a> above).</p>
 </div>
 </div>
 
@@ -365,6 +419,9 @@ For an example of this “formant confusion”, see Figure <a href="ch-spectrogr
 
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Atal_Hanauer_1971" class="csl-entry">
+Atal, B. S., and Suzanne L. Hanauer. 1971. <span>“Speech Analysis and Synthesis by Linear Prediction of the Speech Wave.”</span> <em>J. Acoustical Society of America</em> 50 (2.2): 637–55.
+</div>
 <div id="ref-Atal_Schroeder_1978" class="csl-entry">
 Atal, Bishnu S., and M. R. Schroeder. 1978. <span>“Linear Prediction Analysis of Speech Based on a Pole‐zero Representation.”</span> <em>The Journal of the Acoustical Society of America</em> 64 (5): 1310–18. <a href="https://doi.org/10.1121/1.382117">https://doi.org/10.1121/1.382117</a>.
 </div>
@@ -373,6 +430,9 @@ Klatt, D. H., and Laura C. Klatt. 1990. <span>“Analysis, Synthesis, and Percep
 </div>
 <div id="ref-Markel_Gray_1976" class="csl-entry">
 Markel, John D., and Augustine H. Gray. 1976. <em>Linear Prediction of Speech</em>. Vol. 12. Communication and Cybernetics. Springer. <a href="https://doi.org/10.1007/978-3-642-66286-7">https://doi.org/10.1007/978-3-642-66286-7</a>.
+</div>
+<div id="ref-Story_2026" class="csl-entry">
+Story, Brad H. 2026. <span>“The Enduring Legacy of Linear Prediction for Characterizing Speech Signals.”</span> <em>The Journal of the Acoustical Society of America</em> 159 (6): R11–12. <a href="https://doi.org/10.1121/10.0044102">https://doi.org/10.1121/10.0044102</a>.
 </div>
 <div id="ref-Titze_2008" class="csl-entry">
 Titze, Ingo R. 2008. <span>“Nonlinear Source–Filter Coupling in Phonation: Theory.”</span> <em>The Journal of the Acoustical Society of America</em> 123 (5): 2733–49. <a href="https://doi.org/10.1121/1.2832337">https://doi.org/10.1121/1.2832337</a>.
@@ -384,7 +444,9 @@ Titze, Ingo R. 2008. <span>“Nonlinear Source–Filter Coupling in Phonation: T
 <li id="fn41"><p>The glottal source signal has a presumed slope of <span class="math inline">\(-12\, \textrm{dB} / \textrm{octave}\)</span>. This spectral slope is combined with the effect of the radiation of the speech sound at the lips. Radiation or spreading of sound works better for higher frequencies than for low frequencies (that is one of the reasons why loudspeakers for low frequencies tend to be larger and consume more energy than those for high frequencies): this radiation effect is <span class="math inline">\(+6\, \textrm{dB} / \textrm{octave}\)</span>. For faster computation, we combine the effect of radiation into that of the glottal source, then the combined spectral slope is <span class="math inline">\(-12+6 = -6\)</span> <span class="math inline">\(\textrm{dB} / \textrm{octave}\)</span>, and then we may subsequently ignore the radiation effect.<a href="ch-LPC.html#fnref41" class="footnote-back">↩︎</a></p></li>
 <li id="fn42"><p>The curved shape of the GREEN contour in Figure XX is due to the linear scale on the frequency axis, combined with the logarithmic shape of the filter envelope (octave).<a href="ch-LPC.html#fnref42" class="footnote-back">↩︎</a></p></li>
 <li id="fn43"><p>The actual procedure is computationally different but conceptually similar.<a href="ch-LPC.html#fnref43" class="footnote-back">↩︎</a></p></li>
-<li id="fn44"><p>Such spurious formants may have a very wide bandwidth, and thus a very low quality.<a href="ch-LPC.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>In other words, the number of LPC coefficients should be the sampling frequency <span class="math inline">\(f_s\)</span> in kHz (<span class="citation">Story (<a href="#ref-Story_2026">2026</a>)</span>)<a href="ch-LPC.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn45"><p>or: the number of LPC coefficients should be <span class="math inline">\(f_s/1000\)</span> or <span class="math inline">\(f_s\)</span> in kHz, as suggested above.<a href="ch-LPC.html#fnref45" class="footnote-back">↩︎</a></p></li>
+<li id="fn46"><p>Such spurious formants may have a very wide bandwidth, and thus a very low quality.<a href="ch-LPC.html#fnref46" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -161,11 +161,14 @@ The concept of the *envelope* of a sound property stems from electronic music (s
 knitr::include_graphics("figures/ADSR_parameter.png")
 ```
 
-> TODO: add text
+An envelope is described by four properties:
 
-> A 
-> D 
-> S 
-> R
+- *attack* (A): the "onset time" during which the property increases after the key has been pressed (in case of a piano key: the time between key-press and the hammer hitting the piano string and the string then starting to produce sound);
+
+- *decay* (D): the time during which the property falls back from the peak of the attack (for a piano: the time from the instant of maximum sound) to the ... 
+
+- *sustain* (S): the _level_ of the property after the attack and decay phases, while the key is still pressed (for a piano: the level of sound from the string vibrating shortly after it was hit);
+
+- and *release* (R): the time during which the property falls back from the sustain level, _after_ the key has been released (for a piano: very brief, unless the pedal is used).
 
 In terms of its amplitude, we may regard a brief impulse sound (click or pulse, see §\@ref(sec:impulses) above) as having very short attack and decay times, a zero sustain level, and zero release time.  

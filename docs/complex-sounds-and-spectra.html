@@ -249,7 +249,10 @@ div.csl-indent {
 <li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
 <li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
 <li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-analysis"><i class="fa fa-check"></i><b>8.4.1</b> LPC analysis</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -416,15 +419,13 @@ Figure 3.4: Spectra of white noise (left) and of brown noise (right), with a lin
 Figure 3.5: A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from <span class="math inline">\(https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg\)</span>, used under CC-BY-SA license.
 </p>
 </div>
-<blockquote>
-<p>TODO: add text</p>
-</blockquote>
-<blockquote>
-<p>A
-D
-S
-R</p>
-</blockquote>
+<p>An envelope is described by four properties:</p>
+<ul>
+<li><p><em>attack</em> (A): the “onset time” during which the property increases after the key has been pressed (in case of a piano key: the time between key-press and the hammer hitting the piano string and the string then starting to produce sound);</p></li>
+<li><p><em>decay</em> (D): the time during which the property falls back from the peak of the attack (for a piano: the time from the instant of maximum sound) to the …</p></li>
+<li><p><em>sustain</em> (S): the <em>level</em> of the property after the attack and decay phases, while the key is still pressed (for a piano: the level of sound from the string vibrating shortly after it was hit);</p></li>
+<li><p>and <em>release</em> (R): the time during which the property falls back from the sustain level, <em>after</em> the key has been released (for a piano: very brief, unless the pedal is used).</p></li>
+</ul>
 <p>In terms of its amplitude, we may regard a brief impulse sound (click or pulse, see §<a href="complex-sounds-and-spectra.html#sec:impulses">3.3.2</a> above) as having very short attack and decay times, a zero sustain level, and zero release time.</p>
 
 </div>

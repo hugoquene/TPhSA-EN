@@ -118,7 +118,11 @@ ch-LPC
 introduction-1
 sec:inversefiltering
 sec:LPC-details
-how-to-perform-lpc-analysis-in-praat
+how-to-perform-lpc-analysis
+sec:LPC-analysis
+formants
+sec:LPC-spectralslice
+extract-residual
 app-saywhat
 introduction-2
 dutch

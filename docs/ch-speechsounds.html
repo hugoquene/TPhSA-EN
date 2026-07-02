@@ -249,7 +249,10 @@ div.csl-indent {
 <li class="chapter" data-level="8.1" data-path="ch-LPC.html"><a href="ch-LPC.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
 <li class="chapter" data-level="8.2" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:inversefiltering"><i class="fa fa-check"></i><b>8.2</b> Inverse filtering</a></li>
 <li class="chapter" data-level="8.3" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-details"><i class="fa fa-check"></i><b>8.3</b> Limitations and considerations</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis-in-praat"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis in Praat</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-LPC.html"><a href="ch-LPC.html#how-to-perform-lpc-analysis"><i class="fa fa-check"></i><b>8.4</b> How to perform LPC analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-LPC.html"><a href="ch-LPC.html#sec:LPC-analysis"><i class="fa fa-check"></i><b>8.4.1</b> LPC analysis</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-saywhat.html"><a href="app-saywhat.html"><i class="fa fa-check"></i><b>A</b> What to say?</a>
@@ -371,10 +374,11 @@ The different vowels in any language have different formant patterns, and the fi
 <div id="box-praatformants" class="praatbox">
 <div id="sec:measureformants" class="section level3 hasAnchor" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> How to measure formants<a href="ch-speechsounds.html#sec:measureformants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The safest method for measuring formants is to <em>bypass</em> the spectrum, and measure formants directly from a Sound object.</p>
+<p>The safest method for measuring formants is to <em>bypass</em> the spectrum, and measure formants directly from a Sound object (this is further explained in Ch.<a href="ch-LPC.html#ch-LPC">8</a>).</p>
 <ul>
-<li><p>Select an input Sound object in the <code>Praat</code> Objects window. Then choose <code>Analyse spectum &gt;</code> and then <code>To formant (burg)...</code>.</p></li>
-<li><p>As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate <code>Maximum number of formants</code> and choose the matching <code>Formant ceiling</code> value for your speaker; these values depend on the length of the speaker’s vocal tract and on your sampling frequency (§<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a>)<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.
+<li><p>Select an input Sound object in the <code>Praat</code> Objects window. Then choose <code>Analyse spectrum &gt;</code> and then <code>To formant (burg)...</code>.</p></li>
+<li><p>As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate <code>Maximum number of formants</code> and choose the matching <code>Formant ceiling</code> value for your speaker; these values depend on the length of the speaker’s vocal tract and on your sampling frequency (for further explanation, see §<a href="ch-LPC.html#sec:LPC-details">8.3</a> and §<a href="ch-soundtobytes.html#sec:samplingfrequency">2.3.1</a> respectively).
+<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.
 Leave other arguments at their default (standard) values. Click <code>OK</code>.</p></li>
 <li><p>The resulting Formant object is again added at the bottom of the list of objects.</p></li>
 <li><p>You may <code>Draw</code> or <code>Tabulate</code> or interactively <code>Query</code> the formant values (frequencies and bandwidths per formant per time frame).</p></li>
@@ -468,7 +472,7 @@ Tokuda, Isao. 2021. <span>“The Source–Filter Theory of Speech.”</span> In 
 <li id="fn33"><p>The term <em>formant quality</em> may refer to the inverse of the formant bandwidth, i.e. <span class="math inline">\(1/\textrm{bandwidth}\)</span>; a larger quality value corresponds with a narrower, higher, and more peaked formant.<a href="ch-speechsounds.html#fnref33" class="footnote-back">↩︎</a></p></li>
 <li id="fn34"><p>in the classical sense of “having two or more sections connected by a flexible joint” (<em>New Oxford Dictionary of English</em> 1998).<a href="ch-speechsounds.html#fnref34" class="footnote-back">↩︎</a></p></li>
 <li id="fn35"><p>In that diagram, the scales may be displayed in Bark units, and the F1 axis may have been reversed, in order to clarify the relation between articulatory features and formant frequencies.<a href="ch-speechsounds.html#fnref35" class="footnote-back">↩︎</a></p></li>
-<li id="fn36"><p>See the <code>Help</code> information in the <code>Praat</code> menu, in particular its last paragraph.<a href="ch-speechsounds.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>Also the <code>Help</code> information in the <code>Praat</code> menu, in particular its last paragraph.<a href="ch-speechsounds.html#fnref36" class="footnote-back">↩︎</a></p></li>
 <li id="fn37"><p>Components with lower frequency suffer more from acoustic impedance at the border between the vocal tract and the outside air, and these lower-frequency components are therefore attenuated in the resulting speech sound.<a href="ch-speechsounds.html#fnref37" class="footnote-back">↩︎</a></p></li>
 <li id="fn38"><p>This spectral effect of radiation is often regarded as if it were a spectral property of the source sound, after which this radiation is further ignored.<a href="ch-speechsounds.html#fnref38" class="footnote-back">↩︎</a></p></li>
 </ol>

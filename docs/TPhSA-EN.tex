@@ -85,7 +85,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 30 Jun 2026 15:56}
+\date{Document compiled 02 Jul 2026 16:14}
 
 \begin{document}
 \maketitle
@@ -1081,16 +1081,18 @@ The concept of the \emph{envelope} of a sound property stems from electronic mus
 \caption{A typical amplitude envelope (in gray), with four key parameters Attack, Decay, Sustain, Release describing the changes of amplitude over time, relative to the onset and offset of a synthesizer keyboard key press. Image taken from  $https://commons.wikimedia.org/wiki/File:ADSR_parameter.svg$, used under CC-BY-SA license.}\label{fig:envelope}
 \end{figure}
 
-\begin{quote}
-TODO: add text
-\end{quote}
+An envelope is described by four properties:
 
-\begin{quote}
-A
-D
-S
-R
-\end{quote}
+\begin{itemize}
+\item
+  \emph{attack} (A): the ``onset time'' during which the property increases after the key has been pressed (in case of a piano key: the time between key-press and the hammer hitting the piano string and the string then starting to produce sound);
+\item
+  \emph{decay} (D): the time during which the property falls back from the peak of the attack (for a piano: the time from the instant of maximum sound) to the \ldots{}
+\item
+  \emph{sustain} (S): the \emph{level} of the property after the attack and decay phases, while the key is still pressed (for a piano: the level of sound from the string vibrating shortly after it was hit);
+\item
+  and \emph{release} (R): the time during which the property falls back from the sustain level, \emph{after} the key has been released (for a piano: very brief, unless the pedal is used).
+\end{itemize}
 
 In terms of its amplitude, we may regard a brief impulse sound (click or pulse, see §\ref{sec:impulses} above) as having very short attack and decay times, a zero sustain level, and zero release time.
 
@@ -1325,13 +1327,14 @@ For further background on \emph{formants}, see \citet{Aalto_Malinen_Vainio_2018}
 \protect\phantomsection\label{box-praatformants}
 \subsection{How to measure formants}\label{sec:measureformants}
 
-The safest method for measuring formants is to \emph{bypass} the spectrum, and measure formants directly from a Sound object.
+The safest method for measuring formants is to \emph{bypass} the spectrum, and measure formants directly from a Sound object (this is further explained in Ch.\ref{ch-LPC}).
 
 \begin{itemize}
 \item
-  Select an input Sound object in the \texttt{Praat} Objects window. Then choose \texttt{Analyse\ spectum\ \textgreater{}} and then \texttt{To\ formant\ (burg)...}.
+  Select an input Sound object in the \texttt{Praat} Objects window. Then choose \texttt{Analyse\ spectrum\ \textgreater{}} and then \texttt{To\ formant\ (burg)...}.
 \item
-  As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate \texttt{Maximum\ number\ of\ formants} and choose the matching \texttt{Formant\ ceiling} value for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (§\ref{sec:samplingfrequency})\footnote{See the \texttt{Help} information in the \texttt{Praat} menu, in particular its last paragraph.}.
+  As we saw above, for a male speaker we may expect 5 formants in the range from 0 to 5000 Hz. For a female speaker, having a slightly shorter vocal tract than a male speaker, we may expect 5 formants in the range from 0 to 5500 Hz. Choose appropriate \texttt{Maximum\ number\ of\ formants} and choose the matching \texttt{Formant\ ceiling} value for your speaker; these values depend on the length of the speaker's vocal tract and on your sampling frequency (for further explanation, see §\ref{sec:LPC-details} and §\ref{sec:samplingfrequency} respectively).
+  \footnote{Also the \texttt{Help} information in the \texttt{Praat} menu, in particular its last paragraph.}.
   Leave other arguments at their default (standard) values. Click \texttt{OK}.
 \item
   The resulting Formant object is again added at the bottom of the list of objects.
@@ -1768,7 +1771,7 @@ fundamental, harmonics, formant, formant frequency, formant bandwidth, glottal s
 
 (with Clizia Welker)
 
-Now that we know about spectra (§\ref{sec:spectrum}) and about the source-filter theory of speech production (§\ref{sec:sourcefilter}), we can discuss \emph{Linear Predictive Coding} or \emph{LPC} (key references are: \citet{Markel_Gray_1976}, \citet{Atal_Schroeder_1978}).
+Now that we know about spectra (§\ref{sec:spectrum}) and about the source-filter theory of speech production (§\ref{sec:sourcefilter}), we can discuss \emph{Linear Predictive Coding} or \emph{LPC}. While this analysis method is now over 50 years old (key references are \citet{Atal_Hanauer_1971}, \citet{Atal_Schroeder_1978}, \citet{Markel_Gray_1976}), it is still highly relevant and important today (\citet{Story_2026}) in speech research and telecommunication.
 
 LPC is a method used to analyze and compress the spectral information in speech. The essentials of the LPC analysis will be explained below. LPC analysis achieves two major goals at the same time:
 
@@ -1781,7 +1784,7 @@ LPC is a method used to analyze and compress the spectral information in speech.
 
 \section{Inverse filtering}\label{sec:inversefiltering}
 
-LPC works in the time domain (typically over a brief windowed portion of the input signal), but it is easier to explain in the frequency domain.
+LPC works in the time domain (typically over a brief windowed portion of the input signal), but it is easier to explain in the frequency domain. \citet{Story_2026} offers more detailed explanation and background.
 
 \begin{figure}
 
@@ -1806,7 +1809,7 @@ Finally, as a check, we can pipe the \emph{presumed} glottal source signal (GREE
 \footnote{The actual procedure is computationally different but conceptually similar.}.
 If all has gone well, then according to the source-filter theory, the prediction should come out close to the original, and then the residual should contain only little information (noise or silence). In practice, however, the residual often contains salient phonetic properties of the speech. One reason is that the source and the filter are presumed to be independent in theory (e.g.~formant frequencies are independent of \texttt{F0}) but this assumption does not always hold. Female voices in particular tend to have stronger coupling or interference between source and filter than male voices (\citet{Titze_2008}, \citet{Klatt_Klatt_1990}).
 
-The LPC inverse filtering as described above was performed on a brief windowed portion or \emph{frame} of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at \(f_s = 10\  \textrm{kHz}\) (§\ref{sec:samplingfrequency}). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g.~harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (\texttt{frame\ rate}), and the analysis repeats for the next frame.
+The LPC inverse filtering as described above is performed on a brief windowed portion or \emph{frame} of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at \(f_s = 10\  \textrm{kHz}\) (§\ref{sec:samplingfrequency}). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g.~harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (\texttt{frame\ rate}), and the analysis repeats for the next frame.
 
 In this section, we have described LPC analysis (inverse filtering) for voiced vowels. This is because the source-filter theory applies better to vowels than to consonants. In the case of \emph{unvoiced consonants}, similar principles do apply, using a similar conceptualisation. For unvoiced consonants, the LPC analysis assumes that the source sound is white noise (§\ref{sec:noise}) generated somewhere in the vocal tract, with a flat spectral envelope. In \emph{voiced consonants}, \emph{two} source sounds are produced simultaneously: both the periodic phonation sound at the glottis, and the aperiodic noise at the constriction or closure. LPC has problems accounting for these two effects at the same time, and consequently, the residual still contains a lot of phonetic information: voiced consonants thus are rather unsuitable for LPC analysis. Consequently, the formants identified by LPC in consonants are less reliable than those in vowels.
 
@@ -1816,35 +1819,103 @@ In this section, we have described LPC analysis (inverse filtering) for voiced v
 \item
   As indicated above, LPC models the spectral envelope by a \emph{cascade of formant-like peaks}, where frequencies are amplified. LPC cannot represent so-called anti-formants, where frequencies are actively attenuated. These antiresonances do occur in nasals, nasalized vowels, laterals, and fricatives. LPC is not very suitable for the spectral analysis (nor the transmission) of these categories of speech sounds.
 \item
-  As indicated above, LPC assumes that the \emph{source and filter are two independent systems} (§\ref{sec:sourcefilter}).
+  As indicated above, LPC assumes that the \emph{source and filter are two independent systems} in series (§\ref{sec:sourcefilter}).
   If there is \emph{interaction} between the source signal and the filter then the resulting LPC coefficients may be incorrect. This may happen between \texttt{F0} and the first formant in high vowels, in particular for women and children, or it may happen between formants (e.g.~\texttt{F1} and \texttt{F2} in {[}u{]}) (\citet{Titze_2008}).
 \item
-  In traditional implementations, LPC will find a fixed (but user-settable) number of spectral filter coefficients. Each formant is represented by two of these LPC coefficients, which can be interpreted as its peak frequency and its bandwidth (§\ref{sec:formants}). The \emph{chosen number of formants in the LPC analysis must match the sampling frequency}, and it is the task of you, the analyst, to ensure that these properties do match.
-  For adult male speakers, the formants are spaced about 1000 Hz apart (§\ref{sec:formants}). So if you expect\textbar want to find 5 formants (10 spectral LPC coefficients) in male speech, the frequency range should be 0 to 5000 Hz, and the corresponding sampling frequency should be twice the upper limit, hence \(f_s = 5 \times 1000 \times 2 = 10000\) Hz (see §\ref{sec:samplingfrequency} for the \(\times 2\) part of this rule). For adult female speakers, the formants are spaced about 1100 Hz apart. If you expect\textbar want to find 5 formants in female speech, the corresponding sampling frequency should be \(f_s = 5 \times 1100 \times 2 = 11000\) Hz.
+  In traditional implementations, LPC will find a fixed (but user-settable) number of spectral filter coefficients that together model the spectral envelope. With some precautions, these LPC coefficients can be rearranged into peak frequencies and bandwidths of formants, `using' two coefficients per formant (see §\ref{sec:formants} for background about formants).
+  The \emph{chosen number of formants in the LPC analysis must match the sampling frequency}, and it is the task of you, the analyst, to ensure that these properties do match.
+  For adult male speakers, the formants are spaced about 1000 Hz apart (see §\ref{sec:formants}). So if you expect\textbar want to find 5 formants (10 spectral LPC coefficients) in male speech, the frequency range should be 0 to 5000 Hz, and the corresponding sampling frequency should be twice the upper limit, hence \(f_s = 5 \times 1000 \times 2 = 10000\) Hz (see §\ref{sec:samplingfrequency} about sampling frequency, esp.~for the \(\times 2\) part of this rule)\footnote{In other words, the number of LPC coefficients should be the sampling frequency \(f_s\) in kHz (\citet{Story_2026})}.
+  For adult female speakers, the formants are spaced about 1100 Hz apart. If you expect\textbar want to find 5 formants in female speech, the corresponding sampling frequency should be \(f_s = 5 \times 1100 \times 2 = 11000\) Hz.
 
   Consequently, you must ensure that the number of formants found by the LPC analysis matches the sampling frequency of the input speech signal. This can be achieved in two ways:
 
   \begin{itemize}
   \item
-    by choosing the \emph{number of formants} in the LPC analysis proportional to the sampling frequency: the number of formants should be \(f_s/2/1000\) for male speech and \(f_s/2/1100\) for female speech;
+    by choosing the \emph{number of formants} in the LPC analysis proportional to the sampling frequency: the number of formants should be \(f_s/2/1000\) for male speech \footnote{or: the number of LPC coefficients should be \(f_s/1000\) or \(f_s\) in kHz, as suggested above.} and \(f_s/2/1100\) for female speech;
   \item
-    by setting the \emph{sampling frequency} \(f_s\) (§\ref{sec:samplingfrequency}) proportional to the desired number of formants, that is, by \emph{downsampling} the speech signal to an \(f_s\) that is appropriate for the desired number of formants. (For Figure \ref{fig:a8000lpc}, the speech was downsampled to 8 kHz before LPC analysis, as there were only 4 formants noticeable in the original vowel from a male speaker.)\\
+    by setting the \emph{sampling frequency} \(f_s\) (see §\ref{sec:samplingfrequency}) proportional to the desired number of formants, that is, by \emph{downsampling} the speech signal to an \(f_s\) that is appropriate for the desired number of formants. (For Figure \ref{fig:a8000lpc}, the speech was downsampled to 8 kHz before LPC analysis, as there were only 4 formants noticeable in the original vowel from a male speaker.)\\
   \end{itemize}
 
   If you fail to respect this relation between number of formants and sampling frequency, then the LPC analysis may result in spurious formants (a spectral peak is incorrectly considered to be a formant\footnote{Such spurious formants may have a very wide bandwidth, and thus a very low quality.}) or in missed formants (so that e.g.~the actual F4 is reported as \texttt{F3} because the true F3 has been missed).
   For an example of this ``formant confusion'', see Figure \ref{fig:window-soundeditor-3}, in the last 5 frames within the selection.
 
-  In more advanced implementations, as in Praat, the number of formants reported is independent of the sampling frequency, and such ``formant confusion'' is kept under control.
+  In more advanced implementations, as in \texttt{Praat} (\texttt{To\ Formant\ (burg)...}), the number of formants reported is independent of the sampling frequency, and such ``formant confusion'' is kept under control.
 
-  Remember that the number of coefficients in the LPC analysis is twice the number of formants, as \emph{two} coefficients (peak frequency and bandwidth) are required to describe \emph{one} formant in the LPC spectrum (BLUE).
+  Remember that the number of coefficients in the LPC analysis is twice the number of formants, because \emph{two} coefficients (peak frequency and bandwidth) are required to describe \emph{one} formant in the LPC spectrum (BLUE).
 \end{itemize}
 
-\protect\phantomsection\label{box-praatlpc}
-\section{How to perform LPC analysis in Praat}\label{how-to-perform-lpc-analysis-in-praat}
+\protect\phantomsection\label{box-praatlpc1}
+\section{How to perform LPC analysis}\label{how-to-perform-lpc-analysis}
 
-\begin{quote}
-TODO add text
-\end{quote}
+\subsection{LPC analysis}\label{sec:LPC-analysis}
+
+\texttt{Praat} has several algorithms to perform an LPC analysis. The classical LPC algorithm as described above uses the \texttt{autocorrelation} method (\citet{Markel_Gray_1976}). For phonetic analysis, where you typically want to interpret the LPC coefficients in terms of formants (frequencies and bandwidth), the \texttt{burg} method is more appropriate (and it is the recommended method in \texttt{Praat}); here we will indeed follow the \texttt{burg} method.
+
+\protect\phantomsection\label{box:bypassLPC}
+If you are only interested in the formant values, then the recommended workflow is to entirely \emph{bypass the LPC analysis} as described in this chapter. Instead, go directly from Sound to Formants, as explained in §\ref{sec:measureformants}.
+\texttt{Praat} will then take care of the limitations and considerations and complications in the LPC analysis, generally with good results. However, if your formant analysis yields unexpected or implausible results, then the LPC considerations in this chapter may help you find solutions.
+
+\protect\phantomsection\label{box-praatlpc2}
+\begin{itemize}
+\item
+  Select an input Sound object in the \texttt{Praat} Objects window.
+\item
+  Choose \texttt{Analyze\ Spectrum...\ \textgreater{}\ To\ LPC...\ \textgreater{}\ To\ LPC\ (burg)...}.
+
+  \begin{itemize}
+  \item
+    \texttt{Prediction\ order} refers to the desired number of LPC coefficients, which is twice the number of desired formants, taking the sampling frequency \(f_s\) into account (see above).
+  \item
+    \texttt{Window\ length} determines the time in seconds of the analysis window; the acoustic filter is assumed to be stable during this time, while the window contains several periods of the speech signal. \texttt{Praat}'s default value of 0.025 s is usually OK.
+  \item
+    \texttt{Time\ step} determines by how much the LPC analysis window is shifted between consecutive steps (good values are 0.005 or 0.010 s).
+  \item
+    \texttt{Pre-emphasis\ frequency}: This emphasis filter flattens the downward slope of the spectral envelope, so that spectral information in the higher frequencies is boosted (so that the higher frequencies are well represented in the output LPC coefficients). Here you can set the cutoff frequency of this filter; it's best to leave this at 50 Hz (somewhat below the lowest speech frequency). For more background, see §\ref{sec:emphasisfilters}.
+  \end{itemize}
+\end{itemize}
+
+Then click OK. This will result in an LPC object: a series of LPC spectra, one for each frame (at \texttt{time\ step} intervals and with the chosen frame \texttt{length}).
+
+\begin{itemize}
+\tightlist
+\item
+  Remember to \texttt{Save} the LPC object if you wish.
+\end{itemize}
+
+\subsection{Formants}\label{formants}
+
+From the LPC object, you can extract formant information by choosing \texttt{To\ Formant}.
+
+\begin{itemize}
+\item
+  You may then \texttt{Draw} or \texttt{Tabulate} or interactively \texttt{Query} the resulting formant values (frequencies and bandwidths per formant per time frame).
+\item
+  Remember to \texttt{Save} the Formant object if you wish.
+\end{itemize}
+
+\subsection{Spectral slice}\label{sec:LPC-spectralslice}
+
+From the LPC object, you can also extract a spectral slice (a spectrum at a particular time) by choosing \texttt{To\ Spectrum\ (slice)...} Use the same values for deemphasis as you chose for \texttt{preemphasis} in the analysis.
+
+The resulting Spectrum object contains a typical LPC spectrum, which (ideally) represents the smoothed spectral envelope of the filter, irrespective of the source signal. For more background about spectra, see §\ref{sec:spectrum}.
+
+\begin{itemize}
+\tightlist
+\item
+  You may then \texttt{Draw} this spectrum (spectral slice), perhaps combined with the spectrum of the input signal, as in Figure \ref{fig:a8000lpc} above (in blue). Or you can inspect it interactively (\texttt{View\ \&\ Edit}) as any spectrum.
+\end{itemize}
+
+\subsection{Extract residual}\label{extract-residual}
+
+To check the LPC analysis, you may compute the \emph{residual} from the original sound and the LPC spectrum (see §\ref{sec:inversefiltering} above).
+Select both the Sound and the LPC object (use Command+click to select two objects).
+Then choose \texttt{Filter\ (inverse)...}
+
+The resulting Sound equals the input Sound ``minus'' the LPC smoothed filter (i.e., the input Sound filtered by the LPC filter), for each frame.
+Ideally, the residual should contain little or no phonetic information: it should be difficult to comprehend it and difficult to recognize the speaker.
+In practice, the residual often does contain relevant phonetic information.
+
+You may also inverse-filter the entire input Sound with the LPC spectrum at a particular time (frame). This may be helpful to assess possible ``formant confusion'' as described above (§\ref{sec:LPC-details} above).
 
 \appendix
 

@@ -77,17 +77,20 @@ For adult female speakers, the formants are spaced about 1100 Hz apart. If you e
 
 ### LPC analysis {#sec:LPC-analysis}
 
-`Praat` has several algorithms to perform an LPC analysis. The classical LPC algorithm as described above uses the `autocorrelation` method (@Markel_Gray_1976). For phonetic analysis, where you typically want to interpret the LPC coefficients in terms of formants (frequencies and bandwidth), the `burg` method is more appropriate (and the recommended method in `Praat`); here we will indeed follow the `burg` method. 
+`Praat` has several algorithms to perform an LPC analysis. The classical LPC algorithm as described above uses the `autocorrelation` method (@Markel_Gray_1976). For phonetic analysis, where you typically want to interpret the LPC coefficients in terms of formants (frequencies and bandwidth), the `burg` method is more appropriate (and it is the recommended method in `Praat`); here we will indeed follow the `burg` method. 
 
 :::
 
+<P>
+
 ::: {#box:bypassLPC .warningbox}
 
-WARNING: If you are only interested in the formant values, then the recommended workflow is to bypass the LPC analysis as described in this chapter. Instead, go directly from Sound to Formants, as explained in §\@ref(sec:measureformants). 
+If you are only interested in the formant values, then the recommended workflow is to entirely *bypass the LPC analysis* as described in this chapter. Instead, go directly from Sound to Formants, as explained in §\@ref(sec:measureformants). 
 `Praat` will then take care of the limitations and considerations and complications in the LPC analysis, generally with good results. However, if your formant analysis yields unexpected or implausible results, then the LPC considerations in this chapter may help you find solutions. 
 
 ::: 
 
+<P>
 
 ::: {#box-praatlpc2 .praatbox}
 
@@ -101,7 +104,7 @@ WARNING: If you are only interested in the formant values, then the recommended 
    
    - `Time step` determines by how much the LPC analysis window is shifted between consecutive steps (good values are 0.005 or 0.010 s).
    
-   - `Pre-emphasis frequency`: This filter flattens the downward slope of the spectral envelope, so that spectral information in the higher frequencies is boosted (so that the LPC coefficients are not biased towards the lower frequencies). It's best to leave this at 50 Hz. 
+   - `Pre-emphasis frequency`: This emphasis filter flattens the downward slope of the spectral envelope, so that spectral information in the higher frequencies is boosted (so that the higher frequencies are well represented in the output LPC coefficients). Here you can set the cutoff frequency of this filter; it's best to leave this at 50 Hz (somewhat below the lowest speech frequency). For more background, see §\@ref(sec:emphasisfilters). 
 
 Then click OK. This will result in an LPC object: a series of LPC spectra, one for each frame (at `time step` intervals and with the chosen frame `length`). 
 
@@ -109,7 +112,7 @@ Then click OK. This will result in an LPC object: a series of LPC spectra, one f
 
 ### Formants
 
-- From the LPC object, you can extract formant information by choosing `To Formant`. 
+From the LPC object, you can extract formant information by choosing `To Formant`. 
 
 - You may then `Draw` or `Tabulate` or interactively `Query` the resulting formant values (frequencies and bandwidths per formant per time frame). 
 
