@@ -17,9 +17,9 @@
 
 Broadly speaking, these properties of everyday speech are seldom captured in regular writing, and we need additional symbols such as *punctuation* (@Parkes_1992), *emoji* and *accented letters* to capture these phonetic properties in writing. (In itself, the existence and widespread use of these additional symbols illustrate the importance of prosody in speech communication.)
 
-Unfortunately, there are no simple 1:1 relations between prosodic and acoustic properties. For example, in some languages such as English and Dutch, one syllable in a polysyllabic word carries more *stress* than the others: this is conveyed by segment duration, loudness, as well as pitch, in varying degrees of importance. Similarly, *phrasing* is achieved by means of pausing, intonation, and/or tempo changes. And *rhythm* is established by intricate combination of timing (durations) and prominence patterns. In the other direction, the duration of a vowel depends on many linguistic and phonetic factors, such as its position within its phrase and word and syllable, the stress status of the syllable, the accent status of the word, and more (@Klatt_1976). 
+Unfortunately, there are no simple 1:1 relations between prosodic and acoustic properties. For example, in some languages such as English and Dutch, one syllable in a polysyllabic word carries more *stress* than the others: this linguistic (categorical) property is conveyed by multiple phonetic (gradient) properties: a.o. segment duration, loudness, as well as pitch, in varying degrees of importance. Similarly, *phrasing* is achieved by means of pausing, intonation, and/or tempo changes. And *rhythm* is established by intricate combination of timing (durations) and prominence patterns. In the other direction, the duration of a vowel depends on many linguistic and phonetic factors, such as its position within its phrase and word and syllable, the stress status of the syllable, the accent status of the word, and more (@Klatt_1976). 
 
-In this chapter, we will focus on the measurement and analysis of these prosodic properties of speech. Some of these properties can be manipulated too, as we will discuss in the next chapter. 
+In this chapter, we will focus on the measurement and analysis of these prosodic properties of speech. Some of these properties can be manipulated too, as will be discussed in the next chapter. 
 
 ## Pauses and tempo
 
@@ -42,7 +42,7 @@ Some pauses are silent, but a speaker may typically produce a so-called "filled 
 
 ::: {#box-LTSF .praatbox}
 
-`Praat` helps us to discriminate between speech and pauses automatically. This task is often called *voice activation detection* (VAD). Here we demonstrate the `LTSF` method of VAD, which looks at the Long Term Spectral Flatness. Typical speech does not have a flat spectrum, so whenever the spectrum is flat (according to some threshold of flatness), it may not be speech. 
+`Praat` helps us to discriminate between speech and pauses automatically. This task is often called *voice activation detection* (VAD). Here we demonstrate the `LTSF` method of VAD, which looks at the Long Term Spectral Flatness. Typical speech does not have a flat spectrum (e.g. Ch.\@ref(ch-LPC)), so whenever the spectrum is flat (according to some threshold of flatness), it may not be speech. 
 
 (1) Open the speech recording to analyze as a Sound object (see §\@ref(sec:praatopen)).
 
