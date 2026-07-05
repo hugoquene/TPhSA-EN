@@ -85,7 +85,7 @@
 
 \title{Tutorial on Phonetics and Speech Analysis}
 \author{true}
-\date{Document compiled 02 Jul 2026 16:14}
+\date{Document compiled 05 Jul 2026 22:11}
 
 \begin{document}
 \maketitle
@@ -708,15 +708,11 @@ For any audio recording, there are a few \textbf{essential precautions} that you
 In order to obtain a high-quality recording, it helps to attenuate all non-target sounds, in various ways:
 
 \begin{itemize}
-\tightlist
 \item
   If available, use a sound-attenuating cabin or booth. The booth will help to insulate your target signal from unwanted other sounds. Close the door of the booth properly. Leave non-essential equipment (watches, phones) outside the booth.\\
   If a booth is not available, then find the quietest space available. Try using thick curtains, carpets, and cushions, and other sound-dampening materials, to improve your recording. Make lots of test recordings, listen critically, and attempt phonetic analyses before you proceed with your recordings.
-\end{itemize}
 
-\textbf{Background}: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g.~resonances, formants, see §\ref{sec:formants}) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room\footnote{\emph{Frequency} and \emph{formant} measurements may be suspect if the corresponding \emph{wavelength} (for frequencies) or wavelength \(\times 4\) or wavelength \(\times 2\) (for formants) corresponds to one of the dimensions of the room (see §\ref{sec:wavelength} and §\ref{sec:measureformants}); or if the reported formant frequency is below 200 Hz; or if the reliability of the frequency measurement is low.}.
-
-\begin{itemize}
+  \textbf{Background}: Phonetic analyses typically aim at finding acoustic properties in the speech signal that may be related and relatable to the speaker's articulations and prosody. However, similar spectral properties (e.g.~resonances, formants, see §\ref{sec:formants} and Ch.\ref{ch-LPC}) may also arise from acoustic reflections in the recording room, and it may be difficult or impossible to disentangle similar spectral properties coming from different origins. Hence it helps to minimize any acoustic reflections in the recording room\footnote{\emph{Frequency} and \emph{formant} measurements may be suspect if the corresponding \emph{wavelength} (for frequencies) or wavelength \(\times 4\) or wavelength \(\times 2\) (for formants) corresponds to one of the dimensions of the room (see §\ref{sec:wavelength} and §\ref{sec:measureformants}); or if the reported formant frequency is below 200 Hz; or if the reliability of the frequency measurement is low.}.
 \item
   If there is a lot of noise or non-target speech, try using a \emph{directional} microphone, which only or mostly picks up sounds coming from one direction, and which attenuates sounds from other directions. Vary the position of the microphone and make test recordings.
 \item
@@ -739,11 +735,18 @@ In order to obtain a high-quality recording, it helps to attenuate all non-targe
 
 \textbf{During your recording, check the level of the recording}.\\
 If the recording level is too low, then the target signal is too weak, and the background noise (including quantization noise) is relatively strong. It's very difficult or impossible to fix the signal-to-noise ratio later, so you need to \textbf{fix this now}, during the recording.\\
-If the recording level is too high, then the loudest portions of the target signal will be too strong, leading to ``clipping'' or distortion. It is impossible to fix this later, so you need to \textbf{fix this now}, during the recording.\\
+If the recording level is too high, then the loudest portions of the target signal will be too strong, leading to ``clipping'' or distortion. It is impossible to fix this later, so you need to \textbf{fix this now}, during the recording.
+
 There are several ways to adjust the level of the recording:
-- by adjusting the level of the input channel (maybe called \texttt{Gain}), in your computer settings,
-- by varying the distance from the sound source to the microphone (in general: the closer the better, but also depending on the type of microphone),
-- in speech: by instructing the speaker to speak more loudly or more softly.
+
+\begin{itemize}
+\item
+  by adjusting the level of the input channel (perhaps called \texttt{Gain}), in your computer settings,
+\item
+  by varying the distance from the sound source to the microphone (in general: the closer the better, but also depending on the type of microphone),
+\item
+  in speech: by instructing the speaker to speak more loudly or more softly.
+\end{itemize}
 
 \subsection{Avoid lossy audio formats}\label{sec:avoidlossyformats}
 
@@ -756,9 +759,9 @@ For the same reason, it is better to use a cable connection between the micropho
 
 We assume that you use a computer equipped with a \textbf{microphone}, or with an analog \textbf{input port} for an analog signal coming from an external microphone. If using an external microphone, plug it into your computer (see §\ref{sec:microphone}). Check that audio input is arriving in your computer, using your computer system settings for sound input (if using an external microphone, select the appropriate channel).
 
-There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from the Objects window menu): \texttt{Praat\ \textgreater{}\ Settings\ \textgreater{}\ Sound\ recording\ settings...} where you may adjust certain settings as needed.
-
 \protect\phantomsection\label{box-praatrecord}
+There is a helpful option in \texttt{Praat}, from the \emph{main} menu (not from the Objects window menu): \texttt{Praat\ \textgreater{}\ Settings\ \textgreater{}\ Sound\ recording\ settings...} where you may adjust certain global settings as needed.
+
 \subsubsection{Record}\label{sec:praatrecord}
 
 \begin{itemize}
@@ -1798,7 +1801,7 @@ LPC works in the time domain (typically over a brief windowed portion of the inp
 To start, let us have a look at a spectral slice of a \emph{vowel} {[}a{]}, drawn in BLACK in Figure \ref{fig:a8000lpc} (see also §\ref{sec:spectralslice}).
 At the left we see the first harmonic, the fundamental frequency, at \(f_0 = 108.5\,\textrm{Hz}\). The other harmonics are multiples of the fundamental (see §\ref{sec:FTintro}): the \emph{frequencies} of the harmonics are therefore entirely redundant, once we know that this is a voiced (periodic) sound with this \(f_0\). These two relevant LPC parameters are named \texttt{F0} and \texttt{VUV} (voiced\textasciitilde unvoiced). We also need to know the overall \texttt{Gain} (amplitude) of the input signal.
 
-Moreover, we also assume that the glottal (voice) source sound itself has a particular spectral shape, \emph{before} it enters into the filter (vocal tract). Presumably, the overall spectral slope of the glottal (voice) source sound is \(-6\, \textrm{dB} / \textrm{octave}\), here drawn in GREEN \footnote{The glottal source signal has a presumed slope of \(-12\, \textrm{dB} / \textrm{octave}\). This spectral slope is combined with the effect of the radiation of the speech sound at the lips. Radiation or spreading of sound works better for higher frequencies than for low frequencies (that is one of the reasons why loudspeakers for low frequencies tend to be larger and consume more energy than those for high frequencies): this radiation effect is \(+6\, \textrm{dB} / \textrm{octave}\). For faster computation, we combine the effect of radiation into that of the glottal source, then the combined spectral slope is \(-12+6 = -6\) \(\textrm{dB} / \textrm{octave}\), and then we may subsequently ignore the radiation effect.} \footnote{The curved shape of the GREEN contour in Figure XX is due to the linear scale on the frequency axis, combined with the logarithmic shape of the filter envelope (octave).}.
+Moreover, we also assume that the glottal (voice) source sound itself has a particular spectral shape, \emph{before} it enters into the filter (vocal tract). Presumably, the overall spectral slope of the glottal (voice) source sound is \(-6\, \textrm{dB} / \textrm{octave}\), here drawn in GREEN \footnote{The glottal source signal has a presumed slope of \(-12\, \textrm{dB} / \textrm{octave}\). This spectral slope is combined with the effect of the radiation of the speech sound at the lips. Radiation or spreading of sound works better for higher frequencies than for low frequencies (that is one of the reasons why loudspeakers for low frequencies tend to be larger and consume more energy than those for high frequencies): this radiation effect is \(+6\, \textrm{dB} / \textrm{octave}\). For faster computation, we combine the effect of radiation into that of the glottal source, then the combined spectral slope is \(-12+6 = -6\) \(\textrm{dB} / \textrm{octave}\), and then we may subsequently ignore the radiation effect.} \footnote{The curved shape of the GREEN contour in Figure \ref{fig:a8000lpc} is due to the linear scale on the frequency axis, combined with the logarithmic shape of the filter envelope (octave).}.
 
 However, what is \emph{not} expected from the glottal source sound is (are) the major peaks in the spectral envelope at approximately 800, 1450 and 3000 Hz. As we now know, those peaks are caused by the acoustic filter, that is, by formant resonances in the vocal tract (§\ref{sec:sourcefilter}, §\ref{sec:formants}).
 LPC attempts to determine the difference between the predicted spectrum from the source (GREEN) and the actual spectrum of the signal, by means of so-called ``inverse filtering''. This means that the effect of the vocal tract filter is ``undone'' in order to approximate the spectral envelope that we expect (GREEN): we expect no peaks (GREEN), but we do observe a peak (in the input spectrum, affecting several harmonics), so the inverse filter must suppress that peak at the peak frequency (RED).
@@ -1807,7 +1810,7 @@ Once we have done this inverse filtering, the coefficients of the resulting inve
 
 Finally, as a check, we can pipe the \emph{presumed} glottal source signal (GREEN) with the proper \texttt{F0} and \texttt{Gain} into the filter, and compare the output of the filter (the predicted output speech, BLUE) with the original (BLACK). The difference between these two is termed the \emph{residual}
 \footnote{The actual procedure is computationally different but conceptually similar.}.
-If all has gone well, then according to the source-filter theory, the prediction should come out close to the original, and then the residual should contain only little information (noise or silence). In practice, however, the residual often contains salient phonetic properties of the speech. One reason is that the source and the filter are presumed to be independent in theory (e.g.~formant frequencies are independent of \texttt{F0}) but this assumption does not always hold. Female voices in particular tend to have stronger coupling or interference between source and filter than male voices (\citet{Titze_2008}, \citet{Klatt_Klatt_1990}).
+If all has gone well, then according to the source-filter theory, the prediction should come out close to the original, and then the residual should contain only little information (buzz, noise or silence). In practice, however, the residual often contains salient phonetic properties of the speech. One reason for this is that the source and the filter are presumed to be independent in theory (e.g.~formant frequencies are independent of \texttt{F0}) but this assumption does not always hold. Female voices in particular tend to have stronger coupling or interference between source and filter than male voices (\citet{Titze_2008}, \citet{Klatt_Klatt_1990}).
 
 The LPC inverse filtering as described above is performed on a brief windowed portion or \emph{frame} of the speech signal. Traditionally this was done over 256 samples, or 25.6 ms of speech if sampled at \(f_s = 10\  \textrm{kHz}\) (§\ref{sec:samplingfrequency}). Within this frame, LPC assumes correctly that the filter is stable, as the vocal tract does not change much during 25.6 ms, and it assumes that the fine spectral details (e.g.~harmonics) must have been caused by the source. Thus the source and filter characteristics are separated for this brief time frame. Next, the analysis frame is moved forward, typically by 10 ms (\texttt{frame\ rate}), and the analysis repeats for the next frame.
 
@@ -1817,7 +1820,7 @@ In this section, we have described LPC analysis (inverse filtering) for voiced v
 
 \begin{itemize}
 \item
-  As indicated above, LPC models the spectral envelope by a \emph{cascade of formant-like peaks}, where frequencies are amplified. LPC cannot represent so-called anti-formants, where frequencies are actively attenuated. These antiresonances do occur in nasals, nasalized vowels, laterals, and fricatives. LPC is not very suitable for the spectral analysis (nor the transmission) of these categories of speech sounds.
+  As indicated above, LPC models the spectral envelope by a \emph{set of formant-like peaks}, where frequencies are amplified. LPC cannot represent so-called anti-formants, where frequencies are actively attenuated. These antiresonances do occur in nasals, nasalized vowels, laterals, and fricatives. LPC is not very suitable for the spectral analysis (nor the transmission) of these categories of speech sounds.
 \item
   As indicated above, LPC assumes that the \emph{source and filter are two independent systems} in series (§\ref{sec:sourcefilter}).
   If there is \emph{interaction} between the source signal and the filter then the resulting LPC coefficients may be incorrect. This may happen between \texttt{F0} and the first formant in high vowels, in particular for women and children, or it may happen between formants (e.g.~\texttt{F1} and \texttt{F2} in {[}u{]}) (\citet{Titze_2008}).
