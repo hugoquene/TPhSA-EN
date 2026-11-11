@@ -57,7 +57,7 @@ A special property of the *human* vocal tract is that is not a fixed tube, such 
 
 First we look at the two-tube configuration in Figure \@ref(fig:twotube) [after @Stevens_1998, Fig.3.13, p.143]; this is similar to the human vocal tract producing a low vowel /ɑ/. Due to the low position of the jaw and the tongue, the pharynx is relatively narrow while the oral cavity is relatively wide. This system of two tubes acts as a single system of two *coupled* resonators. The natural frequencies depend on the respective lengths $L_1$ and $L_2$ and the respective cross-sections $A_1$ and $A_2$, that is, the natural frequencies of the narrower tube affect those of the wider tube, and vice versa. This coupling results in a higher $F_1$ and lower $F_2$ for this two-tube configuration [@Stevens_1998, Fig.3.14], relative to those for the uniform tube (§\@ref(sec:onetube)). Indeed, for /ɑ/, average formant values are (for males) $F_1=730$ and $F_2=1090$ Hz, and (for females) $F_1=850$ and $F_2=1220$ Hz. 
 
-```{r twotube, echo=FALSE, fig.cap="Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13.", fig.align="center"}
+```{r twotube, echo=FALSE, fig.cap="Two-tube configuration, with two coupled resonators. After Stevens (1998), Figure 3.13, and Johnson (2012), Figure 6.1.", fig.align="center"}
 knitr::include_graphics("figures/twotube.png")
 ```
 

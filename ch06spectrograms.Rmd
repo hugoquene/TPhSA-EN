@@ -116,7 +116,7 @@ In order to read a spectrogram, we need to remember that:
 
 **Vowels** may be distinguished through their formant values, especially through F1, F2 and F3; consult a vowel diagram in your textbook. 
 
-**Dipthongs** (such as the vowels in the Dutch words *bij*, *bui*, *bouw*, and in the English words *mouth*, *choice*, *price*, *face*) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values (for an example, see Fig.\@ref(fig:window-soundeditor-3) below). 
+**Dipthongs** (such as the vowels in the Dutch words *bij*, *bui*, *bouw*, and in the English words *mouth*, *choice*, *price*, *face*, cf. \@ref(app-lexicalsets) are composed of two different vowel sounds, with a gradual movement of the formants from their initial to final frequency values (for an example, see Fig.\@ref(fig:window-soundeditor-3) below). 
 
 For **voiced consonants** in a CV context, formant frequencies change relatively rapidly. The *F2* value in the vowel from which the formant travels in this formant transition is often called the 'F2 locus', and this locus is correlated with the place of articulation of the consonant. The F2 transition is also due to the fact that acoustic resonators (tube sections) are uncoupled at the moment of closure or frication, but become coupled as the mouth opens.
 For labial consonants the F2 locus is around 700 Hz, for alveolar consonants it is around 1800 Hz, and for velar consonants it is around 2700 Hz.   
