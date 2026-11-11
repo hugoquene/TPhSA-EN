@@ -140,3 +140,17 @@ app-praattools
 editors
 other-tools
 app-lexicalsets
+on-your-phone
+fig:s179f1wolf
+fig:s344f5-pausing
+ch-prosody
+pauses-and-tempo
+pausing
+tempo
+durations
+frequency-pitch
+intensity-loudness
+stresses-and-accents
+rhythm
+voice-quality
+introduction-3
